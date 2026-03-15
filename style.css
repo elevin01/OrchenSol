@@ -395,76 +395,12 @@ h3 {
 }
 
 /* ─── MINI DEVICE (CSS-only laptop) ─── */
-.mini-device {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  width: 260px;
-  margin-top: 0.5rem;
-}
-
-.device-screen {
+.macbook-svg {
   width: 100%;
-  background: var(--bg-ui);
-  border: 1px solid var(--border);
-  border-radius: 6px 6px 0 0;
-  overflow: hidden;
-  box-shadow: var(--shadow-md);
-}
-
-.screen-bar {
-  height: 28px;
-  background: var(--bg);
-  border-bottom: 1px solid var(--border);
-  display: flex;
-  align-items: center;
-  padding: 0 10px;
-  gap: 5px;
-}
-.screen-bar::before,
-.screen-bar::after {
-  content: '';
-  width: 8px;
-  height: 8px;
-  border-radius: 50%;
-  background: var(--border);
-  flex-shrink: 0;
-}
-.screen-bar::after { background: var(--green); opacity: 0.4; }
-
-.screen-content { padding: 14px 16px 16px; }
-
-.sc-line {
-  height: 7px;
-  border-radius: 999px;
-  background: var(--border-light);
-  margin-bottom: 7px;
-}
-.sc-line--title { width: 55%; background: var(--border); height: 9px; margin-bottom: 10px; }
-.sc-line--long  { width: 90%; }
-.sc-line--mid   { width: 70%; }
-.sc-line--short { width: 40%; }
-.sc-spacer      { height: 10px; }
-.sc-chip {
-  display: inline-flex;
-  height: 22px;
-  width: 80px;
-  border-radius: 4px;
-  background: var(--green);
-  opacity: 0.18;
-}
-
-.device-base {
-  width: calc(100% + 16px);
-  height: 8px;
-  background: var(--border-light);
-  border-radius: 0 0 2px 2px;
-}
-.device-foot {
-  width: 60%;
-  height: 5px;
-  background: var(--border);
-  border-radius: 0 0 4px 4px;
+  max-width: 540px;
+  margin-top: 1.5rem;
+  display: block;
+  filter: drop-shadow(0 12px 32px rgba(26,23,20,0.15));
 }
 
 /* ─── CHAT MOCKUP ─── */
@@ -1008,7 +944,7 @@ h3 {
 @media (max-width: 480px) {
   .hero-headline { font-size: clamp(2.25rem, 10vw, 3rem); }
   .statement p { font-size: 1.25rem; }
-  .mini-device { width: 200px; }
+  .macbook-svg { max-width: 100%; }
 }
 
 @media print {

@@ -162,24 +162,60 @@
               <p class="offer-line">Pre-configured MacBook Neo, arriving ready from day one.</p>
             </div>
             <p class="offer-body">Enrolled in your MDM profile on arrival. Competing AI tools blocked at device and DNS level via Jamf and Cloudflare. First managed education environment built on this hardware. No IT burden on your end.</p>
-            <!-- Mini hardware visual -->
-            <div class="mini-device" aria-hidden="true">
-              <div class="device-screen">
-                <div class="screen-bar"></div>
-                <div class="screen-content">
-                  <div class="sc-line sc-line--title"></div>
-                  <div class="sc-line sc-line--short"></div>
-                  <div class="sc-spacer"></div>
-                  <div class="sc-line sc-line--long"></div>
-                  <div class="sc-line sc-line--mid"></div>
-                  <div class="sc-line sc-line--long"></div>
-                  <div class="sc-spacer"></div>
-                  <div class="sc-chip"></div>
-                </div>
-              </div>
-              <div class="device-base"></div>
-              <div class="device-foot"></div>
-            </div>
+            <!-- MacBook Neo — paths from reference SVG, Orchen colour scheme -->
+            <svg class="macbook-svg" viewBox="640 690 3220 1820" overflow="visible" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+              <defs>
+                <linearGradient id="mb-scr" x1="972" y1="804" x2="3528" y2="2193" gradientUnits="userSpaceOnUse">
+                  <stop offset="0%"   stop-color="#1A2A20"/>
+                  <stop offset="100%" stop-color="#070C10"/>
+                </linearGradient>
+                <linearGradient id="mb-base" x1="2250" y1="2275" x2="2250" y2="2425" gradientUnits="userSpaceOnUse">
+                  <stop offset="0%"   stop-color="#DEDAD6"/>
+                  <stop offset="100%" stop-color="#C6C2BD"/>
+                </linearGradient>
+              </defs>
+
+              <!-- Lid / bezel frame (dark — this IS the screen surround) -->
+              <path fill-rule="nonzero" fill="#1C1A18"
+                d="M 3537.59 722.37 L 962.77 722.37
+                   C 922.47 722.37 889.80 755.04 889.80 795.35
+                   L 889.80 2275.52 L 3610.56 2275.52
+                   L 3610.56 795.35
+                   C 3610.56 755.04 3577.89 722.37 3537.59 722.37 Z"/>
+
+              <!-- Screen — dark, on but idle -->
+              <path fill-rule="nonzero" fill="url(#mb-scr)"
+                d="M 972.41 2192.91 L 972.41 804.98
+                   L 3527.95 804.98 L 3527.95 2192.91 Z"/>
+
+              <!-- Subtle glare top-right of screen -->
+              <rect x="3090" y="830" width="400" height="270" rx="24" fill="rgba(255,255,255,0.026)"/>
+
+              <!-- Camera dot -->
+              <ellipse cx="2250" cy="757" rx="44" ry="38" fill="#2A2826"/>
+
+              <!-- Keyboard base — warm silver -->
+              <path fill-rule="nonzero" fill="url(#mb-base)"
+                d="M 3753.76 2275.51 L 3753.76 2296.16
+                   C 3753.76 2331.68 3739.30 2363.82 3715.92 2387.04
+                   C 3692.79 2410.00 3660.90 2424.21 3625.71 2424.21
+                   L 874.65 2424.21
+                   C 839.46 2424.21 807.57 2410.00 784.44 2387.04
+                   C 761.05 2363.82 746.60 2331.68 746.60 2296.16
+                   L 746.60 2275.51 Z"/>
+
+              <!-- Hinge connector strip -->
+              <path fill-rule="nonzero" fill="#C0BCB8"
+                d="M 2668.79 2275.52 L 2668.79 2311.29
+                   L 1831.57 2311.29 L 1831.57 2275.52 Z"/>
+
+              <!-- Bottom chin (slightly darker silver) -->
+              <path fill-rule="nonzero" fill="#B2AEA9"
+                d="M 3715.92 2387.04
+                   C 3692.79 2410.00 3660.90 2424.21 3625.71 2424.21
+                   L 874.65 2424.21
+                   C 839.46 2424.21 807.57 2410.00 784.44 2387.04 Z"/>
+            </svg>
           </div>
         </div>
       </div>
