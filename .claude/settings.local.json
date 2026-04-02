@@ -1,7 +1,13 @@
 {
   "permissions": {
     "allow": [
-      "Bash(python3 -c \":*)"
+      "Bash(python3 -c \":*)",
+      "Bash(ls /Users/emil07/Documents/OrchenSol/*.png /Users/emil07/Documents/OrchenSol/*.jpg /Users/emil07/Documents/OrchenSol/*.jpeg /Users/emil07/Documents/OrchenSol/*.webp)",
+      "Bash(sed -i '' 's|src=\"Figure1_YourBrainonChatGPT.png.1400x1400.png\"|src=\"assets/mit-brain-scan.png\"|g' index.html)",
+      "Bash(sed -i '' 's|src=\"MITCNNUSINGAICANDAMAGE.png\"|src=\"assets/cnn-ai-brainpower.png\"|g' index.html)",
+      "Bash(sed -i '' 's|src=\"NPRnews.webp\"|src=\"assets/npr-brookings.webp\"|g' index.html)",
+      "Bash(sed -i '' 's|src=\"WashingtonPost.avif\"|src=\"assets/wapo-stanford.avif\"|g' index.html)",
+      "Bash(sed -i '' 's|src=\"YoutubeArticle.png\"|src=\"assets/youtube-brain-experts.png\"|g' index.html)"
     ]
   }
 }
