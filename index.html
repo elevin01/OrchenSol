@@ -290,18 +290,18 @@ h4 {
   pointer-events: none;
 }
 
-/* Center column dimmer — slightly stronger behind foreground text */
+/* Center column dimmer — only behind the foreground text block */
 .hero-overlay-center {
   position: absolute;
-  left: 28%;
-  right: 28%;
+  left: 35%;
+  right: 35%;
   top: 0;
   bottom: 0;
   background: linear-gradient(
     to right,
     transparent 0%,
-    rgba(10,20,14,0.35) 20%,
-    rgba(10,20,14,0.35) 80%,
+    rgba(10,20,14,0.22) 30%,
+    rgba(10,20,14,0.22) 70%,
     transparent 100%
   );
   z-index: 3;
@@ -1128,17 +1128,41 @@ h4 {
   .advisor-pullquote::before { font-size: 2.25rem; }
   .advisor-pullquote-credit { padding-left: 1.5rem; }
 
-  /* Hero mobile */
-  .hero-fg { padding: 0 24px; top: 52%; }
-  .hero-content { text-align: center; }
-  .hero-h1 { font-size: clamp(36px, 8vw, 52px); }
-  .hero-rule { margin-left: auto; margin-right: auto; }
-  .hero-descriptor { max-width: 100%; }
-  .hero-cta { width: 100%; }
-  /* Mobile: hide center column, show only first card of each visible column */
+  /* Hero mobile — full viewport, 2×2 news wall behind, text fills the middle */
+  .hero { min-height: 100dvh; }
+  .hero-overlay-center { display: none; }
+
+  /* 2-column news wall: col 1 (MIT + YouTube) and col 3 (NPR + Brookings) */
   .wall-col:nth-child(2) { display: none; }
-  .hero-bg-card:nth-child(2) { display: none; }
-  .card-content { padding-top: 10vh; }
+  .hero-bg {
+    flex-direction: row;
+    flex-wrap: wrap;
+  }
+  .wall-col {
+    flex: 0 0 50%;
+    max-width: 50%;
+  }
+  /* Even out card heights within each column for a true 2×2 feel */
+  .wall-col .hero-bg-card { flex: 1 !important; }
+
+  /* Top-row cards: clear nav (~7vh) + inset (-5%) */
+  .wall-col .hero-bg-card:first-child .card-content { padding-top: 14vh; }
+  .wall-col .hero-bg-card:first-child .card-top-gradient { height: 82%; }
+  .card-content { padding-top: 12px; }
+
+  /* Foreground: center vertically across the full wall */
+  .hero-fg {
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    padding: 0 20px;
+    max-width: 100%;
+  }
+  .hero-content { text-align: center; }
+  .hero-h1 { font-size: clamp(38px, 9vw, 58px); }
+  .hero-rule { margin-left: auto; margin-right: auto; }
+  .hero-descriptor { max-width: 100%; font-size: clamp(15px, 4vw, 18px); }
+  .hero-cta { width: 100%; }
 }
 
 @media (max-width: 480px) {
