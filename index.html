@@ -1128,38 +1128,49 @@ h4 {
   .advisor-pullquote::before { font-size: 2.25rem; }
   .advisor-pullquote-credit { padding-left: 1.5rem; }
 
-  /* Hero mobile — full viewport, 2×2 news wall behind, text fills the middle */
-  .hero { min-height: 100dvh; }
+  /* Hero mobile — exact viewport, no peeking */
+  .hero { height: 100dvh; min-height: 0; overflow: hidden; }
   .hero-overlay-center { display: none; }
 
-  /* 2-column news wall: col 1 (MIT + YouTube) and col 3 (NPR + Brookings) */
-  .wall-col:nth-child(2) { display: none; }
+  /* Switch hero-bg to a true 2×2 CSS grid.
+     wall-col wrappers become transparent via display:contents
+     so all 6 cards are direct grid children. */
   .hero-bg {
-    flex-direction: row;
-    flex-wrap: wrap;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-template-rows: 1fr 1fr;
+    flex-direction: unset;
+    inset: 0; /* remove the -5% inset on mobile so grid fills exactly */
+    animation: none;
+    gap: 2px;
   }
-  .wall-col {
-    flex: 0 0 50%;
-    max-width: 50%;
-  }
-  /* Even out card heights within each column for a true 2×2 feel */
-  .wall-col .hero-bg-card { flex: 1 !important; }
+  .wall-col { display: contents; }
 
-  /* Top-row cards: clear nav (~7vh) + inset (-5%) */
-  .wall-col .hero-bg-card:first-child .card-content { padding-top: 14vh; }
-  .wall-col .hero-bg-card:first-child .card-top-gradient { height: 82%; }
-  .card-content { padding-top: 12px; }
+  /* 6 cards flow into grid order: MIT(1) YouTube(2) CNN(3) WashPost(4) NPR(5) Brookings(6)
+     We want 4 visible: MIT top-left, YouTube top-right, CNN bottom-left, WashPost bottom-right */
+  .hero-bg-card { display: block; flex: none; }
+  .hero-bg-card:nth-child(n+5) { display: none; }
 
-  /* Foreground: center vertically across the full wall */
+  /* Reset flex inline values — grid ignores them but clean up */
+  .hero-bg-card:first-child { flex: none; }
+
+  /* Top row: pad past nav height so titles show */
+  .hero-bg-card:nth-child(-n+2) .card-content { padding-top: 80px; }
+  .hero-bg-card:nth-child(-n+2) .card-top-gradient { height: 80%; }
+  /* Bottom row: normal padding */
+  .hero-bg-card:nth-child(n+3) .card-content { padding-top: 14px; }
+
+  /* Foreground: true center of full viewport */
   .hero-fg {
     top: 50%;
     left: 50%;
     transform: translate(-50%, -50%);
     padding: 0 20px;
     max-width: 100%;
+    width: 100%;
   }
   .hero-content { text-align: center; }
-  .hero-h1 { font-size: clamp(38px, 9vw, 58px); }
+  .hero-h1 { font-size: clamp(36px, 9.5vw, 56px); }
   .hero-rule { margin-left: auto; margin-right: auto; }
   .hero-descriptor { max-width: 100%; font-size: clamp(15px, 4vw, 18px); }
   .hero-cta { width: 100%; }
