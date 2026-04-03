@@ -1131,6 +1131,7 @@ h4 {
   /* Hero mobile — exact viewport, no peeking */
   .hero { height: 100dvh; min-height: 0; overflow: hidden; }
   .hero-overlay-center { display: none; }
+  .research-strip { display: none; }
 
   /* Switch hero-bg to a true 2×2 CSS grid.
      wall-col wrappers become transparent via display:contents
@@ -1160,19 +1161,41 @@ h4 {
   /* Bottom row: normal padding */
   .hero-bg-card:nth-child(n+3) .card-content { padding-top: 14px; }
 
-  /* Foreground: true center of full viewport */
+  /* Foreground: stretch full viewport height, stack top→bottom */
   .hero-fg {
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-    padding: 0 20px;
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    transform: none;
+    padding: 80px 24px 36px; /* top clears nav, bottom clears browser chrome */
     max-width: 100%;
     width: 100%;
+    display: flex;
+    align-items: center;
   }
-  .hero-content { text-align: center; }
-  .hero-h1 { font-size: clamp(36px, 9.5vw, 56px); }
-  .hero-rule { margin-left: auto; margin-right: auto; }
-  .hero-descriptor { max-width: 100%; font-size: clamp(15px, 4vw, 18px); }
+  .hero-content {
+    text-align: center;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+    justify-content: center;
+    gap: 20px;
+  }
+  /* Headline fills the top portion — large and prominent */
+  .hero-h1 {
+    font-size: clamp(44px, 12vw, 68px);
+    line-height: 1.05;
+    flex-shrink: 0;
+  }
+  .hero-rule { margin: 0 auto; }
+  .hero-descriptor {
+    max-width: 100%;
+    font-size: clamp(16px, 4.5vw, 20px);
+    margin: 0;
+  }
   .hero-cta { width: 100%; }
 }
 
