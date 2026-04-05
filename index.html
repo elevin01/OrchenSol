@@ -582,12 +582,19 @@ h4 {
   gap: 0.875rem;
   position: relative;
 }
-.stat-arrow {
-  display: block;
-  font-size: 1.5rem;
-  line-height: 1;
-  color: #E05533;
-  margin-bottom: 0.25rem;
+.stat-source::after {
+  content: '';
+  display: inline-block;
+  width: 0.38em;
+  height: 0.38em;
+  border-top: 1px solid currentColor;
+  border-right: 1px solid currentColor;
+  transform: rotate(45deg);
+  margin-left: 0.3em;
+  vertical-align: middle;
+  position: relative;
+  top: -0.05em;
+  opacity: 0.7;
 }
 .stat-block::before {
   content: '';
@@ -777,18 +784,21 @@ h4 {
   gap: 0.75rem;
 }
 .option--rejected {
-  background: rgba(245,242,238,0.6);
+  background: var(--bg);
+  opacity: 0.45;
+  filter: saturate(0.4);
 }
 .option--chosen {
   background: var(--green-faint);
   position: relative;
+  box-shadow: 0 0 0 1.5px var(--green);
 }
 .option--chosen::before {
   content: '';
   position: absolute;
   top: 0;
   left: 0;
-  width: 3px;
+  width: 4px;
   height: 100%;
   background: var(--green);
 }
@@ -842,6 +852,15 @@ h4 {
   margin-top: 0.5rem;
 }
 .enters-headline em { color: var(--green); font-weight: 400; }
+.enters-translation {
+  font-family: var(--font-body);
+  font-size: 1rem;
+  letter-spacing: 0.01em;
+  color: var(--ink-muted);
+  max-width: 560px;
+  margin-bottom: 2rem;
+  line-height: 1.6;
+}
 .enters-philosophy {
   font-family: var(--font-body);
   font-size: 1.125rem;
@@ -849,6 +868,16 @@ h4 {
   color: var(--ink-muted);
   max-width: 620px;
   margin-bottom: 1.25em;
+}
+.enters-decision {
+  font-family: var(--font-display);
+  font-size: clamp(1rem, 1.8vw, 1.25rem);
+  font-weight: 600;
+  color: var(--ink);
+  line-height: 1.5;
+  max-width: 480px;
+  margin-bottom: 2.5rem;
+  letter-spacing: -0.01em;
 }
 .enters-transition {
   font-family: var(--font-display);
@@ -1298,6 +1327,31 @@ h4 {
 .contact-alt a { color: rgba(255,255,255,0.7); text-decoration: underline; text-underline-offset: 3px; text-decoration-thickness: 1px; transition: color 0.2s; }
 .contact-alt a:hover { color: #fff; }
 
+/* ─── TOAST ─── */
+.toast {
+  position: fixed;
+  bottom: 2rem;
+  left: 50%;
+  transform: translateX(-50%) translateY(1rem);
+  background: var(--ink);
+  color: #fff;
+  font-family: var(--font-body);
+  font-size: 0.9375rem;
+  padding: 0.875rem 1.75rem;
+  border-radius: 4px;
+  box-shadow: 0 8px 32px rgba(0,0,0,0.22);
+  opacity: 0;
+  pointer-events: none;
+  transition: opacity 0.3s ease, transform 0.3s ease;
+  z-index: 9999;
+  white-space: nowrap;
+}
+.toast.visible {
+  opacity: 1;
+  transform: translateX(-50%) translateY(0);
+  pointer-events: auto;
+}
+
 /* ─── FOOTER ─── */
 .footer { border-top: 1px solid var(--border); padding-block: 1.5rem; }
 .footer-inner { display: flex; align-items: center; justify-content: space-between; }
@@ -1460,7 +1514,7 @@ h4 {
         <a href="#how">How It Works</a>
         <a href="#contact">For Schools</a>
       </div>
-      <a href="#contact" class="btn-nav">Request a Conversation</a>
+      <a href="#contact" class="btn-nav">Request a Demo</a>
       <button class="nav-toggle" id="nav-toggle" aria-label="Open menu" aria-expanded="false">
         <span></span><span></span><span></span>
       </button>
@@ -1566,8 +1620,8 @@ h4 {
             what kind gets in.</em>
           </h1>
           <hr class="hero-rule">
-          <p class="hero-descriptor">Orchen - The complete AI for schools that care.</p>
-          <a href="#contact" class="hero-cta">Request a Conversation &rarr;</a>
+          <p class="hero-descriptor">Orchen turns uncontrolled AI use into something schools can guide, measure, and trust.</p>
+          <a href="#contact" class="hero-cta">Request a Demo &rarr;</a>
         </div>
       </div>
 
@@ -1603,8 +1657,8 @@ h4 {
 
         <div class="problem-section-head animate-in">
           <span class="eyebrow">Briefing &middot; The Problem &middot; 2026</span>
-          <h2 class="problem-title">The Cognitive Erosion</h2>
-          <p class="problem-subhead">The data on AI and student cognition is in. Here is what it says.</p>
+          <h2 class="problem-title">AI Isn’t the Risk. Uncontrolled AI Is</h2>
+          <h3 class="problem-subhead">The Cognitive Erosion - Happening Now, Inside YOUR Classrooms.</h3>
         </div>
 
         <div class="baseline-context animate-in">
@@ -1615,31 +1669,31 @@ h4 {
         <div class="stats-grid">
 
           <div class="stat-block animate-in">
-            <p class="stat-category">Critical Thinking Deficit</p>
-            <div class="stat-num">67%</div>
-            <p class="stat-finding">of students now admit that using AI for schoolwork is <strong>actively eroding their critical thinking skills</strong> — up from 54% earlier the same year. The students see it happening before their administrators do.</p>
-            <a href="https://www.rand.org/news/press/2026/03/student-use-of-ai-for-homework-rises-as-concerns-grow.html" target="_blank" rel="noopener" class="stat-source">RAND Corporation &middot; March 2026 ↗</a>
+            <p class="stat-category">Usage Behavior</p>
+            <div class="stat-num">95%</div>
+            <p class="stat-finding">of student-AI interactions monitored in real-time across school networks were <strong>attempts to have AI complete their work entirely</strong> — not to aid understanding. Analyzed across 1.2 million sessions in 1,300+ districts.</p>
+            <a href="https://www.edweek.org/technology/real-time-data-shows-exactly-how-students-use-ai-on-school-technology/2026/03" target="_blank" rel="noopener" class="stat-source">Education Week &middot; Securly &middot; March 2026</a>
           </div>
 
           <div class="stat-block animate-in">
             <p class="stat-category">Faculty Alarm</p>
             <div class="stat-num">84%</div>
             <p class="stat-finding">of college faculty agree that AI is <strong>directly reducing student originality and deep engagement</strong> with course material. Near-universal agreement among the people who actually grade the work.</p>
-            <a href="https://newsroom.collegeboard.org/new-college-board-research-faculty-express-near-universal-concern-student-ai-use-undermines" target="_blank" rel="noopener" class="stat-source">College Board &middot; February 2026 ↗</a>
+            <a href="https://newsroom.collegeboard.org/new-college-board-research-faculty-express-near-universal-concern-student-ai-use-undermines" target="_blank" rel="noopener" class="stat-source">College Board &middot; February 2026</a>
           </div>
 
           <div class="stat-block animate-in">
-            <p class="stat-category">Usage Behavior</p>
-            <div class="stat-num">95%</div>
-            <p class="stat-finding">of student-AI interactions monitored in real-time across school networks were <strong>attempts to have AI complete their work entirely</strong> — not to aid understanding. Analyzed across 1.2 million sessions in 1,300+ districts.</p>
-            <a href="https://www.edweek.org/technology/real-time-data-shows-exactly-how-students-use-ai-on-school-technology/2026/03" target="_blank" rel="noopener" class="stat-source">Education Week &middot; Securly &middot; March 2026 ↗</a>
+            <p class="stat-category">Critical Thinking Deficit</p>
+            <div class="stat-num">67%</div>
+            <p class="stat-finding">of students now admit that using AI for schoolwork is <strong>actively eroding their critical thinking skills</strong> — up from 54% earlier the same year. The students see it happening before their administrators do.</p>
+            <a href="https://www.rand.org/news/press/2026/03/student-use-of-ai-for-homework-rises-as-concerns-grow.html" target="_blank" rel="noopener" class="stat-source">RAND Corporation &middot; March 2026</a>
           </div>
 
           <div class="stat-block animate-in">
             <p class="stat-category">Dependency Surge</p>
             <div class="stat-num">48<span style="font-size:0.45em;letter-spacing:0;vertical-align:middle;opacity:0.6;"> → </span>62%</div>
             <p class="stat-finding">of students using AI for homework — the jump from May to December 2025 alone. <strong>The fastest adoption of a cognitive dependency tool</strong> in recorded educational history, driven almost entirely by middle and high schoolers.</p>
-            <a href="https://www.rand.org/news/press/2026/03/student-use-of-ai-for-homework-rises-as-concerns-grow.html" target="_blank" rel="noopener" class="stat-source">RAND Corporation &middot; March 2026 ↗</a>
+            <a href="https://www.rand.org/news/press/2026/03/student-use-of-ai-for-homework-rises-as-concerns-grow.html" target="_blank" rel="noopener" class="stat-source">RAND Corporation &middot; March 2026</a>
           </div>
 
         </div>
@@ -1647,24 +1701,24 @@ h4 {
         <div class="governance-callout animate-in">
           <div class="gov-stats-row">
             <div class="gov-stat">
-              <span class="gov-num"><span style="color:#E05533;">⬇</span>17%</span>
+              <span class="gov-num">17%</span>
               <span class="gov-desc">exam score reduction when AI was removed — randomized field experiment, ~1,000 students</span>
-              <a href="https://papers.ssrn.com/sol3/papers.cfm?abstract_id=4895486" target="_blank" rel="noopener" class="stat-source">Harvard / Wharton RCT &middot; 2024 ↗</a>
+              <a href="https://papers.ssrn.com/sol3/papers.cfm?abstract_id=4895486" target="_blank" rel="noopener" class="stat-source">Harvard / Wharton RCT &middot; 2024</a>
             </div>
             <div class="gov-stat">
               <span class="gov-num">35%</span>
               <span class="gov-desc">of district leaders provided any student AI training</span>
-              <a href="https://www.rand.org/pubs/research_reports/RRA4742-1.html" target="_blank" rel="noopener" class="stat-source">RAND &middot; 2025 ↗</a>
+              <a href="https://www.rand.org/pubs/research_reports/RRA4742-1.html" target="_blank" rel="noopener" class="stat-source">RAND &middot; 2025</a>
             </div>
             <div class="gov-stat">
               <span class="gov-num">40%</span>
               <span class="gov-desc">of schools ban AI outright — with no alternative plan</span>
-              <a href="https://newsroom.collegeboard.org/new-college-board-research-faculty-express-near-universal-concern-student-ai-use-undermines" target="_blank" rel="noopener" class="stat-source">College Board &middot; 2025 ↗</a>
+              <a href="https://newsroom.collegeboard.org/new-college-board-research-faculty-express-near-universal-concern-student-ai-use-undermines" target="_blank" rel="noopener" class="stat-source">College Board &middot; 2025</a>
             </div>
             <div class="gov-stat">
               <span class="gov-num">13%</span>
               <span class="gov-desc">of high schools encourage AI use across all classes</span>
-              <a href="https://newsroom.collegeboard.org/new-college-board-research-faculty-express-near-universal-concern-student-ai-use-undermines" target="_blank" rel="noopener" class="stat-source">College Board &middot; 2025 ↗</a>
+              <a href="https://newsroom.collegeboard.org/new-college-board-research-faculty-express-near-universal-concern-student-ai-use-undermines" target="_blank" rel="noopener" class="stat-source">College Board &middot; 2025</a>
             </div>
           </div>
         </div>
@@ -1716,21 +1770,21 @@ h4 {
                 <span class="verdict-mark">✗</span>
               </div>
               <h4 class="option-title">Ban it.</h4>
-              <p class="option-body">Schools that go this route discover within weeks that the policy changes nothing. Students use AI on personal devices, at home, in study halls. You have added a rule without addressing the reality.</p>
+              <p class="option-body">Fails in weeks. Students move to personal devices. You lose visibility completely.</p>
             </div>
             <div class="option option--rejected">
               <div class="option-verdict">
                 <span class="verdict-mark">✗</span>
               </div>
               <h4 class="option-title">Ignore it.</h4>
-              <p class="option-body">Each passing semester this position becomes harder to hold. The research is mainstream. Parents are asking. Faculty are frustrated. Every month you wait, the gap widens between what your school promises and what your graduates can do without AI assistance.</p>
+              <p class="option-body">Creates a growing gap between what students submit and what they actually understand.</p>
             </div>
             <div class="option option--chosen">
               <div class="option-verdict">
                 <span class="verdict-mark">→</span>
               </div>
               <h4 class="option-title">Design it.</h4>
-              <p class="option-body">Choose what kind of AI gets into your school. Configure it for learning rather than one that replaces it. Build something your faculty can explain to parents, your advisors can use to know their students better, and your board can stand behind. This is the only option that treats the problem as what it is.</p>
+              <p class="option-body">Take control of AI in your school. Decide how it behaves, what it teaches, and what students actually learn from it.</p>
             </div>
           </div>
         </div>
@@ -1743,8 +1797,10 @@ h4 {
     <section class="orchen-enters section" id="solution">
       <div class="container">
         <span class="eyebrow">The Third Option</span>
-        <h2 class="enters-headline animate-in">Orchen is what <em>designing it without gaps</em> looks like.</h2>
-        <p class="enters-philosophy animate-in">Every architectural decision in Orchen follows from one conviction: learning happens in the space between not knowing and knowing. An AI that removes this space does not help students learn more efficiently. It removes the thing that learning requires. Orchen's AI asks before it answers. It requires students to articulate their thinking before receiving any response. It treats each conversation as an opportunity to develop independent reasoning, not to circumvent it.</p>
+        <h2 class="enters-headline animate-in">Orchen is how schools take control of AI <em>without gaps.</em></h2>
+        <p class="enters-translation animate-in">See every student-AI interaction. Guide how the AI responds. Track how thinking develops over time.</p>
+        <p class="enters-philosophy animate-in">Learning happens between not knowing and knowing. AI that removes that space doesn't help students learn — it replaces the process. Orchen is built to protect that space. It asks before it answers, and requires students to think before receiving help.</p>
+        <p class="enters-decision animate-in">You can't remove AI from your school.<br>You can decide whether you control it.</p>
         <p class="enters-transition animate-in">That conviction plays out across three concrete layers.</p>
       </div>
     </section>
@@ -2010,12 +2066,11 @@ h4 {
     <!-- ═══ SECTION 8: CONTACT ═══ -->
     <section class="contact-section" id="contact">
       <div class="container contact-inner">
-        <span class="eyebrow contact-eyebrow">Get in Touch</span>
-        <h2 class="contact-headline">If you're a school administrator who wants to have a serious conversation about this, <em>we'd like to hear from you.</em></h2>
-        <p class="contact-sub">Not a demo. Not a pitch. A conversation about whether what we're building fits where your school is trying to go.</p>
+        <span class="eyebrow contact-eyebrow">Request a Demo</span>
+        <h2 class="contact-headline">See what a school that has designed its AI environment actually looks like. <em>We'll show you.</em></h2>
+        <p class="contact-sub">Leave your details and we'll reach out to schedule a demo at your convenience.</p>
 
-        <form name="contact" method="POST" data-netlify="true" netlify-honeypot="bot-field" class="contact-form" action="/success">
-          <input type="hidden" name="form-name" value="contact">
+        <form class="contact-form" id="demo-form">
           <p class="form-hidden" aria-hidden="true"><label>Skip: <input name="bot-field" tabindex="-1"></label></p>
           <div class="form-row">
             <div class="form-group">
@@ -2039,7 +2094,7 @@ h4 {
             <label for="message">Anything you'd like to share <em>(optional)</em></label>
             <textarea id="message" name="message" rows="3" placeholder="What's driving your interest?"></textarea>
           </div>
-          <button type="submit" class="btn btn-light">Request a Conversation &rarr;</button>
+          <button type="submit" class="btn btn-light">Request a Demo &rarr;</button>
         </form>
 
         <p class="contact-alt">Or write to us at <a href="mailto:hello@orchen.co">hello@orchen.co</a></p>
@@ -2125,12 +2180,42 @@ document.addEventListener('DOMContentLoaded', () => {
     });
   });
 
-  // ─── FORM SUBMIT STATE ───────────────────────────────────
-  const form = document.querySelector('.contact-form');
-  if (form) {
-    form.addEventListener('submit', () => {
-      const btn = form.querySelector('button[type="submit"]');
-      if (btn) { btn.textContent = 'Sending…'; btn.disabled = true; }
+  // ─── FORM SUBMIT ─────────────────────────────────────────
+  const demoForm = document.getElementById('demo-form');
+  const toast = document.createElement('div');
+  toast.className = 'toast';
+  toast.textContent = 'Submission received — we\'ll be in touch.';
+  document.body.appendChild(toast);
+
+  const showToast = () => {
+    toast.classList.add('visible');
+    setTimeout(() => toast.classList.remove('visible'), 4000);
+  };
+
+  if (demoForm) {
+    demoForm.addEventListener('submit', async (e) => {
+      e.preventDefault();
+      const btn = demoForm.querySelector('button[type="submit"]');
+      btn.textContent = 'Sending…';
+      btn.disabled = true;
+      try {
+        const res = await fetch('https://formspree.io/f/xeepplga', {
+          method: 'POST',
+          headers: { 'Accept': 'application/json' },
+          body: new FormData(demoForm),
+        });
+        if (res.ok) {
+          demoForm.reset();
+          showToast();
+        } else {
+          btn.textContent = 'Something went wrong — try again';
+        }
+      } catch {
+        btn.textContent = 'Something went wrong — try again';
+      } finally {
+        btn.disabled = false;
+        if (btn.textContent === 'Sending…') btn.textContent = 'Request a Demo →';
+      }
     });
   }
 
