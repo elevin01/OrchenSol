@@ -1,0 +1,552 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>For Advisors — Orchen</title>
+  <meta name="description" content="Orchen synthesizes every student's interactions into a plain-English weekly narrative — learning signals, struggle and strength areas, crisis routing. See what advisors get.">
+  <link rel="canonical" href="https://orchen.ai/for/advisors">
+  <meta name="robots" content="index, follow">
+  <meta property="og:title" content="For Advisors — Orchen">
+  <meta property="og:description" content="Orchen synthesizes every student's interactions into a plain-English weekly narrative — learning signals, struggle and strength areas, crisis routing. See what advisors get.">
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://orchen.ai/for/advisors">
+  <meta property="og:image" content="https://orchen.ai/assets/og-image.png">
+  <meta property="og:site_name" content="Orchen">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="For Advisors — Orchen">
+  <meta name="twitter:description" content="Orchen synthesizes every student's interactions into a plain-English weekly narrative — learning signals, struggle and strength areas, crisis routing. See what advisors get.">
+  <meta name="twitter:image" content="https://orchen.ai/assets/og-image.png">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,700;1,400&family=Lora:ital,wght@0,400;0,500;1,400&display=swap" rel="stylesheet">
+  <style>
+:root {
+  --green:       #2C5F3F;
+  --green-dark:  #1E4329;
+  --green-light: #3D7A55;
+  --bg:          #F5F2EE;
+  --ink:         #1A1A1A;
+  --ink-muted:   #6A6460;
+  --ink-faint:   #A09890;
+  --wall-text:   #EDE9E4;
+  --wall-muted:  rgba(237,233,228,0.62);
+  --wall-faint:  rgba(237,233,228,0.40);
+  --dark-bg:     #1A3527;
+  --border:      #DDD8CE;
+  --border-light:#EAE5DC;
+  --amber:       #9C7C4A;
+  --chip-strug-bg:#F3E3DF;
+  --chip-strug-fg:#9B4A3C;
+  --chip-stren-bg:#DDEBE0;
+  --chip-stren-fg:#2C5F3F;
+  --font-display:'Playfair Display', Georgia, serif;
+  --font-body:   'Lora', Georgia, serif;
+  --mono: 'SFMono-Regular', ui-monospace, 'JetBrains Mono', Menlo, Consolas, monospace;
+  --max-w: 1200px;
+  --pad: 2rem;
+  --nav-h: 62px;
+}
+*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+html { scroll-behavior: smooth; font-size: 16px; }
+body {
+  background: var(--bg);
+  color: var(--ink);
+  font-family: var(--font-body);
+  font-size: 1.0625rem;
+  line-height: 1.75;
+  -webkit-font-smoothing: antialiased;
+}
+a { color: inherit; text-decoration: none; }
+
+/* ─── NAV ─── */
+.nav {
+  position: fixed;
+  top: 0; left: 0; right: 0;
+  z-index: 100;
+  background: rgba(245,242,238,0.95);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  border-bottom: 1px solid transparent;
+  transition: border-color 0.25s, box-shadow 0.25s;
+}
+.nav.scrolled { border-color: var(--border-light); box-shadow: 0 1px 16px rgba(26,26,26,0.06); }
+.nav-inner {
+  max-width: var(--max-w);
+  margin: 0 auto;
+  padding: 0 var(--pad);
+  height: var(--nav-h);
+  display: flex;
+  align-items: center;
+  gap: 2rem;
+}
+.nav-logo {
+  font-family: var(--font-display);
+  font-size: 1.25rem;
+  font-weight: 700;
+  color: var(--ink);
+  letter-spacing: -0.02em;
+  white-space: nowrap;
+}
+.nav-logo:hover { color: var(--green); }
+.nav-links { display: flex; gap: 2rem; flex: 1; }
+.nav-links a { font-size: 0.875rem; color: var(--ink-muted); transition: color 0.2s; }
+.nav-links a:hover { color: var(--ink); }
+.btn-nav {
+  display: inline-flex;
+  align-items: center;
+  padding: 0.5rem 1.125rem;
+  background: var(--green);
+  color: #fff;
+  border-radius: 4px;
+  font-family: var(--font-body);
+  font-size: 0.875rem;
+  font-weight: 500;
+  letter-spacing: 0.01em;
+  white-space: nowrap;
+  transition: background 0.2s;
+}
+.btn-nav:hover { background: var(--green-dark); }
+.nav-toggle {
+  display: none;
+  flex-direction: column;
+  justify-content: center;
+  gap: 4.5px;
+  width: 28px; height: 28px;
+  background: none; border: none; cursor: pointer;
+  margin-left: auto; padding: 0;
+}
+.nav-toggle span { display: block; width: 22px; height: 1.5px; background: var(--ink); border-radius: 1px; transition: transform 0.25s, opacity 0.25s; }
+.nav-toggle[aria-expanded="true"] span:nth-child(1) { transform: translateY(6px) rotate(45deg); }
+.nav-toggle[aria-expanded="true"] span:nth-child(2) { opacity: 0; transform: scaleX(0); }
+.nav-toggle[aria-expanded="true"] span:nth-child(3) { transform: translateY(-6px) rotate(-45deg); }
+
+/* ─── LAYOUT ─── */
+.container { max-width: var(--max-w); margin-inline: auto; padding-inline: var(--pad); }
+.section { padding-block: 6rem; }
+.s-cream { background: var(--bg); color: var(--ink); }
+.s-warm  { background: #F0EBE0; color: var(--ink); }
+.s-dark  { background: var(--dark-bg); color: var(--wall-text); }
+.eyebrow {
+  display: block;
+  font-family: var(--font-body);
+  font-size: 0.6875rem;
+  font-weight: 600;
+  letter-spacing: 0.22em;
+  text-transform: uppercase;
+  color: var(--green-light);
+  margin-bottom: 1.25rem;
+}
+.s-dark .eyebrow { color: var(--amber); }
+.s-warm .eyebrow { color: var(--green); }
+.sec-h2 {
+  font-family: var(--font-display);
+  font-weight: 700;
+  font-size: clamp(1.7rem, 3.6vw, 2.6rem);
+  line-height: 1.18;
+  letter-spacing: -0.02em;
+  color: var(--ink);
+  margin-bottom: 1.5rem;
+}
+.s-dark .sec-h2 { color: var(--wall-text); }
+.sec-body { font-size: 1.0625rem; line-height: 1.8; color: var(--ink-muted); max-width: 540px; }
+.s-dark .sec-body { color: var(--wall-muted); }
+.sec-body + .sec-body { margin-top: 1rem; }
+.sec-body strong { color: var(--ink); font-weight: 600; }
+.s-dark .sec-body strong { color: var(--wall-text); }
+
+/* ─── HERO ─── */
+.hero {
+  background: var(--bg);
+  padding-top: calc(var(--nav-h) + 6rem);
+  padding-bottom: 6rem;
+}
+.hero-h1 {
+  font-family: var(--font-display);
+  font-weight: 700;
+  font-size: clamp(2.2rem, 5.2vw, 3.4rem);
+  line-height: 1.12;
+  letter-spacing: -0.025em;
+  color: var(--ink);
+  max-width: 16ch;
+  margin-bottom: 1.5rem;
+}
+.hero-sub {
+  font-size: clamp(1.05rem, 1.6vw, 1.25rem);
+  line-height: 1.7;
+  color: var(--ink-muted);
+  max-width: 620px;
+}
+
+/* ─── TWO-COLUMN ─── */
+.two-col {
+  display: grid;
+  grid-template-columns: minmax(0,1fr) minmax(0,1fr);
+  gap: clamp(2rem, 5vw, 4.5rem);
+  align-items: center;
+}
+.two-col .col-copy .sec-body { max-width: 460px; }
+
+/* ─── PRODUCT EXAMPLE CARD ─── */
+.product-card {
+  border-radius: 8px;
+  border-left: 3px solid var(--green);
+  padding: 1.5rem 1.5rem 1.625rem;
+}
+.s-dark .product-card { background: var(--bg); color: var(--ink); border-left-color: var(--green); box-shadow: 0 10px 30px rgba(0,0,0,0.22); }
+.s-cream .product-card, .s-warm .product-card { background: #fff; border-left-color: var(--green); box-shadow: 0 6px 22px rgba(26,26,26,0.06); }
+.pc-label {
+  display: block;
+  font-family: var(--mono);
+  font-size: 0.625rem;
+  font-weight: 600;
+  letter-spacing: 0.16em;
+  text-transform: uppercase;
+  color: var(--ink-faint);
+  margin-bottom: 1rem;
+  padding-bottom: 0.75rem;
+  border-bottom: 1px solid var(--border);
+}
+.pc-block { margin-bottom: 1.25rem; }
+.pc-block:last-child { margin-bottom: 0; }
+.pc-h {
+  font-family: var(--mono);
+  font-size: 0.625rem;
+  font-weight: 700;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  color: var(--green);
+  margin-bottom: 0.625rem;
+}
+.pc-text { font-family: var(--font-body); font-size: 0.875rem; line-height: 1.65; color: var(--ink-muted); }
+
+/* bars (learning style / signals) */
+.bar-row {
+  display: grid;
+  grid-template-columns: 110px 1fr 42px;
+  align-items: center;
+  gap: 0.75rem;
+  margin-bottom: 0.5rem;
+  font-family: var(--mono);
+  font-size: 0.6875rem;
+  color: var(--ink-muted);
+}
+.bar-row:last-child { margin-bottom: 0; }
+.bar-name { white-space: nowrap; }
+.bar-track { height: 7px; background: var(--border-light); border-radius: 99px; overflow: hidden; }
+.bar-fill { height: 100%; background: var(--green); border-radius: 99px; }
+.bar-fill.lvl { background: var(--green-light); }
+.bar-val { text-align: right; color: var(--ink-faint); }
+
+/* data lines */
+.pc-data { font-family: var(--mono); font-size: 0.75rem; line-height: 1.7; color: var(--ink-muted); }
+.pc-data .k { color: var(--ink); font-weight: 600; }
+
+/* mini table */
+.mini-table { width: 100%; border-collapse: collapse; font-family: var(--mono); font-size: 0.75rem; }
+.mini-table td { padding: 0.55rem 0.4rem; border-bottom: 1px solid var(--border-light); color: var(--ink-muted); }
+.mini-table tr:last-child td { border-bottom: none; }
+.mini-table .nm { color: var(--ink); }
+.mini-note { font-family: var(--mono); font-size: 0.625rem; letter-spacing: 0.08em; text-transform: uppercase; color: var(--ink-faint); margin-top: 0.875rem; }
+.mini-count { font-family: var(--mono); font-size: 0.6875rem; color: var(--ink-faint); margin-bottom: 0.625rem; }
+
+/* concept distribution bar */
+.concept-bar { display: flex; width: 100%; height: 40px; border-radius: 6px; overflow: hidden; margin: 2.25rem 0 1rem; }
+.concept-seg { display: flex; align-items: center; justify-content: center; font-family: var(--mono); font-size: 0.5625rem; letter-spacing: 0.05em; text-transform: uppercase; color: #fff; padding: 0 0.4rem; text-align: center; }
+.cs-1 { background: var(--green-dark); }
+.cs-2 { background: var(--green-light); }
+.cs-3 { background: var(--amber); }
+.cs-4 { background: #C9C2B6; color: var(--ink-muted); }
+.chip-row { display: flex; flex-wrap: wrap; gap: 0.5rem; margin-top: 0.5rem; }
+.chip {
+  font-family: var(--mono);
+  font-size: 0.6875rem;
+  padding: 0.3rem 0.7rem;
+  border-radius: 99px;
+  background: #fff;
+  border: 1px solid var(--border);
+  color: var(--ink-muted);
+}
+.chip.strug { background: var(--chip-strug-bg); border-color: transparent; color: var(--chip-strug-fg); }
+.chip.stren { background: var(--chip-stren-bg); border-color: transparent; color: var(--chip-stren-fg); }
+.caption { font-size: 0.8125rem; color: var(--ink-faint); margin-top: 1rem; font-style: italic; }
+
+/* template grid */
+.tpl-grid { display: grid; grid-template-columns: repeat(4,1fr); gap: 1rem; margin-top: 2.5rem; }
+.tpl-card {
+  background: var(--bg);
+  border-left: 3px solid var(--green-light);
+  border-radius: 4px;
+  padding: 1.1rem 1.15rem;
+}
+.tpl-name { font-family: var(--font-display); font-weight: 700; font-size: 0.95rem; color: var(--ink); line-height: 1.3; }
+.tpl-time { font-family: var(--mono); font-size: 0.625rem; letter-spacing: 0.08em; text-transform: uppercase; color: var(--ink-faint); margin-top: 0.5rem; }
+
+/* CTA */
+.cta { text-align: center; }
+.cta .eyebrow { margin-bottom: 1rem; }
+.cta-h {
+  font-family: var(--font-display);
+  font-weight: 700;
+  font-size: clamp(1.6rem, 3.4vw, 2.4rem);
+  letter-spacing: -0.02em;
+  color: var(--ink);
+  margin-bottom: 2rem;
+}
+.s-dark .cta-h { color: var(--wall-text); }
+.btn-cta {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.4rem;
+  padding: 0.95rem 2.1rem;
+  background: var(--green);
+  color: #fff;
+  border-radius: 4px;
+  font-family: var(--font-body);
+  font-size: 1rem;
+  font-weight: 500;
+  transition: background 0.2s, transform 0.15s;
+}
+.btn-cta:hover { background: var(--green-dark); transform: translateY(-1px); }
+.s-dark .btn-cta { background: var(--bg); color: var(--green); }
+.s-dark .btn-cta:hover { background: #fff; }
+
+/* cross-links */
+.crosslinks { border-top: 1px solid var(--border); padding-block: 2.25rem; }
+.crosslinks-inner { text-align: center; font-size: 0.9375rem; color: var(--ink-faint); }
+.crosslinks-inner a { color: var(--green); border-bottom: 1px solid transparent; padding-bottom: 1px; transition: border-color 0.2s; }
+.crosslinks-inner a:hover { border-color: var(--green); }
+.crosslinks-inner .here { color: var(--ink-faint); }
+.crosslinks-inner .sep { color: var(--border); margin: 0 0.6rem; }
+
+/* ─── FOOTER ─── */
+.footer { border-top: 1px solid var(--border); padding-block: 1.5rem; }
+.footer-inner { display: flex; align-items: center; justify-content: space-between; }
+.footer-logo { font-family: var(--font-display); font-size: 1.0625rem; font-weight: 700; letter-spacing: -0.02em; }
+.footer-meta { font-size: 0.8125rem; color: var(--ink-faint); font-style: italic; }
+
+/* ─── RESPONSIVE ─── */
+@media (max-width: 900px) {
+  .two-col { grid-template-columns: 1fr; gap: 2.25rem; }
+  .tpl-grid { grid-template-columns: repeat(2,1fr); }
+}
+@media (max-width: 768px) {
+  .section { padding-block: 4rem; }
+  .hero { padding-top: calc(var(--nav-h) + 3.5rem); padding-bottom: 4rem; }
+  .nav-links { display: none; }
+  .nav-links.open {
+    display: flex;
+    flex-direction: column;
+    position: absolute;
+    top: var(--nav-h);
+    left: 0; right: 0;
+    background: var(--bg);
+    border-bottom: 1px solid var(--border);
+    padding: 1.25rem var(--pad);
+    gap: 1.25rem;
+    z-index: 99;
+  }
+  .btn-nav { display: none; }
+  .nav-toggle { display: flex; }
+  .footer-inner { flex-direction: column; gap: 0.375rem; align-items: flex-start; }
+  .concept-bar { height: 34px; }
+  .btn-cta { width: 100%; justify-content: center; }
+}
+@media (max-width: 560px) {
+  .tpl-grid { grid-template-columns: 1fr; }
+  .concept-seg { font-size: 0; padding: 0; }
+}
+@media (max-width: 480px) {
+  :root { --pad: 1.25rem; }
+}
+
+/* ─── ADVISORS PAGE ADDITIONS ─── */
+.hero.hero-warm { background: #F0EBE0; }
+.center-block { text-align: center; }
+.center-block .sec-h2 { margin-left: auto; margin-right: auto; }
+.center-block .sec-body { max-width: 600px; margin-left: auto; margin-right: auto; }
+.center-block .product-card { max-width: 680px; margin: 2.5rem auto 0; text-align: left; }
+.center-block .caption { text-align: center; }
+.narrative { border-left: 3px solid var(--green); padding: 0.25rem 0 0.25rem 1.1rem; margin: 1.1rem 0 1.4rem; font-style: italic; font-family: var(--font-body); font-size: 1rem; line-height: 1.7; color: var(--ink-muted); }
+.mini-cards { display: grid; grid-template-columns: repeat(3,1fr); gap: 1rem; margin-top: 2.5rem; }
+.mini-card { background: var(--bg); color: var(--ink); border-radius: 6px; padding: 1.4rem 1.35rem; }
+.mini-card h3 { font-family: var(--font-display); font-weight: 700; font-size: 1.05rem; margin-bottom: 0.5rem; color: var(--ink); }
+.mini-card p { font-family: var(--font-body); font-size: 0.875rem; line-height: 1.6; color: var(--ink-muted); }
+.cta .sec-body { max-width: 560px; margin: 0 auto 2rem; }
+@media (max-width: 900px) {
+  .mini-cards { grid-template-columns: 1fr; }
+}
+  </style>
+</head>
+<body>
+
+  <nav class="nav" id="nav">
+    <div class="nav-inner">
+      <a href="/" class="nav-logo">Orchen</a>
+      <div class="nav-links" id="nav-links">
+        <a href="/#problem">The Problem</a>
+        <a href="/#how">How It Works</a>
+        <a href="/#contact">For Schools</a>
+      </div>
+      <a href="/#contact" class="btn-nav">Book a walkthrough</a>
+      <button class="nav-toggle" id="nav-toggle" aria-label="Open menu" aria-expanded="false">
+        <span></span><span></span><span></span>
+      </button>
+    </div>
+  </nav>
+
+  <main>
+
+    <!-- HERO -->
+    <section class="hero hero-warm">
+      <div class="container">
+        <span class="eyebrow">For Advisors</span>
+        <h1 class="hero-h1">What you've always wanted to know about each student. Now in your inbox every Monday.</h1>
+        <p class="hero-sub">Orchen synthesizes every student's interactions into a plain-English weekly narrative. No transcripts to read. No surveys to chase. Just the signal.</p>
+      </div>
+    </section>
+
+    <!-- THE WEEKLY NARRATIVE -->
+    <section class="section s-warm">
+      <div class="container center-block">
+        <span class="eyebrow">The Weekly Narrative</span>
+        <h2 class="sec-h2">This is what lands in your dashboard each week.</h2>
+        <p class="sec-body">Generated automatically from student interaction data &mdash; no surveys, no self-reporting, no extra work for faculty.</p>
+        <div class="product-card">
+          <span class="pc-label">Advisor Dashboard &mdash; James M. &middot; Grade 11</span>
+          <p class="pc-data">Grade 11 &middot; Calculus BC, AP Climate &nbsp; <span style="color:#3D7A55;">&#9679; LIVE</span></p>
+          <p class="narrative">"This week James worked through three calculus problems independently before asking for help, and spent 40 minutes outside of any assignment exploring questions about climate policy. He pushed back twice on the AI's first responses."</p>
+          <div class="bar-row"><span class="bar-name">Independent effort</span><span class="bar-track"><span class="bar-fill" style="width:72%"></span></span><span class="bar-val">High</span></div>
+          <div class="bar-row"><span class="bar-name">Curiosity depth</span><span class="bar-track"><span class="bar-fill" style="width:72%"></span></span><span class="bar-val">High</span></div>
+          <div class="bar-row"><span class="bar-name">Critical pushback</span><span class="bar-track"><span class="bar-fill" style="width:0"></span></span><span class="bar-val">2&times;</span></div>
+          <p class="mini-note">&#128274; Source conversations deleted &middot; Derived insight only</p>
+        </div>
+        <p class="caption">Advisor summary &mdash; James M., Grade 11 &middot; Week of March 10</p>
+      </div>
+    </section>
+
+    <!-- WHAT BUILDS THE PROFILE -->
+    <section class="section s-dark">
+      <div class="container">
+        <span class="eyebrow">How It Works</span>
+        <h2 class="sec-h2">The longer a school uses Orchen, the richer each profile becomes.</h2>
+        <p class="sec-body">Every chat session, writing assignment, and quiz updates a private institutional profile of how that student processes information &mdash; their pace, their preferred approach, where they disengage, where they push back.</p>
+        <p class="sec-body">You see this as a narrative, not a data dump. After a year, you have something no grade report or college essay can give you: a record of how each student actually thinks.</p>
+        <div class="mini-cards">
+          <div class="mini-card">
+            <h3>Independent effort</h3>
+            <p>How often the student attempts problems before asking for help.</p>
+          </div>
+          <div class="mini-card">
+            <h3>Curiosity depth</h3>
+            <p>Whether the student explores beyond the assignment.</p>
+          </div>
+          <div class="mini-card">
+            <h3>Critical pushback</h3>
+            <p>How often the student questions or challenges the AI's responses.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- STRUGGLE AND STRENGTH AREAS -->
+    <section class="section s-cream">
+      <div class="container">
+        <span class="eyebrow">Subject-Level Detail</span>
+        <h2 class="sec-h2">Struggle areas and strengths, by subject.</h2>
+        <p class="sec-body">Each profile breaks down where the student is getting stuck and where they're building confidence &mdash; at the concept level, not just the subject level.</p>
+        <div class="product-card" style="max-width:680px;margin-top:2.5rem;">
+          <span class="pc-label">Student Insight &mdash; James M.</span>
+          <div class="pc-block">
+            <p class="pc-h">Struggle Areas</p>
+            <p class="pc-data"><span class="k">Calculus</span></p>
+            <div class="chip-row">
+              <span class="chip strug">integration by substitution</span>
+              <span class="chip strug">related rates setup</span>
+            </div>
+            <p class="pc-data" style="margin-top:0.75rem;"><span class="k">Writing</span></p>
+            <div class="chip-row">
+              <span class="chip strug">thesis precision under time pressure</span>
+            </div>
+          </div>
+          <div class="pc-block">
+            <p class="pc-h">Strength Areas</p>
+            <p class="pc-data"><span class="k">Calculus</span></p>
+            <div class="chip-row">
+              <span class="chip stren">derivative rules</span>
+              <span class="chip stren">limit intuition</span>
+            </div>
+            <p class="pc-data" style="margin-top:0.75rem;"><span class="k">History</span></p>
+            <div class="chip-row">
+              <span class="chip stren">source analysis</span>
+              <span class="chip stren">multi-causal arguments</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- CRISIS ROUTING -->
+    <section class="section s-dark">
+      <div class="container">
+        <span class="eyebrow">Safety</span>
+        <h2 class="sec-h2">Concerning content reaches you &mdash; not your inbox.</h2>
+        <p class="sec-body">Orchen flags concerning student content automatically and routes it to your designated counselor with a 24-hour urgency indicator. Every flag moves through a full lifecycle &mdash; open, reviewing, resolved or escalated &mdash; and every step is logged.</p>
+        <p class="sec-body">You see only what's been shared with you. Source conversations are deleted within seven days. You never have access to raw transcripts unless the student has shared a session directly.</p>
+      </div>
+    </section>
+
+    <!-- PRIVACY -->
+    <section class="section s-cream">
+      <div class="container">
+        <span class="eyebrow">How Visibility Works</span>
+        <h2 class="sec-h2">You see derived insight. Never raw transcripts.</h2>
+        <p class="sec-body">Orchen does not give advisors a window into student conversations. It synthesizes those conversations into narratives, learning signals, and concept-level profiles &mdash; and that synthesis is what you see.</p>
+        <p class="sec-body">Students have a private workspace that no staff member can access. What advisors see is scoped, synthesized, and logged every time it's accessed.</p>
+      </div>
+    </section>
+
+    <!-- CTA -->
+    <section class="section s-dark cta">
+      <div class="container">
+        <span class="eyebrow">Book a Walkthrough</span>
+        <h2 class="cta-h">See what a full advisor view looks like.</h2>
+        <p class="sec-body">We'll walk you through a live dashboard during the walkthrough &mdash; including how the weekly narrative is generated and what the crisis flag workflow looks like in practice.</p>
+        <a href="/#contact" class="btn-cta">Book a walkthrough &rarr;</a>
+      </div>
+    </section>
+
+    <!-- CROSS-LINKS -->
+    <div class="crosslinks">
+      <div class="container crosslinks-inner">
+        Also see: <a href="/for/teachers">For Teachers</a><span class="sep">&middot;</span><span class="here">For Advisors</span><span class="sep">&middot;</span><a href="/for/parents">For Parents</a>
+      </div>
+    </div>
+
+  </main>
+
+  <footer class="footer">
+    <div class="container footer-inner">
+      <span class="footer-logo">Orchen</span>
+      <span class="footer-meta">&copy; 2026 Orchen AI &middot; <a href="/privacy" style="border-bottom:1px solid currentColor;">Privacy Policy</a> &middot; <a href="/terms" style="border-bottom:1px solid currentColor;">Terms of Service</a></span>
+    </div>
+  </footer>
+
+  <script>
+  (function () {
+    var nav    = document.getElementById('nav');
+    var toggle = document.getElementById('nav-toggle');
+    var links  = document.getElementById('nav-links');
+    window.addEventListener('scroll', function () {
+      nav.classList.toggle('scrolled', window.scrollY > 10);
+    }, { passive: true });
+    toggle.addEventListener('click', function () {
+      var open = toggle.getAttribute('aria-expanded') === 'true';
+      toggle.setAttribute('aria-expanded', String(!open));
+      links.classList.toggle('open', !open);
+    });
+  }());
+  </script>
+
+</body>
+</html>

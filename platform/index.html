@@ -1,0 +1,838 @@
+<!DOCTYPE html>
+<!--
+  Orchen - platform/index.html
+  Standalone deep-dive page. Single-file build: CSS and JS embedded.
+  Deploy: GitHub → Netlify, publish directory: . (URL /platform/ resolves)
+-->
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Inside the Orchen Platform — Architecture, Insight, Compliance</title>
+  <meta name="description" content="A detailed walkthrough of the Orchen platform: how the AI tutor is built, what the insight layer computes, how the six-role system works, and the compliance and security architecture underneath.">
+  <link rel="canonical" href="https://orchen.ai/platform/">
+  <meta name="robots" content="index, follow">
+  <meta property="og:title" content="Inside the Orchen Platform — Architecture, Insight, Compliance">
+  <meta property="og:description" content="The homepage tells the story. This page documents the architecture: how the AI is built, what the insight layer computes, how the role system works, and the compliance posture underneath.">
+  <meta property="og:type" content="article">
+  <meta property="og:url" content="https://orchen.ai/platform/">
+  <meta property="og:image" content="https://orchen.ai/assets/og-image.png">
+  <meta property="og:site_name" content="Orchen">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="Inside the Orchen Platform — Architecture, Insight, Compliance">
+  <meta name="twitter:description" content="How the AI is built, what the insight layer computes, how the role system works, and the compliance posture underneath.">
+  <meta name="twitter:image" content="https://orchen.ai/assets/og-image.png">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,700;1,400&family=Lora:ital,wght@0,400;0,500;1,400&display=swap" rel="stylesheet">
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "BreadcrumbList",
+    "itemListElement": [
+      { "@type": "ListItem", "position": 1, "name": "Orchen", "item": "https://orchen.ai/" },
+      { "@type": "ListItem", "position": 2, "name": "Platform", "item": "https://orchen.ai/platform/" }
+    ]
+  }
+  </script>
+  <style>
+
+/* ═══════════════════════════════════════════════════════════════
+   ORCHEN — PLATFORM PAGE (embedded styles, dark-capable)
+   ═══════════════════════════════════════════════════════════════ */
+
+/* ─── TOKENS ─── */
+:root {
+  --green:          #2C5F3F;
+  --green-dark:     #1E4329;
+  --green-light:    #3D7A55;
+  --green-pale:     #C5DBCB;
+
+  --bg:             #F5F2EE;
+  --bg-ui:          #FFFFFF;
+  --ink:            #1A1A1A;
+  --ink-muted:      #6A6460;
+  --ink-faint:      #A09890;
+  --border:         #DDD8CE;
+  --border-light:   #EAE5DC;
+
+  --amber:          #9C7C4A;
+  --amber-bg:       #F0E8D5;
+  --amber-border:   #DDD0B4;
+
+  --wall-text:      #EDE9E4;
+  --wall-muted:     rgba(237,233,228,0.52);
+  --wall-faint:     rgba(237,233,228,0.28);
+  --dark-bg:        #1A3527;
+
+  --font-display:   'Playfair Display', Georgia, serif;
+  --font-body:      'Lora', Georgia, serif;
+  --font-mono:      'SF Mono', ui-monospace, 'JetBrains Mono', Menlo, Consolas, monospace;
+
+  --max-w:  1200px;
+  --pad:    2rem;
+  --nav-h:  62px;
+}
+
+/* ─── RESET ─── */
+*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+html { scroll-behavior: smooth; font-size: 16px; }
+body {
+  background: var(--bg);
+  color: var(--ink);
+  font-family: var(--font-body);
+  font-size: 1.0625rem;
+  line-height: 1.75;
+  -webkit-font-smoothing: antialiased;
+}
+img, svg { display: block; max-width: 100%; }
+a { color: inherit; text-decoration: none; }
+p { margin-bottom: 1.25em; }
+p:last-child { margin-bottom: 0; }
+em { font-style: italic; }
+
+/* ─── NAV ─── */
+.nav {
+  position: fixed;
+  top: 0; left: 0; right: 0;
+  z-index: 100;
+  background: rgba(245,242,238,0.95);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  border-bottom: 1px solid transparent;
+  transition: border-color 0.25s, box-shadow 0.25s;
+}
+.nav.scrolled {
+  border-color: var(--border-light);
+  box-shadow: 0 1px 16px rgba(26,26,26,0.06);
+}
+.nav-inner {
+  max-width: var(--max-w);
+  margin: 0 auto;
+  padding: 0 var(--pad);
+  height: var(--nav-h);
+  display: flex;
+  align-items: center;
+  gap: 2rem;
+}
+.nav-logo {
+  font-family: var(--font-display);
+  font-size: 1.25rem;
+  font-weight: 700;
+  color: var(--ink);
+  letter-spacing: -0.02em;
+  white-space: nowrap;
+}
+.nav-logo:hover { color: var(--green); }
+.nav-links { display: flex; gap: 2rem; flex: 1; }
+.nav-links a { font-size: 0.875rem; color: var(--ink-muted); transition: color 0.2s; }
+.nav-links a:hover { color: var(--ink); }
+.btn-nav {
+  display: inline-flex;
+  align-items: center;
+  padding: 0.5rem 1.125rem;
+  background: var(--green);
+  color: #fff;
+  border-radius: 4px;
+  font-family: var(--font-body);
+  font-size: 0.875rem;
+  font-weight: 500;
+  letter-spacing: 0.01em;
+  white-space: nowrap;
+  transition: background 0.2s;
+}
+.btn-nav:hover { background: var(--green-dark); }
+.nav-toggle {
+  display: none;
+  flex-direction: column;
+  justify-content: center;
+  gap: 4.5px;
+  width: 28px;
+  height: 28px;
+  background: none;
+  border: none;
+  cursor: pointer;
+  margin-left: auto;
+  padding: 0;
+}
+.nav-toggle span {
+  display: block;
+  width: 22px;
+  height: 1.5px;
+  background: var(--ink);
+  border-radius: 1px;
+  transition: transform 0.25s, opacity 0.25s;
+}
+.nav-toggle[aria-expanded="true"] span:nth-child(1) { transform: translateY(6px) rotate(45deg); }
+.nav-toggle[aria-expanded="true"] span:nth-child(2) { opacity: 0; transform: scaleX(0); }
+.nav-toggle[aria-expanded="true"] span:nth-child(3) { transform: translateY(-6px) rotate(-45deg); }
+
+/* ─── FOOTER ─── */
+.footer { border-top: 1px solid var(--border); padding-block: 1.5rem; }
+.footer-inner { display: flex; align-items: center; justify-content: space-between; }
+.footer-logo { font-family: var(--font-display); font-size: 1.0625rem; font-weight: 700; letter-spacing: -0.02em; }
+.footer-meta { font-size: 0.8125rem; color: var(--ink-faint); font-style: italic; }
+
+/* ─── CONTAINERS / SECTION RHYTHM ─── */
+.container { max-width: var(--max-w); margin-inline: auto; padding-inline: var(--pad); }
+.section { padding-block: 7rem; }
+.section-inner { max-width: 860px; }
+
+/* ─── SECTION THEMES ─── */
+.s-dark  { background: var(--dark-bg); color: var(--wall-text); }
+.s-light { background: var(--bg);      color: var(--ink); }
+
+/* ─── EYEBROW ─── */
+.eyebrow {
+  display: block;
+  font-family: var(--font-body);
+  font-size: 0.6875rem;
+  font-weight: 500;
+  letter-spacing: 0.16em;
+  text-transform: uppercase;
+  margin-bottom: 1.25rem;
+}
+.s-dark  .eyebrow { color: var(--amber); }
+.s-light .eyebrow { color: var(--green-light); }
+
+/* ─── HEADINGS ─── */
+.section h2 {
+  font-family: var(--font-display);
+  font-weight: 700;
+  font-size: clamp(1.75rem, 4vw, 2.75rem);
+  line-height: 1.15;
+  letter-spacing: -0.02em;
+  margin-bottom: 1.25rem;
+}
+.s-dark  h2 { color: var(--wall-text); }
+.s-light h2 { color: var(--ink); }
+
+.lead {
+  font-size: 1.125rem;
+  line-height: 1.75;
+  max-width: 720px;
+  margin-bottom: 3.25rem;
+}
+.s-dark  .lead { color: var(--wall-muted); }
+.s-light .lead { color: var(--ink-muted); }
+
+/* ─── EVIDENCE ROWS ─── */
+.rows { display: flex; flex-direction: column; }
+.row {
+  padding-block: 2rem;
+  border-top: 1px solid;
+}
+.row:first-child { border-top: none; padding-top: 0.5rem; }
+.s-dark  .row { border-color: rgba(237,233,228,0.10); }
+.s-light .row { border-color: var(--border-light); }
+.row-eyebrow {
+  display: block;
+  font-family: var(--font-body);
+  font-size: 0.625rem;
+  font-weight: 500;
+  letter-spacing: 0.16em;
+  text-transform: uppercase;
+  margin-bottom: 0.625rem;
+}
+.s-dark  .row-eyebrow { color: var(--amber); }
+.s-light .row-eyebrow { color: var(--green-light); }
+.row-head {
+  font-family: var(--font-display);
+  font-weight: 700;
+  font-size: 1.25rem;
+  line-height: 1.3;
+  letter-spacing: -0.01em;
+  margin-bottom: 0.75rem;
+}
+.s-dark  .row-head { color: var(--wall-text); }
+.s-light .row-head { color: var(--ink); }
+.row-body {
+  font-size: 1rem;
+  line-height: 1.75;
+  max-width: 640px;
+}
+.s-dark  .row-body { color: var(--wall-muted); }
+.s-light .row-body { color: var(--ink-muted); }
+
+/* ─── INLINE CODE ─── */
+code {
+  font-family: var(--font-mono);
+  font-size: 0.84em;
+  padding: 0.1em 0.4em;
+  border-radius: 3px;
+  letter-spacing: 0;
+}
+.s-dark  code { background: rgba(237,233,228,0.10); color: #E8D9B8; }
+.s-light code { background: var(--amber-bg);        color: var(--amber); }
+
+/* ─── HERO ─── */
+.hero {
+  background: var(--dark-bg);
+  color: var(--wall-text);
+  padding-top: calc(var(--nav-h) + 5.5rem);
+  padding-bottom: 6rem;
+  text-align: center;
+}
+.hero-inner { max-width: 760px; margin-inline: auto; }
+.hero .eyebrow { color: var(--amber); }
+.hero h1 {
+  font-family: var(--font-display);
+  font-weight: 700;
+  font-size: clamp(2rem, 6vw, 3.5rem);
+  line-height: 1.12;
+  letter-spacing: -0.025em;
+  color: var(--wall-text);
+  margin-bottom: 1.5rem;
+}
+.hero-sub {
+  font-style: italic;
+  font-size: clamp(1.125rem, 2.4vw, 1.375rem);
+  line-height: 1.7;
+  max-width: 720px;
+  margin: 0 auto 1.75rem;
+  color: var(--wall-muted);
+}
+.hero-note {
+  font-style: italic;
+  font-size: 0.9375rem;
+  color: var(--wall-faint);
+}
+
+/* ─── DATA LIFECYCLE STEPS ─── */
+.steps { display: flex; flex-direction: column; counter-reset: step; }
+.step {
+  display: grid;
+  grid-template-columns: 2.75rem 1fr;
+  gap: 1.25rem;
+  padding-block: 1.75rem;
+  border-top: 1px solid var(--border-light);
+}
+.step:first-child { border-top: none; padding-top: 0.5rem; }
+.step-num {
+  counter-increment: step;
+  font-family: var(--font-display);
+  font-weight: 700;
+  font-size: 1.125rem;
+  color: var(--green-light);
+  width: 2.5rem;
+  height: 2.5rem;
+  border: 1px solid var(--green-pale);
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+}
+.step-num::before { content: counter(step); }
+.step-label {
+  font-family: var(--font-display);
+  font-weight: 700;
+  font-size: 1.1875rem;
+  letter-spacing: -0.01em;
+  color: var(--ink);
+  margin-bottom: 0.625rem;
+}
+.step-body {
+  font-size: 1rem;
+  line-height: 1.75;
+  color: var(--ink-muted);
+  max-width: 640px;
+}
+
+/* ─── CTA ─── */
+.cta {
+  background: var(--green);
+  padding-block: 6rem;
+  text-align: center;
+}
+.cta-inner { max-width: 600px; margin-inline: auto; }
+.cta h2 {
+  font-family: var(--font-display);
+  font-weight: 700;
+  font-size: clamp(1.875rem, 4vw, 3rem);
+  line-height: 1.15;
+  letter-spacing: -0.02em;
+  color: var(--wall-text);
+  margin-bottom: 1.125rem;
+}
+.cta p {
+  font-size: 1.0625rem;
+  line-height: 1.7;
+  color: rgba(255,255,255,0.7);
+  max-width: 540px;
+  margin: 0 auto 2.5rem;
+}
+.cta-actions {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 1.5rem;
+  flex-wrap: wrap;
+}
+.btn-cta-white {
+  display: inline-flex;
+  align-items: center;
+  padding: 0.875rem 2.25rem;
+  background: #fff;
+  color: var(--green);
+  border-radius: 4px;
+  font-size: 0.9375rem;
+  font-weight: 500;
+  letter-spacing: 0.01em;
+  transition: background 0.2s;
+}
+.btn-cta-white:hover { background: #EDF4F0; }
+.cta-secondary {
+  font-size: 0.9375rem;
+  color: rgba(255,255,255,0.72);
+  border-bottom: 1px solid rgba(255,255,255,0.28);
+  padding-bottom: 1px;
+  transition: color 0.2s, border-color 0.2s;
+}
+.cta-secondary:hover { color: #fff; border-color: rgba(255,255,255,0.6); }
+
+/* ─── RESPONSIVE ─── */
+@media (max-width: 768px) {
+  .section { padding-block: 5rem; }
+  .hero { padding-top: calc(var(--nav-h) + 3.5rem); padding-bottom: 4rem; }
+  .nav-links { display: none; }
+  .nav-links.open {
+    display: flex;
+    flex-direction: column;
+    position: absolute;
+    top: var(--nav-h);
+    left: 0; right: 0;
+    background: var(--bg);
+    border-bottom: 1px solid var(--border);
+    padding: 1.25rem var(--pad);
+    gap: 1.25rem;
+    z-index: 99;
+  }
+  .btn-nav { display: none; }
+  .nav-toggle { display: flex; }
+  .step { grid-template-columns: 2.25rem 1fr; gap: 1rem; }
+  .footer-inner { flex-direction: column; gap: 0.375rem; align-items: flex-start; }
+}
+
+@media (max-width: 480px) {
+  .section { padding-block: 3rem; }
+  .hero { padding-bottom: 3rem; }
+  :root { --pad: 1.25rem; }
+  .row { padding-block: 1.5rem; }
+}
+
+  </style>
+</head>
+<body>
+
+  <nav class="nav" id="nav">
+    <div class="nav-inner">
+      <a href="/" class="nav-logo">Orchen</a>
+      <div class="nav-links" id="nav-links">
+        <a href="/#problem">The Problem</a>
+        <a href="/#how">How It Works</a>
+        <a href="/#contact">For Schools</a>
+      </div>
+      <a href="/#contact" class="btn-nav">Book a walkthrough</a>
+      <button class="nav-toggle" id="nav-toggle" aria-label="Open menu" aria-expanded="false">
+        <span></span><span></span><span></span>
+      </button>
+    </div>
+  </nav>
+
+  <main>
+
+    <!-- ── 1. HERO ── -->
+    <section class="hero">
+      <div class="container">
+        <div class="hero-inner">
+          <span class="eyebrow">Inside the Platform</span>
+          <h1>Every layer of Orchen, in detail.</h1>
+          <p class="hero-sub">The homepage tells the story. This page documents the architecture: how the AI is built, what the insight layer actually computes, how the role system works, and what the compliance posture looks like underneath.</p>
+          <p class="hero-note">For IT directors, curriculum leads, and school heads in active evaluation.</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- ── 2. THE STUDENT EXPERIENCE ── -->
+    <section class="section s-light">
+      <div class="container">
+        <div class="section-inner">
+          <span class="eyebrow">The Student Experience</span>
+          <h2>A chat surface, an assignment shelf, a flashcard library, and a private workspace.</h2>
+          <p class="lead">Students see Orchen as a conversation. Behind that conversation: a system that adapts to how they think, an assignment workflow that their teachers configured, a flashcard library built automatically from their conversations, and a private workspace nobody else can see.</p>
+          <div class="rows">
+            <div class="row">
+              <span class="row-eyebrow">The conversation</span>
+              <h3 class="row-head">Orchen guides through questions rather than handing over answers</h3>
+              <p class="row-body">The Socratic pattern is hard-coded into the system prompt; it is not a setting that can be toggled off. Students cannot ask the AI to simply provide the answer and expect compliance.</p>
+            </div>
+            <div class="row">
+              <span class="row-eyebrow">Adaptive presentation</span>
+              <h3 class="row-head">Four modes, selected in real time</h3>
+              <p class="row-body">Verbal exploration, structured guidance, examples-first, step-by-step — selected in real time based on the student's response patterns. A student who learns by example sees examples first. A student who learns by reasoning gets prompted to reason.</p>
+            </div>
+            <div class="row">
+              <span class="row-eyebrow">The assignment shelf</span>
+              <h3 class="row-head">Teacher assignments appear in the chat sidebar</h3>
+              <p class="row-body">When a teacher creates an assignment, it appears in the student's chat sidebar with a Launch screen. The student clicks through, sees a hook designed for their grade level, and works with Orchen on the assignment in conversation. Submission and reflection happen in-chat.</p>
+            </div>
+            <div class="row">
+              <span class="row-eyebrow">Flashcards and quizzes</span>
+              <h3 class="row-head">Concepts extracted from conversations, graded semantically</h3>
+              <p class="row-body">Orchen extracts key concepts from chat sessions and offers to save them as flashcards. Cards group by subject. Students can quiz themselves; quizzes use semantic grading, not exact-word matching. Teachers can also create standalone quizzes that the student takes through chat.</p>
+            </div>
+            <div class="row">
+              <span class="row-eyebrow">The private workspace</span>
+              <h3 class="row-head">Goals, journal, and preferences nobody else can see</h3>
+              <p class="row-body">Students set goals, write private journal entries, and adjust their own learning preferences. None of this is visible to teachers, advisors, or parents unless the student explicitly shares it. Privacy here is not a setting — it is architectural.</p>
+            </div>
+            <div class="row">
+              <span class="row-eyebrow">Multimodal input</span>
+              <h3 class="row-head">Images handled natively alongside messages</h3>
+              <p class="row-body">Students can upload images alongside their messages. The AI handles them natively. A student stuck on a physics diagram can photograph the diagram; Orchen sees it and guides accordingly.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ── 3. THE TEACHING ARCHITECTURE ── -->
+    <section class="section s-dark">
+      <div class="container">
+        <div class="section-inner">
+          <span class="eyebrow">The Teaching Architecture</span>
+          <h2>Pedagogy encoded as system behavior, not as marketing language.</h2>
+          <p class="lead">Orchen's pedagogical posture is not a description in a privacy policy. It is a set of specific rules encoded into the AI's system prompt and reinforced through how the product is structured. Each rule is operational, not aspirational.</p>
+          <div class="rows">
+            <div class="row">
+              <span class="row-eyebrow">The Socratic posture</span>
+              <h3 class="row-head">Orchen asks before it answers</h3>
+              <p class="row-body">When a student arrives with a question, the AI's first move is almost always to ask the student what they have tried, what they understand so far, or what specifically is stuck. Only after the student has engaged does Orchen begin to guide.</p>
+            </div>
+            <div class="row">
+              <span class="row-eyebrow">The Circle Rule</span>
+              <h3 class="row-head">Two wrong answers, then a new approach</h3>
+              <p class="row-body">After two consecutive wrong answers on the same concept, Orchen switches approaches — different example, different framing, different entry point. The student does not get repeatedly pushed toward the same dead end.</p>
+            </div>
+            <div class="row">
+              <span class="row-eyebrow">Concept vs. Mechanical</span>
+              <h3 class="row-head">Two question types, two responses</h3>
+              <p class="row-body">Orchen distinguishes between conceptual questions ("why does this work this way?") and mechanical questions ("how do I compute this?"). It responds differently to each. Concept questions get unpacked through reasoning. Mechanical questions get scaffolded through steps.</p>
+            </div>
+            <div class="row">
+              <span class="row-eyebrow">Partial examples</span>
+              <h3 class="row-head">The example stops before the final step</h3>
+              <p class="row-body">Rather than working a complete example for the student to copy, Orchen works partial examples that stop before the final step. The student finishes. This preserves the productive struggle that learning requires.</p>
+            </div>
+            <div class="row">
+              <span class="row-eyebrow">Land the plane</span>
+              <h3 class="row-head">When the student has it, Orchen stops</h3>
+              <p class="row-body">When a student has arrived at the answer through their own work, Orchen recognizes it and stops guiding. It does not extend the conversation unnecessarily. Recognition is part of the pedagogy.</p>
+            </div>
+            <div class="row">
+              <span class="row-eyebrow">Subject-specific modules</span>
+              <h3 class="row-head">The system prompt extends per discipline</h3>
+              <p class="row-body">The system prompt extends differently for math, writing, science, history, and other subjects. Each module encodes the pedagogical strategies appropriate to that discipline. Writing assignments get prewriting scaffolds. Math assignments get worked-example logic.</p>
+            </div>
+            <div class="row">
+              <span class="row-eyebrow">Assignment workflow</span>
+              <h3 class="row-head">Three assignment kinds, each carrying metadata</h3>
+              <p class="row-body">Teachers create three kinds of assignments. Each carries metadata: lesson context, key concepts, vocabulary, common misconceptions, success criteria, scenario hook, and a parent-friendly explanation. The AI uses this metadata to teach the assignment well, not just to run it through chat.</p>
+            </div>
+            <div class="row">
+              <span class="row-eyebrow">Writing workspace</span>
+              <h3 class="row-head">A dedicated essay surface with rubric-aware feedback</h3>
+              <p class="row-body">For essay assignments, students enter a dedicated writing surface with TipTap-based editing, prewriting worksheets (explore → thesis → outline → ready), draft checks with rubric scores, inline comments tied to specific paragraphs, and mechanical feedback (grammar, punctuation, style) configurable by school policy.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ── 4. THE INSIGHT SYSTEM ── -->
+    <section class="section s-light">
+      <div class="container">
+        <div class="section-inner">
+          <span class="eyebrow">The Insight System</span>
+          <h2>Structured insight, computed nightly, surfaced where it matters.</h2>
+          <p class="lead">Every conversation Orchen has with a student feeds an analysis pipeline. The pipeline produces structured insight — learning profiles, concept distributions, struggle and strength tags — that surface to the people responsible for that student. Source conversations are deleted within seven days. What remains is the synthesis.</p>
+          <div class="rows">
+            <div class="row">
+              <span class="row-eyebrow">Learning profiles</span>
+              <h3 class="row-head">Pace, examples, modality, and what works</h3>
+              <p class="row-body">Each student's profile captures their pace, preferred examples, modality preferences (verbal vs. visual vs. example-based vs. step-by-step vs. conceptual), and the kinds of guidance that work for them. The profile updates continuously as the student interacts.</p>
+            </div>
+            <div class="row">
+              <span class="row-eyebrow">Concept-level mastery</span>
+              <h3 class="row-head">Four buckets, not a leaderboard</h3>
+              <p class="row-body">Every concept the student encounters across every conversation is tracked. Mastery state is one of four buckets — demonstrated repeatedly, demonstrated once, in progress, not yet touched. Teachers see the class as a distribution across these buckets, not as a leaderboard of who scored what.</p>
+            </div>
+            <div class="row">
+              <span class="row-eyebrow">Struggle and strength areas</span>
+              <h3 class="row-head">Tagged by subject, surfaced as chips</h3>
+              <p class="row-body">Specific topics where the student gets stuck or excels, tagged by subject and updated as patterns become clear. These appear as colored chips on the advisor dashboard and in the weekly narrative.</p>
+            </div>
+            <div class="row">
+              <span class="row-eyebrow">Weekly advisor narratives</span>
+              <h3 class="row-head">A structured narrative per advisee, every week</h3>
+              <p class="row-body">For every student in their caseload, advisors receive a structured weekly narrative — independent effort level, curiosity depth, critical engagement signals, and any concerning patterns. The narrative is generated automatically from interaction data, not from surveys or self-reports.</p>
+            </div>
+            <div class="row">
+              <span class="row-eyebrow">The longitudinal profile</span>
+              <h3 class="row-head">Years of trajectory, synthesized</h3>
+              <p class="row-body">The longer a school stays with Orchen, the deeper each student's profile becomes. A senior who has used Orchen since freshman year has a four-year trajectory captured as structured insight — not as transcripts to scroll through, but as a synthesis of how their thinking has changed.</p>
+            </div>
+            <div class="row">
+              <span class="row-eyebrow">Topic re-classification</span>
+              <h3 class="row-head">Subject tags update as the conversation evolves</h3>
+              <p class="row-body">Conversations are re-classified every five student messages. Subject tags update as the conversation evolves. The sidebar stays organized without the student having to maintain it.</p>
+            </div>
+            <div class="row">
+              <span class="row-eyebrow">Crisis detection</span>
+              <h3 class="row-head">Every conversation scanned, every flag tracked</h3>
+              <p class="row-body">Every conversation is scanned for concerning content — self-harm indicators, distress signals, references to harm by others. Detected content is flagged automatically and routed to the school's designated counselor. Every flag carries a 24-hour urgency indicator and moves through a full lifecycle (open, reviewing, resolved, or escalated).</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ── 5. THE ROLE ARCHITECTURE ── -->
+    <section class="section s-dark">
+      <div class="container">
+        <div class="section-inner">
+          <span class="eyebrow">The Role Architecture</span>
+          <h2>Six roles. Each sees only what their role needs to see.</h2>
+          <p class="lead">Orchen's data model is organized around six roles. Each role has a defined view of student data — scoped, narrative, and synthesized. The boundaries between roles are enforced architecturally, not through policy documents.</p>
+          <div class="rows">
+            <div class="row">
+              <span class="row-eyebrow">Student</span>
+              <h3 class="row-head">Own work only, private workspace invisible to all</h3>
+              <p class="row-body">Sees their own conversations, their flashcards, their assignments, their goals, and their private journal. Sees nothing about other students. The student's private workspace (goals, journal, preferences) is invisible to every other role unless the student chooses to share.</p>
+            </div>
+            <div class="row">
+              <span class="row-eyebrow">Teacher</span>
+              <h3 class="row-head">Structured insight, not raw transcripts</h3>
+              <p class="row-body">Sees structured insight for students in their classes — learning profiles, concept distributions, recent session summaries, struggle and strength areas. Sees assignment progress and writing rubric scores. Does not see raw transcripts unless the student or school explicitly grants that access.</p>
+            </div>
+            <div class="row">
+              <span class="row-eyebrow">Advisor</span>
+              <h3 class="row-head">Weekly narratives and immediate crisis flags</h3>
+              <p class="row-body">Sees weekly synthesized narratives for every advisee in their caseload. Receives crisis flag notifications immediately. Can write notes to parents through the parent communication system. Sees shared sessions only — students choose what to share.</p>
+            </div>
+            <div class="row">
+              <span class="row-eyebrow">Parent</span>
+              <h3 class="row-head">Weekly digests at the school's visibility level</h3>
+              <p class="row-body">Receives weekly digests at the visibility level the school has set. Sees conversation starters, supporting techniques, subject activity, and overdue assignments. The five visibility tiers range from summary-only to full transcript access; each school sets its own default and maximum.</p>
+            </div>
+            <div class="row">
+              <span class="row-eyebrow">School admin</span>
+              <h3 class="row-head">Configures everything school-level</h3>
+              <p class="row-body">Configures everything school-level: AI identity, mechanical feedback toggles (grammar, punctuation, style — each independently configurable), parent visibility defaults and maximums, crisis routing contacts, white-label branding for premium schools.</p>
+            </div>
+            <div class="row">
+              <span class="row-eyebrow">App admin (Anthropic / Orchen team)</span>
+              <h3 class="row-head">Service-role isolated, never views conversations</h3>
+              <p class="row-body">Full user management with audit logging. Service-role isolated from school-level operations. Never views student conversations except through documented privacy-bounded review for product improvement, logged and disclosed.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ── 6. SCHOOL CONFIGURATION ── -->
+    <section class="section s-light">
+      <div class="container">
+        <div class="section-inner">
+          <span class="eyebrow">School Configuration</span>
+          <h2>You set the defaults. The defaults are yours.</h2>
+          <p class="lead">Orchen's behavior is configured at the school level. The configuration covers what the AI looks like to students, what data parents can see, how mechanical writing feedback is delivered, where crisis flags go, and how the product is branded.</p>
+          <div class="rows">
+            <div class="row">
+              <span class="row-eyebrow">AI identity</span>
+              <h3 class="row-head">A tutor that matches your institutional voice</h3>
+              <p class="row-body">The system prompt that defines how Orchen presents itself can be configured per school. Premium schools can override the default model. The tutor's name, voice, and pedagogical defaults match the school's institutional voice.</p>
+            </div>
+            <div class="row">
+              <span class="row-eyebrow">Mechanical feedback policy</span>
+              <h3 class="row-head">Grammar, punctuation, style — each independent</h3>
+              <p class="row-body">Three categories — grammar, punctuation, style — toggle independently per school. A school that wants Orchen to flag only grammar (and leave style to the teacher) configures that. A school that wants all three configures that. A school that wants none gets a writing workspace without mechanical highlights.</p>
+            </div>
+            <div class="row">
+              <span class="row-eyebrow">Parent visibility tiers</span>
+              <h3 class="row-head">Five tiers, with a default and a ceiling</h3>
+              <p class="row-body">Five tiers, ranging from summary-only to full transcript access. The school sets the default tier and the maximum tier any individual parent can request. Schools can require student notification when a parent requests an upgrade.</p>
+            </div>
+            <div class="row">
+              <span class="row-eyebrow">Crisis routing</span>
+              <h3 class="row-head">Flags stay in the school's designated chain</h3>
+              <p class="row-body">Schools designate the counselor or safeguarding lead who receives crisis flags. The 24-hour urgency indicator and the lifecycle tracking are configurable. Crisis content never leaves the school's designated chain.</p>
+            </div>
+            <div class="row">
+              <span class="row-eyebrow">White-label branding</span>
+              <h3 class="row-head">The AI presents as the school's tutor</h3>
+              <p class="row-body">Premium schools display their own logo and institutional name above every Orchen message. The school's brand sits where the Orchen brand would otherwise sit — the AI presents as the school's tutor, not as a generic AI product.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ── 7. COMPLIANCE AND SECURITY ── -->
+    <section class="section s-dark">
+      <div class="container">
+        <div class="section-inner">
+          <span class="eyebrow">Compliance and Security</span>
+          <h2>The architecture your security review will pass.</h2>
+          <p class="lead">Orchen is built on Supabase Postgres with strict row-level security on every table, immutable audit logging via <code>SECURITY DEFINER</code> RPCs, per-school data retention via <code>pg_cron</code>, and a service-role isolation model that limits even Orchen team access to documented review operations.</p>
+          <div class="rows">
+            <div class="row">
+              <span class="row-eyebrow">Row-level security</span>
+              <h3 class="row-head">RLS enforced at the Postgres level</h3>
+              <p class="row-body">Every table in the database has <code>RLS</code> policies enforced at the Postgres level. Role-based access is checked via <code>SECURITY DEFINER</code> helpers to prevent recursion. Service-role operations are isolated from end-user-facing role-based access; the two cannot accidentally cross.</p>
+            </div>
+            <div class="row">
+              <span class="row-eyebrow">Immutable audit logging</span>
+              <h3 class="row-head">Insert-only, RPC-mediated, server-verified</h3>
+              <p class="row-body">Every staff access of student data is logged via the <code>log_audit_event</code> RPC. The <code>audit_log</code> table is insert-only at the table level — direct inserts are blocked; all writes go through the RPC, which verifies the actor server-side. The audit trail cannot be modified or deleted.</p>
+            </div>
+            <div class="row">
+              <span class="row-eyebrow">Data retention</span>
+              <h3 class="row-head">Per-school policy, swept nightly</h3>
+              <p class="row-body">Each school sets a retention policy covering messages, sessions, quiz results, and snapshot keep-counts. The <code>pg_cron</code>-driven retention job runs nightly. Crisis flags are exempt from retention deletion; they persist until manually resolved.</p>
+            </div>
+            <div class="row">
+              <span class="row-eyebrow">Source conversation deletion</span>
+              <h3 class="row-head">Source deleted within seven days of analysis</h3>
+              <p class="row-body">Source student conversations are deleted within seven days of analysis. What remains is the derived insight — learning profiles, concept distributions, struggle tags. The advisor narrative is computed before deletion. The conversation itself does not persist for the long term.</p>
+            </div>
+            <div class="row">
+              <span class="row-eyebrow">Consent management</span>
+              <h3 class="row-head">Tracked, versioned, revocable</h3>
+              <p class="row-body">Every student account has a <code>consent_records</code> entry. Students without consent records enter a non-persistent Guest Mode where conversations are not saved. Consent is tracked, versioned, and revocable.</p>
+            </div>
+            <div class="row">
+              <span class="row-eyebrow">Right to be forgotten</span>
+              <h3 class="row-head">Soft-delete, anonymize, export, comply</h3>
+              <p class="row-body">Students (or school admins on their behalf) can delete an account at any time. The delete process soft-deletes the profile, anonymizes crisis flag records, and triggers full retention compliance. A full data export is available to the student before deletion.</p>
+            </div>
+            <div class="row">
+              <span class="row-eyebrow">FERPA and COPPA posture</span>
+              <h3 class="row-head">Built around the statutory boundaries</h3>
+              <p class="row-body">The architecture is built around FERPA's parent/student visibility boundaries and COPPA's under-13 protections. Schools with under-13 students configure additional restrictions through the role-gate system. Audit logs satisfy the FERPA documentation requirements for record access.</p>
+            </div>
+            <div class="row">
+              <span class="row-eyebrow">Crisis-flag anonymization</span>
+              <h3 class="row-head">Safeguarding record preserved, identifier removed</h3>
+              <p class="row-body">When a student account is deleted, their crisis flag history is anonymized rather than deleted. This preserves the safeguarding record while removing the personal identifier — a balance between right-to-be-forgotten and the school's duty of care.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ── 8. DATA LIFECYCLE ── -->
+    <section class="section s-light">
+      <div class="container">
+        <div class="section-inner">
+          <span class="eyebrow">Data Lifecycle</span>
+          <h2>A single conversation, end to end.</h2>
+          <p class="lead">The path of a student-AI conversation through Orchen — from creation, through analysis, to deletion. Every step is logged, scoped, and documented.</p>
+          <div class="steps">
+            <div class="step">
+              <span class="step-num"></span>
+              <div>
+                <div class="step-label">Day 0 — Creation</div>
+                <p class="step-body">Student opens a new chat. A session row is created in the database. Each message is stored against that session with RLS scoping to the student. The conversation is visible only to the student during this window.</p>
+              </div>
+            </div>
+            <div class="step">
+              <span class="step-num"></span>
+              <div>
+                <div class="step-label">Day 0-7 — Live conversation</div>
+                <p class="step-body">Messages are saved as they happen. Topic classification updates every five student messages. Concept progress increments. Crisis detection scans every message. The conversation remains the student's private surface.</p>
+              </div>
+            </div>
+            <div class="step">
+              <span class="step-num"></span>
+              <div>
+                <div class="step-label">Day 1-7 — Nightly analysis</div>
+                <p class="step-body">The analysis pipeline runs nightly. Learning profile updates. Concept distribution updates. Struggle and strength tags update. Weekly narratives compile. Crisis flags route to the designated counselor if detected.</p>
+              </div>
+            </div>
+            <div class="step">
+              <span class="step-num"></span>
+              <div>
+                <div class="step-label">Day 7 — Source deletion</div>
+                <p class="step-body">The source conversation is deleted from the messages table. The session row remains, with derived insight attached. The advisor dashboard shows the synthesis; the conversation that produced it is gone.</p>
+              </div>
+            </div>
+            <div class="step">
+              <span class="step-num"></span>
+              <div>
+                <div class="step-label">Day 7+ — Derived insight persists</div>
+                <p class="step-body">The student's learning profile, concept progress, and longitudinal trajectory remain. Teachers see continuing insight. Advisors see ongoing patterns. Parents see ongoing digests. The student's own view shows their continuing work — flashcards, assignments, goals — not the deleted source conversations.</p>
+              </div>
+            </div>
+            <div class="step">
+              <span class="step-num"></span>
+              <div>
+                <div class="step-label">Year-end — Retention sweep</div>
+                <p class="step-body">The pg_cron retention job sweeps based on the school's policy. Insight may persist for years if the school configures long retention. Source data is already gone by then.</p>
+              </div>
+            </div>
+            <div class="step">
+              <span class="step-num"></span>
+              <div>
+                <div class="step-label">Account deletion — Anywhere in the timeline</div>
+                <p class="step-body">Student or school admin initiates deletion. Profile soft-deletes, crisis flags anonymize, data export is offered. The audit log of the deletion itself persists.</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ── 9. CTA ── -->
+    <section class="cta">
+      <div class="container">
+        <div class="cta-inner">
+          <h2>Ready to see it in motion?</h2>
+          <p>A 30-minute walkthrough is the fastest way to verify any of the architecture above against the live product.</p>
+          <div class="cta-actions">
+            <a href="/#contact" class="btn-cta-white">Book a walkthrough</a>
+            <a href="/" class="cta-secondary">Back to the homepage &rarr;</a>
+          </div>
+        </div>
+      </div>
+    </section>
+
+  </main>
+
+  <!-- ── 10. FOOTER ── -->
+  <footer class="footer">
+    <div class="container footer-inner">
+      <span class="footer-logo">Orchen</span>
+      <span class="footer-meta">&copy; 2026 Orchen AI &middot; <a href="/privacy" style="border-bottom:1px solid currentColor;">Privacy Policy</a> &middot; <a href="/terms" style="border-bottom:1px solid currentColor;">Terms of Service</a></span>
+    </div>
+  </footer>
+
+  <script>
+  (function () {
+    var nav    = document.getElementById('nav');
+    var toggle = document.getElementById('nav-toggle');
+    var links  = document.getElementById('nav-links');
+    window.addEventListener('scroll', function () {
+      nav.classList.toggle('scrolled', window.scrollY > 10);
+    }, { passive: true });
+    toggle.addEventListener('click', function () {
+      var open = toggle.getAttribute('aria-expanded') === 'true';
+      toggle.setAttribute('aria-expanded', String(!open));
+      links.classList.toggle('open', !open);
+    });
+  }());
+  </script>
+
+</body>
+</html>

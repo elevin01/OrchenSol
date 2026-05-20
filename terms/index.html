@@ -1,0 +1,542 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Terms of Service — Orchen</title>
+  <meta name="description" content="The terms governing access to and use of the Orchen platform by schools and the users they provision.">
+  <link rel="canonical" href="https://orchen.ai/terms">
+  <meta name="robots" content="index, follow">
+  <meta property="og:title" content="Terms of Service — Orchen">
+  <meta property="og:description" content="The terms governing access to and use of the Orchen platform by schools and the users they provision.">
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://orchen.ai/terms">
+  <meta property="og:image" content="https://orchen.ai/assets/og-image.png">
+  <meta property="og:site_name" content="Orchen">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="Terms of Service — Orchen">
+  <meta name="twitter:description" content="The terms governing access to and use of the Orchen platform by schools and the users they provision.">
+  <meta name="twitter:image" content="https://orchen.ai/assets/og-image.png">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,700;1,400&family=Lora:ital,wght@0,400;0,500;1,400&display=swap" rel="stylesheet">
+  <style>
+:root {
+  --green:       #2C5F3F;
+  --green-dark:  #1E4329;
+  --green-light: #3D7A55;
+  --bg:          #F5F2EE;
+  --ink:         #1A1A1A;
+  --ink-muted:   #6A6460;
+  --ink-faint:   #A09890;
+  --wall-text:   #EDE9E4;
+  --wall-muted:  rgba(237,233,228,0.62);
+  --wall-faint:  rgba(237,233,228,0.40);
+  --dark-bg:     #1A3527;
+  --border:      #DDD8CE;
+  --border-light:#EAE5DC;
+  --amber:       #9C7C4A;
+  --chip-strug-bg:#F3E3DF;
+  --chip-strug-fg:#9B4A3C;
+  --chip-stren-bg:#DDEBE0;
+  --chip-stren-fg:#2C5F3F;
+  --font-display:'Playfair Display', Georgia, serif;
+  --font-body:   'Lora', Georgia, serif;
+  --mono: 'SFMono-Regular', ui-monospace, 'JetBrains Mono', Menlo, Consolas, monospace;
+  --max-w: 1200px;
+  --pad: 2rem;
+  --nav-h: 62px;
+}
+*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+html { scroll-behavior: smooth; font-size: 16px; }
+body {
+  background: var(--bg);
+  color: var(--ink);
+  font-family: var(--font-body);
+  font-size: 1.0625rem;
+  line-height: 1.75;
+  -webkit-font-smoothing: antialiased;
+}
+a { color: inherit; text-decoration: none; }
+
+/* ─── NAV ─── */
+.nav {
+  position: fixed;
+  top: 0; left: 0; right: 0;
+  z-index: 100;
+  background: rgba(245,242,238,0.95);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  border-bottom: 1px solid transparent;
+  transition: border-color 0.25s, box-shadow 0.25s;
+}
+.nav.scrolled { border-color: var(--border-light); box-shadow: 0 1px 16px rgba(26,26,26,0.06); }
+.nav-inner {
+  max-width: var(--max-w);
+  margin: 0 auto;
+  padding: 0 var(--pad);
+  height: var(--nav-h);
+  display: flex;
+  align-items: center;
+  gap: 2rem;
+}
+.nav-logo {
+  font-family: var(--font-display);
+  font-size: 1.25rem;
+  font-weight: 700;
+  color: var(--ink);
+  letter-spacing: -0.02em;
+  white-space: nowrap;
+}
+.nav-logo:hover { color: var(--green); }
+.nav-links { display: flex; gap: 2rem; flex: 1; }
+.nav-links a { font-size: 0.875rem; color: var(--ink-muted); transition: color 0.2s; }
+.nav-links a:hover { color: var(--ink); }
+.btn-nav {
+  display: inline-flex;
+  align-items: center;
+  padding: 0.5rem 1.125rem;
+  background: var(--green);
+  color: #fff;
+  border-radius: 4px;
+  font-family: var(--font-body);
+  font-size: 0.875rem;
+  font-weight: 500;
+  letter-spacing: 0.01em;
+  white-space: nowrap;
+  transition: background 0.2s;
+}
+.btn-nav:hover { background: var(--green-dark); }
+.nav-toggle {
+  display: none;
+  flex-direction: column;
+  justify-content: center;
+  gap: 4.5px;
+  width: 28px; height: 28px;
+  background: none; border: none; cursor: pointer;
+  margin-left: auto; padding: 0;
+}
+.nav-toggle span { display: block; width: 22px; height: 1.5px; background: var(--ink); border-radius: 1px; transition: transform 0.25s, opacity 0.25s; }
+.nav-toggle[aria-expanded="true"] span:nth-child(1) { transform: translateY(6px) rotate(45deg); }
+.nav-toggle[aria-expanded="true"] span:nth-child(2) { opacity: 0; transform: scaleX(0); }
+.nav-toggle[aria-expanded="true"] span:nth-child(3) { transform: translateY(-6px) rotate(-45deg); }
+
+/* ─── LAYOUT ─── */
+.container { max-width: var(--max-w); margin-inline: auto; padding-inline: var(--pad); }
+
+/* ─── LEGAL HERO ─── */
+.legal-hero {
+  background: var(--dark-bg);
+  color: var(--wall-text);
+  padding-top: calc(var(--nav-h) + 5rem);
+  padding-bottom: 5rem;
+  text-align: center;
+}
+.legal-hero h1 {
+  font-family: var(--font-display);
+  font-weight: 700;
+  font-size: clamp(2rem, 5vw, 3.25rem);
+  line-height: 1.14;
+  letter-spacing: -0.025em;
+  color: var(--wall-text);
+  margin-bottom: 1.25rem;
+}
+.legal-hero .updated {
+  font-family: var(--font-body);
+  font-size: 0.875rem;
+  letter-spacing: 0.04em;
+  color: rgba(237,233,228,0.55);
+}
+
+/* ─── LEGAL BODY ─── */
+.legal-section {
+  background: var(--bg);
+  padding-top: 5rem;
+  padding-bottom: 6rem;
+}
+.legal-body {
+  max-width: 720px;
+  margin-inline: auto;
+  padding-inline: var(--pad);
+}
+
+/* notice banner */
+.notice-banner {
+  background: #FDF3DC;
+  color: #7A4F0D;
+  border-left: 3px solid #E8A020;
+  padding: 16px 20px 16px 22px;
+  border-radius: 6px;
+  margin-bottom: 2.5rem;
+  display: flex;
+  gap: 1rem;
+  align-items: flex-start;
+  font-family: var(--font-body);
+  font-size: 0.875rem;
+  line-height: 1.6;
+}
+.notice-banner > div { flex: 1; }
+.notice-banner strong { font-weight: 600; }
+.banner-x {
+  background: none;
+  border: none;
+  color: #7A4F0D;
+  cursor: pointer;
+  font-size: 1.25rem;
+  line-height: 1;
+  padding: 0 0.25rem;
+  margin-left: auto;
+  font-family: inherit;
+}
+.banner-x:hover { opacity: 0.7; }
+
+/* plain summary inset */
+.plain-summary {
+  border-left: 3px solid var(--green);
+  padding: 20px 24px;
+  margin-bottom: 3rem;
+}
+.ps-label {
+  display: block;
+  font-family: var(--font-body);
+  font-size: 0.625rem;
+  font-weight: 600;
+  letter-spacing: 0.16em;
+  text-transform: uppercase;
+  color: var(--green);
+  margin-bottom: 0.6rem;
+}
+.plain-summary p {
+  font-family: var(--font-body);
+  font-size: 0.9375rem;
+  line-height: 1.7;
+  color: var(--ink-muted);
+  margin-bottom: 0.875rem;
+}
+.plain-summary p:last-child { margin-bottom: 0; }
+
+/* article typography */
+.legal-body h2 {
+  font-family: var(--font-display);
+  font-weight: 700;
+  font-size: 1.5rem;
+  line-height: 1.25;
+  letter-spacing: -0.01em;
+  color: var(--ink);
+  margin: 3rem 0 1rem;
+}
+.legal-body h3 {
+  font-family: var(--font-body);
+  font-weight: 500;
+  font-size: 1.0625rem;
+  line-height: 1.4;
+  color: var(--ink);
+  margin: 2rem 0 0.75rem;
+}
+.legal-body p {
+  font-family: var(--font-body);
+  font-weight: 400;
+  font-size: 1.0625rem;
+  line-height: 1.8;
+  color: #1A1A1A;
+  margin-bottom: 1.125rem;
+}
+.legal-body p strong { font-weight: 600; }
+.legal-body ul {
+  padding-left: 1.4rem;
+  margin-bottom: 1.125rem;
+}
+.legal-body li {
+  font-family: var(--font-body);
+  font-size: 1.0625rem;
+  line-height: 1.8;
+  color: #1A1A1A;
+  margin-bottom: 0.5rem;
+}
+.legal-body li strong { font-weight: 600; }
+
+/* legal table */
+.legal-table {
+  width: 100%;
+  border-collapse: collapse;
+  font-family: var(--font-body);
+  font-size: 0.875rem;
+  margin: 1.5rem 0;
+}
+.legal-table th {
+  text-align: left;
+  padding: 0.75rem 0.85rem;
+  border-bottom: 1px solid var(--border);
+  color: var(--ink);
+  font-weight: 600;
+  font-size: 0.75rem;
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+  background: transparent;
+}
+.legal-table td {
+  padding: 0.75rem 0.85rem;
+  border-bottom: 1px solid var(--border-light);
+  color: var(--ink-muted);
+  vertical-align: top;
+  line-height: 1.6;
+}
+.legal-table tbody tr:hover td { background: rgba(44,95,63,0.04); }
+
+/* legal note (inline amber) */
+.legal-note {
+  background: #FDF3DC;
+  border-left: 3px solid #E8A020;
+  padding: 12px 16px;
+  margin: 1.25rem 0;
+  font-family: var(--font-body);
+  font-style: italic;
+  font-size: 0.8125rem;
+  line-height: 1.6;
+  color: #7A4F0D;
+}
+
+/* closing timestamp */
+.legal-body .closing-note {
+  margin-top: 3rem;
+  color: var(--ink-faint);
+  font-style: italic;
+  font-size: 0.8125rem;
+}
+
+/* ─── FOOTER ─── */
+.footer { border-top: 1px solid var(--border); padding-block: 1.5rem; }
+.footer-inner { display: flex; align-items: center; justify-content: space-between; }
+.footer-logo { font-family: var(--font-display); font-size: 1.0625rem; font-weight: 700; letter-spacing: -0.02em; }
+.footer-meta { font-size: 0.8125rem; color: var(--ink-faint); font-style: italic; }
+.footer-meta a { transition: opacity 0.2s; }
+.footer-meta a:hover { opacity: 0.7; }
+
+/* ─── RESPONSIVE ─── */
+@media (max-width: 768px) {
+  .legal-hero { padding-top: calc(var(--nav-h) + 3.5rem); padding-bottom: 3.5rem; }
+  .legal-section { padding-top: 3.5rem; padding-bottom: 4rem; }
+  .nav-links { display: none; }
+  .nav-links.open {
+    display: flex;
+    flex-direction: column;
+    position: absolute;
+    top: var(--nav-h);
+    left: 0; right: 0;
+    background: var(--bg);
+    border-bottom: 1px solid var(--border);
+    padding: 1.25rem var(--pad);
+    gap: 1.25rem;
+    z-index: 99;
+  }
+  .btn-nav { display: none; }
+  .nav-toggle { display: flex; }
+  .footer-inner { flex-direction: column; gap: 0.375rem; align-items: flex-start; }
+}
+@media (max-width: 560px) {
+  .notice-banner { flex-direction: column; }
+  .banner-x { margin-left: 0; align-self: flex-end; }
+  .legal-table thead { display: none; }
+  .legal-table td { display: block; padding: 0.5rem 0; border-bottom: none; }
+  .legal-table tr { display: block; padding: 0.85rem 0; border-bottom: 1px solid var(--border-light); }
+  .legal-table td:first-child { font-weight: 600; color: var(--ink); font-size: 0.8125rem; text-transform: uppercase; letter-spacing: 0.04em; }
+}
+@media (max-width: 480px) {
+  :root { --pad: 1.25rem; }
+}
+  </style>
+</head>
+<body>
+
+  <nav class="nav" id="nav">
+    <div class="nav-inner">
+      <a href="/" class="nav-logo">Orchen</a>
+      <div class="nav-links" id="nav-links">
+        <a href="/#problem">The Problem</a>
+        <a href="/#how">How It Works</a>
+        <a href="/#contact">For Schools</a>
+      </div>
+      <a href="/#contact" class="btn-nav">Book a walkthrough</a>
+      <button class="nav-toggle" id="nav-toggle" aria-label="Open menu" aria-expanded="false">
+        <span></span><span></span><span></span>
+      </button>
+    </div>
+  </nav>
+
+  <main>
+
+    <section class="legal-hero">
+      <div class="container">
+        <h1>Orchen Terms of Service</h1>
+        <p class="updated">Last updated: June 1, 2026</p>
+      </div>
+    </section>
+
+    <section class="legal-section">
+      <article class="legal-body">
+
+        <div class="notice-banner notice-banner-top">
+          <div><strong>Note before publishing:</strong> This document is a substantive working draft based on Orchen's actual product architecture. It should be reviewed by qualified legal counsel before publication. Do not publish without that review.</div>
+          <button class="banner-x" aria-label="Dismiss">&times;</button>
+        </div>
+
+        <div class="plain-summary">
+          <span class="ps-label">Plain summary</span>
+          <p>Orchen is purchased by schools, not by individuals. If you're a student or parent using Orchen, your school agreed to these terms on your behalf. If you're a school administrator, these are the terms that govern your institution's use.</p>
+          <p>The most important things: schools are responsible for appropriate use within their institution, Orchen is not a licensed mental health service, crisis detection does not replace human judgment or institutional duty of care, and we own the platform but your school owns its data.</p>
+          <p>The full terms are below.</p>
+        </div>
+
+        <h2 id="section-1">1. Who these terms apply to</h2>
+        <p>These Terms of Service ("Terms") govern access to and use of the Orchen platform ("Orchen," "the Platform") operated by Orchen AI ("we," "us").</p>
+        <p><strong>Schools</strong> ("School," "Institution") that enter into a contract with Orchen agree to these Terms on behalf of their institution and all users they provision — including students, teachers, advisors, and parents.</p>
+        <p><strong>Students, teachers, advisors, school administrators, and parents</strong> who access Orchen through a school's account are bound by these Terms as a condition of use. By using the Platform, you agree to them.</p>
+        <p><strong>Individual consumers</strong> may not purchase or use Orchen outside of a school context. There is no individual subscription.</p>
+
+        <h2 id="section-2">2. Eligibility and account creation</h2>
+        <p><strong>Schools</strong> must be legally organized educational institutions. The person accepting these Terms on behalf of a school represents that they have authority to bind the institution.</p>
+        <p><strong>Students</strong> must be enrolled at a school with an active Orchen contract. Student accounts are created and managed by the school. Students under 13 require verifiable parental consent, managed through the school's consent process.</p>
+        <p><strong>Staff accounts</strong> (teachers, advisors, administrators) are created by the school administrator. Staff are responsible for using the Platform in accordance with their institution's policies and these Terms.</p>
+        <p><strong>Parent accounts</strong> are created by school administrators or auto-generated when a student account is created. Parents may not self-register.</p>
+        <p>Orchen accounts may not be shared. Each user must have their own credentials.</p>
+
+        <h2 id="section-3">3. What Orchen is — and isn't</h2>
+        <p>Orchen is an AI-powered academic tutoring platform designed to guide student thinking through Socratic questioning. It is configured and governed by your school.</p>
+        <p><strong>Orchen is not:</strong></p>
+        <ul>
+          <li>A licensed mental health, counseling, or crisis intervention service</li>
+          <li>A replacement for human teachers, advisors, or counselors</li>
+          <li>A plagiarism detection service</li>
+          <li>A guarantee of learning outcomes</li>
+          <li>A medical service of any kind</li>
+        </ul>
+        <p><strong>Crisis detection:</strong> Orchen includes automated detection of content that may indicate student distress. When such content is detected, Orchen creates a flag and routes it to the school's designated contact. This detection is probabilistic and not infallible. <strong>It does not replace the school's institutional duty of care, its obligations under applicable law, or the judgment of trained counselors and administrators.</strong> Schools must maintain their own procedures for responding to student safety concerns.</p>
+        <p><strong>AI limitations:</strong> Orchen's responses are generated by large language models. These models can produce incorrect information, miss nuance, or respond in ways that are not appropriate for every student or situation. Schools are responsible for ensuring that Orchen is used appropriately within their institution and that students understand they are interacting with an AI system.</p>
+
+        <h2 id="section-4">4. School responsibilities</h2>
+        <p>By deploying Orchen, the School agrees to:</p>
+        <p><strong>Consent and compliance.</strong> Obtain all required parental consents for student data collection, including COPPA consent for students under 13. Ensure Orchen's deployment complies with FERPA, applicable state privacy laws, and the school's own data governance policies.</p>
+        <p><strong>Appropriate use.</strong> Deploy Orchen only for legitimate educational purposes. Ensure that students, teachers, and other users understand the appropriate and inappropriate uses of the Platform.</p>
+        <p><strong>Account management.</strong> Maintain accurate user records. Promptly deactivate accounts for users who leave the institution. Do not provision accounts for non-affiliated individuals.</p>
+        <p><strong>Crisis response.</strong> Maintain institutional procedures for responding to student safety concerns. Ensure that designated crisis contacts are current and responsive. Understand that Orchen's crisis detection supplements but does not replace institutional duty of care.</p>
+        <p><strong>Data governance.</strong> Configure Orchen's data retention, parent visibility, and access control settings in accordance with your institution's policies and applicable law. You are responsible for the consequences of your configuration choices.</p>
+        <p><strong>Accurate information.</strong> Provide accurate information about your institution and users. Do not misrepresent your school's size, user count, or intended use in ways that affect pricing or contracting.</p>
+
+        <h2 id="section-5">5. Acceptable use</h2>
+        <p>Users of the Platform — including students, teachers, advisors, and administrators — may not:</p>
+        <ul>
+          <li>Use the Platform for any purpose that violates applicable law</li>
+          <li>Attempt to access data or systems beyond what their role permits</li>
+          <li>Share account credentials or allow another person to access the Platform using their credentials</li>
+          <li>Use the Platform to harass, threaten, or harm any person</li>
+          <li>Attempt to reverse-engineer, extract, or replicate Orchen's AI configuration, system prompts, or proprietary logic</li>
+          <li>Use the Platform to generate content intended to deceive teachers about student authorship in ways that constitute academic dishonesty as defined by the school</li>
+          <li>Attempt to circumvent Orchen's pedagogical guardrails through prompt injection or other techniques</li>
+          <li>Introduce malware, automated bots, or unauthorized scripts to the Platform</li>
+          <li>Use the Platform to collect or compile personal information about other users for any purpose not explicitly authorized</li>
+        </ul>
+        <p>Orchen reserves the right to suspend or terminate access for violations of acceptable use, with notice to the school administrator.</p>
+
+        <h2 id="section-6">6. Intellectual property</h2>
+        <p><strong>Orchen's intellectual property.</strong> The Platform, including its software, AI configurations, pedagogical logic, system prompts, design, and documentation, is owned by Orchen AI or its licensors. These Terms do not transfer any ownership of Orchen's intellectual property to schools or users.</p>
+        <p><strong>School and student content.</strong> Your school and its students retain ownership of content they create through the Platform — including student writing, assignments, and other original work. By using the Platform, you grant Orchen a limited license to process this content for the purposes described in our Privacy Policy.</p>
+        <p><strong>Feedback.</strong> If you provide suggestions, feedback, or ideas about the Platform, you grant Orchen the right to use that feedback without restriction or compensation.</p>
+
+        <h2 id="section-7">7. Data ownership and portability</h2>
+        <p>Your school's data — including student interaction data, learning profiles, and synthesized insights — belongs to your school. Orchen processes it as a service provider, not as an independent data controller (except as required by law).</p>
+        <p>Schools may request a full export of their data at any time during their contract. Upon termination, schools have 30 days to request an export before Orchen deletes institutional data. See our Privacy Policy for full details on data retention and deletion.</p>
+
+        <h2 id="section-8">8. Fees and payment</h2>
+        <p>Pricing is set in your school's contract with Orchen. Unless your contract specifies otherwise:</p>
+        <ul>
+          <li>Fees are invoiced annually in advance</li>
+          <li>Payment is due within 30 days of invoice</li>
+          <li>Fees are non-refundable except as required by law or as specified in your contract</li>
+          <li>Orchen may adjust pricing at renewal with 60 days' written notice</li>
+        </ul>
+        <p>Failure to pay fees may result in suspension of access. Orchen will provide 15 days' notice before suspending access for non-payment.</p>
+
+        <h2 id="section-9">9. Term and termination</h2>
+        <p><strong>Term.</strong> These Terms remain in effect for the duration of your school's contract with Orchen.</p>
+        <p><strong>Termination by the school.</strong> Schools may terminate their contract in accordance with its terms. Early termination fees may apply as specified in the contract.</p>
+        <p><strong>Termination by Orchen.</strong> Orchen may terminate a school's access immediately for material breach of these Terms, including but not limited to: non-payment, violation of acceptable use requirements, or use of the Platform in a way that creates legal or reputational risk for Orchen or its other school partners. Orchen will provide notice of the basis for termination.</p>
+        <p><strong>Effect of termination.</strong> Upon termination, all user access to the Platform will be disabled. The school has 30 days to request a data export. After that period, Orchen will delete institutional data in accordance with the Privacy Policy.</p>
+
+        <h2 id="section-10">10. Disclaimers</h2>
+        <p><strong>The Platform is provided "as is."</strong> Orchen makes no warranties, express or implied, regarding the Platform's fitness for a particular purpose, accuracy of AI-generated content, uninterrupted availability, or freedom from errors.</p>
+        <p><strong>AI content.</strong> Content generated by Orchen's AI may be incorrect, incomplete, or inappropriate. Schools and students should exercise judgment when relying on AI-generated content.</p>
+        <p><strong>No guarantee of outcomes.</strong> Orchen does not guarantee any particular learning outcomes, academic results, or improvements in student performance.</p>
+        <p><strong>Availability.</strong> Orchen will make reasonable efforts to maintain Platform availability but does not guarantee uninterrupted access. Scheduled maintenance will be communicated in advance where possible.</p>
+
+        <h2 id="section-11">11. Limitation of liability</h2>
+        <p>To the fullest extent permitted by law:</p>
+        <p>Orchen's total liability to any school or user for any claim arising from these Terms or use of the Platform shall not exceed the fees paid by the school to Orchen in the twelve months preceding the claim.</p>
+        <p>Orchen shall not be liable for any indirect, incidental, special, consequential, or punitive damages — including loss of data, loss of revenue, or harm arising from AI-generated content — even if Orchen has been advised of the possibility of such damages.</p>
+        <p>Nothing in these Terms limits Orchen's liability for: death or personal injury caused by our negligence, fraud or fraudulent misrepresentation, or any liability that cannot be limited by applicable law.</p>
+
+        <h2 id="section-12">12. Indemnification</h2>
+        <p>Schools agree to indemnify and hold harmless Orchen, its officers, employees, and agents from any claims, damages, or expenses (including reasonable legal fees) arising from:</p>
+        <ul>
+          <li>The school's violation of these Terms</li>
+          <li>The school's failure to obtain required consents or comply with applicable law</li>
+          <li>The school's configuration choices within the Platform</li>
+          <li>Content created or submitted by the school's users</li>
+        </ul>
+
+        <h2 id="section-13">13. Governing law and disputes</h2>
+        <p>These Terms are governed by the laws of the State of Delaware, without regard to conflict of law principles.</p>
+        <p>Any dispute arising from these Terms or use of the Platform shall be resolved through binding arbitration administered by the American Arbitration Association under its Commercial Arbitration Rules, with proceedings conducted in English. The arbitration shall take place in New York, New York.</p>
+        <p>Nothing in this section prevents either party from seeking injunctive or other equitable relief in a court of competent jurisdiction for matters involving intellectual property or data security.</p>
+        <p><strong>Class action waiver.</strong> You agree to resolve disputes with Orchen on an individual basis. You waive the right to participate in a class action lawsuit or class-wide arbitration.</p>
+        <div class="legal-note">Note for legal review: The arbitration clause and class action waiver should be reviewed in light of applicable state law, particularly for agreements with educational institutions or parents of minors.</div>
+
+        <h2 id="section-14">14. Changes to these terms</h2>
+        <p>Orchen may update these Terms. For material changes, we will provide at least 30 days' notice to the school's designated administrator by email. Continued use of the Platform after the effective date of the new Terms constitutes acceptance.</p>
+        <p>If a school does not agree to material changes, it may terminate its contract in accordance with its terms without early termination penalty, provided notice is given before the effective date of the changes.</p>
+
+        <h2 id="section-15">15. Miscellaneous</h2>
+        <p><strong>Entire agreement.</strong> These Terms, together with the school's contract and our Privacy Policy, constitute the entire agreement between Orchen and the school regarding the Platform.</p>
+        <p><strong>Severability.</strong> If any provision of these Terms is found unenforceable, the remaining provisions remain in effect.</p>
+        <p><strong>No waiver.</strong> Orchen's failure to enforce any provision of these Terms does not constitute a waiver of the right to enforce it in the future.</p>
+        <p><strong>Assignment.</strong> Schools may not assign their rights under these Terms without Orchen's written consent. Orchen may assign these Terms in connection with a merger, acquisition, or sale of substantially all assets.</p>
+        <p><strong>Force majeure.</strong> Neither party is liable for delays or failures caused by circumstances beyond their reasonable control, including natural disasters, acts of government, or failures of third-party infrastructure.</p>
+
+        <hr style="border:0;border-top:1px solid var(--border-light);margin:2.5rem 0;">
+
+        <h2 id="section-16">16. Contact</h2>
+        <p>For questions about these Terms:</p>
+        <p><strong>Email:</strong> hello@orchen.ai<br><strong>Address:</strong> [Insert registered address]</p>
+
+        <p class="closing-note"><em>These Terms were last updated on June 1, 2026.</em></p>
+
+      </article>
+    </section>
+
+  </main>
+
+  <footer class="footer">
+    <div class="container footer-inner">
+      <span class="footer-logo">Orchen</span>
+      <span class="footer-meta">&copy; 2026 Orchen AI &middot; <a href="/privacy" style="border-bottom:1px solid currentColor;">Privacy Policy</a> &middot; <a href="/terms" style="border-bottom:1px solid currentColor;">Terms of Service</a></span>
+    </div>
+  </footer>
+
+  <script>
+  (function () {
+    var nav    = document.getElementById('nav');
+    var toggle = document.getElementById('nav-toggle');
+    var links  = document.getElementById('nav-links');
+    window.addEventListener('scroll', function () {
+      nav.classList.toggle('scrolled', window.scrollY > 10);
+    }, { passive: true });
+    toggle.addEventListener('click', function () {
+      var open = toggle.getAttribute('aria-expanded') === 'true';
+      toggle.setAttribute('aria-expanded', String(!open));
+      links.classList.toggle('open', !open);
+    });
+  }());
+  (function(){var b=document.querySelector('.notice-banner');var x=b&&b.querySelector('.banner-x');if(x)x.addEventListener('click',function(){b.style.display='none';});}());
+  </script>
+
+</body>
+</html>

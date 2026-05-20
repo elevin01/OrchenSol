@@ -1,0 +1,570 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Privacy Policy — Orchen</title>
+  <meta name="description" content="How Orchen collects, uses, and protects student data. FERPA-aligned, COPPA-aware, school-controlled.">
+  <link rel="canonical" href="https://orchen.ai/privacy">
+  <meta name="robots" content="index, follow">
+  <meta property="og:title" content="Privacy Policy — Orchen">
+  <meta property="og:description" content="How Orchen collects, uses, and protects student data. FERPA-aligned, COPPA-aware, school-controlled.">
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://orchen.ai/privacy">
+  <meta property="og:image" content="https://orchen.ai/assets/og-image.png">
+  <meta property="og:site_name" content="Orchen">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="Privacy Policy — Orchen">
+  <meta name="twitter:description" content="How Orchen collects, uses, and protects student data. FERPA-aligned, COPPA-aware, school-controlled.">
+  <meta name="twitter:image" content="https://orchen.ai/assets/og-image.png">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,700;1,400&family=Lora:ital,wght@0,400;0,500;1,400&display=swap" rel="stylesheet">
+  <style>
+:root {
+  --green:       #2C5F3F;
+  --green-dark:  #1E4329;
+  --green-light: #3D7A55;
+  --bg:          #F5F2EE;
+  --ink:         #1A1A1A;
+  --ink-muted:   #6A6460;
+  --ink-faint:   #A09890;
+  --wall-text:   #EDE9E4;
+  --wall-muted:  rgba(237,233,228,0.62);
+  --wall-faint:  rgba(237,233,228,0.40);
+  --dark-bg:     #1A3527;
+  --border:      #DDD8CE;
+  --border-light:#EAE5DC;
+  --amber:       #9C7C4A;
+  --chip-strug-bg:#F3E3DF;
+  --chip-strug-fg:#9B4A3C;
+  --chip-stren-bg:#DDEBE0;
+  --chip-stren-fg:#2C5F3F;
+  --font-display:'Playfair Display', Georgia, serif;
+  --font-body:   'Lora', Georgia, serif;
+  --mono: 'SFMono-Regular', ui-monospace, 'JetBrains Mono', Menlo, Consolas, monospace;
+  --max-w: 1200px;
+  --pad: 2rem;
+  --nav-h: 62px;
+}
+*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+html { scroll-behavior: smooth; font-size: 16px; }
+body {
+  background: var(--bg);
+  color: var(--ink);
+  font-family: var(--font-body);
+  font-size: 1.0625rem;
+  line-height: 1.75;
+  -webkit-font-smoothing: antialiased;
+}
+a { color: inherit; text-decoration: none; }
+
+/* ─── NAV ─── */
+.nav {
+  position: fixed;
+  top: 0; left: 0; right: 0;
+  z-index: 100;
+  background: rgba(245,242,238,0.95);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  border-bottom: 1px solid transparent;
+  transition: border-color 0.25s, box-shadow 0.25s;
+}
+.nav.scrolled { border-color: var(--border-light); box-shadow: 0 1px 16px rgba(26,26,26,0.06); }
+.nav-inner {
+  max-width: var(--max-w);
+  margin: 0 auto;
+  padding: 0 var(--pad);
+  height: var(--nav-h);
+  display: flex;
+  align-items: center;
+  gap: 2rem;
+}
+.nav-logo {
+  font-family: var(--font-display);
+  font-size: 1.25rem;
+  font-weight: 700;
+  color: var(--ink);
+  letter-spacing: -0.02em;
+  white-space: nowrap;
+}
+.nav-logo:hover { color: var(--green); }
+.nav-links { display: flex; gap: 2rem; flex: 1; }
+.nav-links a { font-size: 0.875rem; color: var(--ink-muted); transition: color 0.2s; }
+.nav-links a:hover { color: var(--ink); }
+.btn-nav {
+  display: inline-flex;
+  align-items: center;
+  padding: 0.5rem 1.125rem;
+  background: var(--green);
+  color: #fff;
+  border-radius: 4px;
+  font-family: var(--font-body);
+  font-size: 0.875rem;
+  font-weight: 500;
+  letter-spacing: 0.01em;
+  white-space: nowrap;
+  transition: background 0.2s;
+}
+.btn-nav:hover { background: var(--green-dark); }
+.nav-toggle {
+  display: none;
+  flex-direction: column;
+  justify-content: center;
+  gap: 4.5px;
+  width: 28px; height: 28px;
+  background: none; border: none; cursor: pointer;
+  margin-left: auto; padding: 0;
+}
+.nav-toggle span { display: block; width: 22px; height: 1.5px; background: var(--ink); border-radius: 1px; transition: transform 0.25s, opacity 0.25s; }
+.nav-toggle[aria-expanded="true"] span:nth-child(1) { transform: translateY(6px) rotate(45deg); }
+.nav-toggle[aria-expanded="true"] span:nth-child(2) { opacity: 0; transform: scaleX(0); }
+.nav-toggle[aria-expanded="true"] span:nth-child(3) { transform: translateY(-6px) rotate(-45deg); }
+
+/* ─── LAYOUT ─── */
+.container { max-width: var(--max-w); margin-inline: auto; padding-inline: var(--pad); }
+
+/* ─── LEGAL HERO ─── */
+.legal-hero {
+  background: var(--dark-bg);
+  color: var(--wall-text);
+  padding-top: calc(var(--nav-h) + 5rem);
+  padding-bottom: 5rem;
+  text-align: center;
+}
+.legal-hero h1 {
+  font-family: var(--font-display);
+  font-weight: 700;
+  font-size: clamp(2rem, 5vw, 3.25rem);
+  line-height: 1.14;
+  letter-spacing: -0.025em;
+  color: var(--wall-text);
+  margin-bottom: 1.25rem;
+}
+.legal-hero .updated {
+  font-family: var(--font-body);
+  font-size: 0.875rem;
+  letter-spacing: 0.04em;
+  color: rgba(237,233,228,0.55);
+}
+
+/* ─── LEGAL BODY ─── */
+.legal-section {
+  background: var(--bg);
+  padding-top: 5rem;
+  padding-bottom: 6rem;
+}
+.legal-body {
+  max-width: 720px;
+  margin-inline: auto;
+  padding-inline: var(--pad);
+}
+
+/* notice banner */
+.notice-banner {
+  background: #FDF3DC;
+  color: #7A4F0D;
+  border-left: 3px solid #E8A020;
+  padding: 16px 20px 16px 22px;
+  border-radius: 6px;
+  margin-bottom: 2.5rem;
+  display: flex;
+  gap: 1rem;
+  align-items: flex-start;
+  font-family: var(--font-body);
+  font-size: 0.875rem;
+  line-height: 1.6;
+}
+.notice-banner > div { flex: 1; }
+.notice-banner strong { font-weight: 600; }
+.banner-x {
+  background: none;
+  border: none;
+  color: #7A4F0D;
+  cursor: pointer;
+  font-size: 1.25rem;
+  line-height: 1;
+  padding: 0 0.25rem;
+  margin-left: auto;
+  font-family: inherit;
+}
+.banner-x:hover { opacity: 0.7; }
+
+/* plain summary inset */
+.plain-summary {
+  border-left: 3px solid var(--green);
+  padding: 20px 24px;
+  margin-bottom: 3rem;
+}
+.ps-label {
+  display: block;
+  font-family: var(--font-body);
+  font-size: 0.625rem;
+  font-weight: 600;
+  letter-spacing: 0.16em;
+  text-transform: uppercase;
+  color: var(--green);
+  margin-bottom: 0.6rem;
+}
+.plain-summary p {
+  font-family: var(--font-body);
+  font-size: 0.9375rem;
+  line-height: 1.7;
+  color: var(--ink-muted);
+  margin-bottom: 0.875rem;
+}
+.plain-summary p:last-child { margin-bottom: 0; }
+
+/* article typography */
+.legal-body h2 {
+  font-family: var(--font-display);
+  font-weight: 700;
+  font-size: 1.5rem;
+  line-height: 1.25;
+  letter-spacing: -0.01em;
+  color: var(--ink);
+  margin: 3rem 0 1rem;
+}
+.legal-body h3 {
+  font-family: var(--font-body);
+  font-weight: 500;
+  font-size: 1.0625rem;
+  line-height: 1.4;
+  color: var(--ink);
+  margin: 2rem 0 0.75rem;
+}
+.legal-body p {
+  font-family: var(--font-body);
+  font-weight: 400;
+  font-size: 1.0625rem;
+  line-height: 1.8;
+  color: #1A1A1A;
+  margin-bottom: 1.125rem;
+}
+.legal-body p strong { font-weight: 600; }
+.legal-body ul {
+  padding-left: 1.4rem;
+  margin-bottom: 1.125rem;
+}
+.legal-body li {
+  font-family: var(--font-body);
+  font-size: 1.0625rem;
+  line-height: 1.8;
+  color: #1A1A1A;
+  margin-bottom: 0.5rem;
+}
+.legal-body li strong { font-weight: 600; }
+
+/* legal table */
+.legal-table {
+  width: 100%;
+  border-collapse: collapse;
+  font-family: var(--font-body);
+  font-size: 0.875rem;
+  margin: 1.5rem 0;
+}
+.legal-table th {
+  text-align: left;
+  padding: 0.75rem 0.85rem;
+  border-bottom: 1px solid var(--border);
+  color: var(--ink);
+  font-weight: 600;
+  font-size: 0.75rem;
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+  background: transparent;
+}
+.legal-table td {
+  padding: 0.75rem 0.85rem;
+  border-bottom: 1px solid var(--border-light);
+  color: var(--ink-muted);
+  vertical-align: top;
+  line-height: 1.6;
+}
+.legal-table tbody tr:hover td { background: rgba(44,95,63,0.04); }
+
+/* legal note (inline amber) */
+.legal-note {
+  background: #FDF3DC;
+  border-left: 3px solid #E8A020;
+  padding: 12px 16px;
+  margin: 1.25rem 0;
+  font-family: var(--font-body);
+  font-style: italic;
+  font-size: 0.8125rem;
+  line-height: 1.6;
+  color: #7A4F0D;
+}
+
+/* closing timestamp */
+.legal-body .closing-note {
+  margin-top: 3rem;
+  color: var(--ink-faint);
+  font-style: italic;
+  font-size: 0.8125rem;
+}
+
+/* ─── FOOTER ─── */
+.footer { border-top: 1px solid var(--border); padding-block: 1.5rem; }
+.footer-inner { display: flex; align-items: center; justify-content: space-between; }
+.footer-logo { font-family: var(--font-display); font-size: 1.0625rem; font-weight: 700; letter-spacing: -0.02em; }
+.footer-meta { font-size: 0.8125rem; color: var(--ink-faint); font-style: italic; }
+.footer-meta a { transition: opacity 0.2s; }
+.footer-meta a:hover { opacity: 0.7; }
+
+/* ─── RESPONSIVE ─── */
+@media (max-width: 768px) {
+  .legal-hero { padding-top: calc(var(--nav-h) + 3.5rem); padding-bottom: 3.5rem; }
+  .legal-section { padding-top: 3.5rem; padding-bottom: 4rem; }
+  .nav-links { display: none; }
+  .nav-links.open {
+    display: flex;
+    flex-direction: column;
+    position: absolute;
+    top: var(--nav-h);
+    left: 0; right: 0;
+    background: var(--bg);
+    border-bottom: 1px solid var(--border);
+    padding: 1.25rem var(--pad);
+    gap: 1.25rem;
+    z-index: 99;
+  }
+  .btn-nav { display: none; }
+  .nav-toggle { display: flex; }
+  .footer-inner { flex-direction: column; gap: 0.375rem; align-items: flex-start; }
+}
+@media (max-width: 560px) {
+  .notice-banner { flex-direction: column; }
+  .banner-x { margin-left: 0; align-self: flex-end; }
+  .legal-table thead { display: none; }
+  .legal-table td { display: block; padding: 0.5rem 0; border-bottom: none; }
+  .legal-table tr { display: block; padding: 0.85rem 0; border-bottom: 1px solid var(--border-light); }
+  .legal-table td:first-child { font-weight: 600; color: var(--ink); font-size: 0.8125rem; text-transform: uppercase; letter-spacing: 0.04em; }
+}
+@media (max-width: 480px) {
+  :root { --pad: 1.25rem; }
+}
+  </style>
+</head>
+<body>
+
+  <nav class="nav" id="nav">
+    <div class="nav-inner">
+      <a href="/" class="nav-logo">Orchen</a>
+      <div class="nav-links" id="nav-links">
+        <a href="/#problem">The Problem</a>
+        <a href="/#how">How It Works</a>
+        <a href="/#contact">For Schools</a>
+      </div>
+      <a href="/#contact" class="btn-nav">Book a walkthrough</a>
+      <button class="nav-toggle" id="nav-toggle" aria-label="Open menu" aria-expanded="false">
+        <span></span><span></span><span></span>
+      </button>
+    </div>
+  </nav>
+
+  <main>
+
+    <section class="legal-hero">
+      <div class="container">
+        <h1>Orchen Privacy Policy</h1>
+        <p class="updated">Last updated: June 1, 2026</p>
+      </div>
+    </section>
+
+    <section class="legal-section">
+      <article class="legal-body">
+
+        <div class="notice-banner notice-banner-top">
+          <div><strong>Note before publishing:</strong> This document is a substantive working draft based on Orchen's actual product architecture. It should be reviewed by qualified legal counsel before publication, particularly regarding FERPA, COPPA, and applicable state privacy laws. Do not publish without that review.</div>
+          <button class="banner-x" aria-label="Dismiss">&times;</button>
+        </div>
+
+        <div class="plain-summary">
+          <span class="ps-label">Plain summary</span>
+          <p>Orchen is a school-governed AI tutoring platform. Schools purchase Orchen and deploy it for their students. We collect student interaction data to personalize tutoring and generate learning insights for teachers, advisors, and parents. We do not sell student data. We do not train AI models on your school's data. Student conversations are deleted within seven days. Schools control what parents can see.</p>
+          <p>The full policy is below. If anything in it conflicts with what's above, the full policy governs.</p>
+        </div>
+
+        <h2 id="section-1">1. Who we are</h2>
+        <p>Orchen AI ("Orchen," "we," "us") operates the Orchen platform at orchen.ai. Our contact address is hello@orchen.ai.</p>
+        <p>Orchen is sold to schools and school systems — not to individual students or families. If you are a student or parent using Orchen, your school has contracted with us and is responsible for the platform's deployment in your institution.</p>
+
+        <h2 id="section-2">2. Who this policy covers</h2>
+        <p>This policy applies to:</p>
+        <ul>
+          <li><strong>Students</strong> who use the Orchen tutoring platform</li>
+          <li><strong>Teachers, advisors, and school administrators</strong> who access student data through Orchen's staff-facing surfaces</li>
+          <li><strong>Parents and guardians</strong> who access the Orchen parent portal</li>
+          <li><strong>Visitors</strong> to orchen.ai</li>
+        </ul>
+        <p>Different sections of this policy apply differently depending on your role. The sections most relevant to each role are indicated throughout.</p>
+
+        <h2 id="section-3">3. Orchen's role under FERPA</h2>
+        <p>The Family Educational Rights and Privacy Act (FERPA) governs student education records. Under FERPA, your <strong>school is the educational agency</strong> that controls student records. Orchen acts as a <strong>school official</strong> operating under the school's direct control, with a legitimate educational interest in the student data we process.</p>
+        <p>This means:</p>
+        <ul>
+          <li>The school is responsible for obtaining any required consents and for ensuring Orchen's use complies with FERPA at their institution.</li>
+          <li>Orchen processes student data only as directed by the school and as described in this policy and our Data Processing Agreement.</li>
+          <li>Students and eligible parents may exercise their FERPA rights (access, correction, and deletion) by contacting their school. The school may then contact us to fulfill those requests.</li>
+        </ul>
+
+        <h2 id="section-4">4. COPPA and students under 13</h2>
+        <p>The Children's Online Privacy Protection Act (COPPA) applies to students under 13. Orchen does not collect personal information from students under 13 without verifiable parental consent obtained through the school.</p>
+        <p>Schools are responsible for obtaining and managing parental consent for students under 13 before deploying Orchen to those students. Orchen provides consent management tools to support this process. Students without an active consent record are placed in a non-persistent Guest Mode — their interactions are not written to our database.</p>
+        <p>If you believe we have collected information from a student under 13 without appropriate consent, contact us immediately at hello@orchen.ai.</p>
+
+        <h2 id="section-5">5. What we collect</h2>
+        <h3>From students</h3>
+        <ul>
+          <li><strong>Conversation data:</strong> Messages exchanged between the student and Orchen during tutoring sessions.</li>
+          <li><strong>Assignment data:</strong> Responses, writing drafts, quiz answers, and prewriting worksheets submitted through Orchen's assignment system.</li>
+          <li><strong>Learning pattern data:</strong> Derived signals including subject areas worked on, session duration, response patterns, and concept engagement — generated from conversation analysis, not self-reported.</li>
+          <li><strong>Profile data:</strong> Name, email address, school affiliation, grade level, role, and any learning accommodations or preferences the student chooses to set.</li>
+          <li><strong>Usage data:</strong> Session timestamps, feature interactions, and device information.</li>
+        </ul>
+        <h3>From teachers, advisors, and school administrators</h3>
+        <ul>
+          <li><strong>Profile data:</strong> Name, email address, school affiliation, and role.</li>
+          <li><strong>Usage data:</strong> Access logs for student data surfaces, which are recorded in our immutable audit log.</li>
+        </ul>
+        <h3>From parents</h3>
+        <ul>
+          <li><strong>Profile data:</strong> Name, email address, and relationship to the student.</li>
+          <li><strong>Usage data:</strong> Access logs for parent portal content.</li>
+        </ul>
+        <h3>What we do not collect</h3>
+        <ul>
+          <li>We do not collect payment information (handled by Stripe or equivalent).</li>
+          <li>We do not collect biometric data.</li>
+          <li>We do not collect data from students outside of their authenticated Orchen sessions.</li>
+        </ul>
+
+        <h2 id="section-6">6. How we use what we collect</h2>
+        <p>We use student data exclusively for the following purposes:</p>
+        <p><strong>Personalizing tutoring.</strong> Conversation data, learning pattern data, and profile data are used to build a personalized system prompt that adapts Orchen's teaching approach to each student's learning style, pace, and accommodations.</p>
+        <p><strong>Generating learning insights for staff.</strong> Conversation and assignment data is analyzed to produce qualitative learning profiles, subject-level synthesis, weekly advisor narratives, and class-level summaries for teachers. This analysis is performed by AI and reviewed by school staff, not by Orchen employees in the ordinary course.</p>
+        <p><strong>Generating parent digests.</strong> At visibility levels configured by the school, summarized learning signals are compiled into weekly parent digests. The content visible to parents is determined entirely by the school's configured visibility level.</p>
+        <p><strong>Crisis detection and routing.</strong> Conversations are analyzed automatically for indicators of student distress or safety concerns. When such content is detected, a flag is created and routed to the school's designated counselor. Crisis flags are retained beyond the standard conversation deletion window because of their safety significance.</p>
+        <p><strong>Compliance and audit logging.</strong> Every staff access of student data is logged to our immutable audit trail, which is available to school administrators and app administrators for compliance purposes.</p>
+        <p><strong>Platform operations.</strong> Usage data is used to maintain platform reliability, diagnose technical issues, and improve Orchen's services. This data is not used to train AI models.</p>
+        <p>We do not use student data for advertising. We do not sell student data to any third party. We do not use student data to train external AI models.</p>
+
+        <h2 id="section-7">7. AI processing and third-party providers</h2>
+        <p>Orchen uses large language models to power tutoring, synthesis, and content analysis. The primary AI provider is Google (Gemini models), accessed through the Lovable AI Gateway. Writing analysis uses Gemini 2.5 Pro; tutoring and synthesis use Gemini 2.5 Flash.</p>
+        <p>Student conversation data is transmitted to these providers for the purpose of generating AI responses. Orchen's contracts with these providers prohibit them from using Orchen-transmitted data to train their models or for any purpose beyond generating the requested response.</p>
+        <p>A complete list of sub-processors is available upon request at hello@orchen.ai.</p>
+
+        <h2 id="section-8">8. Data retention</h2>
+        <p><strong>Student conversation data</strong> is permanently deleted within seven days of the conversation ending. This is a platform-level default. Schools may configure longer retention windows for their institution through their school settings, up to a maximum defined in their contract.</p>
+        <p><strong>Crisis flags</strong> are exempted from the standard deletion window regardless of school policy, because of their student safety significance. Anonymized safety records are retained after student data deletion.</p>
+        <p><strong>Learning pattern data and derived profiles</strong> (synthesis outputs, advisor narratives, parent digests, quiz results, assignment data) are retained for the duration of the school's contract with Orchen, subject to the school's configured retention policy.</p>
+        <p><strong>Audit logs</strong> are retained for a minimum of three years and are not subject to standard data deletion requests, because their purpose is to provide an accurate record of data access.</p>
+        <p><strong>Upon contract termination,</strong> schools may request a full data export before their account is closed. After 30 days following termination, Orchen will delete all school and student data, except as required by law.</p>
+
+        <h2 id="section-9">9. Who can see student data</h2>
+        <p>Orchen enforces role-based access controls on all student data. The following table summarizes what each role can access in the default configuration.</p>
+        <table class="legal-table">
+          <thead>
+            <tr>
+              <th>Role</th>
+              <th>What they can access</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td>Student</td>
+              <td>Their own conversations, assignments, flashcards, quiz results, goals, and journal. Private to them only.</td>
+            </tr>
+            <tr>
+              <td>Teacher</td>
+              <td>Learning profiles and synthesis for students in their classes. Shared sessions only for raw conversation access.</td>
+            </tr>
+            <tr>
+              <td>Advisor</td>
+              <td>Learning profiles, synthesis, and crisis flags for assigned students. Shared sessions only for raw conversation access.</td>
+            </tr>
+            <tr>
+              <td>Parent</td>
+              <td>Summary data at the visibility level configured by the school (Levels 1–5). Level 5 includes redacted read-only transcripts; all access is logged.</td>
+            </tr>
+            <tr>
+              <td>School Admin</td>
+              <td>All of the above for their school. Can configure visibility settings and manage consent records.</td>
+            </tr>
+            <tr>
+              <td>Orchen (App Admin)</td>
+              <td>Access to platform-level data for compliance, support, and audit purposes. All access is logged.</td>
+            </tr>
+          </tbody>
+        </table>
+        <p>Staff access to student data creates an audit log entry that identifies the staff member, the student record accessed, the action taken, and the timestamp. School administrators can view these logs for their school.</p>
+
+        <h2 id="section-10">10. Student rights and data portability</h2>
+        <p><strong>Access:</strong> Students (and parents of students under 18, or under 13 where COPPA applies) may request access to the student's data by contacting their school, which will coordinate with Orchen to fulfill the request.</p>
+        <p><strong>Correction:</strong> Inaccurate data may be corrected by contacting the school or, for profile data, directly within the student's Orchen account settings.</p>
+        <p><strong>Deletion (right to be forgotten):</strong> Students may request deletion of their data by contacting their school. Orchen provides schools with a self-serve deletion tool. Deletion soft-deletes the student profile, anonymizes crisis flags (preserving safety records without PII), and removes all other student data within 30 days.</p>
+        <p><strong>Export:</strong> Students may request a structured export of their data by contacting their school. The export includes conversation data (subject to the 7-day retention window), assignment data, quiz results, flashcard data, goals, and journal entries.</p>
+        <p><strong>FERPA requests:</strong> FERPA-based requests for access, amendment, or hearing should be directed to the school. Orchen will cooperate with the school in fulfilling those requests.</p>
+
+        <h2 id="section-11">11. Security</h2>
+        <p>Orchen implements the following security measures:</p>
+        <ul>
+          <li>Row-level security on all database tables, enforced at the database layer</li>
+          <li>Role-based access controls enforced through Security Definer functions</li>
+          <li>Immutable, insert-only audit logging via an RPC that verifies the actor server-side</li>
+          <li>Encrypted data in transit (TLS) and at rest</li>
+          <li>COPPA-aware role gates that prevent data writes for non-consented students</li>
+          <li>Annual security review</li>
+        </ul>
+        <p>Orchen is not SOC 2 certified at the time of this policy's effective date. Schools with SOC 2 requirements should contact us at hello@orchen.ai to discuss our current security posture and roadmap.</p>
+
+        <h2 id="section-12">12. Breach notification</h2>
+        <p>In the event of a data breach affecting student data, Orchen will notify affected schools within 72 hours of discovering the breach, in accordance with applicable law. Schools are responsible for notifying affected students and parents as required by FERPA and applicable state law.</p>
+
+        <h2 id="section-13">13. International data transfers</h2>
+        <p>Orchen's servers are located in the United States. If your school is located outside the United States, student data will be transferred to and processed in the United States. By using Orchen, your school consents to this transfer.</p>
+
+        <h2 id="section-14">14. Changes to this policy</h2>
+        <p>Orchen will provide at least 30 days' notice before material changes to this policy take effect, by email to the school's designated administrator and by notice on this page. Schools that do not agree to material changes may terminate their contract in accordance with its terms.</p>
+
+        <hr style="border:0;border-top:1px solid var(--border-light);margin:2.5rem 0;">
+
+        <h2 id="section-15">15. Contact</h2>
+        <p>For privacy questions, data requests, or to report a concern:</p>
+        <p><strong>Email:</strong> hello@orchen.ai<br><strong>Address:</strong> [Insert registered address]</p>
+        <p>For FERPA or COPPA-related requests, contact your school first. The school will coordinate with Orchen as needed.</p>
+
+        <p class="closing-note"><em>This policy was last updated on June 1, 2026.</em></p>
+
+      </article>
+    </section>
+
+  </main>
+
+  <footer class="footer">
+    <div class="container footer-inner">
+      <span class="footer-logo">Orchen</span>
+      <span class="footer-meta">&copy; 2026 Orchen AI &middot; <a href="/privacy" style="border-bottom:1px solid currentColor;">Privacy Policy</a> &middot; <a href="/terms" style="border-bottom:1px solid currentColor;">Terms of Service</a></span>
+    </div>
+  </footer>
+
+  <script>
+  (function () {
+    var nav    = document.getElementById('nav');
+    var toggle = document.getElementById('nav-toggle');
+    var links  = document.getElementById('nav-links');
+    window.addEventListener('scroll', function () {
+      nav.classList.toggle('scrolled', window.scrollY > 10);
+    }, { passive: true });
+    toggle.addEventListener('click', function () {
+      var open = toggle.getAttribute('aria-expanded') === 'true';
+      toggle.setAttribute('aria-expanded', String(!open));
+      links.classList.toggle('open', !open);
+    });
+  }());
+  (function(){var b=document.querySelector('.notice-banner');var x=b&&b.querySelector('.banner-x');if(x)x.addEventListener('click',function(){b.style.display='none';});}());
+  </script>
+
+</body>
+</html>

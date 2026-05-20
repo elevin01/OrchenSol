@@ -1,0 +1,545 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>For Teachers — Orchen</title>
+  <meta name="description" content="Orchen builds a learning profile for every student from real interactions — best teaching approach, learning style, struggle and strength areas, class-level concept gaps. See what teachers get.">
+  <link rel="canonical" href="https://orchen.ai/for/teachers">
+  <meta name="robots" content="index, follow">
+  <meta property="og:title" content="For Teachers — Orchen">
+  <meta property="og:description" content="Know how each student actually thinks — not just what they submitted. A learning profile per student, built from real sessions.">
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://orchen.ai/for/teachers">
+  <meta property="og:image" content="https://orchen.ai/assets/og-image.png">
+  <meta property="og:site_name" content="Orchen">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="For Teachers — Orchen">
+  <meta name="twitter:description" content="Know how each student actually thinks — not just what they submitted.">
+  <meta name="twitter:image" content="https://orchen.ai/assets/og-image.png">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,700;1,400&family=Lora:ital,wght@0,400;0,500;1,400&display=swap" rel="stylesheet">
+  <style>
+:root {
+  --green:       #2C5F3F;
+  --green-dark:  #1E4329;
+  --green-light: #3D7A55;
+  --bg:          #F5F2EE;
+  --ink:         #1A1A1A;
+  --ink-muted:   #6A6460;
+  --ink-faint:   #A09890;
+  --wall-text:   #EDE9E4;
+  --wall-muted:  rgba(237,233,228,0.62);
+  --wall-faint:  rgba(237,233,228,0.40);
+  --dark-bg:     #1A3527;
+  --border:      #DDD8CE;
+  --border-light:#EAE5DC;
+  --amber:       #9C7C4A;
+  --chip-strug-bg:#F3E3DF;
+  --chip-strug-fg:#9B4A3C;
+  --chip-stren-bg:#DDEBE0;
+  --chip-stren-fg:#2C5F3F;
+  --font-display:'Playfair Display', Georgia, serif;
+  --font-body:   'Lora', Georgia, serif;
+  --mono: 'SFMono-Regular', ui-monospace, 'JetBrains Mono', Menlo, Consolas, monospace;
+  --max-w: 1200px;
+  --pad: 2rem;
+  --nav-h: 62px;
+}
+*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+html { scroll-behavior: smooth; font-size: 16px; }
+body {
+  background: var(--bg);
+  color: var(--ink);
+  font-family: var(--font-body);
+  font-size: 1.0625rem;
+  line-height: 1.75;
+  -webkit-font-smoothing: antialiased;
+}
+a { color: inherit; text-decoration: none; }
+
+/* ─── NAV ─── */
+.nav {
+  position: fixed;
+  top: 0; left: 0; right: 0;
+  z-index: 100;
+  background: rgba(245,242,238,0.95);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  border-bottom: 1px solid transparent;
+  transition: border-color 0.25s, box-shadow 0.25s;
+}
+.nav.scrolled { border-color: var(--border-light); box-shadow: 0 1px 16px rgba(26,26,26,0.06); }
+.nav-inner {
+  max-width: var(--max-w);
+  margin: 0 auto;
+  padding: 0 var(--pad);
+  height: var(--nav-h);
+  display: flex;
+  align-items: center;
+  gap: 2rem;
+}
+.nav-logo {
+  font-family: var(--font-display);
+  font-size: 1.25rem;
+  font-weight: 700;
+  color: var(--ink);
+  letter-spacing: -0.02em;
+  white-space: nowrap;
+}
+.nav-logo:hover { color: var(--green); }
+.nav-links { display: flex; gap: 2rem; flex: 1; }
+.nav-links a { font-size: 0.875rem; color: var(--ink-muted); transition: color 0.2s; }
+.nav-links a:hover { color: var(--ink); }
+.btn-nav {
+  display: inline-flex;
+  align-items: center;
+  padding: 0.5rem 1.125rem;
+  background: var(--green);
+  color: #fff;
+  border-radius: 4px;
+  font-family: var(--font-body);
+  font-size: 0.875rem;
+  font-weight: 500;
+  letter-spacing: 0.01em;
+  white-space: nowrap;
+  transition: background 0.2s;
+}
+.btn-nav:hover { background: var(--green-dark); }
+.nav-toggle {
+  display: none;
+  flex-direction: column;
+  justify-content: center;
+  gap: 4.5px;
+  width: 28px; height: 28px;
+  background: none; border: none; cursor: pointer;
+  margin-left: auto; padding: 0;
+}
+.nav-toggle span { display: block; width: 22px; height: 1.5px; background: var(--ink); border-radius: 1px; transition: transform 0.25s, opacity 0.25s; }
+.nav-toggle[aria-expanded="true"] span:nth-child(1) { transform: translateY(6px) rotate(45deg); }
+.nav-toggle[aria-expanded="true"] span:nth-child(2) { opacity: 0; transform: scaleX(0); }
+.nav-toggle[aria-expanded="true"] span:nth-child(3) { transform: translateY(-6px) rotate(-45deg); }
+
+/* ─── LAYOUT ─── */
+.container { max-width: var(--max-w); margin-inline: auto; padding-inline: var(--pad); }
+.section { padding-block: 6rem; }
+.s-cream { background: var(--bg); color: var(--ink); }
+.s-warm  { background: #F0EBE0; color: var(--ink); }
+.s-dark  { background: var(--dark-bg); color: var(--wall-text); }
+.eyebrow {
+  display: block;
+  font-family: var(--font-body);
+  font-size: 0.6875rem;
+  font-weight: 600;
+  letter-spacing: 0.22em;
+  text-transform: uppercase;
+  color: var(--green-light);
+  margin-bottom: 1.25rem;
+}
+.s-dark .eyebrow { color: var(--amber); }
+.s-warm .eyebrow { color: var(--green); }
+.sec-h2 {
+  font-family: var(--font-display);
+  font-weight: 700;
+  font-size: clamp(1.7rem, 3.6vw, 2.6rem);
+  line-height: 1.18;
+  letter-spacing: -0.02em;
+  color: var(--ink);
+  margin-bottom: 1.5rem;
+}
+.s-dark .sec-h2 { color: var(--wall-text); }
+.sec-body { font-size: 1.0625rem; line-height: 1.8; color: var(--ink-muted); max-width: 540px; }
+.s-dark .sec-body { color: var(--wall-muted); }
+.sec-body + .sec-body { margin-top: 1rem; }
+.sec-body strong { color: var(--ink); font-weight: 600; }
+.s-dark .sec-body strong { color: var(--wall-text); }
+
+/* ─── HERO ─── */
+.hero {
+  background: var(--bg);
+  padding-top: calc(var(--nav-h) + 6rem);
+  padding-bottom: 6rem;
+}
+.hero-h1 {
+  font-family: var(--font-display);
+  font-weight: 700;
+  font-size: clamp(2.2rem, 5.2vw, 3.4rem);
+  line-height: 1.12;
+  letter-spacing: -0.025em;
+  color: var(--ink);
+  max-width: 16ch;
+  margin-bottom: 1.5rem;
+}
+.hero-sub {
+  font-size: clamp(1.05rem, 1.6vw, 1.25rem);
+  line-height: 1.7;
+  color: var(--ink-muted);
+  max-width: 620px;
+}
+
+/* ─── TWO-COLUMN ─── */
+.two-col {
+  display: grid;
+  grid-template-columns: minmax(0,1fr) minmax(0,1fr);
+  gap: clamp(2rem, 5vw, 4.5rem);
+  align-items: center;
+}
+.two-col .col-copy .sec-body { max-width: 460px; }
+
+/* ─── PRODUCT EXAMPLE CARD ─── */
+.product-card {
+  border-radius: 8px;
+  border-left: 3px solid var(--green);
+  padding: 1.5rem 1.5rem 1.625rem;
+}
+.s-dark .product-card { background: var(--bg); color: var(--ink); border-left-color: var(--green); box-shadow: 0 10px 30px rgba(0,0,0,0.22); }
+.s-cream .product-card, .s-warm .product-card { background: #fff; border-left-color: var(--green); box-shadow: 0 6px 22px rgba(26,26,26,0.06); }
+.pc-label {
+  display: block;
+  font-family: var(--mono);
+  font-size: 0.625rem;
+  font-weight: 600;
+  letter-spacing: 0.16em;
+  text-transform: uppercase;
+  color: var(--ink-faint);
+  margin-bottom: 1rem;
+  padding-bottom: 0.75rem;
+  border-bottom: 1px solid var(--border);
+}
+.pc-block { margin-bottom: 1.25rem; }
+.pc-block:last-child { margin-bottom: 0; }
+.pc-h {
+  font-family: var(--mono);
+  font-size: 0.625rem;
+  font-weight: 700;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  color: var(--green);
+  margin-bottom: 0.625rem;
+}
+.pc-text { font-family: var(--font-body); font-size: 0.875rem; line-height: 1.65; color: var(--ink-muted); }
+
+/* bars (learning style / signals) */
+.bar-row {
+  display: grid;
+  grid-template-columns: 110px 1fr 42px;
+  align-items: center;
+  gap: 0.75rem;
+  margin-bottom: 0.5rem;
+  font-family: var(--mono);
+  font-size: 0.6875rem;
+  color: var(--ink-muted);
+}
+.bar-row:last-child { margin-bottom: 0; }
+.bar-name { white-space: nowrap; }
+.bar-track { height: 7px; background: var(--border-light); border-radius: 99px; overflow: hidden; }
+.bar-fill { height: 100%; background: var(--green); border-radius: 99px; }
+.bar-fill.lvl { background: var(--green-light); }
+.bar-val { text-align: right; color: var(--ink-faint); }
+
+/* data lines */
+.pc-data { font-family: var(--mono); font-size: 0.75rem; line-height: 1.7; color: var(--ink-muted); }
+.pc-data .k { color: var(--ink); font-weight: 600; }
+
+/* mini table */
+.mini-table { width: 100%; border-collapse: collapse; font-family: var(--mono); font-size: 0.75rem; }
+.mini-table td { padding: 0.55rem 0.4rem; border-bottom: 1px solid var(--border-light); color: var(--ink-muted); }
+.mini-table tr:last-child td { border-bottom: none; }
+.mini-table .nm { color: var(--ink); }
+.mini-note { font-family: var(--mono); font-size: 0.625rem; letter-spacing: 0.08em; text-transform: uppercase; color: var(--ink-faint); margin-top: 0.875rem; }
+.mini-count { font-family: var(--mono); font-size: 0.6875rem; color: var(--ink-faint); margin-bottom: 0.625rem; }
+
+/* concept distribution bar */
+.concept-bar { display: flex; width: 100%; height: 40px; border-radius: 6px; overflow: hidden; margin: 2.25rem 0 1rem; }
+.concept-seg { display: flex; align-items: center; justify-content: center; font-family: var(--mono); font-size: 0.5625rem; letter-spacing: 0.05em; text-transform: uppercase; color: #fff; padding: 0 0.4rem; text-align: center; }
+.cs-1 { background: var(--green-dark); }
+.cs-2 { background: var(--green-light); }
+.cs-3 { background: var(--amber); }
+.cs-4 { background: #C9C2B6; color: var(--ink-muted); }
+.chip-row { display: flex; flex-wrap: wrap; gap: 0.5rem; margin-top: 0.5rem; }
+.chip {
+  font-family: var(--mono);
+  font-size: 0.6875rem;
+  padding: 0.3rem 0.7rem;
+  border-radius: 99px;
+  background: #fff;
+  border: 1px solid var(--border);
+  color: var(--ink-muted);
+}
+.chip.strug { background: var(--chip-strug-bg); border-color: transparent; color: var(--chip-strug-fg); }
+.chip.stren { background: var(--chip-stren-bg); border-color: transparent; color: var(--chip-stren-fg); }
+.caption { font-size: 0.8125rem; color: var(--ink-faint); margin-top: 1rem; font-style: italic; }
+
+/* template grid */
+.tpl-grid { display: grid; grid-template-columns: repeat(4,1fr); gap: 1rem; margin-top: 2.5rem; }
+.tpl-card {
+  background: var(--bg);
+  border-left: 3px solid var(--green-light);
+  border-radius: 4px;
+  padding: 1.1rem 1.15rem;
+}
+.tpl-name { font-family: var(--font-display); font-weight: 700; font-size: 0.95rem; color: var(--ink); line-height: 1.3; }
+.tpl-time { font-family: var(--mono); font-size: 0.625rem; letter-spacing: 0.08em; text-transform: uppercase; color: var(--ink-faint); margin-top: 0.5rem; }
+
+/* CTA */
+.cta { text-align: center; }
+.cta .eyebrow { margin-bottom: 1rem; }
+.cta-h {
+  font-family: var(--font-display);
+  font-weight: 700;
+  font-size: clamp(1.6rem, 3.4vw, 2.4rem);
+  letter-spacing: -0.02em;
+  color: var(--ink);
+  margin-bottom: 2rem;
+}
+.s-dark .cta-h { color: var(--wall-text); }
+.btn-cta {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.4rem;
+  padding: 0.95rem 2.1rem;
+  background: var(--green);
+  color: #fff;
+  border-radius: 4px;
+  font-family: var(--font-body);
+  font-size: 1rem;
+  font-weight: 500;
+  transition: background 0.2s, transform 0.15s;
+}
+.btn-cta:hover { background: var(--green-dark); transform: translateY(-1px); }
+.s-dark .btn-cta { background: var(--bg); color: var(--green); }
+.s-dark .btn-cta:hover { background: #fff; }
+
+/* cross-links */
+.crosslinks { border-top: 1px solid var(--border); padding-block: 2.25rem; }
+.crosslinks-inner { text-align: center; font-size: 0.9375rem; color: var(--ink-faint); }
+.crosslinks-inner a { color: var(--green); border-bottom: 1px solid transparent; padding-bottom: 1px; transition: border-color 0.2s; }
+.crosslinks-inner a:hover { border-color: var(--green); }
+.crosslinks-inner .here { color: var(--ink-faint); }
+.crosslinks-inner .sep { color: var(--border); margin: 0 0.6rem; }
+
+/* ─── FOOTER ─── */
+.footer { border-top: 1px solid var(--border); padding-block: 1.5rem; }
+.footer-inner { display: flex; align-items: center; justify-content: space-between; }
+.footer-logo { font-family: var(--font-display); font-size: 1.0625rem; font-weight: 700; letter-spacing: -0.02em; }
+.footer-meta { font-size: 0.8125rem; color: var(--ink-faint); font-style: italic; }
+
+/* ─── RESPONSIVE ─── */
+@media (max-width: 900px) {
+  .two-col { grid-template-columns: 1fr; gap: 2.25rem; }
+  .tpl-grid { grid-template-columns: repeat(2,1fr); }
+}
+@media (max-width: 768px) {
+  .section { padding-block: 4rem; }
+  .hero { padding-top: calc(var(--nav-h) + 3.5rem); padding-bottom: 4rem; }
+  .nav-links { display: none; }
+  .nav-links.open {
+    display: flex;
+    flex-direction: column;
+    position: absolute;
+    top: var(--nav-h);
+    left: 0; right: 0;
+    background: var(--bg);
+    border-bottom: 1px solid var(--border);
+    padding: 1.25rem var(--pad);
+    gap: 1.25rem;
+    z-index: 99;
+  }
+  .btn-nav { display: none; }
+  .nav-toggle { display: flex; }
+  .footer-inner { flex-direction: column; gap: 0.375rem; align-items: flex-start; }
+  .concept-bar { height: 34px; }
+  .btn-cta { width: 100%; justify-content: center; }
+}
+@media (max-width: 560px) {
+  .tpl-grid { grid-template-columns: 1fr; }
+  .concept-seg { font-size: 0; padding: 0; }
+}
+@media (max-width: 480px) {
+  :root { --pad: 1.25rem; }
+}
+  </style>
+</head>
+<body>
+
+  <nav class="nav" id="nav">
+    <div class="nav-inner">
+      <a href="/" class="nav-logo">Orchen</a>
+      <div class="nav-links" id="nav-links">
+        <a href="/#problem">The Problem</a>
+        <a href="/#how">How It Works</a>
+        <a href="/#contact">For Schools</a>
+      </div>
+      <a href="/#contact" class="btn-nav">Book a walkthrough</a>
+      <button class="nav-toggle" id="nav-toggle" aria-label="Open menu" aria-expanded="false">
+        <span></span><span></span><span></span>
+      </button>
+    </div>
+  </nav>
+
+  <main>
+
+    <!-- HERO -->
+    <section class="hero">
+      <div class="container">
+        <span class="eyebrow">For Teachers</span>
+        <h1 class="hero-h1">You'll know how each student actually thinks. Not just what they submitted.</h1>
+        <p class="hero-sub">Orchen builds a learning profile for every student from real interactions &mdash; not surveys, not self-reporting. It updates as you teach them.</p>
+      </div>
+    </section>
+
+    <!-- THE LEARNING PROFILE -->
+    <section class="section s-dark">
+      <div class="container">
+        <div class="two-col">
+          <div class="col-copy">
+            <span class="eyebrow">What You See Per Student</span>
+            <h2 class="sec-h2">A read on how each student thinks &mdash; built from real sessions.</h2>
+            <p class="sec-body">Every student who uses Orchen builds a profile over time. You see the synthesis &mdash; not a transcript to scroll.</p>
+            <p class="sec-body">Best teaching approach. Learning style breakdown. Where they get stuck. Where they're strong. It updates every time they use Orchen, across every subject you teach them.</p>
+          </div>
+          <div class="col-card">
+            <div class="product-card">
+              <span class="pc-label">Student Insight &mdash; Ryoto Falcon</span>
+              <div class="pc-block">
+                <p class="pc-h">Best Teaching Approach</p>
+                <p class="pc-text">Ryoto responds well to verbal exploration and open-ended questions, especially in abstract or philosophical contexts. The student benefits from highly structured guidance, concrete examples, and step-by-step breakdowns, particularly for mathematical concepts and essay writing. Explicit prompting is often necessary to connect curiosity to academic subjects and to bridge abstract ideas to practical understanding.</p>
+              </div>
+              <div class="pc-block">
+                <p class="pc-h">Learning Style for Math, Science</p>
+                <div class="bar-row"><span class="bar-name">Verbal</span><span class="bar-track"><span class="bar-fill" style="width:8%"></span></span><span class="bar-val">8%</span></div>
+                <div class="bar-row"><span class="bar-name">Visual</span><span class="bar-track"><span class="bar-fill" style="width:3%"></span></span><span class="bar-val">3%</span></div>
+                <div class="bar-row"><span class="bar-name">Conceptual</span><span class="bar-track"><span class="bar-fill" style="width:6%"></span></span><span class="bar-val">6%</span></div>
+                <div class="bar-row"><span class="bar-name">Step-By-Step</span><span class="bar-track"><span class="bar-fill" style="width:7%"></span></span><span class="bar-val">7%</span></div>
+                <div class="bar-row"><span class="bar-name">Example-Based</span><span class="bar-track"><span class="bar-fill" style="width:6%"></span></span><span class="bar-val">6%</span></div>
+              </div>
+              <div class="pc-block">
+                <p class="pc-h">Struggle Areas</p>
+                <p class="pc-data"><span class="k">Mathematics:</span> Function notation &middot; Domain of a function &middot; Abstract mathematical definitions</p>
+              </div>
+              <div class="pc-block">
+                <p class="pc-h">Strength Areas</p>
+                <p class="pc-data"><span class="k">Mathematics:</span> Evaluating functions with basic algebraic operations</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- CLASS-LEVEL VIEW -->
+    <section class="section s-cream">
+      <div class="container">
+        <span class="eyebrow">What You See Across a Class</span>
+        <h2 class="sec-h2">See the gaps before the test, not after.</h2>
+        <p class="sec-body">Orchen tracks which concepts have actually landed for each student &mdash; demonstrated repeatedly, demonstrated once, in progress, or not yet touched. You see the class as a distribution.</p>
+        <p class="sec-body">Plan tomorrow's lesson around the real gaps, not the assumed ones.</p>
+        <div class="concept-bar" role="img" aria-label="Concept distribution: demonstrated repeatedly 25%, demonstrated once 30%, in progress 28%, not yet touched 17%">
+          <div class="concept-seg cs-1" style="width:25%">Demonstrated repeatedly</div>
+          <div class="concept-seg cs-2" style="width:30%">Demonstrated once</div>
+          <div class="concept-seg cs-3" style="width:28%">In progress</div>
+          <div class="concept-seg cs-4" style="width:17%">Not yet touched</div>
+        </div>
+        <div class="chip-row">
+          <span class="chip">Function notation</span>
+          <span class="chip">Integration by substitution</span>
+          <span class="chip">Thesis structure under time pressure</span>
+        </div>
+        <p class="caption">Example from a 10th grade class &mdash; concepts flagged as &ldquo;in progress&rdquo; for 3 or more students.</p>
+      </div>
+    </section>
+
+    <!-- ASSIGNMENTS -->
+    <section class="section s-dark">
+      <div class="container">
+        <div class="two-col">
+          <div class="col-copy">
+            <span class="eyebrow">Assignments</span>
+            <h2 class="sec-h2">Assignments students actually engage with.</h2>
+            <p class="sec-body">Create guided chat, writing, or quiz assignments. Orchen runs them with the same Socratic posture &mdash; it won't hand students the answer, even when they ask directly.</p>
+            <p class="sec-body">You see who submitted, how long they were actively working, and how many exchanges it took. Not to surveil &mdash; to understand.</p>
+          </div>
+          <div class="col-card">
+            <div class="product-card">
+              <span class="pc-label">Assignment View &mdash; Fractional Equivalence</span>
+              <p class="mini-count">2 students enrolled</p>
+              <table class="mini-table">
+                <tr><td class="nm">&#10003;&nbsp; Test Student</td><td>Submitted</td><td>14m 31s</td><td>26 exchanges</td></tr>
+                <tr><td class="nm">&#9676;&nbsp; Ryoto Falcon</td><td>In progress</td><td>&mdash;</td><td>&mdash;</td></tr>
+              </table>
+              <p class="mini-note">Guided Chat &middot; Math &middot; Due Apr 10</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- WRITING -->
+    <section class="section s-cream">
+      <div class="container">
+        <span class="eyebrow">Writing Assignments</span>
+        <h2 class="sec-h2">The student writes. Orchen frames and checks.</h2>
+        <p class="sec-body">Writing assignments open a full editing workspace. Students go through prewriting, drafting, and a draft check with rubric scores and inline comments. You configure the rubric. Orchen does the mechanical pass &mdash; you focus on the thinking.</p>
+        <p class="sec-body">You still teach the writing. Orchen handles the parts that don't require your judgment.</p>
+      </div>
+    </section>
+
+    <!-- DOCUMENT TEMPLATES -->
+    <section class="section s-dark">
+      <div class="container">
+        <span class="eyebrow">Documents</span>
+        <h2 class="sec-h2">Lesson plans, unit plans, rubrics &mdash; drafted in seconds.</h2>
+        <p class="sec-body">The Documents tab gives you AI-generated starting points for standard teaching materials. Standard lesson plan, 5-day unit plan, discussion guide, lab plan, substitute teacher plan, rubric generator, exit ticket, differentiated assignment. You edit; you own the result.</p>
+        <div class="tpl-grid">
+          <div class="tpl-card"><p class="tpl-name">Standard Lesson Plan</p><p class="tpl-time">~15 sec</p></div>
+          <div class="tpl-card"><p class="tpl-name">5-Day Unit Plan</p><p class="tpl-time">~20 sec</p></div>
+          <div class="tpl-card"><p class="tpl-name">Rubric Generator</p><p class="tpl-time">~15 sec</p></div>
+          <div class="tpl-card"><p class="tpl-name">Discussion / Socratic S&hellip;</p><p class="tpl-time">~15 sec</p></div>
+        </div>
+      </div>
+    </section>
+
+    <!-- CTA -->
+    <section class="section s-cream cta">
+      <div class="container">
+        <span class="eyebrow">Book a Walkthrough</span>
+        <h2 class="cta-h">See Orchen from a teacher's seat.</h2>
+        <a href="/#contact" class="btn-cta">Book a walkthrough &rarr;</a>
+      </div>
+    </section>
+
+    <!-- CROSS-LINKS -->
+    <div class="crosslinks">
+      <div class="container crosslinks-inner">
+        Also see: <span class="here">For Teachers</span><span class="sep">&middot;</span><a href="/for/advisors">For Advisors</a><span class="sep">&middot;</span><a href="/for/parents">For Parents</a>
+      </div>
+    </div>
+
+  </main>
+
+  <footer class="footer">
+    <div class="container footer-inner">
+      <span class="footer-logo">Orchen</span>
+      <span class="footer-meta">&copy; 2026 Orchen AI &middot; <a href="/privacy" style="border-bottom:1px solid currentColor;">Privacy Policy</a> &middot; <a href="/terms" style="border-bottom:1px solid currentColor;">Terms of Service</a></span>
+    </div>
+  </footer>
+
+  <script>
+  (function () {
+    var nav    = document.getElementById('nav');
+    var toggle = document.getElementById('nav-toggle');
+    var links  = document.getElementById('nav-links');
+    window.addEventListener('scroll', function () {
+      nav.classList.toggle('scrolled', window.scrollY > 10);
+    }, { passive: true });
+    toggle.addEventListener('click', function () {
+      var open = toggle.getAttribute('aria-expanded') === 'true';
+      toggle.setAttribute('aria-expanded', String(!open));
+      links.classList.toggle('open', !open);
+    });
+  }());
+  </script>
+
+</body>
+</html>

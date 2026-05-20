@@ -7,7 +7,11 @@
       "Bash(sed -i '' 's|src=\"MITCNNUSINGAICANDAMAGE.png\"|src=\"assets/cnn-ai-brainpower.png\"|g' index.html)",
       "Bash(sed -i '' 's|src=\"NPRnews.webp\"|src=\"assets/npr-brookings.webp\"|g' index.html)",
       "Bash(sed -i '' 's|src=\"WashingtonPost.avif\"|src=\"assets/wapo-stanford.avif\"|g' index.html)",
-      "Bash(sed -i '' 's|src=\"YoutubeArticle.png\"|src=\"assets/youtube-brain-experts.png\"|g' index.html)"
+      "Bash(sed -i '' 's|src=\"YoutubeArticle.png\"|src=\"assets/youtube-brain-experts.png\"|g' index.html)",
+      "Bash(python3 -)",
+      "Bash(sed -n '/\\\\.hero-overlay-base {/,/^}/p' index.html)",
+      "Bash(sed -n '2257,2277p' index.html)",
+      "Bash([ -f \"$u/index.html\" ])"
     ]
   }
 }

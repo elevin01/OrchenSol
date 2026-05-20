@@ -1,0 +1,581 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>For Parents — Orchen</title>
+  <meta name="description" content="Orchen gives parents a weekly view of their child's learning — conversation starters, bright spots, and progress. What you see is configured by your school.">
+  <link rel="canonical" href="https://orchen.ai/for/parents">
+  <meta name="robots" content="index, follow">
+  <meta property="og:title" content="For Parents — Orchen">
+  <meta property="og:description" content="Orchen gives parents a weekly view of their child's learning — conversation starters, bright spots, and progress. What you see is configured by your school.">
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://orchen.ai/for/parents">
+  <meta property="og:image" content="https://orchen.ai/assets/og-image.png">
+  <meta property="og:site_name" content="Orchen">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="For Parents — Orchen">
+  <meta name="twitter:description" content="Orchen gives parents a weekly view of their child's learning — conversation starters, bright spots, and progress. What you see is configured by your school.">
+  <meta name="twitter:image" content="https://orchen.ai/assets/og-image.png">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,700;1,400&family=Lora:ital,wght@0,400;0,500;1,400&display=swap" rel="stylesheet">
+  <style>
+:root {
+  --green:       #2C5F3F;
+  --green-dark:  #1E4329;
+  --green-light: #3D7A55;
+  --bg:          #F5F2EE;
+  --ink:         #1A1A1A;
+  --ink-muted:   #6A6460;
+  --ink-faint:   #A09890;
+  --wall-text:   #EDE9E4;
+  --wall-muted:  rgba(237,233,228,0.62);
+  --wall-faint:  rgba(237,233,228,0.40);
+  --dark-bg:     #1A3527;
+  --border:      #DDD8CE;
+  --border-light:#EAE5DC;
+  --amber:       #9C7C4A;
+  --chip-strug-bg:#F3E3DF;
+  --chip-strug-fg:#9B4A3C;
+  --chip-stren-bg:#DDEBE0;
+  --chip-stren-fg:#2C5F3F;
+  --font-display:'Playfair Display', Georgia, serif;
+  --font-body:   'Lora', Georgia, serif;
+  --mono: 'SFMono-Regular', ui-monospace, 'JetBrains Mono', Menlo, Consolas, monospace;
+  --max-w: 1200px;
+  --pad: 2rem;
+  --nav-h: 62px;
+}
+*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+html { scroll-behavior: smooth; font-size: 16px; }
+body {
+  background: var(--bg);
+  color: var(--ink);
+  font-family: var(--font-body);
+  font-size: 1.0625rem;
+  line-height: 1.75;
+  -webkit-font-smoothing: antialiased;
+}
+a { color: inherit; text-decoration: none; }
+
+/* ─── NAV ─── */
+.nav {
+  position: fixed;
+  top: 0; left: 0; right: 0;
+  z-index: 100;
+  background: rgba(245,242,238,0.95);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  border-bottom: 1px solid transparent;
+  transition: border-color 0.25s, box-shadow 0.25s;
+}
+.nav.scrolled { border-color: var(--border-light); box-shadow: 0 1px 16px rgba(26,26,26,0.06); }
+.nav-inner {
+  max-width: var(--max-w);
+  margin: 0 auto;
+  padding: 0 var(--pad);
+  height: var(--nav-h);
+  display: flex;
+  align-items: center;
+  gap: 2rem;
+}
+.nav-logo {
+  font-family: var(--font-display);
+  font-size: 1.25rem;
+  font-weight: 700;
+  color: var(--ink);
+  letter-spacing: -0.02em;
+  white-space: nowrap;
+}
+.nav-logo:hover { color: var(--green); }
+.nav-links { display: flex; gap: 2rem; flex: 1; }
+.nav-links a { font-size: 0.875rem; color: var(--ink-muted); transition: color 0.2s; }
+.nav-links a:hover { color: var(--ink); }
+.btn-nav {
+  display: inline-flex;
+  align-items: center;
+  padding: 0.5rem 1.125rem;
+  background: var(--green);
+  color: #fff;
+  border-radius: 4px;
+  font-family: var(--font-body);
+  font-size: 0.875rem;
+  font-weight: 500;
+  letter-spacing: 0.01em;
+  white-space: nowrap;
+  transition: background 0.2s;
+}
+.btn-nav:hover { background: var(--green-dark); }
+.nav-toggle {
+  display: none;
+  flex-direction: column;
+  justify-content: center;
+  gap: 4.5px;
+  width: 28px; height: 28px;
+  background: none; border: none; cursor: pointer;
+  margin-left: auto; padding: 0;
+}
+.nav-toggle span { display: block; width: 22px; height: 1.5px; background: var(--ink); border-radius: 1px; transition: transform 0.25s, opacity 0.25s; }
+.nav-toggle[aria-expanded="true"] span:nth-child(1) { transform: translateY(6px) rotate(45deg); }
+.nav-toggle[aria-expanded="true"] span:nth-child(2) { opacity: 0; transform: scaleX(0); }
+.nav-toggle[aria-expanded="true"] span:nth-child(3) { transform: translateY(-6px) rotate(-45deg); }
+
+/* ─── LAYOUT ─── */
+.container { max-width: var(--max-w); margin-inline: auto; padding-inline: var(--pad); }
+.section { padding-block: 6rem; }
+.s-cream { background: var(--bg); color: var(--ink); }
+.s-warm  { background: #F0EBE0; color: var(--ink); }
+.s-dark  { background: var(--dark-bg); color: var(--wall-text); }
+.eyebrow {
+  display: block;
+  font-family: var(--font-body);
+  font-size: 0.6875rem;
+  font-weight: 600;
+  letter-spacing: 0.22em;
+  text-transform: uppercase;
+  color: var(--green-light);
+  margin-bottom: 1.25rem;
+}
+.s-dark .eyebrow { color: var(--amber); }
+.s-warm .eyebrow { color: var(--green); }
+.sec-h2 {
+  font-family: var(--font-display);
+  font-weight: 700;
+  font-size: clamp(1.7rem, 3.6vw, 2.6rem);
+  line-height: 1.18;
+  letter-spacing: -0.02em;
+  color: var(--ink);
+  margin-bottom: 1.5rem;
+}
+.s-dark .sec-h2 { color: var(--wall-text); }
+.sec-body { font-size: 1.0625rem; line-height: 1.8; color: var(--ink-muted); max-width: 540px; }
+.s-dark .sec-body { color: var(--wall-muted); }
+.sec-body + .sec-body { margin-top: 1rem; }
+.sec-body strong { color: var(--ink); font-weight: 600; }
+.s-dark .sec-body strong { color: var(--wall-text); }
+
+/* ─── HERO ─── */
+.hero {
+  background: var(--bg);
+  padding-top: calc(var(--nav-h) + 6rem);
+  padding-bottom: 6rem;
+}
+.hero-h1 {
+  font-family: var(--font-display);
+  font-weight: 700;
+  font-size: clamp(2.2rem, 5.2vw, 3.4rem);
+  line-height: 1.12;
+  letter-spacing: -0.025em;
+  color: var(--ink);
+  max-width: 16ch;
+  margin-bottom: 1.5rem;
+}
+.hero-sub {
+  font-size: clamp(1.05rem, 1.6vw, 1.25rem);
+  line-height: 1.7;
+  color: var(--ink-muted);
+  max-width: 620px;
+}
+
+/* ─── TWO-COLUMN ─── */
+.two-col {
+  display: grid;
+  grid-template-columns: minmax(0,1fr) minmax(0,1fr);
+  gap: clamp(2rem, 5vw, 4.5rem);
+  align-items: center;
+}
+.two-col .col-copy .sec-body { max-width: 460px; }
+
+/* ─── PRODUCT EXAMPLE CARD ─── */
+.product-card {
+  border-radius: 8px;
+  border-left: 3px solid var(--green);
+  padding: 1.5rem 1.5rem 1.625rem;
+}
+.s-dark .product-card { background: var(--bg); color: var(--ink); border-left-color: var(--green); box-shadow: 0 10px 30px rgba(0,0,0,0.22); }
+.s-cream .product-card, .s-warm .product-card { background: #fff; border-left-color: var(--green); box-shadow: 0 6px 22px rgba(26,26,26,0.06); }
+.pc-label {
+  display: block;
+  font-family: var(--mono);
+  font-size: 0.625rem;
+  font-weight: 600;
+  letter-spacing: 0.16em;
+  text-transform: uppercase;
+  color: var(--ink-faint);
+  margin-bottom: 1rem;
+  padding-bottom: 0.75rem;
+  border-bottom: 1px solid var(--border);
+}
+.pc-block { margin-bottom: 1.25rem; }
+.pc-block:last-child { margin-bottom: 0; }
+.pc-h {
+  font-family: var(--mono);
+  font-size: 0.625rem;
+  font-weight: 700;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  color: var(--green);
+  margin-bottom: 0.625rem;
+}
+.pc-text { font-family: var(--font-body); font-size: 0.875rem; line-height: 1.65; color: var(--ink-muted); }
+
+/* bars (learning style / signals) */
+.bar-row {
+  display: grid;
+  grid-template-columns: 110px 1fr 42px;
+  align-items: center;
+  gap: 0.75rem;
+  margin-bottom: 0.5rem;
+  font-family: var(--mono);
+  font-size: 0.6875rem;
+  color: var(--ink-muted);
+}
+.bar-row:last-child { margin-bottom: 0; }
+.bar-name { white-space: nowrap; }
+.bar-track { height: 7px; background: var(--border-light); border-radius: 99px; overflow: hidden; }
+.bar-fill { height: 100%; background: var(--green); border-radius: 99px; }
+.bar-fill.lvl { background: var(--green-light); }
+.bar-val { text-align: right; color: var(--ink-faint); }
+
+/* data lines */
+.pc-data { font-family: var(--mono); font-size: 0.75rem; line-height: 1.7; color: var(--ink-muted); }
+.pc-data .k { color: var(--ink); font-weight: 600; }
+
+/* mini table */
+.mini-table { width: 100%; border-collapse: collapse; font-family: var(--mono); font-size: 0.75rem; }
+.mini-table td { padding: 0.55rem 0.4rem; border-bottom: 1px solid var(--border-light); color: var(--ink-muted); }
+.mini-table tr:last-child td { border-bottom: none; }
+.mini-table .nm { color: var(--ink); }
+.mini-note { font-family: var(--mono); font-size: 0.625rem; letter-spacing: 0.08em; text-transform: uppercase; color: var(--ink-faint); margin-top: 0.875rem; }
+.mini-count { font-family: var(--mono); font-size: 0.6875rem; color: var(--ink-faint); margin-bottom: 0.625rem; }
+
+/* concept distribution bar */
+.concept-bar { display: flex; width: 100%; height: 40px; border-radius: 6px; overflow: hidden; margin: 2.25rem 0 1rem; }
+.concept-seg { display: flex; align-items: center; justify-content: center; font-family: var(--mono); font-size: 0.5625rem; letter-spacing: 0.05em; text-transform: uppercase; color: #fff; padding: 0 0.4rem; text-align: center; }
+.cs-1 { background: var(--green-dark); }
+.cs-2 { background: var(--green-light); }
+.cs-3 { background: var(--amber); }
+.cs-4 { background: #C9C2B6; color: var(--ink-muted); }
+.chip-row { display: flex; flex-wrap: wrap; gap: 0.5rem; margin-top: 0.5rem; }
+.chip {
+  font-family: var(--mono);
+  font-size: 0.6875rem;
+  padding: 0.3rem 0.7rem;
+  border-radius: 99px;
+  background: #fff;
+  border: 1px solid var(--border);
+  color: var(--ink-muted);
+}
+.chip.strug { background: var(--chip-strug-bg); border-color: transparent; color: var(--chip-strug-fg); }
+.chip.stren { background: var(--chip-stren-bg); border-color: transparent; color: var(--chip-stren-fg); }
+.caption { font-size: 0.8125rem; color: var(--ink-faint); margin-top: 1rem; font-style: italic; }
+
+/* template grid */
+.tpl-grid { display: grid; grid-template-columns: repeat(4,1fr); gap: 1rem; margin-top: 2.5rem; }
+.tpl-card {
+  background: var(--bg);
+  border-left: 3px solid var(--green-light);
+  border-radius: 4px;
+  padding: 1.1rem 1.15rem;
+}
+.tpl-name { font-family: var(--font-display); font-weight: 700; font-size: 0.95rem; color: var(--ink); line-height: 1.3; }
+.tpl-time { font-family: var(--mono); font-size: 0.625rem; letter-spacing: 0.08em; text-transform: uppercase; color: var(--ink-faint); margin-top: 0.5rem; }
+
+/* CTA */
+.cta { text-align: center; }
+.cta .eyebrow { margin-bottom: 1rem; }
+.cta-h {
+  font-family: var(--font-display);
+  font-weight: 700;
+  font-size: clamp(1.6rem, 3.4vw, 2.4rem);
+  letter-spacing: -0.02em;
+  color: var(--ink);
+  margin-bottom: 2rem;
+}
+.s-dark .cta-h { color: var(--wall-text); }
+.btn-cta {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.4rem;
+  padding: 0.95rem 2.1rem;
+  background: var(--green);
+  color: #fff;
+  border-radius: 4px;
+  font-family: var(--font-body);
+  font-size: 1rem;
+  font-weight: 500;
+  transition: background 0.2s, transform 0.15s;
+}
+.btn-cta:hover { background: var(--green-dark); transform: translateY(-1px); }
+.s-dark .btn-cta { background: var(--bg); color: var(--green); }
+.s-dark .btn-cta:hover { background: #fff; }
+
+/* cross-links */
+.crosslinks { border-top: 1px solid var(--border); padding-block: 2.25rem; }
+.crosslinks-inner { text-align: center; font-size: 0.9375rem; color: var(--ink-faint); }
+.crosslinks-inner a { color: var(--green); border-bottom: 1px solid transparent; padding-bottom: 1px; transition: border-color 0.2s; }
+.crosslinks-inner a:hover { border-color: var(--green); }
+.crosslinks-inner .here { color: var(--ink-faint); }
+.crosslinks-inner .sep { color: var(--border); margin: 0 0.6rem; }
+
+/* ─── FOOTER ─── */
+.footer { border-top: 1px solid var(--border); padding-block: 1.5rem; }
+.footer-inner { display: flex; align-items: center; justify-content: space-between; }
+.footer-logo { font-family: var(--font-display); font-size: 1.0625rem; font-weight: 700; letter-spacing: -0.02em; }
+.footer-meta { font-size: 0.8125rem; color: var(--ink-faint); font-style: italic; }
+
+/* ─── RESPONSIVE ─── */
+@media (max-width: 900px) {
+  .two-col { grid-template-columns: 1fr; gap: 2.25rem; }
+  .tpl-grid { grid-template-columns: repeat(2,1fr); }
+}
+@media (max-width: 768px) {
+  .section { padding-block: 4rem; }
+  .hero { padding-top: calc(var(--nav-h) + 3.5rem); padding-bottom: 4rem; }
+  .nav-links { display: none; }
+  .nav-links.open {
+    display: flex;
+    flex-direction: column;
+    position: absolute;
+    top: var(--nav-h);
+    left: 0; right: 0;
+    background: var(--bg);
+    border-bottom: 1px solid var(--border);
+    padding: 1.25rem var(--pad);
+    gap: 1.25rem;
+    z-index: 99;
+  }
+  .btn-nav { display: none; }
+  .nav-toggle { display: flex; }
+  .footer-inner { flex-direction: column; gap: 0.375rem; align-items: flex-start; }
+  .concept-bar { height: 34px; }
+  .btn-cta { width: 100%; justify-content: center; }
+}
+@media (max-width: 560px) {
+  .tpl-grid { grid-template-columns: 1fr; }
+  .concept-seg { font-size: 0; padding: 0; }
+}
+@media (max-width: 480px) {
+  :root { --pad: 1.25rem; }
+}
+
+/* ─── PARENTS PAGE ADDITIONS ─── */
+.pc-headline { font-family: var(--font-display); font-weight: 700; font-size: 1.25rem; line-height: 1.35; color: var(--ink); margin-bottom: 1.25rem; }
+.stat-row { display: grid; grid-template-columns: repeat(4,1fr); gap: 1rem; margin-bottom: 1.25rem; }
+.stat-cell .sl { display: block; font-family: var(--mono); font-size: 0.5625rem; letter-spacing: 0.12em; text-transform: uppercase; color: var(--ink-faint); margin-bottom: 0.3rem; }
+.stat-cell .sv { font-family: var(--font-display); font-weight: 700; font-size: 1.05rem; color: var(--ink); }
+.stat-cell .sx { display: block; font-family: var(--mono); font-size: 0.625rem; color: var(--ink-faint); margin-top: 0.15rem; }
+.mix-bar { display: flex; height: 10px; border-radius: 99px; overflow: hidden; margin: 0.5rem 0 0.4rem; }
+.split2 { display: grid; grid-template-columns: 1fr 1fr; gap: 1rem; margin-top: 1.25rem; }
+.note-card { background: var(--bg); border-radius: 6px; padding: 1rem 1.1rem; }
+.note-card p { font-family: var(--font-body); font-size: 0.8125rem; line-height: 1.6; color: var(--ink-muted); }
+.pg-toggle { font-family: var(--mono); font-size: 0.625rem; letter-spacing: 0.06em; text-transform: uppercase; color: var(--green); margin-top: 0.6rem; display: block; }
+.mini-cards { display: grid; grid-template-columns: repeat(2,1fr); gap: 1rem; margin-top: 2.5rem; }
+.mini-card { background: var(--bg); color: var(--ink); border-radius: 6px; padding: 1.4rem 1.35rem; }
+.mini-card h3 { font-family: var(--font-display); font-weight: 700; font-size: 1.05rem; margin-bottom: 0.5rem; color: var(--ink); }
+.mini-card p { font-family: var(--font-body); font-size: 0.875rem; line-height: 1.6; color: var(--ink-muted); }
+.vis-table { width: 100%; border-collapse: collapse; margin-top: 2rem; font-family: var(--font-body); font-size: 0.9375rem; }
+.vis-table td { padding: 0.85rem 1rem; vertical-align: top; color: var(--ink-muted); }
+.vis-table tr:nth-child(odd) { background: #FFFFFF; }
+.vis-table .lv { white-space: nowrap; color: var(--ink); font-weight: 600; width: 200px; }
+.cta .sec-body { max-width: 560px; margin: 0 auto 2rem; }
+.cta-alt { font-size: 0.875rem; color: var(--ink-faint); margin-top: 1rem; }
+@media (max-width: 768px) {
+  .mini-cards { grid-template-columns: 1fr; }
+}
+@media (max-width: 560px) {
+  .stat-row { grid-template-columns: repeat(2,1fr); }
+  .split2 { grid-template-columns: 1fr; }
+}
+  </style>
+</head>
+<body>
+
+  <nav class="nav" id="nav">
+    <div class="nav-inner">
+      <a href="/" class="nav-logo">Orchen</a>
+      <div class="nav-links" id="nav-links">
+        <a href="/#problem">The Problem</a>
+        <a href="/#how">How It Works</a>
+        <a href="/#contact">For Schools</a>
+      </div>
+      <a href="/#contact" class="btn-nav">Book a walkthrough</a>
+      <button class="nav-toggle" id="nav-toggle" aria-label="Open menu" aria-expanded="false">
+        <span></span><span></span><span></span>
+      </button>
+    </div>
+  </nav>
+
+  <main>
+
+    <!-- HERO -->
+    <section class="hero">
+      <div class="container">
+        <span class="eyebrow">For Parents</span>
+        <h1 class="hero-h1">Know how your child is learning. Not just what they submitted.</h1>
+        <p class="hero-sub">Orchen gives parents a weekly view of their child's learning &mdash; conversation starters, bright spots, and what they've been working on. What you see is configured by your school.</p>
+      </div>
+    </section>
+
+    <!-- WHAT YOU RECEIVE -->
+    <section class="section s-cream">
+      <div class="container">
+        <span class="eyebrow">What Parents See</span>
+        <h2 class="sec-h2">A weekly digest &mdash; not a transcript.</h2>
+        <p class="sec-body" style="max-width:640px;">You don't see your child's conversations with Orchen. You see what those conversations produced: how they're engaging, where they're making progress, and how you can support them at home.</p>
+        <p class="sec-body" style="max-width:640px;">Your school sets what's visible to you. The examples below reflect a mid-level visibility setting &mdash; the most common configuration.</p>
+        <div class="product-card" style="max-width:760px;margin:2.5rem auto 0;">
+          <span class="pc-label">Orchen Academy &middot; This Week</span>
+          <p class="pc-headline">This week, Test independently completed five quizzes using their existing learning materials.</p>
+          <div class="stat-row">
+            <div class="stat-cell"><span class="sl">Time This Week</span><span class="sv">&mdash;</span><span class="sx">No sessions yet</span></div>
+            <div class="stat-cell"><span class="sl">Streak</span><span class="sv">4 weeks</span><span class="sx">Active row</span></div>
+            <div class="stat-cell"><span class="sl">Sessions</span><span class="sv">4</span><span class="sx">2 subjects</span></div>
+            <div class="stat-cell"><span class="sl">Assignments</span><span class="sv">1 of 8</span><span class="sx">Completed</span></div>
+          </div>
+          <div class="mix-bar">
+            <span style="background:var(--green);width:75%"></span>
+            <span style="background:var(--green-light);width:25%"></span>
+          </div>
+          <p class="pc-data"><span style="color:var(--green);">&#9679;</span> Science &middot; 3 &middot; Astronomy, Biology &nbsp;&nbsp; <span style="color:var(--green-light);">&#9679;</span> General &middot; 1 &middot; General Inquiry</p>
+          <div class="pc-block" style="margin-top:1.25rem;">
+            <p class="pc-h">How Test Is Learning</p>
+            <p class="pc-data">&middot; Uses retrieval practice by taking quizzes on their own.<br>&middot; Maintains a large bank of flashcards from prior work.<br>&middot; Learning this week was self-directed review, not new topic exploration.</p>
+          </div>
+          <div class="split2">
+            <div class="note-card" style="border-left:3px solid var(--amber);">
+              <p class="pc-h" style="color:var(--amber);">Bright Spot</p>
+              <p>Test took the initiative to complete five quizzes independently, without any formal sessions.</p>
+            </div>
+            <div class="note-card" style="border-left:3px solid #3E8E8E;">
+              <p class="pc-h" style="color:#3E8E8E;">Something to Talk About</p>
+              <p>A possible question: which of those recent quizzes felt the easiest, and why?</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- WHAT YOU DON'T SEE -->
+    <section class="section s-dark">
+      <div class="container">
+        <span class="eyebrow">Privacy</span>
+        <h2 class="sec-h2">Your child has a private workspace. It stays private.</h2>
+        <p class="sec-body">Orchen does not show parents raw conversation transcripts by default. Your child's journal entries, quiz answers, and learning preferences are not visible to you.</p>
+        <p class="sec-body">What you see is a synthesis &mdash; the patterns and highlights that help you support their learning at home, without turning every conversation into something they feel watched for.</p>
+        <p class="sec-body">Your school configures what visibility level applies to your account. If you have questions about what you can see, contact your school's administration.</p>
+      </div>
+    </section>
+
+    <!-- ASSIGNMENTS -->
+    <section class="section s-cream">
+      <div class="container">
+        <span class="eyebrow">Assignments</span>
+        <h2 class="sec-h2">See what's due and what's been submitted.</h2>
+        <p class="sec-body">You see your child's assignment list &mdash; status, due date, and a plain-English explanation of what the assignment is for.</p>
+        <div class="tpl-grid">
+          <div class="tpl-card">
+            <p class="tpl-name">The universe</p>
+            <p class="tpl-time">Chat &middot; In progress &middot; Overdue &middot; Apr 6</p>
+            <span class="pg-toggle">See parent guide &or;</span>
+          </div>
+          <div class="tpl-card">
+            <p class="tpl-name">Fractional Equivalence</p>
+            <p class="tpl-time">Chat &middot; Submitted &middot; Apr 10</p>
+            <span class="pg-toggle">See parent guide &or;</span>
+          </div>
+          <div class="tpl-card">
+            <p class="tpl-name">The Role of Chromebooks in Education</p>
+            <p class="tpl-time">Writing &middot; Not started &middot; Overdue &middot; Apr 19</p>
+            <span class="pg-toggle">See parent guide &or;</span>
+          </div>
+          <div class="tpl-card">
+            <p class="tpl-name">Statistics &amp; Sampling</p>
+            <p class="tpl-time">Chat &middot; In progress &middot; Overdue &middot; Apr 11</p>
+            <span class="pg-toggle">See parent guide &or;</span>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- STUDY PATTERNS -->
+    <section class="section s-dark">
+      <div class="container">
+        <span class="eyebrow">Patterns</span>
+        <h2 class="sec-h2">Small signals. Useful context.</h2>
+        <div class="mini-cards">
+          <div class="mini-card">
+            <h3>When Test Studies</h3>
+            <p>Most active late at night.</p>
+          </div>
+          <div class="mini-card">
+            <h3>Where Test Needs Help</h3>
+            <p>No specific struggles flagged this week. Test seems to be handling the material well.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- VISIBILITY LEVELS -->
+    <section class="section s-cream">
+      <div class="container">
+        <span class="eyebrow">How Visibility Works</span>
+        <h2 class="sec-h2">Your school sets what you see. You can ask for more.</h2>
+        <p class="sec-body">Orchen uses a five-level visibility model. Your school sets the default and the maximum allowed for your account. Some schools allow parents to request a higher level; others set a fixed policy.</p>
+        <table class="vis-table">
+          <tr><td class="lv">Level 1 &mdash; Minimal</td><td>Account exists. No learning data shown.</td></tr>
+          <tr><td class="lv">Level 2 &mdash; Activity</td><td>Subjects active this week. Total study time.</td></tr>
+          <tr><td class="lv">Level 3 &mdash; Summaries</td><td>Weekly digest &middot; Bright Spot &middot; Conversation starters.</td></tr>
+          <tr><td class="lv">Level 4 &mdash; Insights</td><td>All of Level 3 + qualitative learning insights and home support guidance.</td></tr>
+          <tr><td class="lv">Level 5 &mdash; Transcripts</td><td>All of Level 4 + read-only session transcripts. Crisis-flagged sessions are redacted. All access logged.</td></tr>
+        </table>
+        <p class="caption">Most schools configure parents at Level 3 or Level 4 by default. Questions about your visibility level should go to your school's administration.</p>
+      </div>
+    </section>
+
+    <!-- CTA -->
+    <section class="section s-cream cta">
+      <div class="container">
+        <span class="eyebrow">For Schools</span>
+        <h2 class="cta-h">Orchen is purchased by schools, not individual families.</h2>
+        <p class="sec-body">If your school uses Orchen, your account is created by the school. If you'd like your school to consider it, the right conversation starts with your Head of School or Director of Technology.</p>
+        <a href="/#contact" class="btn-cta">Book a school walkthrough &rarr;</a>
+        <p class="cta-alt">Or write to us at <a href="mailto:hello@orchen.ai" style="color:var(--green);border-bottom:1px solid var(--green);">hello@orchen.ai</a></p>
+      </div>
+    </section>
+
+    <!-- CROSS-LINKS -->
+    <div class="crosslinks">
+      <div class="container crosslinks-inner">
+        Also see: <a href="/for/teachers">For Teachers</a><span class="sep">&middot;</span><a href="/for/advisors">For Advisors</a><span class="sep">&middot;</span><span class="here">For Parents</span>
+      </div>
+    </div>
+
+  </main>
+
+  <footer class="footer">
+    <div class="container footer-inner">
+      <span class="footer-logo">Orchen</span>
+      <span class="footer-meta">&copy; 2026 Orchen AI &middot; <a href="/privacy" style="border-bottom:1px solid currentColor;">Privacy Policy</a> &middot; <a href="/terms" style="border-bottom:1px solid currentColor;">Terms of Service</a></span>
+    </div>
+  </footer>
+
+  <script>
+  (function () {
+    var nav    = document.getElementById('nav');
+    var toggle = document.getElementById('nav-toggle');
+    var links  = document.getElementById('nav-links');
+    window.addEventListener('scroll', function () {
+      nav.classList.toggle('scrolled', window.scrollY > 10);
+    }, { passive: true });
+    toggle.addEventListener('click', function () {
+      var open = toggle.getAttribute('aria-expanded') === 'true';
+      toggle.setAttribute('aria-expanded', String(!open));
+      links.classList.toggle('open', !open);
+    });
+  }());
+  </script>
+
+</body>
+</html>
