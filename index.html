@@ -1724,136 +1724,188 @@ h4 {
 .yes-ai p:last-child { margin-bottom: 0; }
 .yes-ai p strong { color: var(--ink); font-weight: 600; }
 
-/* ─── SECTION D — THE LOOP ─── */
-.loop { background: #1A3527; color: var(--wall-text); }
-.loop-inner { max-width: 1000px; margin: 0 auto; text-align: center; }
-.loop .eyebrow { color: var(--amber); }
-.loop h2 {
-  font-family: var(--font-display);
-  font-weight: 700;
-  font-size: clamp(2rem, 4vw, 3rem);
-  line-height: 1.12;
-  letter-spacing: -0.02em;
+/* ─── CINEMATIC SCROLL MATRIX SCROLLWAY ─── */
+.matrix-section {
+  background: #0A140E; /* Deep premium canvas background matches your hero block */
   color: var(--wall-text);
-  margin: 0 0 3.25rem;
-}
-.loop-nodes {
-  display: grid;
-  grid-template-columns: 1fr auto 1fr auto 1fr;
-  align-items: stretch;
-  gap: 1rem;
-  text-align: left;
-}
-.loop-node {
-  background: var(--bg);
-  color: var(--ink);
-  border-radius: 6px;
-  padding: 2rem 1.75rem;
-  box-shadow: 0 6px 24px rgba(0,0,0,0.20);
-}
-.loop-num {
-  font-family: var(--font-body);
-  font-size: 0.75rem;
-  font-weight: 600;
-  letter-spacing: 0.16em;
-  color: var(--green-light);
-}
-.loop-node h3 {
-  font-family: var(--font-display);
-  font-weight: 700;
-  font-size: 1.25rem;
-  color: var(--ink);
-  margin: 0.6rem 0 0.75rem;
-}
-.loop-node p {
-  font-family: var(--font-body);
-  font-size: 0.9375rem;
-  line-height: 1.7;
-  color: var(--ink-muted);
-  margin: 0;
-}
-.loop-arrow { align-self: center; font-size: 1.5rem; color: var(--amber); }
-@media (max-width: 768px) {
-  .loop-nodes { grid-template-columns: 1fr; }
-  .loop-arrow { transform: rotate(90deg); margin: 0 auto; }
+  position: relative;
+  padding-block: 0;
 }
 
-/* ─── SECTION E — STAKEHOLDER GLIMPSES ─── */
-.glimpse { background: var(--bg); }
-.glimpse-head { text-align: center; max-width: 680px; margin: 0 auto 3rem; }
-.glimpse-head h2 {
-  font-family: var(--font-display);
-  font-weight: 700;
-  font-size: clamp(1.9rem, 4vw, 2.75rem);
-  line-height: 1.15;
-  letter-spacing: -0.02em;
-  color: var(--ink);
-  margin: 0 0 1rem;
+.matrix-viewport-container {
+  display: grid;
+  grid-template-columns: 0.9fr 1.1fr;
+  gap: 5rem;
+  max-width: var(--max-w-wide);
+  margin: 0 auto;
+  padding-inline: var(--pad);
 }
-.glimpse-head p {
-  font-family: var(--font-body);
-  font-size: 1.0625rem;
-  color: var(--ink-muted);
-  margin: 0;
-}
-.glimpse-grid { display: grid; grid-template-columns: repeat(3,1fr); gap: 1.5rem; }
-.glimpse-card {
-  background: #fff;
-  border-left: 4px solid var(--green);
-  border-radius: 4px;
-  padding: 1.75rem;
-  box-shadow: 0 4px 20px rgba(26,26,26,0.06);
+
+/* Left Track Positioning */
+.matrix-left-track {
   display: flex;
   flex-direction: column;
 }
-.glimpse-label {
-  font-family: var(--font-body);
-  font-size: 0.625rem;
-  font-weight: 600;
-  letter-spacing: 0.18em;
-  text-transform: uppercase;
-  color: var(--green);
-  margin: 0 0 1rem;
+
+.matrix-scroll-card {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  padding-block: 4rem;
+  opacity: 0.22;
+  transform: translate3d(-16px, 0, 0);
+  transition: opacity 0.5s cubic-bezier(0.25, 1, 0.5, 1), transform 0.6s cubic-bezier(0.25, 1, 0.5, 1);
+  will-change: opacity, transform;
 }
-.glimpse-excerpt {
-  background: var(--bg);
-  border: 1px solid var(--border);
-  border-radius: 4px;
-  padding: 1rem 1.1rem;
+
+.matrix-scroll-card.active {
+  opacity: 1;
+  transform: translate3d(0, 0, 0);
+}
+
+.matrix-num-badge {
+  font-family: var(--font-display);
+  font-size: clamp(3.5rem, 6vw, 5.5rem);
+  font-weight: 700;
+  line-height: 1;
+  color: var(--amber);
+  opacity: 0.4;
+  margin-bottom: 1rem;
+  letter-spacing: -0.03em;
+  transition: opacity 0.4s ease;
+}
+
+.matrix-scroll-card.active .matrix-num-badge {
+  opacity: 1;
+}
+
+.matrix-heading {
+  font-family: var(--font-display);
+  font-size: clamp(2.2rem, 3.5vw, 3rem);
+  font-weight: 700;
+  line-height: 1.1;
+  color: #fff;
+  letter-spacing: -0.02em;
+  margin-bottom: 1.5rem;
+}
+
+.matrix-body {
   font-family: var(--font-body);
-  font-size: 0.8125rem;
-  line-height: 1.65;
+  font-size: 1.125rem;
+  line-height: 1.8;
+  color: var(--wall-muted);
+  max-width: 480px;
+}
+
+/* Right Fixed Canvas Stage */
+.matrix-right-stage {
+  position: sticky;
+  top: 0;
+  height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  will-change: transform;
+}
+
+.canvas-mockup {
+  width: 100%;
+  max-width: 620px;
+  background: var(--bg-ui);
   color: var(--ink);
-  margin: 0 0 1.25rem;
-  flex: 1;
+  border-radius: 14px;
+  box-shadow: 0 30px 80px rgba(0, 0, 0, 0.45);
+  border: 1px solid rgba(255, 255, 255, 0.06);
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+  min-height: 480px;
+  transition: transform 0.4s ease;
 }
-.glimpse-excerpt .gx-label {
-  display: block;
-  font-size: 0.5625rem;
-  letter-spacing: 0.14em;
-  text-transform: uppercase;
-  color: var(--ink-faint);
-  margin-bottom: 0.55rem;
+
+.canvas-chrome {
+  background: #EDF4F0;
+  padding: 14px 24px;
+  border-bottom: 1px solid var(--border);
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
 }
-.glimpse-excerpt .gx-priv {
-  display: block;
-  margin-top: 0.75rem;
-  font-size: 0.5625rem;
-  letter-spacing: 0.1em;
-  text-transform: uppercase;
-  color: var(--ink-faint);
-}
-.glimpse-link {
+
+.canvas-indicator-tag {
   font-family: var(--font-body);
-  font-size: 0.9375rem;
-  color: var(--green);
-  text-decoration: none;
-  border-bottom: 1px solid var(--green-pale);
-  padding-bottom: 1px;
-  align-self: flex-start;
+  font-size: 0.75rem;
+  font-weight: 600;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: var(--green-light);
 }
-.glimpse-link:hover { color: var(--green-light); }
-@media (max-width: 900px) { .glimpse-grid { grid-template-columns: 1fr; } }
+
+.canvas-window-body {
+  padding: 2.5rem;
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+/* Screen State Switching Transitions */
+.canvas-view-pane {
+  display: none;
+  animation: visualMatrixSweep 0.5s cubic-bezier(0.25, 1, 0.5, 1) forwards;
+}
+
+.canvas-view-pane.active {
+  display: block;
+}
+
+@keyframes visualMatrixSweep {
+  from { opacity: 0; transform: scale(0.96) translateY(16px); filter: blur(6px); }
+  to { opacity: 1; transform: scale(1) translateY(0); filter: blur(0); }
+}
+
+/* Content Details */
+.matrix-ui-header {
+  font-family: var(--font-display);
+  font-size: 1.5rem;
+  font-weight: 700;
+  color: var(--ink);
+  margin-bottom: 1.25rem;
+  letter-spacing: -0.015em;
+}
+
+.matrix-ui-box {
+  background: var(--bg);
+  border-left: 4px solid var(--green);
+  padding: 1.5rem;
+  border-radius: 0 6px 6px 0;
+  margin-bottom: 1.5rem;
+}
+
+/* Mobile Fallback Track Layout */
+@media (max-width: 900px) {
+  .matrix-viewport-container {
+    grid-template-columns: 1fr;
+    gap: 3rem;
+  }
+  .matrix-right-stage {
+    position: relative;
+    top: auto;
+    height: auto;
+    padding-bottom: 4rem;
+  }
+  .matrix-scroll-card {
+    min-height: 0;
+    opacity: 1;
+    transform: none;
+    padding-block: 3rem;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+  }
+  .matrix-scroll-card:last-child {
+    border-bottom: none;
+  }
+}
 
 /* ─── SECTION F — DEVICE FOOTNOTE ─── */
 .device-note { background: var(--bg); padding-block: 3.5rem; }
@@ -2424,74 +2476,103 @@ h4 {
       </div>
     </section>
 
-    <!-- ═══ SECTION D: THE LOOP ═══ -->
-    <section class="loop section" id="how">
-      <div class="container">
-        <div class="loop-inner">
-          <span class="eyebrow">How It Works</span>
-          <h2>One interaction. Insight for everyone who needs it.</h2>
-          <div class="loop-nodes animate-in">
-            <div class="loop-node">
-              <span class="loop-num">01</span>
-              <h3>Student uses Orchen</h3>
-              <p>Asks questions, gets guided &mdash; not handed answers. Orchen requires the student to explain their thinking before moving forward.</p>
-            </div>
-            <span class="loop-arrow" aria-hidden="true">&rarr;</span>
-            <div class="loop-node">
-              <span class="loop-num">02</span>
-              <h3>Every session analyzed</h3>
-              <p>Interactions are synthesized nightly into learning signals. Source conversations deleted within seven days. Derived insight only &mdash; never raw transcripts.</p>
-            </div>
-            <span class="loop-arrow" aria-hidden="true">&rarr;</span>
-            <div class="loop-node">
-              <span class="loop-num">03</span>
-              <h3>The right people see the right things</h3>
-              <p>Teachers, advisors, and parents each see a view scoped to their role. No one sees more than your school's policy allows.</p>
-            </div>
-          </div>
-        </div>
-      </div>
-    </section>
+    <!-- ═══ SECTION D+E: CINEMATIC SCROLL MATRIX (replaces Radial) ═══ -->
+    <section class="matrix-section" id="how">
+      <div class="matrix-viewport-container">
 
-    <!-- ═══ SECTION E: STAKEHOLDER GLIMPSES ═══ -->
-    <section class="glimpse section">
-      <div class="container">
-        <div class="glimpse-head animate-in">
-          <h2>What each role actually sees.</h2>
-        </div>
-        <div class="glimpse-grid animate-in">
+        <div class="matrix-left-track">
 
-          <div class="glimpse-card">
-            <p class="glimpse-label">For Teachers</p>
-            <div class="glimpse-excerpt">
-              <span class="gx-label">Best Teaching Approach &mdash; Ryoto Falcon</span>
-              Ryoto responds well to verbal exploration and open-ended questions. Benefits from structured guidance for mathematical concepts. Struggle areas: function notation, domain of a function.
-            </div>
-            <a href="/for/teachers" class="glimpse-link">See what teachers get &rarr;</a>
+          <div class="matrix-scroll-card active" data-matrix-step="01">
+            <div class="matrix-num-badge">01</div>
+            <h2 class="matrix-heading">The Student AI Interface</h2>
+            <p class="matrix-body">
+              Students collaborate with a conversational Socratic guide tuned to your academic standards. The software blocks copy-paste code bypassing and forces learners to clarify their conceptual logic before answering.
+            </p>
           </div>
 
-          <div class="glimpse-card">
-            <p class="glimpse-label">For Advisors</p>
-            <div class="glimpse-excerpt">
-              <span class="gx-label">Week of March 10 &mdash; James M., Grade 11</span>
-              &ldquo;This week James worked through three calculus problems independently before asking for help, and spent 40 minutes outside of any assignment exploring questions about climate policy. He pushed back twice on the AI's first responses.&rdquo;
-              <span class="gx-priv">Source conversations deleted &middot; Derived insight only</span>
-            </div>
-            <a href="/for/advisors" class="glimpse-link">See what advisors get &rarr;</a>
+          <div class="matrix-scroll-card" data-matrix-step="02">
+            <div class="matrix-num-badge">02</div>
+            <h2 class="matrix-heading">Continuous Analysis Pipeline</h2>
+            <p class="matrix-body">
+              Interactions are synthesized nightly into structured cognitive milestones and study dynamics. Complete raw conversation text logs are fully scrubbed at 7 days to protect family data security.
+            </p>
           </div>
 
-          <div class="glimpse-card">
-            <p class="glimpse-label">For Parents</p>
-            <div class="glimpse-excerpt">
-              <span class="gx-label">This Week &mdash; Test Student</span>
-              <strong>Bright spot:</strong> completed five quizzes independently, without any formal sessions.<br><br>
-              <strong>Something to talk about:</strong> &ldquo;Which of those recent quizzes felt the easiest, and why?&rdquo;<br><br>
-              <em>When Test studies: most active late at night.</em>
-            </div>
-            <a href="/for/parents" class="glimpse-link">See what parents get &rarr;</a>
+          <div class="matrix-scroll-card" data-matrix-step="03">
+            <div class="matrix-num-badge">03</div>
+            <h2 class="matrix-heading">Role-Scoped Institutional Visibility</h2>
+            <p class="matrix-body">
+              The metrics layer maps directly to your school&rsquo;s visibility controls. Data slices route securely to the right roles&mdash;giving teachers cohort maps, advisors summaries, and parents custom updates.
+            </p>
           </div>
 
         </div>
+
+        <div class="matrix-right-stage" aria-hidden="true">
+          <div class="canvas-mockup">
+
+            <div class="canvas-chrome">
+              <div class="mockup-dots"><div class="mockup-dot"></div><div class="mockup-dot"></div><div class="mockup-dot"></div></div>
+              <span class="canvas-indicator-tag" id="matrix-active-tag">Workspace Lens &middot; Active Tutor</span>
+            </div>
+
+            <div class="canvas-window-body">
+
+              <div class="canvas-view-pane active" id="pane-matrix-01">
+                <h4 class="matrix-ui-header">Orchen Socratic Environment</h4>
+                <div class="matrix-ui-box">
+                  <p style="font-size: 0.95rem; margin: 0; line-height: 1.6; color: var(--ink-muted);">
+                    <span style="color: var(--green); font-weight: 600; display: block; margin-bottom: 4px;">Orchen:</span>
+                    "Let's check the structural assumptions behind that equation layout before computing the values. What does the parameter represent in your own words?"
+                  </p>
+                </div>
+                <div style="font-family: var(--font-body); font-size: 0.75rem; color: var(--ink-faint); text-transform: uppercase; letter-spacing: 0.05em;">
+                  Active Engagement &middot; Answer Giveaways Guarded
+                </div>
+              </div>
+
+              <div class="canvas-view-pane" id="pane-matrix-02">
+                <h4 class="matrix-ui-header">Privacy Engine Scrubbing Track</h4>
+                <div class="matrix-ui-box" style="border-left-color: var(--amber); background: rgba(156,124,74,0.04);">
+                  <p style="font-family: var(--font-body); font-size: 0.875rem; line-height: 1.6; color: var(--ink-muted); margin: 0;">
+                    [ Day 0 ] Interactive chat streaming active <br>
+                    [ Day 1 ] Metadata signals written to student goals <br>
+                    <span style="color: var(--amber); font-weight: 600;">[ Day 7 ] Source conversation log securely deleted</span> <br>
+                    [ Status ] Immutable analytical profile saved.
+                  </p>
+                </div>
+                <div style="font-family: var(--font-body); font-size: 0.75rem; color: var(--ink-faint); text-transform: uppercase; letter-spacing: 0.05em;">
+                  Compliance Isolation &middot; FERPA/COPPA Compliant Ledger
+                </div>
+              </div>
+
+              <div class="canvas-view-pane" id="pane-matrix-03">
+                <h4 class="matrix-ui-header">Multi-Stakeholder Data Distribution</h4>
+                <div style="display: flex; flex-direction: column; gap: 12px; max-height: 240px; overflow-y: auto; padding-right: 4px;">
+
+                  <div style="background: var(--bg); padding: 10px 14px; border-radius: 4px; border-left: 3px solid var(--green);">
+                    <span style="font-size: 0.65rem; text-transform: uppercase; letter-spacing: 0.08em; color: var(--green); display: block; font-weight: 600; margin-bottom: 2px;">For Teachers</span>
+                    <p style="font-size: 0.8125rem; margin: 0; color: var(--ink-muted);">Ryoto Falcon roadblock details: function notation layouts.</p>
+                  </div>
+
+                  <div style="background: var(--bg); padding: 10px 14px; border-radius: 4px; border-left: 3px solid var(--amber);">
+                    <span style="font-size: 0.65rem; text-transform: uppercase; letter-spacing: 0.08em; color: var(--amber); display: block; font-weight: 600; margin-bottom: 2px;">For Advisors</span>
+                    <p style="font-size: 0.8125rem; margin: 0; color: var(--ink-muted);">James M. completed 3 proofs independently outside class modules.</p>
+                  </div>
+
+                  <div style="background: var(--bg); padding: 10px 14px; border-radius: 4px; border-left: 3px solid #6B9B80;">
+                    <span style="font-size: 0.65rem; text-transform: uppercase; letter-spacing: 0.08em; color: #6B9B80; display: block; font-weight: 600; margin-bottom: 2px;">For Parents</span>
+                    <p style="font-size: 0.8125rem; margin: 0; color: var(--ink-muted);">Bright Spot: Completed 5 quizzes independently. Starter question provided.</p>
+                  </div>
+
+                </div>
+              </div>
+
+            </div>
+
+          </div>
+        </div>
+
       </div>
     </section>
 
@@ -2869,6 +2950,43 @@ document.addEventListener('DOMContentLoaded', () => {
         if (btn.textContent === 'Sending…') btn.textContent = 'Book a walkthrough →';
       }
     });
+  }
+
+  // ─── CINEMATIC SCROLLWAY ENGINE SCROLL COORDINATOR ──────
+  const matrixCards = document.querySelectorAll('.matrix-scroll-card');
+  const matrixPanes = document.querySelectorAll('.canvas-view-pane');
+  const matrixTag   = document.getElementById('matrix-active-tag');
+
+  const updateMatrixLabelText = (stepId) => {
+    if (stepId === '01') matrixTag.textContent = 'Workspace Lens &middot; Active Tutor';
+    if (stepId === '02') matrixTag.textContent = 'Privacy Engine &middot; Encryption Trail';
+    if (stepId === '03') matrixTag.textContent = 'Platform Grid &middot; Scoped Visibility';
+  };
+
+  if ('IntersectionObserver' in window && !reduceMotion) {
+    const matrixObserver = new IntersectionObserver((entries) => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          // Clear standard states
+          matrixCards.forEach(card => card.classList.remove('active'));
+          matrixPanes.forEach(pane => pane.classList.remove('active'));
+
+          // Trigger active highlights on the pinned elements
+          entry.target.classList.add('active');
+          const activeStep = entry.target.dataset.matrixStep;
+
+          const currentPane = document.getElementById(`pane-matrix-${activeStep}`);
+          if (currentPane) currentPane.classList.add('active');
+
+          updateMatrixLabelText(activeStep);
+        }
+      });
+    }, {
+      threshold: 0.5,
+      rootMargin: '-10% 0px -20% 0px'
+    });
+
+    matrixCards.forEach(card => matrixObserver.observe(card));
   }
 
 });
