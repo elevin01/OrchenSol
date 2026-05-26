@@ -14,7 +14,13 @@
       "Bash([ -f \"$u/index.html\" ])",
       "Bash(sed -n '3076,3100p' index.html)",
       "Bash(sed -n '3120,3160p' index.html)",
-      "Bash(grep -nA1 'class=\"btn btn-primary\"' index.html)"
+      "Bash(grep -nA1 'class=\"btn btn-primary\"' index.html)",
+      "Bash(sips -g pixelWidth -g pixelHeight \"assets/Untitled design \\(61\\).png\")",
+      "Bash(sips -s format png -z 256 256 assets/orchen-mark-source.png --out assets/favicon.png)",
+      "Bash(sips -s format png -z 180 180 assets/orchen-mark-source.png --out assets/apple-touch-icon.png)",
+      "Bash(sips -s format png -z 32 32 assets/orchen-mark-source.png --out assets/favicon-32.png)",
+      "Bash(awk '{printf \"%-44s %s\\\\n\", $NF, $5}')",
+      "Bash(python3 -c ' *)"
     ]
   }
 }
