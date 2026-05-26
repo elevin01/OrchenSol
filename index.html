@@ -527,6 +527,84 @@ h4 {
 }
 .hero-cta:hover { background: var(--green-light); }
 
+/* ─── HERO CTAs wrapper + outline secondary ─── */
+.hero-ctas {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: flex-start;
+  gap: 0.85rem;
+}
+.hero-cta-secondary {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.5rem;
+  min-width: 240px;
+  font-family: var(--font-body);
+  font-size: 15px;
+  letter-spacing: 0.06em;
+  font-weight: 500;
+  color: rgba(255,255,255,0.92);
+  background: transparent;
+  padding: 17px 36px;
+  border: 1px solid rgba(255,255,255,0.32);
+  cursor: pointer;
+  text-decoration: none;
+  text-align: center;
+  transition: background 0.2s, border-color 0.2s, color 0.2s;
+}
+.hero-cta-secondary:hover {
+  background: rgba(255,255,255,0.08);
+  border-color: rgba(255,255,255,0.55);
+  color: #fff;
+}
+.hero-cta-secondary .beta {
+  font-size: 0.625rem;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+  color: rgba(255,255,255,0.55);
+  padding: 2px 6px;
+  border: 1px solid rgba(255,255,255,0.22);
+  border-radius: 2px;
+}
+
+/* ─── CONTACT secondary CTA (outline, sits below form submit) ─── */
+.form-secondary-cta {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.5rem;
+  margin-top: 1rem;
+  padding: 0.875rem 2rem;
+  font-family: var(--font-body);
+  font-size: 0.9375rem;
+  font-weight: 500;
+  letter-spacing: 0.02em;
+  color: rgba(255,255,255,0.92);
+  background: transparent;
+  border: 1px solid rgba(255,255,255,0.32);
+  border-radius: 2px;
+  text-decoration: none;
+  transition: background 0.2s, border-color 0.2s, color 0.2s;
+  align-self: flex-start;
+}
+.form-secondary-cta:hover {
+  background: rgba(255,255,255,0.08);
+  border-color: rgba(255,255,255,0.55);
+  color: #fff;
+}
+.form-secondary-cta .beta {
+  font-size: 0.625rem;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+  color: rgba(255,255,255,0.55);
+  padding: 2px 6px;
+  border: 1px solid rgba(255,255,255,0.22);
+  border-radius: 2px;
+}
+
+
 /* Card subtext — brief sentence below headline */
 .card-subtext {
   font-family: var(--font-body);
@@ -1702,27 +1780,230 @@ h4 {
 }
 .research-brief-link a:hover { color: #fff; border-color: #fff; }
 
+/* ─── SECTION B2 — WHAT ORCHEN IS ─── */
+.what-is {
+  background: var(--bg);
+  position: relative;
+  padding-block: 8rem;
+  overflow: hidden;
+}
+/* Dark design panel — section background element on the right, NOT a frame.
+   Bleeds to the right viewport edge; rounded inner corner faces the text. */
+.what-is::before {
+  content: '';
+  position: absolute;
+  top: 4.5rem;
+  bottom: 4.5rem;
+  right: 0;
+  width: 56%;
+  background: linear-gradient(135deg, #1F3D2D 0%, #0F2218 100%);
+  border-top-left-radius: 32px;
+  border-bottom-left-radius: 32px;
+  box-shadow:
+    0 30px 80px rgba(15,34,24,0.22),
+    inset 0 1px 0 rgba(255,255,255,0.04);
+  z-index: 0;
+}
+.what-is::after {
+  /* Soft top sheen on the dark panel */
+  content: '';
+  position: absolute;
+  top: 4.5rem;
+  right: 0;
+  width: 56%;
+  height: 240px;
+  background: radial-gradient(ellipse 70% 60% at 50% 0%, rgba(255,255,255,0.04) 0%, transparent 70%);
+  border-top-left-radius: 32px;
+  pointer-events: none;
+  z-index: 0;
+}
+.what-is-grid {
+  position: relative;
+  z-index: 1;
+  display: grid;
+  grid-template-columns: minmax(0, 0.9fr) minmax(0, 1.35fr);
+  gap: clamp(2.5rem, 5vw, 5rem);
+  align-items: center;
+  max-width: 1720px;
+  margin: 0 auto;
+  /* Asymmetric padding: more on the left to anchor the copy column,
+     less on the right so the product shot breathes toward the edge. */
+  padding-left: clamp(1.75rem, 6vw, 6rem);
+  padding-right: clamp(1.5rem, 3.5vw, 3.5rem);
+}
+
+/* Copy column */
+.what-is-copy { max-width: 560px; }
+.what-is-copy .eyebrow {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.75rem;
+  margin-bottom: 2.25rem;
+}
+.what-is-copy .eyebrow::before {
+  content: '';
+  width: 22px;
+  height: 1px;
+  background: currentColor;
+  opacity: 0.55;
+  flex-shrink: 0;
+}
+.what-is-copy h2 {
+  font-family: var(--font-display);
+  font-weight: 700;
+  font-size: clamp(2.5rem, 5.4vw, 4.4rem);
+  line-height: 1.02;
+  letter-spacing: -0.03em;
+  color: var(--ink);
+  margin: 0 0 2.25rem;
+}
+.what-is-copy h2 em {
+  display: block;
+  font-style: italic;
+  font-weight: 700;
+  color: var(--green);
+  margin-top: 0.15em;
+}
+.what-is-copy p {
+  font-family: var(--font-body);
+  font-size: 1.0625rem;
+  line-height: 1.75;
+  color: var(--ink);
+  margin: 0 0 1.25rem;
+}
+.what-is-copy p.lead {
+  font-size: 1.0625rem;
+  color: var(--ink);
+}
+.what-is-copy p:last-of-type { margin-bottom: 0; }
+.what-is-copy p strong { font-weight: 600; }
+
+/* Bottom editorial rule — subtle anchor below the text */
+.what-is-rule {
+  display: block;
+  margin-top: 3rem;
+  height: 1px;
+  background: linear-gradient(to right, var(--green-light) 0, var(--green-light) 8px, var(--border) 8px, var(--border) 100%);
+  background-size: 100% 1px;
+  position: relative;
+}
+.what-is-rule::before {
+  content: '✦';
+  position: absolute;
+  left: -2px;
+  top: -10px;
+  font-size: 0.625rem;
+  color: var(--green-light);
+  background: var(--bg);
+  padding-right: 4px;
+}
+
+/* Visual column — no dark frame; the image carries its own staging */
+.what-is-visual {
+  position: relative;
+  background: none;
+  padding: 0;
+  box-shadow: none;
+  min-height: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.what-is-visual::before { display: none; }
+.what-is-shot {
+  position: relative;
+  width: 94%;
+  max-width: 680px;
+  height: auto;
+  display: block;
+  margin-inline: auto;
+}
+
+@media (max-width: 1100px) {
+  .what-is-grid { grid-template-columns: minmax(0, 1fr) minmax(0, 1.2fr); gap: 3rem; }
+}
+@media (max-width: 900px) {
+  .what-is { padding-block: 5rem; }
+  .what-is::before,
+  .what-is::after { display: none; }
+  .what-is-grid {
+    grid-template-columns: 1fr;
+    gap: 3rem;
+    padding-left: clamp(1.5rem, 5vw, 3rem);
+    padding-right: clamp(1.5rem, 5vw, 3rem);
+  }
+  .what-is-copy { max-width: none; }
+  .what-is-copy h2 { font-size: clamp(2.1rem, 7vw, 2.75rem); }
+  .what-is-rule { margin-top: 2.25rem; }
+  .what-is-shot { max-width: 640px; width: 100%; }
+}
+
 /* ─── SECTION C — YES, ORCHEN IS AI TOO ─── */
-.yes-ai { background: var(--bg); }
-.yes-ai-inner { max-width: 680px; margin: 0 auto; }
+.yes-ai {
+  background: var(--bg);
+  padding-block: 7.5rem;
+}
+.yes-ai-inner { max-width: 720px; margin: 0 auto; }
+.yes-ai .eyebrow {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.65rem;
+}
+.yes-ai .eyebrow::before {
+  content: '';
+  width: 18px;
+  height: 1px;
+  background: currentColor;
+  opacity: 0.55;
+  flex-shrink: 0;
+}
 .yes-ai h2 {
   font-family: var(--font-display);
   font-weight: 700;
-  font-size: clamp(1.9rem, 4vw, 2.75rem);
-  line-height: 1.15;
-  letter-spacing: -0.02em;
+  font-size: clamp(2.1rem, 4.6vw, 3rem);
+  line-height: 1.1;
+  letter-spacing: -0.022em;
   color: var(--ink);
-  margin: 0 0 1.5rem;
+  margin: 0 0 2rem;
+}
+.yes-ai h2 em {
+  font-style: italic;
+  font-weight: 600;
+  color: var(--green);
 }
 .yes-ai p {
   font-family: var(--font-body);
-  font-size: 1.1875rem;
-  line-height: 1.75;
+  font-size: 1.125rem;
+  line-height: 1.8;
   color: var(--ink-muted);
-  margin: 0 0 1.25rem;
+  margin: 0 0 1.4rem;
 }
 .yes-ai p:last-child { margin-bottom: 0; }
 .yes-ai p strong { color: var(--ink); font-weight: 600; }
+
+/* Closing-line coda — visual punctuation */
+.yes-ai-coda {
+  margin-top: 2.5rem;
+  padding: 1.6rem 1.85rem;
+  background: #fff;
+  border-left: 3px solid var(--green);
+  border-radius: 0 8px 8px 0;
+  box-shadow: 0 8px 28px rgba(26,26,26,0.05);
+  font-family: var(--font-display);
+  font-style: italic;
+  font-size: clamp(1.15rem, 2vw, 1.4rem);
+  line-height: 1.45;
+  letter-spacing: -0.01em;
+  color: var(--ink);
+}
+.yes-ai-coda strong {
+  font-style: normal;
+  font-weight: 700;
+  color: var(--green-dark);
+}
+@media (max-width: 900px) {
+  .yes-ai { padding-block: 5rem; }
+}
 
 /* ─── CINEMATIC SCROLL MATRIX SCROLLWAY ─── */
 .matrix-section {
@@ -1853,11 +2134,12 @@ h4 {
 /* Screen State Switching Transitions */
 .canvas-view-pane {
   display: none;
-  animation: visualMatrixSweep 0.5s cubic-bezier(0.25, 1, 0.5, 1) forwards;
 }
 
 .canvas-view-pane.active {
   display: block;
+  position: relative;
+  min-height: 320px;
 }
 
 @keyframes visualMatrixSweep {
@@ -1905,6 +2187,395 @@ h4 {
   .matrix-scroll-card:last-child {
     border-bottom: none;
   }
+}
+
+/* ─── ROLE STEP-THROUGH ANIMATIONS — one beat at a time, looping ─── */
+
+/* Each beat fills the pane (stage). Default: hidden. */
+.stu-beat, .tch-beat, .par-beat {
+  position: absolute;
+  inset: 0;
+  opacity: 0;
+  pointer-events: none;
+  display: flex;
+  flex-direction: column;
+  border-radius: 8px;
+  overflow: hidden;
+}
+
+/* Reduce-motion fallback: show only the final beat per role.
+   Overridden inside the @media (prefers-reduced-motion: no-preference) block below. */
+.canvas-view-pane.role-student.active .beat-final,
+.canvas-view-pane.role-teacher.active .beat-final,
+.canvas-view-pane.role-parent.active  .beat-final {
+  opacity: 1;
+  pointer-events: auto;
+}
+
+/* ── STUDENT BEAT 1 — dark chat surface ── */
+.stu-chat-screen {
+  background: #fff;
+  color: var(--ink);
+  padding: 1rem 1.1rem;
+  gap: 0.6rem;
+  border: 1px solid var(--border);
+}
+.stu-chat-header {
+  display: flex; align-items: center; gap: 0.5rem;
+  padding-bottom: 0.5rem;
+  border-bottom: 1px solid var(--border-light);
+  margin-bottom: 0.25rem;
+}
+.stu-chat-tab {
+  font-family: var(--font-display); font-weight: 700; font-size: 0.9rem;
+  color: var(--ink);
+}
+.stu-chat-meta {
+  font-family: 'SFMono-Regular', ui-monospace, Menlo, monospace;
+  font-size: 0.55rem; letter-spacing: 0.14em; text-transform: uppercase;
+  color: var(--ink-faint);
+  margin-left: auto;
+}
+.stu-chat-msg { display: flex; }
+.stu-chat-msg.user { justify-content: flex-end; }
+.stu-chat-msg.ai   { justify-content: flex-start; }
+.stu-chat-bubble {
+  font-family: var(--font-body); font-size: 0.82rem; line-height: 1.5;
+  padding: 0.55rem 0.8rem; border-radius: 10px; max-width: 82%;
+}
+.stu-chat-msg.user .stu-chat-bubble {
+  background: var(--border-light); color: var(--ink);
+  border-bottom-right-radius: 3px;
+}
+.stu-chat-msg.ai .stu-chat-bubble {
+  background: #D4E8DC; color: var(--green-dark);
+  border-bottom-left-radius: 3px;
+}
+
+/* ── STUDENT BEAT 2 — flashcard with 3D flip ── */
+.stu-flash-stage {
+  background: var(--bg);
+  perspective: 900px;
+  align-items: center; justify-content: center;
+  padding: 1.5rem;
+}
+.stu-flash-card {
+  position: relative;
+  width: 100%; max-width: 320px; height: 180px;
+  transform-style: preserve-3d;
+  will-change: transform;
+}
+.stu-flash-face {
+  position: absolute; inset: 0;
+  backface-visibility: hidden;
+  -webkit-backface-visibility: hidden;
+  background: #fff;
+  border: 1px solid var(--border);
+  border-radius: 10px;
+  padding: 1.25rem 1.4rem;
+  display: flex; flex-direction: column; justify-content: center; gap: 0.45rem;
+  box-shadow: 0 10px 30px rgba(26,26,26,0.10);
+}
+.stu-flash-face .flash-label {
+  font-family: 'SFMono-Regular', ui-monospace, Menlo, monospace;
+  font-size: 0.55rem; letter-spacing: 0.14em; text-transform: uppercase;
+  color: var(--ink-faint);
+}
+.stu-flash-front .flash-prompt {
+  font-family: var(--font-display); font-weight: 700; font-size: 1.1rem;
+  color: var(--ink); line-height: 1.25;
+}
+.stu-flash-front .flash-hint {
+  font-family: 'SFMono-Regular', ui-monospace, Menlo, monospace;
+  font-size: 0.625rem; letter-spacing: 0.1em; color: var(--green);
+  text-transform: uppercase;
+}
+.stu-flash-back {
+  background: var(--bg);
+  border-left: 3px solid var(--green);
+  transform: rotateY(180deg);
+}
+.stu-flash-back .flash-answer {
+  font-family: var(--font-body); font-size: 0.8125rem; line-height: 1.55;
+  color: var(--ink);
+}
+
+/* ── STUDENT BEAT 3 — quiz ── */
+.stu-quiz {
+  background: #fff;
+  border: 1px solid var(--border);
+  padding: 1.1rem 1.25rem;
+  gap: 0.55rem;
+  justify-content: center;
+}
+.stu-quiz .quiz-label {
+  font-family: 'SFMono-Regular', ui-monospace, Menlo, monospace;
+  font-size: 0.55rem; letter-spacing: 0.14em; text-transform: uppercase;
+  color: var(--ink-faint);
+}
+.stu-quiz .quiz-question {
+  font-family: var(--font-display); font-weight: 700; font-size: 0.95rem;
+  color: var(--ink); margin: 0 0 0.4rem;
+}
+.stu-quiz .quiz-opts {
+  display: grid; grid-template-columns: 1fr 1fr; gap: 0.45rem;
+}
+.stu-quiz .quiz-opt {
+  font-family: var(--font-body); font-size: 0.8125rem;
+  padding: 0.5rem 0.7rem;
+  background: transparent; border: 1px solid var(--border); border-radius: 6px;
+  color: var(--ink);
+  transition: background 0.4s, border-color 0.4s, color 0.4s;
+}
+
+/* ── STUDENT BEAT 4 — learning profile ── */
+.stu-profile-card {
+  background: var(--bg);
+  border: 1px solid var(--border);
+  padding: 1.25rem 1.4rem;
+  justify-content: center;
+  gap: 0.8rem;
+}
+.stu-profile-card .prof-label {
+  font-family: 'SFMono-Regular', ui-monospace, Menlo, monospace;
+  font-size: 0.55rem; letter-spacing: 0.14em; text-transform: uppercase;
+  color: var(--ink-faint);
+}
+.stu-profile-card .prof-row {
+  display: grid; grid-template-columns: 88px 1fr 36px;
+  gap: 0.6rem; align-items: center;
+}
+.stu-profile-card .prof-name { font-size: 0.75rem; color: var(--ink-muted); }
+.stu-profile-card .prof-track {
+  height: 7px; background: rgba(0,0,0,0.07); border-radius: 99px; overflow: hidden;
+}
+.stu-profile-card .prof-fill {
+  display: block; height: 100%; background: var(--green); width: 78%;
+}
+.stu-profile-card .prof-val {
+  font-family: 'SFMono-Regular', ui-monospace, Menlo, monospace;
+  font-size: 0.7rem; color: var(--ink-faint); text-align: right;
+}
+
+/* ── TEACHER BEAT 1 — dashboard ── */
+.tch-dashboard {
+  background: #fff;
+  border: 1px solid var(--border);
+  padding: 1rem;
+  justify-content: center;
+}
+.tch-dashboard .tch-grid {
+  display: grid; grid-template-columns: 1fr 1fr; gap: 0.55rem;
+  width: 100%;
+}
+.tch-dashboard .tch-tile {
+  background: var(--bg); border-radius: 6px;
+  padding: 0.7rem 0.85rem 0.85rem;
+  display: flex; flex-direction: column; gap: 0.35rem;
+  opacity: 0;
+}
+.tch-dashboard .tch-label {
+  font-family: 'SFMono-Regular', ui-monospace, Menlo, monospace;
+  font-size: 0.55rem; letter-spacing: 0.14em; text-transform: uppercase;
+  color: var(--ink-faint);
+}
+.tch-dashboard .tch-val {
+  font-family: var(--font-display); font-weight: 700; font-size: 1.3rem;
+  color: var(--ink); line-height: 1;
+}
+.tch-dashboard .tch-track {
+  height: 4px; background: rgba(0,0,0,0.06); border-radius: 99px; overflow: hidden; margin-top: 0.2rem;
+}
+.tch-dashboard .tch-track > span {
+  display: block; height: 100%; background: var(--green); width: 100%;
+}
+
+/* ── TEACHER BEAT 2 — focused student card ── */
+.tch-focus-card {
+  background: var(--bg);
+  border-left: 3px solid var(--green);
+  border-radius: 0 8px 8px 0;
+  padding: 1.2rem 1.4rem;
+  justify-content: center;
+  gap: 0.45rem;
+}
+.tch-focus-card .tch-flabel {
+  font-family: 'SFMono-Regular', ui-monospace, Menlo, monospace;
+  font-size: 0.55rem; letter-spacing: 0.14em; text-transform: uppercase;
+  color: var(--ink-faint);
+}
+.tch-focus-card .tch-name {
+  font-family: var(--font-display); font-weight: 700; font-size: 1.05rem;
+  color: var(--ink);
+}
+.tch-focus-card .tch-note {
+  font-family: var(--font-body); font-size: 0.85rem; line-height: 1.55;
+  color: var(--ink-muted); margin: 0;
+}
+.tch-focus-card .tch-note strong { color: var(--ink); font-weight: 600; }
+
+/* ── PARENT BEAT 1 — summary view ── */
+.par-summary {
+  background: #fff;
+  border: 1px solid var(--border);
+  padding: 1.1rem 1.25rem;
+  gap: 0.55rem;
+  justify-content: center;
+}
+.par-summary .par-row {
+  background: var(--bg);
+  border-radius: 6px;
+  padding: 0.7rem 0.9rem;
+  display: flex; align-items: center; justify-content: space-between;
+  gap: 0.75rem;
+  opacity: 0;
+}
+.par-summary .par-l { display: flex; flex-direction: column; gap: 2px; min-width: 0; }
+.par-summary .par-label {
+  font-family: 'SFMono-Regular', ui-monospace, Menlo, monospace;
+  font-size: 0.55rem; letter-spacing: 0.14em; text-transform: uppercase;
+  color: var(--ink-faint);
+}
+.par-summary .par-text { font-size: 0.8125rem; color: var(--ink); }
+.par-summary .par-r {
+  font-family: 'SFMono-Regular', ui-monospace, Menlo, monospace;
+  font-size: 0.6875rem; color: var(--ink-muted); white-space: nowrap;
+}
+
+/* ── PARENT BEAT 2 — single action card ── */
+.par-action-card {
+  background: linear-gradient(180deg, #fff 0%, var(--bg) 100%);
+  border: 1px solid var(--border);
+  border-left: 3px solid var(--amber);
+  border-radius: 0 10px 10px 0;
+  padding: 1.3rem 1.5rem;
+  justify-content: center;
+  gap: 8px;
+  box-shadow: 0 6px 20px rgba(156,124,74,0.10);
+}
+.par-action-card .pa-label {
+  font-family: 'SFMono-Regular', ui-monospace, Menlo, monospace;
+  font-size: 0.55rem; letter-spacing: 0.18em; text-transform: uppercase;
+  color: var(--amber); font-weight: 600;
+}
+.par-action-card .pa-title {
+  font-family: var(--font-display); font-weight: 700; font-size: 1.05rem;
+  color: var(--ink); line-height: 1.35;
+}
+.par-action-card .pa-note {
+  font-family: var(--font-body); font-size: 0.8125rem; line-height: 1.55;
+  color: var(--ink-muted);
+}
+
+/* ─── BEAT VISIBILITY + INNER ANIMATION KEYFRAMES ─── */
+
+/* STUDENT — 16s cycle, 4 beats */
+@keyframes stuBeat1Show {
+  0% { opacity: 0; transform: translateY(6px); }
+  3%, 22% { opacity: 1; transform: none; }
+  26%, 100% { opacity: 0; transform: translateY(6px); }
+}
+@keyframes stuBeat2Show {
+  0%, 25% { opacity: 0; transform: translateY(6px); }
+  28%, 47% { opacity: 1; transform: none; }
+  51%, 100% { opacity: 0; transform: translateY(6px); }
+}
+@keyframes stuBeat3Show {
+  0%, 50% { opacity: 0; transform: translateY(6px); }
+  53%, 72% { opacity: 1; transform: none; }
+  76%, 100% { opacity: 0; transform: translateY(6px); }
+}
+@keyframes stuBeat4Show {
+  0%, 75% { opacity: 0; transform: translateY(6px); }
+  78%, 97% { opacity: 1; transform: none; }
+  100% { opacity: 0; transform: translateY(6px); }
+}
+@keyframes stuFlashFlip {
+  0%, 36% { transform: rotateY(0deg); }
+  43%, 47% { transform: rotateY(180deg); }
+  100% { transform: rotateY(0deg); }
+}
+@keyframes stuQuizPick {
+  0%, 62% { background: transparent; border-color: var(--border); color: var(--ink); }
+  66%, 72% { background: rgba(44,95,63,0.12); border-color: var(--green); color: var(--green); }
+  100% { background: transparent; border-color: var(--border); color: var(--ink); }
+}
+@keyframes stuMeterNudge {
+  0%, 80% { width: 60%; }
+  90%, 97% { width: 78%; }
+  100% { width: 60%; }
+}
+
+/* TEACHER — 12s cycle, 2 beats */
+@keyframes tchBeat1Show {
+  0% { opacity: 0; transform: translateY(6px); }
+  3%, 45% { opacity: 1; transform: none; }
+  49%, 100% { opacity: 0; transform: translateY(6px); }
+}
+@keyframes tchBeat2Show {
+  0%, 48% { opacity: 0; transform: translateY(6px); }
+  52%, 95% { opacity: 1; transform: none; }
+  100% { opacity: 0; transform: translateY(6px); }
+}
+@keyframes tchTileIn1 { 0%, 5%  { opacity: 0; transform: translateY(8px); } 11%, 100% { opacity: 1; transform: none; } }
+@keyframes tchTileIn2 { 0%, 12% { opacity: 0; transform: translateY(8px); } 18%, 100% { opacity: 1; transform: none; } }
+@keyframes tchTileIn3 { 0%, 19% { opacity: 0; transform: translateY(8px); } 25%, 100% { opacity: 1; transform: none; } }
+@keyframes tchTileIn4 { 0%, 26% { opacity: 0; transform: translateY(8px); } 32%, 100% { opacity: 1; transform: none; } }
+@keyframes tchBar1 { 0%, 11% { width: 0%; } 18%, 100% { width: 100%; } }
+@keyframes tchBar2 { 0%, 18% { width: 0%; } 25%, 100% { width: 100%; } }
+@keyframes tchBar3 { 0%, 25% { width: 0%; } 32%, 100% { width: 100%; } }
+@keyframes tchBar4 { 0%, 32% { width: 0%; } 39%, 100% { width: 100%; } }
+
+/* PARENT — 12s cycle, 2 beats (Beat 2 holds to end) */
+@keyframes parBeat1Show {
+  0% { opacity: 0; transform: translateY(6px); }
+  3%, 45% { opacity: 1; transform: none; }
+  49%, 100% { opacity: 0; transform: translateY(6px); }
+}
+@keyframes parBeat2Show {
+  0%, 48% { opacity: 0; transform: translateY(6px); }
+  53%, 100% { opacity: 1; transform: none; }
+}
+@keyframes parItem1In { 0%, 5%  { opacity: 0; transform: translateY(6px); } 12%, 100% { opacity: 1; transform: none; } }
+@keyframes parItem2In { 0%, 15% { opacity: 0; transform: translateY(6px); } 22%, 100% { opacity: 1; transform: none; } }
+
+@media (prefers-reduced-motion: no-preference) {
+  /* Re-trigger pane sweep-in on each activation */
+  .canvas-view-pane.active {
+    animation: visualMatrixSweep 0.5s cubic-bezier(0.25, 1, 0.5, 1) forwards;
+  }
+
+  /* Hide the reduce-motion fallback so the animation loop can drive visibility */
+  .canvas-view-pane.role-student.active .beat-final,
+  .canvas-view-pane.role-teacher.active .beat-final,
+  .canvas-view-pane.role-parent.active  .beat-final { opacity: 0; }
+
+  /* STUDENT — 16s loop, 4 beats one-at-a-time */
+  .canvas-view-pane.role-student.active .stu-beat.beat-1 { animation: stuBeat1Show 16s infinite ease-out; }
+  .canvas-view-pane.role-student.active .stu-beat.beat-2 { animation: stuBeat2Show 16s infinite ease-out; }
+  .canvas-view-pane.role-student.active .stu-beat.beat-3 { animation: stuBeat3Show 16s infinite ease-out; }
+  .canvas-view-pane.role-student.active .stu-beat.beat-4 { animation: stuBeat4Show 16s infinite ease-out; }
+  .canvas-view-pane.role-student.active .stu-flash-card  { animation: stuFlashFlip 16s infinite ease-in-out; }
+  .canvas-view-pane.role-student.active .stu-quiz .quiz-opt.picked { animation: stuQuizPick 16s infinite; }
+  .canvas-view-pane.role-student.active .stu-profile-card .prof-fill-nudge { animation: stuMeterNudge 16s infinite ease-out; }
+
+  /* TEACHER — 12s loop, 2 beats */
+  .canvas-view-pane.role-teacher.active .tch-beat.beat-1 { animation: tchBeat1Show 12s infinite ease-out; }
+  .canvas-view-pane.role-teacher.active .tch-beat.beat-2 { animation: tchBeat2Show 12s infinite ease-out; }
+  .canvas-view-pane.role-teacher.active .tch-dashboard .tch-tile:nth-of-type(1) { animation: tchTileIn1 12s infinite ease-out; }
+  .canvas-view-pane.role-teacher.active .tch-dashboard .tch-tile:nth-of-type(2) { animation: tchTileIn2 12s infinite ease-out; }
+  .canvas-view-pane.role-teacher.active .tch-dashboard .tch-tile:nth-of-type(3) { animation: tchTileIn3 12s infinite ease-out; }
+  .canvas-view-pane.role-teacher.active .tch-dashboard .tch-tile:nth-of-type(4) { animation: tchTileIn4 12s infinite ease-out; }
+  .canvas-view-pane.role-teacher.active .tch-dashboard .tch-tile:nth-of-type(1) .tch-track > span { animation: tchBar1 12s infinite ease-out; }
+  .canvas-view-pane.role-teacher.active .tch-dashboard .tch-tile:nth-of-type(2) .tch-track > span { animation: tchBar2 12s infinite ease-out; }
+  .canvas-view-pane.role-teacher.active .tch-dashboard .tch-tile:nth-of-type(3) .tch-track > span { animation: tchBar3 12s infinite ease-out; }
+  .canvas-view-pane.role-teacher.active .tch-dashboard .tch-tile:nth-of-type(4) .tch-track > span { animation: tchBar4 12s infinite ease-out; }
+
+  /* PARENT — 12s loop, ends on the action */
+  .canvas-view-pane.role-parent.active .par-beat.beat-1 { animation: parBeat1Show 12s infinite ease-out; }
+  .canvas-view-pane.role-parent.active .par-beat.beat-2 { animation: parBeat2Show 12s infinite ease-out; }
+  .canvas-view-pane.role-parent.active .par-summary .par-row.par-item-1 { animation: parItem1In 12s infinite ease-out; }
+  .canvas-view-pane.role-parent.active .par-summary .par-row.par-item-2 { animation: parItem2In 12s infinite ease-out; }
 }
 
 /* ─── SECTION F — DEVICE FOOTNOTE ─── */
@@ -2016,6 +2687,136 @@ h4 {
 
 /* ─── FOOTER ─── */
 .footer { border-top: 1px solid var(--border); padding-block: 1.5rem; }
+/* ─── YES-AI · comparison links ─── */
+.yes-ai-compare {
+  margin-top: 2.5rem;
+  padding-top: 1.75rem;
+  border-top: 1px solid var(--border);
+  font-family: var(--font-body);
+  font-size: 0.9375rem;
+  line-height: 1.65;
+  color: var(--ink-muted);
+}
+.yes-ai-compare a {
+  color: var(--green);
+  border-bottom: 1px solid var(--green-pale);
+  padding-bottom: 1px;
+  transition: color 0.2s, border-color 0.2s;
+}
+.yes-ai-compare a:hover { color: var(--green-light); border-color: var(--green-light); }
+
+/* ─── WHAT-IS · platform CTA (replaces decorative rule) ─── */
+.what-is-cta {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.6rem;
+  margin-top: 3rem;
+  padding-top: 1.1rem;
+  border-top: 1px solid var(--border);
+  font-family: var(--font-body);
+  font-size: 0.9375rem;
+  color: var(--green);
+  text-decoration: none;
+  transition: color 0.2s;
+}
+.what-is-cta::before {
+  content: '✦';
+  color: var(--green-light);
+  font-size: 0.625rem;
+  position: relative;
+  top: -1px;
+}
+.what-is-cta:hover { color: var(--green-light); }
+
+/* ─── MATRIX · per-card role link ─── */
+.matrix-card-link {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.45rem;
+  margin-top: 1.75rem;
+  font-family: var(--font-body);
+  font-size: 0.875rem;
+  letter-spacing: 0.01em;
+  color: var(--amber);
+  text-decoration: none;
+  border-bottom: 1px solid rgba(156,124,74,0.45);
+  padding-bottom: 2px;
+  transition: color 0.2s, border-color 0.2s;
+}
+.matrix-card-link:hover {
+  color: #C5A06D;
+  border-color: #C5A06D;
+}
+
+/* ─── EXPANDED FOOTER ─── */
+.footer { border-top: 1px solid var(--border); padding-block: 3.5rem 1.75rem; background: var(--bg); }
+.footer-cols {
+  display: grid;
+  grid-template-columns: 1.4fr 1fr 1fr 1fr 1fr;
+  gap: clamp(1.5rem, 3vw, 2.75rem);
+  margin-bottom: 2.5rem;
+}
+.footer-brand { max-width: 300px; }
+.footer-brand .footer-logo { font-family: var(--font-display); font-size: 1.25rem; font-weight: 700; letter-spacing: -0.02em; color: var(--ink); }
+.footer-tag {
+  font-family: var(--font-body);
+  font-size: 0.875rem;
+  line-height: 1.6;
+  color: var(--ink-muted);
+  margin-top: 0.85rem;
+}
+.footer-col h4 {
+  font-family: var(--font-body);
+  font-size: 0.6875rem;
+  font-weight: 600;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  color: var(--ink-faint);
+  margin: 0 0 1rem;
+}
+.footer-col ul { list-style: none; margin: 0; padding: 0; }
+.footer-col li { margin-bottom: 0.55rem; line-height: 1.4; }
+.footer-col a {
+  font-family: var(--font-body);
+  font-size: 0.875rem;
+  color: var(--ink-muted);
+  text-decoration: none;
+  transition: color 0.2s;
+}
+.footer-col a:hover { color: var(--green); }
+.footer-bottom {
+  padding-top: 1.5rem;
+  border-top: 1px solid var(--border-light);
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 1rem;
+  flex-wrap: wrap;
+}
+.footer-bottom .footer-meta { font-size: 0.8125rem; color: var(--ink-faint); font-style: italic; }
+.footer-bottom .footer-mail {
+  font-family: var(--font-body);
+  font-size: 0.8125rem;
+  color: var(--ink-muted);
+  text-decoration: none;
+  transition: color 0.2s;
+}
+.footer-bottom .footer-mail:hover { color: var(--green); }
+
+@media (max-width: 1100px) {
+  .footer-cols { grid-template-columns: repeat(3, 1fr); gap: 2rem 1.75rem; }
+  .footer-brand { grid-column: 1 / -1; max-width: none; margin-bottom: 0.5rem; }
+}
+@media (max-width: 700px) {
+  .footer-cols { grid-template-columns: repeat(2, 1fr); }
+  .footer { padding-block: 3rem 1.5rem; }
+}
+@media (max-width: 480px) {
+  .footer-cols { grid-template-columns: 1fr; gap: 1.75rem; }
+  .footer-bottom { flex-direction: column; align-items: flex-start; gap: 0.5rem; }
+}
+
+/* keep old .footer-inner working in case any other page still uses it */
 .footer-inner { display: flex; align-items: center; justify-content: space-between; }
 .footer-logo { font-family: var(--font-display); font-size: 1rem; font-weight: 700; letter-spacing: -0.015em; }
 .footer-meta { font-size: 0.8125rem; color: var(--ink-faint); font-style: italic; }
@@ -2209,6 +3010,8 @@ h4 {
     margin: 0;
   }
   .hero-cta { width: 100%; }
+  .hero-cta-secondary { width: 100%; }
+  .hero-ctas { flex-direction: column; gap: 0.625rem; }
 }
 
 @media (max-width: 480px) {
@@ -2348,7 +3151,10 @@ h4 {
           </h1>
           <hr class="hero-rule">
           <p class="hero-descriptor">Orchen turns uncontrolled AI use into something schools can guide, measure, and trust.</p>
-          <a href="#contact" class="hero-cta">Book a walkthrough &rarr;</a>
+          <div class="hero-ctas">
+            <a href="#contact" class="hero-cta">Book a walkthrough &rarr;</a>
+            <a href="https://app.orchen.ai" class="hero-cta-secondary" target="_blank" rel="noopener">Try the demo <span class="beta">Beta</span></a>
+          </div>
         </div>
       </div>
 
@@ -2462,16 +3268,42 @@ h4 {
     </section>
 
 
+    <!-- ═══ SECTION B2: WHAT ORCHEN IS ═══ -->
+    <section class="what-is section">
+      <div class="what-is-grid">
+        <div class="what-is-copy animate-in">
+          <span class="eyebrow">What Orchen Is</span>
+          <h2>One managed environment. <em>Visibility for all.</em></h2>
+          <p class="lead">Orchen is a managed AI learning environment built for schools. Students get a Socratic tutor that works through problems with them and teaches instead of simply answering.</p>
+          <p>Everything that happens in those conversations becomes structured insight, routed to the people who support that student. Teachers see how their class is really doing. Parents get a clear picture of their child, without raw chat logs. It is one connected environment, not a single chatbot.</p>
+          <a class="what-is-cta" href="/platform/">See the full platform architecture &rarr;</a>
+        </div>
+        <div class="what-is-visual animate-in">
+          <img class="what-is-shot" src="assets/orchen-product-shot.png" alt="Orchen student, teacher, and parent interfaces" loading="lazy">
+        </div>
+      </div>
+    </section>
+
     <!-- ═══ SECTION C: YES, ORCHEN IS AI TOO ═══ -->
     <section class="yes-ai section">
       <div class="container">
         <div class="yes-ai-inner animate-in">
           <span class="eyebrow">The Obvious Question</span>
-          <h2>Yes. Orchen is AI too.</h2>
+          <h2>Yes. Orchen <em>is</em> AI too.</h2>
           <p>The difference isn't AI versus not-AI. It's what the AI is designed to do.</p>
           <p>ChatGPT, Claude, and Gemini are designed to complete tasks. Give them a question, they produce an answer. Give them an essay prompt, they write the essay. They have no stake in whether the student learned anything, no relationship with the school, and they report nothing to anyone.</p>
           <p>Orchen is designed to make students think &mdash; not to think for them. It asks before it answers. It requires the student to engage before it moves forward. And every interaction feeds an insight layer that gives teachers, advisors, and parents visibility into how each student actually learns.</p>
-          <p>The AI your students are already using is invisible to your school. <strong>Orchen is the version you can see, configure, and act on.</strong></p>
+          <p>The AI your students are already using is invisible to your school.</p>
+          <div class="yes-ai-coda"><strong>Orchen</strong> is the version you can see, configure, and act on.</div>
+          <p class="yes-ai-compare">
+            See how Orchen compares to the tools your students are already using &mdash;
+            <a href="/compare/orchen-vs-chatgpt.html">ChatGPT, Claude, and Gemini</a>
+            &mdash; and to the K&ndash;12 platforms most schools are evaluating:
+            <a href="/compare/orchen-vs-schoolai.html">SchoolAI</a>,
+            <a href="/compare/orchen-vs-khanmigo.html">Khanmigo</a>,
+            and <a href="/compare/orchen-vs-magicschool.html">MagicSchool</a>.
+            Or browse <a href="/compare/">all comparisons</a>.
+          </p>
         </div>
       </div>
     </section>
@@ -2484,26 +3316,28 @@ h4 {
 
           <div class="matrix-scroll-card active" data-matrix-step="01">
             <div class="matrix-num-badge">01</div>
-            <h2 class="matrix-heading">The Student AI Interface</h2>
+            <h2 class="matrix-heading">For Students</h2>
             <p class="matrix-body">
-              Students collaborate with a conversational Socratic guide tuned to your academic standards. The software blocks copy-paste code bypassing and forces learners to clarify their conceptual logic before answering.
+              Orchen works through problems with students instead of handing them answers, asking questions and guiding the thinking. Every conversation turns into flashcards and quizzes built from what they actually studied. Over time, it becomes a picture of how each student learns.
             </p>
           </div>
 
           <div class="matrix-scroll-card" data-matrix-step="02">
             <div class="matrix-num-badge">02</div>
-            <h2 class="matrix-heading">Continuous Analysis Pipeline</h2>
+            <h2 class="matrix-heading">For Teachers</h2>
             <p class="matrix-body">
-              Interactions are synthesized nightly into structured cognitive milestones and study dynamics. Complete raw conversation text logs are fully scrubbed at 7 days to protect family data security.
+              Orchen turns every student conversation into a clear view of your class: who is on track, who is quietly stuck, who needs you today. Instead of guessing, you walk in already knowing where to focus.
             </p>
+            <a class="matrix-card-link" href="/for/teachers">See what teachers get &rarr;</a>
           </div>
 
           <div class="matrix-scroll-card" data-matrix-step="03">
             <div class="matrix-num-badge">03</div>
-            <h2 class="matrix-heading">Role-Scoped Institutional Visibility</h2>
+            <h2 class="matrix-heading">For Parents</h2>
             <p class="matrix-body">
-              The metrics layer maps directly to your school&rsquo;s visibility controls. Data slices route securely to the right roles&mdash;giving teachers cohort maps, advisors summaries, and parents custom updates.
+              Orchen gives parents a clear picture of how their child is really doing, what they are learning and where they are struggling, without raw chat logs to dig through. It ends somewhere useful: one concrete thing you can do tonight.
             </p>
+            <a class="matrix-card-link" href="/for/parents">See what parents get &rarr;</a>
           </div>
 
         </div>
@@ -2518,54 +3352,118 @@ h4 {
 
             <div class="canvas-window-body">
 
-              <div class="canvas-view-pane active" id="pane-matrix-01">
-                <h4 class="matrix-ui-header">Orchen Socratic Environment</h4>
-                <div class="matrix-ui-box">
-                  <p style="font-size: 0.95rem; margin: 0; line-height: 1.6; color: var(--ink-muted);">
-                    <span style="color: var(--green); font-weight: 600; display: block; margin-bottom: 4px;">Orchen:</span>
-                    "Let's check the structural assumptions behind that equation layout before computing the values. What does the parameter represent in your own words?"
-                  </p>
+              <div class="canvas-view-pane active role-student" id="pane-matrix-01" aria-label="Student view mockup">
+
+                <div class="stu-beat beat-1 stu-chat-screen">
+                  <div class="stu-chat-header">
+                    <span class="stu-chat-tab">Orchen</span>
+                    <span class="stu-chat-meta">Westfield Academy</span>
+                  </div>
+                  <div class="stu-chat-msg user"><div class="stu-chat-bubble">How is this proof actually concluding?</div></div>
+                  <div class="stu-chat-msg ai"><div class="stu-chat-bubble">Before I help &mdash; what's the next step you'd try, and why?</div></div>
                 </div>
-                <div style="font-family: var(--font-body); font-size: 0.75rem; color: var(--ink-faint); text-transform: uppercase; letter-spacing: 0.05em;">
-                  Active Engagement &middot; Answer Giveaways Guarded
+
+                <div class="stu-beat beat-2 stu-flash-stage">
+                  <div class="stu-flash-card">
+                    <div class="stu-flash-face stu-flash-front">
+                      <span class="flash-label">Flashcard &middot; 1 of 5</span>
+                      <span class="flash-prompt">Limit definition &middot; &epsilon;&ndash;&delta;</span>
+                      <span class="flash-hint">Tap to reveal</span>
+                    </div>
+                    <div class="stu-flash-face stu-flash-back">
+                      <span class="flash-label">Definition</span>
+                      <span class="flash-answer">For every &epsilon; &gt; 0, there exists &delta; &gt; 0 such that |x &minus; a| &lt; &delta; implies |f(x) &minus; L| &lt; &epsilon;.</span>
+                    </div>
+                  </div>
                 </div>
+
+                <div class="stu-beat beat-3 stu-quiz">
+                  <span class="quiz-label">Quiz &middot; Question 1 of 3</span>
+                  <p class="quiz-question">If f(x) = 2x + 3, then f(5) = ?</p>
+                  <div class="quiz-opts">
+                    <span class="quiz-opt">A. 7</span>
+                    <span class="quiz-opt">B. 11</span>
+                    <span class="quiz-opt picked">C. 13</span>
+                    <span class="quiz-opt">D. 17</span>
+                  </div>
+                </div>
+
+                <div class="stu-beat beat-4 beat-final stu-profile-card">
+                  <span class="prof-label">Learning Profile &middot; math</span>
+                  <div class="prof-row">
+                    <span class="prof-name">Verbal</span>
+                    <span class="prof-track"><span class="prof-fill prof-fill-nudge"></span></span>
+                    <span class="prof-val">78%</span>
+                  </div>
+                  <div class="prof-row">
+                    <span class="prof-name">Conceptual</span>
+                    <span class="prof-track"><span class="prof-fill" style="width: 65%;"></span></span>
+                    <span class="prof-val">65%</span>
+                  </div>
+                </div>
+
               </div>
 
-              <div class="canvas-view-pane" id="pane-matrix-02">
-                <h4 class="matrix-ui-header">Privacy Engine Scrubbing Track</h4>
-                <div class="matrix-ui-box" style="border-left-color: var(--amber); background: rgba(156,124,74,0.04);">
-                  <p style="font-family: var(--font-body); font-size: 0.875rem; line-height: 1.6; color: var(--ink-muted); margin: 0;">
-                    [ Day 0 ] Interactive chat streaming active <br>
-                    [ Day 1 ] Metadata signals written to student goals <br>
-                    <span style="color: var(--amber); font-weight: 600;">[ Day 7 ] Source conversation log securely deleted</span> <br>
-                    [ Status ] Immutable analytical profile saved.
-                  </p>
+              <div class="canvas-view-pane role-teacher" id="pane-matrix-02" aria-label="Teacher view mockup">
+
+                <div class="tch-beat beat-1 tch-dashboard">
+                  <div class="tch-grid">
+                    <div class="tch-tile">
+                      <span class="tch-label">Independent effort</span>
+                      <span class="tch-val">87</span>
+                      <span class="tch-track"><span></span></span>
+                    </div>
+                    <div class="tch-tile">
+                      <span class="tch-label">Curiosity depth</span>
+                      <span class="tch-val">72</span>
+                      <span class="tch-track"><span></span></span>
+                    </div>
+                    <div class="tch-tile">
+                      <span class="tch-label">Concept range</span>
+                      <span class="tch-val">64</span>
+                      <span class="tch-track"><span></span></span>
+                    </div>
+                    <div class="tch-tile">
+                      <span class="tch-label">On track</span>
+                      <span class="tch-val">19/24</span>
+                      <span class="tch-track"><span></span></span>
+                    </div>
+                  </div>
                 </div>
-                <div style="font-family: var(--font-body); font-size: 0.75rem; color: var(--ink-faint); text-transform: uppercase; letter-spacing: 0.05em;">
-                  Compliance Isolation &middot; FERPA/COPPA Compliant Ledger
+
+                <div class="tch-beat beat-2 beat-final tch-focus-card">
+                  <span class="tch-flabel">Focus &middot; Ryoto Falcon</span>
+                  <span class="tch-name">Stuck on integration by substitution</span>
+                  <p class="tch-note">Verbal explanation lands; <strong>visual walkthrough</strong> doesn't. Try a worked example next.</p>
                 </div>
+
               </div>
 
-              <div class="canvas-view-pane" id="pane-matrix-03">
-                <h4 class="matrix-ui-header">Multi-Stakeholder Data Distribution</h4>
-                <div style="display: flex; flex-direction: column; gap: 12px; max-height: 240px; overflow-y: auto; padding-right: 4px;">
+              <div class="canvas-view-pane role-parent" id="pane-matrix-03" aria-label="Parent view mockup">
 
-                  <div style="background: var(--bg); padding: 10px 14px; border-radius: 4px; border-left: 3px solid var(--green);">
-                    <span style="font-size: 0.65rem; text-transform: uppercase; letter-spacing: 0.08em; color: var(--green); display: block; font-weight: 600; margin-bottom: 2px;">For Teachers</span>
-                    <p style="font-size: 0.8125rem; margin: 0; color: var(--ink-muted);">Ryoto Falcon roadblock details: function notation layouts.</p>
+                <div class="par-beat beat-1 par-summary">
+                  <div class="par-row par-item-1">
+                    <div class="par-l">
+                      <span class="par-label">Assignments this week</span>
+                      <span class="par-text">4 of 5 submitted</span>
+                    </div>
+                    <span class="par-r">1 due Friday</span>
                   </div>
-
-                  <div style="background: var(--bg); padding: 10px 14px; border-radius: 4px; border-left: 3px solid var(--amber);">
-                    <span style="font-size: 0.65rem; text-transform: uppercase; letter-spacing: 0.08em; color: var(--amber); display: block; font-weight: 600; margin-bottom: 2px;">For Advisors</span>
-                    <p style="font-size: 0.8125rem; margin: 0; color: var(--ink-muted);">James M. completed 3 proofs independently outside class modules.</p>
+                  <div class="par-row par-item-2">
+                    <div class="par-l">
+                      <span class="par-label">Where Test is stuck</span>
+                      <span class="par-text">Integration by substitution</span>
+                    </div>
+                    <span class="par-r">2 sessions this week</span>
                   </div>
-
-                  <div style="background: var(--bg); padding: 10px 14px; border-radius: 4px; border-left: 3px solid #6B9B80;">
-                    <span style="font-size: 0.65rem; text-transform: uppercase; letter-spacing: 0.08em; color: #6B9B80; display: block; font-weight: 600; margin-bottom: 2px;">For Parents</span>
-                    <p style="font-size: 0.8125rem; margin: 0; color: var(--ink-muted);">Bright Spot: Completed 5 quizzes independently. Starter question provided.</p>
-                  </div>
-
                 </div>
+
+                <div class="par-beat beat-2 beat-final par-action-card">
+                  <span class="pa-label">Tonight</span>
+                  <span class="pa-title">Ask: &ldquo;Walk me through the last problem you tried.&rdquo;</span>
+                  <span class="pa-note">5&ndash;10 minutes. Lets them explain rather than be quizzed.</span>
+                </div>
+
               </div>
 
             </div>
@@ -2618,16 +3516,67 @@ h4 {
           <p class="form-agree">By submitting this form you agree to our <a href="/terms">Terms of Service</a> and <a href="/privacy">Privacy Policy</a>.</p>
         </form>
 
-        <p class="contact-alt">Or write to us at <a href="mailto:hello@orchen.ai">hello@orchen.ai</a></p>
+        <a class="form-secondary-cta" href="https://app.orchen.ai" target="_blank" rel="noopener">Try the demo <span class="beta">Beta</span></a>
+
+        <p class="contact-alt">Or write to us at <a href="mailto:emil@orchen.ai">emil@orchen.ai</a></p>
       </div>
     </section>
 
   </main>
 
   <footer class="footer">
-    <div class="container footer-inner">
-      <span class="footer-logo">Orchen</span>
-      <span class="footer-meta">&copy; 2026 Orchen AI &middot; <a href="/privacy" style="border-bottom:1px solid currentColor;">Privacy Policy</a> &middot; <a href="/terms" style="border-bottom:1px solid currentColor;">Terms of Service</a></span>
+    <div class="container">
+      <div class="footer-cols">
+
+        <div class="footer-col footer-brand">
+          <span class="footer-logo">Orchen</span>
+          <p class="footer-tag">A managed AI learning environment for schools.</p>
+        </div>
+
+        <div class="footer-col">
+          <h4>Product</h4>
+          <ul>
+            <li><a href="/#how">How it works</a></li>
+            <li><a href="/platform/">Platform</a></li>
+            <li><a href="/trust">Trust</a></li>
+          </ul>
+        </div>
+
+        <div class="footer-col">
+          <h4>For Schools</h4>
+          <ul>
+            <li><a href="/for/teachers">For teachers</a></li>
+            <li><a href="/for/advisors">For advisors</a></li>
+            <li><a href="/for/parents">For parents</a></li>
+          </ul>
+        </div>
+
+        <div class="footer-col">
+          <h4>Compare</h4>
+          <ul>
+            <li><a href="/compare/orchen-vs-chatgpt.html">vs. ChatGPT, Claude &amp; Gemini</a></li>
+            <li><a href="/compare/orchen-vs-schoolai.html">vs. SchoolAI</a></li>
+            <li><a href="/compare/orchen-vs-khanmigo.html">vs. Khanmigo</a></li>
+            <li><a href="/compare/orchen-vs-magicschool.html">vs. MagicSchool</a></li>
+            <li><a href="/compare/">All comparisons</a></li>
+          </ul>
+        </div>
+
+        <div class="footer-col">
+          <h4>Resources</h4>
+          <ul>
+            <li><a href="/the-problem">The Problem</a></li>
+            <li><a href="/privacy">Privacy</a></li>
+            <li><a href="/terms">Terms</a></li>
+          </ul>
+        </div>
+
+      </div>
+
+      <div class="footer-bottom">
+        <span class="footer-meta">&copy; 2026 Orchen AI</span>
+        <a class="footer-mail" href="mailto:emil@orchen.ai">emil@orchen.ai</a>
+      </div>
     </div>
   </footer>
 
@@ -2958,12 +3907,12 @@ document.addEventListener('DOMContentLoaded', () => {
   const matrixTag   = document.getElementById('matrix-active-tag');
 
   const updateMatrixLabelText = (stepId) => {
-    if (stepId === '01') matrixTag.textContent = 'Workspace Lens &middot; Active Tutor';
-    if (stepId === '02') matrixTag.textContent = 'Privacy Engine &middot; Encryption Trail';
-    if (stepId === '03') matrixTag.textContent = 'Platform Grid &middot; Scoped Visibility';
+    if (stepId === '01') matrixTag.textContent = 'Student view · what the learner experiences';
+    if (stepId === '02') matrixTag.textContent = 'Teacher view · what the teacher sees';
+    if (stepId === '03') matrixTag.textContent = 'Parent view · what the parent receives';
   };
 
-  if ('IntersectionObserver' in window && !reduceMotion) {
+  if ('IntersectionObserver' in window) {
     const matrixObserver = new IntersectionObserver((entries) => {
       entries.forEach(entry => {
         if (entry.isIntersecting) {

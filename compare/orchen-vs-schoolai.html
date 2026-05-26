@@ -55,12 +55,12 @@
       {
         "@type": "Question",
         "name": "Does Orchen have a teacher Spaces equivalent?",
-        "acceptedAnswer": { "@type": "Answer", "text": "Orchen doesn't use a per-assignment Spaces model. Instead, the AI environment is configured at the school level via a shared system prompt that defines the tutor's identity and constraints for all students. Whether that's a strength or a limitation depends on your school's model. Schools that want per-teacher flexibility will find SchoolAI's Spaces more suited to that workflow." }
+        "acceptedAnswer": { "@type": "Answer", "text": "Orchen uses a school-level system prompt rather than per-assignment Spaces. The AI environment is configured at the school level via a shared system prompt that defines the tutor's identity and consistent behavior for all students. Whether that fits your model depends on what you want. Schools that want per-teacher flexibility per assignment will find SchoolAI's Spaces more suited to that workflow." }
       },
       {
         "@type": "Question",
         "name": "Which is better for a 1:1 device school?",
-        "acceptedAnswer": { "@type": "Answer", "text": "Both work in 1:1 environments. SchoolAI works on any web-enabled device. Orchen offers an optional managed device layer — MacBooks provisioned with Jamf and Cloudflare DNS filtering — that can block competing AI tools at the network level. If you want hard enforcement alongside the tutoring environment, that's a differentiator. If you already have a mixed device fleet, both platforms can run as web apps." }
+        "acceptedAnswer": { "@type": "Answer", "text": "Both work in 1:1 environments. SchoolAI works on any web-enabled device. Orchen offers an optional managed device layer — MacBooks provisioned with Jamf and Cloudflare DNS filtering — that points each device to Orchen at the network level as the school's AI environment of record. If you want network-level enforcement alongside the tutoring environment, that's a differentiator. If you already have a mixed device fleet, both platforms can run as web apps." }
       },
       {
         "@type": "Question",
@@ -139,7 +139,7 @@
               </tr>
               <tr>
                 <td class="td-feature">Pedagogy</td>
-                <td class="td-orchen">Socratic by design — questions over answers; the AI never completes student work</td>
+                <td class="td-orchen">Socratic by design — questions over answers; the AI works through problems with the student</td>
                 <td>Spaces are teacher-configured — Socratic behavior depends on how the individual teacher writes the Space's instructions. Socratic pedagogy is a possible configuration, not the platform's default architecture.</td>
               </tr>
               <tr>
@@ -154,7 +154,7 @@
               </tr>
               <tr>
                 <td class="td-feature">Deployment model</td>
-                <td class="td-orchen">SaaS + optional managed device layer (MacBook + Jamf + Cloudflare DNS blocking)</td>
+                <td class="td-orchen">SaaS + optional managed device layer (MacBook + Jamf + Cloudflare DNS routing)</td>
                 <td>SaaS only</td>
               </tr>
               <tr>
@@ -230,7 +230,7 @@
             <span class="si-dot">&#10003;</span>
             <div class="si-body">
               <strong>Strong compliance posture and multi-layer safety</strong>
-              <p>SchoolAI's moderation includes real-time safety alerts for concerns like bullying or abuse. Compliance certifications: SOC 2 Type 2, FERPA, COPPA, 1EdTech, and FIPPA (Canada). ESSA Tier 4 aligned. Direct agreements with AI model providers confirm student and educator data is never used to train future models.</p>
+              <p>SchoolAI's moderation includes real-time safety alerts for concerns like bullying or abuse. Compliance certifications: SOC 2 Type 2, FERPA, COPPA, 1EdTech, and FIPPA (Canada). ESSA Tier 4 aligned. Direct agreements with AI model providers keep student and educator data out of future model training.</p>
             </div>
           </li>
         </ul>
@@ -262,7 +262,7 @@
             <span class="si-dot">&#9670;</span>
             <div class="si-body">
               <strong>Optional managed device layer</strong>
-              <p>For schools that want hard guardrails — not just AI policy but network-level enforcement — Orchen offers provisioned MacBooks with Jamf management and Cloudflare DNS filtering that blocks competing AI tools. No other AI tutoring platform currently packages this as a single offering.</p>
+              <p>For schools that want network-level enforcement — not just written AI policy — Orchen offers provisioned MacBooks with Jamf management and Cloudflare DNS filtering that routes every device to Orchen as the school's AI environment of record. No other AI tutoring platform currently packages this as a single offering.</p>
             </div>
           </li>
           <li class="strength-item">
@@ -351,7 +351,7 @@
           <details class="faq-item">
             <summary class="faq-q">Does Orchen have a teacher Spaces equivalent? <span class="faq-chevron">&#8964;</span></summary>
             <div class="faq-a">
-              <p>Orchen doesn't use a per-assignment Spaces model. The AI environment is configured at the school level via a shared system prompt that applies to every student. Teachers can view student conversations through the advisor dashboard, but they don't create separate Spaces per assignment.</p>
+              <p>Orchen uses a school-level system prompt rather than per-assignment Spaces. The AI environment is configured at the school level via a shared system prompt that applies to every student. Teachers can view student conversations through the advisor dashboard, with the AI's identity and behavior staying consistent across all assignments.</p>
               <p>Whether that's a strength or a limitation depends entirely on your school's model. If you want teachers driving individual AI environments, SchoolAI is genuinely better suited to that.</p>
             </div>
           </details>
@@ -359,7 +359,7 @@
           <details class="faq-item">
             <summary class="faq-q">Which is better for a 1:1 device school? <span class="faq-chevron">&#8964;</span></summary>
             <div class="faq-a">
-              <p>Both work in 1:1 environments. SchoolAI runs on any web-enabled device. Orchen offers an optional managed device layer — MacBooks provisioned with Jamf and Cloudflare DNS filtering — that can block competing AI tools at the network level, not just through policy.</p>
+              <p>Both work in 1:1 environments. SchoolAI runs on any web-enabled device. Orchen offers an optional managed device layer — MacBooks provisioned with Jamf and Cloudflare DNS filtering — that points each device to Orchen at the network level as the school's AI environment of record, rather than relying on written policy alone.</p>
               <p>If you already have a device fleet and don't need hard network enforcement, both platforms operate as web applications. If hard enforcement is part of your AI governance plan, Orchen's managed device option is worth a conversation.</p>
             </div>
           </details>

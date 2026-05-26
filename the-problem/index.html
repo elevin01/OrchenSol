@@ -3,9 +3,20 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Coming soon — Orchen</title>
-  <meta name="robots" content="noindex">
+  <title>The Problem — Orchen</title>
+  <meta name="description" content="A growing body of cited research on what AI is doing in K–12 classrooms — usage behavior, faculty alarm, critical-thinking decline, dependency surge, and the cognitive baseline.">
   <link rel="canonical" href="https://orchen.ai/the-problem">
+  <meta name="robots" content="index, follow">
+  <meta property="og:title" content="The Problem — Orchen">
+  <meta property="og:description" content="A growing body of cited research on what AI is doing in K–12 classrooms — usage behavior, faculty alarm, critical-thinking decline, dependency surge, and the cognitive baseline.">
+  <meta property="og:type" content="article">
+  <meta property="og:url" content="https://orchen.ai/the-problem">
+  <meta property="og:image" content="https://orchen.ai/assets/og-image.png">
+  <meta property="og:site_name" content="Orchen">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="The Problem — Orchen">
+  <meta name="twitter:description" content="A growing body of cited research on what AI is doing in K–12 classrooms — usage behavior, faculty alarm, critical-thinking decline, dependency surge, and the cognitive baseline.">
+  <meta name="twitter:image" content="https://orchen.ai/assets/og-image.png">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,700;1,400&family=Lora:ital,wght@0,400;0,500;1,400&display=swap" rel="stylesheet">
@@ -19,11 +30,19 @@
   --ink-muted:   #6A6460;
   --ink-faint:   #A09890;
   --wall-text:   #EDE9E4;
+  --wall-muted:  rgba(237,233,228,0.62);
+  --wall-faint:  rgba(237,233,228,0.40);
   --dark-bg:     #1A3527;
   --border:      #DDD8CE;
   --border-light:#EAE5DC;
+  --amber:       #9C7C4A;
+  --chip-strug-bg:#F3E3DF;
+  --chip-strug-fg:#9B4A3C;
+  --chip-stren-bg:#DDEBE0;
+  --chip-stren-fg:#2C5F3F;
   --font-display:'Playfair Display', Georgia, serif;
   --font-body:   'Lora', Georgia, serif;
+  --mono: 'SFMono-Regular', ui-monospace, 'JetBrains Mono', Menlo, Consolas, monospace;
   --max-w: 1200px;
   --pad: 2rem;
   --nav-h: 62px;
@@ -39,6 +58,8 @@ body {
   -webkit-font-smoothing: antialiased;
 }
 a { color: inherit; text-decoration: none; }
+
+/* ─── NAV ─── */
 .nav {
   position: fixed;
   top: 0; left: 0; right: 0;
@@ -49,10 +70,7 @@ a { color: inherit; text-decoration: none; }
   border-bottom: 1px solid transparent;
   transition: border-color 0.25s, box-shadow 0.25s;
 }
-.nav.scrolled {
-  border-color: var(--border-light);
-  box-shadow: 0 1px 16px rgba(26,26,26,0.06);
-}
+.nav.scrolled { border-color: var(--border-light); box-shadow: 0 1px 16px rgba(26,26,26,0.06); }
 .nav-inner {
   max-width: var(--max-w);
   margin: 0 auto;
@@ -94,77 +112,227 @@ a { color: inherit; text-decoration: none; }
   flex-direction: column;
   justify-content: center;
   gap: 4.5px;
-  width: 28px;
-  height: 28px;
-  background: none;
-  border: none;
-  cursor: pointer;
-  margin-left: auto;
-  padding: 0;
+  width: 28px; height: 28px;
+  background: none; border: none; cursor: pointer;
+  margin-left: auto; padding: 0;
 }
-.nav-toggle span {
-  display: block;
-  width: 22px;
-  height: 1.5px;
-  background: var(--ink);
-  border-radius: 1px;
-  transition: transform 0.25s, opacity 0.25s;
-}
+.nav-toggle span { display: block; width: 22px; height: 1.5px; background: var(--ink); border-radius: 1px; transition: transform 0.25s, opacity 0.25s; }
 .nav-toggle[aria-expanded="true"] span:nth-child(1) { transform: translateY(6px) rotate(45deg); }
 .nav-toggle[aria-expanded="true"] span:nth-child(2) { opacity: 0; transform: scaleX(0); }
 .nav-toggle[aria-expanded="true"] span:nth-child(3) { transform: translateY(-6px) rotate(-45deg); }
+
+/* ─── LAYOUT ─── */
 .container { max-width: var(--max-w); margin-inline: auto; padding-inline: var(--pad); }
-.stub {
-  background: var(--dark-bg);
-  color: var(--wall-text);
-  min-height: 70vh;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  text-align: center;
-  padding-top: calc(var(--nav-h) + 4rem);
-  padding-bottom: 4rem;
-}
-.stub-inner { max-width: 600px; margin-inline: auto; }
-.stub-eyebrow {
+.section { padding-block: 6rem; }
+.s-cream { background: var(--bg); color: var(--ink); }
+.s-warm  { background: #F0EBE0; color: var(--ink); }
+.s-dark  { background: var(--dark-bg); color: var(--wall-text); }
+.eyebrow {
   display: block;
   font-family: var(--font-body);
   font-size: 0.6875rem;
-  font-weight: 500;
-  letter-spacing: 0.7rem;
+  font-weight: 600;
+  letter-spacing: 0.22em;
   text-transform: uppercase;
-  color: rgba(237,233,228,0.5);
-  margin-bottom: 1.5rem;
-}
-.stub h1 {
-  font-family: var(--font-display);
-  font-weight: 700;
-  font-size: clamp(2rem, 5vw, 3.25rem);
-  line-height: 1.12;
-  letter-spacing: -0.025em;
-  color: var(--wall-text);
+  color: var(--green-light);
   margin-bottom: 1.25rem;
 }
-.stub p {
+.s-dark .eyebrow { color: var(--amber); }
+.s-warm .eyebrow { color: var(--green); }
+.sec-h2 {
+  font-family: var(--font-display);
+  font-weight: 700;
+  font-size: clamp(1.7rem, 3.6vw, 2.6rem);
+  line-height: 1.18;
+  letter-spacing: -0.02em;
+  color: var(--ink);
+  margin-bottom: 1.5rem;
+}
+.s-dark .sec-h2 { color: var(--wall-text); }
+.sec-body { font-size: 1.0625rem; line-height: 1.8; color: var(--ink-muted); max-width: 540px; }
+.s-dark .sec-body { color: var(--wall-muted); }
+.sec-body + .sec-body { margin-top: 1rem; }
+.sec-body strong { color: var(--ink); font-weight: 600; }
+.s-dark .sec-body strong { color: var(--wall-text); }
+
+/* ─── HERO ─── */
+.hero {
+  background: var(--bg);
+  padding-top: calc(var(--nav-h) + 6rem);
+  padding-bottom: 6rem;
+}
+.hero-h1 {
+  font-family: var(--font-display);
+  font-weight: 700;
+  font-size: clamp(2.2rem, 5.2vw, 3.4rem);
+  line-height: 1.12;
+  letter-spacing: -0.025em;
+  color: var(--ink);
+  max-width: 16ch;
+  margin-bottom: 1.5rem;
+}
+.hero-sub {
+  font-size: clamp(1.05rem, 1.6vw, 1.25rem);
+  line-height: 1.7;
+  color: var(--ink-muted);
+  max-width: 620px;
+}
+
+/* ─── TWO-COLUMN ─── */
+.two-col {
+  display: grid;
+  grid-template-columns: minmax(0,1fr) minmax(0,1fr);
+  gap: clamp(2rem, 5vw, 4.5rem);
+  align-items: center;
+}
+.two-col .col-copy .sec-body { max-width: 460px; }
+
+/* ─── PRODUCT EXAMPLE CARD ─── */
+.product-card {
+  border-radius: 8px;
+  border-left: 3px solid var(--green);
+  padding: 1.5rem 1.5rem 1.625rem;
+}
+.s-dark .product-card { background: var(--bg); color: var(--ink); border-left-color: var(--green); box-shadow: 0 10px 30px rgba(0,0,0,0.22); }
+.s-cream .product-card, .s-warm .product-card { background: #fff; border-left-color: var(--green); box-shadow: 0 6px 22px rgba(26,26,26,0.06); }
+.pc-label {
+  display: block;
+  font-family: var(--mono);
+  font-size: 0.625rem;
+  font-weight: 600;
+  letter-spacing: 0.16em;
+  text-transform: uppercase;
+  color: var(--ink-faint);
+  margin-bottom: 1rem;
+  padding-bottom: 0.75rem;
+  border-bottom: 1px solid var(--border);
+}
+.pc-block { margin-bottom: 1.25rem; }
+.pc-block:last-child { margin-bottom: 0; }
+.pc-h {
+  font-family: var(--mono);
+  font-size: 0.625rem;
+  font-weight: 700;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  color: var(--green);
+  margin-bottom: 0.625rem;
+}
+.pc-text { font-family: var(--font-body); font-size: 0.875rem; line-height: 1.65; color: var(--ink-muted); }
+
+/* bars (learning style / signals) */
+.bar-row {
+  display: grid;
+  grid-template-columns: 110px 1fr 42px;
+  align-items: center;
+  gap: 0.75rem;
+  margin-bottom: 0.5rem;
+  font-family: var(--mono);
+  font-size: 0.6875rem;
+  color: var(--ink-muted);
+}
+.bar-row:last-child { margin-bottom: 0; }
+.bar-name { white-space: nowrap; }
+.bar-track { height: 7px; background: var(--border-light); border-radius: 99px; overflow: hidden; }
+.bar-fill { height: 100%; background: var(--green); border-radius: 99px; }
+.bar-fill.lvl { background: var(--green-light); }
+.bar-val { text-align: right; color: var(--ink-faint); }
+
+/* data lines */
+.pc-data { font-family: var(--mono); font-size: 0.75rem; line-height: 1.7; color: var(--ink-muted); }
+.pc-data .k { color: var(--ink); font-weight: 600; }
+
+/* mini table */
+.mini-table { width: 100%; border-collapse: collapse; font-family: var(--mono); font-size: 0.75rem; }
+.mini-table td { padding: 0.55rem 0.4rem; border-bottom: 1px solid var(--border-light); color: var(--ink-muted); }
+.mini-table tr:last-child td { border-bottom: none; }
+.mini-table .nm { color: var(--ink); }
+.mini-note { font-family: var(--mono); font-size: 0.625rem; letter-spacing: 0.08em; text-transform: uppercase; color: var(--ink-faint); margin-top: 0.875rem; }
+.mini-count { font-family: var(--mono); font-size: 0.6875rem; color: var(--ink-faint); margin-bottom: 0.625rem; }
+
+/* concept distribution bar */
+.concept-bar { display: flex; width: 100%; height: 40px; border-radius: 6px; overflow: hidden; margin: 2.25rem 0 1rem; }
+.concept-seg { display: flex; align-items: center; justify-content: center; font-family: var(--mono); font-size: 0.5625rem; letter-spacing: 0.05em; text-transform: uppercase; color: #fff; padding: 0 0.4rem; text-align: center; }
+.cs-1 { background: var(--green-dark); }
+.cs-2 { background: var(--green-light); }
+.cs-3 { background: var(--amber); }
+.cs-4 { background: #C9C2B6; color: var(--ink-muted); }
+.chip-row { display: flex; flex-wrap: wrap; gap: 0.5rem; margin-top: 0.5rem; }
+.chip {
+  font-family: var(--mono);
+  font-size: 0.6875rem;
+  padding: 0.3rem 0.7rem;
+  border-radius: 99px;
+  background: #fff;
+  border: 1px solid var(--border);
+  color: var(--ink-muted);
+}
+.chip.strug { background: var(--chip-strug-bg); border-color: transparent; color: var(--chip-strug-fg); }
+.chip.stren { background: var(--chip-stren-bg); border-color: transparent; color: var(--chip-stren-fg); }
+.caption { font-size: 0.8125rem; color: var(--ink-faint); margin-top: 1rem; font-style: italic; }
+
+/* template grid */
+.tpl-grid { display: grid; grid-template-columns: repeat(4,1fr); gap: 1rem; margin-top: 2.5rem; }
+.tpl-card {
+  background: var(--bg);
+  border-left: 3px solid var(--green-light);
+  border-radius: 4px;
+  padding: 1.1rem 1.15rem;
+}
+.tpl-name { font-family: var(--font-display); font-weight: 700; font-size: 0.95rem; color: var(--ink); line-height: 1.3; }
+.tpl-time { font-family: var(--mono); font-size: 0.625rem; letter-spacing: 0.08em; text-transform: uppercase; color: var(--ink-faint); margin-top: 0.5rem; }
+
+/* CTA */
+.cta { text-align: center; }
+.cta .eyebrow { margin-bottom: 1rem; }
+.cta-h {
+  font-family: var(--font-display);
+  font-weight: 700;
+  font-size: clamp(1.6rem, 3.4vw, 2.4rem);
+  letter-spacing: -0.02em;
+  color: var(--ink);
+  margin-bottom: 2rem;
+}
+.s-dark .cta-h { color: var(--wall-text); }
+.btn-cta {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.4rem;
+  padding: 0.95rem 2.1rem;
+  background: var(--green);
+  color: #fff;
+  border-radius: 4px;
   font-family: var(--font-body);
-  font-size: 1.0625rem;
-  line-height: 1.75;
-  color: rgba(237,233,228,0.6);
-  max-width: 540px;
-  margin: 0 auto 2rem;
+  font-size: 1rem;
+  font-weight: 500;
+  transition: background 0.2s, transform 0.15s;
 }
-.stub-back {
-  font-size: 0.9375rem;
-  color: var(--wall-text);
-  opacity: 0.65;
-  transition: opacity 0.2s;
-}
-.stub-back:hover { opacity: 1; text-decoration: underline; }
+.btn-cta:hover { background: var(--green-dark); transform: translateY(-1px); }
+.s-dark .btn-cta { background: var(--bg); color: var(--green); }
+.s-dark .btn-cta:hover { background: #fff; }
+
+/* cross-links */
+.crosslinks { border-top: 1px solid var(--border); padding-block: 2.25rem; }
+.crosslinks-inner { text-align: center; font-size: 0.9375rem; color: var(--ink-faint); }
+.crosslinks-inner a { color: var(--green); border-bottom: 1px solid transparent; padding-bottom: 1px; transition: border-color 0.2s; }
+.crosslinks-inner a:hover { border-color: var(--green); }
+.crosslinks-inner .here { color: var(--ink-faint); }
+.crosslinks-inner .sep { color: var(--border); margin: 0 0.6rem; }
+
+/* ─── FOOTER ─── */
 .footer { border-top: 1px solid var(--border); padding-block: 1.5rem; }
 .footer-inner { display: flex; align-items: center; justify-content: space-between; }
 .footer-logo { font-family: var(--font-display); font-size: 1.0625rem; font-weight: 700; letter-spacing: -0.02em; }
 .footer-meta { font-size: 0.8125rem; color: var(--ink-faint); font-style: italic; }
+
+/* ─── RESPONSIVE ─── */
+@media (max-width: 900px) {
+  .two-col { grid-template-columns: 1fr; gap: 2.25rem; }
+  .tpl-grid { grid-template-columns: repeat(2,1fr); }
+}
 @media (max-width: 768px) {
+  .section { padding-block: 4rem; }
+  .hero { padding-top: calc(var(--nav-h) + 3.5rem); padding-bottom: 4rem; }
   .nav-links { display: none; }
   .nav-links.open {
     display: flex;
@@ -181,10 +349,106 @@ a { color: inherit; text-decoration: none; }
   .btn-nav { display: none; }
   .nav-toggle { display: flex; }
   .footer-inner { flex-direction: column; gap: 0.375rem; align-items: flex-start; }
+  .concept-bar { height: 34px; }
+  .btn-cta { width: 100%; justify-content: center; }
+}
+@media (max-width: 560px) {
+  .tpl-grid { grid-template-columns: 1fr; }
+  .concept-seg { font-size: 0; padding: 0; }
 }
 @media (max-width: 480px) {
   :root { --pad: 1.25rem; }
 }
+.research-cite {
+  display: inline-block;
+  margin-top: 1.25rem;
+  font-family: var(--font-body);
+  font-size: 0.6875rem;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  color: var(--ink-faint);
+}
+.s-dark .research-cite { color: var(--wall-muted); }
+a.research-cite { border-bottom: 1px solid currentColor; padding-bottom: 1px; }
+
+/* ─── DATA-POINT TWO-COLUMN LAYOUT + DISPLAY FIGURE ─── */
+/* Figure column sits on the LEFT and anchors each section. All figures
+   share one weight class — single percentages, range shifts, and negative
+   deltas render at the same base font-size; adjuncts (arrow, "pts") are
+   smaller without dragging the number itself smaller. */
+.dp-grid {
+  display: grid;
+  grid-template-columns: minmax(0, 0.95fr) minmax(0, 1.05fr);
+  gap: clamp(2.5rem, 5vw, 5rem);
+  align-items: center;
+}
+.dp-copy { max-width: 560px; }
+
+.dp-figure {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  justify-content: center;
+  gap: 1rem;
+}
+.dp-figure-num {
+  font-family: var(--font-display);
+  font-weight: 700;
+  line-height: 0.92;
+  letter-spacing: -0.045em;
+  color: var(--ink);
+  font-size: clamp(4rem, 10.5vw, 7.5rem);
+  display: inline-flex;
+  align-items: baseline;
+  flex-wrap: nowrap;
+  white-space: nowrap;
+}
+.s-dark .dp-figure-num { color: var(--wall-text); }
+
+/* Number-group: keeps a primary number (e.g. "48%") at the full figure size */
+.dp-num { font-size: 1em; line-height: 1; }
+
+/* Unit suffix (e.g. "pts") — smaller, accent-colored, baseline-lifted */
+.dp-unit {
+  font-style: normal;
+  font-size: 0.38em;
+  font-weight: 500;
+  letter-spacing: 0;
+  color: var(--green);
+  margin-left: 0.18em;
+  position: relative;
+  top: -0.95em;
+}
+.s-dark .dp-unit { color: var(--amber); }
+
+/* Arrow separator in shift figures (e.g. "48% → 62%") */
+.dp-arrow {
+  font-size: 0.46em;
+  color: var(--green);
+  margin: 0 0.28em;
+  font-weight: 500;
+  position: relative;
+  top: -0.55em;
+}
+.s-dark .dp-arrow { color: var(--amber); }
+
+.dp-figure-label {
+  font-family: var(--font-body);
+  font-size: 0.8125rem;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  color: var(--ink-faint);
+  max-width: 320px;
+  line-height: 1.5;
+}
+.s-dark .dp-figure-label { color: rgba(237,233,228,0.5); }
+
+@media (max-width: 900px) {
+  .dp-grid { grid-template-columns: 1fr; gap: 1.5rem; }
+  .dp-figure-num { font-size: clamp(3rem, 13vw, 5rem); }
+  .dp-figure-label { max-width: none; }
+}
+
   </style>
 </head>
 <body>
@@ -205,16 +469,150 @@ a { color: inherit; text-decoration: none; }
   </nav>
 
   <main>
-    <section class="stub">
+
+    <!-- HERO -->
+    <section class="hero">
       <div class="container">
-        <div class="stub-inner">
-          <span class="stub-eyebrow">THE PROBLEM &middot; 2026</span>
-          <h1>Coming soon</h1>
-          <p>The full research brief &mdash; six cited data points on AI and student cognition &mdash; is being finalized.</p>
-          <a href="/" class="stub-back">&larr; Back to Orchen</a>
+        <span class="eyebrow">The Problem &middot; 2026</span>
+        <h1 class="hero-h1">The research brief.</h1>
+        <p class="hero-sub">A growing body of cited research on what AI is actually doing inside K&ndash;12 classrooms &mdash; what students do with it, what faculty observe, and what the cognitive baseline already looked like before these tools arrived.</p>
+      </div>
+    </section>
+
+    <!-- DATA POINT 01 -->
+    <section class="section s-dark">
+      <div class="container">
+        <div class="dp-grid">
+          <div class="dp-figure">
+            <div class="dp-figure-num">95%</div>
+            <div class="dp-figure-label">of student-AI interactions</div>
+          </div>
+          <div class="dp-copy">
+            <span class="eyebrow">Usage behavior</span>
+            <h2 class="sec-h2">Student-AI activity is overwhelmingly about skipping the work, not understanding it.</h2>
+            <p class="sec-body">Education Week, working with Securly's school-network monitoring, analyzed <strong>1.2 million student-AI sessions across more than 1,300 districts</strong> in early 2026. Across that real-world dataset, 95% of interactions were students trying to have the AI complete their assigned work entirely &mdash; not asking for help understanding it.</p>
+            <p class="sec-body">This is the first dataset of its size to look at what students actually do with AI on school networks, rather than what they self-report. The pattern is consistent across grade levels and subjects: AI is being used to bypass the thinking, not to support it.</p>
+            <span class="research-cite">Education Week &middot; Securly &middot; March 2026</span>
+          </div>
         </div>
       </div>
     </section>
+
+    <!-- DATA POINT 02 -->
+    <section class="section s-cream">
+      <div class="container">
+        <div class="dp-grid">
+          <div class="dp-figure">
+            <div class="dp-figure-num">84%</div>
+            <div class="dp-figure-label">of college faculty</div>
+          </div>
+          <div class="dp-copy">
+            <span class="eyebrow">Faculty alarm</span>
+            <h2 class="sec-h2">College faculty say AI is directly reducing student originality.</h2>
+            <p class="sec-body">In a February 2026 College Board survey of college and university faculty across the United States, 84% reported that AI is directly reducing student originality and deep engagement with the material. This is near-universal agreement among the people who actually grade the work.</p>
+            <p class="sec-body">Faculty are positioned to see the change earliest: they read the same student writing over multiple terms and notice when reasoning patterns flatten. Their concern is specifically that work submitted today looks more polished but reflects less thinking than it did even a year ago.</p>
+            <a class="research-cite" href="https://newsroom.collegeboard.org/new-college-board-research-faculty-express-near-universal-concern-student-ai-use-undermines" target="_blank" rel="noopener">College Board &middot; February 2026 &#8599;</a>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- DATA POINT 03 -->
+    <section class="section s-dark">
+      <div class="container">
+        <div class="dp-grid">
+          <div class="dp-figure">
+            <div class="dp-figure-num">67%</div>
+            <div class="dp-figure-label">of students, self-reported</div>
+          </div>
+          <div class="dp-copy">
+            <span class="eyebrow">Cognitive impact</span>
+            <h2 class="sec-h2">Students themselves now say AI is eroding their critical thinking.</h2>
+            <p class="sec-body">RAND Corporation's March 2026 research on student AI use found that 67% of students now admit, in their own words, that using AI for schoolwork is actively eroding their critical thinking skills. That number was 54% earlier in the same school year.</p>
+            <p class="sec-body">The students see it happening before their administrators do. This is one of the clearest patterns in the research: the people most exposed to AI's substitution effect are reporting it first.</p>
+            <a class="research-cite" href="https://www.rand.org/news/press/2026/03/student-use-of-ai-for-homework-rises-as-concerns-grow.html" target="_blank" rel="noopener">RAND Corporation &middot; March 2026 &#8599;</a>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- DATA POINT 04 -->
+    <section class="section s-cream">
+      <div class="container">
+        <div class="dp-grid">
+          <div class="dp-figure">
+            <div class="dp-figure-num"><span class="dp-num">48%</span><span class="dp-arrow">&rarr;</span><span class="dp-num">62%</span></div>
+            <div class="dp-figure-label">share of students, May &rarr; December 2025</div>
+          </div>
+          <div class="dp-copy">
+            <span class="eyebrow">Dependency surge</span>
+            <h2 class="sec-h2">AI use for homework crossed into majority among students &mdash; in eight months.</h2>
+            <p class="sec-body">From May 2025 to December 2025, the share of students using AI for homework rose from 48% to 62%. This is the fastest adoption of a cognitive-dependency tool in recorded educational history.</p>
+            <p class="sec-body">The jump was driven almost entirely by middle and high schoolers &mdash; the age range where habits of mind around effortful learning are still forming. Adoption that fast, in that age range, with that little institutional response, is a category of risk schools have not faced before.</p>
+            <a class="research-cite" href="https://www.rand.org/news/press/2026/03/student-use-of-ai-for-homework-rises-as-concerns-grow.html" target="_blank" rel="noopener">RAND Corporation &middot; March 2026 &#8599;</a>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- DATA POINT 05 -->
+    <section class="section s-dark">
+      <div class="container">
+        <div class="dp-grid">
+          <div class="dp-figure">
+            <div class="dp-figure-num">&minus;7<span class="dp-unit">pts</span></div>
+            <div class="dp-figure-label">U.S. 9-year-old math, 2020&ndash;2022</div>
+          </div>
+          <div class="dp-copy">
+            <span class="eyebrow">The U.S. baseline</span>
+            <h2 class="sec-h2">U.S. nine-year-olds posted their first-ever math score decline &mdash; and the largest reading drop since 1990.</h2>
+            <p class="sec-body">Before generative AI became a classroom default, U.S. nine-year-olds recorded their <strong>first-ever math score decline</strong> on the National Assessment of Educational Progress, dropping 7 points between 2020 and 2022. Reading scores fell 5 points &mdash; the largest reading decline since 1990.</p>
+            <p class="sec-body">AI did not create a learning crisis. It arrived during one. Any school's AI policy has to be read against this baseline: students were already losing ground on foundational cognitive work before AI made shortcuts trivial.</p>
+            <span class="research-cite">National Center for Education Statistics &middot; NAEP 2022 Long-Term Trend Assessment</span>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- DATA POINT 06 -->
+    <section class="section s-cream">
+      <div class="container">
+        <div class="dp-grid">
+          <div class="dp-figure">
+            <div class="dp-figure-num">&minus;15<span class="dp-unit">pts</span></div>
+            <div class="dp-figure-label">OECD math, since 2018</div>
+          </div>
+          <div class="dp-copy">
+            <span class="eyebrow">The global baseline</span>
+            <h2 class="sec-h2">The steepest math decline the OECD has ever recorded.</h2>
+            <p class="sec-body">PISA 2022 &mdash; the OECD's tri-annual assessment of 15-year-olds across 81 economies &mdash; recorded the steepest mathematics decline in the program's history: a 15-point drop since 2018. Reading declined 10 points; science 4.</p>
+            <p class="sec-body">The decline was unprecedented in scale and broad-based across systems. PISA's own analysis ruled out the pandemic as a sufficient explanation; the drop began earlier and continued beyond reopenings. The cognitive baseline was already weakening before AI entered the picture.</p>
+            <span class="research-cite">OECD &middot; PISA 2022 Results &middot; December 2023</span>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- CLOSING -->
+    <section class="section s-cream cta">
+      <div class="container">
+        <div style="max-width:720px; margin-inline:auto;">
+          <h2 class="sec-h2" style="text-align:center; margin-inline:auto;">One shape across the research.</h2>
+          <p class="sec-body" style="max-width:720px; margin-inline:auto; text-align:center;">Students are using AI overwhelmingly to skip the thinking, not support it. Faculty closest to the work see originality declining. Students themselves are starting to report the cognitive cost. Adoption is accelerating into the age range where the cognitive habits matter most. And the foundational baseline &mdash; what schools could count on students arriving with &mdash; was already deteriorating before AI showed up.</p>
+          <p class="sec-body" style="max-width:720px; margin-inline:auto; text-align:center;">Most of the public conversation about AI in schools is still about whether to allow it. The research is past that question. AI is in your classrooms. The question is what kind of AI environment the school is willing to take responsibility for.</p>
+          <p class="sec-body" style="max-width:720px; margin-inline:auto; text-align:center; margin-top:2.5rem;"><a href="/#contact" class="btn-cta closing-cta">Book a walkthrough &rarr;</a></p>
+          <p class="sec-body" style="max-width:720px; margin-inline:auto; text-align:center; font-size:0.9375rem; margin-top:1.25rem;">Or read about our approach: <a href="/#how" style="color:var(--green); border-bottom:1px solid currentColor; padding-bottom:1px;">How it works &rarr;</a></p>
+        </div>
+      </div>
+    </section>
+
+    <!-- CROSS-LINKS -->
+    <div class="crosslinks">
+      <div class="container crosslinks-inner">
+        Also see: <span class="here">The Problem</span><span class="sep">&middot;</span><a href="/compare/">/compare/</a><span class="sep">&middot;</span><a href="/platform/">/platform/</a>
+      </div>
+    </div>
+
   </main>
 
   <footer class="footer">

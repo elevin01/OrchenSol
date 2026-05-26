@@ -11,7 +11,10 @@
       "Bash(python3 -)",
       "Bash(sed -n '/\\\\.hero-overlay-base {/,/^}/p' index.html)",
       "Bash(sed -n '2257,2277p' index.html)",
-      "Bash([ -f \"$u/index.html\" ])"
+      "Bash([ -f \"$u/index.html\" ])",
+      "Bash(sed -n '3076,3100p' index.html)",
+      "Bash(sed -n '3120,3160p' index.html)",
+      "Bash(grep -nA1 'class=\"btn btn-primary\"' index.html)"
     ]
   }
 }
