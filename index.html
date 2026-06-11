@@ -3055,9 +3055,10 @@ h4 {
     <div class="nav-inner">
       <a href="#" class="nav-logo">Orchen</a>
       <div class="nav-links" id="nav-links">
-        <a href="#problem">The Problem</a>
-        <a href="#how">How It Works</a>
-        <a href="#contact">For Schools</a>
+        <a href="/the-problem">The Problem</a>
+        <a href="/how-it-works/">How It Works</a>
+        <a href="/trust">Trust</a>
+        <a href="/#contact">For Schools</a>
       </div>
       <a href="#contact" class="btn-nav">Book a walkthrough</a>
       <button class="nav-toggle" id="nav-toggle" aria-label="Open menu" aria-expanded="false">
@@ -3205,6 +3206,10 @@ h4 {
         </div>
 
         <p class="research-brief-link animate-in"><a href="/the-problem">See the full research brief &mdash; six data points, all cited &rarr;</a></p>
+
+        <p class="research-brief-link animate-in" style="margin-top:0.75rem;">
+          <a href="/resources/ai-policy-brief/">Or take the board-ready version: the AI Policy Brief for school leaders &rarr;</a>
+        </p>
 
         <div class="tools-strip animate-in">
           <p class="tools-label">The tools in your students&rsquo; hands - real-world interaction data</p>
@@ -3496,6 +3501,90 @@ h4 {
       </div>
     </section>
 
+    <!-- ═══ FOUNDER NOTE ═══ -->
+    <style>
+      .founder-note {
+        background: var(--bg);
+        border-top: 1px solid var(--border);
+        padding-block: 6rem;
+      }
+      .founder-inner {
+        max-width: 720px;
+        margin-inline: auto;
+        padding-inline: var(--pad);
+      }
+      .founder-note .eyebrow { color: var(--green-light); }
+      .founder-h {
+        font-family: var(--font-display);
+        font-weight: 700;
+        font-size: clamp(1.6rem, 3.4vw, 2.4rem);
+        line-height: 1.18;
+        letter-spacing: -0.02em;
+        color: var(--ink);
+        margin: 0.5rem 0 1.75rem;
+      }
+      .founder-body {
+        font-family: var(--font-body);
+        font-size: 1.0625rem;
+        line-height: 1.85;
+        color: var(--ink-muted);
+      }
+      .founder-body p { margin-bottom: 1.25rem; }
+      .founder-body strong { color: var(--ink); font-weight: 600; }
+      .founder-sig {
+        margin-top: 2.25rem;
+        padding-top: 1.5rem;
+        border-top: 1px solid var(--border-light);
+        display: flex;
+        align-items: baseline;
+        gap: 1rem;
+        flex-wrap: wrap;
+      }
+      .founder-name {
+        font-family: var(--font-display);
+        font-style: italic;
+        font-size: 1.375rem;
+        color: var(--ink);
+      }
+      .founder-title {
+        font-family: var(--font-body);
+        font-size: 0.8125rem;
+        letter-spacing: 0.1em;
+        text-transform: uppercase;
+        color: var(--ink-faint);
+      }
+      .founder-mail {
+        margin-left: auto;
+        font-family: var(--font-body);
+        font-size: 0.9375rem;
+        color: var(--green);
+        border-bottom: 1px solid var(--green-pale, #C5DBCB);
+        padding-bottom: 1px;
+      }
+      .founder-mail:hover { color: var(--green-light); }
+      @media (max-width: 560px) {
+        .founder-note { padding-block: 4rem; }
+        .founder-mail { margin-left: 0; }
+      }
+    </style>
+
+    <section class="founder-note" id="founder">
+      <div class="founder-inner animate-in">
+        <span class="eyebrow">A Note From the Founder</span>
+        <h2 class="founder-h">You'll be working with the person who built this. Here's why that's the point.</h2>
+        <div class="founder-body">
+          <p>I built Orchen because the two answers schools were being offered &mdash; ban AI, or look away &mdash; both seemed designed to fail the students. The research made the stakes clear; what was missing was an environment a school could actually take responsibility for: one that teaches instead of completing work, and treats student data like it belongs to the student.</p>
+          <p>Orchen is early-stage, and I'd rather say that plainly than dress it up. What early means in practice: <strong>schools that join now work directly with me</strong> &mdash; on configuration, on the pilot, on the roadmap. Every privacy commitment on this site is one I can show you in the architecture, live, with your technical reviewer in the room.</p>
+          <p>If you're weighing this decision for your school, write to me. You'll get a straight answer &mdash; including when that answer is that Orchen isn't the right fit yet.</p>
+        </div>
+        <div class="founder-sig">
+          <span class="founder-name">Emil</span>
+          <span class="founder-title">Founder, Orchen</span>
+          <a class="founder-mail" href="mailto:emil@orchen.ai">emil@orchen.ai</a>
+        </div>
+      </div>
+    </section>
+
     <!-- ═══ SECTION 8: CONTACT ═══ -->
     <section class="contact-section" id="contact">
       <div class="container contact-inner">
@@ -3551,9 +3640,10 @@ h4 {
         <div class="footer-col">
           <h4>Product</h4>
           <ul>
-            <li><a href="/#how">How it works</a></li>
+            <li><a href="/how-it-works/">How it works</a></li>
             <li><a href="/platform/">Platform</a></li>
-            <li><a href="/trust">Trust</a></li>
+            <li><a href="/trust">Trust Center</a></li>
+            <li><a href="/founding-schools/">Founding Schools</a></li>
           </ul>
         </div>
 
@@ -3581,6 +3671,8 @@ h4 {
           <h4>Resources</h4>
           <ul>
             <li><a href="/the-problem">The Problem</a></li>
+            <li><a href="/resources/ai-policy-brief/">AI Policy Brief</a></li>
+            <li><a href="/solutions/heads-of-school/">For Heads of School</a></li>
             <li><a href="/privacy">Privacy</a></li>
             <li><a href="/terms">Terms</a></li>
           </ul>

@@ -3,192 +3,37 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Coming soon — Orchen</title>
-  <meta name="robots" content="noindex">
-  <link rel="canonical" href="https://orchen.ai/how-it-works">
+  <title>How Orchen Works — The Three Layers of a Governed AI Environment</title>
+  <meta name="description" content="How Orchen works, layer by layer: the Socratic AI environment students learn in, the insight layer that informs teachers, advisors, and parents, and the optional managed device layer.">
   <link rel="icon" type="image/png" sizes="32x32" href="/assets/favicon-32.png">
   <link rel="icon" type="image/png" sizes="256x256" href="/assets/favicon.png">
   <link rel="apple-touch-icon" sizes="180x180" href="/assets/apple-touch-icon.png">
+  <link rel="canonical" href="https://orchen.ai/how-it-works">
+  <meta name="robots" content="index, follow">
+  <meta property="og:title" content="How Orchen Works — The Three Layers">
+  <meta property="og:description" content="The Socratic AI environment, the insight layer, and the optional device layer — how a governed AI environment actually fits together.">
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://orchen.ai/how-it-works">
+  <meta property="og:image" content="https://orchen.ai/assets/og-image.png">
+  <meta property="og:site_name" content="Orchen">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="How Orchen Works — The Three Layers">
+  <meta name="twitter:description" content="The Socratic AI environment, the insight layer, and the optional device layer.">
+  <meta name="twitter:image" content="https://orchen.ai/assets/og-image.png">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,700;1,400&family=Lora:ital,wght@0,400;0,500;1,400&display=swap" rel="stylesheet">
-  <style>
-:root {
-  --green:       #2C5F3F;
-  --green-dark:  #1E4329;
-  --green-light: #3D7A55;
-  --bg:          #F5F2EE;
-  --ink:         #1A1A1A;
-  --ink-muted:   #6A6460;
-  --ink-faint:   #A09890;
-  --wall-text:   #EDE9E4;
-  --dark-bg:     #1A3527;
-  --border:      #DDD8CE;
-  --border-light:#EAE5DC;
-  --font-display:'Playfair Display', Georgia, serif;
-  --font-body:   'Lora', Georgia, serif;
-  --max-w: 1200px;
-  --pad: 2rem;
-  --nav-h: 62px;
-}
-*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
-html { scroll-behavior: smooth; font-size: 16px; }
-body {
-  background: var(--bg);
-  color: var(--ink);
-  font-family: var(--font-body);
-  font-size: 1.0625rem;
-  line-height: 1.75;
-  -webkit-font-smoothing: antialiased;
-}
-a { color: inherit; text-decoration: none; }
-.nav {
-  position: fixed;
-  top: 0; left: 0; right: 0;
-  z-index: 100;
-  background: rgba(245,242,238,0.95);
-  backdrop-filter: blur(12px);
-  -webkit-backdrop-filter: blur(12px);
-  border-bottom: 1px solid transparent;
-  transition: border-color 0.25s, box-shadow 0.25s;
-}
-.nav.scrolled {
-  border-color: var(--border-light);
-  box-shadow: 0 1px 16px rgba(26,26,26,0.06);
-}
-.nav-inner {
-  max-width: var(--max-w);
-  margin: 0 auto;
-  padding: 0 var(--pad);
-  height: var(--nav-h);
-  display: flex;
-  align-items: center;
-  gap: 2rem;
-}
-.nav-logo {
-  font-family: var(--font-display);
-  font-size: 1.25rem;
-  font-weight: 700;
-  color: var(--ink);
-  letter-spacing: -0.02em;
-  white-space: nowrap;
-}
-.nav-logo:hover { color: var(--green); }
-.nav-links { display: flex; gap: 2rem; flex: 1; }
-.nav-links a { font-size: 0.875rem; color: var(--ink-muted); transition: color 0.2s; }
-.nav-links a:hover { color: var(--ink); }
-.btn-nav {
-  display: inline-flex;
-  align-items: center;
-  padding: 0.5rem 1.125rem;
-  background: var(--green);
-  color: #fff;
-  border-radius: 4px;
-  font-family: var(--font-body);
-  font-size: 0.875rem;
-  font-weight: 500;
-  letter-spacing: 0.01em;
-  white-space: nowrap;
-  transition: background 0.2s;
-}
-.btn-nav:hover { background: var(--green-dark); }
-.nav-toggle {
-  display: none;
-  flex-direction: column;
-  justify-content: center;
-  gap: 4.5px;
-  width: 28px;
-  height: 28px;
-  background: none;
-  border: none;
-  cursor: pointer;
-  margin-left: auto;
-  padding: 0;
-}
-.nav-toggle span {
-  display: block;
-  width: 22px;
-  height: 1.5px;
-  background: var(--ink);
-  border-radius: 1px;
-  transition: transform 0.25s, opacity 0.25s;
-}
-.nav-toggle[aria-expanded="true"] span:nth-child(1) { transform: translateY(6px) rotate(45deg); }
-.nav-toggle[aria-expanded="true"] span:nth-child(2) { opacity: 0; transform: scaleX(0); }
-.nav-toggle[aria-expanded="true"] span:nth-child(3) { transform: translateY(-6px) rotate(-45deg); }
-.container { max-width: var(--max-w); margin-inline: auto; padding-inline: var(--pad); }
-.stub {
-  background: var(--dark-bg);
-  color: var(--wall-text);
-  min-height: 70vh;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  text-align: center;
-  padding-top: calc(var(--nav-h) + 4rem);
-  padding-bottom: 4rem;
-}
-.stub-inner { max-width: 600px; margin-inline: auto; }
-.stub-eyebrow {
-  display: block;
-  font-family: var(--font-body);
-  font-size: 0.6875rem;
-  font-weight: 500;
-  letter-spacing: 0.7rem;
-  text-transform: uppercase;
-  color: rgba(237,233,228,0.5);
-  margin-bottom: 1.5rem;
-}
-.stub h1 {
-  font-family: var(--font-display);
-  font-weight: 700;
-  font-size: clamp(2rem, 5vw, 3.25rem);
-  line-height: 1.12;
-  letter-spacing: -0.025em;
-  color: var(--wall-text);
-  margin-bottom: 1.25rem;
-}
-.stub p {
-  font-family: var(--font-body);
-  font-size: 1.0625rem;
-  line-height: 1.75;
-  color: rgba(237,233,228,0.6);
-  max-width: 540px;
-  margin: 0 auto 2rem;
-}
-.stub-back {
-  font-size: 0.9375rem;
-  color: var(--wall-text);
-  opacity: 0.65;
-  transition: opacity 0.2s;
-}
-.stub-back:hover { opacity: 1; text-decoration: underline; }
-.footer { border-top: 1px solid var(--border); padding-block: 1.5rem; }
-.footer-inner { display: flex; align-items: center; justify-content: space-between; }
-.footer-logo { font-family: var(--font-display); font-size: 1.0625rem; font-weight: 700; letter-spacing: -0.02em; }
-.footer-meta { font-size: 0.8125rem; color: var(--ink-faint); font-style: italic; }
-@media (max-width: 768px) {
-  .nav-links { display: none; }
-  .nav-links.open {
-    display: flex;
-    flex-direction: column;
-    position: absolute;
-    top: var(--nav-h);
-    left: 0; right: 0;
-    background: var(--bg);
-    border-bottom: 1px solid var(--border);
-    padding: 1.25rem var(--pad);
-    gap: 1.25rem;
-    z-index: 99;
+  <link rel="stylesheet" href="/assets/site.css">
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "BreadcrumbList",
+    "itemListElement": [
+      { "@type": "ListItem", "position": 1, "name": "Orchen", "item": "https://orchen.ai/" },
+      { "@type": "ListItem", "position": 2, "name": "How It Works", "item": "https://orchen.ai/how-it-works" }
+    ]
   }
-  .btn-nav { display: none; }
-  .nav-toggle { display: flex; }
-  .footer-inner { flex-direction: column; gap: 0.375rem; align-items: flex-start; }
-}
-@media (max-width: 480px) {
-  :root { --pad: 1.25rem; }
-}
-  </style>
+  </script>
 </head>
 <body>
 
@@ -196,8 +41,9 @@ a { color: inherit; text-decoration: none; }
     <div class="nav-inner">
       <a href="/" class="nav-logo">Orchen</a>
       <div class="nav-links" id="nav-links">
-        <a href="/#problem">The Problem</a>
-        <a href="/#how">How It Works</a>
+        <a href="/the-problem">The Problem</a>
+        <a href="/how-it-works/">How It Works</a>
+        <a href="/trust">Trust</a>
         <a href="/#contact">For Schools</a>
       </div>
       <a href="/#contact" class="btn-nav">Book a walkthrough</a>
@@ -208,22 +54,146 @@ a { color: inherit; text-decoration: none; }
   </nav>
 
   <main>
-    <section class="stub">
+
+    <!-- HERO -->
+    <section class="hero hero-dark">
       <div class="container">
-        <div class="stub-inner">
-          <span class="stub-eyebrow">HOW IT WORKS</span>
-          <h1>Coming soon</h1>
-          <p>A full walkthrough of Orchen's three layers &mdash; the AI environment, the insight layer, and the device layer &mdash; is on its way.</p>
-          <a href="/" class="stub-back">&larr; Back to Orchen</a>
+        <span class="eyebrow">How It Works</span>
+        <h1 class="hero-h1">Three layers. One governed environment.</h1>
+        <p class="hero-sub">Orchen is not a chatbot with a dashboard bolted on. It's three deliberate layers: the AI environment students learn inside, the insight layer that informs the adults around them, and an optional device layer for schools that want hard enforcement.</p>
+      </div>
+    </section>
+
+    <!-- LAYER 01 -->
+    <section class="section s-cream">
+      <div class="container">
+        <div class="section-inner" style="margin-bottom: 3rem;">
+          <span class="eyebrow">Layer 01 &middot; The AI Environment</span>
+          <h2 class="sec-h2">A tutor that teaches, configured by your school.</h2>
+          <p class="sec-body">Students experience Orchen as a conversation. Underneath: a Socratic posture hard-coded into the system architecture, adaptive presentation that adjusts to how each student thinks, subject-specific teaching modules, and assignments, flashcards, and quizzes that grow out of real sessions.</p>
+        </div>
+        <div class="two-col">
+          <div>
+            <div class="shot-frame">
+              <div class="shot-chrome"><span class="shot-dot"></span><span class="shot-dot"></span><span class="shot-dot"></span><span class="shot-name">Student &middot; Tutoring session</span></div>
+              <img src="/assets/product-student-chat.png" alt="A live Orchen tutoring session where the AI guides a student through the difference between stars and planets with questions and a diagram" loading="lazy">
+            </div>
+            <p class="shot-caption">The Socratic loop: question, attempt, build. Not answer delivery.</p>
+          </div>
+          <div>
+            <div class="shot-frame">
+              <div class="shot-chrome"><span class="shot-dot"></span><span class="shot-dot"></span><span class="shot-dot"></span><span class="shot-name">Student &middot; Writing workspace</span></div>
+              <img src="/assets/product-writing-workspace.png" alt="The Orchen writing workspace: a full essay editor with a contextual outline card guiding the student through their draft" loading="lazy">
+            </div>
+            <p class="shot-caption">Writing assignments open a full workspace &mdash; the student writes, Orchen frames and checks.</p>
+          </div>
+        </div>
+        <div class="section-inner" style="margin-top: 3rem;">
+          <div class="rows">
+            <div class="row">
+              <span class="row-eyebrow">Pedagogy rules</span>
+              <h3 class="row-head">Encoded behavior, not marketing language</h3>
+              <p class="row-body">The Circle Rule switches approach after two wrong answers on the same concept. Partial examples stop before the final step so the student finishes. When the student has it, Orchen recognizes it and stops. Each rule is operational, documented on the <a href="/platform/" style="color: var(--green); border-bottom: 1px solid var(--green-pale);">platform page</a>.</p>
+            </div>
+            <div class="row">
+              <span class="row-eyebrow">School configuration</span>
+              <h3 class="row-head">Your identity, your defaults</h3>
+              <p class="row-body">The tutor's identity, tone, mechanical-feedback policy, and crisis routing are set at the school level. Every student meets the same configured tutor in every class &mdash; consistency is the point.</p>
+            </div>
+          </div>
         </div>
       </div>
     </section>
+
+    <!-- LAYER 02 -->
+    <section class="section s-warm">
+      <div class="container">
+        <div class="section-inner" style="margin-bottom: 3rem;">
+          <span class="eyebrow">Layer 02 &middot; The Insight Layer</span>
+          <h2 class="sec-h2">Every conversation becomes structured signal.</h2>
+          <p class="sec-body">A nightly pipeline turns sessions into learning profiles, concept-level mastery tracking, struggle and strength tags, and weekly plain-English advisor narratives. Teachers see their class as a distribution of understanding. Advisors get the synthesis. Parents get school-configured digests. Nobody reads raw transcripts &mdash; the source conversations are deleted within seven days.</p>
+        </div>
+        <div class="two-col">
+          <div>
+            <div class="shot-frame">
+              <div class="shot-chrome"><span class="shot-dot"></span><span class="shot-dot"></span><span class="shot-dot"></span><span class="shot-name">Teacher &middot; Student insight</span></div>
+              <img src="/assets/product-teacher-insight.png" alt="The teacher insight view for one student: best teaching approach, learning style percentages, struggle areas and strength areas by subject" loading="lazy">
+            </div>
+            <p class="shot-caption">A teacher's read on one student &mdash; built from sessions, not surveys.</p>
+          </div>
+          <div>
+            <div class="shot-frame">
+              <div class="shot-chrome"><span class="shot-dot"></span><span class="shot-dot"></span><span class="shot-dot"></span><span class="shot-name">Parent &middot; Weekly digest</span></div>
+              <img src="/assets/product-parent-digest.png" alt="The parent weekly digest with a one-sentence summary of the week, activity stats, learning observations, and a suggested question to ask at home" loading="lazy">
+            </div>
+            <p class="shot-caption">The parent view: a clear weekly picture, ending with one thing to do tonight.</p>
+          </div>
+        </div>
+        <div class="section-inner" style="margin-top: 3rem;">
+          <div class="rows">
+            <div class="row">
+              <span class="row-eyebrow">Crisis detection</span>
+              <h3 class="row-head">Concerning content reaches a counselor, not an inbox</h3>
+              <p class="row-body">Every conversation is scanned. Detected concerns are flagged with a 24-hour urgency indicator, routed to the school's designated counselor, and tracked through a full lifecycle &mdash; open, reviewing, resolved, or escalated. Every step is logged.</p>
+            </div>
+            <div class="row">
+              <span class="row-eyebrow">Privacy by structure</span>
+              <h3 class="row-head">Insight without surveillance</h3>
+              <p class="row-body">Students keep a private workspace &mdash; goals, journal, preferences &mdash; that no staff member can access. Staff see derived synthesis, scoped to their role, with every access written to an immutable audit log. The full model is in the <a href="/trust" style="color: var(--green); border-bottom: 1px solid var(--green-pale);">Trust Center</a>.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- LAYER 03 -->
+    <section class="section s-dark">
+      <div class="container">
+        <div class="section-inner">
+          <span class="eyebrow">Layer 03 &middot; The Device Layer (Optional)</span>
+          <h2 class="sec-h2">For schools that want enforcement, not just policy.</h2>
+          <p class="sec-body">Orchen runs in the browser on whatever fleet your school already has &mdash; no IT project required. For schools that want network-level enforcement, an optional managed device layer is available: devices provisioned with MDM management and DNS filtering that point to Orchen as the school's AI environment of record.</p>
+          <p class="sec-body">Most pilots start without it. It exists for schools where a written AI policy has already failed and the board wants the next answer to hold.</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- LIFECYCLE SUMMARY -->
+    <section class="section s-cream">
+      <div class="container">
+        <div class="section-inner">
+          <span class="eyebrow">Underneath It All</span>
+          <h2 class="sec-h2">The data lifecycle in one sentence.</h2>
+          <p class="sec-body">A conversation is created, analyzed nightly into derived insight, and deleted at the source within seven days &mdash; leaving profiles and narratives governed by your school's retention policy, with crisis flags preserved and every staff access logged.</p>
+          <p class="sec-body" style="margin-top: 1.5rem;"><a href="/trust" class="btn-secondary">Read the full data lifecycle &rarr;</a></p>
+        </div>
+      </div>
+    </section>
+
+    <!-- CTA -->
+    <section class="section s-dark cta">
+      <div class="container">
+        <span class="eyebrow">See It Live</span>
+        <h2 class="cta-h">Thirty minutes against the real product.</h2>
+        <p class="sec-body">Every screen on this page is from the live platform. A walkthrough shows you the rest &mdash; with your questions driving it.</p>
+        <a href="/#contact" class="btn-cta btn-invert">Book a walkthrough &rarr;</a>
+        <p class="cta-alt">Or go deeper: <a href="/platform/">the full platform architecture</a>.</p>
+      </div>
+    </section>
+
+    <!-- CROSS-LINKS -->
+    <div class="crosslinks">
+      <div class="container crosslinks-inner">
+        Also see: <a href="/for/teachers">For Teachers</a><span class="sep">&middot;</span><a href="/for/advisors">For Advisors</a><span class="sep">&middot;</span><a href="/for/parents">For Parents</a><span class="sep">&middot;</span><a href="/founding-schools/">Founding Schools</a>
+      </div>
+    </div>
+
   </main>
 
   <footer class="footer">
     <div class="container footer-inner">
       <span class="footer-logo">Orchen</span>
-      <span class="footer-meta">&copy; 2026 Orchen AI &middot; <a href="/privacy" style="border-bottom:1px solid currentColor;">Privacy Policy</a> &middot; <a href="/terms" style="border-bottom:1px solid currentColor;">Terms of Service</a></span>
+      <span class="footer-meta">&copy; 2026 Orchen AI &middot; <a href="/privacy">Privacy Policy</a> &middot; <a href="/terms">Terms of Service</a></span>
     </div>
   </footer>
 

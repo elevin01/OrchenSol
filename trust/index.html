@@ -3,192 +3,37 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Coming soon — Orchen</title>
-  <meta name="robots" content="noindex">
-  <link rel="canonical" href="https://orchen.ai/trust">
+  <title>Trust Center — Orchen | Security, Privacy &amp; Compliance for Schools</title>
+  <meta name="description" content="Orchen's security architecture, data lifecycle, sub-processors, FERPA and COPPA posture, and an honest account of where our compliance roadmap stands. Built for your security review.">
   <link rel="icon" type="image/png" sizes="32x32" href="/assets/favicon-32.png">
   <link rel="icon" type="image/png" sizes="256x256" href="/assets/favicon.png">
   <link rel="apple-touch-icon" sizes="180x180" href="/assets/apple-touch-icon.png">
+  <link rel="canonical" href="https://orchen.ai/trust">
+  <meta name="robots" content="index, follow">
+  <meta property="og:title" content="Trust Center — Orchen">
+  <meta property="og:description" content="Security architecture, data lifecycle, sub-processors, FERPA and COPPA posture — and an honest account of where our compliance roadmap stands.">
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://orchen.ai/trust">
+  <meta property="og:image" content="https://orchen.ai/assets/og-image.png">
+  <meta property="og:site_name" content="Orchen">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="Trust Center — Orchen">
+  <meta name="twitter:description" content="Security architecture, data lifecycle, sub-processors, FERPA and COPPA posture — built for your security review.">
+  <meta name="twitter:image" content="https://orchen.ai/assets/og-image.png">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,700;1,400&family=Lora:ital,wght@0,400;0,500;1,400&display=swap" rel="stylesheet">
-  <style>
-:root {
-  --green:       #2C5F3F;
-  --green-dark:  #1E4329;
-  --green-light: #3D7A55;
-  --bg:          #F5F2EE;
-  --ink:         #1A1A1A;
-  --ink-muted:   #6A6460;
-  --ink-faint:   #A09890;
-  --wall-text:   #EDE9E4;
-  --dark-bg:     #1A3527;
-  --border:      #DDD8CE;
-  --border-light:#EAE5DC;
-  --font-display:'Playfair Display', Georgia, serif;
-  --font-body:   'Lora', Georgia, serif;
-  --max-w: 1200px;
-  --pad: 2rem;
-  --nav-h: 62px;
-}
-*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
-html { scroll-behavior: smooth; font-size: 16px; }
-body {
-  background: var(--bg);
-  color: var(--ink);
-  font-family: var(--font-body);
-  font-size: 1.0625rem;
-  line-height: 1.75;
-  -webkit-font-smoothing: antialiased;
-}
-a { color: inherit; text-decoration: none; }
-.nav {
-  position: fixed;
-  top: 0; left: 0; right: 0;
-  z-index: 100;
-  background: rgba(245,242,238,0.95);
-  backdrop-filter: blur(12px);
-  -webkit-backdrop-filter: blur(12px);
-  border-bottom: 1px solid transparent;
-  transition: border-color 0.25s, box-shadow 0.25s;
-}
-.nav.scrolled {
-  border-color: var(--border-light);
-  box-shadow: 0 1px 16px rgba(26,26,26,0.06);
-}
-.nav-inner {
-  max-width: var(--max-w);
-  margin: 0 auto;
-  padding: 0 var(--pad);
-  height: var(--nav-h);
-  display: flex;
-  align-items: center;
-  gap: 2rem;
-}
-.nav-logo {
-  font-family: var(--font-display);
-  font-size: 1.25rem;
-  font-weight: 700;
-  color: var(--ink);
-  letter-spacing: -0.02em;
-  white-space: nowrap;
-}
-.nav-logo:hover { color: var(--green); }
-.nav-links { display: flex; gap: 2rem; flex: 1; }
-.nav-links a { font-size: 0.875rem; color: var(--ink-muted); transition: color 0.2s; }
-.nav-links a:hover { color: var(--ink); }
-.btn-nav {
-  display: inline-flex;
-  align-items: center;
-  padding: 0.5rem 1.125rem;
-  background: var(--green);
-  color: #fff;
-  border-radius: 4px;
-  font-family: var(--font-body);
-  font-size: 0.875rem;
-  font-weight: 500;
-  letter-spacing: 0.01em;
-  white-space: nowrap;
-  transition: background 0.2s;
-}
-.btn-nav:hover { background: var(--green-dark); }
-.nav-toggle {
-  display: none;
-  flex-direction: column;
-  justify-content: center;
-  gap: 4.5px;
-  width: 28px;
-  height: 28px;
-  background: none;
-  border: none;
-  cursor: pointer;
-  margin-left: auto;
-  padding: 0;
-}
-.nav-toggle span {
-  display: block;
-  width: 22px;
-  height: 1.5px;
-  background: var(--ink);
-  border-radius: 1px;
-  transition: transform 0.25s, opacity 0.25s;
-}
-.nav-toggle[aria-expanded="true"] span:nth-child(1) { transform: translateY(6px) rotate(45deg); }
-.nav-toggle[aria-expanded="true"] span:nth-child(2) { opacity: 0; transform: scaleX(0); }
-.nav-toggle[aria-expanded="true"] span:nth-child(3) { transform: translateY(-6px) rotate(-45deg); }
-.container { max-width: var(--max-w); margin-inline: auto; padding-inline: var(--pad); }
-.stub {
-  background: var(--dark-bg);
-  color: var(--wall-text);
-  min-height: 70vh;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  text-align: center;
-  padding-top: calc(var(--nav-h) + 4rem);
-  padding-bottom: 4rem;
-}
-.stub-inner { max-width: 600px; margin-inline: auto; }
-.stub-eyebrow {
-  display: block;
-  font-family: var(--font-body);
-  font-size: 0.6875rem;
-  font-weight: 500;
-  letter-spacing: 0.7rem;
-  text-transform: uppercase;
-  color: rgba(237,233,228,0.5);
-  margin-bottom: 1.5rem;
-}
-.stub h1 {
-  font-family: var(--font-display);
-  font-weight: 700;
-  font-size: clamp(2rem, 5vw, 3.25rem);
-  line-height: 1.12;
-  letter-spacing: -0.025em;
-  color: var(--wall-text);
-  margin-bottom: 1.25rem;
-}
-.stub p {
-  font-family: var(--font-body);
-  font-size: 1.0625rem;
-  line-height: 1.75;
-  color: rgba(237,233,228,0.6);
-  max-width: 540px;
-  margin: 0 auto 2rem;
-}
-.stub-back {
-  font-size: 0.9375rem;
-  color: var(--wall-text);
-  opacity: 0.65;
-  transition: opacity 0.2s;
-}
-.stub-back:hover { opacity: 1; text-decoration: underline; }
-.footer { border-top: 1px solid var(--border); padding-block: 1.5rem; }
-.footer-inner { display: flex; align-items: center; justify-content: space-between; }
-.footer-logo { font-family: var(--font-display); font-size: 1.0625rem; font-weight: 700; letter-spacing: -0.02em; }
-.footer-meta { font-size: 0.8125rem; color: var(--ink-faint); font-style: italic; }
-@media (max-width: 768px) {
-  .nav-links { display: none; }
-  .nav-links.open {
-    display: flex;
-    flex-direction: column;
-    position: absolute;
-    top: var(--nav-h);
-    left: 0; right: 0;
-    background: var(--bg);
-    border-bottom: 1px solid var(--border);
-    padding: 1.25rem var(--pad);
-    gap: 1.25rem;
-    z-index: 99;
+  <link rel="stylesheet" href="/assets/site.css">
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "BreadcrumbList",
+    "itemListElement": [
+      { "@type": "ListItem", "position": 1, "name": "Orchen", "item": "https://orchen.ai/" },
+      { "@type": "ListItem", "position": 2, "name": "Trust Center", "item": "https://orchen.ai/trust" }
+    ]
   }
-  .btn-nav { display: none; }
-  .nav-toggle { display: flex; }
-  .footer-inner { flex-direction: column; gap: 0.375rem; align-items: flex-start; }
-}
-@media (max-width: 480px) {
-  :root { --pad: 1.25rem; }
-}
-  </style>
+  </script>
 </head>
 <body>
 
@@ -196,8 +41,9 @@ a { color: inherit; text-decoration: none; }
     <div class="nav-inner">
       <a href="/" class="nav-logo">Orchen</a>
       <div class="nav-links" id="nav-links">
-        <a href="/#problem">The Problem</a>
-        <a href="/#how">How It Works</a>
+        <a href="/the-problem">The Problem</a>
+        <a href="/how-it-works/">How It Works</a>
+        <a href="/trust">Trust</a>
         <a href="/#contact">For Schools</a>
       </div>
       <a href="/#contact" class="btn-nav">Book a walkthrough</a>
@@ -208,22 +54,361 @@ a { color: inherit; text-decoration: none; }
   </nav>
 
   <main>
-    <section class="stub">
+
+    <!-- HERO -->
+    <section class="hero hero-dark">
       <div class="container">
-        <div class="stub-inner">
-          <span class="stub-eyebrow">TRUST &amp; COMPLIANCE</span>
-          <h1>Coming soon</h1>
-          <p>Our full data, privacy, and compliance documentation is being prepared for publication.</p>
-          <a href="/" class="stub-back">&larr; Back to Orchen</a>
+        <span class="eyebrow">Trust Center</span>
+        <h1 class="hero-h1">Built so your security review is the easy part.</h1>
+        <p class="hero-sub">Everything your technology director, legal counsel, or board will ask about Orchen — the data lifecycle, the security architecture, the sub-processors, and an honest account of where our compliance roadmap stands today.</p>
+        <p class="hero-note">Last updated June 2026 &middot; Questions or document requests: emil@orchen.ai</p>
+      </div>
+    </section>
+
+    <!-- COMMITMENTS AT A GLANCE -->
+    <section class="section s-cream">
+      <div class="container">
+        <span class="eyebrow">At a Glance</span>
+        <h2 class="sec-h2">Six commitments, each enforced in the architecture.</h2>
+        <p class="sec-body">These are not policy statements layered on top of the product. Each one is a design decision you can verify in a walkthrough.</p>
+        <div class="mini-cards" style="grid-template-columns: repeat(3, 1fr);">
+          <div class="mini-card">
+            <h3>Source conversations deleted in 7 days</h3>
+            <p>Raw student transcripts are deleted within seven days of analysis. What persists is derived insight — profiles, concept progress, narratives — not the conversations themselves.</p>
+          </div>
+          <div class="mini-card">
+            <h3>No model training on student data</h3>
+            <p>Student data is never used to train AI models — ours or our providers'. Provider terms prohibit use of transmitted data beyond generating the requested response.</p>
+          </div>
+          <div class="mini-card">
+            <h3>No data sales, no advertising</h3>
+            <p>Orchen is paid by schools, full stop. There is no advertising business model and no third party purchasing student data — now or planned.</p>
+          </div>
+          <div class="mini-card">
+            <h3>Row-level security on every table</h3>
+            <p>Access control is enforced at the database layer, not just in application code. A teacher's query physically cannot return another school's rows.</p>
+          </div>
+          <div class="mini-card">
+            <h3>Immutable audit logging</h3>
+            <p>Every staff access of student data writes an insert-only audit entry with server-side actor verification. The trail cannot be edited or deleted.</p>
+          </div>
+          <div class="mini-card">
+            <h3>School-controlled visibility</h3>
+            <p>Parent visibility runs on a five-tier model with school-set defaults and ceilings. Crisis flags route only to the school's designated contact.</p>
+          </div>
         </div>
       </div>
     </section>
+
+    <!-- DATA LIFECYCLE -->
+    <section class="section s-warm">
+      <div class="container">
+        <div class="section-inner">
+          <span class="eyebrow">Data Lifecycle</span>
+          <h2 class="sec-h2">A single conversation, end to end.</h2>
+          <p class="sec-body" style="margin-bottom: 2.5rem;">The path of one student-AI conversation through Orchen — from creation, through analysis, to deletion. Every step is logged, scoped, and documented.</p>
+          <div class="steps">
+            <div class="step">
+              <span class="step-num"></span>
+              <div>
+                <div class="step-label">Day 0 — Creation</div>
+                <p class="step-body">Student opens a new chat. A session row is created; each message is stored against it with row-level security scoping it to the student. During this window, the conversation is visible only to the student.</p>
+              </div>
+            </div>
+            <div class="step">
+              <span class="step-num"></span>
+              <div>
+                <div class="step-label">Day 0–7 — Live conversation</div>
+                <p class="step-body">Messages save as they happen. Topic classification updates every five student messages. Concept progress increments. Crisis detection scans every message and routes any flag to the school's designated counselor.</p>
+              </div>
+            </div>
+            <div class="step">
+              <span class="step-num"></span>
+              <div>
+                <div class="step-label">Day 1–7 — Nightly analysis</div>
+                <p class="step-body">The analysis pipeline runs nightly: learning profile updates, concept distribution updates, struggle and strength tags refresh, and weekly advisor narratives compile.</p>
+              </div>
+            </div>
+            <div class="step">
+              <span class="step-num"></span>
+              <div>
+                <div class="step-label">Day 7 — Source deletion</div>
+                <p class="step-body">The source conversation is deleted from the messages table. The session row remains with derived insight attached. The advisor dashboard shows the synthesis; the conversation that produced it is gone.</p>
+              </div>
+            </div>
+            <div class="step">
+              <span class="step-num"></span>
+              <div>
+                <div class="step-label">Day 7+ — Derived insight persists</div>
+                <p class="step-body">Learning profiles, concept progress, and longitudinal trajectory remain, governed by the school's retention policy. Crisis flags are exempt from automatic deletion because of their safety significance.</p>
+              </div>
+            </div>
+            <div class="step">
+              <span class="step-num"></span>
+              <div>
+                <div class="step-label">Retention sweep — Per school policy</div>
+                <p class="step-body">A nightly <code>pg_cron</code> job enforces each school's configured retention rules across messages, sessions, quiz results, and profile snapshots.</p>
+              </div>
+            </div>
+            <div class="step">
+              <span class="step-num"></span>
+              <div>
+                <div class="step-label">Account deletion — Anywhere in the timeline</div>
+                <p class="step-body">Student or school admin initiates deletion. The profile soft-deletes, crisis flags anonymize (preserving the safeguarding record without personal identifiers), and a full structured data export is available beforehand. The audit log of the deletion itself persists.</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- SECURITY ARCHITECTURE -->
+    <section class="section s-dark">
+      <div class="container">
+        <div class="section-inner">
+          <span class="eyebrow">Security Architecture</span>
+          <h2 class="sec-h2">Enforced in the database, not promised in a PDF.</h2>
+          <div class="rows">
+            <div class="row">
+              <span class="row-eyebrow">Access control</span>
+              <h3 class="row-head">Row-level security on every table</h3>
+              <p class="row-body">Every table carries <code>RLS</code> policies enforced at the Postgres layer. Role checks run through <code>SECURITY DEFINER</code> helpers to prevent recursion, and service-role operations are isolated from end-user role-based access — the two cannot accidentally cross.</p>
+            </div>
+            <div class="row">
+              <span class="row-eyebrow">Audit trail</span>
+              <h3 class="row-head">Insert-only, RPC-mediated, server-verified</h3>
+              <p class="row-body">Direct writes to the <code>audit_log</code> table are blocked. All entries go through the <code>log_audit_event</code> RPC, which verifies the actor server-side. Every staff access of student data is recorded; school administrators can review their school's log at any time.</p>
+            </div>
+            <div class="row">
+              <span class="row-eyebrow">Encryption</span>
+              <h3 class="row-head">TLS in transit, encrypted at rest</h3>
+              <p class="row-body">All traffic between clients, the application, and the database runs over TLS. Data at rest is encrypted by the underlying infrastructure provider.</p>
+            </div>
+            <div class="row">
+              <span class="row-eyebrow">Privilege escalation</span>
+              <h3 class="row-head">Role changes blocked at the trigger level</h3>
+              <p class="row-body">A database trigger prevents non-admins from modifying their own role, premium status, or age flags — privilege escalation is stopped in the database, before application code is even involved.</p>
+            </div>
+            <div class="row">
+              <span class="row-eyebrow">Consent gating</span>
+              <h3 class="row-head">No consent record, no persistence</h3>
+              <p class="row-body">Students without an active consent record operate in a non-persistent Guest Mode: their interactions are never written to the database. Consent is tracked, versioned, and revocable.</p>
+            </div>
+            <div class="row">
+              <span class="row-eyebrow">Account hygiene</span>
+              <h3 class="row-head">Forced credential rotation, no self-registration for parents</h3>
+              <p class="row-body">Admin-created accounts must set a new password on first login. Parents cannot self-register — accounts exist only because a school created them, which keeps the account perimeter under institutional control.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- WHO SEES WHAT -->
+    <section class="section s-cream">
+      <div class="container">
+        <div class="section-inner">
+          <span class="eyebrow">Access Model</span>
+          <h2 class="sec-h2">Who can see student data.</h2>
+          <p class="sec-body">Six roles, each scoped to what the role needs. Boundaries are enforced architecturally, not by policy documents.</p>
+          <table class="std-table">
+            <thead>
+              <tr><th>Role</th><th>What they can access</th></tr>
+            </thead>
+            <tbody>
+              <tr><td>Student</td><td>Their own conversations, assignments, flashcards, quiz results, goals, and journal. The private workspace is invisible to every other role.</td></tr>
+              <tr><td>Teacher</td><td>Learning profiles and synthesis for students in their classes. Raw conversations only when a session has been explicitly shared.</td></tr>
+              <tr><td>Advisor</td><td>Weekly narratives, learning profiles, and crisis flags for assigned students. Shared sessions only for raw conversation access.</td></tr>
+              <tr><td>Parent</td><td>Summary data at the school-configured visibility level (1–5). Level 5 includes redacted, read-only transcripts; every access is logged.</td></tr>
+              <tr><td>School Admin</td><td>School-scoped administration: users, settings, consent records, audit logs, visibility configuration.</td></tr>
+              <tr><td>Orchen</td><td>Platform-level access for compliance, support, and audit purposes only. All access is logged.</td></tr>
+            </tbody>
+          </table>
+        </div>
+      </div>
+    </section>
+
+    <!-- SUB-PROCESSORS -->
+    <section class="section s-warm">
+      <div class="container">
+        <div class="section-inner">
+          <span class="eyebrow">Sub-processors</span>
+          <h2 class="sec-h2">Where your data goes, and why.</h2>
+          <p class="sec-body">Orchen uses a small number of infrastructure providers. None of them may use student data for any purpose beyond delivering the service.</p>
+          <table class="std-table">
+            <thead>
+              <tr><th>Provider</th><th>Purpose</th><th>Data involved</th></tr>
+            </thead>
+            <tbody>
+              <tr><td>Supabase</td><td>Database, authentication, edge functions, file storage</td><td>All platform data, encrypted at rest, US-hosted</td></tr>
+              <tr><td>Google (Gemini)</td><td>AI model inference for tutoring, writing analysis, and synthesis, via the Lovable AI Gateway</td><td>Conversation content transmitted per-request; not retained for training</td></tr>
+              <tr><td>Netlify</td><td>Marketing site hosting (orchen.ai)</td><td>No student data</td></tr>
+              <tr><td>Formspree</td><td>Marketing site contact forms</td><td>Inquiry contact details only; no student data</td></tr>
+            </tbody>
+          </table>
+          <p class="sec-body" style="font-size: 0.9375rem;">A current, complete sub-processor list with data processing terms is available on request and is incorporated into our Data Processing Agreement. Schools are notified before any new sub-processor handles student data.</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- COMPLIANCE POSTURE -->
+    <section class="section s-cream">
+      <div class="container">
+        <div class="section-inner">
+          <span class="eyebrow">Regulatory Posture</span>
+          <h2 class="sec-h2">FERPA, COPPA, and state privacy law.</h2>
+          <div class="rows">
+            <div class="row">
+              <span class="row-eyebrow">FERPA</span>
+              <h3 class="row-head">Orchen operates as a school official</h3>
+              <p class="row-body">Under FERPA, your school controls the education records; Orchen processes them as a school official under the school's direct control, with a legitimate educational interest. Access, amendment, and deletion requests route through the school, and our audit logs satisfy FERPA's documentation requirements for record access.</p>
+            </div>
+            <div class="row">
+              <span class="row-eyebrow">COPPA</span>
+              <h3 class="row-head">Under-13 protections enforced by role gates</h3>
+              <p class="row-body">Students under 13 require verifiable parental consent managed through the school's consent process. Without an active consent record, the platform's COPPA-aware role gates place the student in non-persistent Guest Mode — no data is written.</p>
+            </div>
+            <div class="row">
+              <span class="row-eyebrow">State law</span>
+              <h3 class="row-head">Data minimization as the default posture</h3>
+              <p class="row-body">State student-privacy statutes vary, but nearly all reward the same posture: collect less, keep less, log everything. The 7-day source deletion, school-configurable retention, and immutable audit trail are designed so that posture holds across jurisdictions. Your counsel reviews the DPA against your state's requirements before deployment.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- HONEST STATUS -->
+    <section class="section s-dark">
+      <div class="container">
+        <div class="section-inner">
+          <span class="eyebrow">Where We Stand</span>
+          <h2 class="sec-h2">An honest account of our current posture.</h2>
+          <p class="sec-body">Trust pages usually list what a company has. Ours also lists what we don't have yet — because a head of school deserves to make this decision with complete information.</p>
+          <div class="rows">
+            <div class="row">
+              <span class="row-eyebrow">In place today</span>
+              <h3 class="row-head">Architecture-level controls, live in production</h3>
+              <p class="row-body">Row-level security, immutable audit logging, consent gating with Guest Mode, the 7-day source deletion pipeline, per-school retention enforcement, crisis flag lifecycle tracking, structured data export, and right-to-be-forgotten tooling. Each is verifiable in a technical walkthrough.</p>
+            </div>
+            <div class="row">
+              <span class="row-eyebrow">Not yet</span>
+              <h3 class="row-head">SOC 2 certification</h3>
+              <p class="row-body">Orchen is not SOC 2 certified today. A Type 1 audit is on our roadmap as we move from founding pilots to broader deployment. If your procurement process requires SOC 2 now, we'd rather tell you that on this page than in month three of an evaluation. We're glad to walk your reviewer through our current controls in detail.</p>
+            </div>
+            <div class="row">
+              <span class="row-eyebrow">Not yet</span>
+              <h3 class="row-head">Third-party penetration test</h3>
+              <p class="row-body">An independent penetration test is planned ahead of our first full-school deployments. Schools participating in our founding program will receive the results when complete.</p>
+            </div>
+            <div class="row">
+              <span class="row-eyebrow">By design</span>
+              <h3 class="row-head">What an early-stage vendor owes you</h3>
+              <p class="row-body">An early-stage company can't offer a decade of audits. What it can offer is an architecture where the privacy promises are structural rather than procedural, direct access to the people who built it, and contractual terms — data ownership, export, deletion — that protect the school regardless of what happens to the vendor. That is the deal we offer, stated plainly.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- DOCUMENTS -->
+    <section class="section s-warm">
+      <div class="container">
+        <div class="section-inner">
+          <span class="eyebrow">For Your Review</span>
+          <h2 class="sec-h2">Documents available on request.</h2>
+          <p class="sec-body">Email <strong>emil@orchen.ai</strong> with your school name and we'll send these within one business day:</p>
+          <div class="mini-cards" style="margin-top: 2rem;">
+            <div class="mini-card">
+              <h3>Data Processing Agreement</h3>
+              <p>Retention windows, deletion rights, breach notification terms, and the full sub-processor list.</p>
+            </div>
+            <div class="mini-card">
+              <h3>Security overview</h3>
+              <p>A technical summary of the controls on this page, written for IT directors and security reviewers.</p>
+            </div>
+            <div class="mini-card">
+              <h3>Architecture walkthrough</h3>
+              <p>A live session with the founder covering RLS policies, the audit log, and the deletion pipeline against the production system.</p>
+            </div>
+          </div>
+          <p class="sec-body" style="margin-top: 2rem; font-size: 0.9375rem;">Also see our public <a href="/privacy" style="color: var(--green); border-bottom: 1px solid var(--green-pale);">Privacy Policy</a> and <a href="/terms" style="color: var(--green); border-bottom: 1px solid var(--green-pale);">Terms of Service</a>, and the <a href="/platform/" style="color: var(--green); border-bottom: 1px solid var(--green-pale);">full platform architecture</a>.</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- FAQ -->
+    <section class="section s-cream">
+      <div class="container">
+        <div class="section-inner">
+          <span class="eyebrow">Common Questions</span>
+          <h2 class="sec-h2">What reviewers ask us.</h2>
+          <div class="faq-list">
+            <details class="faq-item">
+              <summary class="faq-q">If conversations are deleted in 7 days, how do advisors see anything useful? <span class="faq-chevron">&#8964;</span></summary>
+              <div class="faq-a">
+                <p>The analysis runs before deletion. Each night, conversations feed the learning profile, concept tracking, and the weekly advisor narrative. By the time the source transcript is removed, the synthesis your staff actually uses already exists — and that's all they ever needed. Advisors were never going to read raw transcripts at scale anyway.</p>
+              </div>
+            </details>
+            <details class="faq-item">
+              <summary class="faq-q">Does Google see our students' conversations? <span class="faq-chevron">&#8964;</span></summary>
+              <div class="faq-a">
+                <p>Conversation content is transmitted to Google's Gemini models per-request to generate AI responses — the same way any AI product works. The terms governing that access prohibit using the data to train models or for any purpose beyond generating the requested response. No student account information is required for inference, and Google is listed in our DPA as a sub-processor.</p>
+              </div>
+            </details>
+            <details class="faq-item">
+              <summary class="faq-q">What happens to our data if Orchen shuts down? <span class="faq-chevron">&#8964;</span></summary>
+              <div class="faq-a">
+                <p>Your school owns its data, contractually. You can request a full structured export at any time during the contract, and you have a 30-day export window after termination for any reason. After that window, all school and student data is deleted. The export covers profiles, derived insights, assignment data, and quiz results in machine-readable formats.</p>
+              </div>
+            </details>
+            <details class="faq-item">
+              <summary class="faq-q">Who at Orchen can read student conversations? <span class="faq-chevron">&#8964;</span></summary>
+              <div class="faq-a">
+                <p>In the ordinary course, no one. Analysis is performed by AI, not by staff reading transcripts. Platform-level access exists for compliance, support, and audit purposes, and every such access writes an audit log entry. There is no support workflow that involves browsing student conversations.</p>
+              </div>
+            </details>
+            <details class="faq-item">
+              <summary class="faq-q">How does crisis detection interact with the deletion policy? <span class="faq-chevron">&#8964;</span></summary>
+              <div class="faq-a">
+                <p>Crisis flags are exempt from automatic deletion because of their safety significance. A flag moves through a tracked lifecycle — open, reviewing, resolved, or escalated — with a 24-hour urgency indicator, and it routes only to the school's designated counselor. If a student account is later deleted, flags are anonymized rather than destroyed, preserving the safeguarding record without the personal identifier.</p>
+              </div>
+            </details>
+            <details class="faq-item">
+              <summary class="faq-q">Can we verify any of this, or do we take your word for it? <span class="faq-chevron">&#8964;</span></summary>
+              <div class="faq-a">
+                <p>Verify it. The architecture walkthrough is a live session against the production system — RLS policies, the audit log behavior, the deletion job — with your technical reviewer in the room asking questions. For founding schools, we treat the security review as part of the partnership, not an obstacle to it.</p>
+              </div>
+            </details>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- CTA -->
+    <section class="section s-dark cta">
+      <div class="container">
+        <span class="eyebrow">Next Step</span>
+        <h2 class="cta-h">Put your hardest reviewer in the room.</h2>
+        <p class="sec-body">Book a walkthrough and bring your technology director. We'll go as deep as they want to go.</p>
+        <a href="/#contact" class="btn-cta btn-invert">Book a walkthrough &rarr;</a>
+        <p class="cta-alt">Or request documents directly: <a href="mailto:emil@orchen.ai">emil@orchen.ai</a></p>
+      </div>
+    </section>
+
+    <!-- CROSS-LINKS -->
+    <div class="crosslinks">
+      <div class="container crosslinks-inner">
+        Also see: <a href="/platform/">Platform architecture</a><span class="sep">&middot;</span><a href="/founding-schools/">Founding Schools</a><span class="sep">&middot;</span><a href="/solutions/heads-of-school/">For Heads of School</a>
+      </div>
+    </div>
+
   </main>
 
   <footer class="footer">
     <div class="container footer-inner">
       <span class="footer-logo">Orchen</span>
-      <span class="footer-meta">&copy; 2026 Orchen AI &middot; <a href="/privacy" style="border-bottom:1px solid currentColor;">Privacy Policy</a> &middot; <a href="/terms" style="border-bottom:1px solid currentColor;">Terms of Service</a></span>
+      <span class="footer-meta">&copy; 2026 Orchen AI &middot; <a href="/privacy">Privacy Policy</a> &middot; <a href="/terms">Terms of Service</a></span>
     </div>
   </footer>
 

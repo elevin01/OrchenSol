@@ -39,6 +39,7 @@
   --border:      #DDD8CE;
   --border-light:#EAE5DC;
   --amber:       #9C7C4A;
+  --green-pale:  #C5DBCB;
   --chip-strug-bg:#F3E3DF;
   --chip-strug-fg:#9B4A3C;
   --chip-stren-bg:#DDEBE0;
@@ -452,6 +453,53 @@ a.research-cite { border-bottom: 1px solid currentColor; padding-bottom: 1px; }
   .dp-figure-label { max-width: none; }
 }
 
+/* ─── EDITORIAL ACCENTS ─── */
+.bg-grid {
+  background-image:
+    linear-gradient(to right, rgba(0,0,0,0.025) 1px, transparent 1px),
+    linear-gradient(to bottom, rgba(0,0,0,0.025) 1px, transparent 1px);
+  background-size: 3rem 3rem;
+}
+.s-dark.bg-grid {
+  background-image:
+    linear-gradient(to right, rgba(255,255,255,0.025) 1px, transparent 1px),
+    linear-gradient(to bottom, rgba(255,255,255,0.025) 1px, transparent 1px);
+}
+.drop-cap::first-letter {
+  float: left;
+  font-family: var(--font-display);
+  font-size: 4.2rem;
+  line-height: 0.85;
+  padding-top: 0.15rem;
+  padding-right: 0.6rem;
+  color: var(--green);
+  font-weight: 700;
+}
+.s-dark .drop-cap::first-letter { color: var(--amber); }
+.pull-quote {
+  font-family: var(--font-display);
+  font-size: clamp(1.4rem, 2.6vw, 2rem);
+  line-height: 1.3;
+  color: var(--green-dark);
+  margin: 2rem 0;
+  padding-left: 1.5rem;
+  border-left: 4px solid var(--green);
+  font-style: italic;
+  max-width: 560px;
+}
+.s-dark .pull-quote { color: var(--amber); border-left-color: var(--amber); }
+.progress-container {
+  position: fixed;
+  top: var(--nav-h);
+  left: 0;
+  width: 100%;
+  height: 3px;
+  background: transparent;
+  z-index: 99;
+  pointer-events: none;
+}
+.progress-bar { height: 100%; width: 0%; background: var(--green); transition: width 0.05s linear; }
+
   </style>
 </head>
 <body>
@@ -460,8 +508,9 @@ a.research-cite { border-bottom: 1px solid currentColor; padding-bottom: 1px; }
     <div class="nav-inner">
       <a href="/" class="nav-logo">Orchen</a>
       <div class="nav-links" id="nav-links">
-        <a href="/#problem">The Problem</a>
-        <a href="/#how">How It Works</a>
+        <a href="/the-problem">The Problem</a>
+        <a href="/how-it-works/">How It Works</a>
+        <a href="/trust">Trust</a>
         <a href="/#contact">For Schools</a>
       </div>
       <a href="/#contact" class="btn-nav">Book a walkthrough</a>
@@ -470,6 +519,8 @@ a.research-cite { border-bottom: 1px solid currentColor; padding-bottom: 1px; }
       </button>
     </div>
   </nav>
+
+  <div class="progress-container"><div class="progress-bar" id="myBar"></div></div>
 
   <main>
 
@@ -483,7 +534,7 @@ a.research-cite { border-bottom: 1px solid currentColor; padding-bottom: 1px; }
     </section>
 
     <!-- DATA POINT 01 -->
-    <section class="section s-dark">
+    <section class="section s-dark bg-grid">
       <div class="container">
         <div class="dp-grid">
           <div class="dp-figure">
@@ -493,7 +544,7 @@ a.research-cite { border-bottom: 1px solid currentColor; padding-bottom: 1px; }
           <div class="dp-copy">
             <span class="eyebrow">Usage behavior</span>
             <h2 class="sec-h2">Student-AI activity is overwhelmingly about skipping the work, not understanding it.</h2>
-            <p class="sec-body">Education Week, working with Securly's school-network monitoring, analyzed <strong>1.2 million student-AI sessions across more than 1,300 districts</strong> in early 2026. Across that real-world dataset, 95% of interactions were students trying to have the AI complete their assigned work entirely &mdash; not asking for help understanding it.</p>
+            <p class="sec-body drop-cap">Education Week, working with Securly's school-network monitoring, analyzed <strong>1.2 million student-AI sessions across more than 1,300 districts</strong> in early 2026. Across that real-world dataset, 95% of interactions were students trying to have the AI complete their assigned work entirely &mdash; not asking for help understanding it.</p>
             <p class="sec-body">This is the first dataset of its size to look at what students actually do with AI on school networks, rather than what they self-report. The pattern is consistent across grade levels and subjects: AI is being used to bypass the thinking, not to support it.</p>
             <span class="research-cite">Education Week &middot; Securly &middot; March 2026</span>
           </div>
@@ -502,7 +553,7 @@ a.research-cite { border-bottom: 1px solid currentColor; padding-bottom: 1px; }
     </section>
 
     <!-- DATA POINT 02 -->
-    <section class="section s-cream">
+    <section class="section s-cream bg-grid">
       <div class="container">
         <div class="dp-grid">
           <div class="dp-figure">
@@ -513,7 +564,8 @@ a.research-cite { border-bottom: 1px solid currentColor; padding-bottom: 1px; }
             <span class="eyebrow">Faculty alarm</span>
             <h2 class="sec-h2">College faculty say AI is directly reducing student originality.</h2>
             <p class="sec-body">In a February 2026 College Board survey of college and university faculty across the United States, 84% reported that AI is directly reducing student originality and deep engagement with the material. This is near-universal agreement among the people who actually grade the work.</p>
-            <p class="sec-body">Faculty are positioned to see the change earliest: they read the same student writing over multiple terms and notice when reasoning patterns flatten. Their concern is specifically that work submitted today looks more polished but reflects less thinking than it did even a year ago.</p>
+            <p class="sec-body">Faculty are positioned to see the change earliest: they read the same student writing over multiple terms and notice when reasoning patterns flatten.</p>
+            <blockquote class="pull-quote">Work submitted today looks more polished but reflects less thinking than it did even a year ago.</blockquote>
             <a class="research-cite" href="https://newsroom.collegeboard.org/new-college-board-research-faculty-express-near-universal-concern-student-ai-use-undermines" target="_blank" rel="noopener">College Board &middot; February 2026 &#8599;</a>
           </div>
         </div>
@@ -521,7 +573,7 @@ a.research-cite { border-bottom: 1px solid currentColor; padding-bottom: 1px; }
     </section>
 
     <!-- DATA POINT 03 -->
-    <section class="section s-dark">
+    <section class="section s-dark bg-grid">
       <div class="container">
         <div class="dp-grid">
           <div class="dp-figure">
@@ -540,7 +592,7 @@ a.research-cite { border-bottom: 1px solid currentColor; padding-bottom: 1px; }
     </section>
 
     <!-- DATA POINT 04 -->
-    <section class="section s-cream">
+    <section class="section s-cream bg-grid">
       <div class="container">
         <div class="dp-grid">
           <div class="dp-figure">
@@ -551,7 +603,8 @@ a.research-cite { border-bottom: 1px solid currentColor; padding-bottom: 1px; }
             <span class="eyebrow">Dependency surge</span>
             <h2 class="sec-h2">AI use for homework crossed into majority among students &mdash; in eight months.</h2>
             <p class="sec-body">From May 2025 to December 2025, the share of students using AI for homework rose from 48% to 62%. This is the fastest adoption of a cognitive-dependency tool in recorded educational history.</p>
-            <p class="sec-body">The jump was driven almost entirely by middle and high schoolers &mdash; the age range where habits of mind around effortful learning are still forming. Adoption that fast, in that age range, with that little institutional response, is a category of risk schools have not faced before.</p>
+            <p class="sec-body">The jump was driven almost entirely by middle and high schoolers &mdash; the age range where habits of mind around effortful learning are still forming.</p>
+            <blockquote class="pull-quote">Adoption that fast, in that age range, with that little institutional response, is a category of risk schools have not faced before.</blockquote>
             <a class="research-cite" href="https://www.rand.org/news/press/2026/03/student-use-of-ai-for-homework-rises-as-concerns-grow.html" target="_blank" rel="noopener">RAND Corporation &middot; March 2026 &#8599;</a>
           </div>
         </div>
@@ -559,7 +612,7 @@ a.research-cite { border-bottom: 1px solid currentColor; padding-bottom: 1px; }
     </section>
 
     <!-- DATA POINT 05 -->
-    <section class="section s-dark">
+    <section class="section s-dark bg-grid">
       <div class="container">
         <div class="dp-grid">
           <div class="dp-figure">
@@ -578,7 +631,7 @@ a.research-cite { border-bottom: 1px solid currentColor; padding-bottom: 1px; }
     </section>
 
     <!-- DATA POINT 06 -->
-    <section class="section s-cream">
+    <section class="section s-cream bg-grid">
       <div class="container">
         <div class="dp-grid">
           <div class="dp-figure">
@@ -630,8 +683,14 @@ a.research-cite { border-bottom: 1px solid currentColor; padding-bottom: 1px; }
     var nav    = document.getElementById('nav');
     var toggle = document.getElementById('nav-toggle');
     var links  = document.getElementById('nav-links');
+    var bar    = document.getElementById('myBar');
     window.addEventListener('scroll', function () {
       nav.classList.toggle('scrolled', window.scrollY > 10);
+      if (bar) {
+        var scrolled = document.body.scrollTop || document.documentElement.scrollTop;
+        var height = document.documentElement.scrollHeight - document.documentElement.clientHeight;
+        bar.style.width = (height > 0 ? (scrolled / height) * 100 : 0) + '%';
+      }
     }, { passive: true });
     toggle.addEventListener('click', function () {
       var open = toggle.getAttribute('aria-expanded') === 'true';

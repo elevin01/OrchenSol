@@ -1,0 +1,334 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>The AI Policy Brief for School Leaders — Orchen</title>
+  <meta name="description" content="A board-ready brief on AI in K–12: six cited data points, a decision framework for school leadership, and a policy checklist. Free, no signup required to read.">
+  <link rel="icon" type="image/png" sizes="32x32" href="/assets/favicon-32.png">
+  <link rel="icon" type="image/png" sizes="256x256" href="/assets/favicon.png">
+  <link rel="apple-touch-icon" sizes="180x180" href="/assets/apple-touch-icon.png">
+  <link rel="canonical" href="https://orchen.ai/resources/ai-policy-brief/">
+  <meta name="robots" content="index, follow">
+  <meta property="og:title" content="The AI Policy Brief for School Leaders — Orchen">
+  <meta property="og:description" content="Six cited data points, a decision framework, and a policy checklist — written to be forwarded to a board as-is.">
+  <meta property="og:type" content="article">
+  <meta property="og:url" content="https://orchen.ai/resources/ai-policy-brief/">
+  <meta property="og:image" content="https://orchen.ai/assets/og-image.png">
+  <meta property="og:site_name" content="Orchen">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="The AI Policy Brief for School Leaders — Orchen">
+  <meta name="twitter:description" content="Six cited data points, a decision framework, and a policy checklist for school leadership.">
+  <meta name="twitter:image" content="https://orchen.ai/assets/og-image.png">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,700;1,400&family=Lora:ital,wght@0,400;0,500;1,400&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="/assets/site.css">
+  <style>
+    /* Brief-specific: numbered checklist + print styles */
+    .brief-meta {
+      font-family: var(--mono);
+      font-size: 0.6875rem;
+      letter-spacing: 0.14em;
+      text-transform: uppercase;
+      color: var(--ink-faint);
+      margin-top: 1.5rem;
+    }
+    .checklist { margin-top: 2rem; max-width: 720px; }
+    .check-item {
+      display: grid;
+      grid-template-columns: 1.6rem 1fr;
+      gap: 0.9rem;
+      padding: 1.1rem 0;
+      border-bottom: 1px solid var(--border-light);
+      align-items: start;
+    }
+    .check-box {
+      width: 1.15rem; height: 1.15rem;
+      border: 1.5px solid var(--green-light);
+      border-radius: 3px;
+      margin-top: 0.3rem;
+    }
+    .check-text { font-size: 1rem; line-height: 1.7; color: var(--ink); }
+    .check-text .sub { display: block; font-size: 0.875rem; color: var(--ink-muted); margin-top: 0.2rem; }
+    .brief-figure {
+      font-family: var(--font-display);
+      font-weight: 700;
+      font-size: clamp(2.4rem, 5vw, 3.4rem);
+      line-height: 1;
+      letter-spacing: -0.03em;
+      color: var(--green);
+      margin-bottom: 0.4rem;
+    }
+    .s-dark .brief-figure { color: var(--amber); }
+    @media print {
+      .nav, .crosslinks, .no-print, .btn-cta, .btn-secondary { display: none !important; }
+      .hero { padding-top: 2rem; padding-bottom: 1.5rem; }
+      .section { padding-block: 1.75rem; }
+      .s-dark, .hero-dark { background: #fff !important; color: var(--ink) !important; }
+      .s-dark .sec-h2, .s-dark .row-head, .hero-dark .hero-h1 { color: var(--ink) !important; }
+      .s-dark .sec-body, .s-dark .row-body, .hero-dark .hero-sub { color: var(--ink-muted) !important; }
+      .s-dark .brief-figure { color: var(--green) !important; }
+      body { font-size: 0.9375rem; }
+      /* Flatten editorial marginalia to a single column for clean PDFs */
+      .editorial-layout { display: block !important; }
+      .editorial-layout .sidenote {
+        text-align: left;
+        border-right: none;
+        border-left: 2px solid var(--green-pale);
+        padding: 0 0 0 1rem;
+        margin: 0 0 1.5rem;
+      }
+    }
+  </style>
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "BreadcrumbList",
+    "itemListElement": [
+      { "@type": "ListItem", "position": 1, "name": "Orchen", "item": "https://orchen.ai/" },
+      { "@type": "ListItem", "position": 2, "name": "Resources", "item": "https://orchen.ai/resources/ai-policy-brief/" },
+      { "@type": "ListItem", "position": 3, "name": "AI Policy Brief", "item": "https://orchen.ai/resources/ai-policy-brief/" }
+    ]
+  }
+  </script>
+</head>
+<body>
+
+  <nav class="nav" id="nav">
+    <div class="nav-inner">
+      <a href="/" class="nav-logo">Orchen</a>
+      <div class="nav-links" id="nav-links">
+        <a href="/the-problem">The Problem</a>
+        <a href="/how-it-works/">How It Works</a>
+        <a href="/trust">Trust</a>
+        <a href="/#contact">For Schools</a>
+      </div>
+      <a href="/#contact" class="btn-nav">Book a walkthrough</a>
+      <button class="nav-toggle" id="nav-toggle" aria-label="Open menu" aria-expanded="false">
+        <span></span><span></span><span></span>
+      </button>
+    </div>
+  </nav>
+
+  <div class="progress-container no-print"><div class="progress-bar" id="myBar"></div></div>
+
+  <main>
+
+    <!-- HERO -->
+    <section class="hero hero-warm">
+      <div class="container">
+        <span class="eyebrow">Resource &middot; For School Leadership</span>
+        <h1 class="hero-h1">The AI Policy Brief for School Leaders.</h1>
+        <p class="hero-sub">Six cited data points, a decision framework, and a policy checklist &mdash; written to be forwarded to a board, a faculty meeting, or a parents' association as-is. Free to read; no signup required.</p>
+        <p class="brief-meta">June 2026 edition &middot; ~8 minute read &middot; Print-friendly</p>
+      </div>
+    </section>
+
+    <!-- EMAIL CAPTURE -->
+    <section class="section s-cream no-print" style="padding-block: 3.5rem;">
+      <div class="container">
+        <div class="section-inner">
+          <div class="green-note" style="max-width: 760px;">
+            <strong>Want the printable version?</strong> This page prints cleanly (File &rarr; Print &rarr; Save as PDF). If you'd like it emailed &mdash; plus future editions as the research updates &mdash; leave your address below. Nothing else; no drip campaign.
+          </div>
+          <form class="std-form form-light" id="brief-form" style="flex-direction: row; flex-wrap: wrap; align-items: flex-end; gap: 1rem; max-width: 760px;">
+            <p class="form-hidden" aria-hidden="true"><label>Skip: <input name="bot-field" tabindex="-1"></label></p>
+            <input type="hidden" name="form-type" value="policy-brief-request">
+            <div class="form-group" style="flex: 1; min-width: 260px;">
+              <label for="email">Work email</label>
+              <input type="email" id="email" name="email" placeholder="s.chen@westfieldacademy.edu" required autocomplete="email">
+            </div>
+            <button type="submit" class="btn-cta" style="align-self: flex-end;">Email me the brief</button>
+          </form>
+        </div>
+      </div>
+    </section>
+
+    <!-- PART 1: EVIDENCE -->
+    <section class="section s-dark bg-grid">
+      <div class="container">
+        <div class="section-inner">
+          <span class="eyebrow">Part One &middot; The Evidence</span>
+          <h2 class="sec-h2">What the research actually says, in six points.</h2>
+          <div class="rows">
+            <div class="row">
+              <div class="brief-figure">95%</div>
+              <h3 class="row-head">Student-AI activity is overwhelmingly work-completion, not learning.</h3>
+              <p class="row-body">Across 1.2 million monitored student-AI sessions in 1,300+ districts, 95% of interactions were students attempting to have the AI complete assigned work entirely. <em>Education Week / Securly, March 2026.</em></p>
+            </div>
+            <div class="row">
+              <div class="brief-figure">84%</div>
+              <h3 class="row-head">Faculty closest to the work see originality declining.</h3>
+              <p class="row-body">84% of college faculty report AI is directly reducing student originality and deep engagement — near-universal agreement among the people who grade the work. <em>College Board, February 2026.</em></p>
+            </div>
+            <div class="row">
+              <div class="brief-figure">67%</div>
+              <h3 class="row-head">Students themselves now report the cognitive cost.</h3>
+              <p class="row-body">67% of students say, in their own words, that using AI for schoolwork is eroding their critical thinking — up from 54% earlier in the same school year. <em>RAND Corporation, March 2026.</em></p>
+            </div>
+            <div class="row">
+              <div class="brief-figure">48&rarr;62%</div>
+              <h3 class="row-head">Adoption crossed into the majority in eight months.</h3>
+              <p class="row-body">The share of students using AI for homework rose from 48% to 62% between May and December 2025, driven almost entirely by middle and high schoolers — the age range where habits of effortful learning form. <em>RAND Corporation, March 2026.</em></p>
+            </div>
+            <div class="row">
+              <div class="brief-figure">&minus;7 pts</div>
+              <h3 class="row-head">The U.S. cognitive baseline was already weakening.</h3>
+              <p class="row-body">U.S. nine-year-olds posted their first-ever NAEP math decline (−7 points, 2020–22) and the largest reading drop since 1990. AI did not create a learning crisis; it arrived during one. <em>NCES, NAEP 2022.</em></p>
+            </div>
+            <div class="row">
+              <div class="brief-figure">&minus;15 pts</div>
+              <h3 class="row-head">The decline is global, and predates the pandemic explanation.</h3>
+              <p class="row-body">PISA 2022 recorded the steepest math decline in the program's history across 81 economies. OECD analysis found the drop began before COVID and continued after reopenings. <em>OECD, December 2023.</em></p>
+            </div>
+          </div>
+          <p class="sec-body" style="margin-top: 2rem; font-size: 0.9375rem;">Full citations and context: <a href="/the-problem" style="color: inherit; border-bottom: 1px solid rgba(237,233,228,0.35);">orchen.ai/the-problem</a></p>
+        </div>
+      </div>
+    </section>
+
+    <!-- PART 2: FRAMEWORK -->
+    <section class="section s-cream bg-grid">
+      <div class="container">
+        <div class="editorial-layout">
+          <aside class="sidenote">
+            <strong>Governance &amp; liability</strong><br>
+            Option B quietly shifts data liability from the vendor to the school: consumer terms of service are not written to satisfy FERPA or COPPA obligations.
+          </aside>
+          <span class="eyebrow">Part Two &middot; The Decision Framework</span>
+          <h2 class="sec-h2">Three honest options, and what each one costs.</h2>
+          <div class="rows">
+            <div class="row">
+              <span class="row-eyebrow">Option A</span>
+              <h3 class="row-head">Ban AI on school networks and devices.</h3>
+              <p class="row-body"><strong>What it buys:</strong> a clear public position and short-term board comfort. <strong>What it costs:</strong> the activity moves to personal devices within weeks. The school loses all visibility, the policy becomes unenforceable theater, and students learn that the institution's rules and reality don't match. Roughly 40% of schools have chosen this; monitoring data shows usage continues regardless.</p>
+            </div>
+            <div class="row">
+              <span class="row-eyebrow">Option B</span>
+              <h3 class="row-head">Permit consumer AI with guidelines.</h3>
+              <p class="row-body"><strong>What it buys:</strong> honesty about reality and low cost. <strong>What it costs:</strong> the school is endorsing tools designed for task completion, with no pedagogy, no school visibility, no crisis routing, and student data on consumer terms. Guidelines without an environment to apply them in are advice, not policy. The gap between submitted work and actual understanding keeps widening — invisibly.</p>
+            </div>
+            <div class="row">
+              <span class="row-eyebrow">Option C</span>
+              <h3 class="row-head">Provide a governed environment, and set policy around it.</h3>
+              <p class="row-body"><strong>What it buys:</strong> an AI the school configured to teach rather than complete work, structured visibility for faculty and parents, crisis detection that routes to a counselor, and a defensible data posture. <strong>What it costs:</strong> budget, an implementation effort, and accepting that students will still use consumer AI off-network — the school governs its own environment, not the internet. This is the only option where the school is making a decision rather than reacting to one.</p>
+            </div>
+          </div>
+          <div class="legal-note" style="margin-top: 2.5rem;">
+            <strong>A note on who's telling you this.</strong> This brief is published by Orchen, which sells a governed AI environment — so Option C is, transparently, our business. We've tried to state all three options at their strongest. Whichever direction your school takes, the checklist below applies to any vendor you evaluate, including us.
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- PART 3: CHECKLIST -->
+    <section class="section s-warm bg-grid">
+      <div class="container">
+        <div class="section-inner">
+          <span class="eyebrow">Part Three &middot; The Policy Checklist</span>
+          <h2 class="sec-h2">Twelve questions to settle before any deployment.</h2>
+          <p class="sec-body drop-cap">Use this in a leadership meeting or send it to any vendor — the quality of the answers tells you most of what you need to know.</p>
+          <div class="checklist">
+            <div class="check-item"><span class="check-box" aria-hidden="true"></span><span class="check-text">Does the AI complete student work, or does it require student thinking before it proceeds?<span class="sub">Ask for a live demonstration of a student asking for the answer directly.</span></span></div>
+            <div class="check-item"><span class="check-box" aria-hidden="true"></span><span class="check-text">Is the pedagogical behavior architectural, or a mode students can switch off?</span></div>
+            <div class="check-item"><span class="check-box" aria-hidden="true"></span><span class="check-text">What do teachers see, and is it synthesis or surveillance?<span class="sub">Raw transcript access at scale is both a privacy problem and a workload problem.</span></span></div>
+            <div class="check-item"><span class="check-box" aria-hidden="true"></span><span class="check-text">What do parents see, and who controls that — the school or the vendor?</span></div>
+            <div class="check-item"><span class="check-box" aria-hidden="true"></span><span class="check-text">How long are student conversations retained, and is the answer specific?<span class="sub">"Per our privacy policy" is not a number. Get a number.</span></span></div>
+            <div class="check-item"><span class="check-box" aria-hidden="true"></span><span class="check-text">Is student data used to train AI models — the vendor's or their providers'?</span></div>
+            <div class="check-item"><span class="check-box" aria-hidden="true"></span><span class="check-text">What happens when a student types something concerning?<span class="sub">Who at the school is notified, how fast, and is there a tracked lifecycle?</span></span></div>
+            <div class="check-item"><span class="check-box" aria-hidden="true"></span><span class="check-text">Is staff access to student data logged, and can the school review the log?</span></div>
+            <div class="check-item"><span class="check-box" aria-hidden="true"></span><span class="check-text">How does under-13 consent actually work — and what happens without it?</span></div>
+            <div class="check-item"><span class="check-box" aria-hidden="true"></span><span class="check-text">Can the school export everything and exit cleanly?<span class="sub">Ask for the export format and the post-termination deletion window in writing.</span></span></div>
+            <div class="check-item"><span class="check-box" aria-hidden="true"></span><span class="check-text">What certifications exist today — and what does the vendor admit it doesn't have yet?<span class="sub">A vendor that volunteers its gaps is telling you how it will behave under pressure.</span></span></div>
+            <div class="check-item"><span class="check-box" aria-hidden="true"></span><span class="check-text">Can a pilot be scoped small enough that failure costs weeks, not budget?</span></div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- CTA -->
+    <section class="section s-cream cta no-print">
+      <div class="container">
+        <span class="eyebrow">If Option C Is on Your List</span>
+        <h2 class="cta-h">Run the checklist against us first.</h2>
+        <p class="sec-body">Our answers to all twelve questions are public — in the <a href="/trust" style="color: var(--green); border-bottom: 1px solid var(--green-pale);">Trust Center</a> and the <a href="/platform/" style="color: var(--green); border-bottom: 1px solid var(--green-pale);">platform documentation</a>. Then put us in a room with your hardest reviewer.</p>
+        <a href="/#contact" class="btn-cta">Book a walkthrough &rarr;</a>
+        <p class="cta-alt">Or see the <a href="/founding-schools/">Founding Schools program</a> for pilot structure.</p>
+      </div>
+    </section>
+
+    <!-- CROSS-LINKS -->
+    <div class="crosslinks no-print">
+      <div class="container crosslinks-inner">
+        Also see: <a href="/the-problem">The full research brief</a><span class="sep">&middot;</span><a href="/solutions/heads-of-school/">For Heads of School</a><span class="sep">&middot;</span><a href="/compare/">Platform comparisons</a>
+      </div>
+    </div>
+
+  </main>
+
+  <footer class="footer">
+    <div class="container footer-inner">
+      <span class="footer-logo">Orchen</span>
+      <span class="footer-meta">&copy; 2026 Orchen AI &middot; <a href="/privacy">Privacy Policy</a> &middot; <a href="/terms">Terms of Service</a></span>
+    </div>
+  </footer>
+
+  <script>
+  (function () {
+    var nav    = document.getElementById('nav');
+    var toggle = document.getElementById('nav-toggle');
+    var links  = document.getElementById('nav-links');
+    var bar    = document.getElementById('myBar');
+    window.addEventListener('scroll', function () {
+      nav.classList.toggle('scrolled', window.scrollY > 10);
+      if (bar) {
+        var scrolled = document.body.scrollTop || document.documentElement.scrollTop;
+        var height = document.documentElement.scrollHeight - document.documentElement.clientHeight;
+        bar.style.width = (height > 0 ? (scrolled / height) * 100 : 0) + '%';
+      }
+    }, { passive: true });
+    toggle.addEventListener('click', function () {
+      var open = toggle.getAttribute('aria-expanded') === 'true';
+      toggle.setAttribute('aria-expanded', String(!open));
+      links.classList.toggle('open', !open);
+    });
+
+    var form = document.getElementById('brief-form');
+    var toast = document.createElement('div');
+    toast.className = 'toast';
+    toast.textContent = 'On its way — check your inbox shortly.';
+    document.body.appendChild(toast);
+
+    if (form) {
+      form.addEventListener('submit', async function (e) {
+        e.preventDefault();
+        var btn = form.querySelector('button[type="submit"]');
+        btn.textContent = 'Sending…';
+        btn.disabled = true;
+        try {
+          var res = await fetch('https://formspree.io/f/xeepplga', {
+            method: 'POST',
+            headers: { 'Accept': 'application/json' },
+            body: new FormData(form)
+          });
+          if (res.ok) {
+            form.reset();
+            toast.classList.add('visible');
+            setTimeout(function () { toast.classList.remove('visible'); }, 4500);
+          } else {
+            btn.textContent = 'Something went wrong — try again';
+          }
+        } catch (err) {
+          btn.textContent = 'Something went wrong — try again';
+        } finally {
+          btn.disabled = false;
+          if (btn.textContent === 'Sending…') btn.textContent = 'Email me the brief';
+        }
+      });
+    }
+  }());
+  </script>
+
+</body>
+</html>

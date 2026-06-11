@@ -20,7 +20,15 @@
       "Bash(sips -s format png -z 180 180 assets/orchen-mark-source.png --out assets/apple-touch-icon.png)",
       "Bash(sips -s format png -z 32 32 assets/orchen-mark-source.png --out assets/favicon-32.png)",
       "Bash(awk '{printf \"%-44s %s\\\\n\", $NF, $5}')",
-      "Bash(python3 -c ' *)"
+      "Bash(python3 -c ' *)",
+      "Bash(echo \"=== Downloads package ===\" && ls -la /Users/emil07/Downloads/files-2/orchen/ && echo \"\" && echo \"=== Repo root ===\" && ls -la /Users/emil07/Documents/OrchenSol/)",
+      "Read(//Users/emil07/Downloads/files-2/orchen/**)",
+      "Bash(cp __TRACKED_VAR__/assets/site.css assets/)",
+      "Bash(cp __TRACKED_VAR__/assets/product-student-chat.png assets/)",
+      "Bash(cp __TRACKED_VAR__/assets/product-teacher-insight.png assets/)",
+      "Bash(cp __TRACKED_VAR__/assets/product-parent-digest.png assets/)",
+      "Bash(cp __TRACKED_VAR__/assets/product-writing-workspace.png assets/)",
+      "Bash(perl -0pi -e 's{<!-- DATA POINT \\(\\\\d+\\) -->\\\\n    <section class=\"section \\(s-dark|s-cream\\)\">}{<!-- DATA POINT $1 -->\\\\n    <section class=\"section $2 bg-grid\">}g' the-problem/index.html)"
     ]
   }
 }
