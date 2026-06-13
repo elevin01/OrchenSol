@@ -1,0 +1,186 @@
+/* ═══════════════════════════════════════════════════════════════════
+   ORCHEN — REFINEMENT LAYER
+   Loaded LAST on every page, on top of the page's own styles.
+   Purpose: one consistent design language across the whole site without
+   rewriting the existing (duplicated, no-build) stylesheets.
+   - Unifies design tokens (radius / shadow / motion scales + drift fixes)
+   - Tightens typography & spacing rhythm
+   - Adds accessible focus states + reduced-motion safety
+   - Adds consistent, tasteful micro-interactions (hover / press)
+   It only refines — it does not restructure layout or change the brand
+   palette, fonts, or the homepage news-wall hero.
+   ═══════════════════════════════════════════════════════════════════ */
+
+/* ─── TOKEN SCALES (added) ─────────────────────────────────────────── */
+:root {
+  /* Radius scale */
+  --r-xs: 2px;
+  --r-sm: 4px;
+  --r-md: 8px;
+  --r-lg: 12px;
+  --r-pill: 999px;
+
+  /* Shadow scale — softer, larger-blur, lower-opacity for a calmer depth */
+  --shadow-xs: 0 1px 14px rgba(26,26,26,0.05);
+  --shadow-sm: 0 4px 18px rgba(26,26,26,0.05);
+  --shadow-md: 0 8px 28px rgba(26,26,26,0.07), 0 2px 6px rgba(26,26,26,0.03);
+  --shadow-lg: 0 18px 44px rgba(26,26,26,0.10), 0 4px 12px rgba(26,26,26,0.04);
+  --shadow-xl: 0 30px 70px rgba(0,0,0,0.28);
+  --shadow-dark: 0 20px 48px rgba(0,0,0,0.30);
+
+  /* Motion scale */
+  --ease: cubic-bezier(0.25,0.46,0.45,0.94);
+  --ease-out: cubic-bezier(0.22,1,0.36,1);
+  --dur-fast: 0.15s;
+  --dur: 0.22s;
+  --dur-slow: 0.35s;
+
+  /* Readability */
+  --measure: 68ch;
+
+  /* Resolve token drift across files to one canonical value */
+  --wall-muted: rgba(237,233,228,0.58);
+  --wall-faint: rgba(237,233,228,0.34);
+}
+
+/* ─── BASE POLISH ──────────────────────────────────────────────────── */
+body {
+  text-rendering: optimizeLegibility;
+  -moz-osx-font-smoothing: grayscale;
+}
+::selection { background: rgba(44,95,63,0.16); }
+.s-dark ::selection,
+.hero ::selection { background: rgba(237,233,228,0.20); }
+
+/* ─── ACCESSIBILITY: focus + reduced motion ────────────────────────── */
+a:focus-visible,
+button:focus-visible,
+input:focus-visible,
+textarea:focus-visible,
+select:focus-visible,
+summary:focus-visible,
+[tabindex]:focus-visible {
+  outline: 2px solid var(--green-light);
+  outline-offset: 2px;
+  border-radius: var(--r-xs);
+}
+/* On dark surfaces a green ring is hard to see — use a light ring */
+.s-dark a:focus-visible,
+.s-dark button:focus-visible,
+.hero a:focus-visible,
+.hero button:focus-visible,
+.cmp-cta-bar a:focus-visible,
+.nav[data-theme="dark"] a:focus-visible,
+.nav[data-theme="dark"] button:focus-visible {
+  outline-color: var(--wall-text);
+}
+
+@media (prefers-reduced-motion: reduce) {
+  html { scroll-behavior: auto; }
+  *, *::before, *::after {
+    animation-duration: 0.001ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.001ms !important;
+  }
+}
+
+/* ─── TYPOGRAPHY RHYTHM ────────────────────────────────────────────── */
+/* Unify the eyebrow label: 0.22em reads dated, 0.14em too tight — 0.16em
+   is the existing majority (row-eyebrow / pc-label already use it). */
+.eyebrow {
+  letter-spacing: 0.16em;
+  font-weight: 600;
+}
+
+/* ─── SECTION SPACING RHYTHM ───────────────────────────────────────── */
+/* Resolve the 6rem (interior) vs 7rem (home) split into one fluid rhythm
+   that scales down gracefully on smaller viewports. */
+.section { padding-block: clamp(4.5rem, 7vw, 7rem); }
+
+/* ─── BUTTONS: consistent radius + tactile micro-interactions ──────── */
+.btn,
+.btn-cta,
+.btn-cta-white,
+.btn-primary,
+.btn-secondary,
+.btn-invert,
+.btn-light,
+.hero-cta,
+.hero-cta-secondary,
+.form-secondary-cta,
+.crosslink-btn {
+  transition: background var(--dur) var(--ease),
+              color var(--dur) var(--ease),
+              border-color var(--dur) var(--ease),
+              transform var(--dur-fast) var(--ease),
+              box-shadow var(--dur) var(--ease);
+}
+.btn,
+.btn-cta,
+.btn-cta-white,
+.btn-primary,
+.btn-secondary,
+.btn-invert,
+.hero-cta {
+  border-radius: var(--r-sm);
+}
+.btn-cta:hover,
+.btn-cta-white:hover,
+.btn-primary:hover,
+.btn-invert:hover,
+.hero-cta:hover,
+.crosslink-btn:hover {
+  transform: translateY(-1px);
+}
+.btn-cta:active,
+.btn-cta-white:active,
+.btn-primary:active,
+.btn-invert:active,
+.btn-nav:active,
+.hero-cta:active,
+.crosslink-btn:active {
+  transform: translateY(0);
+}
+.btn-cta:hover,
+.btn-primary:hover {
+  box-shadow: 0 6px 20px rgba(44,95,63,0.26);
+}
+
+/* ─── CARDS: consistent radius + gentle hover lift ─────────────────── */
+.mini-card,
+.compare-card,
+.decide-card,
+.tpl-card,
+.note-card { border-radius: var(--r-md); }
+
+.product-card,
+.s-cream .mini-card,
+.s-warm .mini-card,
+.decide-card,
+.tpl-card,
+.compare-card {
+  transition: transform var(--dur) var(--ease-out),
+              box-shadow var(--dur) var(--ease-out),
+              border-color var(--dur) var(--ease);
+}
+.product-card:hover,
+.s-cream .mini-card:hover,
+.s-warm .mini-card:hover {
+  transform: translateY(-2px);
+  box-shadow: var(--shadow-lg);
+}
+.decide-card:hover,
+.tpl-card:hover {
+  transform: translateY(-2px);
+  box-shadow: var(--shadow-md);
+}
+.compare-card:hover { transform: translateY(-2px); }
+
+/* ─── SURFACE SHADOWS: refined, consistent depth ───────────────────── */
+.product-card { box-shadow: var(--shadow-md); }
+.shot-frame {
+  border-radius: var(--r-lg);
+  box-shadow: var(--shadow-lg);
+}
+.s-dark .product-card { box-shadow: var(--shadow-dark); }
+.s-dark .shot-frame { box-shadow: var(--shadow-dark); }
