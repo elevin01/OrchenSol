@@ -436,6 +436,17 @@ a.research-cite { border-bottom: 1px solid currentColor; padding-bottom: 1px; }
 }
 .s-dark .dp-arrow { color: var(--amber); }
 
+/* Range figures (e.g. 48% → 62%) stack vertically so the big size still
+   fits the column instead of overflowing onto the copy. */
+.dp-figure-num.is-range { flex-direction: column; align-items: flex-start; line-height: 0.86; }
+.dp-grid--rev .dp-figure-num.is-range { align-items: flex-end; }
+.dp-figure-num.is-range .dp-arrow {
+  top: 0;
+  margin: 0.04em 0;
+  font-size: 0.34em;
+  transform: rotate(90deg);
+}
+
 .dp-figure-label {
   font-family: var(--font-body);
   font-size: 0.8125rem;
@@ -663,7 +674,7 @@ a.research-cite { border-bottom: 1px solid currentColor; padding-bottom: 1px; }
       <div class="container">
         <div class="dp-grid dp-grid--rev">
           <div class="dp-figure">
-            <div class="dp-figure-num"><span class="dp-num">48%</span><span class="dp-arrow">&rarr;</span><span class="dp-num">62%</span></div>
+            <div class="dp-figure-num is-range"><span class="dp-num">48%</span><span class="dp-arrow">&rarr;</span><span class="dp-num">62%</span></div>
             <div class="dp-figure-label">share of students, May &rarr; December 2025</div>
             <div class="dp-bar"><span style="width:62%"></span></div>
           </div>

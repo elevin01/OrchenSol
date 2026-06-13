@@ -46,7 +46,12 @@
       "Bash(rm -rf /Users/emil07/Downloads/orchen /Users/emil07/Downloads/files-2/orchen)",
       "Bash(curl -s -o /dev/null -w \"platform: %{http_code}\\\\n\" http://localhost:8765/platform/)",
       "Bash(pkill -f \"http.server 8765\" 2>/dev/null; rm -f /tmp/p_*.png /tmp/tp_*.png /tmp/hiw_*.png /tmp/fs_*.png /tmp/sol_*.png /tmp/br_*.png /tmp/v_*.png /tmp/shot_*.png 2>/dev/null *)",
-      "Bash(pkill -f \"http.server 8765\" 2>/dev/null; rm -f /tmp/m_*.png /tmp/srv.log 2>/dev/null; echo cleaned)"
+      "Bash(pkill -f \"http.server 8765\" 2>/dev/null; rm -f /tmp/m_*.png /tmp/srv.log 2>/dev/null; echo cleaned)",
+      "Bash(pkill -f \"http.server 8765\" 2>/dev/null; rm -f /tmp/r_*.png /tmp/srv.log 2>/dev/null; echo cleaned)",
+      "Bash(awk 'NR>=3230 && NR<=3300 && /what-is/' index.html)",
+      "Bash(npm i *)",
+      "Bash(echo \"install exit $?\")",
+      "Bash(node shot.js)"
     ],
     "additionalDirectories": [
       "/Users/emil07/Documents/OrchenSol/the-problem",
