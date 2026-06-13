@@ -4,21 +4,21 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>The AI Policy Brief for School Leaders — Orchen</title>
-  <meta name="description" content="A board-ready brief on AI in K–12: six cited data points, a decision framework for school leadership, and a policy checklist. Free, no signup required to read.">
+  <meta name="description" content="A board-ready brief on AI in K–12: the cited research, a decision framework for school leadership, and a policy checklist. Free, no signup required to read.">
   <link rel="icon" type="image/png" sizes="32x32" href="/assets/favicon-32.png">
   <link rel="icon" type="image/png" sizes="256x256" href="/assets/favicon.png">
   <link rel="apple-touch-icon" sizes="180x180" href="/assets/apple-touch-icon.png">
   <link rel="canonical" href="https://orchen.ai/resources/ai-policy-brief/">
   <meta name="robots" content="index, follow">
   <meta property="og:title" content="The AI Policy Brief for School Leaders — Orchen">
-  <meta property="og:description" content="Six cited data points, a decision framework, and a policy checklist — written to be forwarded to a board as-is.">
+  <meta property="og:description" content="The cited research, a decision framework, and a policy checklist — written to be forwarded to a board as-is.">
   <meta property="og:type" content="article">
   <meta property="og:url" content="https://orchen.ai/resources/ai-policy-brief/">
   <meta property="og:image" content="https://orchen.ai/assets/og-image.png">
   <meta property="og:site_name" content="Orchen">
   <meta name="twitter:card" content="summary_large_image">
   <meta name="twitter:title" content="The AI Policy Brief for School Leaders — Orchen">
-  <meta name="twitter:description" content="Six cited data points, a decision framework, and a policy checklist for school leadership.">
+  <meta name="twitter:description" content="The cited research, a decision framework, and a policy checklist for school leadership.">
   <meta name="twitter:image" content="https://orchen.ai/assets/og-image.png">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -61,7 +61,12 @@
       margin-bottom: 0.4rem;
     }
     .s-dark .brief-figure { color: var(--amber); }
+    .brief-figure.in-cell { margin-bottom: 0.5rem; font-size: clamp(2rem, 4vw, 2.6rem); }
+    @media (min-width: 760px) {
+      .checklist { max-width: none; display: grid; grid-template-columns: 1fr 1fr; column-gap: 3rem; }
+    }
     @media print {
+      .checklist { display: block !important; }
       .nav, .crosslinks, .no-print, .btn-cta, .btn-secondary { display: none !important; }
       .hero { padding-top: 2rem; padding-bottom: 1.5rem; }
       .section { padding-block: 1.75rem; }
@@ -93,6 +98,7 @@
   }
   </script>
   <link rel="stylesheet" href="/assets/refine.css">
+  <link rel="stylesheet" href="/assets/editorial.css">
 </head>
 <body>
 
@@ -121,7 +127,7 @@
       <div class="container">
         <span class="eyebrow">Resource &middot; For School Leadership</span>
         <h1 class="hero-h1">The AI Policy Brief for School Leaders.</h1>
-        <p class="hero-sub">Six cited data points, a decision framework, and a policy checklist &mdash; written to be forwarded to a board, a faculty meeting, or a parents' association as-is. Free to read; no signup required.</p>
+        <p class="hero-sub">The cited research, a decision framework, and a policy checklist &mdash; written to be forwarded to a board, a faculty meeting, or a parents' association as-is. Free to read; no signup required.</p>
         <p class="brief-meta">June 2026 edition &middot; ~8 minute read &middot; Print-friendly</p>
       </div>
     </section>
@@ -149,39 +155,45 @@
     <!-- PART 1: EVIDENCE -->
     <section class="section s-dark bg-grid">
       <div class="container">
-        <div class="section-inner">
-          <span class="eyebrow">Part One &middot; The Evidence</span>
-          <h2 class="sec-h2">What the research actually says, in six points.</h2>
-          <div class="rows">
-            <div class="row">
-              <div class="brief-figure">95%</div>
-              <h3 class="row-head">Student-AI activity is overwhelmingly work-completion, not learning.</h3>
-              <p class="row-body">Across 1.2 million monitored student-AI sessions in 1,300+ districts, 95% of interactions were students attempting to have the AI complete assigned work entirely. <em>Education Week / Securly, March 2026.</em></p>
+        <div class="section-inner section-inner--wide">
+          <div class="ed-head">
+            <div class="ed-head__title">
+              <span class="eyebrow">Part One &middot; The Evidence</span>
+              <h2 class="sec-h2">The research brief.</h2>
+              <hr class="ed-rule">
             </div>
-            <div class="row">
-              <div class="brief-figure">84%</div>
-              <h3 class="row-head">Faculty closest to the work see originality declining.</h3>
-              <p class="row-body">84% of college faculty report AI is directly reducing student originality and deep engagement — near-universal agreement among the people who grade the work. <em>College Board, February 2026.</em></p>
+            <p class="ed-head__lead">The cited research in one place — and the single shape it forms: students are using AI to skip the thinking, and the cognitive baseline was already falling before it arrived.</p>
+          </div>
+          <div class="feature-grid cols-2">
+            <div class="feature-cell">
+              <div class="brief-figure in-cell">95%</div>
+              <h3 class="feature-cell__head">Student-AI activity is overwhelmingly work-completion, not learning.</h3>
+              <p class="feature-cell__body">Across 1.2 million monitored student-AI sessions in 1,300+ districts, 95% of interactions were students attempting to have the AI complete assigned work entirely. <em>Education Week / Securly, March 2026.</em></p>
             </div>
-            <div class="row">
-              <div class="brief-figure">67%</div>
-              <h3 class="row-head">Students themselves now report the cognitive cost.</h3>
-              <p class="row-body">67% of students say, in their own words, that using AI for schoolwork is eroding their critical thinking — up from 54% earlier in the same school year. <em>RAND Corporation, March 2026.</em></p>
+            <div class="feature-cell">
+              <div class="brief-figure in-cell">84%</div>
+              <h3 class="feature-cell__head">Faculty closest to the work see originality declining.</h3>
+              <p class="feature-cell__body">84% of college faculty report AI is directly reducing student originality and deep engagement — near-universal agreement among the people who grade the work. <em>College Board, February 2026.</em></p>
             </div>
-            <div class="row">
-              <div class="brief-figure">48&rarr;62%</div>
-              <h3 class="row-head">Adoption crossed into the majority in eight months.</h3>
-              <p class="row-body">The share of students using AI for homework rose from 48% to 62% between May and December 2025, driven almost entirely by middle and high schoolers — the age range where habits of effortful learning form. <em>RAND Corporation, March 2026.</em></p>
+            <div class="feature-cell">
+              <div class="brief-figure in-cell">67%</div>
+              <h3 class="feature-cell__head">Students themselves now report the cognitive cost.</h3>
+              <p class="feature-cell__body">67% of students say, in their own words, that using AI for schoolwork is eroding their critical thinking — up from 54% earlier in the same school year. <em>RAND Corporation, March 2026.</em></p>
             </div>
-            <div class="row">
-              <div class="brief-figure">&minus;7 pts</div>
-              <h3 class="row-head">The U.S. cognitive baseline was already weakening.</h3>
-              <p class="row-body">U.S. nine-year-olds posted their first-ever NAEP math decline (−7 points, 2020–22) and the largest reading drop since 1990. AI did not create a learning crisis; it arrived during one. <em>NCES, NAEP 2022.</em></p>
+            <div class="feature-cell">
+              <div class="brief-figure in-cell">48&rarr;62%</div>
+              <h3 class="feature-cell__head">Adoption crossed into the majority in eight months.</h3>
+              <p class="feature-cell__body">The share of students using AI for homework rose from 48% to 62% between May and December 2025, driven almost entirely by middle and high schoolers — the age range where habits of effortful learning form. <em>RAND Corporation, March 2026.</em></p>
             </div>
-            <div class="row">
-              <div class="brief-figure">&minus;15 pts</div>
-              <h3 class="row-head">The decline is global, and predates the pandemic explanation.</h3>
-              <p class="row-body">PISA 2022 recorded the steepest math decline in the program's history across 81 economies. OECD analysis found the drop began before COVID and continued after reopenings. <em>OECD, December 2023.</em></p>
+            <div class="feature-cell">
+              <div class="brief-figure in-cell">&minus;7 pts</div>
+              <h3 class="feature-cell__head">The U.S. cognitive baseline was already weakening.</h3>
+              <p class="feature-cell__body">U.S. nine-year-olds posted their first-ever NAEP math decline (−7 points, 2020–22) and the largest reading drop since 1990. AI did not create a learning crisis; it arrived during one. <em>NCES, NAEP 2022.</em></p>
+            </div>
+            <div class="feature-cell">
+              <div class="brief-figure in-cell">&minus;15 pts</div>
+              <h3 class="feature-cell__head">The decline is global, and predates the pandemic explanation.</h3>
+              <p class="feature-cell__body">PISA 2022 recorded the steepest math decline in the program's history across 81 economies. OECD analysis found the drop began before COVID and continued after reopenings. <em>OECD, December 2023.</em></p>
             </div>
           </div>
           <p class="sec-body" style="margin-top: 2rem; font-size: 0.9375rem;">Full citations and context: <a href="/the-problem" style="color: inherit; border-bottom: 1px solid rgba(237,233,228,0.35);">orchen.ai/the-problem</a></p>
@@ -226,10 +238,15 @@
     <!-- PART 3: CHECKLIST -->
     <section class="section s-warm bg-grid">
       <div class="container">
-        <div class="section-inner">
-          <span class="eyebrow">Part Three &middot; The Policy Checklist</span>
-          <h2 class="sec-h2">Twelve questions to settle before any deployment.</h2>
-          <p class="sec-body drop-cap">Use this in a leadership meeting or send it to any vendor — the quality of the answers tells you most of what you need to know.</p>
+        <div class="section-inner section-inner--wide">
+          <div class="ed-head">
+            <div class="ed-head__title">
+              <span class="eyebrow">Part Three &middot; The Policy Checklist</span>
+              <h2 class="sec-h2">Twelve questions to settle before any deployment.</h2>
+              <hr class="ed-rule">
+            </div>
+            <p class="ed-head__lead">Use this in a leadership meeting or send it to any vendor — including us. The quality of the answers tells you most of what you need to know.</p>
+          </div>
           <div class="checklist">
             <div class="check-item"><span class="check-box" aria-hidden="true"></span><span class="check-text">Does the AI complete student work, or does it require student thinking before it proceeds?<span class="sub">Ask for a live demonstration of a student asking for the answer directly.</span></span></div>
             <div class="check-item"><span class="check-box" aria-hidden="true"></span><span class="check-text">Is the pedagogical behavior architectural, or a mode students can switch off?</span></div>

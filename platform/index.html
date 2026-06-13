@@ -409,6 +409,16 @@ code {
 }
 .cta-secondary:hover { color: #fff; border-color: rgba(255,255,255,0.6); }
 
+/* ─── PAGE COMPOSITION (editorial) ─── */
+.section-inner { max-width: 1040px; }
+.hero-stack { max-width: 680px; margin: 3rem auto 0; text-align: left; }
+.hero-stack .layer-band { background: rgba(237,233,228,0.05); border-color: rgba(237,233,228,0.14); }
+.hero-stack .layer-band__tag  { color: var(--amber); }
+.hero-stack .layer-band__name { color: var(--wall-text); }
+.hero-stack .layer-band__desc { color: var(--wall-muted); }
+.platform-figcap { font-size: 0.8125rem; color: var(--ink-faint); font-style: italic; text-align: center; margin-top: 0.9rem; }
+.s-dark .platform-figcap { color: var(--wall-faint); }
+
 /* ─── RESPONSIVE ─── */
 @media (max-width: 768px) {
   .section { padding-block: 5rem; }
@@ -441,6 +451,7 @@ code {
 
   </style>
   <link rel="stylesheet" href="/assets/refine.css">
+  <link rel="stylesheet" href="/assets/editorial.css">
 </head>
 <body>
 
@@ -468,8 +479,31 @@ code {
         <div class="hero-inner">
           <span class="eyebrow">Inside the Platform</span>
           <h1>Every layer of Orchen, in detail.</h1>
-          <p class="hero-sub">The homepage tells the story. This page documents the architecture: how the AI is built, what the insight layer actually computes, how the role system works, and what the compliance posture looks like underneath.</p>
+          <p class="hero-sub">Everything under the hood: how the AI is built to teach, what the insight layer actually computes, how six roles are scoped, and the compliance posture your security review will sign off on.</p>
           <p class="hero-note">For IT directors, curriculum leads, and school heads in active evaluation.</p>
+        </div>
+        <div class="hero-stack layer-diagram">
+          <div class="layer-band">
+            <span class="layer-band__tag">Layer 01</span>
+            <div>
+              <span class="layer-band__name">The student environment</span>
+              <span class="layer-band__desc">A Socratic tutor, an assignment shelf, a writing workspace, and a private space nobody else can see.</span>
+            </div>
+          </div>
+          <div class="layer-band">
+            <span class="layer-band__tag">Layer 02</span>
+            <div>
+              <span class="layer-band__name">The insight &amp; role system</span>
+              <span class="layer-band__desc">Conversations become structured insight, scoped to six roles that each see only what they need.</span>
+            </div>
+          </div>
+          <div class="layer-band">
+            <span class="layer-band__tag">Layer 03</span>
+            <div>
+              <span class="layer-band__name">The compliance foundation</span>
+              <span class="layer-band__desc">Row-level security, immutable audit logs, per-school retention, and source deletion within seven days.</span>
+            </div>
+          </div>
         </div>
       </div>
     </section>
@@ -478,39 +512,65 @@ code {
     <section class="section s-light">
       <div class="container">
         <div class="section-inner">
-          <span class="eyebrow">The Student Experience</span>
-          <h2>A chat surface, an assignment shelf, a flashcard library, and a private workspace.</h2>
-          <p class="lead">Students see Orchen as a conversation. Behind that conversation: a system that adapts to how they think, an assignment workflow that their teachers configured, a flashcard library built automatically from their conversations, and a private workspace nobody else can see.</p>
-          <div class="rows">
-            <div class="row">
-              <span class="row-eyebrow">The conversation</span>
-              <h3 class="row-head">Orchen guides through questions rather than handing over answers</h3>
-              <p class="row-body">The Socratic pattern is hard-coded into the system prompt; it is not a setting that can be toggled off. Students cannot ask the AI to simply provide the answer and expect compliance.</p>
+          <div class="ed-head">
+            <div class="ed-head__title">
+              <span class="ed-index">01</span>
+              <span class="eyebrow">The Student Experience</span>
+              <h2>A chat surface, an assignment shelf, a flashcard library, and a private workspace.</h2>
+              <hr class="ed-rule">
             </div>
-            <div class="row">
-              <span class="row-eyebrow">Adaptive presentation</span>
-              <h3 class="row-head">Four modes, selected in real time</h3>
-              <p class="row-body">Verbal exploration, structured guidance, examples-first, step-by-step — selected in real time based on the student's response patterns. A student who learns by example sees examples first. A student who learns by reasoning gets prompted to reason.</p>
+            <p class="ed-head__lead">Students see Orchen as a conversation. Behind it: a system that adapts to how they think, an assignment workflow their teachers configured, a flashcard library built automatically from their chats, and a private workspace nobody else can see.</p>
+          </div>
+        </div>
+      </div>
+      <div class="media-wide ed-split" style="margin-bottom: clamp(2.5rem, 5vw, 3.5rem);">
+            <figure>
+              <div class="shot-frame">
+                <div class="shot-chrome"><span class="shot-dot"></span><span class="shot-dot"></span><span class="shot-dot"></span><span class="shot-name">orchen · student chat</span></div>
+                <img src="/assets/product-student-chat.png" alt="Orchen student chat surface" loading="lazy">
+              </div>
+              <figcaption class="platform-figcap">The conversation surface students work in every day.</figcaption>
+            </figure>
+            <figure>
+              <div class="shot-frame">
+                <div class="shot-chrome"><span class="shot-dot"></span><span class="shot-dot"></span><span class="shot-dot"></span><span class="shot-name">orchen · writing workspace</span></div>
+                <img src="/assets/product-writing-workspace.png" alt="Orchen writing workspace" loading="lazy">
+              </div>
+              <figcaption class="platform-figcap">The dedicated essay surface with rubric-aware feedback.</figcaption>
+            </figure>
+      </div>
+      <div class="container">
+        <div class="section-inner">
+          <div class="feature-grid cols-3">
+            <div class="feature-cell">
+              <span class="feature-cell__eyebrow">The conversation</span>
+              <h3 class="feature-cell__head">Guides through questions, not answers</h3>
+              <p class="feature-cell__body">The Socratic pattern is hard-coded into the system prompt — not a setting that can be toggled off. Students can't ask the AI to simply hand over the answer.</p>
             </div>
-            <div class="row">
-              <span class="row-eyebrow">The assignment shelf</span>
-              <h3 class="row-head">Teacher assignments appear in the chat sidebar</h3>
-              <p class="row-body">When a teacher creates an assignment, it appears in the student's chat sidebar with a Launch screen. The student clicks through, sees a hook designed for their grade level, and works with Orchen on the assignment in conversation. Submission and reflection happen in-chat.</p>
+            <div class="feature-cell">
+              <span class="feature-cell__eyebrow">Adaptive presentation</span>
+              <h3 class="feature-cell__head">Four modes, selected in real time</h3>
+              <p class="feature-cell__body">Verbal exploration, structured guidance, examples-first, step-by-step — chosen in real time from the student's response patterns. A student who learns by example sees examples first.</p>
             </div>
-            <div class="row">
-              <span class="row-eyebrow">Flashcards and quizzes</span>
-              <h3 class="row-head">Concepts extracted from conversations, graded semantically</h3>
-              <p class="row-body">Orchen extracts key concepts from chat sessions and offers to save them as flashcards. Cards group by subject. Students can quiz themselves; quizzes use semantic grading, not exact-word matching. Teachers can also create standalone quizzes that the student takes through chat.</p>
+            <div class="feature-cell">
+              <span class="feature-cell__eyebrow">The assignment shelf</span>
+              <h3 class="feature-cell__head">Teacher assignments in the sidebar</h3>
+              <p class="feature-cell__body">When a teacher creates an assignment it appears in the student's sidebar with a Launch screen. Work, submission, and reflection all happen in-chat.</p>
             </div>
-            <div class="row">
-              <span class="row-eyebrow">The private workspace</span>
-              <h3 class="row-head">Goals, journal, and preferences nobody else can see</h3>
-              <p class="row-body">Students set goals, write private journal entries, and adjust their own learning preferences. None of this is visible to teachers, advisors, or parents unless the student explicitly shares it. Privacy here is not a setting — it is architectural.</p>
+            <div class="feature-cell">
+              <span class="feature-cell__eyebrow">Flashcards &amp; quizzes</span>
+              <h3 class="feature-cell__head">Concepts extracted, graded semantically</h3>
+              <p class="feature-cell__body">Orchen extracts key concepts from sessions and offers to save them as flashcards, grouped by subject. Quizzes use semantic grading, not exact-word matching.</p>
             </div>
-            <div class="row">
-              <span class="row-eyebrow">Multimodal input</span>
-              <h3 class="row-head">Images handled natively alongside messages</h3>
-              <p class="row-body">Students can upload images alongside their messages. The AI handles them natively. A student stuck on a physics diagram can photograph the diagram; Orchen sees it and guides accordingly.</p>
+            <div class="feature-cell">
+              <span class="feature-cell__eyebrow">The private workspace</span>
+              <h3 class="feature-cell__head">Goals and journal nobody else sees</h3>
+              <p class="feature-cell__body">Students set goals, keep a private journal, and tune their own preferences. None of it is visible to teachers, advisors, or parents unless the student shares it.</p>
+            </div>
+            <div class="feature-cell">
+              <span class="feature-cell__eyebrow">Multimodal input</span>
+              <h3 class="feature-cell__head">Images handled natively</h3>
+              <p class="feature-cell__body">Students upload images alongside their messages and the AI handles them natively. A student stuck on a physics diagram can photograph it and Orchen guides accordingly.</p>
             </div>
           </div>
         </div>
@@ -521,49 +581,56 @@ code {
     <section class="section s-dark">
       <div class="container">
         <div class="section-inner">
-          <span class="eyebrow">The Teaching Architecture</span>
-          <h2>Pedagogy encoded as system behavior, not as marketing language.</h2>
-          <p class="lead">Orchen's pedagogical posture is not a description in a privacy policy. It is a set of specific rules encoded into the AI's system prompt and reinforced through how the product is structured. Each rule is operational, not aspirational.</p>
-          <div class="rows">
-            <div class="row">
-              <span class="row-eyebrow">The Socratic posture</span>
-              <h3 class="row-head">Orchen asks before it answers</h3>
-              <p class="row-body">When a student arrives with a question, the AI's first move is almost always to ask the student what they have tried, what they understand so far, or what specifically is stuck. Only after the student has engaged does Orchen begin to guide.</p>
+          <div class="ed-rail">
+            <div class="ed-rail__label">
+              <span class="ed-rail__num">02</span>
+              <span class="eyebrow">The Teaching Architecture</span>
+              <div class="ed-rail__title">Pedagogy encoded as system behavior, not marketing language.</div>
+              <p class="ed-rail__sub">A set of specific rules in the AI's system prompt and the product's structure. Each is operational, not aspirational.</p>
             </div>
-            <div class="row">
-              <span class="row-eyebrow">The Circle Rule</span>
-              <h3 class="row-head">Two wrong answers, then a new approach</h3>
-              <p class="row-body">After two consecutive wrong answers on the same concept, Orchen switches approaches — different example, different framing, different entry point. The student does not get repeatedly pushed toward the same dead end.</p>
-            </div>
-            <div class="row">
-              <span class="row-eyebrow">Concept vs. Mechanical</span>
-              <h3 class="row-head">Two question types, two responses</h3>
-              <p class="row-body">Orchen distinguishes between conceptual questions ("why does this work this way?") and mechanical questions ("how do I compute this?"). It responds differently to each. Concept questions get unpacked through reasoning. Mechanical questions get scaffolded through steps.</p>
-            </div>
-            <div class="row">
-              <span class="row-eyebrow">Partial examples</span>
-              <h3 class="row-head">The example stops before the final step</h3>
-              <p class="row-body">Rather than working a complete example for the student to copy, Orchen works partial examples that stop before the final step. The student finishes. This preserves the productive struggle that learning requires.</p>
-            </div>
-            <div class="row">
-              <span class="row-eyebrow">Land the plane</span>
-              <h3 class="row-head">When the student has it, Orchen stops</h3>
-              <p class="row-body">When a student has arrived at the answer through their own work, Orchen recognizes it and stops guiding. It does not extend the conversation unnecessarily. Recognition is part of the pedagogy.</p>
-            </div>
-            <div class="row">
-              <span class="row-eyebrow">Subject-specific modules</span>
-              <h3 class="row-head">The system prompt extends per discipline</h3>
-              <p class="row-body">The system prompt extends differently for math, writing, science, history, and other subjects. Each module encodes the pedagogical strategies appropriate to that discipline. Writing assignments get prewriting scaffolds. Math assignments get worked-example logic.</p>
-            </div>
-            <div class="row">
-              <span class="row-eyebrow">Assignment workflow</span>
-              <h3 class="row-head">Three assignment kinds, each carrying metadata</h3>
-              <p class="row-body">Teachers create three kinds of assignments. Each carries metadata: lesson context, key concepts, vocabulary, common misconceptions, success criteria, scenario hook, and a parent-friendly explanation. The AI uses this metadata to teach the assignment well, not just to run it through chat.</p>
-            </div>
-            <div class="row">
-              <span class="row-eyebrow">Writing workspace</span>
-              <h3 class="row-head">A dedicated essay surface with rubric-aware feedback</h3>
-              <p class="row-body">For essay assignments, students enter a dedicated writing surface with TipTap-based editing, prewriting worksheets (explore → thesis → outline → ready), draft checks with rubric scores, inline comments tied to specific paragraphs, and mechanical feedback (grammar, punctuation, style) configurable by school policy.</p>
+            <div class="ed-rail__body">
+              <div class="feature-grid cols-2">
+                <div class="feature-cell">
+                  <span class="feature-cell__eyebrow">The Socratic posture</span>
+                  <h3 class="feature-cell__head">Asks before it answers</h3>
+                  <p class="feature-cell__body">The AI's first move is to ask what the student has tried, understands, or is stuck on. Only after they engage does Orchen begin to guide.</p>
+                </div>
+                <div class="feature-cell">
+                  <span class="feature-cell__eyebrow">The Circle Rule</span>
+                  <h3 class="feature-cell__head">Two wrong answers, then a new approach</h3>
+                  <p class="feature-cell__body">After two consecutive wrong answers on the same concept, Orchen switches approaches — different example, framing, entry point — instead of the same dead end.</p>
+                </div>
+                <div class="feature-cell">
+                  <span class="feature-cell__eyebrow">Concept vs. mechanical</span>
+                  <h3 class="feature-cell__head">Two question types, two responses</h3>
+                  <p class="feature-cell__body">Conceptual questions ("why does this work?") get unpacked through reasoning. Mechanical questions ("how do I compute this?") get scaffolded through steps.</p>
+                </div>
+                <div class="feature-cell">
+                  <span class="feature-cell__eyebrow">Partial examples</span>
+                  <h3 class="feature-cell__head">The example stops before the last step</h3>
+                  <p class="feature-cell__body">Rather than a complete example to copy, Orchen works partial examples that stop short. The student finishes — preserving the productive struggle learning requires.</p>
+                </div>
+                <div class="feature-cell">
+                  <span class="feature-cell__eyebrow">Land the plane</span>
+                  <h3 class="feature-cell__head">When the student has it, Orchen stops</h3>
+                  <p class="feature-cell__body">Once a student reaches the answer through their own work, Orchen recognizes it and stops guiding. Recognition is part of the pedagogy.</p>
+                </div>
+                <div class="feature-cell">
+                  <span class="feature-cell__eyebrow">Subject modules</span>
+                  <h3 class="feature-cell__head">The prompt extends per discipline</h3>
+                  <p class="feature-cell__body">The system prompt extends differently for math, writing, science, and history. Writing gets prewriting scaffolds; math gets worked-example logic.</p>
+                </div>
+                <div class="feature-cell">
+                  <span class="feature-cell__eyebrow">Assignment workflow</span>
+                  <h3 class="feature-cell__head">Three kinds, each carrying metadata</h3>
+                  <p class="feature-cell__body">Each assignment carries lesson context, key concepts, vocabulary, common misconceptions, success criteria, a scenario hook, and a parent-friendly explanation.</p>
+                </div>
+                <div class="feature-cell">
+                  <span class="feature-cell__eyebrow">Writing workspace</span>
+                  <h3 class="feature-cell__head">A dedicated, rubric-aware essay surface</h3>
+                  <p class="feature-cell__body">TipTap editing, prewriting worksheets (explore → thesis → outline → ready), rubric-scored draft checks, inline comments, and configurable mechanical feedback.</p>
+                </div>
+              </div>
             </div>
           </div>
         </div>
@@ -574,44 +641,73 @@ code {
     <section class="section s-light">
       <div class="container">
         <div class="section-inner">
-          <span class="eyebrow">The Insight System</span>
-          <h2>Structured insight, computed nightly, surfaced where it matters.</h2>
-          <p class="lead">Every conversation Orchen has with a student feeds an analysis pipeline. The pipeline produces structured insight — learning profiles, concept distributions, struggle and strength tags — that surface to the people responsible for that student. Source conversations are deleted within seven days. What remains is the synthesis.</p>
-          <div class="rows">
-            <div class="row">
-              <span class="row-eyebrow">Learning profiles</span>
-              <h3 class="row-head">Pace, examples, modality, and what works</h3>
-              <p class="row-body">Each student's profile captures their pace, preferred examples, modality preferences (verbal vs. visual vs. example-based vs. step-by-step vs. conceptual), and the kinds of guidance that work for them. The profile updates continuously as the student interacts.</p>
+          <div class="ed-head">
+            <div class="ed-head__title">
+              <span class="ed-index">03</span>
+              <span class="eyebrow">The Insight System</span>
+              <h2>Structured insight, computed nightly, surfaced where it matters.</h2>
+              <hr class="ed-rule">
             </div>
-            <div class="row">
-              <span class="row-eyebrow">Concept-level mastery</span>
-              <h3 class="row-head">Four buckets, not a leaderboard</h3>
-              <p class="row-body">Every concept the student encounters across every conversation is tracked. Mastery state is one of four buckets — demonstrated repeatedly, demonstrated once, in progress, not yet touched. Teachers see the class as a distribution across these buckets, not as a leaderboard of who scored what.</p>
+            <p class="ed-head__lead">Every conversation feeds an analysis pipeline that produces structured insight — learning profiles, concept distributions, struggle and strength tags. Source conversations are deleted within seven days; what remains is the synthesis.</p>
+          </div>
+        </div>
+      </div>
+      <div class="media-wide ed-split ed-split--media-left" style="margin-bottom: clamp(2.5rem, 5vw, 3.5rem);">
+            <figure>
+              <div class="shot-frame">
+                <div class="shot-chrome"><span class="shot-dot"></span><span class="shot-dot"></span><span class="shot-dot"></span><span class="shot-name">orchen · teacher insight</span></div>
+                <img src="/assets/product-teacher-insight.png" alt="Orchen teacher insight dashboard" loading="lazy">
+              </div>
+              <figcaption class="platform-figcap">What teachers see: synthesis, not raw transcripts.</figcaption>
+            </figure>
+            <div class="viz-panel">
+              <div class="viz-panel__title">Concept mastery — a class, not a leaderboard</div>
+              <div class="bar-viz">
+                <div class="bar-row"><span class="bar-row__label">Demonstrated repeatedly</span><div class="bar-row__track"><div class="bar-row__fill" style="width:42%"></div></div><span class="bar-row__val">42%</span></div>
+                <div class="bar-row"><span class="bar-row__label">Demonstrated once</span><div class="bar-row__track"><div class="bar-row__fill" style="width:26%"></div></div><span class="bar-row__val">26%</span></div>
+                <div class="bar-row"><span class="bar-row__label">In progress</span><div class="bar-row__track"><div class="bar-row__fill" style="width:21%"></div></div><span class="bar-row__val">21%</span></div>
+                <div class="bar-row"><span class="bar-row__label">Not yet touched</span><div class="bar-row__track"><div class="bar-row__fill" style="width:11%"></div></div><span class="bar-row__val">11%</span></div>
+              </div>
+              <p class="viz-panel__note">Illustrative distribution across the four mastery buckets.</p>
             </div>
-            <div class="row">
-              <span class="row-eyebrow">Struggle and strength areas</span>
-              <h3 class="row-head">Tagged by subject, surfaced as chips</h3>
-              <p class="row-body">Specific topics where the student gets stuck or excels, tagged by subject and updated as patterns become clear. These appear as colored chips on the advisor dashboard and in the weekly narrative.</p>
+      </div>
+      <div class="container">
+        <div class="section-inner">
+          <div class="feature-grid cols-2">
+            <div class="feature-cell">
+              <span class="feature-cell__eyebrow">Learning profiles</span>
+              <h3 class="feature-cell__head">Pace, examples, modality, and what works</h3>
+              <p class="feature-cell__body">Each profile captures pace, preferred examples, modality (verbal, visual, example-based, step-by-step, conceptual), and the guidance that works. It updates continuously as the student interacts.</p>
             </div>
-            <div class="row">
-              <span class="row-eyebrow">Weekly advisor narratives</span>
-              <h3 class="row-head">A structured narrative per advisee, every week</h3>
-              <p class="row-body">For every student in their caseload, advisors receive a structured weekly narrative — independent effort level, curiosity depth, critical engagement signals, and any concerning patterns. The narrative is generated automatically from interaction data, not from surveys or self-reports.</p>
+            <div class="feature-cell">
+              <span class="feature-cell__eyebrow">Concept-level mastery</span>
+              <h3 class="feature-cell__head">Four buckets, not a leaderboard</h3>
+              <p class="feature-cell__body">Every concept across every conversation is tracked into one of four buckets. Teachers see the class as a distribution, not a ranking of who scored what.</p>
             </div>
-            <div class="row">
-              <span class="row-eyebrow">The longitudinal profile</span>
-              <h3 class="row-head">Years of trajectory, synthesized</h3>
-              <p class="row-body">The longer a school stays with Orchen, the deeper each student's profile becomes. A senior who has used Orchen since freshman year has a four-year trajectory captured as structured insight — not as transcripts to scroll through, but as a synthesis of how their thinking has changed.</p>
+            <div class="feature-cell">
+              <span class="feature-cell__eyebrow">Struggle &amp; strength</span>
+              <h3 class="feature-cell__head">Tagged by subject, surfaced as chips</h3>
+              <p class="feature-cell__body">Topics where the student gets stuck or excels, tagged by subject and updated as patterns become clear — shown as colored chips on the advisor dashboard and in the weekly narrative.</p>
             </div>
-            <div class="row">
-              <span class="row-eyebrow">Topic re-classification</span>
-              <h3 class="row-head">Subject tags update as the conversation evolves</h3>
-              <p class="row-body">Conversations are re-classified every five student messages. Subject tags update as the conversation evolves. The sidebar stays organized without the student having to maintain it.</p>
+            <div class="feature-cell">
+              <span class="feature-cell__eyebrow">Weekly narratives</span>
+              <h3 class="feature-cell__head">A structured narrative per advisee</h3>
+              <p class="feature-cell__body">Independent effort, curiosity depth, critical-engagement signals, and any concerning patterns — generated automatically from interaction data, not surveys or self-reports.</p>
             </div>
-            <div class="row">
-              <span class="row-eyebrow">Crisis detection</span>
-              <h3 class="row-head">Every conversation scanned, every flag tracked</h3>
-              <p class="row-body">Every conversation is scanned for concerning content — self-harm indicators, distress signals, references to harm by others. Detected content is flagged automatically and routed to the school's designated counselor. Every flag carries a 24-hour urgency indicator and moves through a full lifecycle (open, reviewing, resolved, or escalated).</p>
+            <div class="feature-cell">
+              <span class="feature-cell__eyebrow">Longitudinal profile</span>
+              <h3 class="feature-cell__head">Years of trajectory, synthesized</h3>
+              <p class="feature-cell__body">A senior who has used Orchen since freshman year has a four-year trajectory captured as structured insight — a synthesis of how their thinking changed, not transcripts to scroll.</p>
+            </div>
+            <div class="feature-cell">
+              <span class="feature-cell__eyebrow">Topic re-classification</span>
+              <h3 class="feature-cell__head">Tags update as the conversation evolves</h3>
+              <p class="feature-cell__body">Conversations are re-classified every five student messages, so the sidebar stays organized without the student having to maintain it.</p>
+            </div>
+            <div class="feature-cell" style="grid-column: 1 / -1;">
+              <span class="feature-cell__eyebrow">Crisis detection</span>
+              <h3 class="feature-cell__head">Every conversation scanned, every flag tracked</h3>
+              <p class="feature-cell__body">Every conversation is scanned for concerning content — self-harm indicators, distress signals, references to harm by others. Detected content is flagged automatically and routed to the school's designated counselor, carrying a 24-hour urgency indicator and moving through a full lifecycle (open, reviewing, resolved, or escalated).</p>
             </div>
           </div>
         </div>
@@ -622,41 +718,52 @@ code {
     <section class="section s-dark">
       <div class="container">
         <div class="section-inner">
-          <span class="eyebrow">The Role Architecture</span>
-          <h2>Six roles. Each sees only what their role needs to see.</h2>
-          <p class="lead">Orchen's data model is organized around six roles. Each role has a defined view of student data — scoped, narrative, and synthesized. The boundaries between roles are enforced architecturally, not through policy documents.</p>
-          <div class="rows">
-            <div class="row">
-              <span class="row-eyebrow">Student</span>
-              <h3 class="row-head">Own work only, private workspace invisible to all</h3>
-              <p class="row-body">Sees their own conversations, their flashcards, their assignments, their goals, and their private journal. Sees nothing about other students. The student's private workspace (goals, journal, preferences) is invisible to every other role unless the student chooses to share.</p>
+          <div class="ed-head">
+            <div class="ed-head__title">
+              <span class="ed-index">04</span>
+              <span class="eyebrow">The Role Architecture</span>
+              <h2>Six roles. Each sees only what their role needs to see.</h2>
+              <hr class="ed-rule">
             </div>
-            <div class="row">
-              <span class="row-eyebrow">Teacher</span>
-              <h3 class="row-head">Structured insight, not raw transcripts</h3>
-              <p class="row-body">Sees structured insight for students in their classes — learning profiles, concept distributions, recent session summaries, struggle and strength areas. Sees assignment progress and writing rubric scores. Does not see raw transcripts unless the student or school explicitly grants that access.</p>
-            </div>
-            <div class="row">
-              <span class="row-eyebrow">Advisor</span>
-              <h3 class="row-head">Weekly narratives and immediate crisis flags</h3>
-              <p class="row-body">Sees weekly synthesized narratives for every advisee in their caseload. Receives crisis flag notifications immediately. Can write notes to parents through the parent communication system. Sees shared sessions only — students choose what to share.</p>
-            </div>
-            <div class="row">
-              <span class="row-eyebrow">Parent</span>
-              <h3 class="row-head">Weekly digests at the school's visibility level</h3>
-              <p class="row-body">Receives weekly digests at the visibility level the school has set. Sees conversation starters, supporting techniques, subject activity, and overdue assignments. The five visibility tiers range from summary-only to full transcript access; each school sets its own default and maximum.</p>
-            </div>
-            <div class="row">
-              <span class="row-eyebrow">School admin</span>
-              <h3 class="row-head">Configures everything school-level</h3>
-              <p class="row-body">Configures everything school-level: AI identity, mechanical feedback toggles (grammar, punctuation, style — each independently configurable), parent visibility defaults and maximums, crisis routing contacts, white-label branding for premium schools.</p>
-            </div>
-            <div class="row">
-              <span class="row-eyebrow">App admin (Anthropic / Orchen team)</span>
-              <h3 class="row-head">Service-role isolated, never views conversations</h3>
-              <p class="row-body">Full user management with audit logging. Service-role isolated from school-level operations. Never views student conversations except through documented privacy-bounded review for product improvement, logged and disclosed.</p>
-            </div>
+            <p class="ed-head__lead">The data model is organized around six roles, each with a defined view of student data — scoped, narrative, synthesized. The boundaries are enforced architecturally, not through policy documents.</p>
           </div>
+          <table class="matrix-grid">
+            <thead>
+              <tr><th scope="col">Role</th><th scope="col">What they see</th><th scope="col">Where the boundary is</th></tr>
+            </thead>
+            <tbody>
+              <tr>
+                <th scope="row">Student</th>
+                <td data-label="Sees">Own conversations, flashcards, assignments, goals, and private journal.</td>
+                <td data-label="Boundary">Nothing about other students. The private workspace is invisible to every other role unless the student shares it.</td>
+              </tr>
+              <tr>
+                <th scope="row">Teacher</th>
+                <td data-label="Sees">Structured insight for their classes — profiles, concept distributions, session summaries, struggle/strength areas, assignment progress, rubric scores.</td>
+                <td data-label="Boundary">No raw transcripts unless the student or school explicitly grants access.</td>
+              </tr>
+              <tr>
+                <th scope="row">Advisor</th>
+                <td data-label="Sees">Weekly synthesized narratives for each advisee, immediate crisis flags, and parent-note tools.</td>
+                <td data-label="Boundary">Shared sessions only — students choose what to share.</td>
+              </tr>
+              <tr>
+                <th scope="row">Parent</th>
+                <td data-label="Sees">Weekly digests at the school's visibility level: conversation starters, techniques, subject activity, overdue assignments.</td>
+                <td data-label="Boundary">Five visibility tiers; the school sets the default and the ceiling any parent can request.</td>
+              </tr>
+              <tr>
+                <th scope="row">School admin</th>
+                <td data-label="Sees">School-level configuration: AI identity, mechanical-feedback toggles, parent visibility, crisis routing, white-label branding.</td>
+                <td data-label="Boundary">School-scoped — no access across other schools.</td>
+              </tr>
+              <tr>
+                <th scope="row">App admin</th>
+                <td data-label="Sees">Full user management with audit logging (Orchen team).</td>
+                <td data-label="Boundary">Service-role isolated; never views conversations except documented, logged, privacy-bounded review.</td>
+              </tr>
+            </tbody>
+          </table>
         </div>
       </div>
     </section>
@@ -665,34 +772,41 @@ code {
     <section class="section s-light">
       <div class="container">
         <div class="section-inner">
-          <span class="eyebrow">School Configuration</span>
-          <h2>You set the defaults. The defaults are yours.</h2>
-          <p class="lead">Orchen's behavior is configured at the school level. The configuration covers what the AI looks like to students, what data parents can see, how mechanical writing feedback is delivered, where crisis flags go, and how the product is branded.</p>
-          <div class="rows">
-            <div class="row">
-              <span class="row-eyebrow">AI identity</span>
-              <h3 class="row-head">A tutor that matches your institutional voice</h3>
-              <p class="row-body">The system prompt that defines how Orchen presents itself can be configured per school. Premium schools can override the default model. The tutor's name, voice, and pedagogical defaults match the school's institutional voice.</p>
+          <div class="ed-rail">
+            <div class="ed-rail__label">
+              <span class="ed-rail__num">05</span>
+              <span class="eyebrow">School Configuration</span>
+              <div class="ed-rail__title">You set the defaults. The defaults are yours.</div>
+              <p class="ed-rail__sub">Behavior is configured at the school level — what the AI looks like, what parents see, how feedback is delivered, where flags go, and how it's branded.</p>
             </div>
-            <div class="row">
-              <span class="row-eyebrow">Mechanical feedback policy</span>
-              <h3 class="row-head">Grammar, punctuation, style — each independent</h3>
-              <p class="row-body">Three categories — grammar, punctuation, style — toggle independently per school. A school that wants Orchen to flag only grammar (and leave style to the teacher) configures that. A school that wants all three configures that. A school that wants none gets a writing workspace without mechanical highlights.</p>
-            </div>
-            <div class="row">
-              <span class="row-eyebrow">Parent visibility tiers</span>
-              <h3 class="row-head">Five tiers, with a default and a ceiling</h3>
-              <p class="row-body">Five tiers, ranging from summary-only to full transcript access. The school sets the default tier and the maximum tier any individual parent can request. Schools can require student notification when a parent requests an upgrade.</p>
-            </div>
-            <div class="row">
-              <span class="row-eyebrow">Crisis routing</span>
-              <h3 class="row-head">Flags stay in the school's designated chain</h3>
-              <p class="row-body">Schools designate the counselor or safeguarding lead who receives crisis flags. The 24-hour urgency indicator and the lifecycle tracking are configurable. Crisis content never leaves the school's designated chain.</p>
-            </div>
-            <div class="row">
-              <span class="row-eyebrow">White-label branding</span>
-              <h3 class="row-head">The AI presents as the school's tutor</h3>
-              <p class="row-body">Premium schools display their own logo and institutional name above every Orchen message. The school's brand sits where the Orchen brand would otherwise sit — the AI presents as the school's tutor, not as a generic AI product.</p>
+            <div class="ed-rail__body">
+              <div class="feature-grid cols-2">
+                <div class="feature-cell">
+                  <span class="feature-cell__eyebrow">AI identity</span>
+                  <h3 class="feature-cell__head">A tutor that matches your voice</h3>
+                  <p class="feature-cell__body">The system prompt defining how Orchen presents itself is configurable per school; premium schools can override the default model. Name, voice, and pedagogical defaults match your institution.</p>
+                </div>
+                <div class="feature-cell">
+                  <span class="feature-cell__eyebrow">Mechanical feedback</span>
+                  <h3 class="feature-cell__head">Grammar, punctuation, style — independent</h3>
+                  <p class="feature-cell__body">Three categories toggle independently. Flag only grammar, all three, or none — a writing workspace with or without mechanical highlights, your call.</p>
+                </div>
+                <div class="feature-cell">
+                  <span class="feature-cell__eyebrow">Parent visibility</span>
+                  <h3 class="feature-cell__head">Five tiers, a default and a ceiling</h3>
+                  <p class="feature-cell__body">From summary-only to full transcript. The school sets the default and the maximum any parent can request, and can require student notification on an upgrade.</p>
+                </div>
+                <div class="feature-cell">
+                  <span class="feature-cell__eyebrow">Crisis routing</span>
+                  <h3 class="feature-cell__head">Flags stay in your designated chain</h3>
+                  <p class="feature-cell__body">Schools designate the counselor or safeguarding lead who receives flags. The urgency indicator and lifecycle tracking are configurable; crisis content never leaves the chain.</p>
+                </div>
+                <div class="feature-cell" style="grid-column: 1 / -1;">
+                  <span class="feature-cell__eyebrow">White-label branding</span>
+                  <h3 class="feature-cell__head">The AI presents as the school's tutor</h3>
+                  <p class="feature-cell__body">Premium schools show their own logo and name above every Orchen message. The school's brand sits where Orchen's would — so the AI presents as the school's tutor, not a generic product.</p>
+                </div>
+              </div>
             </div>
           </div>
         </div>
@@ -703,49 +817,56 @@ code {
     <section class="section s-dark">
       <div class="container">
         <div class="section-inner">
-          <span class="eyebrow">Compliance and Security</span>
-          <h2>The architecture your security review will pass.</h2>
-          <p class="lead">Orchen is built on Supabase Postgres with strict row-level security on every table, immutable audit logging via <code>SECURITY DEFINER</code> RPCs, per-school data retention via <code>pg_cron</code>, and a service-role isolation model that limits even Orchen team access to documented review operations.</p>
-          <div class="rows">
-            <div class="row">
-              <span class="row-eyebrow">Row-level security</span>
-              <h3 class="row-head">RLS enforced at the Postgres level</h3>
-              <p class="row-body">Every table in the database has <code>RLS</code> policies enforced at the Postgres level. Role-based access is checked via <code>SECURITY DEFINER</code> helpers to prevent recursion. Service-role operations are isolated from end-user-facing role-based access; the two cannot accidentally cross.</p>
+          <div class="ed-rail">
+            <div class="ed-rail__label">
+              <span class="ed-rail__num">06</span>
+              <span class="eyebrow">Compliance &amp; Security</span>
+              <div class="ed-rail__title">The architecture your security review will pass.</div>
+              <p class="ed-rail__sub">Supabase Postgres with strict row-level security, immutable audit logging, per-school retention, and a service-role isolation model.</p>
             </div>
-            <div class="row">
-              <span class="row-eyebrow">Immutable audit logging</span>
-              <h3 class="row-head">Insert-only, RPC-mediated, server-verified</h3>
-              <p class="row-body">Every staff access of student data is logged via the <code>log_audit_event</code> RPC. The <code>audit_log</code> table is insert-only at the table level — direct inserts are blocked; all writes go through the RPC, which verifies the actor server-side. The audit trail cannot be modified or deleted.</p>
-            </div>
-            <div class="row">
-              <span class="row-eyebrow">Data retention</span>
-              <h3 class="row-head">Per-school policy, swept nightly</h3>
-              <p class="row-body">Each school sets a retention policy covering messages, sessions, quiz results, and snapshot keep-counts. The <code>pg_cron</code>-driven retention job runs nightly. Crisis flags are exempt from retention deletion; they persist until manually resolved.</p>
-            </div>
-            <div class="row">
-              <span class="row-eyebrow">Source conversation deletion</span>
-              <h3 class="row-head">Source deleted within seven days of analysis</h3>
-              <p class="row-body">Source student conversations are deleted within seven days of analysis. What remains is the derived insight — learning profiles, concept distributions, struggle tags. The advisor narrative is computed before deletion. The conversation itself does not persist for the long term.</p>
-            </div>
-            <div class="row">
-              <span class="row-eyebrow">Consent management</span>
-              <h3 class="row-head">Tracked, versioned, revocable</h3>
-              <p class="row-body">Every student account has a <code>consent_records</code> entry. Students without consent records enter a non-persistent Guest Mode where conversations are not saved. Consent is tracked, versioned, and revocable.</p>
-            </div>
-            <div class="row">
-              <span class="row-eyebrow">Right to be forgotten</span>
-              <h3 class="row-head">Soft-delete, anonymize, export, comply</h3>
-              <p class="row-body">Students (or school admins on their behalf) can delete an account at any time. The delete process soft-deletes the profile, anonymizes crisis flag records, and triggers full retention compliance. A full data export is available to the student before deletion.</p>
-            </div>
-            <div class="row">
-              <span class="row-eyebrow">FERPA and COPPA posture</span>
-              <h3 class="row-head">Built around the statutory boundaries</h3>
-              <p class="row-body">The architecture is built around FERPA's parent/student visibility boundaries and COPPA's under-13 protections. Schools with under-13 students configure additional restrictions through the role-gate system. Audit logs satisfy the FERPA documentation requirements for record access.</p>
-            </div>
-            <div class="row">
-              <span class="row-eyebrow">Crisis-flag anonymization</span>
-              <h3 class="row-head">Safeguarding record preserved, identifier removed</h3>
-              <p class="row-body">When a student account is deleted, their crisis flag history is anonymized rather than deleted. This preserves the safeguarding record while removing the personal identifier — a balance between right-to-be-forgotten and the school's duty of care.</p>
+            <div class="ed-rail__body">
+              <div class="feature-grid cols-2">
+                <div class="feature-cell">
+                  <span class="feature-cell__eyebrow">Row-level security</span>
+                  <h3 class="feature-cell__head">RLS enforced at the Postgres level</h3>
+                  <p class="feature-cell__body">Every table has <code>RLS</code> policies. Role-based access is checked via <code>SECURITY DEFINER</code> helpers to prevent recursion; service-role operations are isolated from user-facing access and cannot accidentally cross.</p>
+                </div>
+                <div class="feature-cell">
+                  <span class="feature-cell__eyebrow">Immutable audit logging</span>
+                  <h3 class="feature-cell__head">Insert-only, RPC-mediated</h3>
+                  <p class="feature-cell__body">Every staff access is logged via <code>log_audit_event</code>. The <code>audit_log</code> table is insert-only — direct inserts blocked; all writes go through the RPC, which verifies the actor server-side.</p>
+                </div>
+                <div class="feature-cell">
+                  <span class="feature-cell__eyebrow">Data retention</span>
+                  <h3 class="feature-cell__head">Per-school policy, swept nightly</h3>
+                  <p class="feature-cell__body">Each school sets retention for messages, sessions, quiz results, and snapshot keep-counts. The <code>pg_cron</code> job runs nightly. Crisis flags are exempt until resolved.</p>
+                </div>
+                <div class="feature-cell">
+                  <span class="feature-cell__eyebrow">Source deletion</span>
+                  <h3 class="feature-cell__head">Source deleted within seven days</h3>
+                  <p class="feature-cell__body">Source conversations are deleted within seven days of analysis. What remains is derived insight; the advisor narrative is computed before deletion.</p>
+                </div>
+                <div class="feature-cell">
+                  <span class="feature-cell__eyebrow">Consent management</span>
+                  <h3 class="feature-cell__head">Tracked, versioned, revocable</h3>
+                  <p class="feature-cell__body">Every account has a <code>consent_records</code> entry. Students without one enter a non-persistent Guest Mode where conversations are not saved.</p>
+                </div>
+                <div class="feature-cell">
+                  <span class="feature-cell__eyebrow">Right to be forgotten</span>
+                  <h3 class="feature-cell__head">Soft-delete, anonymize, export</h3>
+                  <p class="feature-cell__body">Accounts can be deleted at any time: soft-delete the profile, anonymize crisis records, trigger retention compliance. A full export is offered before deletion.</p>
+                </div>
+                <div class="feature-cell">
+                  <span class="feature-cell__eyebrow">FERPA &amp; COPPA</span>
+                  <h3 class="feature-cell__head">Built around the statutory boundaries</h3>
+                  <p class="feature-cell__body">Built around FERPA's visibility boundaries and COPPA's under-13 protections. Under-13 schools add restrictions via the role-gate; audit logs satisfy FERPA record-access documentation.</p>
+                </div>
+                <div class="feature-cell">
+                  <span class="feature-cell__eyebrow">Crisis-flag anonymization</span>
+                  <h3 class="feature-cell__head">Record preserved, identifier removed</h3>
+                  <p class="feature-cell__body">On account deletion, crisis flag history is anonymized rather than deleted — preserving the safeguarding record while removing the personal identifier.</p>
+                </div>
+              </div>
             </div>
           </div>
         </div>
@@ -756,57 +877,70 @@ code {
     <section class="section s-light">
       <div class="container">
         <div class="section-inner">
-          <span class="eyebrow">Data Lifecycle</span>
-          <h2>A single conversation, end to end.</h2>
-          <p class="lead">The path of a student-AI conversation through Orchen — from creation, through analysis, to deletion. Every step is logged, scoped, and documented.</p>
-          <div class="steps">
-            <div class="step">
-              <span class="step-num"></span>
+          <div class="ed-head ed-head--center">
+            <div class="ed-head__title">
+              <span class="ed-index">07</span>
+              <span class="eyebrow">Data Lifecycle</span>
+              <h2>A single conversation, end to end.</h2>
+              <hr class="ed-rule">
+            </div>
+            <p class="ed-head__lead">The path of one student-AI conversation through Orchen — from creation, through analysis, to deletion. Every step is logged, scoped, and documented.</p>
+          </div>
+          <div class="flow-diagram" style="max-width: 760px; margin-inline: auto;">
+            <div class="flow-node">
+              <div class="flow-node__dot">1</div>
               <div>
-                <div class="step-label">Day 0 — Creation</div>
-                <p class="step-body">Student opens a new chat. A session row is created in the database. Each message is stored against that session with RLS scoping to the student. The conversation is visible only to the student during this window.</p>
+                <div class="flow-node__tag">Day 0</div>
+                <div class="flow-node__head">Creation</div>
+                <p class="flow-node__body">The student opens a new chat. A session row is created; each message is stored against it with RLS scoping to the student. Visible only to the student.</p>
               </div>
             </div>
-            <div class="step">
-              <span class="step-num"></span>
+            <div class="flow-node">
+              <div class="flow-node__dot">2</div>
               <div>
-                <div class="step-label">Day 0-7 — Live conversation</div>
-                <p class="step-body">Messages are saved as they happen. Topic classification updates every five student messages. Concept progress increments. Crisis detection scans every message. The conversation remains the student's private surface.</p>
+                <div class="flow-node__tag">Day 0–7</div>
+                <div class="flow-node__head">Live conversation</div>
+                <p class="flow-node__body">Messages save as they happen. Topic classification updates every five messages, concept progress increments, crisis detection scans every message. Still the student's private surface.</p>
               </div>
             </div>
-            <div class="step">
-              <span class="step-num"></span>
+            <div class="flow-node">
+              <div class="flow-node__dot">3</div>
               <div>
-                <div class="step-label">Day 1-7 — Nightly analysis</div>
-                <p class="step-body">The analysis pipeline runs nightly. Learning profile updates. Concept distribution updates. Struggle and strength tags update. Weekly narratives compile. Crisis flags route to the designated counselor if detected.</p>
+                <div class="flow-node__tag">Day 1–7</div>
+                <div class="flow-node__head">Nightly analysis</div>
+                <p class="flow-node__body">The pipeline runs nightly: learning profile, concept distribution, and struggle/strength tags update; weekly narratives compile; crisis flags route to the designated counselor.</p>
               </div>
             </div>
-            <div class="step">
-              <span class="step-num"></span>
+            <div class="flow-node">
+              <div class="flow-node__dot">4</div>
               <div>
-                <div class="step-label">Day 7 — Source deletion</div>
-                <p class="step-body">The source conversation is deleted from the messages table. The session row remains, with derived insight attached. The advisor dashboard shows the synthesis; the conversation that produced it is gone.</p>
+                <div class="flow-node__tag">Day 7</div>
+                <div class="flow-node__head">Source deletion</div>
+                <p class="flow-node__body">The source conversation is deleted from the messages table. The session row remains with derived insight attached — the synthesis stays, the conversation that produced it is gone.</p>
               </div>
             </div>
-            <div class="step">
-              <span class="step-num"></span>
+            <div class="flow-node">
+              <div class="flow-node__dot">5</div>
               <div>
-                <div class="step-label">Day 7+ — Derived insight persists</div>
-                <p class="step-body">The student's learning profile, concept progress, and longitudinal trajectory remain. Teachers see continuing insight. Advisors see ongoing patterns. Parents see ongoing digests. The student's own view shows their continuing work — flashcards, assignments, goals — not the deleted source conversations.</p>
+                <div class="flow-node__tag">Day 7+</div>
+                <div class="flow-node__head">Derived insight persists</div>
+                <p class="flow-node__body">Learning profile, concept progress, and longitudinal trajectory remain. The student's own view shows continuing work — flashcards, assignments, goals — not the deleted sources.</p>
               </div>
             </div>
-            <div class="step">
-              <span class="step-num"></span>
+            <div class="flow-node">
+              <div class="flow-node__dot">6</div>
               <div>
-                <div class="step-label">Year-end — Retention sweep</div>
-                <p class="step-body">The pg_cron retention job sweeps based on the school's policy. Insight may persist for years if the school configures long retention. Source data is already gone by then.</p>
+                <div class="flow-node__tag">Year-end</div>
+                <div class="flow-node__head">Retention sweep</div>
+                <p class="flow-node__body">The <code>pg_cron</code> job sweeps per the school's policy. Insight may persist for years if configured; source data is already gone.</p>
               </div>
             </div>
-            <div class="step">
-              <span class="step-num"></span>
+            <div class="flow-node">
+              <div class="flow-node__dot">7</div>
               <div>
-                <div class="step-label">Account deletion — Anywhere in the timeline</div>
-                <p class="step-body">Student or school admin initiates deletion. Profile soft-deletes, crisis flags anonymize, data export is offered. The audit log of the deletion itself persists.</p>
+                <div class="flow-node__tag">Anytime</div>
+                <div class="flow-node__head">Account deletion</div>
+                <p class="flow-node__body">Student or admin initiates deletion. Profile soft-deletes, crisis flags anonymize, an export is offered. The audit log of the deletion itself persists.</p>
               </div>
             </div>
           </div>

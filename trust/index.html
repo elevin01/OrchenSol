@@ -35,6 +35,7 @@
   }
   </script>
   <link rel="stylesheet" href="/assets/refine.css">
+  <link rel="stylesheet" href="/assets/editorial.css">
 </head>
 <body>
 
@@ -72,7 +73,7 @@
         <span class="eyebrow">At a Glance</span>
         <h2 class="sec-h2">Six commitments, each enforced in the architecture.</h2>
         <p class="sec-body">These are not policy statements layered on top of the product. Each one is a design decision you can verify in a walkthrough.</p>
-        <div class="mini-cards" style="grid-template-columns: repeat(3, 1fr);">
+        <div class="mini-cards">
           <div class="mini-card">
             <h3>Source conversations deleted in 7 days</h3>
             <p>Raw student transcripts are deleted within seven days of analysis. What persists is derived insight — profiles, concept progress, narratives — not the conversations themselves.</p>
@@ -105,57 +106,69 @@
     <section class="section s-warm">
       <div class="container">
         <div class="section-inner">
-          <span class="eyebrow">Data Lifecycle</span>
-          <h2 class="sec-h2">A single conversation, end to end.</h2>
-          <p class="sec-body" style="margin-bottom: 2.5rem;">The path of one student-AI conversation through Orchen — from creation, through analysis, to deletion. Every step is logged, scoped, and documented.</p>
-          <div class="steps">
-            <div class="step">
-              <span class="step-num"></span>
+          <div class="ed-head ed-head--center">
+            <div class="ed-head__title">
+              <span class="eyebrow">Data Lifecycle</span>
+              <h2 class="sec-h2">A single conversation, end to end.</h2>
+              <hr class="ed-rule">
+            </div>
+            <p class="ed-head__lead">The path of one student-AI conversation through Orchen — from creation, through analysis, to deletion. Every step is logged, scoped, and documented.</p>
+          </div>
+          <div class="flow-diagram" style="max-width: 760px; margin-inline: auto;">
+            <div class="flow-node">
+              <div class="flow-node__dot">1</div>
               <div>
-                <div class="step-label">Day 0 — Creation</div>
-                <p class="step-body">Student opens a new chat. A session row is created; each message is stored against it with row-level security scoping it to the student. During this window, the conversation is visible only to the student.</p>
+                <div class="flow-node__tag">Day 0</div>
+                <div class="flow-node__head">Creation</div>
+                <p class="flow-node__body">A student opens a new chat. A session row is created; each message is stored against it with row-level security scoping it to the student. During this window, the conversation is visible only to the student.</p>
               </div>
             </div>
-            <div class="step">
-              <span class="step-num"></span>
+            <div class="flow-node">
+              <div class="flow-node__dot">2</div>
               <div>
-                <div class="step-label">Day 0–7 — Live conversation</div>
-                <p class="step-body">Messages save as they happen. Topic classification updates every five student messages. Concept progress increments. Crisis detection scans every message and routes any flag to the school's designated counselor.</p>
+                <div class="flow-node__tag">Day 0–7</div>
+                <div class="flow-node__head">Live conversation</div>
+                <p class="flow-node__body">Messages save as they happen. Topic classification updates every five student messages. Concept progress increments. Crisis detection scans every message and routes any flag to the school's designated counselor.</p>
               </div>
             </div>
-            <div class="step">
-              <span class="step-num"></span>
+            <div class="flow-node">
+              <div class="flow-node__dot">3</div>
               <div>
-                <div class="step-label">Day 1–7 — Nightly analysis</div>
-                <p class="step-body">The analysis pipeline runs nightly: learning profile updates, concept distribution updates, struggle and strength tags refresh, and weekly advisor narratives compile.</p>
+                <div class="flow-node__tag">Day 1–7</div>
+                <div class="flow-node__head">Nightly analysis</div>
+                <p class="flow-node__body">The analysis pipeline runs nightly: learning profile updates, concept distribution updates, struggle and strength tags refresh, and weekly advisor narratives compile.</p>
               </div>
             </div>
-            <div class="step">
-              <span class="step-num"></span>
+            <div class="flow-node">
+              <div class="flow-node__dot">4</div>
               <div>
-                <div class="step-label">Day 7 — Source deletion</div>
-                <p class="step-body">The source conversation is deleted from the messages table. The session row remains with derived insight attached. The advisor dashboard shows the synthesis; the conversation that produced it is gone.</p>
+                <div class="flow-node__tag">Day 7</div>
+                <div class="flow-node__head">Source deletion</div>
+                <p class="flow-node__body">The source conversation is deleted from the messages table. The session row remains with derived insight attached. The advisor dashboard shows the synthesis; the conversation that produced it is gone.</p>
               </div>
             </div>
-            <div class="step">
-              <span class="step-num"></span>
+            <div class="flow-node">
+              <div class="flow-node__dot">5</div>
               <div>
-                <div class="step-label">Day 7+ — Derived insight persists</div>
-                <p class="step-body">Learning profiles, concept progress, and longitudinal trajectory remain, governed by the school's retention policy. Crisis flags are exempt from automatic deletion because of their safety significance.</p>
+                <div class="flow-node__tag">Day 7+</div>
+                <div class="flow-node__head">Derived insight persists</div>
+                <p class="flow-node__body">Learning profiles, concept progress, and longitudinal trajectory remain, governed by the school's retention policy. Crisis flags are exempt from automatic deletion because of their safety significance.</p>
               </div>
             </div>
-            <div class="step">
-              <span class="step-num"></span>
+            <div class="flow-node">
+              <div class="flow-node__dot">6</div>
               <div>
-                <div class="step-label">Retention sweep — Per school policy</div>
-                <p class="step-body">A nightly <code>pg_cron</code> job enforces each school's configured retention rules across messages, sessions, quiz results, and profile snapshots.</p>
+                <div class="flow-node__tag">Per policy</div>
+                <div class="flow-node__head">Retention sweep</div>
+                <p class="flow-node__body">A nightly <code>pg_cron</code> job enforces each school's configured retention rules across messages, sessions, quiz results, and profile snapshots.</p>
               </div>
             </div>
-            <div class="step">
-              <span class="step-num"></span>
+            <div class="flow-node">
+              <div class="flow-node__dot">7</div>
               <div>
-                <div class="step-label">Account deletion — Anywhere in the timeline</div>
-                <p class="step-body">Student or school admin initiates deletion. The profile soft-deletes, crisis flags anonymize (preserving the safeguarding record without personal identifiers), and a full structured data export is available beforehand. The audit log of the deletion itself persists.</p>
+                <div class="flow-node__tag">Anytime</div>
+                <div class="flow-node__head">Account deletion</div>
+                <p class="flow-node__body">Student or school admin initiates deletion. The profile soft-deletes, crisis flags anonymize (preserving the safeguarding record without personal identifiers), and a full structured data export is available beforehand. The audit log of the deletion itself persists.</p>
               </div>
             </div>
           </div>
@@ -166,39 +179,45 @@
     <!-- SECURITY ARCHITECTURE -->
     <section class="section s-dark">
       <div class="container">
-        <div class="section-inner">
-          <span class="eyebrow">Security Architecture</span>
-          <h2 class="sec-h2">Enforced in the database, not promised in a PDF.</h2>
-          <div class="rows">
-            <div class="row">
-              <span class="row-eyebrow">Access control</span>
-              <h3 class="row-head">Row-level security on every table</h3>
-              <p class="row-body">Every table carries <code>RLS</code> policies enforced at the Postgres layer. Role checks run through <code>SECURITY DEFINER</code> helpers to prevent recursion, and service-role operations are isolated from end-user role-based access — the two cannot accidentally cross.</p>
+        <div class="section-inner section-inner--wide">
+          <div class="ed-head">
+            <div class="ed-head__title">
+              <span class="eyebrow">Security Architecture</span>
+              <h2 class="sec-h2">Enforced in the database, not promised in a PDF.</h2>
+              <hr class="ed-rule">
             </div>
-            <div class="row">
-              <span class="row-eyebrow">Audit trail</span>
-              <h3 class="row-head">Insert-only, RPC-mediated, server-verified</h3>
-              <p class="row-body">Direct writes to the <code>audit_log</code> table are blocked. All entries go through the <code>log_audit_event</code> RPC, which verifies the actor server-side. Every staff access of student data is recorded; school administrators can review their school's log at any time.</p>
+            <p class="ed-head__lead">The privacy guarantees here are structural — enforced at the database layer, where an application bug can't quietly undo them.</p>
+          </div>
+          <div class="feature-grid cols-3">
+            <div class="feature-cell">
+              <span class="feature-cell__eyebrow">Access control</span>
+              <h3 class="feature-cell__head">Row-level security on every table</h3>
+              <p class="feature-cell__body">Every table carries <code>RLS</code> policies enforced at the Postgres layer. Role checks run through <code>SECURITY DEFINER</code> helpers to prevent recursion, and service-role operations are isolated from end-user role-based access — the two cannot accidentally cross.</p>
             </div>
-            <div class="row">
-              <span class="row-eyebrow">Encryption</span>
-              <h3 class="row-head">TLS in transit, encrypted at rest</h3>
-              <p class="row-body">All traffic between clients, the application, and the database runs over TLS. Data at rest is encrypted by the underlying infrastructure provider.</p>
+            <div class="feature-cell">
+              <span class="feature-cell__eyebrow">Audit trail</span>
+              <h3 class="feature-cell__head">Insert-only, RPC-mediated, server-verified</h3>
+              <p class="feature-cell__body">Direct writes to the <code>audit_log</code> table are blocked. All entries go through the <code>log_audit_event</code> RPC, which verifies the actor server-side. Every staff access of student data is recorded; school administrators can review their school's log at any time.</p>
             </div>
-            <div class="row">
-              <span class="row-eyebrow">Privilege escalation</span>
-              <h3 class="row-head">Role changes blocked at the trigger level</h3>
-              <p class="row-body">A database trigger prevents non-admins from modifying their own role, premium status, or age flags — privilege escalation is stopped in the database, before application code is even involved.</p>
+            <div class="feature-cell">
+              <span class="feature-cell__eyebrow">Encryption</span>
+              <h3 class="feature-cell__head">TLS in transit, encrypted at rest</h3>
+              <p class="feature-cell__body">All traffic between clients, the application, and the database runs over TLS. Data at rest is encrypted by the underlying infrastructure provider.</p>
             </div>
-            <div class="row">
-              <span class="row-eyebrow">Consent gating</span>
-              <h3 class="row-head">No consent record, no persistence</h3>
-              <p class="row-body">Students without an active consent record operate in a non-persistent Guest Mode: their interactions are never written to the database. Consent is tracked, versioned, and revocable.</p>
+            <div class="feature-cell">
+              <span class="feature-cell__eyebrow">Privilege escalation</span>
+              <h3 class="feature-cell__head">Role changes blocked at the trigger level</h3>
+              <p class="feature-cell__body">A database trigger prevents non-admins from modifying their own role, premium status, or age flags — privilege escalation is stopped in the database, before application code is even involved.</p>
             </div>
-            <div class="row">
-              <span class="row-eyebrow">Account hygiene</span>
-              <h3 class="row-head">Forced credential rotation, no self-registration for parents</h3>
-              <p class="row-body">Admin-created accounts must set a new password on first login. Parents cannot self-register — accounts exist only because a school created them, which keeps the account perimeter under institutional control.</p>
+            <div class="feature-cell">
+              <span class="feature-cell__eyebrow">Consent gating</span>
+              <h3 class="feature-cell__head">No consent record, no persistence</h3>
+              <p class="feature-cell__body">Students without an active consent record operate in a non-persistent Guest Mode: their interactions are never written to the database. Consent is tracked, versioned, and revocable.</p>
+            </div>
+            <div class="feature-cell">
+              <span class="feature-cell__eyebrow">Account hygiene</span>
+              <h3 class="feature-cell__head">Forced credential rotation, no self-registration for parents</h3>
+              <p class="feature-cell__body">Admin-created accounts must set a new password on first login. Parents cannot self-register — accounts exist only because a school created them, which keeps the account perimeter under institutional control.</p>
             </div>
           </div>
         </div>
@@ -208,9 +227,10 @@
     <!-- WHO SEES WHAT -->
     <section class="section s-cream">
       <div class="container">
-        <div class="section-inner">
+        <div class="section-inner section-inner--wide">
           <span class="eyebrow">Access Model</span>
           <h2 class="sec-h2">Who can see student data.</h2>
+          <hr class="ed-rule" style="margin-bottom: 1.5rem;">
           <p class="sec-body">Six roles, each scoped to what the role needs. Boundaries are enforced architecturally, not by policy documents.</p>
           <table class="std-table">
             <thead>
@@ -232,9 +252,10 @@
     <!-- SUB-PROCESSORS -->
     <section class="section s-warm">
       <div class="container">
-        <div class="section-inner">
+        <div class="section-inner section-inner--wide">
           <span class="eyebrow">Sub-processors</span>
           <h2 class="sec-h2">Where your data goes, and why.</h2>
+          <hr class="ed-rule" style="margin-bottom: 1.5rem;">
           <p class="sec-body">Orchen uses a small number of infrastructure providers. None of them may use student data for any purpose beyond delivering the service.</p>
           <table class="std-table">
             <thead>
@@ -255,24 +276,30 @@
     <!-- COMPLIANCE POSTURE -->
     <section class="section s-cream">
       <div class="container">
-        <div class="section-inner">
-          <span class="eyebrow">Regulatory Posture</span>
-          <h2 class="sec-h2">FERPA, COPPA, and state privacy law.</h2>
-          <div class="rows">
-            <div class="row">
-              <span class="row-eyebrow">FERPA</span>
-              <h3 class="row-head">Orchen operates as a school official</h3>
-              <p class="row-body">Under FERPA, your school controls the education records; Orchen processes them as a school official under the school's direct control, with a legitimate educational interest. Access, amendment, and deletion requests route through the school, and our audit logs satisfy FERPA's documentation requirements for record access.</p>
+        <div class="section-inner section-inner--wide">
+          <div class="ed-head">
+            <div class="ed-head__title">
+              <span class="eyebrow">Regulatory Posture</span>
+              <h2 class="sec-h2">FERPA, COPPA, and state privacy law.</h2>
+              <hr class="ed-rule">
             </div>
-            <div class="row">
-              <span class="row-eyebrow">COPPA</span>
-              <h3 class="row-head">Under-13 protections enforced by role gates</h3>
-              <p class="row-body">Students under 13 require verifiable parental consent managed through the school's consent process. Without an active consent record, the platform's COPPA-aware role gates place the student in non-persistent Guest Mode — no data is written.</p>
+            <p class="ed-head__lead">The same posture satisfies all three: collect less, keep less, log everything — and keep the school in control of the record.</p>
+          </div>
+          <div class="feature-grid cols-3">
+            <div class="feature-cell">
+              <span class="feature-cell__eyebrow">FERPA</span>
+              <h3 class="feature-cell__head">Orchen operates as a school official</h3>
+              <p class="feature-cell__body">Under FERPA, your school controls the education records; Orchen processes them as a school official under the school's direct control, with a legitimate educational interest. Access, amendment, and deletion requests route through the school, and our audit logs satisfy FERPA's documentation requirements for record access.</p>
             </div>
-            <div class="row">
-              <span class="row-eyebrow">State law</span>
-              <h3 class="row-head">Data minimization as the default posture</h3>
-              <p class="row-body">State student-privacy statutes vary, but nearly all reward the same posture: collect less, keep less, log everything. The 7-day source deletion, school-configurable retention, and immutable audit trail are designed so that posture holds across jurisdictions. Your counsel reviews the DPA against your state's requirements before deployment.</p>
+            <div class="feature-cell">
+              <span class="feature-cell__eyebrow">COPPA</span>
+              <h3 class="feature-cell__head">Under-13 protections enforced by role gates</h3>
+              <p class="feature-cell__body">Students under 13 require verifiable parental consent managed through the school's consent process. Without an active consent record, the platform's COPPA-aware role gates place the student in non-persistent Guest Mode — no data is written.</p>
+            </div>
+            <div class="feature-cell">
+              <span class="feature-cell__eyebrow">State law</span>
+              <h3 class="feature-cell__head">Data minimization as the default posture</h3>
+              <p class="feature-cell__body">State student-privacy statutes vary, but nearly all reward the same posture: collect less, keep less, log everything. The 7-day source deletion, school-configurable retention, and immutable audit trail are designed so that posture holds across jurisdictions. Your counsel reviews the DPA against your state's requirements before deployment.</p>
             </div>
           </div>
         </div>
@@ -282,30 +309,35 @@
     <!-- HONEST STATUS -->
     <section class="section s-dark">
       <div class="container">
-        <div class="section-inner">
-          <span class="eyebrow">Where We Stand</span>
-          <h2 class="sec-h2">An honest account of our current posture.</h2>
-          <p class="sec-body">Trust pages usually list what a company has. Ours also lists what we don't have yet — because a head of school deserves to make this decision with complete information.</p>
-          <div class="rows">
-            <div class="row">
-              <span class="row-eyebrow">In place today</span>
-              <h3 class="row-head">Architecture-level controls, live in production</h3>
-              <p class="row-body">Row-level security, immutable audit logging, consent gating with Guest Mode, the 7-day source deletion pipeline, per-school retention enforcement, crisis flag lifecycle tracking, structured data export, and right-to-be-forgotten tooling. Each is verifiable in a technical walkthrough.</p>
+        <div class="section-inner section-inner--wide">
+          <div class="ed-head">
+            <div class="ed-head__title">
+              <span class="eyebrow">Where We Stand</span>
+              <h2 class="sec-h2">An honest account of our current posture.</h2>
+              <hr class="ed-rule">
             </div>
-            <div class="row">
-              <span class="row-eyebrow">Not yet</span>
-              <h3 class="row-head">SOC 2 certification</h3>
-              <p class="row-body">Orchen is not SOC 2 certified today. A Type 1 audit is on our roadmap as we move from founding pilots to broader deployment. If your procurement process requires SOC 2 now, we'd rather tell you that on this page than in month three of an evaluation. We're glad to walk your reviewer through our current controls in detail.</p>
+            <p class="ed-head__lead">Trust pages usually list what a company has. Ours also lists what we don't have yet — because you deserve to make this decision with complete information.</p>
+          </div>
+          <div class="feature-grid cols-2">
+            <div class="feature-cell">
+              <span class="feature-cell__eyebrow">In place today</span>
+              <h3 class="feature-cell__head">Architecture-level controls, live in production</h3>
+              <p class="feature-cell__body">Row-level security, immutable audit logging, consent gating with Guest Mode, the 7-day source deletion pipeline, per-school retention enforcement, crisis flag lifecycle tracking, structured data export, and right-to-be-forgotten tooling. Each is verifiable in a technical walkthrough.</p>
             </div>
-            <div class="row">
-              <span class="row-eyebrow">Not yet</span>
-              <h3 class="row-head">Third-party penetration test</h3>
-              <p class="row-body">An independent penetration test is planned ahead of our first full-school deployments. Schools participating in our founding program will receive the results when complete.</p>
+            <div class="feature-cell">
+              <span class="feature-cell__eyebrow">Not yet</span>
+              <h3 class="feature-cell__head">SOC 2 certification</h3>
+              <p class="feature-cell__body">Orchen is not SOC 2 certified today. A Type 1 audit is on our roadmap as we move from founding pilots to broader deployment. If your procurement process requires SOC 2 now, we'd rather tell you that on this page than in month three of an evaluation. We're glad to walk your reviewer through our current controls in detail.</p>
             </div>
-            <div class="row">
-              <span class="row-eyebrow">By design</span>
-              <h3 class="row-head">What an early-stage vendor owes you</h3>
-              <p class="row-body">An early-stage company can't offer a decade of audits. What it can offer is an architecture where the privacy promises are structural rather than procedural, direct access to the people who built it, and contractual terms — data ownership, export, deletion — that protect the school regardless of what happens to the vendor. That is the deal we offer, stated plainly.</p>
+            <div class="feature-cell">
+              <span class="feature-cell__eyebrow">Not yet</span>
+              <h3 class="feature-cell__head">Third-party penetration test</h3>
+              <p class="feature-cell__body">An independent penetration test is planned ahead of our first full-school deployments. Schools participating in our founding program will receive the results when complete.</p>
+            </div>
+            <div class="feature-cell">
+              <span class="feature-cell__eyebrow">By design</span>
+              <h3 class="feature-cell__head">What an early-stage vendor owes you</h3>
+              <p class="feature-cell__body">An early-stage company can't offer a decade of audits. What it can offer is an architecture where the privacy promises are structural rather than procedural, direct access to the people who built it, and contractual terms — data ownership, export, deletion — that protect the school regardless of what happens to the vendor. That is the deal we offer, stated plainly.</p>
             </div>
           </div>
         </div>

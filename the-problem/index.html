@@ -382,7 +382,7 @@ a.research-cite { border-bottom: 1px solid currentColor; padding-bottom: 1px; }
    smaller without dragging the number itself smaller. */
 .dp-grid {
   display: grid;
-  grid-template-columns: minmax(0, 0.95fr) minmax(0, 1.05fr);
+  grid-template-columns: minmax(0, 1.1fr) minmax(0, 1fr);
   gap: clamp(2.5rem, 5vw, 5rem);
   align-items: center;
 }
@@ -399,9 +399,9 @@ a.research-cite { border-bottom: 1px solid currentColor; padding-bottom: 1px; }
   font-family: var(--font-display);
   font-weight: 700;
   line-height: 0.92;
-  letter-spacing: -0.045em;
+  letter-spacing: -0.05em;
   color: var(--ink);
-  font-size: clamp(4rem, 10.5vw, 7.5rem);
+  font-size: clamp(5rem, 13vw, 11rem);
   display: inline-flex;
   align-items: baseline;
   flex-wrap: nowrap;
@@ -449,7 +449,7 @@ a.research-cite { border-bottom: 1px solid currentColor; padding-bottom: 1px; }
 
 @media (max-width: 900px) {
   .dp-grid { grid-template-columns: 1fr; gap: 1.5rem; }
-  .dp-figure-num { font-size: clamp(3rem, 13vw, 5rem); }
+  .dp-figure-num { font-size: clamp(3.5rem, 16vw, 6.5rem); }
   .dp-figure-label { max-width: none; }
 }
 
@@ -500,8 +500,62 @@ a.research-cite { border-bottom: 1px solid currentColor; padding-bottom: 1px; }
 }
 .progress-bar { height: 100%; width: 0%; background: var(--green); transition: width 0.05s linear; }
 
+/* ─── HERO STAT STRIP ─── */
+.hero-rule { width: 3rem; height: 2px; background: var(--green); border: none; margin: 1.75rem 0 0; }
+.hero-figures {
+  display: flex; flex-wrap: wrap;
+  gap: clamp(1.5rem, 4vw, 3.25rem);
+  margin-top: 2.75rem; padding-top: 2rem;
+  border-top: 1px solid var(--border);
+}
+.hero-figures div { min-width: 0; }
+.hero-figures b {
+  display: block;
+  font-family: var(--font-display); font-weight: 700;
+  font-size: clamp(1.6rem, 3.2vw, 2.5rem); line-height: 1;
+  color: var(--green); letter-spacing: -0.02em;
+}
+.hero-figures b i { font-style: normal; font-size: 0.5em; color: var(--ink-faint); }
+.hero-figures span {
+  display: block; margin-top: 0.4rem;
+  font-size: 0.625rem; letter-spacing: 0.12em; text-transform: uppercase;
+  color: var(--ink-faint); line-height: 1.4; max-width: 14ch;
+}
+
+/* ─── DATA-POINT: alternate (zig-zag) + magnitude bar ─── */
+.dp-grid--rev .dp-figure { order: 2; align-items: flex-end; text-align: right; }
+.dp-grid--rev .dp-copy   { order: 1; }
+.dp-grid--rev .dp-figure-label { text-align: right; }
+.dp-bar {
+  width: 100%; max-width: 360px; height: 7px;
+  border-radius: 99px; background: rgba(44,95,63,0.12);
+  overflow: hidden; margin-top: 0.75rem;
+}
+.s-dark .dp-bar { background: rgba(237,233,228,0.12); }
+.dp-bar > span { display: block; height: 100%; border-radius: 99px; background: var(--green); }
+.s-dark .dp-bar > span { background: var(--amber); }
+.dp-grid--rev .dp-bar { margin-left: auto; }
+@media (max-width: 900px) {
+  .dp-grid--rev .dp-figure { order: 0; align-items: flex-start; text-align: left; }
+  .dp-grid--rev .dp-copy   { order: 0; }
+  .dp-grid--rev .dp-figure-label { text-align: left; }
+  .dp-grid--rev .dp-bar { margin-left: 0; }
+}
+
+/* ─── CLOSING SYNTHESIS ─── */
+.closing-figures {
+  display: flex; justify-content: center; flex-wrap: wrap;
+  gap: 0.5rem 0.75rem; margin: 0 auto 2.25rem; max-width: 640px;
+}
+.closing-figures span {
+  font-family: var(--font-mono, monospace); font-size: 0.6875rem;
+  letter-spacing: 0.08em; padding: 0.3rem 0.7rem; border-radius: 99px;
+  background: rgba(237,233,228,0.08); color: var(--wall-muted);
+}
+
   </style>
   <link rel="stylesheet" href="/assets/refine.css">
+  <link rel="stylesheet" href="/assets/editorial.css">
 </head>
 <body>
 
@@ -526,11 +580,20 @@ a.research-cite { border-bottom: 1px solid currentColor; padding-bottom: 1px; }
   <main>
 
     <!-- HERO -->
-    <section class="hero">
+    <section class="hero bg-grid">
       <div class="container">
         <span class="eyebrow">The Problem &middot; 2026</span>
         <h1 class="hero-h1">The research brief.</h1>
-        <p class="hero-sub">A growing body of cited research on what AI is actually doing inside K&ndash;12 classrooms &mdash; what students do with it, what faculty observe, and what the cognitive baseline already looked like before these tools arrived.</p>
+        <p class="hero-sub">What students actually do with AI, what faculty already see in the work, and how far the cognitive baseline had fallen before these tools arrived &mdash; the cited research, in one place.</p>
+        <hr class="hero-rule">
+        <div class="hero-figures">
+          <div><b>95%</b><span>sessions skip the work</span></div>
+          <div><b>84%</b><span>faculty see less originality</span></div>
+          <div><b>67%</b><span>students report erosion</span></div>
+          <div><b>62%</b><span>now use AI for homework</span></div>
+          <div><b>&minus;7<i>pts</i></b><span>U.S. 9-yr-old math</span></div>
+          <div><b>&minus;15<i>pts</i></b><span>OECD math since 2018</span></div>
+        </div>
       </div>
     </section>
 
@@ -541,6 +604,7 @@ a.research-cite { border-bottom: 1px solid currentColor; padding-bottom: 1px; }
           <div class="dp-figure">
             <div class="dp-figure-num">95%</div>
             <div class="dp-figure-label">of student-AI interactions</div>
+            <div class="dp-bar"><span style="width:95%"></span></div>
           </div>
           <div class="dp-copy">
             <span class="eyebrow">Usage behavior</span>
@@ -556,10 +620,11 @@ a.research-cite { border-bottom: 1px solid currentColor; padding-bottom: 1px; }
     <!-- DATA POINT 02 -->
     <section class="section s-cream bg-grid">
       <div class="container">
-        <div class="dp-grid">
+        <div class="dp-grid dp-grid--rev">
           <div class="dp-figure">
             <div class="dp-figure-num">84%</div>
             <div class="dp-figure-label">of college faculty</div>
+            <div class="dp-bar"><span style="width:84%"></span></div>
           </div>
           <div class="dp-copy">
             <span class="eyebrow">Faculty alarm</span>
@@ -580,6 +645,7 @@ a.research-cite { border-bottom: 1px solid currentColor; padding-bottom: 1px; }
           <div class="dp-figure">
             <div class="dp-figure-num">67%</div>
             <div class="dp-figure-label">of students, self-reported</div>
+            <div class="dp-bar"><span style="width:67%"></span></div>
           </div>
           <div class="dp-copy">
             <span class="eyebrow">Cognitive impact</span>
@@ -595,10 +661,11 @@ a.research-cite { border-bottom: 1px solid currentColor; padding-bottom: 1px; }
     <!-- DATA POINT 04 -->
     <section class="section s-cream bg-grid">
       <div class="container">
-        <div class="dp-grid">
+        <div class="dp-grid dp-grid--rev">
           <div class="dp-figure">
             <div class="dp-figure-num"><span class="dp-num">48%</span><span class="dp-arrow">&rarr;</span><span class="dp-num">62%</span></div>
             <div class="dp-figure-label">share of students, May &rarr; December 2025</div>
+            <div class="dp-bar"><span style="width:62%"></span></div>
           </div>
           <div class="dp-copy">
             <span class="eyebrow">Dependency surge</span>
@@ -634,7 +701,7 @@ a.research-cite { border-bottom: 1px solid currentColor; padding-bottom: 1px; }
     <!-- DATA POINT 06 -->
     <section class="section s-cream bg-grid">
       <div class="container">
-        <div class="dp-grid">
+        <div class="dp-grid dp-grid--rev">
           <div class="dp-figure">
             <div class="dp-figure-num">&minus;15<span class="dp-unit">pts</span></div>
             <div class="dp-figure-label">OECD math, since 2018</div>
@@ -651,14 +718,25 @@ a.research-cite { border-bottom: 1px solid currentColor; padding-bottom: 1px; }
     </section>
 
     <!-- CLOSING -->
-    <section class="section s-cream cta">
+    <section class="section s-dark bg-grid cta">
       <div class="container">
-        <div style="max-width:720px; margin-inline:auto;">
-          <h2 class="sec-h2" style="text-align:center; margin-inline:auto;">One shape across the research.</h2>
-          <p class="sec-body" style="max-width:720px; margin-inline:auto; text-align:center;">Students are using AI overwhelmingly to skip the thinking, not support it. Faculty closest to the work see originality declining. Students themselves are starting to report the cognitive cost. Adoption is accelerating into the age range where the cognitive habits matter most. And the foundational baseline &mdash; what schools could count on students arriving with &mdash; was already deteriorating before AI showed up.</p>
-          <p class="sec-body" style="max-width:720px; margin-inline:auto; text-align:center;">Most of the public conversation about AI in schools is still about whether to allow it. The research is past that question. AI is in your classrooms. The question is what kind of AI environment the school is willing to take responsibility for.</p>
-          <p class="sec-body" style="max-width:720px; margin-inline:auto; text-align:center; margin-top:2.5rem;"><a href="/#contact" class="btn-cta closing-cta">Book a walkthrough &rarr;</a></p>
-          <p class="sec-body" style="max-width:720px; margin-inline:auto; text-align:center; font-size:0.9375rem; margin-top:1.25rem;">Or read about our approach: <a href="/#how" style="color:var(--green); border-bottom:1px solid currentColor; padding-bottom:1px;">How it works &rarr;</a></p>
+        <div class="ed-head ed-head--center">
+          <div class="ed-head__title">
+            <span class="eyebrow">The synthesis</span>
+            <h2 class="sec-h2">One shape across the research.</h2>
+            <hr class="ed-rule">
+          </div>
+        </div>
+        <div class="closing-figures">
+          <span>95% skip the work</span><span>84% faculty alarm</span><span>67% self-reported erosion</span><span>62% now dependent</span><span>baseline already falling</span>
+        </div>
+        <div class="measure" style="text-align:center;">
+          <p class="sec-body">Students are using AI overwhelmingly to skip the thinking, not support it. Faculty closest to the work see originality declining. Students themselves are starting to report the cognitive cost. Adoption is accelerating into the age range where cognitive habits matter most. And the foundational baseline &mdash; what schools could count on students arriving with &mdash; was already deteriorating before AI showed up.</p>
+        </div>
+        <blockquote class="pull-quote" style="margin:2.5rem auto; max-width:640px; text-align:left;">The research is past whether to allow AI. It is in your classrooms. The question is what kind of AI environment the school is willing to take responsibility for.</blockquote>
+        <div style="text-align:center;">
+          <a href="/#contact" class="btn-cta closing-cta">Book a walkthrough &rarr;</a>
+          <p class="sec-body" style="font-size:0.9375rem; margin-top:1.25rem;">Or read about our approach: <a href="/#how" style="color:var(--wall-text); border-bottom:1px solid rgba(237,233,228,0.3); padding-bottom:1px;">How it works &rarr;</a></p>
         </div>
       </div>
     </section>
