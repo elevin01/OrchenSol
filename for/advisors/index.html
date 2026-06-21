@@ -379,6 +379,109 @@ a { color: inherit; text-decoration: none; }
 @media (max-width: 900px) {
   .mini-cards { grid-template-columns: 1fr; }
 }
+
+/* ═══ VISUAL UPGRADE COMPONENTS (shared across audience pages) ═══ */
+/* screenshot frame (editorial.css not loaded here, so define in full) */
+.shot-frame { background:#fff; border:1px solid var(--border); border-radius:var(--r-lg,12px); overflow:hidden; box-shadow:var(--shadow-lg); }
+.s-dark .shot-frame { border-color:rgba(237,233,228,0.12); box-shadow:var(--shadow-dark); }
+.shot-chrome { display:flex; align-items:center; gap:7px; padding:0.6rem 0.85rem; background:#F0ECE5; border-bottom:1px solid var(--border-light); }
+.s-dark .shot-chrome { background:#EAE6E0; }
+.shot-dot { width:9px; height:9px; border-radius:50%; background:var(--border); flex-shrink:0; }
+.shot-name { font-family:var(--mono); font-size:0.625rem; letter-spacing:0.08em; text-transform:uppercase; color:var(--ink-faint); margin-left:6px; }
+.shot-frame img { width:100%; display:block; }
+.shot-caption { font-size:0.8125rem; color:var(--ink-faint); margin-top:1rem; font-style:italic; }
+.s-dark .shot-caption { color:var(--wall-faint); }
+
+/* horizontal flow / stepper */
+.flow { display:flex; align-items:stretch; gap:0.25rem; flex-wrap:nowrap; margin-top:2.75rem; }
+.flow-step { flex:1 1 0; min-width:0; display:flex; flex-direction:column; gap:0.55rem; padding:1.4rem 1.2rem; background:#fff; border-radius:8px; border:1px solid var(--border-light); }
+.s-dark .flow-step { background:rgba(237,233,228,0.05); border-color:rgba(237,233,228,0.09); }
+.flow-ico { width:30px; height:30px; color:var(--green); }
+.s-dark .flow-ico { color:var(--green-pale,#C5DBCB); }
+.flow-step .step-n { font-family:var(--mono); font-size:0.5625rem; letter-spacing:0.12em; text-transform:uppercase; color:var(--amber); }
+.flow-step h4 { font-family:var(--font-display); font-weight:700; font-size:1.02rem; line-height:1.25; color:var(--ink); }
+.s-dark .flow-step h4 { color:var(--wall-text); }
+.flow-step p { font-family:var(--font-body); font-size:0.8125rem; line-height:1.55; color:var(--ink-muted); }
+.s-dark .flow-step p { color:var(--wall-muted); }
+.flow-arrow { display:flex; align-items:center; justify-content:center; color:var(--ink-faint); flex:0 0 22px; }
+.s-dark .flow-arrow { color:var(--wall-faint); }
+.flow-arrow svg { width:18px; height:18px; }
+.flow-branch { display:flex; flex-direction:column; gap:0.25rem; flex:1 1 0; min-width:0; }
+.flow-branch .flow-step { flex:1 1 auto; }
+
+/* inline line-icons inside cards */
+.ico { width:26px; height:26px; color:var(--green); display:block; margin-bottom:0.85rem; }
+.s-dark .ico { color:var(--green-pale,#C5DBCB); }
+.tpl-card .ico { width:22px; height:22px; margin-bottom:0.6rem; }
+
+/* private vs shared split panels */
+.split-priv { display:grid; grid-template-columns:1fr 1fr; gap:1rem; margin-top:2.5rem; }
+.priv-panel { border-radius:8px; padding:1.4rem 1.45rem; }
+.priv-panel.is-private { background:rgba(237,233,228,0.045); border:1px solid rgba(237,233,228,0.12); }
+.priv-panel.is-shared  { background:rgba(197,219,203,0.10); border:1px solid rgba(197,219,203,0.22); }
+.s-cream .priv-panel.is-private { background:#fff; border:1px solid var(--border); }
+.s-cream .priv-panel.is-shared  { background:var(--chip-stren-bg,#DDEBE0); border:1px solid var(--green-pale,#C5DBCB); }
+.priv-head { display:flex; align-items:center; gap:0.6rem; margin-bottom:1rem; }
+.priv-head .ico { width:22px; height:22px; margin:0; }
+.priv-panel.is-private .priv-head .ico { color:var(--amber); }
+.priv-panel.is-shared  .priv-head .ico { color:var(--green-light); }
+.priv-head h4 { font-family:var(--mono); font-size:0.625rem; font-weight:700; letter-spacing:0.14em; text-transform:uppercase; }
+.priv-panel.is-private .priv-head h4 { color:var(--amber); }
+.priv-panel.is-shared  .priv-head h4 { color:var(--green-light); }
+.priv-list { list-style:none; margin:0; padding:0; }
+.priv-list li { font-family:var(--font-body); font-size:0.875rem; line-height:1.5; padding:0.4rem 0 0.4rem 1.35rem; position:relative; color:var(--ink-muted); border-top:1px solid var(--border-light); }
+.s-dark .priv-list li { color:var(--wall-muted); border-color:rgba(237,233,228,0.08); }
+.priv-list li:first-child { border-top:none; }
+.priv-list li::before { content:""; position:absolute; left:0; top:0.95rem; width:7px; height:7px; border-radius:50%; }
+.priv-panel.is-private .priv-list li::before { background:var(--amber); }
+.priv-panel.is-shared  .priv-list li::before { background:var(--green-light); }
+
+/* visibility ladder */
+.ladder { margin-top:2.5rem; display:flex; flex-direction:column; gap:0.5rem; }
+.rung { display:grid; grid-template-columns:46px 150px 1fr; align-items:center; gap:1rem; background:#fff; border:1px solid var(--border-light); border-radius:6px; padding:0.85rem 1.1rem; transition:transform var(--dur,0.22s) var(--ease); }
+.rung:hover { transform:translateX(3px); }
+.rung-n { font-family:var(--font-display); font-weight:700; font-size:1.4rem; color:var(--green); position:relative; }
+.rung-bar { position:absolute; left:0; bottom:-0.85rem; height:4px; border-radius:99px; background:var(--green); }
+.rung-lv { font-family:var(--mono); font-size:0.6875rem; letter-spacing:0.06em; text-transform:uppercase; color:var(--ink); font-weight:600; }
+.rung-desc { font-family:var(--font-body); font-size:0.9rem; color:var(--ink-muted); line-height:1.5; }
+.rung.is-typical { border-color:var(--green-pale,#C5DBCB); background:var(--chip-stren-bg,#DDEBE0); }
+.rung-tag { display:inline-block; font-family:var(--mono); font-size:0.5rem; letter-spacing:0.1em; text-transform:uppercase; color:#fff; background:var(--green); border-radius:99px; padding:0.12rem 0.5rem; margin-left:0.5rem; vertical-align:middle; }
+
+/* trend chart wrapper */
+.trend { margin-top:2.75rem; background:rgba(237,233,228,0.04); border:1px solid rgba(237,233,228,0.09); border-radius:10px; padding:1.75rem 1.75rem 1.4rem; }
+.s-cream .trend { background:#fff; border-color:var(--border-light); }
+.trend svg { width:100%; height:auto; display:block; }
+.trend-cap { font-family:var(--mono); font-size:0.625rem; letter-spacing:0.08em; text-transform:uppercase; color:var(--ink-faint); margin-top:1rem; text-align:center; }
+.s-dark .trend-cap { color:var(--wall-faint); }
+
+@media (max-width: 820px) {
+  .flow { flex-wrap:wrap; }
+  .flow-step { flex:1 1 100%; }
+  .flow-arrow { flex-basis:100%; height:22px; transform:rotate(90deg); }
+}
+@media (max-width: 640px) {
+  .split-priv { grid-template-columns:1fr; }
+  .rung { grid-template-columns:38px 1fr; grid-row-gap:0.3rem; }
+  .rung-desc { grid-column:1 / -1; }
+}
+
+/* tighter vertical rhythm + product-led hero / feature stages */
+.section { padding-block: 5rem; }
+.hero { padding-bottom: 0; }
+.hero-center { text-align:center; }
+.hero-center .hero-h1 { margin-left:auto; margin-right:auto; }
+.hero-center .hero-sub { margin-left:auto; margin-right:auto; max-width:680px; }
+.hero-stage { margin-top: clamp(2.25rem,4.5vw,3.5rem); }
+.stage { position:relative; border-radius:16px; padding:clamp(1.4rem,4vw,3.5rem);
+  background:radial-gradient(125% 150% at 50% 0%, #EFE9DE 0%, #F1ECE4 55%, var(--bg) 100%);
+  border:1px solid var(--border-light); }
+.s-dark .stage { background:radial-gradient(125% 150% at 50% 0%, #21402F 0%, #18301F 60%, var(--dark-bg) 100%); border-color:rgba(237,233,228,0.08); }
+.hero-warm .stage { background:radial-gradient(125% 150% at 50% 0%, #ECE4D2 0%, #F0EBE0 60%, #F0EBE0 100%); }
+.stage .shot-frame { max-width:1020px; margin-inline:auto; }
+.stage-cap { text-align:center; margin-top:1.1rem; }
+.feature-head { text-align:center; max-width:680px; margin:0 auto 2.5rem; }
+.feature-head .sec-body { margin-left:auto; margin-right:auto; }
+@media (max-width: 700px) { .stage { padding:1rem; border-radius:12px; } }
   </style>
   <link rel="stylesheet" href="/assets/refine.css">
 </head>
@@ -404,10 +507,19 @@ a { color: inherit; text-decoration: none; }
 
     <!-- HERO -->
     <section class="hero hero-warm">
-      <div class="container">
+      <div class="container hero-center">
         <span class="eyebrow">For Advisors</span>
         <h1 class="hero-h1">What you've always wanted to know about each student. Now in your inbox every Monday.</h1>
         <p class="hero-sub">Orchen synthesizes every student's interactions into a plain-English weekly narrative. No transcripts to read. No surveys to chase. Just the signal.</p>
+      </div>
+      <div class="container hero-stage">
+        <div class="stage">
+          <div class="shot-frame">
+            <div class="shot-chrome"><span class="shot-dot"></span><span class="shot-dot"></span><span class="shot-dot"></span><span class="shot-name">Advisor &middot; Student insight</span></div>
+            <img src="/assets/product-teacher-insight.png" alt="The Orchen student insight view: best teaching approach narrative, learning style percentages, and struggle and strength areas broken down by subject" loading="eager">
+          </div>
+        </div>
+        <p class="shot-caption stage-cap">One student, synthesized &mdash; best approach, learning style, and concept-level detail.</p>
       </div>
     </section>
 
@@ -439,17 +551,39 @@ a { color: inherit; text-decoration: none; }
         <p class="sec-body">You see this as a narrative, not a data dump. After a year, you have something no grade report or college essay can give you: a record of how each student actually thinks.</p>
         <div class="mini-cards">
           <div class="mini-card">
+            <svg class="ico" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M13 2 4.5 12.5a.6.6 0 0 0 .5 1h6L11 22l8.5-10.5a.6.6 0 0 0-.5-1H13Z"/></svg>
             <h3>Independent effort</h3>
             <p>How often the student attempts problems before asking for help.</p>
           </div>
           <div class="mini-card">
+            <svg class="ico" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><circle cx="11" cy="11" r="7"/><path d="m21 21-4.3-4.3"/></svg>
             <h3>Curiosity depth</h3>
             <p>Whether the student explores beyond the assignment.</p>
           </div>
           <div class="mini-card">
+            <svg class="ico" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M7.9 20A5 5 0 0 1 3 15a5 5 0 0 1 5-5h.5"/><path d="M16.1 4A5 5 0 0 1 21 9a5 5 0 0 1-5 5h-.5"/><path d="M8 12h8"/></svg>
             <h3>Critical pushback</h3>
             <p>How often the student questions or challenges the AI's responses.</p>
           </div>
+        </div>
+
+        <div class="trend">
+          <svg viewBox="0 0 760 240" role="img" aria-label="Profile richness grows the longer a school uses Orchen, rising from week one to year one">
+            <line x1="40" y1="210" x2="740" y2="210" stroke="rgba(237,233,228,0.18)" stroke-width="1"/>
+            <line x1="40" y1="40" x2="40" y2="210" stroke="rgba(237,233,228,0.18)" stroke-width="1"/>
+            <polygon points="70,185 240,150 400,110 560,78 710,52 710,210 70,210" fill="rgba(197,219,203,0.14)"/>
+            <polyline points="70,185 240,150 400,110 560,78 710,52" fill="none" stroke="#C5DBCB" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/>
+            <g fill="#C5DBCB"><circle cx="70" cy="185" r="4.5"/><circle cx="240" cy="150" r="4.5"/><circle cx="400" cy="110" r="4.5"/><circle cx="560" cy="78" r="4.5"/><circle cx="710" cy="52" r="5.5"/></g>
+            <g fill="rgba(237,233,228,0.6)" font-family="'SFMono-Regular', ui-monospace, Menlo, monospace" font-size="13" text-anchor="middle">
+              <text x="70" y="232">Week 1</text>
+              <text x="240" y="232">Month 1</text>
+              <text x="400" y="232">Term 1</text>
+              <text x="560" y="232">Semester</text>
+              <text x="710" y="232">Year 1</text>
+            </g>
+            <text x="40" y="30" fill="rgba(237,233,228,0.45)" font-family="'SFMono-Regular', ui-monospace, Menlo, monospace" font-size="11" letter-spacing="1.5">PROFILE RICHNESS &rarr;</text>
+          </svg>
+          <p class="trend-cap">Every session, essay, and quiz adds to the profile &mdash; it compounds over the year.</p>
         </div>
       </div>
     </section>
@@ -495,9 +629,42 @@ a { color: inherit; text-decoration: none; }
     <section class="section s-dark">
       <div class="container">
         <span class="eyebrow">Safety</span>
-        <h2 class="sec-h2">Concerning content reaches you &mdash; not your inbox.</h2>
-        <p class="sec-body">Orchen flags concerning student content automatically and routes it to your designated counselor with a 24-hour urgency indicator. Every flag moves through a full lifecycle &mdash; open, reviewing, resolved or escalated &mdash; and every step is logged.</p>
-        <p class="sec-body">You see only what's been shared with you. Source conversations are deleted within seven days. You never have access to raw transcripts unless the student has shared a session directly.</p>
+        <h2 class="sec-h2">Concerning content reaches the right person &mdash; on a tracked path.</h2>
+        <p class="sec-body" style="max-width:640px;">Orchen flags concerning student content automatically and routes it to your designated counselor with a 24-hour urgency indicator. Every flag moves through a full lifecycle &mdash; and every step is logged. Source conversations are deleted within seven days.</p>
+
+        <div class="flow" aria-label="The crisis flag lifecycle: flagged, routed within 24 hours, reviewed, then resolved or escalated">
+          <div class="flow-step">
+            <svg class="flow-ico" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M4 21V4a1 1 0 0 1 1-1h11l-2 4 2 4H5"/><path d="M4 21h-.5"/></svg>
+            <span class="step-n">Auto</span>
+            <h4>Flagged</h4>
+            <p>Concerning content is detected automatically as it happens.</p>
+          </div>
+          <div class="flow-arrow"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14"/><path d="m13 6 6 6-6 6"/></svg></div>
+          <div class="flow-step">
+            <svg class="flow-ico" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M18 8a6 6 0 0 0-12 0c0 7-3 9-3 9h18s-3-2-3-9"/><path d="M13.7 21a2 2 0 0 1-3.4 0"/></svg>
+            <span class="step-n">&lt; 24h</span>
+            <h4>Routed</h4>
+            <p>Sent to your designated counselor with an urgency indicator.</p>
+          </div>
+          <div class="flow-arrow"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14"/><path d="m13 6 6 6-6 6"/></svg></div>
+          <div class="flow-step">
+            <svg class="flow-ico" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><circle cx="11" cy="11" r="7"/><path d="m21 21-4.3-4.3"/></svg>
+            <span class="step-n">Logged</span>
+            <h4>Reviewing</h4>
+            <p>The counselor works the flag &mdash; every action is recorded.</p>
+          </div>
+          <div class="flow-arrow"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14"/><path d="m13 6 6 6-6 6"/></svg></div>
+          <div class="flow-branch">
+            <div class="flow-step">
+              <svg class="flow-ico" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M22 11.1V12a10 10 0 1 1-5.9-9.1"/><path d="m9 11 3 3L22 4"/></svg>
+              <h4>Resolved</h4>
+            </div>
+            <div class="flow-step">
+              <svg class="flow-ico" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M10.3 3.9 1.8 18a2 2 0 0 0 1.7 3h17a2 2 0 0 0 1.7-3L13.7 3.9a2 2 0 0 0-3.4 0Z"/><path d="M12 9v4M12 17h.01"/></svg>
+              <h4>Escalated</h4>
+            </div>
+          </div>
+        </div>
       </div>
     </section>
 
@@ -506,8 +673,30 @@ a { color: inherit; text-decoration: none; }
       <div class="container">
         <span class="eyebrow">How Visibility Works</span>
         <h2 class="sec-h2">You see derived insight. Never raw transcripts.</h2>
-        <p class="sec-body">Orchen does not give advisors a window into student conversations. It synthesizes those conversations into narratives, learning signals, and concept-level profiles &mdash; and that synthesis is what you see.</p>
-        <p class="sec-body">Students have a private workspace that no staff member can access. What advisors see is scoped, synthesized, and logged every time it's accessed.</p>
+        <p class="sec-body" style="max-width:640px;">Students have a private workspace no staff member can access. Orchen turns those conversations into narratives, learning signals, and concept-level profiles &mdash; and that synthesis is the only thing that reaches you. Every access is scoped and logged.</p>
+
+        <div class="flow" aria-label="How a private conversation becomes the synthesis an advisor sees">
+          <div class="flow-step">
+            <svg class="flow-ico" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2Z"/><rect x="7" y="8" width="10" height="2" rx="1" fill="currentColor" stroke="none"/></svg>
+            <span class="step-n">Private</span>
+            <h4>Student conversation</h4>
+            <p>Lives in the student's workspace. No staff member can read it.</p>
+          </div>
+          <div class="flow-arrow"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14"/><path d="m13 6 6 6-6 6"/></svg></div>
+          <div class="flow-step">
+            <svg class="flow-ico" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="3"/><path d="M19.4 15a1.65 1.65 0 0 0 .33 1.82l.06.06a2 2 0 1 1-2.83 2.83l-.06-.06a1.65 1.65 0 0 0-1.82-.33 1.65 1.65 0 0 0-1 1.51V21a2 2 0 0 1-4 0v-.09A1.65 1.65 0 0 0 9 19.4a1.65 1.65 0 0 0-1.82.33l-.06.06a2 2 0 1 1-2.83-2.83l.06-.06a1.65 1.65 0 0 0 .33-1.82 1.65 1.65 0 0 0-1.51-1H3a2 2 0 0 1 0-4h.09A1.65 1.65 0 0 0 4.6 9a1.65 1.65 0 0 0-.33-1.82l-.06-.06a2 2 0 1 1 2.83-2.83l.06.06a1.65 1.65 0 0 0 1.82.33H9a1.65 1.65 0 0 0 1-1.51V3a2 2 0 0 1 4 0v.09a1.65 1.65 0 0 0 1 1.51 1.65 1.65 0 0 0 1.82-.33l.06-.06a2 2 0 1 1 2.83 2.83l-.06.06a1.65 1.65 0 0 0-.33 1.82V9a1.65 1.65 0 0 0 1.51 1H21a2 2 0 0 1 0 4h-.09a1.65 1.65 0 0 0-1.51 1Z"/></svg>
+            <span class="step-n">Orchen</span>
+            <h4>Synthesis</h4>
+            <p>Patterns and signals are extracted. The source is deleted within 7 days.</p>
+          </div>
+          <div class="flow-arrow"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14"/><path d="m13 6 6 6-6 6"/></svg></div>
+          <div class="flow-step">
+            <svg class="flow-ico" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M2 12s3.5-7 10-7 10 7 10 7-3.5 7-10 7-10-7-10-7Z"/><circle cx="12" cy="12" r="3"/></svg>
+            <span class="step-n">Scoped &amp; logged</span>
+            <h4>What you see</h4>
+            <p>A plain-English narrative and learning signals &mdash; nothing more.</p>
+          </div>
+        </div>
       </div>
     </section>
 

@@ -482,6 +482,34 @@
 .s-dark .shot-caption { color: var(--wall-faint); }
 
 /* ───────────────────────────────────────────────────────────────────
+   7c. PRODUCT-LED STAGE  ·  lead with the shot, full-width feature
+   ─────────────────────────────────────────────────────────────────── */
+.stage {
+  position: relative;
+  border-radius: 16px;
+  padding: clamp(1.4rem, 4vw, 3.5rem);
+  background: radial-gradient(125% 150% at 50% 0%, #EFE9DE 0%, #F1ECE4 55%, var(--bg) 100%);
+  border: 1px solid var(--border-light);
+}
+.s-warm .stage { background: radial-gradient(125% 150% at 50% 0%, #ECE4D2 0%, #F0EBE0 60%, #F0EBE0 100%); }
+.s-dark .stage { background: radial-gradient(125% 150% at 50% 0%, #21402F 0%, #18301F 60%, var(--dark-bg) 100%); border-color: rgba(237,233,228,0.08); }
+.stage .shot-frame { max-width: 1020px; margin-inline: auto; }
+.stage figure { margin: 0; }
+.stage--duo { display: grid; grid-template-columns: 1fr 1fr; gap: clamp(1rem, 2.5vw, 1.75rem); align-items: start; }
+.stage--duo .shot-frame { max-width: none; }
+.stage-cap { text-align: center; margin-top: 1.1rem; }
+.feature-head { text-align: center; max-width: 720px; margin: 0 auto 2.5rem; }
+.feature-head .sec-body,
+.feature-head .ed-head__lead { margin-inline: auto; }
+.hero-center { text-align: center; }
+.hero-center .hero-sub { margin-inline: auto; }
+.hero-stage { margin-top: clamp(2.25rem, 4.5vw, 3.5rem); }
+@media (max-width: 760px) {
+  .stage { padding: 1rem; border-radius: 12px; }
+  .stage--duo { grid-template-columns: 1fr; gap: 2rem; }
+}
+
+/* ───────────────────────────────────────────────────────────────────
    8. RESPONSIVE
    ─────────────────────────────────────────────────────────────────── */
 @media (max-width: 900px) {

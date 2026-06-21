@@ -362,6 +362,109 @@ a { color: inherit; text-decoration: none; }
 @media (max-width: 480px) {
   :root { --pad: 1.25rem; }
 }
+
+/* ═══ VISUAL UPGRADE COMPONENTS (shared across audience pages) ═══ */
+/* screenshot frame (editorial.css not loaded here, so define in full) */
+.shot-frame { background:#fff; border:1px solid var(--border); border-radius:var(--r-lg,12px); overflow:hidden; box-shadow:var(--shadow-lg); }
+.s-dark .shot-frame { border-color:rgba(237,233,228,0.12); box-shadow:var(--shadow-dark); }
+.shot-chrome { display:flex; align-items:center; gap:7px; padding:0.6rem 0.85rem; background:#F0ECE5; border-bottom:1px solid var(--border-light); }
+.s-dark .shot-chrome { background:#EAE6E0; }
+.shot-dot { width:9px; height:9px; border-radius:50%; background:var(--border); flex-shrink:0; }
+.shot-name { font-family:var(--mono); font-size:0.625rem; letter-spacing:0.08em; text-transform:uppercase; color:var(--ink-faint); margin-left:6px; }
+.shot-frame img { width:100%; display:block; }
+.shot-caption { font-size:0.8125rem; color:var(--ink-faint); margin-top:1rem; font-style:italic; }
+.s-dark .shot-caption { color:var(--wall-faint); }
+
+/* horizontal flow / stepper */
+.flow { display:flex; align-items:stretch; gap:0.25rem; flex-wrap:nowrap; margin-top:2.75rem; }
+.flow-step { flex:1 1 0; min-width:0; display:flex; flex-direction:column; gap:0.55rem; padding:1.4rem 1.2rem; background:#fff; border-radius:8px; border:1px solid var(--border-light); }
+.s-dark .flow-step { background:rgba(237,233,228,0.05); border-color:rgba(237,233,228,0.09); }
+.flow-ico { width:30px; height:30px; color:var(--green); }
+.s-dark .flow-ico { color:var(--green-pale,#C5DBCB); }
+.flow-step .step-n { font-family:var(--mono); font-size:0.5625rem; letter-spacing:0.12em; text-transform:uppercase; color:var(--amber); }
+.flow-step h4 { font-family:var(--font-display); font-weight:700; font-size:1.02rem; line-height:1.25; color:var(--ink); }
+.s-dark .flow-step h4 { color:var(--wall-text); }
+.flow-step p { font-family:var(--font-body); font-size:0.8125rem; line-height:1.55; color:var(--ink-muted); }
+.s-dark .flow-step p { color:var(--wall-muted); }
+.flow-arrow { display:flex; align-items:center; justify-content:center; color:var(--ink-faint); flex:0 0 22px; }
+.s-dark .flow-arrow { color:var(--wall-faint); }
+.flow-arrow svg { width:18px; height:18px; }
+.flow-branch { display:flex; flex-direction:column; gap:0.25rem; flex:1 1 0; min-width:0; }
+.flow-branch .flow-step { flex:1 1 auto; }
+
+/* inline line-icons inside cards */
+.ico { width:26px; height:26px; color:var(--green); display:block; margin-bottom:0.85rem; }
+.s-dark .ico { color:var(--green-pale,#C5DBCB); }
+.tpl-card .ico { width:22px; height:22px; margin-bottom:0.6rem; }
+
+/* private vs shared split panels */
+.split-priv { display:grid; grid-template-columns:1fr 1fr; gap:1rem; margin-top:2.5rem; }
+.priv-panel { border-radius:8px; padding:1.4rem 1.45rem; }
+.priv-panel.is-private { background:rgba(237,233,228,0.045); border:1px solid rgba(237,233,228,0.12); }
+.priv-panel.is-shared  { background:rgba(197,219,203,0.10); border:1px solid rgba(197,219,203,0.22); }
+.s-cream .priv-panel.is-private { background:#fff; border:1px solid var(--border); }
+.s-cream .priv-panel.is-shared  { background:var(--chip-stren-bg,#DDEBE0); border:1px solid var(--green-pale,#C5DBCB); }
+.priv-head { display:flex; align-items:center; gap:0.6rem; margin-bottom:1rem; }
+.priv-head .ico { width:22px; height:22px; margin:0; }
+.priv-panel.is-private .priv-head .ico { color:var(--amber); }
+.priv-panel.is-shared  .priv-head .ico { color:var(--green-light); }
+.priv-head h4 { font-family:var(--mono); font-size:0.625rem; font-weight:700; letter-spacing:0.14em; text-transform:uppercase; }
+.priv-panel.is-private .priv-head h4 { color:var(--amber); }
+.priv-panel.is-shared  .priv-head h4 { color:var(--green-light); }
+.priv-list { list-style:none; margin:0; padding:0; }
+.priv-list li { font-family:var(--font-body); font-size:0.875rem; line-height:1.5; padding:0.4rem 0 0.4rem 1.35rem; position:relative; color:var(--ink-muted); border-top:1px solid var(--border-light); }
+.s-dark .priv-list li { color:var(--wall-muted); border-color:rgba(237,233,228,0.08); }
+.priv-list li:first-child { border-top:none; }
+.priv-list li::before { content:""; position:absolute; left:0; top:0.95rem; width:7px; height:7px; border-radius:50%; }
+.priv-panel.is-private .priv-list li::before { background:var(--amber); }
+.priv-panel.is-shared  .priv-list li::before { background:var(--green-light); }
+
+/* visibility ladder */
+.ladder { margin-top:2.5rem; display:flex; flex-direction:column; gap:0.5rem; }
+.rung { display:grid; grid-template-columns:46px 150px 1fr; align-items:center; gap:1rem; background:#fff; border:1px solid var(--border-light); border-radius:6px; padding:0.85rem 1.1rem; transition:transform var(--dur,0.22s) var(--ease); }
+.rung:hover { transform:translateX(3px); }
+.rung-n { font-family:var(--font-display); font-weight:700; font-size:1.4rem; color:var(--green); position:relative; }
+.rung-bar { position:absolute; left:0; bottom:-0.85rem; height:4px; border-radius:99px; background:var(--green); }
+.rung-lv { font-family:var(--mono); font-size:0.6875rem; letter-spacing:0.06em; text-transform:uppercase; color:var(--ink); font-weight:600; }
+.rung-desc { font-family:var(--font-body); font-size:0.9rem; color:var(--ink-muted); line-height:1.5; }
+.rung.is-typical { border-color:var(--green-pale,#C5DBCB); background:var(--chip-stren-bg,#DDEBE0); }
+.rung-tag { display:inline-block; font-family:var(--mono); font-size:0.5rem; letter-spacing:0.1em; text-transform:uppercase; color:#fff; background:var(--green); border-radius:99px; padding:0.12rem 0.5rem; margin-left:0.5rem; vertical-align:middle; }
+
+/* trend chart wrapper */
+.trend { margin-top:2.75rem; background:rgba(237,233,228,0.04); border:1px solid rgba(237,233,228,0.09); border-radius:10px; padding:1.75rem 1.75rem 1.4rem; }
+.s-cream .trend { background:#fff; border-color:var(--border-light); }
+.trend svg { width:100%; height:auto; display:block; }
+.trend-cap { font-family:var(--mono); font-size:0.625rem; letter-spacing:0.08em; text-transform:uppercase; color:var(--ink-faint); margin-top:1rem; text-align:center; }
+.s-dark .trend-cap { color:var(--wall-faint); }
+
+@media (max-width: 820px) {
+  .flow { flex-wrap:wrap; }
+  .flow-step { flex:1 1 100%; }
+  .flow-arrow { flex-basis:100%; height:22px; transform:rotate(90deg); }
+}
+@media (max-width: 640px) {
+  .split-priv { grid-template-columns:1fr; }
+  .rung { grid-template-columns:38px 1fr; grid-row-gap:0.3rem; }
+  .rung-desc { grid-column:1 / -1; }
+}
+
+/* tighter vertical rhythm + product-led hero / feature stages */
+.section { padding-block: 5rem; }
+.hero { padding-bottom: 0; }
+.hero-center { text-align:center; }
+.hero-center .hero-h1 { margin-left:auto; margin-right:auto; }
+.hero-center .hero-sub { margin-left:auto; margin-right:auto; max-width:680px; }
+.hero-stage { margin-top: clamp(2.25rem,4.5vw,3.5rem); }
+.stage { position:relative; border-radius:16px; padding:clamp(1.4rem,4vw,3.5rem);
+  background:radial-gradient(125% 150% at 50% 0%, #EFE9DE 0%, #F1ECE4 55%, var(--bg) 100%);
+  border:1px solid var(--border-light); }
+.s-dark .stage { background:radial-gradient(125% 150% at 50% 0%, #21402F 0%, #18301F 60%, var(--dark-bg) 100%); border-color:rgba(237,233,228,0.08); }
+.hero-warm .stage { background:radial-gradient(125% 150% at 50% 0%, #ECE4D2 0%, #F0EBE0 60%, #F0EBE0 100%); }
+.stage .shot-frame { max-width:1020px; margin-inline:auto; }
+.stage-cap { text-align:center; margin-top:1.1rem; }
+.feature-head { text-align:center; max-width:680px; margin:0 auto 2.5rem; }
+.feature-head .sec-body { margin-left:auto; margin-right:auto; }
+@media (max-width: 700px) { .stage { padding:1rem; border-radius:12px; } }
   </style>
   <script type="application/ld+json">
   {
@@ -402,10 +505,19 @@ a { color: inherit; text-decoration: none; }
 
     <!-- HERO -->
     <section class="hero">
-      <div class="container">
+      <div class="container hero-center">
         <span class="eyebrow">For Teachers</span>
         <h1 class="hero-h1">You'll know how each student actually thinks. Not just what they submitted.</h1>
         <p class="hero-sub">Orchen builds a learning profile for every student from real interactions &mdash; not surveys, not self-reporting. It updates as you teach them.</p>
+      </div>
+      <div class="container hero-stage">
+        <div class="stage">
+          <div class="shot-frame">
+            <div class="shot-chrome"><span class="shot-dot"></span><span class="shot-dot"></span><span class="shot-dot"></span><span class="shot-name">Teacher &middot; Assignments</span></div>
+            <img src="/assets/product-teacher-assignments.png" alt="The Orchen teacher assignments view: who has submitted, how long they were actively working, and how many exchanges each took" loading="eager">
+          </div>
+        </div>
+        <p class="shot-caption stage-cap">Your view of an assignment &mdash; submissions, active time, and exchanges, at a glance.</p>
       </div>
     </section>
 
@@ -492,16 +604,54 @@ a { color: inherit; text-decoration: none; }
             </div>
           </div>
         </div>
+
+        <div class="flow" aria-label="The Socratic loop Orchen runs on every assignment">
+          <div class="flow-step">
+            <svg class="flow-ico" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3a6 6 0 0 0-4 10.5c.7.6 1 1.2 1 2V17h6v-1.5c0-.8.3-1.4 1-2A6 6 0 0 0 12 3Z"/><path d="M9.5 20h5"/><path d="M10 22h4"/></svg>
+            <span class="step-n">Step 01</span>
+            <h4>Student attempts</h4>
+            <p>They try the problem first &mdash; Orchen waits before stepping in.</p>
+          </div>
+          <div class="flow-arrow"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14"/><path d="m13 6 6 6-6 6"/></svg></div>
+          <div class="flow-step">
+            <svg class="flow-ico" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M21 11.5a8.38 8.38 0 0 1-.9 3.8 8.5 8.5 0 0 1-7.6 4.7 8.38 8.38 0 0 1-3.8-.9L3 21l1.9-5.7a8.38 8.38 0 0 1-.9-3.8 8.5 8.5 0 0 1 4.7-7.6 8.38 8.38 0 0 1 3.8-.9h.5a8.48 8.48 0 0 1 8 8v.5Z"/><path d="M12 8v.01M12 11v3"/></svg>
+            <span class="step-n">Step 02</span>
+            <h4>Orchen asks back</h4>
+            <p>It guides with questions &mdash; it won't hand over the answer, even on request.</p>
+          </div>
+          <div class="flow-arrow"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14"/><path d="m13 6 6 6-6 6"/></svg></div>
+          <div class="flow-step">
+            <svg class="flow-ico" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M12 20h9"/><path d="M16.5 3.5a2.12 2.12 0 0 1 3 3L7 19l-4 1 1-4Z"/></svg>
+            <span class="step-n">Step 03</span>
+            <h4>Student revises</h4>
+            <p>They work toward the answer themselves, exchange by exchange.</p>
+          </div>
+          <div class="flow-arrow"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14"/><path d="m13 6 6 6-6 6"/></svg></div>
+          <div class="flow-step">
+            <svg class="flow-ico" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M3 3v18h18"/><path d="m7 14 3-3 3 3 5-6"/></svg>
+            <span class="step-n">Step 04</span>
+            <h4>You see the work</h4>
+            <p>Submission, active time, and exchange count roll up to your view.</p>
+          </div>
+        </div>
       </div>
     </section>
 
     <!-- WRITING -->
     <section class="section s-cream">
       <div class="container">
-        <span class="eyebrow">Writing Assignments</span>
-        <h2 class="sec-h2">The student writes. Orchen frames and checks.</h2>
-        <p class="sec-body">Writing assignments open a full editing workspace. Students go through prewriting, drafting, and a draft check with rubric scores and inline comments. You configure the rubric. Orchen does the mechanical pass &mdash; you focus on the thinking.</p>
-        <p class="sec-body">You still teach the writing. Orchen handles the parts that don't require your judgment.</p>
+        <div class="feature-head">
+          <span class="eyebrow">Writing Assignments</span>
+          <h2 class="sec-h2">The student writes. Orchen frames and checks.</h2>
+          <p class="sec-body">Writing assignments open a full editing workspace &mdash; prewriting, drafting, and a draft check with rubric scores and inline comments. You configure the rubric; Orchen does the mechanical pass so you can focus on the thinking.</p>
+        </div>
+        <div class="stage">
+          <div class="shot-frame">
+            <div class="shot-chrome"><span class="shot-dot"></span><span class="shot-dot"></span><span class="shot-dot"></span><span class="shot-name">Student &middot; Writing workspace</span></div>
+            <img src="/assets/product-writing-workspace.png" alt="The Orchen writing workspace: a full essay editor with a contextual outline card guiding the student through their draft" loading="lazy">
+          </div>
+        </div>
+        <p class="shot-caption stage-cap">A full editing workspace &mdash; prewriting, drafting, and a rubric-scored draft check.</p>
       </div>
     </section>
 
@@ -512,10 +662,10 @@ a { color: inherit; text-decoration: none; }
         <h2 class="sec-h2">Lesson plans, unit plans, rubrics &mdash; drafted in seconds.</h2>
         <p class="sec-body">The Documents tab gives you AI-generated starting points for standard teaching materials. Standard lesson plan, 5-day unit plan, discussion guide, lab plan, substitute teacher plan, rubric generator, exit ticket, differentiated assignment. You edit; you own the result.</p>
         <div class="tpl-grid">
-          <div class="tpl-card"><p class="tpl-name">Standard Lesson Plan</p><p class="tpl-time">~15 sec</p></div>
-          <div class="tpl-card"><p class="tpl-name">5-Day Unit Plan</p><p class="tpl-time">~20 sec</p></div>
-          <div class="tpl-card"><p class="tpl-name">Rubric Generator</p><p class="tpl-time">~15 sec</p></div>
-          <div class="tpl-card"><p class="tpl-name">Discussion / Socratic S&hellip;</p><p class="tpl-time">~15 sec</p></div>
+          <div class="tpl-card"><svg class="ico" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8Z"/><path d="M14 2v6h6"/><path d="M8 13h8M8 17h5"/></svg><p class="tpl-name">Standard Lesson Plan</p><p class="tpl-time">~15 sec</p></div>
+          <div class="tpl-card"><svg class="ico" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="4" width="18" height="18" rx="2"/><path d="M16 2v4M8 2v4M3 10h18"/></svg><p class="tpl-name">5-Day Unit Plan</p><p class="tpl-time">~20 sec</p></div>
+          <div class="tpl-card"><svg class="ico" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M9 11l3 3L22 4"/><path d="M21 12v7a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h11"/></svg><p class="tpl-name">Rubric Generator</p><p class="tpl-time">~15 sec</p></div>
+          <div class="tpl-card"><svg class="ico" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M21 11.5a8.38 8.38 0 0 1-8.5 8.5 8.38 8.38 0 0 1-3.8-.9L3 21l1.9-5.7A8.38 8.38 0 0 1 4 11.5 8.5 8.5 0 0 1 12.5 3 8.5 8.5 0 0 1 21 11.5Z"/></svg><p class="tpl-name">Discussion / Socratic S&hellip;</p><p class="tpl-time">~15 sec</p></div>
         </div>
       </div>
     </section>
