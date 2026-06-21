@@ -510,6 +510,26 @@
 }
 
 /* ───────────────────────────────────────────────────────────────────
+   7d. CARD ICONS + TAG PILLS  ·  turn text cards into visual cards
+   ─────────────────────────────────────────────────────────────────── */
+.card-ico { width: 26px; height: 26px; color: var(--green); display: block; margin-bottom: 0.9rem; }
+.s-dark .card-ico { color: #A7CBB4; }
+.feature-cell .card-ico { margin-bottom: 1rem; }
+.tag-pill {
+  display: inline-flex; align-items: center; gap: 0.4rem;
+  font-family: var(--font-mono, monospace);
+  font-size: 0.625rem; font-weight: 600; letter-spacing: 0.12em; text-transform: uppercase;
+  padding: 0.3rem 0.65rem; border-radius: 99px; margin-bottom: 1rem;
+}
+.tag-pill svg { width: 13px; height: 13px; }
+.tag-pill.is-pos { background: rgba(44,95,63,0.12); color: var(--green); }
+.s-dark .tag-pill.is-pos { background: rgba(110,170,130,0.20); color: #A7CBB4; }
+.tag-pill.is-cau { background: var(--amber-bg, #F0E8D5); color: var(--amber); }
+.s-dark .tag-pill.is-cau { background: rgba(156,124,74,0.26); color: #E8C98C; }
+.tag-pill.is-neu { background: rgba(26,26,26,0.06); color: var(--ink-muted); }
+.s-dark .tag-pill.is-neu { background: rgba(237,233,228,0.10); color: var(--wall-muted); }
+
+/* ───────────────────────────────────────────────────────────────────
    8. RESPONSIVE
    ─────────────────────────────────────────────────────────────────── */
 @media (max-width: 900px) {

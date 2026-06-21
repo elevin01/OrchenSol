@@ -75,26 +75,32 @@
         <p class="sec-body">These are not policy statements layered on top of the product. Each one is a design decision you can verify in a walkthrough.</p>
         <div class="mini-cards">
           <div class="mini-card">
+            <svg class="card-ico" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M3 6h18M8 6V4a1 1 0 0 1 1-1h6a1 1 0 0 1 1 1v2m2 0v14a2 2 0 0 1-2 2H7a2 2 0 0 1-2-2V6"/><path d="M10 11v6M14 11v6"/></svg>
             <h3>Source conversations deleted in 7 days</h3>
             <p>Raw student transcripts are deleted within seven days of analysis. What persists is derived insight — profiles, concept progress, narratives — not the conversations themselves.</p>
           </div>
           <div class="mini-card">
+            <svg class="card-ico" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10Z"/><path d="m9 12 2 2 4-4"/></svg>
             <h3>No model training on student data</h3>
             <p>Student data is never used to train AI models — ours or our providers'. Provider terms prohibit use of transmitted data beyond generating the requested response.</p>
           </div>
           <div class="mini-card">
+            <svg class="card-ico" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="9"/><path d="m5.6 5.6 12.8 12.8"/></svg>
             <h3>No data sales, no advertising</h3>
             <p>Orchen is paid by schools, full stop. There is no advertising business model and no third party purchasing student data — now or planned.</p>
           </div>
           <div class="mini-card">
+            <svg class="card-ico" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><ellipse cx="12" cy="5" rx="8" ry="3"/><path d="M4 5v6c0 1.7 3.6 3 8 3s8-1.3 8-3V5"/><path d="M4 11v6c0 1.7 3.6 3 8 3s8-1.3 8-3v-6"/></svg>
             <h3>Row-level security on every table</h3>
             <p>Access control is enforced at the database layer, not just in application code. A teacher's query physically cannot return another school's rows.</p>
           </div>
           <div class="mini-card">
+            <svg class="card-ico" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M9 3h6a1 1 0 0 1 1 1v1h1a2 2 0 0 1 2 2v12a2 2 0 0 1-2 2H7a2 2 0 0 1-2-2V7a2 2 0 0 1 2-2h1V4a1 1 0 0 1 1-1Z"/><path d="m9 14 2 2 4-4"/></svg>
             <h3>Immutable audit logging</h3>
             <p>Every staff access of student data writes an insert-only audit entry with server-side actor verification. The trail cannot be edited or deleted.</p>
           </div>
           <div class="mini-card">
+            <svg class="card-ico" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M4 21v-7M4 10V3M12 21v-9M12 8V3M20 21v-5M20 12V3M1 14h6M9 8h6M17 16h6"/></svg>
             <h3>School-controlled visibility</h3>
             <p>Parent visibility runs on a five-tier model with school-set defaults and ceilings. Crisis flags route only to the school's designated contact.</p>
           </div>
@@ -190,31 +196,37 @@
           </div>
           <div class="feature-grid cols-3">
             <div class="feature-cell">
+              <svg class="card-ico" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M5 11h14a1 1 0 0 1 1 1v8a1 1 0 0 1-1 1H5a1 1 0 0 1-1-1v-8a1 1 0 0 1 1-1Z"/><path d="M8 11V7a4 4 0 0 1 8 0v4"/></svg>
               <span class="feature-cell__eyebrow">Access control</span>
               <h3 class="feature-cell__head">Row-level security on every table</h3>
               <p class="feature-cell__body">Every table carries <code>RLS</code> policies enforced at the Postgres layer. Role checks run through <code>SECURITY DEFINER</code> helpers to prevent recursion, and service-role operations are isolated from end-user role-based access — the two cannot accidentally cross.</p>
             </div>
             <div class="feature-cell">
+              <svg class="card-ico" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M9 3h6a1 1 0 0 1 1 1v1h1a2 2 0 0 1 2 2v12a2 2 0 0 1-2 2H7a2 2 0 0 1-2-2V7a2 2 0 0 1 2-2h1V4a1 1 0 0 1 1-1Z"/><path d="m9 14 2 2 4-4"/></svg>
               <span class="feature-cell__eyebrow">Audit trail</span>
               <h3 class="feature-cell__head">Insert-only, RPC-mediated, server-verified</h3>
               <p class="feature-cell__body">Direct writes to the <code>audit_log</code> table are blocked. All entries go through the <code>log_audit_event</code> RPC, which verifies the actor server-side. Every staff access of student data is recorded; school administrators can review their school's log at any time.</p>
             </div>
             <div class="feature-cell">
+              <svg class="card-ico" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><circle cx="7.5" cy="15.5" r="4.5"/><path d="m10.5 12.5 8-8"/><path d="m16 5 3 3"/><path d="m13 8 2.5 2.5"/></svg>
               <span class="feature-cell__eyebrow">Encryption</span>
               <h3 class="feature-cell__head">TLS in transit, encrypted at rest</h3>
               <p class="feature-cell__body">All traffic between clients, the application, and the database runs over TLS. Data at rest is encrypted by the underlying infrastructure provider.</p>
             </div>
             <div class="feature-cell">
+              <svg class="card-ico" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10Z"/><path d="M12 8v4M12 16h.01"/></svg>
               <span class="feature-cell__eyebrow">Privilege escalation</span>
               <h3 class="feature-cell__head">Role changes blocked at the trigger level</h3>
               <p class="feature-cell__body">A database trigger prevents non-admins from modifying their own role, premium status, or age flags — privilege escalation is stopped in the database, before application code is even involved.</p>
             </div>
             <div class="feature-cell">
+              <svg class="card-ico" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M14 3H6a2 2 0 0 0-2 2v14a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8Z"/><path d="M14 3v5h6"/><path d="m9 15 2 2 4-4"/></svg>
               <span class="feature-cell__eyebrow">Consent gating</span>
               <h3 class="feature-cell__head">No consent record, no persistence</h3>
               <p class="feature-cell__body">Students without an active consent record operate in a non-persistent Guest Mode: their interactions are never written to the database. Consent is tracked, versioned, and revocable.</p>
             </div>
             <div class="feature-cell">
+              <svg class="card-ico" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M16 21v-2a4 4 0 0 0-4-4H6a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="m15 11 2 2 4-4"/></svg>
               <span class="feature-cell__eyebrow">Account hygiene</span>
               <h3 class="feature-cell__head">Forced credential rotation, no self-registration for parents</h3>
               <p class="feature-cell__body">Admin-created accounts must set a new password on first login. Parents cannot self-register — accounts exist only because a school created them, which keeps the account perimeter under institutional control.</p>
@@ -285,16 +297,19 @@
           </div>
           <div class="feature-grid cols-3">
             <div class="feature-cell">
+              <svg class="card-ico" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8Z"/><path d="M14 2v6h6"/><path d="M8 13h8M8 17h5"/></svg>
               <span class="feature-cell__eyebrow">FERPA</span>
               <h3 class="feature-cell__head">Orchen operates as a school official</h3>
               <p class="feature-cell__body">Under FERPA, your school controls the education records; Orchen processes them as a school official under the school's direct control, with a legitimate educational interest. Access, amendment, and deletion requests route through the school, and our audit logs satisfy FERPA's documentation requirements for record access.</p>
             </div>
             <div class="feature-cell">
+              <svg class="card-ico" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M12 2l8 3v6c0 5-3.5 8-8 9-4.5-1-8-4-8-9V5Z"/><circle cx="12" cy="9.5" r="1.8"/><path d="M9 15.5a3 3 0 0 1 6 0"/></svg>
               <span class="feature-cell__eyebrow">COPPA</span>
               <h3 class="feature-cell__head">Under-13 protections enforced by role gates</h3>
               <p class="feature-cell__body">Students under 13 require verifiable parental consent managed through the school's consent process. Without an active consent record, the platform's COPPA-aware role gates place the student in non-persistent Guest Mode — no data is written.</p>
             </div>
             <div class="feature-cell">
+              <svg class="card-ico" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M12 4v17M8 21h8M4 8l16-3"/><path d="M4 8l-2.5 5a2.5 2.5 0 0 0 5 0L4 8Z"/><path d="M20 5l-2.5 5a2.5 2.5 0 0 0 5 0L20 5Z"/></svg>
               <span class="feature-cell__eyebrow">State law</span>
               <h3 class="feature-cell__head">Data minimization as the default posture</h3>
               <p class="feature-cell__body">State student-privacy statutes vary, but nearly all reward the same posture: collect less, keep less, log everything. The 7-day source deletion, school-configurable retention, and immutable audit trail are designed so that posture holds across jurisdictions. Your counsel reviews the DPA against your state's requirements before deployment.</p>
@@ -318,22 +333,22 @@
           </div>
           <div class="feature-grid cols-2">
             <div class="feature-cell">
-              <span class="feature-cell__eyebrow">In place today</span>
+              <span class="tag-pill is-pos"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"/></svg>In place today</span>
               <h3 class="feature-cell__head">Architecture-level controls, live in production</h3>
               <p class="feature-cell__body">Row-level security, immutable audit logging, consent gating with Guest Mode, the 7-day source deletion pipeline, per-school retention enforcement, crisis flag lifecycle tracking, structured data export, and right-to-be-forgotten tooling. Each is verifiable in a technical walkthrough.</p>
             </div>
             <div class="feature-cell">
-              <span class="feature-cell__eyebrow">Not yet</span>
+              <span class="tag-pill is-cau"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="9"/><path d="M12 7v5l3 2"/></svg>Not yet</span>
               <h3 class="feature-cell__head">SOC 2 certification</h3>
               <p class="feature-cell__body">Orchen is not SOC 2 certified today. A Type 1 audit is on our roadmap as we move from founding pilots to broader deployment. If your procurement process requires SOC 2 now, we'd rather tell you that on this page than in month three of an evaluation. We're glad to walk your reviewer through our current controls in detail.</p>
             </div>
             <div class="feature-cell">
-              <span class="feature-cell__eyebrow">Not yet</span>
+              <span class="tag-pill is-cau"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="9"/><path d="M12 7v5l3 2"/></svg>Not yet</span>
               <h3 class="feature-cell__head">Third-party penetration test</h3>
               <p class="feature-cell__body">An independent penetration test is planned ahead of our first full-school deployments. Schools participating in our founding program will receive the results when complete.</p>
             </div>
             <div class="feature-cell">
-              <span class="feature-cell__eyebrow">By design</span>
+              <span class="tag-pill is-neu"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="9"/><path d="m16 8-2 6-6 2 2-6Z"/></svg>By design</span>
               <h3 class="feature-cell__head">What an early-stage vendor owes you</h3>
               <p class="feature-cell__body">An early-stage company can't offer a decade of audits. What it can offer is an architecture where the privacy promises are structural rather than procedural, direct access to the people who built it, and contractual terms — data ownership, export, deletion — that protect the school regardless of what happens to the vendor. That is the deal we offer, stated plainly.</p>
             </div>
@@ -351,14 +366,17 @@
           <p class="sec-body">Email <strong>emil@orchen.ai</strong> with your school name and we'll send these within one business day:</p>
           <div class="mini-cards" style="margin-top: 2rem;">
             <div class="mini-card">
+              <svg class="card-ico" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8Z"/><path d="M14 2v6h6"/><path d="M8 13h8M8 17h5"/></svg>
               <h3>Data Processing Agreement</h3>
               <p>Retention windows, deletion rights, breach notification terms, and the full sub-processor list.</p>
             </div>
             <div class="mini-card">
+              <svg class="card-ico" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10Z"/><path d="m9 12 2 2 4-4"/></svg>
               <h3>Security overview</h3>
               <p>A technical summary of the controls on this page, written for IT directors and security reviewers.</p>
             </div>
             <div class="mini-card">
+              <svg class="card-ico" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="3" width="20" height="14" rx="2"/><path d="M8 21h8M12 17v4"/><path d="m7 10 2.5 2.5L15 7"/></svg>
               <h3>Architecture walkthrough</h3>
               <p>A live session with the founder covering RLS policies, the audit log, and the deletion pipeline against the production system.</p>
             </div>
