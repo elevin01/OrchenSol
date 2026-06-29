@@ -122,6 +122,43 @@
       </div>
     </section>
 
+    <!-- ── SAME QUESTION, TWO ANSWERS ── -->
+    <section class="cmp-section">
+      <div class="cmp-wide">
+        <div class="section-label">Same question, two answers</div>
+        <h2>Ask both &ldquo;why is the sky blue?&rdquo;</h2>
+        <p style="max-width: 60ch; color: var(--ink-muted); font-size: 1.05rem; line-height: 1.7; margin: 0.75rem 0 0;">ChatGPT hands over the explanation. Orchen hands it back as a question &mdash; and the student does the thinking. Same prompt, two different ideas of what AI in a classroom is for.</p>
+        <style>
+          .demo-duo { display: grid; grid-template-columns: 1fr 1fr; gap: clamp(1rem, 2.5vw, 2rem); margin-top: 2.5rem; align-items: start; }
+          .demo-duo figure { margin: 0; }
+          .demo-frame { background: #fff; border-radius: 12px; overflow: hidden; box-shadow: 0 18px 44px rgba(26,26,26,0.10), 0 4px 12px rgba(26,26,26,0.04); }
+          .demo-chrome { display: flex; align-items: center; gap: 7px; padding: 0.6rem 0.85rem; background: #F0ECE5; border-bottom: 1px solid var(--border-light, #EAE5DC); }
+          .demo-dot { width: 9px; height: 9px; border-radius: 50%; background: var(--border, #DDD8CE); }
+          .demo-name { font-family: 'SFMono-Regular', ui-monospace, Menlo, monospace; font-size: 0.625rem; letter-spacing: 0.08em; text-transform: uppercase; color: var(--ink-faint, #A09890); margin-left: 6px; }
+          .demo-frame img { width: 100%; display: block; }
+          .demo-cap { text-align: center; font-size: 0.85rem; color: var(--ink-faint, #A09890); margin: 0.9rem 0 0; font-style: italic; }
+          .demo-cap strong { font-style: normal; color: var(--green, #2C5F3F); }
+          @media (max-width: 700px) { .demo-duo { grid-template-columns: 1fr; gap: 1.75rem; } }
+        </style>
+        <div class="demo-duo">
+          <figure>
+            <div class="demo-frame">
+              <div class="demo-chrome"><span class="demo-dot"></span><span class="demo-dot"></span><span class="demo-dot"></span><span class="demo-name">Orchen &middot; Student</span></div>
+              <img src="/assets/shot-orchen-skyblue.png" alt="Orchen responding to 'why is the sky blue' with a guiding question that asks the student what they already know about sunlight" loading="lazy">
+            </div>
+            <p class="demo-cap"><strong>Orchen asks first.</strong> The student reasons toward the answer.</p>
+          </figure>
+          <figure>
+            <div class="demo-frame">
+              <div class="demo-chrome"><span class="demo-dot"></span><span class="demo-dot"></span><span class="demo-dot"></span><span class="demo-name">ChatGPT</span></div>
+              <img src="/assets/shot-chatgpt-skyblue.png" alt="ChatGPT answering 'why is the sky blue' by immediately explaining Rayleigh scattering in full" loading="lazy">
+            </div>
+            <p class="demo-cap">ChatGPT delivers the finished answer.</p>
+          </figure>
+        </div>
+      </div>
+    </section>
+
     <!-- ── COMPARISON TABLE ── -->
     <section class="cmp-section">
       <div class="cmp-wide">

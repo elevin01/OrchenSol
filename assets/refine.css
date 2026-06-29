@@ -184,3 +184,15 @@ summary:focus-visible,
 }
 .s-dark .product-card { box-shadow: var(--shadow-dark); }
 .s-dark .shot-frame { box-shadow: var(--shadow-dark); }
+
+/* ─── BORDERLESS MEDIA: drop hard outlines, keep soft shadow depth ──── */
+.shot-frame,
+.s-dark .shot-frame,
+.demo-frame { border: none; }
+/* Flatten the "stage": no beige box / border / inset — media floats on the page */
+.stage,
+.s-dark .stage,
+.s-warm .stage,
+.hero-warm .stage { border: none; background: none; padding: 0; border-radius: 0; }
+.shot-frame video,
+.demo-frame video { width: 100%; display: block; }

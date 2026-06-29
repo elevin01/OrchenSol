@@ -4,21 +4,21 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>For Parents — Orchen</title>
-  <meta name="description" content="Orchen gives parents a weekly view of their child's learning — conversation starters, bright spots, and progress. What you see is configured by your school.">
+  <meta name="description" content="Orchen gives school-managed parent clarity: private weekly learning context, assignment support, and at-home next steps without exposing raw student conversations.">
   <link rel="icon" type="image/png" sizes="32x32" href="/assets/favicon-32.png">
   <link rel="icon" type="image/png" sizes="256x256" href="/assets/favicon.png">
   <link rel="apple-touch-icon" sizes="180x180" href="/assets/apple-touch-icon.png">
   <link rel="canonical" href="https://orchen.ai/for/parents">
   <meta name="robots" content="index, follow">
   <meta property="og:title" content="For Parents — Orchen">
-  <meta property="og:description" content="Orchen gives parents a weekly view of their child's learning — conversation starters, bright spots, and progress. What you see is configured by your school.">
+  <meta property="og:description" content="Orchen gives school-managed parent clarity: private weekly learning context, assignment support, and at-home next steps without exposing raw student conversations.">
   <meta property="og:type" content="website">
   <meta property="og:url" content="https://orchen.ai/for/parents">
   <meta property="og:image" content="https://orchen.ai/assets/og-image.png">
   <meta property="og:site_name" content="Orchen">
   <meta name="twitter:card" content="summary_large_image">
   <meta name="twitter:title" content="For Parents — Orchen">
-  <meta name="twitter:description" content="Orchen gives parents a weekly view of their child's learning — conversation starters, bright spots, and progress. What you see is configured by your school.">
+  <meta name="twitter:description" content="Orchen gives school-managed parent clarity: private weekly learning context, assignment support, and at-home next steps without exposing raw student conversations.">
   <meta name="twitter:image" content="https://orchen.ai/assets/og-image.png">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -494,6 +494,1511 @@ a { color: inherit; text-decoration: none; }
 .feature-head { text-align:center; max-width:680px; margin:0 auto 2.5rem; }
 .feature-head .sec-body { margin-left:auto; margin-right:auto; }
 @media (max-width: 700px) { .stage { padding:1rem; border-radius:12px; } }
+
+/* ── Width system: wider content, less side whitespace ── */
+.pw    { width:100%; max-width:1320px; margin-inline:auto; padding-inline:clamp(1.25rem,5vw,4rem); }
+.pw-xl { width:100%; max-width:1840px; margin-inline:auto; padding-inline:clamp(1.25rem,5vw,4rem); }
+
+/* ── Feature row: text + media (show, not tell) ── */
+.feat { padding-block: clamp(4.5rem,8vw,7rem); }
+.feat-grid {
+  display:grid;
+  grid-template-columns: minmax(280px,0.72fr) minmax(0,1.45fr);
+  gap: clamp(2rem,5vw,4.5rem);
+  align-items:center;
+}
+.feat-grid--media-first {
+  grid-template-columns: minmax(0,1.45fr) minmax(280px,0.72fr);
+}
+.feat-grid--media-first .feat-media { order:1; }
+.feat-grid--media-first .feat-copy { order:2; justify-self:end; }
+.feat-copy { max-width: 420px; }
+.feat-copy .sec-body { max-width: 420px; }
+.feat-media img, .feat-media video { width:100%; display:block; border-radius:12px; }
+.feat-copy,
+.feat-media,
+.ask-copy,
+.ask-media,
+.privacy-copy { min-width:0; }
+.hero-h1,
+.sec-h2 { overflow-wrap:break-word; }
+
+.parent-showcase {
+  position:relative;
+  display:grid;
+  gap:clamp(0.85rem,1.6vw,1.25rem);
+  min-width:0;
+  max-width:100%;
+  border:1px solid var(--border-light);
+  border-radius:16px;
+  background:#FBF8F2;
+  padding:clamp(0.75rem,1.8vw,1.25rem);
+  box-shadow:var(--shadow-lg);
+}
+.s-warm .parent-showcase { background:#F7F2E8; border-color:#E2D7C3; }
+.showcase-shot {
+  min-width:0;
+  max-width:100%;
+  background:#fff;
+  border:1px solid rgba(26,26,26,0.05);
+  box-shadow:0 12px 30px rgba(26,26,26,0.08);
+}
+.assignment-showcase {
+  grid-template-columns:minmax(230px,0.62fr) minmax(0,1fr);
+  align-items:center;
+}
+.assignment-guide { align-self:stretch; object-fit:cover; object-position:top; max-height:620px; }
+.assignment-list { align-self:center; }
+.assignment-support {
+  display:grid;
+  gap:clamp(0.85rem,1.6vw,1.25rem);
+  align-content:center;
+}
+.support-note {
+  border-left:2px solid var(--green);
+  padding:0.9rem 1rem;
+  background:#fff;
+  border-radius:8px;
+  box-shadow:var(--shadow-xs);
+}
+.support-note strong {
+  display:block;
+  font-family:var(--mono);
+  font-size:0.625rem;
+  letter-spacing:0.12em;
+  text-transform:uppercase;
+  color:var(--green);
+  margin-bottom:0.4rem;
+}
+.support-note span {
+  display:block;
+  font-size:0.875rem;
+  line-height:1.55;
+  color:var(--ink-muted);
+}
+.pattern-showcase { grid-template-columns:1fr; }
+.pattern-main { max-width:min(100%,860px); justify-self:end; }
+.pattern-learning {
+  width:min(82%,720px);
+  justify-self:start;
+  margin-top:-3.5rem;
+}
+
+.privacy-section { padding-block:clamp(4.5rem,7vw,6.5rem); }
+.privacy-grid {
+  display:grid;
+  grid-template-columns:minmax(280px,0.85fr) minmax(0,1.15fr);
+  gap:clamp(2rem,5vw,4rem);
+  align-items:start;
+}
+.privacy-copy .sec-body { max-width:640px; }
+.privacy-section .split-priv { margin-top:0; }
+.s-dark .priv-panel {
+  background:rgba(237,233,228,0.07);
+  border:1px solid rgba(237,233,228,0.16);
+  box-shadow:0 14px 34px rgba(0,0,0,0.14);
+}
+.s-dark .priv-panel.is-shared {
+  background:rgba(197,219,203,0.13);
+  border-color:rgba(197,219,203,0.30);
+}
+.s-dark .priv-head h4 { color:var(--wall-text); }
+.s-dark .priv-list li { color:rgba(237,233,228,0.76); }
+
+.visibility-section { padding-block:clamp(4.5rem,7vw,6.5rem); }
+.visibility-section .sec-h2,
+.visibility-section .sec-body { max-width:760px; }
+.visibility-section .caption { max-width:920px; }
+.visibility-section .ladder { max-width:1120px; }
+.visibility-section .rung {
+  grid-template-columns:64px 190px minmax(0,1fr);
+  padding:1rem 1.25rem;
+}
+.visibility-section .rung-desc { font-size:0.9375rem; }
+.parent-cta {
+  padding-block:clamp(4.5rem,7vw,6rem);
+  background:#F7F2EA;
+  border-top:1px solid rgba(26,26,26,0.06);
+}
+.parent-cta .sec-body { margin-bottom:2rem; }
+
+.portal-carousel {
+  position:relative;
+  overflow:hidden;
+  padding-top:clamp(4rem,7vw,6rem);
+  padding-bottom:clamp(4.5rem,8vw,7rem);
+  background:
+    radial-gradient(circle at 12% 10%, rgba(197,219,203,0.34), transparent 30%),
+    radial-gradient(circle at 88% 0%, rgba(232,218,190,0.42), transparent 34%),
+    linear-gradient(180deg, #F7F2EA 0%, #F7F2EA 100%);
+}
+.portal-carousel::before {
+  content:"";
+  position:absolute;
+  inset:0;
+  pointer-events:none;
+  background:
+    linear-gradient(90deg, rgba(197,219,203,0.35), transparent 28%, transparent 72%, rgba(232,218,190,0.34)),
+    radial-gradient(circle at 16% 12%, rgba(62,142,142,0.12), transparent 28%),
+    radial-gradient(circle at 86% 18%, rgba(156,124,74,0.12), transparent 30%);
+}
+.portal-carousel .pw { position:relative; z-index:1; }
+.carousel-head {
+  display:grid;
+  grid-template-columns:minmax(0,1fr) auto;
+  gap:clamp(1.5rem,4vw,3.5rem);
+  align-items:end;
+  margin-bottom:clamp(2rem,4vw,3.25rem);
+}
+.hero-carousel { padding-top:calc(var(--nav-h) + clamp(3rem,7vw,6rem)); }
+.hero-carousel .pw { max-width:1580px; }
+.hero-carousel-frame { position:relative; }
+.hero-carousel .carousel-head {
+  grid-template-columns:minmax(0,0.95fr) minmax(0,0.85fr);
+  align-items:start;
+  margin-top:clamp(1.65rem,3vw,2.5rem);
+  margin-bottom:0;
+}
+.hero-carousel .hero-h1 {
+  max-width:15ch;
+  margin-bottom:0;
+  font-size:clamp(2.5rem,5.5vw,4.25rem);
+}
+.hero-carousel .hero-sub {
+  max-width:540px;
+  font-size:clamp(1.08rem,1.7vw,1.32rem);
+}
+.carousel-head .sec-h2 { max-width:760px; margin-bottom:0.9rem; }
+.carousel-head .sec-body { max-width:650px; }
+.carousel-controls { display:flex; gap:0.6rem; align-items:center; }
+.hero-carousel .carousel-controls {
+  position:absolute;
+  right:clamp(1rem,2.2vw,1.8rem);
+  top:50%;
+  transform:translateY(-50%);
+  z-index:4;
+}
+.carousel-btn {
+  width:42px;
+  height:42px;
+  border:1px solid var(--border);
+  border-radius:50%;
+  background:#fff;
+  color:var(--green);
+  font-size:1.35rem;
+  line-height:1;
+  cursor:pointer;
+  box-shadow:var(--shadow-xs);
+  transition:transform var(--dur-fast,0.15s) var(--ease), background var(--dur,0.22s) var(--ease), color var(--dur,0.22s) var(--ease);
+}
+.carousel-btn:hover { transform:translateY(-1px); background:var(--green); color:#fff; }
+.insight-track {
+  display:flex;
+  gap:clamp(1rem,2.4vw,1.5rem);
+  overflow-x:auto;
+  overscroll-behavior-x:contain;
+  scroll-snap-type:x mandatory;
+  scroll-padding-inline:1px;
+  padding:0.25rem 0 clamp(1.4rem,3vw,2rem);
+  scrollbar-width:none;
+}
+.insight-track::-webkit-scrollbar { display:none; }
+.insight-slide {
+  flex:0 0 min(1460px, calc(100vw - 4rem));
+  min-height:clamp(470px,43vw,620px);
+  display:grid;
+  grid-template-columns:minmax(300px,0.62fr) minmax(0,1.38fr);
+  gap:clamp(1.5rem,4vw,3.75rem);
+  align-items:center;
+  scroll-snap-align:start;
+  border:1px solid rgba(26,26,26,0.06);
+  border-radius:28px;
+  padding:clamp(1.5rem,3vw,2.6rem);
+  background:#fff;
+  box-shadow:0 18px 46px rgba(26,26,26,0.09);
+  overflow:hidden;
+}
+.hero-carousel .insight-track {
+  padding:0 0 clamp(0.9rem,1.8vw,1.25rem);
+}
+.hero-carousel .insight-slide {
+  flex-basis:100%;
+  min-height:clamp(560px,56vw,780px);
+  display:flex;
+  flex-direction:column;
+  justify-content:space-between;
+  gap:clamp(1rem,2vw,1.4rem);
+  padding:clamp(0.85rem,1.6vw,1.2rem);
+}
+.insight-slide.is-digest { background:linear-gradient(135deg,#FFFFFF 0%,#EEF6F2 100%); }
+.insight-slide.is-profile { background:linear-gradient(135deg,#FFFFFF 0%,#F1ECE2 100%); }
+.insight-slide.is-support { background:linear-gradient(135deg,#FFFDF8 0%,#EAF4F4 100%); }
+.insight-slide.is-ask { background:linear-gradient(135deg,#FFFFFF 0%,#EDE9FA 100%); }
+.insight-slide.is-private { background:linear-gradient(135deg,#143625 0%,#1F4A34 100%); color:var(--wall-text); }
+.slide-copy { min-width:0; }
+.hero-carousel .slide-copy {
+  display:grid;
+  grid-template-columns:minmax(145px,0.22fr) minmax(0,0.44fr) minmax(0,0.34fr);
+  gap:clamp(0.8rem,2vw,1.4rem);
+  align-items:baseline;
+  padding:0 clamp(0.4rem,1vw,0.8rem) clamp(0.2rem,0.8vw,0.5rem);
+}
+.slide-kicker {
+  display:inline-flex;
+  align-items:center;
+  gap:0.45rem;
+  font-family:var(--mono);
+  font-size:0.625rem;
+  font-weight:700;
+  letter-spacing:0.12em;
+  text-transform:uppercase;
+  color:var(--green);
+  margin-bottom:0.9rem;
+}
+.slide-kicker::before {
+  content:"";
+  width:8px;
+  height:8px;
+  border-radius:50%;
+  background:currentColor;
+}
+.insight-slide.is-private .slide-kicker { color:#C5DBCB; }
+.slide-copy h3 {
+  font-family:var(--font-display);
+  font-weight:700;
+  font-size:clamp(1.85rem,3.5vw,3rem);
+  line-height:1.06;
+  letter-spacing:-0.025em;
+  color:var(--ink);
+  margin-bottom:1rem;
+}
+.hero-carousel .slide-copy h3 {
+  font-size:clamp(1.35rem,2.4vw,2.1rem);
+  margin-bottom:0;
+}
+.insight-slide.is-private .slide-copy h3 { color:var(--wall-text); }
+.slide-copy p {
+  font-size:1rem;
+  line-height:1.62;
+  color:var(--ink-muted);
+  max-width:34ch;
+}
+.hero-carousel .slide-copy p {
+  max-width:42ch;
+  margin:0;
+}
+.insight-slide.is-private .slide-copy p { color:rgba(237,233,228,0.72); }
+.slide-pills {
+  display:flex;
+  flex-wrap:wrap;
+  gap:0.5rem;
+  margin-top:1.25rem;
+}
+.slide-pill {
+  font-family:var(--mono);
+  font-size:0.625rem;
+  letter-spacing:0.08em;
+  text-transform:uppercase;
+  color:var(--green);
+  background:rgba(255,255,255,0.72);
+  border:1px solid rgba(44,95,63,0.16);
+  border-radius:999px;
+  padding:0.42rem 0.7rem;
+}
+.insight-slide.is-private .slide-pill {
+  color:#C5DBCB;
+  background:rgba(237,233,228,0.08);
+  border-color:rgba(237,233,228,0.18);
+}
+.slide-visual {
+  min-width:0;
+  align-self:stretch;
+  display:flex;
+  align-items:center;
+  justify-content:center;
+}
+.hero-carousel .slide-visual {
+  flex:1 1 auto;
+  width:100%;
+  min-height:0;
+}
+.slide-visual img {
+  width:100%;
+  max-height:540px;
+  object-fit:contain;
+  border-radius:16px;
+  box-shadow:0 18px 42px rgba(26,26,26,0.12);
+  background:#fff;
+}
+.hero-carousel .slide-visual img {
+  width:100%;
+  height:100%;
+  max-height:none;
+  object-fit:contain;
+  border-radius:20px;
+}
+.hero-carousel .privacy-mock {
+  width:min(100%,920px);
+  align-self:center;
+}
+.insight-slide.is-shot .slide-visual {
+  align-self:stretch;
+  align-items:center;
+}
+.insight-slide.is-shot .slide-visual img {
+  border:1px solid rgba(26,26,26,0.06);
+}
+.insight-slide.is-support .slide-visual img,
+.insight-slide.is-ask .slide-visual img { max-height:540px; width:100%; max-width:100%; }
+.moment-visual,
+.privacy-mock {
+  width:min(100%,680px);
+  display:grid;
+  gap:0.8rem;
+}
+.moment-card {
+  border-radius:18px;
+  padding:clamp(1rem,2vw,1.35rem);
+  background:rgba(255,255,255,0.78);
+  border:1px solid rgba(26,26,26,0.07);
+  box-shadow:0 12px 30px rgba(26,26,26,0.08);
+}
+.moment-card.is-dark {
+  background:var(--green);
+  color:#fff;
+  border-color:transparent;
+}
+.moment-label {
+  display:block;
+  font-family:var(--mono);
+  font-size:0.58rem;
+  letter-spacing:0.12em;
+  text-transform:uppercase;
+  color:var(--green);
+  margin-bottom:0.55rem;
+}
+.moment-card.is-dark .moment-label { color:rgba(255,255,255,0.68); }
+.moment-line {
+  display:block;
+  font-family:var(--font-display);
+  font-weight:700;
+  font-size:clamp(1.25rem,2.5vw,1.75rem);
+  line-height:1.12;
+  color:var(--ink);
+}
+.moment-card.is-dark .moment-line { color:#fff; }
+.moment-small {
+  display:block;
+  margin-top:0.55rem;
+  font-size:0.9rem;
+  line-height:1.5;
+  color:var(--ink-muted);
+}
+.moment-card.is-dark .moment-small { color:rgba(255,255,255,0.78); }
+.moment-stack {
+  display:grid;
+  grid-template-columns:1fr 1fr;
+  gap:0.8rem;
+}
+.moment-stat {
+  display:grid;
+  gap:0.35rem;
+  border-radius:16px;
+  padding:1rem;
+  background:#fff;
+  border:1px solid rgba(44,95,63,0.12);
+}
+.moment-stat strong {
+  font-family:var(--font-display);
+  font-size:1.35rem;
+  line-height:1;
+  color:var(--green);
+}
+.moment-stat span {
+  font-family:var(--mono);
+  font-size:0.58rem;
+  letter-spacing:0.1em;
+  text-transform:uppercase;
+  color:var(--ink-faint);
+}
+.moment-rule {
+  height:8px;
+  border-radius:999px;
+  background:linear-gradient(90deg,var(--green),#3E8E8E,#B4915B);
+}
+.moment-quote {
+  display:flex;
+  align-items:flex-start;
+  gap:0.75rem;
+}
+.moment-quote::before {
+  content:"";
+  width:10px;
+  height:10px;
+  margin-top:0.42rem;
+  border-radius:50%;
+  background:var(--green);
+  flex:0 0 auto;
+}
+.moment-list {
+  display:grid;
+  gap:0.65rem;
+}
+.moment-list span {
+  display:block;
+  border-radius:999px;
+  padding:0.65rem 0.85rem;
+  background:#fff;
+  border:1px solid rgba(26,26,26,0.06);
+  font-family:var(--mono);
+  font-size:0.64rem;
+  letter-spacing:0.08em;
+  text-transform:uppercase;
+  color:var(--green);
+}
+.privacy-mock-card {
+  border:1px solid rgba(237,233,228,0.16);
+  border-radius:14px;
+  background:rgba(237,233,228,0.08);
+  padding:1.05rem 1.1rem;
+}
+.privacy-mock-card strong {
+  display:block;
+  font-family:var(--mono);
+  font-size:0.625rem;
+  letter-spacing:0.12em;
+  text-transform:uppercase;
+  color:#C5DBCB;
+  margin-bottom:0.45rem;
+}
+.privacy-mock-card span {
+  display:block;
+  color:rgba(237,233,228,0.76);
+  font-size:0.95rem;
+  line-height:1.55;
+}
+.carousel-dots {
+  display:flex;
+  gap:0.45rem;
+  align-items:center;
+  justify-content:center;
+}
+.carousel-dot {
+  width:9px;
+  height:9px;
+  border:0;
+  border-radius:999px;
+  background:rgba(44,95,63,0.22);
+  cursor:pointer;
+  padding:0;
+  transition:width var(--dur,0.22s) var(--ease), background var(--dur,0.22s) var(--ease);
+}
+.carousel-dot.is-active { width:28px; background:var(--green); }
+
+.assignment-section {
+  padding-block:clamp(4.5rem,8vw,7rem);
+  background:#F7F2EA;
+}
+.assignment-section .pw { max-width:1500px; }
+.assignment-section .feat-grid {
+  grid-template-columns:minmax(0,1.58fr) minmax(260px,0.42fr);
+  gap:clamp(2rem,4vw,3.5rem);
+}
+.assignment-section .feat-media { order:1; }
+.assignment-section .feat-copy {
+  order:2;
+  justify-self:start;
+}
+.assignment-section .feat-copy { max-width:540px; }
+.assignment-section .feat-copy .sec-body { max-width:510px; }
+.assignment-video-frame {
+  position:relative;
+  overflow:hidden;
+  border-radius:22px;
+  background:#fff;
+  border:1px solid rgba(26,26,26,0.06);
+  box-shadow:0 22px 54px rgba(26,26,26,0.12);
+  max-width:none;
+  margin-left:0;
+}
+.assignment-video-frame::before {
+  content:"";
+  position:absolute;
+  inset:0;
+  pointer-events:none;
+  border-radius:inherit;
+  box-shadow:inset 0 0 0 1px rgba(255,255,255,0.58);
+  z-index:1;
+}
+.assignment-video {
+  display:block;
+  width:100%;
+  background:#fff;
+}
+.assignment-proof {
+  display:grid;
+  gap:0.7rem;
+  margin-top:1.4rem;
+}
+.assignment-proof-row {
+  display:grid;
+  grid-template-columns:28px 1fr;
+  gap:0.75rem;
+  align-items:start;
+  padding:0.82rem 0.9rem;
+  border-radius:12px;
+  background:rgba(255,255,255,0.68);
+  border:1px solid rgba(44,95,63,0.12);
+}
+.assignment-proof-row span {
+  display:grid;
+  place-items:center;
+  width:28px;
+  height:28px;
+  border-radius:50%;
+  background:rgba(44,95,63,0.10);
+  color:var(--green);
+  font-family:var(--mono);
+  font-size:0.75rem;
+  font-weight:700;
+}
+.assignment-proof-row strong {
+  display:block;
+  font-family:var(--mono);
+  font-size:0.64rem;
+  letter-spacing:0.08em;
+  text-transform:uppercase;
+  line-height:1.25;
+  color:var(--green);
+  margin-bottom:0.3rem;
+}
+.assignment-proof-row p {
+  font-size:0.86rem;
+  line-height:1.55;
+  color:var(--ink-muted);
+}
+
+/* Ask Anything — wider, bigger video */
+.ask-section { padding-block: clamp(3.5rem,7vw,6.5rem); }
+.ask-section,
+.visibility-section { background:#F7F2EA; }
+.ask-grid { display:grid; grid-template-columns: minmax(0,1fr) minmax(0,3fr); gap: clamp(2rem,5vw,4.5rem); align-items:center; }
+.ask-copy { max-width: 420px; }
+.ask-copy .sec-body { max-width: 420px; }
+.ask-video { width:100%; display:block; border-radius:12px; box-shadow: var(--shadow-lg); }
+
+.reveal.is-armed { opacity:0; transform:translateY(18px); transition:opacity .7s var(--ease,cubic-bezier(.22,1,.36,1)), transform .7s var(--ease,cubic-bezier(.22,1,.36,1)); }
+.reveal.is-armed.is-in { opacity:1; transform:none; }
+@media (prefers-reduced-motion: reduce){ .reveal.is-armed{opacity:1;transform:none;transition:none;} }
+
+@media (max-width: 900px){
+  .feat-grid, .ask-grid { grid-template-columns: 1fr; gap: 1.25rem; }
+  .feat-grid--media-first .feat-media,
+  .feat-grid--media-first .feat-copy { order:initial; justify-self:stretch; }
+  .feat-copy, .feat-copy .sec-body, .ask-copy, .ask-copy .sec-body { max-width:none; }
+  .privacy-grid { grid-template-columns:1fr; }
+  .privacy-section .split-priv { margin-top:0; }
+  .carousel-head,
+  .hero-carousel .carousel-head { grid-template-columns:1fr; align-items:start; }
+  .carousel-controls { justify-content:flex-start; }
+  .insight-slide {
+    grid-template-columns:1fr;
+    min-height:0;
+  }
+  .hero-carousel .insight-slide {
+    min-height:clamp(480px,78vw,640px);
+  }
+  .hero-carousel .slide-copy {
+    grid-template-columns:1fr;
+    gap:0.35rem;
+  }
+  .slide-copy p { max-width:none; }
+  .assignment-section .feat-grid { grid-template-columns:1fr; }
+  .assignment-video-frame { max-width:900px; margin-left:0; }
+  .hero-carousel .hero-h1 { max-width:16ch; }
+}
+@media (max-width: 760px){
+  .hero-carousel .hero-h1 {
+    max-width:12ch;
+    font-size:clamp(2.05rem,11vw,2.85rem);
+  }
+  .hero-carousel .hero-sub { font-size:1rem; }
+  .assignment-proof-row { grid-template-columns:1fr; }
+  .assignment-proof-row span { width:28px; height:28px; }
+  .pattern-learning { width:100%; margin-top:0; }
+  .portal-carousel { padding-block:3.75rem; }
+  .hero-carousel { padding-top:calc(var(--nav-h) + 3rem); }
+  .carousel-controls { display:none; }
+  .insight-slide {
+    flex-basis:calc(100vw - 2.5rem);
+    border-radius:18px;
+  }
+  .hero-carousel .insight-slide {
+    flex-basis:100%;
+    min-height:clamp(430px,118vw,620px);
+    padding:0.75rem;
+  }
+  .slide-visual { align-self:auto; }
+  .moment-stack { grid-template-columns:1fr; }
+  .slide-visual img { max-height:320px; }
+  .hero-carousel .slide-visual img { max-height:none; border-radius:14px; }
+  .hero-carousel .carousel-head { margin-top:1.45rem; }
+  .insight-slide.is-support .slide-visual img,
+  .insight-slide.is-ask .slide-visual img { max-height:380px; width:100%; }
+  .hero-carousel .insight-slide.is-support .slide-visual img,
+  .hero-carousel .insight-slide.is-ask .slide-visual img { max-height:none; }
+  .visibility-section .rung {
+    display:block;
+    padding:1rem;
+  }
+  .visibility-section .rung-n,
+  .visibility-section .rung-lv,
+  .visibility-section .rung-desc { display:block; }
+  .visibility-section .rung-n { margin-bottom:0.35rem; }
+  .visibility-section .rung-lv { margin-bottom:0.55rem; }
+  .visibility-section .rung-bar { display:none; }
+  .visibility-section .rung-tag { margin-left:0.45rem; }
+}
+
+/* ═══ PARENT PAGE REDESIGN — product-led, image-first ═══ */
+.parent-redesign {
+  --parent-bg:#F7F2EA;
+  --parent-paper:#FFFDF8;
+  --parent-soft:#EEF6F1;
+  --parent-line:rgba(44,95,63,0.13);
+  --parent-shadow:0 24px 70px rgba(45,40,32,0.13), 0 2px 12px rgba(45,40,32,0.06);
+  background:
+    radial-gradient(circle at 5% 4%, rgba(197,219,203,0.48), transparent 24%),
+    radial-gradient(circle at 95% 2%, rgba(232,218,190,0.58), transparent 28%),
+    linear-gradient(180deg, var(--parent-bg), var(--parent-bg));
+  color:var(--ink);
+  overflow:hidden;
+}
+.pr-wide,
+.pr-wrap {
+  width:100%;
+  margin-inline:auto;
+  padding-inline:clamp(1.25rem,5vw,4rem);
+}
+.pr-wide { max-width:1580px; }
+.pr-wrap { max-width:1320px; }
+.parent-redesign img,
+.parent-redesign video { max-width:100%; }
+.parent-hero {
+  padding-top:calc(var(--nav-h) + clamp(2.75rem,5vw,4.75rem));
+  padding-bottom:clamp(4.75rem,8vw,7rem);
+}
+.parent-hero-stage {
+  position:relative;
+  overflow:hidden;
+  height:clamp(460px,54vw,720px);
+  border:1px solid rgba(44,95,63,0.12);
+  border-radius:8px;
+  background:#fff;
+  box-shadow:var(--parent-shadow);
+}
+.parent-hero-stage img {
+  width:100%;
+  height:100%;
+  display:block;
+  object-fit:cover;
+  object-position:top center;
+}
+.parent-hero-stage::after {
+  content:"";
+  position:absolute;
+  inset:auto 0 0;
+  height:34%;
+  pointer-events:none;
+  background:linear-gradient(180deg, rgba(247,242,234,0), rgba(247,242,234,0.82));
+}
+.parent-hero-copy {
+  display:grid;
+  grid-template-columns:minmax(0,1.05fr) minmax(320px,0.85fr);
+  gap:clamp(2rem,5vw,4.5rem);
+  align-items:end;
+  margin-top:clamp(2rem,4vw,3.2rem);
+}
+.parent-hero-copy .eyebrow { margin-bottom:0.9rem; }
+.parent-hero-copy h1 {
+  font-family:var(--font-display);
+  font-weight:700;
+  font-size:clamp(2.6rem,5.8vw,5rem);
+  line-height:0.98;
+  letter-spacing:-0.035em;
+  max-width:13ch;
+  color:var(--ink);
+}
+.parent-hero-aside {
+  display:grid;
+  gap:1.15rem;
+  justify-items:start;
+}
+.parent-hero-aside p {
+  font-size:clamp(1.05rem,1.45vw,1.28rem);
+  line-height:1.68;
+  color:var(--ink-muted);
+  max-width:560px;
+}
+.parent-actions {
+  display:flex;
+  flex-wrap:wrap;
+  align-items:center;
+  gap:0.9rem 1rem;
+}
+.parent-primary {
+  display:inline-flex;
+  align-items:center;
+  justify-content:center;
+  min-height:44px;
+  padding:0.78rem 1.18rem;
+  border-radius:4px;
+  background:var(--green);
+  color:#fff;
+  font-size:0.95rem;
+  font-weight:600;
+  line-height:1.2;
+  box-shadow:0 10px 24px rgba(44,95,63,0.18);
+  transition:background 0.2s var(--ease), transform 0.15s var(--ease);
+}
+.parent-primary:hover {
+  background:var(--green-dark);
+  transform:translateY(-1px);
+}
+.parent-proof {
+  font-family:var(--mono);
+  font-size:0.68rem;
+  letter-spacing:0.1em;
+  text-transform:uppercase;
+  color:var(--ink-faint);
+}
+.product-reel-section,
+.assignment-story,
+.ask-showcase,
+.trust-story,
+.parent-final-cta {
+  padding-block:clamp(4.75rem,8vw,7rem);
+  background:transparent;
+}
+.section-kicker {
+  display:block;
+  font-family:var(--mono);
+  font-size:0.68rem;
+  font-weight:700;
+  letter-spacing:0.12em;
+  text-transform:uppercase;
+  color:var(--green);
+  margin-bottom:0.75rem;
+}
+.section-title {
+  font-family:var(--font-display);
+  font-weight:700;
+  font-size:clamp(2rem,4vw,3.4rem);
+  line-height:1.04;
+  letter-spacing:-0.03em;
+  color:var(--ink);
+}
+.section-lede {
+  font-size:clamp(1rem,1.35vw,1.16rem);
+  line-height:1.72;
+  color:var(--ink-muted);
+  max-width:620px;
+}
+.reel-head {
+  display:flex;
+  justify-content:space-between;
+  align-items:end;
+  gap:1.5rem;
+  margin-bottom:1.35rem;
+}
+.reel-head-copy { max-width:720px; }
+.reel-controls {
+  display:flex;
+  align-items:center;
+  gap:0.55rem;
+  flex:0 0 auto;
+}
+.reel-btn,
+.reel-pause {
+  display:grid;
+  place-items:center;
+  border:1px solid var(--parent-line);
+  border-radius:999px;
+  background:#fff;
+  color:var(--green);
+  box-shadow:0 6px 18px rgba(45,40,32,0.08);
+  cursor:pointer;
+}
+.reel-btn {
+  width:42px;
+  height:42px;
+  font-size:1.25rem;
+  line-height:1;
+}
+.reel-pause {
+  min-width:42px;
+  height:42px;
+  padding-inline:0.8rem;
+  font-family:var(--mono);
+  font-size:0.6rem;
+  letter-spacing:0.08em;
+  text-transform:uppercase;
+}
+.reel-btn:hover,
+.reel-pause:hover { background:var(--green); color:#fff; }
+.reel-window {
+  overflow:hidden;
+  border:none;
+  border-radius:0;
+  background:transparent;
+  box-shadow:none;
+  padding:0.45rem;
+  margin-inline:-0.45rem;
+}
+.reel-track {
+  display:flex;
+  transform:translateX(0);
+  transition:transform 620ms cubic-bezier(.22,1,.36,1);
+  will-change:transform;
+}
+.reel-slide {
+  --reel-stage-h:clamp(360px,31vw,500px);
+  --reel-image-max:1160px;
+  --reel-accent:44,95,63;
+  --reel-wash:197,219,203;
+  --reel-paper:255,253,248;
+  flex:0 0 100%;
+  position:relative;
+  display:grid;
+  grid-template-columns:minmax(240px,0.34fr) minmax(0,0.66fr);
+  grid-template-areas:"copy media";
+  gap:clamp(1.25rem,3vw,3rem);
+  min-height:clamp(520px,43vw,680px);
+  align-items:center;
+  padding:clamp(1rem,2.6vw,2.6rem);
+  background:transparent;
+  overflow:visible;
+}
+.reel-slide::before {
+  content:"";
+  position:absolute;
+  inset:8% 2% 2%;
+  z-index:0;
+  pointer-events:none;
+  border-radius:36px;
+  background:
+    radial-gradient(circle at 78% 18%, rgba(var(--reel-wash),0.54), transparent 34%),
+    radial-gradient(circle at 12% 82%, rgba(var(--reel-accent),0.13), transparent 34%),
+    linear-gradient(135deg, rgba(var(--reel-paper),0.74), rgba(247,242,234,0.28));
+  filter:blur(0);
+}
+.reel-media {
+  position:relative;
+  grid-area:media;
+  z-index:1;
+  min-height:var(--reel-stage-h);
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  padding:clamp(0.8rem,2vw,1.9rem);
+  border:1px solid rgba(255,255,255,0.68);
+  border-radius:26px;
+  background:rgba(255,255,255,0.50);
+  box-shadow:inset 0 0 0 1px rgba(44,95,63,0.04), 0 24px 58px rgba(45,40,32,0.11);
+  overflow:visible;
+}
+.reel-media img,
+.reel-media video {
+  width:min(100%, var(--reel-image-max));
+  height:auto;
+  max-height:calc(var(--reel-stage-h) - 1.25rem);
+  display:block;
+  object-fit:contain;
+  border-radius:16px;
+  background:transparent;
+  filter:drop-shadow(0 18px 36px rgba(26,26,26,0.14));
+}
+.privacy-reel-visual {
+  height:100%;
+  display:grid;
+  grid-template-columns:1fr 1fr;
+  gap:1rem;
+  align-items:stretch;
+  padding:clamp(1rem,2vw,2rem);
+  background:
+    radial-gradient(circle at 20% 0%, rgba(197,219,203,0.42), transparent 32%),
+    linear-gradient(135deg,#193723 0%,#254B34 100%);
+}
+.privacy-reel-panel {
+  border:1px solid rgba(237,233,228,0.18);
+  border-radius:6px;
+  padding:clamp(1rem,2vw,1.45rem);
+  background:rgba(237,233,228,0.08);
+  color:var(--wall-text);
+}
+.privacy-reel-panel.is-shared {
+  background:rgba(197,219,203,0.16);
+  border-color:rgba(197,219,203,0.32);
+}
+.privacy-reel-panel strong {
+  display:block;
+  font-family:var(--mono);
+  font-size:0.68rem;
+  letter-spacing:0.12em;
+  text-transform:uppercase;
+  color:#C5DBCB;
+  margin-bottom:1rem;
+}
+.privacy-reel-panel span {
+  display:block;
+  padding-block:0.48rem;
+  color:rgba(237,233,228,0.78);
+  border-top:1px solid rgba(237,233,228,0.10);
+}
+.reel-caption {
+  position:relative;
+  grid-area:copy;
+  z-index:1;
+  display:grid;
+  gap:0.9rem;
+  align-content:start;
+  max-width:410px;
+  padding:clamp(1.05rem,2.2vw,1.65rem);
+  border:1px solid rgba(var(--reel-accent),0.16);
+  border-radius:22px;
+  background:rgba(255,253,248,0.84);
+  box-shadow:0 18px 44px rgba(45,40,32,0.11);
+  backdrop-filter:blur(10px);
+}
+.reel-kicker {
+  display:inline-flex;
+  align-items:center;
+  gap:0.5rem;
+  font-family:var(--mono);
+  font-size:0.65rem;
+  letter-spacing:0.12em;
+  text-transform:uppercase;
+  color:rgb(var(--reel-accent));
+}
+.reel-kicker::before {
+  content:"";
+  width:8px;
+  height:8px;
+  border-radius:50%;
+  background:currentColor;
+}
+.reel-title {
+  display:block;
+  font-family:var(--font-display);
+  font-weight:700;
+  font-size:clamp(1.45rem,2.45vw,2.2rem);
+  line-height:1.05;
+  letter-spacing:-0.03em;
+  color:var(--ink);
+}
+.reel-sub {
+  display:block;
+  max-width:34ch;
+  font-size:clamp(0.98rem,1.15vw,1.1rem);
+  line-height:1.62;
+  color:var(--ink-muted);
+}
+.reel-slide.is-brightspot {
+  --reel-accent:222,132,18;
+  --reel-wash:248,223,176;
+  --reel-stage-h:clamp(360px,30vw,470px);
+  --reel-image-max:860px;
+  grid-template-columns:minmax(300px,0.38fr) minmax(0,0.62fr);
+}
+.reel-slide.is-brightspot .reel-media {
+  justify-self:start;
+  width:min(100%,940px);
+  border-radius:34px 18px 34px 18px;
+  background:
+    linear-gradient(135deg, rgba(255,251,241,0.78), rgba(248,223,176,0.24));
+}
+.reel-slide.is-brightspot .reel-caption {
+  align-self:center;
+  min-height:var(--reel-stage-h);
+  margin-bottom:0;
+  padding:clamp(1.25rem,2.6vw,2.25rem) clamp(0.2rem,1.5vw,1rem) clamp(1.25rem,2.6vw,2.25rem) clamp(2rem,5vw,4.5rem);
+  border:0;
+  background:transparent;
+  box-shadow:none;
+  backdrop-filter:none;
+  grid-template-rows:auto minmax(0,1fr) auto;
+  align-content:stretch;
+}
+.reel-slide.is-brightspot .reel-title,
+.reel-slide.is-talkabout .reel-title {
+  max-width:10ch;
+  font-size:clamp(2.1rem,4vw,3.65rem);
+}
+.reel-slide.is-brightspot .reel-sub,
+.reel-slide.is-talkabout .reel-sub {
+  max-width:29ch;
+}
+.reel-slide.is-brightspot .reel-title,
+.reel-slide.is-talkabout .reel-title {
+  align-self:center;
+}
+.reel-slide.is-brightspot .reel-sub,
+.reel-slide.is-talkabout .reel-sub {
+  align-self:end;
+}
+.reel-slide.is-recent {
+  --reel-accent:44,95,63;
+  --reel-wash:197,219,203;
+  --reel-stage-h:clamp(410px,36vw,560px);
+  --reel-image-max:1380px;
+  grid-template-columns:1fr;
+  grid-template-areas:"media" "copy";
+  gap:clamp(1.25rem,2.4vw,2rem);
+}
+.reel-slide.is-recent::before { inset:0 4% 6%; }
+.reel-slide.is-recent .reel-caption {
+  width:min(100%,1280px);
+  justify-self:center;
+  grid-template-columns:minmax(140px,0.2fr) minmax(260px,0.34fr) minmax(0,0.46fr);
+  gap:clamp(1rem,2.5vw,2rem);
+  max-width:1280px;
+  align-items:start;
+  padding:0;
+  border:0;
+  background:transparent;
+  box-shadow:none;
+  backdrop-filter:none;
+}
+.reel-slide.is-recent .reel-kicker { grid-column:1; margin-top:0.2rem; }
+.reel-slide.is-recent .reel-title { grid-column:2; }
+.reel-slide.is-recent .reel-sub { grid-column:3; }
+.reel-slide.is-recent .reel-title { max-width:18ch; }
+.reel-slide.is-recent .reel-sub { max-width:40ch; padding-top:0.16rem; }
+.reel-slide.is-recent .reel-media {
+  width:min(100%,1460px);
+  justify-self:center;
+  padding:clamp(1rem,2vw,1.5rem);
+  border-radius:28px;
+  background:rgba(255,255,255,0.72);
+}
+.reel-slide.is-comingup {
+  --reel-accent:0,123,171;
+  --reel-wash:198,230,241;
+  --reel-stage-h:clamp(230px,22vw,330px);
+  --reel-image-max:1120px;
+  grid-template-columns:minmax(0,0.67fr) minmax(230px,0.33fr);
+  grid-template-areas:"media copy";
+}
+.reel-slide.is-comingup::before {
+  inset:16% 2% 16% 18%;
+  background:
+    radial-gradient(circle at 70% 48%, rgba(var(--reel-wash),0.72), transparent 42%),
+    linear-gradient(135deg, rgba(255,253,248,0.58), rgba(238,248,251,0.34));
+}
+.reel-slide.is-comingup .reel-media {
+  align-self:center;
+  min-height:var(--reel-stage-h);
+  padding:clamp(1rem,3vw,2.5rem);
+  border-radius:999px;
+  background:rgba(255,255,255,0.58);
+}
+.reel-slide.is-comingup .reel-caption {
+  align-self:center;
+  max-width:330px;
+  border-radius:28px;
+}
+.reel-slide.is-goals {
+  --reel-accent:44,95,63;
+  --reel-wash:214,232,218;
+  --reel-stage-h:clamp(250px,22vw,345px);
+  --reel-image-max:1360px;
+  grid-template-columns:1fr;
+  grid-template-areas:"media" "copy";
+  gap:clamp(1rem,2vw,1.55rem);
+  align-content:center;
+}
+.reel-slide.is-goals .reel-caption {
+  width:min(100%,1240px);
+  justify-self:center;
+  max-width:1240px;
+  grid-template-columns:minmax(140px,0.2fr) minmax(270px,0.34fr) minmax(0,0.46fr);
+  gap:clamp(1rem,2.5vw,2rem);
+  align-items:start;
+  padding:0;
+  border:0;
+  background:transparent;
+  box-shadow:none;
+  backdrop-filter:none;
+}
+.reel-slide.is-goals .reel-kicker { grid-column:1; margin-top:0.2rem; }
+.reel-slide.is-goals .reel-title { grid-column:2; max-width:18ch; }
+.reel-slide.is-goals .reel-sub { grid-column:3; max-width:40ch; padding-top:0.16rem; }
+.reel-slide.is-goals .reel-media {
+  width:min(100%,1420px);
+  justify-self:center;
+  border-radius:18px 34px 18px 34px;
+  background:rgba(255,255,255,0.60);
+}
+.reel-slide.is-talkabout {
+  --reel-accent:12,126,183;
+  --reel-wash:201,231,245;
+  --reel-stage-h:clamp(360px,30vw,460px);
+  --reel-image-max:820px;
+  grid-template-columns:minmax(0,0.58fr) minmax(240px,0.42fr);
+  grid-template-areas:"media copy";
+}
+.reel-slide.is-talkabout .reel-media {
+  width:min(100%,900px);
+  justify-self:end;
+  border-radius:18px 36px 18px 36px;
+  background:
+    linear-gradient(135deg, rgba(236,248,252,0.82), rgba(255,255,255,0.44));
+}
+.reel-slide.is-talkabout .reel-caption {
+  align-self:center;
+  min-height:var(--reel-stage-h);
+  margin-top:0;
+  padding:clamp(1.25rem,2.6vw,2.25rem) 0 clamp(1.25rem,2.6vw,2.25rem) clamp(0.2rem,1.5vw,1rem);
+  border:0;
+  background:transparent;
+  box-shadow:none;
+  backdrop-filter:none;
+  grid-template-rows:auto minmax(0,1fr) auto;
+  align-content:stretch;
+}
+.reel-slide.is-needshelp {
+  --reel-accent:44,95,63;
+  --reel-wash:227,234,224;
+  --reel-stage-h:clamp(230px,20vw,315px);
+  --reel-image-max:1320px;
+  grid-template-columns:1fr;
+  grid-template-areas:"media" "copy";
+  gap:clamp(1rem,2vw,1.5rem);
+  align-content:center;
+}
+.reel-slide.is-needshelp::before {
+  inset:14% 8% 10%;
+  border-radius:999px;
+  background:
+    radial-gradient(circle at 50% 45%, rgba(var(--reel-wash),0.68), transparent 44%),
+    linear-gradient(135deg, rgba(255,253,248,0.42), rgba(242,246,240,0.36));
+}
+.reel-slide.is-needshelp .reel-media {
+  width:min(100%,1380px);
+  justify-self:center;
+  border-radius:999px;
+  background:rgba(255,255,255,0.56);
+}
+.reel-slide.is-needshelp .reel-caption {
+  width:min(100%,1280px);
+  justify-self:center;
+  max-width:1280px;
+  grid-template-columns:minmax(150px,0.2fr) max-content minmax(0,1fr);
+  gap:clamp(1rem,2.4vw,2rem);
+  align-items:baseline;
+  padding:0 clamp(0.4rem,2vw,1.75rem);
+  border:0;
+  background:transparent;
+  box-shadow:none;
+  backdrop-filter:none;
+}
+.reel-slide.is-needshelp .reel-kicker { grid-column:1; margin-top:0; }
+.reel-slide.is-needshelp .reel-title {
+  grid-column:2;
+  max-width:none;
+  white-space:nowrap;
+  font-size:clamp(1.45rem,2.3vw,2.05rem);
+}
+.reel-slide.is-needshelp .reel-sub {
+  grid-column:3;
+  max-width:none;
+  padding-top:0;
+}
+.reel-dots {
+  display:flex;
+  justify-content:center;
+  gap:0.42rem;
+  margin-top:1rem;
+}
+.reel-dot {
+  width:9px;
+  height:9px;
+  border:0;
+  border-radius:999px;
+  background:rgba(44,95,63,0.22);
+  cursor:pointer;
+  padding:0;
+}
+.reel-dot.is-active {
+  width:28px;
+  background:var(--green);
+}
+.assignment-grid,
+.ask-showcase-grid,
+.trust-grid {
+  display:grid;
+  gap:clamp(2rem,5vw,4.5rem);
+  align-items:center;
+}
+.assignment-grid { grid-template-columns:minmax(0,3.3fr) minmax(240px,0.82fr); max-width:1760px; }
+.assignment-story { padding-block:clamp(6rem,10vw,9.5rem); }
+.assignment-copy .section-title { margin-bottom:clamp(1.15rem,2.2vw,1.85rem); }
+.assignment-media,
+.ask-media-card {
+  overflow:hidden;
+  border:1px solid rgba(44,95,63,0.12);
+  border-radius:8px;
+  background:#fff;
+  box-shadow:var(--parent-shadow);
+}
+.assignment-media video,
+.ask-media-card video {
+  width:100%;
+  display:block;
+  background:#fff;
+}
+.assignment-copy,
+.ask-copy-panel { min-width:0; }
+.outcome-chips {
+  display:grid;
+  grid-template-columns:repeat(3,1fr);
+  gap:0.65rem;
+  margin-top:1.35rem;
+}
+.outcome-chip {
+  border:1px solid var(--parent-line);
+  border-radius:6px;
+  background:rgba(255,255,255,0.72);
+  padding:0.85rem 0.9rem;
+  color:var(--green);
+  font-family:var(--mono);
+  font-size:0.66rem;
+  font-weight:700;
+  letter-spacing:0.08em;
+  text-transform:uppercase;
+}
+.ask-showcase-grid { grid-template-columns:minmax(240px,0.82fr) minmax(0,3.3fr); max-width:1760px; }
+.ask-media-card { order:2; }
+.ask-copy-panel { order:1; }
+.ask-showcase { padding-block:clamp(6rem,10vw,9.5rem); }
+.ask-copy-panel .section-title { margin-bottom:clamp(1.15rem,2.2vw,1.85rem); }
+.trust-grid { grid-template-columns:minmax(310px,0.72fr) minmax(0,1.28fr); align-items:start; }
+.trust-panels {
+  display:grid;
+  grid-template-columns:1fr 1fr;
+  gap:1rem;
+}
+.trust-panel {
+  min-height:310px;
+  border:1px solid var(--parent-line);
+  border-radius:8px;
+  background:rgba(255,255,255,0.70);
+  padding:clamp(1rem,2vw,1.35rem);
+}
+.trust-panel.is-receive {
+  background:rgba(221,235,224,0.62);
+}
+.trust-panel h3 {
+  font-family:var(--mono);
+  font-size:0.7rem;
+  letter-spacing:0.12em;
+  text-transform:uppercase;
+  color:var(--green);
+  margin-bottom:0.95rem;
+}
+.trust-panel p,
+.trust-panel li {
+  font-size:0.95rem;
+  line-height:1.65;
+  color:var(--ink-muted);
+}
+.trust-panel ul {
+  list-style:none;
+  display:grid;
+  gap:0.55rem;
+}
+.trust-panel li::before {
+  content:"";
+  display:inline-block;
+  width:6px;
+  height:6px;
+  margin-right:0.5rem;
+  border-radius:50%;
+  background:var(--green);
+  vertical-align:middle;
+}
+.visibility-compact {
+  grid-column:1 / -1;
+  display:grid;
+  grid-template-columns:repeat(5,1fr);
+  gap:0.5rem;
+  margin-top:clamp(1.6rem,3vw,2.5rem);
+}
+.visibility-step {
+  border:1px solid var(--parent-line);
+  border-radius:6px;
+  background:rgba(255,255,255,0.70);
+  padding:0.95rem;
+}
+.visibility-step.is-typical {
+  background:rgba(197,219,203,0.42);
+  border-color:rgba(44,95,63,0.20);
+}
+.visibility-step strong {
+  display:block;
+  font-family:var(--font-display);
+  font-size:1.35rem;
+  line-height:1;
+  color:var(--green);
+  margin-bottom:0.5rem;
+}
+.visibility-step span {
+  display:block;
+  font-family:var(--mono);
+  font-size:0.62rem;
+  letter-spacing:0.09em;
+  text-transform:uppercase;
+  color:var(--ink);
+  margin-bottom:0.45rem;
+}
+.visibility-step p {
+  font-size:0.82rem;
+  line-height:1.45;
+  color:var(--ink-muted);
+}
+.parent-final-cta {
+  text-align:center;
+  border-top:1px solid rgba(26,26,26,0.06);
+}
+.parent-final-cta .section-title {
+  max-width:820px;
+  margin:0 auto 1rem;
+}
+.parent-final-cta .section-lede {
+  margin:0 auto 1.6rem;
+}
+.parent-final-cta .parent-primary { margin-inline:auto; }
+@media (max-width: 980px) {
+  .parent-hero-copy,
+  .assignment-grid,
+  .ask-showcase-grid,
+  .trust-grid { grid-template-columns:1fr; }
+  .parent-hero-copy h1 { max-width:15ch; }
+  .ask-media-card,
+  .ask-copy-panel { order:initial; }
+  .trust-panels { grid-template-columns:1fr; }
+  .visibility-compact { grid-template-columns:repeat(2,1fr); }
+}
+@media (max-width: 760px) {
+  .parent-hero {
+    padding-top:calc(var(--nav-h) + 2rem);
+    padding-bottom:4rem;
+  }
+  .parent-hero-stage {
+    height:390px;
+    margin-inline:-0.45rem;
+  }
+  .parent-hero-copy h1 {
+    font-size:clamp(2.25rem,11vw,3.25rem);
+    line-height:1.02;
+  }
+  .reel-head {
+    display:grid;
+    align-items:start;
+  }
+  .reel-controls { justify-content:flex-start; }
+  .reel-window {
+    padding:0.18rem;
+    margin-inline:-0.18rem;
+  }
+  .reel-slide,
+  .reel-slide.is-brightspot,
+  .reel-slide.is-recent,
+  .reel-slide.is-comingup,
+  .reel-slide.is-goals,
+  .reel-slide.is-talkabout,
+  .reel-slide.is-needshelp {
+    --reel-stage-h:300px;
+    grid-template-columns:1fr;
+    grid-template-areas:"media" "copy";
+    min-height:0;
+    gap:1rem;
+    padding:0.55rem 0;
+  }
+  .reel-slide::before { inset:10% 0 8%; }
+  .reel-slide.is-recent { --reel-stage-h:350px; }
+  .reel-slide.is-comingup,
+  .reel-slide.is-goals,
+  .reel-slide.is-needshelp { --reel-stage-h:210px; }
+  .reel-slide.is-brightspot,
+  .reel-slide.is-talkabout { --reel-stage-h:285px; }
+  .reel-media {
+    min-height:var(--reel-stage-h);
+    padding:0.75rem;
+    border-radius:18px;
+  }
+  .reel-media img,
+  .reel-media video {
+    max-height:calc(var(--reel-stage-h) - 0.75rem);
+    border-radius:12px;
+  }
+  .reel-caption {
+    grid-template-columns:1fr;
+    gap:0.55rem;
+    align-items:start;
+    justify-self:stretch;
+    max-width:none;
+    margin:0;
+    padding:1rem;
+    min-height:auto;
+    grid-template-rows:auto;
+  }
+  .reel-slide.is-recent .reel-caption,
+  .reel-slide.is-goals .reel-caption {
+    grid-template-columns:1fr;
+    max-width:none;
+    padding:1rem;
+    border:1px solid rgba(var(--reel-accent),0.16);
+    border-radius:18px;
+    background:rgba(255,253,248,0.84);
+    box-shadow:0 14px 34px rgba(45,40,32,0.09);
+  }
+  .reel-slide.is-needshelp .reel-caption {
+    grid-template-columns:1fr;
+    width:auto;
+    max-width:none;
+    padding:0 0.25rem;
+    border:0;
+    background:transparent;
+    box-shadow:none;
+  }
+  .reel-slide.is-recent .reel-kicker,
+  .reel-slide.is-goals .reel-kicker,
+  .reel-slide.is-needshelp .reel-kicker,
+  .reel-slide.is-recent .reel-title,
+  .reel-slide.is-recent .reel-sub,
+  .reel-slide.is-goals .reel-title,
+  .reel-slide.is-goals .reel-sub,
+  .reel-slide.is-needshelp .reel-title,
+  .reel-slide.is-needshelp .reel-sub {
+    grid-column:auto;
+    grid-row:auto;
+  }
+  .reel-title {
+    max-width:none;
+    font-size:clamp(1.35rem,7vw,1.8rem);
+  }
+  .reel-slide.is-needshelp .reel-title { white-space:normal; }
+  .reel-sub { max-width:none; }
+  .privacy-reel-visual { grid-template-columns:1fr; }
+  .outcome-chips,
+  .visibility-compact { grid-template-columns:1fr; }
+  .product-reel-section,
+  .assignment-story,
+  .ask-showcase,
+  .trust-story,
+  .parent-final-cta { padding-block:4rem; }
+}
   </style>
   <link rel="stylesheet" href="/assets/refine.css">
 </head>
@@ -515,177 +2020,220 @@ a { color: inherit; text-decoration: none; }
     </div>
   </nav>
 
-  <main>
+  <main class="parent-redesign">
 
     <!-- HERO -->
-    <section class="hero">
-      <div class="container hero-center">
-        <span class="eyebrow">For Parents</span>
-        <h1 class="hero-h1">Know how your child is learning. Not just what they submitted.</h1>
-        <p class="hero-sub">Orchen gives parents a weekly view of their child's learning &mdash; conversation starters, bright spots, and what they've been working on. What you see is configured by your school.</p>
-      </div>
-      <div class="container hero-stage">
-        <div class="stage">
-          <div class="shot-frame">
-            <div class="shot-chrome"><span class="shot-dot"></span><span class="shot-dot"></span><span class="shot-dot"></span><span class="shot-name">Parent &middot; Weekly digest</span></div>
-            <img src="/assets/product-parent-digest.png" alt="The Orchen parent weekly digest: a one-sentence summary of the week, activity stats, learning observations, and a suggested question to ask at home" loading="eager">
-          </div>
+    <section class="parent-hero">
+      <div class="pr-wide">
+        <div class="parent-hero-stage reveal">
+          <img src="/assets/ParentInterface(Maya).png" alt="Orchen parent portal showing Maya's weekly learning summary, active subjects, learning patterns, upcoming work, and suggested ways to help at home" loading="eager">
         </div>
-        <p class="shot-caption stage-cap">The weekly digest, as it lands in your inbox &mdash; ending with one thing to do tonight.</p>
-      </div>
-    </section>
 
-    <!-- WHAT YOU RECEIVE -->
-    <section class="section s-cream">
-      <div class="container">
-        <span class="eyebrow">What Parents See</span>
-        <h2 class="sec-h2">A weekly digest &mdash; not a transcript.</h2>
-        <p class="sec-body" style="max-width:640px;">You don't see your child's conversations with Orchen. You see what those conversations produced: how they're engaging, where they're making progress, and how you can support them at home.</p>
-        <p class="sec-body" style="max-width:640px;">Your school sets what's visible to you. The examples below reflect a mid-level visibility setting &mdash; the most common configuration.</p>
-        <div class="product-card" style="max-width:760px;margin:2.5rem auto 0;">
-          <span class="pc-label">Orchen Academy &middot; This Week</span>
-          <p class="pc-headline">This week, Test independently completed five quizzes using their existing learning materials.</p>
-          <div class="stat-row">
-            <div class="stat-cell"><span class="sl">Time This Week</span><span class="sv">&mdash;</span><span class="sx">No sessions yet</span></div>
-            <div class="stat-cell"><span class="sl">Streak</span><span class="sv">4 weeks</span><span class="sx">Active row</span></div>
-            <div class="stat-cell"><span class="sl">Sessions</span><span class="sv">4</span><span class="sx">2 subjects</span></div>
-            <div class="stat-cell"><span class="sl">Assignments</span><span class="sv">1 of 8</span><span class="sx">Completed</span></div>
+        <div class="parent-hero-copy">
+          <div>
+            <span class="eyebrow">Parent Portal</span>
+            <h1>See more of your child&rsquo;s learning than you thought possible.</h1>
           </div>
-          <div class="mix-bar">
-            <span style="background:var(--green);width:75%"></span>
-            <span style="background:var(--green-light);width:25%"></span>
-          </div>
-          <p class="pc-data"><span style="color:var(--green);">&#9679;</span> Science &middot; 3 &middot; Astronomy, Biology &nbsp;&nbsp; <span style="color:var(--green-light);">&#9679;</span> General &middot; 1 &middot; General Inquiry</p>
-          <div class="pc-block" style="margin-top:1.25rem;">
-            <p class="pc-h">How Test Is Learning</p>
-            <p class="pc-data">&middot; Uses retrieval practice by taking quizzes on their own.<br>&middot; Maintains a large bank of flashcards from prior work.<br>&middot; Learning this week was self-directed review, not new topic exploration.</p>
-          </div>
-          <div class="split2">
-            <div class="note-card" style="border-left:3px solid var(--amber);">
-              <p class="pc-h" style="color:var(--amber);">Bright Spot</p>
-              <p>Test took the initiative to complete five quizzes independently, without any formal sessions.</p>
-            </div>
-            <div class="note-card" style="border-left:3px solid #3E8E8E;">
-              <p class="pc-h" style="color:#3E8E8E;">Something to Talk About</p>
-              <p>A possible question: which of those recent quizzes felt the easiest, and why?</p>
+          <div class="parent-hero-aside">
+            <p>Orchen turns classroom learning signals into clear, private, useful context families can act on at home.</p>
+            <div class="parent-actions">
+              <a href="/#contact" class="parent-primary">Book a walkthrough &rarr;</a>
+              <span class="parent-proof">Purchased by schools. Designed for families.</span>
             </div>
           </div>
         </div>
       </div>
     </section>
 
-    <!-- WHAT YOU DON'T SEE -->
-    <section class="section s-dark">
-      <div class="container">
-        <span class="eyebrow">Privacy</span>
-        <h2 class="sec-h2">Your child has a private workspace. It stays private.</h2>
-        <p class="sec-body" style="max-width:640px;">What you see is a synthesis &mdash; the patterns and highlights that help you support learning at home, without turning every conversation into something your child feels watched for. Your school configures the visibility level on your account.</p>
-        <div class="split-priv">
-          <div class="priv-panel is-private">
-            <div class="priv-head">
-              <svg class="ico" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="11" width="18" height="11" rx="2"/><path d="M7 11V7a5 5 0 0 1 10 0v4"/></svg>
-              <h4>Stays Private</h4>
-            </div>
-            <ul class="priv-list">
+    <!-- PRODUCT REEL -->
+    <section class="product-reel-section" data-product-reel aria-label="Parent portal product reel">
+      <div class="pr-wide">
+        <div class="reel-head">
+          <div class="reel-head-copy">
+            <span class="section-kicker">The Parent View</span>
+            <h2 class="section-title">A parent experience schools can stand behind.</h2>
+          </div>
+          <div class="reel-controls" aria-label="Product reel controls">
+            <button class="reel-btn" type="button" data-reel-prev aria-label="Previous product moment">‹</button>
+            <button class="reel-btn" type="button" data-reel-next aria-label="Next product moment">›</button>
+            <button class="reel-pause" type="button" data-reel-pause aria-pressed="false">Pause</button>
+          </div>
+        </div>
+
+        <div class="reel-window">
+          <div class="reel-track">
+            <article class="reel-slide is-brightspot">
+              <div class="reel-media">
+                <img src="/assets/ParentInterfaceBrightSpotMaya.png" alt="The Bright Spot card in the parent portal celebrating a moment of curiosity from Maya's week" loading="lazy">
+              </div>
+              <div class="reel-caption">
+                <span class="reel-kicker">Weekly signal</span>
+                <span class="reel-title">Know what to praise.</span>
+                <span class="reel-sub">A specific moment of curiosity gives families a natural place to start.</span>
+              </div>
+            </article>
+            <article class="reel-slide is-recent">
+              <div class="reel-media">
+                <img src="/assets/ParentInterfaceRecentLearningMaya.png" alt="The Recent Learning timeline showing specific moments from Maya's week with time spent" loading="lazy">
+              </div>
+              <div class="reel-caption">
+                <span class="reel-kicker">Learning trail</span>
+                <span class="reel-title">See the week as moments.</span>
+                <span class="reel-sub">Short observations make progress easier to understand than minutes or scores alone.</span>
+              </div>
+            </article>
+            <article class="reel-slide is-comingup">
+              <div class="reel-media">
+                <img src="/assets/ParentInterfaceComingUpMaya.png" alt="The Coming Up list showing Maya's upcoming assignments and due dates" loading="lazy">
+              </div>
+              <div class="reel-caption">
+                <span class="reel-kicker">Next up</span>
+                <span class="reel-title">Understand what is coming.</span>
+                <span class="reel-sub">Upcoming work is translated into plain language before it becomes urgent.</span>
+              </div>
+            </article>
+            <article class="reel-slide is-goals">
+              <div class="reel-media">
+                <img src="/assets/ParentInterfaceMayasGoals.png" alt="Maya's Goals showing what she is working toward in her own words" loading="lazy">
+              </div>
+              <div class="reel-caption">
+                <span class="reel-kicker">Student voice</span>
+                <span class="reel-title">See what they are aiming for.</span>
+                <span class="reel-sub">Goals connect schoolwork to a concrete next step your child recognizes.</span>
+              </div>
+            </article>
+            <article class="reel-slide is-talkabout">
+              <div class="reel-media">
+                <img src="/assets/ParentInterfaceSomethingtoAskAboutMaya.png" alt="A Something to Talk About card with a ready-made question to ask Maya at home" loading="lazy">
+              </div>
+              <div class="reel-caption">
+                <span class="reel-kicker">Conversation starter</span>
+                <span class="reel-title">Know what to ask tonight.</span>
+                <span class="reel-sub">Orchen turns a learning moment into one question a parent can actually use.</span>
+              </div>
+            </article>
+            <article class="reel-slide is-needshelp">
+              <div class="reel-media">
+                <img src="/assets/ParentInterfaceWhereMayaNeedsHelp.png" alt="The Where Maya Needs Help card giving an honest read on the week" loading="lazy">
+              </div>
+              <div class="reel-caption">
+                <span class="reel-kicker">Support read</span>
+                <span class="reel-title">Know whether to step in.</span>
+                <span class="reel-sub">Families get a direct signal, including when there is nothing concerning to chase.</span>
+              </div>
+            </article>
+          </div>
+        </div>
+
+        <div class="reel-dots" aria-label="Product reel position">
+          <button class="reel-dot is-active" type="button" data-reel-dot aria-label="Show Bright Spot"></button>
+          <button class="reel-dot" type="button" data-reel-dot aria-label="Show Recent Learning"></button>
+          <button class="reel-dot" type="button" data-reel-dot aria-label="Show Coming Up"></button>
+          <button class="reel-dot" type="button" data-reel-dot aria-label="Show Their Goals"></button>
+          <button class="reel-dot" type="button" data-reel-dot aria-label="Show Something to Talk About"></button>
+          <button class="reel-dot" type="button" data-reel-dot aria-label="Show Where They Need Help"></button>
+        </div>
+      </div>
+    </section>
+
+    <!-- ASSIGNMENTS -->
+    <section class="assignment-story">
+      <div class="pr-wide assignment-grid">
+        <div class="assignment-media reveal">
+          <video src="/assets/shot-parent-assignment-drilldown.mp4" poster="/assets/shot-parent-assignment-drilldown-poster.jpg" autoplay muted loop playsinline preload="metadata" aria-label="A parent clicking an assignment to reveal assignment context, student status, and support guidance"></video>
+        </div>
+        <div class="assignment-copy reveal">
+          <span class="section-kicker">Assignments</span>
+          <h2 class="section-title">When parents only see a due date, they&rsquo;re still guessing.</h2>
+          <p class="section-lede">Orchen opens the assignment into what it covers, where the student is, and how a parent can support without taking over.</p>
+          <div class="outcome-chips" aria-label="Assignment drilldown outcomes">
+            <span class="outcome-chip">What this covers</span>
+            <span class="outcome-chip">Where they are</span>
+            <span class="outcome-chip">How to help</span>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ASK ANYTHING -->
+    <section class="ask-showcase">
+      <div class="pr-wide ask-showcase-grid">
+        <div class="ask-media-card reveal">
+          <video src="/assets/shot-parent-ask.mp4" poster="/assets/shot-parent-ask-poster.jpg" autoplay muted loop playsinline preload="metadata" aria-label="A parent asking Orchen about Maya's learning and receiving a plain-English response"></video>
+        </div>
+        <div class="ask-copy-panel reveal">
+          <span class="section-kicker">Ask Anything</span>
+          <h2 class="section-title">A report families can talk to.</h2>
+          <p class="section-lede">When a learning observation is unclear, parents can ask what it means and what to try at home.</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- TRUST + VISIBILITY -->
+    <section class="trust-story">
+      <div class="pr-wrap trust-grid">
+        <div class="trust-copy reveal">
+          <span class="section-kicker">Trust</span>
+          <h2 class="section-title">Clarity without surveillance.</h2>
+          <p class="section-lede">The parent portal is intentionally scoped: schools decide what families can see, and Orchen turns student work into synthesis instead of exposing private learning space.</p>
+        </div>
+        <div class="trust-panels reveal">
+          <div class="trust-panel">
+            <h3>Stays Private</h3>
+            <ul>
               <li>Raw conversation transcripts</li>
               <li>Journal entries</li>
               <li>Quiz answers</li>
               <li>Stated learning preferences</li>
             </ul>
           </div>
-          <div class="priv-panel is-shared">
-            <div class="priv-head">
-              <svg class="ico" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M2 12s3.5-7 10-7 10 7 10 7-3.5 7-10 7-10-7-10-7Z"/><circle cx="12" cy="12" r="3"/></svg>
-              <h4>Shared as Synthesis</h4>
-            </div>
-            <ul class="priv-list">
+          <div class="trust-panel is-receive">
+            <h3>Parents Receive</h3>
+            <ul>
               <li>Weekly progress digest</li>
-              <li>Bright spots &amp; highlights</li>
-              <li>Conversation starters for home</li>
-              <li>Subjects active this week</li>
+              <li>Bright spots and patterns</li>
+              <li>Conversation starters</li>
+              <li>Home support guidance</li>
             </ul>
           </div>
         </div>
-      </div>
-    </section>
-
-    <!-- ASSIGNMENTS -->
-    <section class="section s-cream">
-      <div class="container">
-        <span class="eyebrow">Assignments</span>
-        <h2 class="sec-h2">See what's due and what's been submitted.</h2>
-        <p class="sec-body">You see your child's assignment list &mdash; status, due date, and a plain-English explanation of what the assignment is for.</p>
-        <div class="tpl-grid">
-          <div class="tpl-card">
-            <p class="tpl-name">The universe</p>
-            <p class="tpl-time">Chat &middot; In progress &middot; Overdue &middot; Apr 6</p>
-            <span class="pg-toggle">See parent guide &or;</span>
+        <div class="visibility-compact reveal" aria-label="Parent visibility levels">
+          <div class="visibility-step">
+            <strong>1</strong>
+            <span>Minimal</span>
+            <p>Account exists. No learning data shown.</p>
           </div>
-          <div class="tpl-card">
-            <p class="tpl-name">Fractional Equivalence</p>
-            <p class="tpl-time">Chat &middot; Submitted &middot; Apr 10</p>
-            <span class="pg-toggle">See parent guide &or;</span>
+          <div class="visibility-step">
+            <strong>2</strong>
+            <span>Activity</span>
+            <p>Subjects active this week and total study time.</p>
           </div>
-          <div class="tpl-card">
-            <p class="tpl-name">The Role of Chromebooks in Education</p>
-            <p class="tpl-time">Writing &middot; Not started &middot; Overdue &middot; Apr 19</p>
-            <span class="pg-toggle">See parent guide &or;</span>
+          <div class="visibility-step is-typical">
+            <strong>3</strong>
+            <span>Summaries</span>
+            <p>Weekly digest, bright spots, conversation starters.</p>
           </div>
-          <div class="tpl-card">
-            <p class="tpl-name">Statistics &amp; Sampling</p>
-            <p class="tpl-time">Chat &middot; In progress &middot; Overdue &middot; Apr 11</p>
-            <span class="pg-toggle">See parent guide &or;</span>
+          <div class="visibility-step is-typical">
+            <strong>4</strong>
+            <span>Insights</span>
+            <p>Learning patterns and home support guidance.</p>
+          </div>
+          <div class="visibility-step">
+            <strong>5</strong>
+            <span>Transcripts</span>
+            <p>Read-only transcripts, redacted and logged.</p>
           </div>
         </div>
-      </div>
-    </section>
-
-    <!-- STUDY PATTERNS -->
-    <section class="section s-dark">
-      <div class="container">
-        <span class="eyebrow">Patterns</span>
-        <h2 class="sec-h2">Small signals. Useful context.</h2>
-        <p class="sec-body">Alongside the digest, Orchen surfaces small patterns &mdash; when your child tends to study, and where they may need a hand this week.</p>
-        <div class="mini-cards">
-          <div class="mini-card">
-            <svg class="ico" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="9"/><path d="M12 7v5l3 2"/></svg>
-            <h3>When Test Studies</h3>
-            <p>Most active late at night.</p>
-          </div>
-          <div class="mini-card">
-            <svg class="ico" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="9"/><circle cx="12" cy="12" r="5"/><circle cx="12" cy="12" r="1.4" fill="currentColor" stroke="none"/></svg>
-            <h3>Where Test Needs Help</h3>
-            <p>No specific struggles flagged this week. Test seems to be handling the material well.</p>
-          </div>
-        </div>
-      </div>
-    </section>
-
-    <!-- VISIBILITY LEVELS -->
-    <section class="section s-cream">
-      <div class="container">
-        <span class="eyebrow">How Visibility Works</span>
-        <h2 class="sec-h2">Your school sets what you see. You can ask for more.</h2>
-        <p class="sec-body">Orchen uses a five-level visibility model. Your school sets the default and the maximum allowed for your account. Some schools allow parents to request a higher level; others set a fixed policy.</p>
-        <div class="ladder">
-          <div class="rung"><span class="rung-n">1<span class="rung-bar" style="width:18px"></span></span><span class="rung-lv">Minimal</span><span class="rung-desc">Account exists. No learning data shown.</span></div>
-          <div class="rung"><span class="rung-n">2<span class="rung-bar" style="width:34px"></span></span><span class="rung-lv">Activity</span><span class="rung-desc">Subjects active this week. Total study time.</span></div>
-          <div class="rung is-typical"><span class="rung-n">3<span class="rung-bar" style="width:50px"></span></span><span class="rung-lv">Summaries<span class="rung-tag">Typical</span></span><span class="rung-desc">Weekly digest &middot; Bright Spot &middot; Conversation starters.</span></div>
-          <div class="rung is-typical"><span class="rung-n">4<span class="rung-bar" style="width:66px"></span></span><span class="rung-lv">Insights<span class="rung-tag">Typical</span></span><span class="rung-desc">All of Level 3 + qualitative learning insights and home support guidance.</span></div>
-          <div class="rung"><span class="rung-n">5<span class="rung-bar" style="width:82px"></span></span><span class="rung-lv">Transcripts</span><span class="rung-desc">All of Level 4 + read-only session transcripts. Crisis-flagged sessions redacted. All access logged.</span></div>
-        </div>
-        <p class="caption">Most schools configure parents at Level 3 or Level 4 by default. Questions about your visibility level should go to your school's administration.</p>
       </div>
     </section>
 
     <!-- CTA -->
-    <section class="section s-cream cta">
-      <div class="container">
-        <span class="eyebrow">For Schools</span>
-        <h2 class="cta-h">Orchen is purchased by schools, not individual families.</h2>
-        <p class="sec-body">If your school uses Orchen, your account is created by the school. If you'd like your school to consider it, the right conversation starts with your Head of School or Director of Technology.</p>
-        <a href="/#contact" class="btn-cta">Book a school walkthrough &rarr;</a>
-        <p class="cta-alt">Or write to us at <a href="mailto:emil@orchen.ai" style="color:var(--green);border-bottom:1px solid var(--green);">emil@orchen.ai</a></p>
+    <section class="parent-final-cta">
+      <div class="pr-wrap">
+        <span class="section-kicker">For Schools</span>
+        <h2 class="section-title">Give families clarity without adding work for teachers.</h2>
+        <p class="section-lede">Parent access is school-managed, visibility is configurable, and families get guidance they can use without needing raw student conversations.</p>
+        <a href="/#contact" class="parent-primary">Book a school walkthrough &rarr;</a>
       </div>
     </section>
 
@@ -719,6 +2267,125 @@ a { color: inherit; text-decoration: none; }
       links.classList.toggle('open', !open);
     });
   }());
+
+  // Parent portal product reel
+  (function () {
+    var reel = document.querySelector('[data-product-reel]');
+    if (!reel) return;
+    var track = reel.querySelector('.reel-track');
+    var slides = Array.prototype.slice.call(reel.querySelectorAll('.reel-slide'));
+    var dots = Array.prototype.slice.call(reel.querySelectorAll('[data-reel-dot]'));
+    var prev = reel.querySelector('[data-reel-prev]');
+    var next = reel.querySelector('[data-reel-next]');
+    var pause = reel.querySelector('[data-reel-pause]');
+    var reduceMotion = window.matchMedia && window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+    var activeIndex = 0;
+    var timer = null;
+    var inView = false;
+    var userPaused = reduceMotion;
+    var delay = 6600;
+
+    function normalize(index) {
+      if (index < 0) return slides.length - 1;
+      if (index >= slides.length) return 0;
+      return index;
+    }
+
+    function updatePause() {
+      if (!pause) return;
+      pause.textContent = userPaused ? 'Play' : 'Pause';
+      pause.setAttribute('aria-pressed', userPaused ? 'true' : 'false');
+    }
+
+    function show(index) {
+      activeIndex = normalize(index);
+      track.style.transform = 'translateX(' + (-activeIndex * 100) + '%)';
+      dots.forEach(function (dot, i) {
+        dot.classList.toggle('is-active', i === activeIndex);
+        dot.setAttribute('aria-current', i === activeIndex ? 'true' : 'false');
+      });
+      slides.forEach(function (slide, i) {
+        slide.setAttribute('aria-hidden', i === activeIndex ? 'false' : 'true');
+      });
+    }
+
+    function stop() {
+      if (timer) window.clearInterval(timer);
+      timer = null;
+    }
+
+    function start() {
+      if (reduceMotion || userPaused || !inView || timer || slides.length < 2) return;
+      timer = window.setInterval(function () {
+        show(activeIndex + 1);
+      }, delay);
+    }
+
+    function pauseForUser() {
+      userPaused = true;
+      stop();
+      updatePause();
+    }
+
+    show(0);
+    updatePause();
+
+    dots.forEach(function (dot, index) {
+      dot.addEventListener('click', function () {
+        show(index);
+        pauseForUser();
+      });
+    });
+    if (prev) prev.addEventListener('click', function () {
+      show(activeIndex - 1);
+      pauseForUser();
+    });
+    if (next) next.addEventListener('click', function () {
+      show(activeIndex + 1);
+      pauseForUser();
+    });
+    if (pause) pause.addEventListener('click', function () {
+      userPaused = !userPaused;
+      updatePause();
+      if (userPaused) stop();
+      else start();
+    });
+
+    reel.addEventListener('mouseenter', stop);
+    reel.addEventListener('mouseleave', start);
+    reel.addEventListener('focusin', stop);
+    reel.addEventListener('focusout', start);
+    reel.addEventListener('touchstart', stop, { passive: true });
+
+    if ('IntersectionObserver' in window) {
+      var observer = new IntersectionObserver(function (entries) {
+        entries.forEach(function (entry) {
+          inView = entry.isIntersecting;
+          if (inView) start();
+          else stop();
+        });
+      }, { threshold: 0.2 });
+      observer.observe(reel);
+    } else {
+      inView = true;
+      start();
+    }
+  }());
+
+  // Reveal-on-scroll (progressive enhancement; visible by default without JS)
+  (function () {
+    var rm = window.matchMedia && window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+    var els = document.querySelectorAll('.reveal');
+    if (rm || !('IntersectionObserver' in window) || !els.length) return;
+    els.forEach(function (el) { el.classList.add('is-armed'); });
+    var io = new IntersectionObserver(function (entries) {
+      entries.forEach(function (e) {
+        if (e.isIntersecting) { e.target.classList.add('is-in'); io.unobserve(e.target); }
+      });
+    }, { threshold: 0.2 });
+    els.forEach(function (el) { io.observe(el); });
+  }());
+
   </script>
 
 </body>
