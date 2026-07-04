@@ -480,3 +480,15 @@ details[open] .faq-chevron {
   .compare-index-grid { grid-template-columns: 1fr; }
   .cmp-hero { padding-top: calc(var(--nav-h) + 2.5rem); }
 }
+
+
+/* ─── STICKY TABLE HEADERS (desktop) ─── */
+@media (min-width: 900px) {
+  .cmp-table-wrap { overflow-x: visible; }
+  .cmp-table thead th {
+    position: sticky;
+    top: var(--nav-h, 62px);
+    z-index: 5;
+    background: var(--bg);
+  }
+}
