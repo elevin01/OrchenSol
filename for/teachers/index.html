@@ -2,6 +2,7 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8">
+  <meta name="theme-color" content="#1A3527">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>AI for Schools: The Orchen Teacher Dashboard &amp; Tools</title>
   <meta name="description" content="The Orchen teacher experience: per-student learning profiles built from real AI sessions, AI-guided chat, writing, and quiz assignments, and class-level concept gap analysis so you can see how a class is really doing.">
@@ -20,9 +21,6 @@
   <meta name="twitter:title" content="AI for Schools: The Orchen Teacher Dashboard &amp; Tools">
   <meta name="twitter:description" content="Per-student learning profiles, AI-guided assignments, and class-level concept gap analysis.">
   <meta name="twitter:image" content="https://orchen.ai/assets/og-image.png">
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,700;1,400&family=Lora:ital,wght@0,400;0,500;1,400&display=swap" rel="stylesheet">
   <style>
 :root {
   --green:       #2C5F3F;
@@ -481,9 +479,11 @@ a { color: inherit; text-decoration: none; }
     }
   }
   </script>
+    <link rel="preload" href="/assets/fonts/playfair-bold.woff2" as="font" type="font/woff2" crossorigin>
+  <link rel="preload" href="/assets/fonts/lora-regular.woff2" as="font" type="font/woff2" crossorigin>
   <link rel="stylesheet" href="/assets/refine.css">
 </head>
-<body>
+<body class="site-warm-refresh">
 
   <nav class="nav" id="nav">
     <div class="nav-inner">
@@ -491,6 +491,15 @@ a { color: inherit; text-decoration: none; }
       <div class="nav-links" id="nav-links">
         <a href="/the-problem">The Problem</a>
         <a href="/how-it-works/">How It Works</a>
+        <div class="nav-drop">
+          <button class="nav-drop__btn" type="button" aria-haspopup="true">Who it&rsquo;s for</button>
+          <div class="nav-drop__menu">
+            <a href="/for/teachers">Teachers</a>
+            <a href="/for/parents">Parents</a>
+            <a href="/for/advisors">Advisors</a>
+            <a href="/solutions/heads-of-school">Heads of School</a>
+          </div>
+        </div>
         <a href="/trust">Trust</a>
         <a href="/#contact">For Schools</a>
       </div>
@@ -507,14 +516,14 @@ a { color: inherit; text-decoration: none; }
     <section class="hero">
       <div class="container hero-center">
         <span class="eyebrow">For Teachers</span>
-        <h1 class="hero-h1">You'll know how each student actually thinks. Not just what they submitted.</h1>
-        <p class="hero-sub">Orchen builds a learning profile for every student from real interactions &mdash; not surveys, not self-reporting. It updates as you teach them.</p>
+        <h1 class="hero-h1">See how each student is learning, not just what they turned in.</h1>
+        <p class="hero-sub">Orchen turns real student interactions into clear learning profiles, class patterns, and assignment insight teachers can use tomorrow.</p>
       </div>
       <div class="container hero-stage">
         <div class="stage">
           <div class="shot-frame">
             <div class="shot-chrome"><span class="shot-dot"></span><span class="shot-dot"></span><span class="shot-dot"></span><span class="shot-name">Teacher &middot; Class insights</span></div>
-            <img src="/assets/shot-teacher-class-insights.png" alt="The Orchen class insights view: students needing attention, concept distribution by subject, and class-level stats" loading="eager">
+            <video src="/assets/shot-teacher-classview.mp4" poster="/assets/shot-teacher-classview-poster.jpg" autoplay muted loop playsinline preload="metadata" style="width:100%;display:block;" aria-label="The Orchen class view, live: students needing attention, concept distribution, and class-level stats"></video>
           </div>
         </div>
         <p class="shot-caption stage-cap">See the gaps before the test, not after &mdash; the whole class as a distribution.</p>
@@ -589,7 +598,7 @@ a { color: inherit; text-decoration: none; }
           <div class="col-copy">
             <span class="eyebrow">Assignments</span>
             <h2 class="sec-h2">Assignments students actually engage with.</h2>
-            <p class="sec-body">Create guided chat, writing, or quiz assignments. Orchen runs them with the same Socratic posture &mdash; it won't hand students the answer, even when they ask directly.</p>
+            <p class="sec-body">Create guided chat, writing, or quiz assignments. Orchen runs them with the same Socratic posture &mdash; guiding with questions all the way to the answer, even when students ask for it outright.</p>
             <p class="sec-body">You see who submitted, how long they were actively working, and how many exchanges it took. Not to surveil &mdash; to understand.</p>
           </div>
           <div class="col-card">
@@ -617,7 +626,7 @@ a { color: inherit; text-decoration: none; }
             <svg class="flow-ico" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M21 11.5a8.38 8.38 0 0 1-.9 3.8 8.5 8.5 0 0 1-7.6 4.7 8.38 8.38 0 0 1-3.8-.9L3 21l1.9-5.7a8.38 8.38 0 0 1-.9-3.8 8.5 8.5 0 0 1 4.7-7.6 8.38 8.38 0 0 1 3.8-.9h.5a8.48 8.48 0 0 1 8 8v.5Z"/><path d="M12 8v.01M12 11v3"/></svg>
             <span class="step-n">Step 02</span>
             <h4>Orchen asks back</h4>
-            <p>It guides with questions &mdash; it won't hand over the answer, even on request.</p>
+            <p>It guides with questions until the student reaches the answer themselves &mdash; every time, on every request.</p>
           </div>
           <div class="flow-arrow"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14"/><path d="m13 6 6 6-6 6"/></svg></div>
           <div class="flow-step">
@@ -648,7 +657,7 @@ a { color: inherit; text-decoration: none; }
         <div class="stage">
           <div class="shot-frame">
             <div class="shot-chrome"><span class="shot-dot"></span><span class="shot-dot"></span><span class="shot-dot"></span><span class="shot-name">Student &middot; Writing workspace</span></div>
-            <img src="/assets/product-writing-workspace.png" alt="The Orchen writing workspace: a full essay editor with a contextual outline card guiding the student through their draft" loading="lazy">
+            <img src="/assets/product-writing-workspace.webp" alt="The Orchen writing workspace: a full essay editor with a contextual outline card guiding the student through their draft" loading="lazy">
           </div>
         </div>
         <p class="shot-caption stage-cap">A full editing workspace &mdash; prewriting, drafting, and a rubric-scored draft check.</p>
@@ -711,5 +720,6 @@ a { color: inherit; text-decoration: none; }
   }());
   </script>
 
+  <a class="mobile-cta-bar" href="/#contact">Book a walkthrough &rarr;</a>
 </body>
 </html>

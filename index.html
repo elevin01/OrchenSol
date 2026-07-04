@@ -7,6 +7,7 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8">
+  <meta name="theme-color" content="#1A3527">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Orchen | Managed AI Tutor &amp; Learning Environment for Schools</title>
   <meta name="description" content="Orchen is a managed AI tutor and safe learning environment built for schools. A Socratic AI that guides student thinking instead of just giving answers.">
@@ -16,9 +17,6 @@
   <meta property="og:title" content="Orchen | Managed AI Tutor &amp; Learning Environment for Schools">
   <meta property="og:description" content="Orchen is a managed AI tutor and safe learning environment built for schools. A Socratic AI that guides student thinking instead of just giving answers.">
   <meta property="og:type" content="website">
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,600;0,700;1,400;1,600;1,700&family=Lora:ital,wght@0,400;0,500;1,400&display=swap" rel="stylesheet">
   <style>
 
 /* ═══════════════════════════════════════════════════════════════
@@ -49,8 +47,8 @@
 
   --wall-bg:        #0C1210;
   --wall-text:      #EDE9E4;
-  --wall-muted:     rgba(237,233,228,0.52);
-  --wall-faint:     rgba(237,233,228,0.28);
+  --wall-muted:     rgba(237,233,228,0.74);
+  --wall-faint:     rgba(237,233,228,0.48);
   --wall-border:    rgba(237,233,228,0.07);
 
   --font-display:   'Playfair Display', Georgia, serif;
@@ -134,9 +132,7 @@ h4 {
 }
 
 /* Wider track for desktop-heavy visual sections */
-.research-strip .container,
-.problem-section .container,
-.reframe .container {
+.research-strip .container {
   max-width: var(--max-w-wide);
 }
 .section { padding-block: 7rem; }
@@ -618,181 +614,6 @@ h4 {
   margin-top: 7px;
 }
 
-/* ─── PROBLEM / STATS ─── */
-.problem-section {
-  background: #1A3527;
-  border-bottom: 1px solid rgba(255,255,255,0.06);
-  color: var(--wall-text);
-}
-.problem-section .eyebrow {
-  color: var(--amber);
-  letter-spacing: 0.2em;
-}
-.problem-section-head {
-  border-bottom: 1px solid rgba(255,255,255,0.1);
-  padding-bottom: 2rem;
-  margin-bottom: 3rem;
-}
-.problem-title {
-  font-family: var(--font-display);
-  font-size: clamp(2rem, 4vw, 3.25rem);
-  font-weight: 700;
-  color: #fff;
-  line-height: 1.1;
-  letter-spacing: -0.025em;
-  margin: 0.5rem 0 0.75rem;
-}
-.problem-subhead {
-  font-family: var(--font-body);
-  font-size: 0.9375rem;
-  color: var(--wall-muted);
-  max-width: 560px;
-  margin: 0;
-  line-height: 1.6;
-}
-.baseline-context {
-  border: 1px solid rgba(255,255,255,0.08);
-  border-bottom: none;
-  padding: 1.5rem 2.25rem;
-  margin-bottom: 1px;
-  font-family: var(--font-body);
-  font-size: 0.8125rem;
-  line-height: 1.7;
-  color: var(--wall-faint);
-}
-.baseline-context strong { color: var(--wall-muted); font-weight: 500; }
-.baseline-context .baseline-label {
-  font-size: 0.5625rem;
-  letter-spacing: 0.2em;
-  text-transform: uppercase;
-  color: rgba(255,255,255,0.2);
-  display: block;
-  margin-bottom: 0.5rem;
-}
-.stats-grid {
-  display: grid;
-  grid-template-columns: repeat(2, 1fr);
-  gap: 1px;
-  background: rgba(255,255,255,0.08);
-  border: 1px solid rgba(255,255,255,0.08);
-  margin-bottom: 1px;
-}
-.stat-block {
-  background: #1A3527;
-  padding: 2.5rem 2.25rem;
-  display: flex;
-  flex-direction: column;
-  gap: 0.875rem;
-  position: relative;
-}
-.stat-source::after {
-  content: '';
-  display: inline-block;
-  width: 0.38em;
-  height: 0.38em;
-  border-top: 1px solid currentColor;
-  border-right: 1px solid currentColor;
-  transform: rotate(45deg);
-  margin-left: 0.3em;
-  vertical-align: middle;
-  position: relative;
-  top: -0.05em;
-  opacity: 0.7;
-}
-.stat-block::before {
-  content: '';
-  position: absolute;
-  top: 0; left: 0;
-  width: 3px; height: 100%;
-  background: var(--amber);
-  opacity: 0.6;
-}
-.stat-category {
-  font-family: var(--font-body);
-  font-size: 0.625rem;
-  letter-spacing: 0.2em;
-  text-transform: uppercase;
-  color: var(--amber);
-  margin: 0;
-}
-.stat-num {
-  font-family: var(--font-display);
-  font-size: clamp(4.5rem, 8vw, 7.5rem);
-  font-weight: 700;
-  color: #fff;
-  line-height: 0.85;
-  letter-spacing: -0.04em;
-  margin: 0;
-}
-.stat-finding {
-  font-family: var(--font-body);
-  font-size: 0.875rem;
-  line-height: 1.7;
-  color: var(--wall-muted);
-  margin: 0;
-  flex: 1;
-}
-.stat-finding strong { color: var(--wall-text); font-weight: 500; }
-.stat-source {
-  font-family: var(--font-body);
-  font-size: 0.625rem;
-  letter-spacing: 0.14em;
-  text-transform: uppercase;
-  color: var(--wall-faint);
-  text-decoration: none;
-  border-bottom: 1px solid rgba(255,255,255,0.1);
-  padding-bottom: 1px;
-  align-self: flex-start;
-  transition: color 0.2s, border-color 0.2s;
-}
-.stat-source:hover { color: var(--amber); border-color: var(--amber); }
-.stats-section-break {
-  border-left: 1px solid rgba(255,255,255,0.08);
-  border-right: 1px solid rgba(255,255,255,0.08);
-  padding: 0.625rem 2.25rem;
-  font-size: 0.5625rem;
-  letter-spacing: 0.22em;
-  text-transform: uppercase;
-  color: rgba(255,255,255,0.18);
-  font-family: var(--font-body);
-  background: rgba(255,255,255,0.015);
-}
-.tools-strip {
-  border: 1px solid rgba(255,255,255,0.08);
-  border-top: none;
-  padding: 2rem 2.25rem;
-  display: flex;
-  flex-wrap: wrap;
-  align-items: flex-start;
-  gap: 0.5rem 2.5rem;
-}
-.tools-label {
-  font-size: 0.625rem;
-  letter-spacing: 0.2em;
-  text-transform: uppercase;
-  color: var(--wall-faint);
-  width: 100%;
-  margin-bottom: 0.75rem;
-  font-family: var(--font-body);
-}
-.tool-item {
-  display: flex;
-  align-items: center;
-  gap: 0.5rem;
-  font-family: var(--font-body);
-  font-size: 0.8125rem;
-  color: var(--wall-muted);
-}
-.tool-name { color: var(--wall-text); font-weight: 500; }
-.tool-badge {
-  font-size: 0.6875rem;
-  color: var(--amber);
-  background: rgba(156,124,74,0.12);
-  border: 1px solid rgba(156,124,74,0.25);
-  border-radius: 2px;
-  padding: 1px 6px;
-  letter-spacing: 0.04em;
-}
 /* ─── PIVOT QUOTE — standalone full-bleed moment ─── */
 .quote-pivot {
   background: #1A3527;
@@ -824,91 +645,6 @@ h4 {
 @media (max-width: 768px) {
   .quote-pivot { padding-block: 5rem; }
 }
-
-/* ─── THE REFRAME ─── */
-.reframe {
-  background: var(--bg);
-  border-bottom: 1px solid var(--border);
-}
-
-/* Three-option treatment */
-.options-wrapper { margin-top: 0; }
-.options-eyebrow {
-  font-family: var(--font-body);
-  font-size: 0.6875rem;
-  font-weight: 500;
-  letter-spacing: 0.14em;
-  text-transform: uppercase;
-  color: var(--ink-faint);
-  margin-bottom: 1.5rem;
-}
-.options-grid {
-  display: grid;
-  grid-template-columns: repeat(3, 1fr);
-  gap: 1px;
-  background: var(--border);
-  border: 1px solid var(--border);
-}
-.option {
-  padding: 2rem 1.75rem;
-  display: flex;
-  flex-direction: column;
-  gap: 0.75rem;
-}
-.option--rejected {
-  background: var(--bg);
-  opacity: 0.45;
-  filter: saturate(0.4);
-}
-.option--chosen {
-  background: var(--green-faint);
-  position: relative;
-  box-shadow: 0 0 0 1.5px var(--green);
-}
-.option--chosen::before {
-  content: '';
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 4px;
-  height: 100%;
-  background: var(--green);
-}
-.option-verdict {
-  display: flex;
-  align-items: center;
-  gap: 0.4rem;
-}
-.verdict-mark {
-  font-size: 0.875rem;
-  line-height: 1;
-  font-family: var(--font-body);
-}
-.option--rejected .verdict-mark { color: var(--ink-faint); }
-.option--chosen .verdict-mark { color: var(--green); font-size: 1rem; }
-.option-title {
-  font-family: var(--font-display);
-  font-size: clamp(1.1rem, 2vw, 1.375rem);
-  font-weight: 700;
-  letter-spacing: -0.01em;
-  line-height: 1.1;
-  margin: 0;
-}
-.option--rejected .option-title {
-  color: var(--ink-muted);
-  text-decoration: line-through;
-  text-decoration-color: var(--border);
-  text-decoration-thickness: 1px;
-}
-.option--chosen .option-title { color: var(--green); }
-.option-body {
-  font-family: var(--font-body);
-  font-size: 0.9375rem;
-  line-height: 1.7;
-  margin: 0;
-}
-.option--rejected .option-body { color: var(--ink-faint); }
-.option--chosen .option-body { color: var(--ink-muted); }
 
 /* ─── ORCHEN ENTERS ─── */
 .orchen-enters {
@@ -1766,23 +1502,6 @@ h4 {
 }
 .advisor-compound strong { color: var(--ink); font-weight: 500; }
 
-/* ─── COMPRESSED STAT GRID + RESEARCH LINK ─── */
-.stats-grid--two { grid-template-columns: repeat(2, minmax(0,1fr)); }
-.research-brief-link {
-  text-align: center;
-  margin: 2.25rem 0 0;
-  font-family: var(--font-body);
-  font-size: 0.9375rem;
-}
-.research-brief-link a {
-  color: var(--wall-text);
-  text-decoration: none;
-  border-bottom: 1px solid rgba(237,233,228,0.32);
-  padding-bottom: 2px;
-  transition: color 0.2s, border-color 0.2s;
-}
-.research-brief-link a:hover { color: #fff; border-color: #fff; }
-
 /* ─── SECTION B2 — WHAT ORCHEN IS ─── */
 .what-is {
   background: var(--bg);
@@ -2016,578 +1735,219 @@ h4 {
   .yes-ai { padding-block: 5rem; }
 }
 
-/* ─── CINEMATIC SCROLL MATRIX SCROLLWAY ─── */
-.matrix-section {
-  background: #0A140E; /* Deep premium canvas background matches your hero block */
-  color: var(--wall-text);
-  position: relative;
-  padding-block: 0;
+/* ─── ROLE SELECTOR — one environment, four views ─── */
+.roles-section {
+  background: #EAF2EC;
+  border-top: 1px solid rgba(44,95,63,0.10);
+  border-bottom: 1px solid rgba(44,95,63,0.10);
+  padding-block: 7rem;
 }
-
-.matrix-viewport-container {
-  display: grid;
-  grid-template-columns: 0.9fr 1.1fr;
-  gap: 5rem;
+.roles-container {
   max-width: var(--max-w-wide);
-  margin: 0 auto;
+  margin-inline: auto;
   padding-inline: var(--pad);
 }
-
-/* Left Track Positioning */
-.matrix-left-track {
-  display: flex;
-  flex-direction: column;
-}
-
-.matrix-scroll-card {
-  min-height: 100vh;
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  padding-block: 4rem;
-  opacity: 0.22;
-  transform: translate3d(-16px, 0, 0);
-  transition: opacity 0.5s cubic-bezier(0.25, 1, 0.5, 1), transform 0.6s cubic-bezier(0.25, 1, 0.5, 1);
-  will-change: opacity, transform;
-}
-
-.matrix-scroll-card.active {
-  opacity: 1;
-  transform: translate3d(0, 0, 0);
-}
-
-.matrix-num-badge {
+.roles-head { margin-bottom: 2.5rem; }
+.roles-section .eyebrow { color: var(--green); letter-spacing: 0.2em; }
+.roles-title {
   font-family: var(--font-display);
-  font-size: clamp(3.5rem, 6vw, 5.5rem);
+  font-size: clamp(2rem, 3.6vw, 3rem);
   font-weight: 700;
-  line-height: 1;
-  color: var(--amber);
-  opacity: 0.4;
-  margin-bottom: 1rem;
-  letter-spacing: -0.03em;
-  transition: opacity 0.4s ease;
-}
-
-.matrix-scroll-card.active .matrix-num-badge {
-  opacity: 1;
-}
-
-.matrix-heading {
-  font-family: var(--font-display);
-  font-size: clamp(2.2rem, 3.5vw, 3rem);
-  font-weight: 700;
-  line-height: 1.1;
-  color: #fff;
-  letter-spacing: -0.02em;
-  margin-bottom: 1.5rem;
-}
-
-.matrix-body {
-  font-family: var(--font-body);
-  font-size: 1.125rem;
-  line-height: 1.8;
-  color: var(--wall-muted);
-  max-width: 480px;
-}
-
-/* Right Fixed Canvas Stage */
-.matrix-right-stage {
-  position: sticky;
-  top: 0;
-  height: 100vh;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  will-change: transform;
-}
-
-.canvas-mockup {
-  width: 100%;
-  max-width: 620px;
-  background: var(--bg-ui);
   color: var(--ink);
-  border-radius: 14px;
-  box-shadow: 0 30px 80px rgba(0, 0, 0, 0.45);
-  border: 1px solid rgba(255, 255, 255, 0.06);
-  overflow: hidden;
-  display: flex;
-  flex-direction: column;
-  min-height: 480px;
-  transition: transform 0.4s ease;
+  line-height: 1.1;
+  letter-spacing: -0.02em;
+  margin: 0.5rem 0 2.25rem;
+}
+.roles-title em { font-style: italic; color: var(--green); }
+
+.roles-tabs {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.375rem;
+  flex-wrap: wrap;
+  background: rgba(255,253,248,0.92);
+  border: 1px solid rgba(44,95,63,0.16);
+  border-radius: 999px;
+  padding: 0.375rem 0.5rem;
+  box-shadow: 0 10px 30px rgba(45,40,32,0.08);
+}
+.roles-tabs-label {
+  font-family: var(--font-body);
+  font-size: 0.8125rem;
+  font-style: italic;
+  color: var(--ink-faint);
+  padding: 0 0.5rem 0 0.875rem;
+  white-space: nowrap;
+}
+.roles-tab {
+  font-family: var(--font-body);
+  font-size: 0.9375rem;
+  font-weight: 500;
+  color: var(--ink-muted);
+  background: transparent;
+  border: none;
+  cursor: pointer;
+  border-radius: 999px;
+  padding: 0.55rem 1.25rem;
+  transition: color 0.2s, background 0.25s;
+}
+.roles-tab:hover { color: var(--ink); }
+.roles-tab.active { background: var(--green); color: #fff; }
+
+.roles-panel {
+  display: none;
+  grid-template-columns: 0.6fr 1.4fr;
+  gap: 3rem;
+  align-items: center;
+}
+.roles-panel.active { display: grid; animation: rolesPanelIn 0.45s cubic-bezier(0.25, 1, 0.5, 1); }
+@keyframes rolesPanelIn {
+  from { opacity: 0; transform: translateY(10px); }
+  to   { opacity: 1; transform: none; }
 }
 
-.canvas-chrome {
-  background: #EDF4F0;
-  padding: 14px 24px;
-  border-bottom: 1px solid var(--border);
+.roles-h3 {
+  font-family: var(--font-display);
+  font-size: clamp(1.75rem, 3vw, 2.5rem);
+  font-weight: 700;
+  color: var(--ink);
+  line-height: 1.15;
+  letter-spacing: -0.02em;
+  margin: 0 0 1.25rem;
+}
+.roles-h3 em { color: var(--green); }
+.roles-body {
+  font-family: var(--font-body);
+  font-size: 1.0625rem;
+  line-height: 1.8;
+  color: var(--ink-muted);
+  margin: 0 0 1.5rem;
+  max-width: 460px;
+}
+.roles-list {
+  list-style: none;
+  margin: 0 0 1.75rem;
+  padding: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 0.75rem;
+}
+.roles-list li {
+  font-family: var(--font-body);
+  font-size: 0.9375rem;
+  line-height: 1.6;
+  color: var(--ink);
+  padding-left: 1.5rem;
+  position: relative;
+}
+.roles-list li::before {
+  content: '\2192';
+  position: absolute;
+  left: 0;
+  color: var(--green);
+}
+.roles-link {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.45rem;
+  font-family: var(--font-body);
+  font-size: 0.875rem;
+  font-weight: 500;
+  letter-spacing: 0.01em;
+  color: var(--green);
+  text-decoration: none;
+  border-bottom: 1px solid rgba(44,95,63,0.32);
+  padding-bottom: 2px;
+  transition: color 0.2s, border-color 0.2s;
+}
+.roles-link:hover { color: var(--green-dark); border-color: var(--green-dark); }
+
+.roles-stage {
+  background: #fff;
+  border-radius: 14px;
+  border: 1px solid rgba(44,95,63,0.12);
+  box-shadow: 0 24px 64px rgba(45,40,32,0.16);
+  overflow: hidden;
+}
+.roles-chrome {
+  background: #F7F2EA;
+  padding: 12px 20px;
   display: flex;
   align-items: center;
   justify-content: space-between;
+  border-bottom: 1px solid var(--border-light);
 }
-
-.canvas-indicator-tag {
+.roles-chrome .mockup-dots { display: flex; gap: 6px; }
+.roles-chrome .mockup-dot {
+  width: 10px; height: 10px;
+  border-radius: 50%;
+  background: rgba(26,26,26,0.14);
+}
+.roles-chrome-tag {
   font-family: var(--font-body);
-  font-size: 0.75rem;
+  font-size: 0.6875rem;
   font-weight: 600;
   letter-spacing: 0.12em;
   text-transform: uppercase;
-  color: var(--green-light);
+  color: var(--green);
 }
-
-.canvas-window-body {
-  padding: 2.5rem;
-  flex: 1;
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
+.roles-media {
+  position: relative;
+  background: #F0EBE0;
 }
-
-/* Screen State Switching Transitions */
-.canvas-view-pane {
+.roles-shot {
   display: none;
-}
-
-.canvas-view-pane.active {
-  display: block;
-  position: relative;
-  min-height: 320px;
-}
-
-@keyframes visualMatrixSweep {
-  from { opacity: 0; transform: scale(0.96) translateY(16px); filter: blur(6px); }
-  to { opacity: 1; transform: scale(1) translateY(0); filter: blur(0); }
-}
-
-/* Content Details */
-.matrix-ui-header {
-  font-family: var(--font-display);
-  font-size: 1.5rem;
-  font-weight: 700;
-  color: var(--ink);
-  margin-bottom: 1.25rem;
-  letter-spacing: -0.015em;
-}
-
-.matrix-ui-box {
-  background: var(--bg);
-  border-left: 4px solid var(--green);
-  padding: 1.5rem;
-  border-radius: 0 6px 6px 0;
-  margin-bottom: 1.5rem;
-}
-
-/* Mobile Fallback Track Layout */
-@media (max-width: 900px) {
-  .matrix-viewport-container {
-    grid-template-columns: 1fr;
-    gap: 3rem;
-  }
-  .matrix-right-stage {
-    position: relative;
-    top: auto;
-    height: auto;
-    padding-bottom: 4rem;
-  }
-  .matrix-scroll-card {
-    min-height: 0;
-    opacity: 1;
-    transform: none;
-    padding-block: 3rem;
-    border-bottom: 1px solid rgba(255, 255, 255, 0.08);
-  }
-  .matrix-scroll-card:last-child {
-    border-bottom: none;
-  }
-}
-
-/* ─── ROLE STEP-THROUGH ANIMATIONS — one beat at a time, looping ─── */
-
-/* Each beat fills the pane (stage). Default: hidden. */
-.stu-beat, .tch-beat, .par-beat {
-  position: absolute;
-  inset: 0;
-  opacity: 0;
-  pointer-events: none;
-  display: flex;
-  flex-direction: column;
-  border-radius: 8px;
-  overflow: hidden;
-}
-
-/* Reduce-motion fallback: show only the final beat per role.
-   Overridden inside the @media (prefers-reduced-motion: no-preference) block below. */
-.canvas-view-pane.role-student.active .beat-final,
-.canvas-view-pane.role-teacher.active .beat-final,
-.canvas-view-pane.role-parent.active  .beat-final {
-  opacity: 1;
-  pointer-events: auto;
-}
-
-/* ── STUDENT BEAT 1 — dark chat surface ── */
-.stu-chat-screen {
-  background: #fff;
-  color: var(--ink);
-  padding: 1rem 1.1rem;
-  gap: 0.6rem;
-  border: 1px solid var(--border);
-}
-.stu-chat-header {
-  display: flex; align-items: center; gap: 0.5rem;
-  padding-bottom: 0.5rem;
-  border-bottom: 1px solid var(--border-light);
-  margin-bottom: 0.25rem;
-}
-.stu-chat-tab {
-  font-family: var(--font-display); font-weight: 700; font-size: 0.9rem;
-  color: var(--ink);
-}
-.stu-chat-meta {
-  font-family: 'SFMono-Regular', ui-monospace, Menlo, monospace;
-  font-size: 0.55rem; letter-spacing: 0.14em; text-transform: uppercase;
-  color: var(--ink-faint);
-  margin-left: auto;
-}
-.stu-chat-msg { display: flex; }
-.stu-chat-msg.user { justify-content: flex-end; }
-.stu-chat-msg.ai   { justify-content: flex-start; }
-.stu-chat-bubble {
-  font-family: var(--font-body); font-size: 0.82rem; line-height: 1.5;
-  padding: 0.55rem 0.8rem; border-radius: 10px; max-width: 82%;
-}
-.stu-chat-msg.user .stu-chat-bubble {
-  background: var(--border-light); color: var(--ink);
-  border-bottom-right-radius: 3px;
-}
-.stu-chat-msg.ai .stu-chat-bubble {
-  background: #D4E8DC; color: var(--green-dark);
-  border-bottom-left-radius: 3px;
-}
-
-/* ── STUDENT BEAT 2 — flashcard with 3D flip ── */
-.stu-flash-stage {
-  background: var(--bg);
-  perspective: 900px;
-  align-items: center; justify-content: center;
-  padding: 1.5rem;
-}
-.stu-flash-card {
-  position: relative;
-  width: 100%; max-width: 320px; height: 180px;
-  transform-style: preserve-3d;
-  will-change: transform;
-}
-.stu-flash-face {
-  position: absolute; inset: 0;
-  backface-visibility: hidden;
-  -webkit-backface-visibility: hidden;
-  background: #fff;
-  border: 1px solid var(--border);
-  border-radius: 10px;
-  padding: 1.25rem 1.4rem;
-  display: flex; flex-direction: column; justify-content: center; gap: 0.45rem;
-  box-shadow: 0 10px 30px rgba(26,26,26,0.10);
-}
-.stu-flash-face .flash-label {
-  font-family: 'SFMono-Regular', ui-monospace, Menlo, monospace;
-  font-size: 0.55rem; letter-spacing: 0.14em; text-transform: uppercase;
-  color: var(--ink-faint);
-}
-.stu-flash-front .flash-prompt {
-  font-family: var(--font-display); font-weight: 700; font-size: 1.1rem;
-  color: var(--ink); line-height: 1.25;
-}
-.stu-flash-front .flash-hint {
-  font-family: 'SFMono-Regular', ui-monospace, Menlo, monospace;
-  font-size: 0.625rem; letter-spacing: 0.1em; color: var(--green);
-  text-transform: uppercase;
-}
-.stu-flash-back {
-  background: var(--bg);
-  border-left: 3px solid var(--green);
-  transform: rotateY(180deg);
-}
-.stu-flash-back .flash-answer {
-  font-family: var(--font-body); font-size: 0.8125rem; line-height: 1.55;
-  color: var(--ink);
-}
-
-/* ── STUDENT BEAT 3 — quiz ── */
-.stu-quiz {
-  background: #fff;
-  border: 1px solid var(--border);
-  padding: 1.1rem 1.25rem;
-  gap: 0.55rem;
-  justify-content: center;
-}
-.stu-quiz .quiz-label {
-  font-family: 'SFMono-Regular', ui-monospace, Menlo, monospace;
-  font-size: 0.55rem; letter-spacing: 0.14em; text-transform: uppercase;
-  color: var(--ink-faint);
-}
-.stu-quiz .quiz-question {
-  font-family: var(--font-display); font-weight: 700; font-size: 0.95rem;
-  color: var(--ink); margin: 0 0 0.4rem;
-}
-.stu-quiz .quiz-opts {
-  display: grid; grid-template-columns: 1fr 1fr; gap: 0.45rem;
-}
-.stu-quiz .quiz-opt {
-  font-family: var(--font-body); font-size: 0.8125rem;
-  padding: 0.5rem 0.7rem;
-  background: transparent; border: 1px solid var(--border); border-radius: 6px;
-  color: var(--ink);
-  transition: background 0.4s, border-color 0.4s, color 0.4s;
-}
-
-/* ── STUDENT BEAT 4 — learning profile ── */
-.stu-profile-card {
-  background: var(--bg);
-  border: 1px solid var(--border);
-  padding: 1.25rem 1.4rem;
-  justify-content: center;
-  gap: 0.8rem;
-}
-.stu-profile-card .prof-label {
-  font-family: 'SFMono-Regular', ui-monospace, Menlo, monospace;
-  font-size: 0.55rem; letter-spacing: 0.14em; text-transform: uppercase;
-  color: var(--ink-faint);
-}
-.stu-profile-card .prof-row {
-  display: grid; grid-template-columns: 88px 1fr 36px;
-  gap: 0.6rem; align-items: center;
-}
-.stu-profile-card .prof-name { font-size: 0.75rem; color: var(--ink-muted); }
-.stu-profile-card .prof-track {
-  height: 7px; background: rgba(0,0,0,0.07); border-radius: 99px; overflow: hidden;
-}
-.stu-profile-card .prof-fill {
-  display: block; height: 100%; background: var(--green); width: 78%;
-}
-.stu-profile-card .prof-val {
-  font-family: 'SFMono-Regular', ui-monospace, Menlo, monospace;
-  font-size: 0.7rem; color: var(--ink-faint); text-align: right;
-}
-
-/* ── TEACHER BEAT 1 — dashboard ── */
-.tch-dashboard {
-  background: #fff;
-  border: 1px solid var(--border);
-  padding: 1rem;
-  justify-content: center;
-}
-.tch-dashboard .tch-grid {
-  display: grid; grid-template-columns: 1fr 1fr; gap: 0.55rem;
   width: 100%;
+  height: auto;
 }
-.tch-dashboard .tch-tile {
-  background: var(--bg); border-radius: 6px;
-  padding: 0.7rem 0.85rem 0.85rem;
-  display: flex; flex-direction: column; gap: 0.35rem;
-  opacity: 0;
+.roles-shot.active { display: block; animation: roleShotIn 0.35s ease; }
+@keyframes roleShotIn { from { opacity: 0; } to { opacity: 1; } }
+.roles-chips {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+  padding: 0.875rem 1rem;
+  background: #F7F2EA;
+  border-top: 1px solid var(--border-light);
 }
-.tch-dashboard .tch-label {
-  font-family: 'SFMono-Regular', ui-monospace, Menlo, monospace;
-  font-size: 0.55rem; letter-spacing: 0.14em; text-transform: uppercase;
-  color: var(--ink-faint);
-}
-.tch-dashboard .tch-val {
-  font-family: var(--font-display); font-weight: 700; font-size: 1.3rem;
-  color: var(--ink); line-height: 1;
-}
-.tch-dashboard .tch-track {
-  height: 4px; background: rgba(0,0,0,0.06); border-radius: 99px; overflow: hidden; margin-top: 0.2rem;
-}
-.tch-dashboard .tch-track > span {
-  display: block; height: 100%; background: var(--green); width: 100%;
-}
-
-/* ── TEACHER BEAT 2 — focused student card ── */
-.tch-focus-card {
-  background: var(--bg);
-  border-left: 3px solid var(--green);
-  border-radius: 0 8px 8px 0;
-  padding: 1.2rem 1.4rem;
-  justify-content: center;
-  gap: 0.45rem;
-}
-.tch-focus-card .tch-flabel {
-  font-family: 'SFMono-Regular', ui-monospace, Menlo, monospace;
-  font-size: 0.55rem; letter-spacing: 0.14em; text-transform: uppercase;
-  color: var(--ink-faint);
-}
-.tch-focus-card .tch-name {
-  font-family: var(--font-display); font-weight: 700; font-size: 1.05rem;
-  color: var(--ink);
-}
-.tch-focus-card .tch-note {
-  font-family: var(--font-body); font-size: 0.85rem; line-height: 1.55;
-  color: var(--ink-muted); margin: 0;
-}
-.tch-focus-card .tch-note strong { color: var(--ink); font-weight: 600; }
-
-/* ── PARENT BEAT 1 — summary view ── */
-.par-summary {
+.roles-chip {
+  font-family: var(--font-body);
+  font-size: 0.8125rem;
+  color: var(--ink-muted);
   background: #fff;
   border: 1px solid var(--border);
-  padding: 1.1rem 1.25rem;
-  gap: 0.55rem;
-  justify-content: center;
+  border-radius: 999px;
+  padding: 0.35rem 0.875rem;
+  cursor: pointer;
+  transition: color 0.2s, border-color 0.2s, background 0.2s;
 }
-.par-summary .par-row {
-  background: var(--bg);
-  border-radius: 6px;
-  padding: 0.7rem 0.9rem;
-  display: flex; align-items: center; justify-content: space-between;
-  gap: 0.75rem;
-  opacity: 0;
+.roles-chip:hover { border-color: var(--green); color: var(--green); }
+.roles-chip.active { background: var(--green); border-color: var(--green); color: #fff; }
+
+@media (max-width: 1100px) {
+  .roles-panel { grid-template-columns: 1fr; gap: 2.25rem; }
+  .roles-stage { order: -1; }
+  .roles-body { max-width: 560px; }
 }
-.par-summary .par-l { display: flex; flex-direction: column; gap: 2px; min-width: 0; }
-.par-summary .par-label {
-  font-family: 'SFMono-Regular', ui-monospace, Menlo, monospace;
-  font-size: 0.55rem; letter-spacing: 0.14em; text-transform: uppercase;
-  color: var(--ink-faint);
-}
-.par-summary .par-text { font-size: 0.8125rem; color: var(--ink); }
-.par-summary .par-r {
-  font-family: 'SFMono-Regular', ui-monospace, Menlo, monospace;
-  font-size: 0.6875rem; color: var(--ink-muted); white-space: nowrap;
+@media (max-width: 560px) {
+  .roles-section { padding-block: 5rem; }
+  .roles-tabs { border-radius: 22px; }
+  .roles-tabs-label { display: none; }
+  .roles-tab { padding: 0.5rem 0.875rem; font-size: 0.875rem; }
 }
 
-/* ── PARENT BEAT 2 — single action card ── */
-.par-action-card {
-  background: linear-gradient(180deg, #fff 0%, var(--bg) 100%);
-  border: 1px solid var(--border);
-  border-left: 3px solid var(--amber);
-  border-radius: 0 10px 10px 0;
-  padding: 1.3rem 1.5rem;
-  justify-content: center;
-  gap: 8px;
-  box-shadow: 0 6px 20px rgba(156,124,74,0.10);
+/* ─── HERO — research footnote link ─── */
+.hero-research-link {
+  display: inline-block;
+  margin-top: 1.5rem;
+  font-family: var(--font-body);
+  font-size: 0.875rem;
+  color: var(--wall-faint);
+  border-bottom: 1px solid rgba(255,255,255,0.15);
+  padding-bottom: 2px;
+  transition: color 0.2s, border-color 0.2s;
 }
-.par-action-card .pa-label {
-  font-family: 'SFMono-Regular', ui-monospace, Menlo, monospace;
-  font-size: 0.55rem; letter-spacing: 0.18em; text-transform: uppercase;
-  color: var(--amber); font-weight: 600;
-}
-.par-action-card .pa-title {
-  font-family: var(--font-display); font-weight: 700; font-size: 1.05rem;
-  color: var(--ink); line-height: 1.35;
-}
-.par-action-card .pa-note {
-  font-family: var(--font-body); font-size: 0.8125rem; line-height: 1.55;
-  color: var(--ink-muted);
-}
-
-/* ─── BEAT VISIBILITY + INNER ANIMATION KEYFRAMES ─── */
-
-/* STUDENT — 16s cycle, 4 beats */
-@keyframes stuBeat1Show {
-  0% { opacity: 0; transform: translateY(6px); }
-  3%, 22% { opacity: 1; transform: none; }
-  26%, 100% { opacity: 0; transform: translateY(6px); }
-}
-@keyframes stuBeat2Show {
-  0%, 25% { opacity: 0; transform: translateY(6px); }
-  28%, 47% { opacity: 1; transform: none; }
-  51%, 100% { opacity: 0; transform: translateY(6px); }
-}
-@keyframes stuBeat3Show {
-  0%, 50% { opacity: 0; transform: translateY(6px); }
-  53%, 72% { opacity: 1; transform: none; }
-  76%, 100% { opacity: 0; transform: translateY(6px); }
-}
-@keyframes stuBeat4Show {
-  0%, 75% { opacity: 0; transform: translateY(6px); }
-  78%, 97% { opacity: 1; transform: none; }
-  100% { opacity: 0; transform: translateY(6px); }
-}
-@keyframes stuFlashFlip {
-  0%, 36% { transform: rotateY(0deg); }
-  43%, 47% { transform: rotateY(180deg); }
-  100% { transform: rotateY(0deg); }
-}
-@keyframes stuQuizPick {
-  0%, 62% { background: transparent; border-color: var(--border); color: var(--ink); }
-  66%, 72% { background: rgba(44,95,63,0.12); border-color: var(--green); color: var(--green); }
-  100% { background: transparent; border-color: var(--border); color: var(--ink); }
-}
-@keyframes stuMeterNudge {
-  0%, 80% { width: 60%; }
-  90%, 97% { width: 78%; }
-  100% { width: 60%; }
-}
-
-/* TEACHER — 12s cycle, 2 beats */
-@keyframes tchBeat1Show {
-  0% { opacity: 0; transform: translateY(6px); }
-  3%, 45% { opacity: 1; transform: none; }
-  49%, 100% { opacity: 0; transform: translateY(6px); }
-}
-@keyframes tchBeat2Show {
-  0%, 48% { opacity: 0; transform: translateY(6px); }
-  52%, 95% { opacity: 1; transform: none; }
-  100% { opacity: 0; transform: translateY(6px); }
-}
-@keyframes tchTileIn1 { 0%, 5%  { opacity: 0; transform: translateY(8px); } 11%, 100% { opacity: 1; transform: none; } }
-@keyframes tchTileIn2 { 0%, 12% { opacity: 0; transform: translateY(8px); } 18%, 100% { opacity: 1; transform: none; } }
-@keyframes tchTileIn3 { 0%, 19% { opacity: 0; transform: translateY(8px); } 25%, 100% { opacity: 1; transform: none; } }
-@keyframes tchTileIn4 { 0%, 26% { opacity: 0; transform: translateY(8px); } 32%, 100% { opacity: 1; transform: none; } }
-@keyframes tchBar1 { 0%, 11% { width: 0%; } 18%, 100% { width: 100%; } }
-@keyframes tchBar2 { 0%, 18% { width: 0%; } 25%, 100% { width: 100%; } }
-@keyframes tchBar3 { 0%, 25% { width: 0%; } 32%, 100% { width: 100%; } }
-@keyframes tchBar4 { 0%, 32% { width: 0%; } 39%, 100% { width: 100%; } }
-
-/* PARENT — 12s cycle, 2 beats (Beat 2 holds to end) */
-@keyframes parBeat1Show {
-  0% { opacity: 0; transform: translateY(6px); }
-  3%, 45% { opacity: 1; transform: none; }
-  49%, 100% { opacity: 0; transform: translateY(6px); }
-}
-@keyframes parBeat2Show {
-  0%, 48% { opacity: 0; transform: translateY(6px); }
-  53%, 100% { opacity: 1; transform: none; }
-}
-@keyframes parItem1In { 0%, 5%  { opacity: 0; transform: translateY(6px); } 12%, 100% { opacity: 1; transform: none; } }
-@keyframes parItem2In { 0%, 15% { opacity: 0; transform: translateY(6px); } 22%, 100% { opacity: 1; transform: none; } }
-
-@media (prefers-reduced-motion: no-preference) {
-  /* Re-trigger pane sweep-in on each activation */
-  .canvas-view-pane.active {
-    animation: visualMatrixSweep 0.5s cubic-bezier(0.25, 1, 0.5, 1) forwards;
-  }
-
-  /* Hide the reduce-motion fallback so the animation loop can drive visibility */
-  .canvas-view-pane.role-student.active .beat-final,
-  .canvas-view-pane.role-teacher.active .beat-final,
-  .canvas-view-pane.role-parent.active  .beat-final { opacity: 0; }
-
-  /* STUDENT — 16s loop, 4 beats one-at-a-time */
-  .canvas-view-pane.role-student.active .stu-beat.beat-1 { animation: stuBeat1Show 16s infinite ease-out; }
-  .canvas-view-pane.role-student.active .stu-beat.beat-2 { animation: stuBeat2Show 16s infinite ease-out; }
-  .canvas-view-pane.role-student.active .stu-beat.beat-3 { animation: stuBeat3Show 16s infinite ease-out; }
-  .canvas-view-pane.role-student.active .stu-beat.beat-4 { animation: stuBeat4Show 16s infinite ease-out; }
-  .canvas-view-pane.role-student.active .stu-flash-card  { animation: stuFlashFlip 16s infinite ease-in-out; }
-  .canvas-view-pane.role-student.active .stu-quiz .quiz-opt.picked { animation: stuQuizPick 16s infinite; }
-  .canvas-view-pane.role-student.active .stu-profile-card .prof-fill-nudge { animation: stuMeterNudge 16s infinite ease-out; }
-
-  /* TEACHER — 12s loop, 2 beats */
-  .canvas-view-pane.role-teacher.active .tch-beat.beat-1 { animation: tchBeat1Show 12s infinite ease-out; }
-  .canvas-view-pane.role-teacher.active .tch-beat.beat-2 { animation: tchBeat2Show 12s infinite ease-out; }
-  .canvas-view-pane.role-teacher.active .tch-dashboard .tch-tile:nth-of-type(1) { animation: tchTileIn1 12s infinite ease-out; }
-  .canvas-view-pane.role-teacher.active .tch-dashboard .tch-tile:nth-of-type(2) { animation: tchTileIn2 12s infinite ease-out; }
-  .canvas-view-pane.role-teacher.active .tch-dashboard .tch-tile:nth-of-type(3) { animation: tchTileIn3 12s infinite ease-out; }
-  .canvas-view-pane.role-teacher.active .tch-dashboard .tch-tile:nth-of-type(4) { animation: tchTileIn4 12s infinite ease-out; }
-  .canvas-view-pane.role-teacher.active .tch-dashboard .tch-tile:nth-of-type(1) .tch-track > span { animation: tchBar1 12s infinite ease-out; }
-  .canvas-view-pane.role-teacher.active .tch-dashboard .tch-tile:nth-of-type(2) .tch-track > span { animation: tchBar2 12s infinite ease-out; }
-  .canvas-view-pane.role-teacher.active .tch-dashboard .tch-tile:nth-of-type(3) .tch-track > span { animation: tchBar3 12s infinite ease-out; }
-  .canvas-view-pane.role-teacher.active .tch-dashboard .tch-tile:nth-of-type(4) .tch-track > span { animation: tchBar4 12s infinite ease-out; }
-
-  /* PARENT — 12s loop, ends on the action */
-  .canvas-view-pane.role-parent.active .par-beat.beat-1 { animation: parBeat1Show 12s infinite ease-out; }
-  .canvas-view-pane.role-parent.active .par-beat.beat-2 { animation: parBeat2Show 12s infinite ease-out; }
-  .canvas-view-pane.role-parent.active .par-summary .par-row.par-item-1 { animation: parItem1In 12s infinite ease-out; }
-  .canvas-view-pane.role-parent.active .par-summary .par-row.par-item-2 { animation: parItem2In 12s infinite ease-out; }
-}
+.hero-research-link:hover { color: var(--wall-text); border-color: var(--wall-muted); }
 
 /* ─── SECTION F — DEVICE FOOTNOTE ─── */
 .device-note { background: var(--bg); padding-block: 3.5rem; }
@@ -2739,26 +2099,6 @@ h4 {
 }
 .what-is-cta:hover { color: var(--green-light); }
 
-/* ─── MATRIX · per-card role link ─── */
-.matrix-card-link {
-  display: inline-flex;
-  align-items: center;
-  gap: 0.45rem;
-  margin-top: 1.75rem;
-  font-family: var(--font-body);
-  font-size: 0.875rem;
-  letter-spacing: 0.01em;
-  color: var(--amber);
-  text-decoration: none;
-  border-bottom: 1px solid rgba(156,124,74,0.45);
-  padding-bottom: 2px;
-  transition: color 0.2s, border-color 0.2s;
-}
-.matrix-card-link:hover {
-  color: #C5A06D;
-  border-color: #C5A06D;
-}
-
 /* ─── EXPANDED FOOTER ─── */
 .footer { border-top: 1px solid var(--border); padding-block: 3.5rem 1.75rem; background: var(--bg); }
 .footer-cols {
@@ -2908,7 +2248,6 @@ h4 {
 }
 
 @media (max-width: 900px) {
-  .options-grid { grid-template-columns: 1fr; }
   .enters-visual {
     max-width: 700px;
     min-height: 0;
@@ -2931,8 +2270,6 @@ h4 {
 @media (max-width: 768px) {
   :root { --pad: 1.25rem; }
   .section { padding-block: 5rem; }
-  .stats-grid { grid-template-columns: 1fr; }
-  .tools-strip { flex-direction: column; align-items: flex-start; gap: 1rem; }
   .layers-section { padding-block: 5rem 0; }
   .layers-title { margin-bottom: 2.5rem; }
   .layer-block { padding-block: 3.5rem; }
@@ -3040,7 +2377,105 @@ h4 {
   .contact-headline, .contact-sub, .contact-eyebrow, .contact-alt { color: var(--ink); }
 }
 
-  </style>
+  
+/* ─── LIVE DEMO SECTION ─── */
+.demo-section {
+  background: var(--green-faint, #EEF6F1);
+  border-top: 1px solid var(--border-light);
+  border-bottom: 1px solid var(--border-light);
+  padding-block: 5.5rem;
+  text-align: center;
+}
+.demo-h {
+  font-family: var(--font-display);
+  font-size: clamp(1.9rem, 3.4vw, 2.8rem);
+  font-weight: 700;
+  color: var(--ink);
+  letter-spacing: -0.02em;
+  margin: 0.5rem 0 1rem;
+}
+.demo-h em { color: var(--green); }
+.demo-sub {
+  font-family: var(--font-body);
+  font-size: 1.0625rem;
+  line-height: 1.75;
+  color: var(--ink-muted);
+  max-width: 520px;
+  margin: 0 auto 2rem;
+}
+.demo-ctas { display: flex; flex-direction: column; gap: 1rem; align-items: center; }
+.demo-alt {
+  font-family: var(--font-body);
+  font-size: 0.9375rem;
+  color: var(--ink-muted);
+  border-bottom: 1px solid var(--border);
+  padding-bottom: 2px;
+  transition: color 0.2s, border-color 0.2s;
+}
+.demo-alt:hover { color: var(--green); border-color: var(--green); }
+
+/* ─── FAQ ─── */
+.faq-section { background: var(--bg); padding-block: 6rem; }
+.faq-inner { max-width: 760px; }
+.faq-h {
+  font-family: var(--font-display);
+  font-size: clamp(1.75rem, 3vw, 2.4rem);
+  font-weight: 700;
+  color: var(--ink);
+  letter-spacing: -0.02em;
+  margin: 0.5rem 0 2rem;
+}
+.faq-item { border-bottom: 1px solid var(--border-light); }
+.faq-item summary {
+  cursor: pointer;
+  list-style: none;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 1rem;
+  padding: 1.25rem 0;
+  font-family: var(--font-body);
+  font-size: 1.0625rem;
+  font-weight: 600;
+  color: var(--ink);
+}
+.faq-item summary::-webkit-details-marker { display: none; }
+.faq-item summary::after {
+  content: '+';
+  font-size: 1.35rem;
+  font-weight: 400;
+  color: var(--green);
+  flex-shrink: 0;
+  transition: transform 0.25s;
+}
+.faq-item[open] summary::after { transform: rotate(45deg); }
+.faq-item p {
+  font-family: var(--font-body);
+  font-size: 0.96875rem;
+  line-height: 1.75;
+  color: var(--ink-muted);
+  margin: 0 0 1.4rem;
+  max-width: 660px;
+}
+.faq-item a { color: var(--green); border-bottom: 1px solid var(--green-pale, #C5DBCB); }
+
+/* ─── CONTACT — what happens next ─── */
+.contact-next {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 1.25rem;
+  margin: 0 0 2.25rem;
+  padding: 1.25rem 0;
+  border-top: 1px solid rgba(255,255,255,0.16);
+  border-bottom: 1px solid rgba(255,255,255,0.16);
+  text-align: left;
+}
+.contact-next div { display: flex; flex-direction: column; gap: 0.3rem; }
+.contact-next strong { font-family: var(--font-body); font-size: 0.9375rem; color: #fff; }
+.contact-next span { font-family: var(--font-body); font-size: 0.8125rem; line-height: 1.5; color: rgba(255,255,255,0.72); }
+@media (max-width: 640px) { .contact-next { grid-template-columns: 1fr; } }
+
+</style>
 
   <script type="application/ld+json">
   {
@@ -3053,9 +2488,68 @@ h4 {
     "url": "https://orchen.ai"
   }
   </script>
+    <link rel="preload" href="/assets/fonts/playfair-bold.woff2" as="font" type="font/woff2" crossorigin>
+  <link rel="preload" href="/assets/fonts/lora-regular.woff2" as="font" type="font/woff2" crossorigin>
   <link rel="stylesheet" href="/assets/refine.css">
+  <script type="application/ld+json">
+
+{
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": [
+    {
+      "@type": "Question",
+      "name": "Can teachers or parents read student conversations?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "No — and that's by design, not policy. Adults see derived insight scoped to their role: teachers see class patterns, parents get plain-language digests. Raw conversations are erased within seven days, and every student keeps a private workspace that belongs to them alone. The full model is documented in the Trust Center."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Is Orchen FERPA and COPPA compliant?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Orchen is built around both statutes: row-level security at the database layer, immutable audit logs of every staff access, per-school retention policies, and under-13 protections via the role gate. Your technical reviewer can verify every claim against the live architecture during the walkthrough — the platform page covers the details."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "What does rollout take? Do we need new devices?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "No new hardware and no IT project. Orchen runs in the browser on whatever fleet you already manage — iPads, Chromebooks, MacBooks. Configuration is an afternoon, not a semester. Schools that want network-level enforcement can add the optional managed device layer later."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Is this one more tool my teachers have to learn?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Teachers read Orchen like a morning briefing — the platform does the managing. The class view shows who's on track, who's quietly stuck, who needs attention today. Creating assignments through Orchen is optional; the insight flows either way."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "What happens when the AI gets something wrong?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "The Socratic design lowers the stakes of any single answer: Orchen asks students to reason and check, rather than handing down statements to accept. Subject-specific modules constrain how it teaches each discipline, and because teachers see concept-level trends across the class, a misunderstanding surfaces as a pattern — not a secret."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "What does it cost, and what does a pilot look like?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Pilots are small, bounded, and reversible: one class, about six weeks, working directly with the founder — then you review the data together and decide. Pricing is per school and depends on size and scope — the founding program spells out terms, timeline, and the clean exit. Write to emil@orchen.ai and you'll get straight numbers, not a quote funnel."
+      }
+    }
+  ]
+}
+  </script>
 </head>
-<body>
+<body class="site-warm-refresh">
 
   <div class="grain" aria-hidden="true"></div>
 
@@ -3066,6 +2560,15 @@ h4 {
       <div class="nav-links" id="nav-links">
         <a href="/the-problem">The Problem</a>
         <a href="/how-it-works/">How It Works</a>
+        <div class="nav-drop">
+          <button class="nav-drop__btn" type="button" aria-haspopup="true">Who it&rsquo;s for</button>
+          <div class="nav-drop__menu">
+            <a href="/for/teachers">Teachers</a>
+            <a href="/for/parents">Parents</a>
+            <a href="/for/advisors">Advisors</a>
+            <a href="/solutions/heads-of-school">Heads of School</a>
+          </div>
+        </div>
         <a href="/trust">Trust</a>
         <a href="/#contact">For Schools</a>
       </div>
@@ -3087,7 +2590,7 @@ h4 {
         <!-- Column 1 -->
         <div class="wall-col">
           <div class="hero-bg-card" style="flex:1.5;">
-            <img src="assets/mit-brain-scan.png" alt="MIT news article on a brain-scan study of AI use during writing tasks" loading="eager">
+            <img src="assets/mit-brain-scan.webp" alt="MIT news article on a brain-scan study of AI use during writing tasks" loading="eager">
             <div class="card-top-gradient"></div>
             <div class="card-content">
               <span class="card-source">MIT &middot; Fluid Interfaces</span>
@@ -3097,7 +2600,7 @@ h4 {
             </div>
           </div>
           <div class="hero-bg-card" style="flex:0.9;">
-            <img src="assets/youtube-brain-experts.png" alt="YouTube video thumbnail featuring experts discussing AI&apos;s effect on the developing brain" loading="lazy">
+            <img src="assets/youtube-brain-experts.webp" alt="YouTube video thumbnail featuring experts discussing AI&apos;s effect on the developing brain" loading="lazy">
             <div class="card-top-gradient"></div>
             <div class="card-content">
               <span class="card-source">YouTube</span>
@@ -3111,7 +2614,7 @@ h4 {
         <!-- Column 2 -->
         <div class="wall-col">
           <div class="hero-bg-card" style="flex:0.85;">
-            <img src="assets/cnn-ai-brainpower.png" alt="CNN news article headline: Study says using AI could cost you brainpower" loading="eager">
+            <img src="assets/cnn-ai-brainpower.webp" alt="CNN news article headline: Study says using AI could cost you brainpower" loading="eager">
             <div class="card-top-gradient"></div>
             <div class="card-content">
               <span class="card-source">CNN</span>
@@ -3169,132 +2672,23 @@ h4 {
       <div class="hero-fg">
         <div class="hero-content">
           <h1 class="hero-h1">
-            You can't keep AI<br>
-            out of school.<br>
-            <em>You can choose<br>
-            what kind gets in.</em>
+            An AI<br>
+            students can use<br>
+            <em>and Schools can<br>stand behind.</em>
           </h1>
           <hr class="hero-rule">
-          <p class="hero-descriptor">Orchen turns uncontrolled AI use into something schools can guide, measure, and trust.</p>
+          <p class="hero-descriptor">Orchen gives schools a governed AI tutor that helps students think, then turns learning signals into clear insight for teachers, advisors, and families.</p>
           <div class="hero-ctas">
             <a href="#contact" class="hero-cta">Book a walkthrough &rarr;</a>
             <a href="https://app.orchen.ai" class="hero-cta-secondary" target="_blank" rel="noopener">Try the demo <span class="beta">Beta</span></a>
           </div>
+          <a class="hero-research-link" href="/the-problem">Why now? Read the research &rarr;</a>
         </div>
       </div>
 
 
     </section>
 
-
-    <section class="problem-section section" id="problem">
-      <div class="container">
-
-        <div class="problem-section-head animate-in">
-          <span class="eyebrow">The Problem &middot; 2026</span>
-          <h2 class="problem-title">AI Isn’t the Risk. Uncontrolled AI Is.</h2>
-          <h3 class="problem-subhead">The Cognitive Erosion &mdash; Happening Now, Inside Your Classrooms.</h3>
-        </div>
-
-        <div class="stats-grid stats-grid--two">
-
-          <div class="stat-block animate-in">
-            <p class="stat-category">Usage Behavior</p>
-            <div class="stat-num">95%</div>
-            <p class="stat-finding">of student-AI interactions monitored in real-time across school networks were attempts to <strong>have AI complete their work entirely</strong> - not to aid understanding. Analyzed across 1.2 million sessions in 1,300+ districts.</p>
-            <span class="stat-source">Education Week &middot; Securly &middot; March 2026</span>
-          </div>
-
-          <div class="stat-block animate-in">
-            <p class="stat-category">Faculty Alarm</p>
-            <div class="stat-num">84%</div>
-            <p class="stat-finding">of college faculty agree that AI is <strong>directly reducing student originality</strong> and deep engagement with course material. Near-universal agreement among the people who actually grade the work.</p>
-            <a href="https://newsroom.collegeboard.org/new-college-board-research-faculty-express-near-universal-concern-student-ai-use-undermines" target="_blank" rel="noopener" class="stat-source">College Board &middot; February 2026</a>
-          </div>
-
-        </div>
-
-        <p class="research-brief-link animate-in"><a href="/the-problem">See the full research brief &mdash; the evidence, every figure cited &rarr;</a></p>
-
-        <p class="research-brief-link animate-in" style="margin-top:0.75rem;">
-          <a href="/resources/ai-policy-brief/">Or take the board-ready version: the AI Policy Brief for school leaders &rarr;</a>
-        </p>
-
-        <div class="tools-strip animate-in">
-          <p class="tools-label">The tools in your students&rsquo; hands - real-world interaction data</p>
-          <div class="tool-item">
-            <span class="tool-name">ChatGPT</span>
-            <span class="tool-badge">42% of AI sessions</span>
-            <span>- the dominant shortcut</span>
-          </div>
-          <div class="tool-item">
-            <span class="tool-name">Google Gemini</span>
-            <span class="tool-badge">21% of AI sessions</span>
-            <span>- fastest-growing in schools</span>
-          </div>
-          <div class="tool-item">
-            <span class="tool-name">Claude</span>
-            <span class="tool-badge">undetectable writing</span>
-            <span>- favored to evade AI detectors</span>
-          </div>
-          <div class="tool-item">
-            <span class="tool-name">Photomath &amp; Socratic</span>
-            <span class="tool-badge">STEM shortcuts</span>
-            <span>- turning productive struggle into point-and-click</span>
-          </div>
-          <div class="tool-item" style="width:100%;margin-top:0.75rem;padding-top:0.75rem;border-top:1px solid rgba(255,255,255,0.06);color:var(--wall-faint);font-size:0.75rem;">
-            Meanwhile: <strong style="color:var(--wall-muted);font-weight:500;">40% of schools ban AI outright</strong> with no alternative plan &mdash; and only 13% encourage use across all classes. Most students navigate this alone.
-            <a href="https://newsroom.collegeboard.org/new-college-board-research-faculty-express-near-universal-concern-student-ai-use-undermines" target="_blank" rel="noopener" style="color:var(--wall-faint);text-decoration:none;border-bottom:1px solid rgba(255,255,255,0.1);padding-bottom:1px;margin-left:0.5rem;font-size:0.625rem;letter-spacing:0.12em;text-transform:uppercase;">College Board 2025</a>
-          </div>
-        </div>
-
-      </div>
-    </section>
-
-    <!-- ═══ PIVOT QUOTE ═══ -->
-    <section class="quote-pivot">
-      <div class="quote-pivot-inner animate-in">
-        <blockquote>&ldquo;When kids replace effortful learning with generative AI to shortcut assignments, it is quantifiably bad for their cognitive development. Students must make mistakes to become independent thinkers.&rdquo;</blockquote>
-        <cite>National School Boards Association &middot; January 2026</cite>
-      </div>
-    </section>
-
-    <!-- ═══ SECTION 2: THE REFRAME ═══ -->
-
-
-    <!-- ═══ THREE RESPONSES ═══ -->
-    <section class="reframe section">
-      <div class="container">
-
-        <div class="options-wrapper">
-          <div class="options-eyebrow">Three responses to this moment</div>
-          <div class="options-grid animate-in">
-            <div class="option option--rejected">
-              <div class="option-verdict">
-                <span class="verdict-mark">✗</span>
-              </div>
-              <h4 class="option-title">Ban it.</h4>
-              <p class="option-body">Fails in weeks. Students move to personal devices. You lose visibility completely.</p>
-            </div>
-            <div class="option option--rejected">
-              <div class="option-verdict">
-                <span class="verdict-mark">✗</span>
-              </div>
-              <h4 class="option-title">Ignore it.</h4>
-              <p class="option-body">Creates a growing gap between what students submit and what they actually understand.</p>
-            </div>
-            <div class="option option--chosen">
-              <div class="option-verdict">
-                <span class="verdict-mark">→</span>
-              </div>
-              <h4 class="option-title">Design it.</h4>
-              <p class="option-body">Take control of AI in your school. Decide how it behaves, what it teaches, and what students actually learn from it.</p>
-            </div>
-          </div>
-        </div>
-
-      </div>
-    </section>
 
 
     <!-- ═══ SECTION B2: WHAT ORCHEN IS ═══ -->
@@ -3304,200 +2698,176 @@ h4 {
           <span class="eyebrow">What Orchen Is</span>
           <h2>One managed environment. <em>Visibility for all.</em></h2>
           <p class="lead">Orchen is a managed AI learning environment built for schools. Students get a Socratic AI tutor that works through problems with them and teaches instead of simply answering.</p>
-          <p>Everything that happens in those conversations becomes structured insight, routed to the people who support that student. Teachers see how their class is really doing. Parents get a clear picture of their child, without raw chat logs. It is one connected environment, not a single chatbot.</p>
+          <p>Everything that happens in those conversations becomes structured insight, routed to the people who support that student. Teachers see how their class is really doing. Parents get a clear picture of their child, without raw chat logs. It is one connected environment, purpose-built for schools from the first line of code.</p>
           <a class="what-is-cta" href="/platform/">See the full platform architecture &rarr;</a>
         </div>
         <div class="what-is-visual animate-in">
-          <img class="what-is-shot" src="assets/orchen-product-shot.png" alt="Orchen student, teacher, and parent interfaces" loading="lazy">
+          <img class="what-is-shot" src="assets/orchen-product-shot.webp" alt="Orchen student, teacher, and parent interfaces" loading="lazy">
         </div>
       </div>
     </section>
 
-    <!-- ═══ SECTION C: YES, ORCHEN IS AI TOO ═══ -->
-    <section class="yes-ai section">
+    <!-- ═══ SECTION C: AI, DESIGNED FOR LEARNING ═══ -->
+    <section class="yes-ai section" id="obvious-question">
       <div class="container">
-        <div class="yes-ai-inner animate-in">
-          <span class="eyebrow">The Obvious Question</span>
-          <h2>Yes. Orchen <em>is</em> AI too.</h2>
-          <p>The difference isn't AI versus not-AI. It's what the AI is designed to do.</p>
-          <p>ChatGPT, Claude, and Gemini are designed to complete tasks. Give them a question, they produce an answer. Give them an essay prompt, they write the essay. They have no stake in whether the student learned anything, no relationship with the school, and they report nothing to anyone.</p>
-          <p>Orchen is designed to make students think &mdash; not to think for them. It asks before it answers. It requires the student to engage before it moves forward. And every interaction feeds an insight layer that gives teachers, advisors, and parents visibility into how each student actually learns.</p>
-          <p>The AI your students are already using is invisible to your school.</p>
-          <div class="yes-ai-coda"><strong>Orchen</strong> is the version you can see, configure, and act on.</div>
-          <p class="yes-ai-compare">
-            See how Orchen compares to the tools your students are already using &mdash;
-            <a href="/compare/orchen-vs-chatgpt.html">ChatGPT, Claude, and Gemini</a>
-            &mdash; and to the K&ndash;12 platforms most schools are evaluating:
-            <a href="/compare/orchen-vs-schoolai.html">SchoolAI</a>,
-            <a href="/compare/orchen-vs-khanmigo.html">Khanmigo</a>,
-            and <a href="/compare/orchen-vs-magicschool.html">MagicSchool</a>.
-            Or browse <a href="/compare/">all comparisons</a>.
-          </p>
+        <div class="yes-ai-inner">
+          <div class="yes-ai-copy animate-in">
+            <span class="eyebrow">AI, designed for school</span>
+            <h2>Same category. <em>Different job.</em></h2>
+            <p>Students are already using AI. Orchen gives schools a version built to slow them down, keep them thinking, and show adults what support is needed next.</p>
+          </div>
+
+          <div class="ai-contrast-grid animate-in" aria-label="How Orchen differs from generic AI tools">
+            <article class="ai-contrast-card">
+              <span class="ai-contrast-kicker">Generic AI tools</span>
+              <h3>Complete the task.</h3>
+              <ul>
+                <li>Answer first</li>
+                <li>Optimize for speed</li>
+                <li>Leave school invisible</li>
+              </ul>
+            </article>
+
+            <article class="ai-contrast-card ai-contrast-card--orchen">
+              <span class="ai-contrast-kicker">Orchen</span>
+              <h3>Develop the student.</h3>
+              <ul>
+                <li>Ask before answering</li>
+                <li>Protect productive struggle</li>
+                <li>Turn use into support signals</li>
+              </ul>
+            </article>
+          </div>
+
+          <div class="yes-ai-compare animate-in">
+            <strong>Orchen is the version schools can see, configure, and act on.</strong>
+            <a href="/compare/">Compare Orchen to other AI tools &rarr;</a>
+          </div>
         </div>
       </div>
     </section>
 
-    <!-- ═══ SECTION D+E: CINEMATIC SCROLL MATRIX (replaces Radial) ═══ -->
-    <section class="matrix-section" id="how">
-      <div class="matrix-viewport-container">
+    <!-- ═══ SECTION D+E: ROLE SELECTOR — one environment, four views ═══ -->
+    <section class="roles-section" id="how">
+      <div class="roles-container">
 
-        <div class="matrix-left-track">
-
-          <div class="matrix-scroll-card active" data-matrix-step="01">
-            <div class="matrix-num-badge">01</div>
-            <h2 class="matrix-heading">For Students</h2>
-            <p class="matrix-body">
-              Orchen works through problems with students instead of handing them answers, asking questions and guiding the thinking. Every conversation turns into flashcards and quizzes built from what they actually studied. Over time, it becomes a picture of how each student learns.
-            </p>
+        <div class="roles-head animate-in">
+          <span class="eyebrow">One environment &middot; every seat</span>
+          <h2 class="roles-title">Built around everyone <em>in the building.</em></h2>
+          <div class="roles-tabs" role="tablist" aria-label="Choose who Orchen is for">
+            <span class="roles-tabs-label">Orchen for&hellip;</span>
+            <button class="roles-tab active" role="tab" aria-selected="true" id="tab-students" aria-controls="panel-students" data-panel="students">Students</button>
+            <button class="roles-tab" role="tab" aria-selected="false" id="tab-teachers" aria-controls="panel-teachers" data-panel="teachers">Teachers</button>
+            <button class="roles-tab" role="tab" aria-selected="false" id="tab-parents" aria-controls="panel-parents" data-panel="parents">Parents</button>
+            <button class="roles-tab" role="tab" aria-selected="false" id="tab-leaders" aria-controls="panel-leaders" data-panel="leaders">Leaders</button>
           </div>
-
-          <div class="matrix-scroll-card" data-matrix-step="02">
-            <div class="matrix-num-badge">02</div>
-            <h2 class="matrix-heading">For Teachers</h2>
-            <p class="matrix-body">
-              Orchen turns every student conversation into a clear view of your class: who is on track, who is quietly stuck, who needs you today. Instead of guessing, you walk in already knowing where to focus.
-            </p>
-            <a class="matrix-card-link" href="/for/teachers">See what teachers get &rarr;</a>
-          </div>
-
-          <div class="matrix-scroll-card" data-matrix-step="03">
-            <div class="matrix-num-badge">03</div>
-            <h2 class="matrix-heading">For Parents</h2>
-            <p class="matrix-body">
-              Orchen gives parents a clear picture of how their child is really doing, what they are learning and where they are struggling, without raw chat logs to dig through. It ends somewhere useful: one concrete thing you can do tonight.
-            </p>
-            <a class="matrix-card-link" href="/for/parents">See what parents get &rarr;</a>
-          </div>
-
         </div>
 
-        <div class="matrix-right-stage" aria-hidden="true">
-          <div class="canvas-mockup">
+        <div class="roles-panels">
 
-            <div class="canvas-chrome">
-              <div class="mockup-dots"><div class="mockup-dot"></div><div class="mockup-dot"></div><div class="mockup-dot"></div></div>
-              <span class="canvas-indicator-tag" id="matrix-active-tag">Workspace Lens &middot; Active Tutor</span>
+          <!-- STUDENTS -->
+          <div class="roles-panel active" id="panel-students" role="tabpanel" aria-labelledby="tab-students">
+            <div class="roles-copy">
+              <h3 class="roles-h3">A tutor that asks <em>before it answers.</em></h3>
+              <p class="roles-body">Orchen works through problems with students instead of handing them answers &mdash; then turns every conversation into flashcards, quizzes, and a learning profile that grows with them.</p>
+              <ul class="roles-list">
+                <li>Socratic chat that keeps students thinking &mdash; not copying</li>
+                <li>Flashcards and quizzes built automatically from their own sessions</li>
+                <li>A learning profile that adapts to each student &mdash; down to today&rsquo;s study mood</li>
+              </ul>
+              <a class="roles-link" href="/platform/">See the full platform &rarr;</a>
             </div>
-
-            <div class="canvas-window-body">
-
-              <div class="canvas-view-pane active role-student" id="pane-matrix-01" aria-label="Student view mockup">
-
-                <div class="stu-beat beat-1 stu-chat-screen">
-                  <div class="stu-chat-header">
-                    <span class="stu-chat-tab">Orchen</span>
-                    <span class="stu-chat-meta">Westfield Academy</span>
-                  </div>
-                  <div class="stu-chat-msg user"><div class="stu-chat-bubble">How is this proof actually concluding?</div></div>
-                  <div class="stu-chat-msg ai"><div class="stu-chat-bubble">Before I help &mdash; what's the next step you'd try, and why?</div></div>
-                </div>
-
-                <div class="stu-beat beat-2 stu-flash-stage">
-                  <div class="stu-flash-card">
-                    <div class="stu-flash-face stu-flash-front">
-                      <span class="flash-label">Flashcard &middot; 1 of 5</span>
-                      <span class="flash-prompt">Limit definition &middot; &epsilon;&ndash;&delta;</span>
-                      <span class="flash-hint">Tap to reveal</span>
-                    </div>
-                    <div class="stu-flash-face stu-flash-back">
-                      <span class="flash-label">Definition</span>
-                      <span class="flash-answer">For every &epsilon; &gt; 0, there exists &delta; &gt; 0 such that |x &minus; a| &lt; &delta; implies |f(x) &minus; L| &lt; &epsilon;.</span>
-                    </div>
-                  </div>
-                </div>
-
-                <div class="stu-beat beat-3 stu-quiz">
-                  <span class="quiz-label">Quiz &middot; Question 1 of 3</span>
-                  <p class="quiz-question">If f(x) = 2x + 3, then f(5) = ?</p>
-                  <div class="quiz-opts">
-                    <span class="quiz-opt">A. 7</span>
-                    <span class="quiz-opt">B. 11</span>
-                    <span class="quiz-opt picked">C. 13</span>
-                    <span class="quiz-opt">D. 17</span>
-                  </div>
-                </div>
-
-                <div class="stu-beat beat-4 beat-final stu-profile-card">
-                  <span class="prof-label">Learning Profile &middot; math</span>
-                  <div class="prof-row">
-                    <span class="prof-name">Verbal</span>
-                    <span class="prof-track"><span class="prof-fill prof-fill-nudge"></span></span>
-                    <span class="prof-val">78%</span>
-                  </div>
-                  <div class="prof-row">
-                    <span class="prof-name">Conceptual</span>
-                    <span class="prof-track"><span class="prof-fill" style="width: 65%;"></span></span>
-                    <span class="prof-val">65%</span>
-                  </div>
-                </div>
-
+            <div class="roles-stage">
+              <div class="roles-chrome">
+                <div class="mockup-dots"><div class="mockup-dot"></div><div class="mockup-dot"></div><div class="mockup-dot"></div></div>
+                <span class="roles-chrome-tag">Student view &middot; live capture</span>
               </div>
-
-              <div class="canvas-view-pane role-teacher" id="pane-matrix-02" aria-label="Teacher view mockup">
-
-                <div class="tch-beat beat-1 tch-dashboard">
-                  <div class="tch-grid">
-                    <div class="tch-tile">
-                      <span class="tch-label">Independent effort</span>
-                      <span class="tch-val">87</span>
-                      <span class="tch-track"><span></span></span>
-                    </div>
-                    <div class="tch-tile">
-                      <span class="tch-label">Curiosity depth</span>
-                      <span class="tch-val">72</span>
-                      <span class="tch-track"><span></span></span>
-                    </div>
-                    <div class="tch-tile">
-                      <span class="tch-label">Concept range</span>
-                      <span class="tch-val">64</span>
-                      <span class="tch-track"><span></span></span>
-                    </div>
-                    <div class="tch-tile">
-                      <span class="tch-label">On track</span>
-                      <span class="tch-val">19/24</span>
-                      <span class="tch-track"><span></span></span>
-                    </div>
-                  </div>
-                </div>
-
-                <div class="tch-beat beat-2 beat-final tch-focus-card">
-                  <span class="tch-flabel">Focus &middot; Ryoto Falcon</span>
-                  <span class="tch-name">Stuck on integration by substitution</span>
-                  <p class="tch-note">Verbal explanation lands; <strong>visual walkthrough</strong> doesn't. Try a worked example next.</p>
-                </div>
-
+              <div class="roles-media">
+                <video class="roles-shot active" data-chip="demo" src="assets/shot-student-chat.mp4" poster="assets/shot-student-chat-poster.jpg" autoplay muted loop playsinline preload="metadata" aria-label="Student chat: the tutor asks a guiding question instead of giving the answer"></video>
+                <img class="roles-shot" data-chip="flashcards" src="assets/shot-student-flashcard.png" alt="Flashcards generated from the student's own conversation" loading="lazy">
+                <video class="roles-shot" data-chip="quiz" src="assets/shot-student-quiz.mp4" poster="assets/shot-student-quiz-poster.jpg" muted loop playsinline preload="none" aria-label="A quiz built from the concepts the student just studied, live"></video>
+                <video class="roles-shot" data-chip="profile" src="assets/shot-student-profile.mp4" poster="assets/shot-student-profile-poster.jpg" muted loop playsinline preload="none" aria-label="A student's learning profile, live"></video>
+                <img class="roles-shot" data-chip="moods" src="assets/shot-student-mood-zoom.png" alt="Six study moods &mdash; the student picks how Orchen coaches today" loading="lazy">
               </div>
-
-              <div class="canvas-view-pane role-parent" id="pane-matrix-03" aria-label="Parent view mockup">
-
-                <div class="par-beat beat-1 par-summary">
-                  <div class="par-row par-item-1">
-                    <div class="par-l">
-                      <span class="par-label">Assignments this week</span>
-                      <span class="par-text">4 of 5 submitted</span>
-                    </div>
-                    <span class="par-r">1 due Friday</span>
-                  </div>
-                  <div class="par-row par-item-2">
-                    <div class="par-l">
-                      <span class="par-label">Where Test is stuck</span>
-                      <span class="par-text">Integration by substitution</span>
-                    </div>
-                    <span class="par-r">2 sessions this week</span>
-                  </div>
-                </div>
-
-                <div class="par-beat beat-2 beat-final par-action-card">
-                  <span class="pa-label">Tonight</span>
-                  <span class="pa-title">Ask: &ldquo;Walk me through the last problem you tried.&rdquo;</span>
-                  <span class="pa-note">5&ndash;10 minutes. Lets them explain rather than be quizzed.</span>
-                </div>
-
+              <div class="roles-chips" aria-label="More of the student workspace">
+                <button class="roles-chip active" data-chip="demo">&#9654;&#xFE0E; Live demo</button>
+                <button class="roles-chip" data-chip="flashcards">Flashcards</button>
+                <button class="roles-chip" data-chip="quiz">Quizzes</button>
+                <button class="roles-chip" data-chip="profile">Learning profile</button>
+                <button class="roles-chip" data-chip="moods">Study moods</button>
               </div>
-
             </div>
-
           </div>
+
+          <!-- TEACHERS -->
+          <div class="roles-panel" id="panel-teachers" role="tabpanel" aria-labelledby="tab-teachers">
+            <div class="roles-copy">
+              <h3 class="roles-h3">Walk in already knowing <em>who needs you.</em></h3>
+              <p class="roles-body">Every student conversation becomes a live picture of your class &mdash; who&rsquo;s on track, who&rsquo;s quietly stuck, and who needs you today. Before the test says so.</p>
+              <ul class="roles-list">
+                <li>A class view built from real work, not test scores</li>
+                <li>Per-student insight: sticking points, what changed, what to try next</li>
+                <li>Early flags the moment a student needs an adult</li>
+              </ul>
+              <a class="roles-link" href="/for/teachers">See what teachers get &rarr;</a>
+            </div>
+            <div class="roles-stage">
+              <div class="roles-chrome">
+                <div class="mockup-dots"><div class="mockup-dot"></div><div class="mockup-dot"></div><div class="mockup-dot"></div></div>
+                <span class="roles-chrome-tag">Teacher view &middot; live capture</span>
+              </div>
+              <div class="roles-media">
+                <video class="roles-shot active" data-chip="demo" src="assets/shot-teacher-classview.mp4" poster="assets/shot-teacher-classview-poster.jpg" autoplay muted loop playsinline preload="metadata" aria-label="Teacher class view: drilling into how the class is doing"></video>
+              </div>
+            </div>
+          </div>
+
+          <!-- PARENTS -->
+          <div class="roles-panel" id="panel-parents" role="tabpanel" aria-labelledby="tab-parents">
+            <div class="roles-copy">
+              <h3 class="roles-h3">Finally, a clear picture &mdash; <em>without the chat logs.</em></h3>
+              <p class="roles-body">Know what your child is learning, where they&rsquo;re struggling, and what&rsquo;s going well &mdash; in plain language, not dashboards.</p>
+              <ul class="roles-list">
+                <li>Weekly updates on what they&rsquo;re learning and where they&rsquo;re stuck</li>
+                <li>Bright spots worth celebrating at dinner</li>
+                <li>One concrete thing you can do tonight &mdash; five minutes, no nagging</li>
+              </ul>
+              <a class="roles-link" href="/for/parents">See what parents get &rarr;</a>
+            </div>
+            <div class="roles-stage">
+              <div class="roles-chrome">
+                <div class="mockup-dots"><div class="mockup-dot"></div><div class="mockup-dot"></div><div class="mockup-dot"></div></div>
+                <span class="roles-chrome-tag">Parent view &middot; live capture</span>
+              </div>
+              <div class="roles-media">
+                <video class="roles-shot active" data-chip="demo" src="assets/shot-parent-ask.mp4" poster="assets/shot-parent-ask-poster.jpg" autoplay muted loop playsinline preload="metadata" aria-label="Parent view: asking Orchen how their child is doing"></video>
+              </div>
+            </div>
+          </div>
+
+          <!-- LEADERS -->
+          <div class="roles-panel" id="panel-leaders" role="tabpanel" aria-labelledby="tab-leaders">
+            <div class="roles-copy">
+              <h3 class="roles-h3">Set the rules once. <em>See the whole school.</em></h3>
+              <p class="roles-body">You decide how the AI behaves &mdash; what it will and won&rsquo;t do &mdash; and every classroom inherits it. Everything rolls up into a school-wide view you can stand behind.</p>
+              <ul class="roles-list">
+                <li>School-wide visibility across classes and grades</li>
+                <li>Policy and configuration in your control, not a vendor&rsquo;s</li>
+                <li>Evidence you can take to boards, accreditors, and families</li>
+              </ul>
+              <a class="roles-link" href="/solutions/heads-of-school">See the leadership view &rarr;</a>
+            </div>
+            <div class="roles-stage">
+              <div class="roles-chrome">
+                <div class="mockup-dots"><div class="mockup-dot"></div><div class="mockup-dot"></div><div class="mockup-dot"></div></div>
+                <span class="roles-chrome-tag">School view &middot; overview</span>
+              </div>
+              <div class="roles-media">
+                <img class="roles-shot active" data-chip="demo" src="assets/shot-leader-overview.webp" alt="School-wide overview across classes" loading="lazy">
+              </div>
+            </div>
+          </div>
+
         </div>
 
       </div>
@@ -3507,6 +2877,27 @@ h4 {
     <section class="device-note">
       <div class="container">
         <p class="animate-in">Orchen runs as a software application on your school's existing devices &mdash; iPads, MacBooks, or any managed fleet. For schools that want airtight network-level enforcement, a pre-configured managed device layer is available as an optional add-on. No IT setup required either way.</p>
+      </div>
+    </section>
+
+    <!-- ═══ LIVE DEMO ═══ -->
+    <section class="demo-section" id="demo">
+      <div class="container animate-in">
+        <span class="eyebrow">Try it yourself</span>
+        <h2 class="demo-h">Don&rsquo;t take our word for it. <em>Take the wheel.</em></h2>
+        <p class="demo-sub">The Orchen demo is open &mdash; no signup, no sales call. Ask it something a student would ask, and watch it teach instead of answer.</p>
+        <div class="demo-ctas">
+          <a class="btn btn-primary" href="https://app.orchen.ai" target="_blank" rel="noopener">Open the live demo &rarr;</a>
+          <a class="demo-alt" href="#contact">or book a guided walkthrough</a>
+        </div>
+      </div>
+    </section>
+
+    <!-- ═══ PIVOT QUOTE — the stakes, before the ask ═══ -->
+    <section class="quote-pivot">
+      <div class="quote-pivot-inner animate-in">
+        <blockquote>&ldquo;When kids replace effortful learning with generative AI to shortcut assignments, it is quantifiably bad for their cognitive development. Students must make mistakes to become independent thinkers.&rdquo;</blockquote>
+        <cite>National School Boards Association &middot; January 2026</cite>
       </div>
     </section>
 
@@ -3584,7 +2975,7 @@ h4 {
         <div class="founder-body">
           <p>I built Orchen because the two answers schools were being offered &mdash; ban AI, or look away &mdash; both seemed designed to fail the students. The research made the stakes clear; what was missing was an environment a school could actually take responsibility for: one that teaches instead of completing work, and treats student data like it belongs to the student.</p>
           <p>Orchen is early-stage, and I'd rather say that plainly than dress it up. What early means in practice: <strong>schools that join now work directly with me</strong> &mdash; on configuration, on the pilot, on the roadmap. Every privacy commitment on this site is one I can show you in the architecture, live, with your technical reviewer in the room.</p>
-          <p>If you're weighing this decision for your school, write to me. You'll get a straight answer &mdash; including when that answer is that Orchen isn't the right fit yet.</p>
+          <p>If you're weighing this decision for your school, write to me. You'll get a straight answer &mdash; including honest guidance on timing, if a later cohort would serve your school better.</p>
         </div>
         <div class="founder-sig">
           <span class="founder-name">Emil</span>
@@ -3594,12 +2985,50 @@ h4 {
       </div>
     </section>
 
+    <!-- ═══ FAQ — objection handling before the ask ═══ -->
+    <section class="faq-section" id="faq">
+      <div class="container faq-inner">
+        <span class="eyebrow">Before you ask</span>
+        <h2 class="faq-h">The questions every head of school asks.</h2>
+        <details class="faq-item">
+          <summary>Can teachers or parents read student conversations?</summary>
+          <p>No &mdash; and that&rsquo;s by design, not policy. Adults see derived insight scoped to their role: teachers see class patterns, parents get plain-language digests. Raw conversations are erased within seven days, and every student keeps a private workspace that belongs to them alone. The full model is documented in the <a href="/trust">Trust Center</a>.</p>
+        </details>
+        <details class="faq-item">
+          <summary>Is Orchen FERPA and COPPA compliant?</summary>
+          <p>Orchen is built around both statutes: row-level security at the database layer, immutable audit logs of every staff access, per-school retention policies, and under-13 protections via the role gate. Your technical reviewer can verify every claim against the live architecture during the walkthrough &mdash; the <a href="/platform/">platform page</a> covers the details.</p>
+        </details>
+        <details class="faq-item">
+          <summary>What does rollout take? Do we need new devices?</summary>
+          <p>No new hardware and no IT project. Orchen runs in the browser on whatever fleet you already manage &mdash; iPads, Chromebooks, MacBooks. Configuration is an afternoon, not a semester. Schools that want network-level enforcement can add the optional managed device layer later.</p>
+        </details>
+        <details class="faq-item">
+          <summary>Is this one more tool my teachers have to learn?</summary>
+          <p>Teachers read Orchen like a morning briefing &mdash; the platform does the managing. The class view shows who&rsquo;s on track, who&rsquo;s quietly stuck, who needs attention today. Creating assignments through Orchen is optional; the insight flows either way.</p>
+        </details>
+        <details class="faq-item">
+          <summary>What happens when the AI gets something wrong?</summary>
+          <p>The Socratic design lowers the stakes of any single answer: Orchen asks students to reason and check, rather than handing down statements to accept. Subject-specific modules constrain how it teaches each discipline, and because teachers see concept-level trends across the class, a misunderstanding surfaces as a pattern &mdash; not a secret.</p>
+        </details>
+        <details class="faq-item">
+          <summary>What does it cost, and what does a pilot look like?</summary>
+          <p>Pilots are small, bounded, and reversible: one class, about six weeks, working directly with the founder &mdash; then you review the data together and decide. Pricing is per school and depends on size and scope &mdash; the <a href="/founding-schools/">founding program</a> spells out terms, timeline, and the clean exit. Write to <a href="mailto:emil@orchen.ai">emil@orchen.ai</a> and you&rsquo;ll get straight numbers, not a quote funnel.</p>
+        </details>
+      </div>
+    </section>
+
     <!-- ═══ SECTION 8: CONTACT ═══ -->
     <section class="contact-section" id="contact">
       <div class="container contact-inner">
         <span class="eyebrow contact-eyebrow">Book a walkthrough</span>
         <h2 class="contact-headline">See what a school that has designed its AI environment actually looks like. <em>We'll show you.</em></h2>
         <p class="contact-sub">Leave your details and we'll reach out to book your walkthrough.</p>
+
+        <div class="contact-next animate-in">
+          <div><strong>Within 24 hours</strong><span>you hear back from Emil &mdash; the founder, not a sales team</span></div>
+          <div><strong>30 minutes, live product</strong><span>your questions drive the walkthrough</span></div>
+          <div><strong>Founding cohort</strong><span>pilot schools work directly with the founder and shape the roadmap</span></div>
+        </div>
 
         <form class="contact-form" id="demo-form">
           <p class="form-hidden" aria-hidden="true"><label>Skip: <input name="bot-field" tabindex="-1"></label></p>
@@ -3713,20 +3142,11 @@ document.addEventListener('DOMContentLoaded', () => {
   };
 
   prepReveal('.hero-h1, .hero-rule, .hero-descriptor, .hero-cta', { anim: 'zoom', stagger: 120, baseDelay: 80 });
-  prepReveal('.stats-grid .stat-block', { anim: 'rise', stagger: 110 });
-  prepReveal('.tools-strip .tool-item', { anim: 'left', stagger: 70, baseDelay: 120 });
-  prepReveal('.options-grid .option', { anim: 'rise', stagger: 100, baseDelay: 60 });
   prepReveal('.enters-copy .animate-in', { anim: 'rise', stagger: 110, baseDelay: 30 });
   prepReveal('.enters-visual', { anim: 'zoom', stagger: 0, baseDelay: 390 });
   prepReveal('.layer-block .layer-content', { anim: 'right', stagger: 120, baseDelay: 40 });
   prepReveal('.advisor-widget', { anim: 'right', stagger: 0, baseDelay: 140 });
   prepReveal('.contact-headline, .contact-sub, #demo-form, .contact-alt', { anim: 'rise', stagger: 110, baseDelay: 40 });
-
-  document.querySelectorAll('.tools-strip.animate-in, .options-grid.animate-in').forEach((el) => {
-    el.classList.remove('animate-in');
-    el.classList.remove('visible');
-    el.style.removeProperty('--anim-delay');
-  });
 
   document.querySelectorAll('.layer-block .layer-content').forEach((el, idx) => {
     if (idx % 2 === 1) el.dataset.anim = 'left';
@@ -4017,45 +3437,64 @@ document.addEventListener('DOMContentLoaded', () => {
     });
   }
 
-  // ─── CINEMATIC SCROLLWAY ENGINE SCROLL COORDINATOR ──────
-  const matrixCards = document.querySelectorAll('.matrix-scroll-card');
-  const matrixPanes = document.querySelectorAll('.canvas-view-pane');
-  const matrixTag   = document.getElementById('matrix-active-tag');
+  // ─── ROLE SELECTOR — tabs + student chips ────────────────
+  const roleTabs = document.querySelectorAll('.roles-tab');
+  const rolePanels = document.querySelectorAll('.roles-panel');
 
-  const updateMatrixLabelText = (stepId) => {
-    if (stepId === '01') matrixTag.textContent = 'Student view · what the learner experiences';
-    if (stepId === '02') matrixTag.textContent = 'Teacher view · what the teacher sees';
-    if (stepId === '03') matrixTag.textContent = 'Parent view · what the parent receives';
+  const setRoleVideo = (video, on) => {
+    if (!video) return;
+    if (on) { video.play().catch(() => {}); } else { video.pause(); }
   };
 
-  if ('IntersectionObserver' in window) {
-    const matrixObserver = new IntersectionObserver((entries) => {
-      entries.forEach(entry => {
-        if (entry.isIntersecting) {
-          // Clear standard states
-          matrixCards.forEach(card => card.classList.remove('active'));
-          matrixPanes.forEach(pane => pane.classList.remove('active'));
-
-          // Trigger active highlights on the pinned elements
-          entry.target.classList.add('active');
-          const activeStep = entry.target.dataset.matrixStep;
-
-          const currentPane = document.getElementById(`pane-matrix-${activeStep}`);
-          if (currentPane) currentPane.classList.add('active');
-
-          updateMatrixLabelText(activeStep);
-        }
-      });
-    }, {
-      threshold: 0.5,
-      rootMargin: '-10% 0px -20% 0px'
+  const activateRole = (name) => {
+    roleTabs.forEach((tab) => {
+      const on = tab.dataset.panel === name;
+      tab.classList.toggle('active', on);
+      tab.setAttribute('aria-selected', String(on));
     });
+    rolePanels.forEach((panel) => {
+      const on = panel.id === `panel-${name}`;
+      panel.classList.toggle('active', on);
+      panel.querySelectorAll('video.roles-shot').forEach((video) => {
+        setRoleVideo(video, on && video.classList.contains('active') && !reduceMotion);
+      });
+    });
+  };
 
-    matrixCards.forEach(card => matrixObserver.observe(card));
-  }
+  roleTabs.forEach((tab) => {
+    tab.addEventListener('click', () => activateRole(tab.dataset.panel));
+  });
+  if (roleTabs.length) activateRole('students');
+
+  roleTabs.forEach((tab, i) => {
+    tab.addEventListener('keydown', (ev) => {
+      if (ev.key !== 'ArrowRight' && ev.key !== 'ArrowLeft') return;
+      ev.preventDefault();
+      const next = roleTabs[(i + (ev.key === 'ArrowRight' ? 1 : roleTabs.length - 1)) % roleTabs.length];
+      next.focus();
+      activateRole(next.dataset.panel);
+    });
+  });
+
+  rolePanels.forEach((panel) => {
+    const chips = panel.querySelectorAll('.roles-chip');
+    if (!chips.length) return;
+    const shots = panel.querySelectorAll('.roles-shot');
+    chips.forEach((chip) => {
+      chip.addEventListener('click', () => {
+        chips.forEach((c) => c.classList.toggle('active', c === chip));
+        shots.forEach((shot) => {
+          const on = shot.dataset.chip === chip.dataset.chip;
+          shot.classList.toggle('active', on);
+          if (shot.tagName === 'VIDEO') setRoleVideo(shot, on && panel.classList.contains('active') && !reduceMotion);
+        });
+      });
+    });
+  });
 
 });
   </script>
 
+  <a class="mobile-cta-bar" href="#contact">Book a walkthrough &rarr;</a>
 </body>
 </html>

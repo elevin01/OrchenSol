@@ -7,6 +7,7 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8">
+  <meta name="theme-color" content="#1A3527">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Orchen Platform Architecture | Secure AI for Schools</title>
   <meta name="description" content="A detailed walkthrough of Orchen's managed, secure AI for schools: the Socratic engine that powers student conversations, the insight layer that turns sessions into structured signal, the six-role system, and the compliance and security posture underneath.">
@@ -19,15 +20,12 @@
   <meta property="og:description" content="A detailed walkthrough of Orchen's managed, secure AI for schools: the Socratic engine, the insight layer, the six-role system, and the compliance posture underneath.">
   <meta property="og:type" content="article">
   <meta property="og:url" content="https://orchen.ai/platform/">
-  <meta property="og:image" content="https://orchen.ai/assets/og-image.png">
+  <meta property="og:image" content="https://orchen.ai/assets/og-platform.png">
   <meta property="og:site_name" content="Orchen">
   <meta name="twitter:card" content="summary_large_image">
   <meta name="twitter:title" content="Orchen Platform Architecture | Secure AI for Schools">
   <meta name="twitter:description" content="A detailed walkthrough of Orchen's managed, secure AI for schools: the Socratic engine, the insight layer, the six-role system, and the compliance posture underneath.">
-  <meta name="twitter:image" content="https://orchen.ai/assets/og-image.png">
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,700;1,400&family=Lora:ital,wght@0,400;0,500;1,400&display=swap" rel="stylesheet">
+  <meta name="twitter:image" content="https://orchen.ai/assets/og-platform.png">
   <script type="application/ld+json">
   {
     "@context": "https://schema.org",
@@ -449,11 +447,23 @@ code {
   .row { padding-block: 1.5rem; }
 }
 
+
+/* ─── MEDIA UPGRADE — full-bleed frames, video stages ─── */
+.shot-frame video { width: 100%; display: block; }
+.stage { padding: clamp(1rem, 2.2vw, 1.75rem); }
+.stage .shot-frame { max-width: none; }
+.stage figure { margin: 0; }
+.stage-duo-inline { display: grid; grid-template-columns: 1fr 1fr; gap: clamp(1rem, 2.5vw, 1.75rem); margin-top: 1.75rem; }
+.stage-duo-inline .shot-frame { max-width: none; }
+@media (max-width: 760px) { .stage-duo-inline { grid-template-columns: 1fr; } }
+
   </style>
+    <link rel="preload" href="/assets/fonts/playfair-bold.woff2" as="font" type="font/woff2" crossorigin>
+  <link rel="preload" href="/assets/fonts/lora-regular.woff2" as="font" type="font/woff2" crossorigin>
   <link rel="stylesheet" href="/assets/refine.css">
   <link rel="stylesheet" href="/assets/editorial.css">
 </head>
-<body>
+<body class="site-warm-refresh">
 
   <nav class="nav" id="nav">
     <div class="nav-inner">
@@ -461,6 +471,15 @@ code {
       <div class="nav-links" id="nav-links">
         <a href="/the-problem">The Problem</a>
         <a href="/how-it-works/">How It Works</a>
+        <div class="nav-drop">
+          <button class="nav-drop__btn" type="button" aria-haspopup="true">Who it&rsquo;s for</button>
+          <div class="nav-drop__menu">
+            <a href="/for/teachers">Teachers</a>
+            <a href="/for/parents">Parents</a>
+            <a href="/for/advisors">Advisors</a>
+            <a href="/solutions/heads-of-school">Heads of School</a>
+          </div>
+        </div>
         <a href="/trust">Trust</a>
         <a href="/#contact">For Schools</a>
       </div>
@@ -487,7 +506,7 @@ code {
             <span class="layer-band__tag">Layer 01</span>
             <div>
               <span class="layer-band__name">The student environment</span>
-              <span class="layer-band__desc">A Socratic tutor, an assignment shelf, a writing workspace, and a private space nobody else can see.</span>
+              <span class="layer-band__desc">A Socratic tutor, an assignment shelf, a writing workspace, and a private space that belongs to the student alone.</span>
             </div>
           </div>
           <div class="layer-band">
@@ -519,26 +538,35 @@ code {
               <h2>A chat surface, an assignment shelf, a flashcard library, and a private workspace.</h2>
               <hr class="ed-rule">
             </div>
-            <p class="ed-head__lead">Students see Orchen as a conversation. Behind it: a system that adapts to how they think, an assignment workflow their teachers configured, a flashcard library built automatically from their chats, and a private workspace nobody else can see.</p>
+            <p class="ed-head__lead">Students see Orchen as a conversation. Behind it: a system that adapts to how they think, an assignment workflow their teachers configured, a flashcard library built automatically from their chats, and a private workspace that belongs to the student alone.</p>
           </div>
         </div>
       </div>
       <div class="media-wide" style="margin-bottom: clamp(2.5rem, 5vw, 3.5rem);">
-        <div class="stage stage--duo">
+        <div class="stage">
+          <figure>
+            <div class="shot-frame">
+              <div class="shot-chrome"><span class="shot-dot"></span><span class="shot-dot"></span><span class="shot-dot"></span><span class="shot-name">orchen &middot; student chat &middot; live capture</span></div>
+              <video src="/assets/shot-student-chat.mp4" poster="/assets/shot-student-chat-poster.jpg" autoplay muted loop playsinline preload="metadata" aria-label="The Orchen student chat surface in a live tutoring session"></video>
+            </div>
+            <figcaption class="platform-figcap">The conversation surface students work in every day &mdash; live.</figcaption>
+          </figure>
+          <div class="stage-duo-inline">
             <figure>
               <div class="shot-frame">
-                <div class="shot-chrome"><span class="shot-dot"></span><span class="shot-dot"></span><span class="shot-dot"></span><span class="shot-name">orchen · student chat</span></div>
-                <img src="/assets/shot-student-socratic.png" alt="Orchen student chat surface" loading="lazy">
-              </div>
-              <figcaption class="platform-figcap">The conversation surface students work in every day.</figcaption>
-            </figure>
-            <figure>
-              <div class="shot-frame">
-                <div class="shot-chrome"><span class="shot-dot"></span><span class="shot-dot"></span><span class="shot-dot"></span><span class="shot-name">orchen · writing workspace</span></div>
-                <img src="/assets/product-writing-workspace.png" alt="Orchen writing workspace" loading="lazy">
+                <div class="shot-chrome"><span class="shot-dot"></span><span class="shot-dot"></span><span class="shot-dot"></span><span class="shot-name">orchen &middot; writing workspace</span></div>
+                <img src="/assets/product-writing-workspace.webp" alt="Orchen writing workspace" loading="lazy">
               </div>
               <figcaption class="platform-figcap">The dedicated essay surface with rubric-aware feedback.</figcaption>
             </figure>
+            <figure>
+              <div class="shot-frame">
+                <div class="shot-chrome"><span class="shot-dot"></span><span class="shot-dot"></span><span class="shot-dot"></span><span class="shot-name">orchen &middot; quiz</span></div>
+                <video src="/assets/shot-student-quiz.mp4" poster="/assets/shot-student-quiz-poster.jpg" autoplay muted loop playsinline preload="metadata" aria-label="A quiz generated from the student's own session, live"></video>
+              </div>
+              <figcaption class="platform-figcap">Quizzes built from the session &mdash; graded semantically, not word-matched.</figcaption>
+            </figure>
+          </div>
         </div>
       </div>
       <div class="container">
@@ -547,7 +575,7 @@ code {
             <div class="feature-cell">
               <span class="feature-cell__eyebrow">The conversation</span>
               <h3 class="feature-cell__head">Guides through questions, not answers</h3>
-              <p class="feature-cell__body">The Socratic pattern is hard-coded into the system prompt — not a setting that can be toggled off. Students can't ask the AI to simply hand over the answer.</p>
+              <p class="feature-cell__body">The Socratic pattern is hard-coded into the system architecture &mdash; a commitment deeper than any setting. Even the most creative &ldquo;just give me the answer&rdquo; prompt gets a guiding question back.</p>
             </div>
             <div class="feature-cell">
               <span class="feature-cell__eyebrow">Adaptive presentation</span>
@@ -566,7 +594,7 @@ code {
             </div>
             <div class="feature-cell">
               <span class="feature-cell__eyebrow">The private workspace</span>
-              <h3 class="feature-cell__head">Goals and journal nobody else sees</h3>
+              <h3 class="feature-cell__head">Goals and a journal that stay the student's alone</h3>
               <p class="feature-cell__body">Students set goals, keep a private journal, and tune their own preferences. None of it is visible to teachers, advisors, or parents unless the student shares it.</p>
             </div>
             <div class="feature-cell">
@@ -654,12 +682,23 @@ code {
           </div>
         </div>
       </div>
+      <div class="media-wide" style="margin-bottom: 1.5rem;">
+        <div class="stage">
+          <figure>
+            <div class="shot-frame">
+              <div class="shot-chrome"><span class="shot-dot"></span><span class="shot-dot"></span><span class="shot-dot"></span><span class="shot-name">orchen &middot; teacher class view &middot; live capture</span></div>
+              <video src="/assets/shot-teacher-classview.mp4" poster="/assets/shot-teacher-classview-poster.jpg" autoplay muted loop playsinline preload="metadata" aria-label="The teacher class view, drilling from class distribution into a single student"></video>
+            </div>
+            <figcaption class="platform-figcap">From class distribution to a single student in two clicks.</figcaption>
+          </figure>
+        </div>
+      </div>
       <div class="media-wide" style="margin-bottom: clamp(2.5rem, 5vw, 3.5rem);">
         <div class="stage ed-split ed-split--media-left">
             <figure>
               <div class="shot-frame">
                 <div class="shot-chrome"><span class="shot-dot"></span><span class="shot-dot"></span><span class="shot-dot"></span><span class="shot-name">orchen · teacher insight</span></div>
-                <img src="/assets/shot-teacher-insight-glance.png" alt="Orchen teacher insight dashboard" loading="lazy">
+                <img src="/assets/shot-teacher-insight-glance.webp" alt="Orchen teacher insight dashboard" loading="lazy">
               </div>
               <figcaption class="platform-figcap">What teachers see: synthesis, not raw transcripts.</figcaption>
             </figure>
@@ -992,5 +1031,6 @@ code {
   }());
   </script>
 
+  <a class="mobile-cta-bar" href="/#contact">Book a walkthrough &rarr;</a>
 </body>
 </html>

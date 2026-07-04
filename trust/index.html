@@ -2,6 +2,7 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8">
+  <meta name="theme-color" content="#1A3527">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Trust Center — Orchen | Security, Privacy &amp; Compliance for Schools</title>
   <meta name="description" content="Orchen's security architecture, data lifecycle, sub-processors, FERPA and COPPA posture, and an honest account of where our compliance roadmap stands. Built for your security review.">
@@ -14,15 +15,12 @@
   <meta property="og:description" content="Security architecture, data lifecycle, sub-processors, FERPA and COPPA posture — and an honest account of where our compliance roadmap stands.">
   <meta property="og:type" content="website">
   <meta property="og:url" content="https://orchen.ai/trust">
-  <meta property="og:image" content="https://orchen.ai/assets/og-image.png">
+  <meta property="og:image" content="https://orchen.ai/assets/og-trust.png">
   <meta property="og:site_name" content="Orchen">
   <meta name="twitter:card" content="summary_large_image">
   <meta name="twitter:title" content="Trust Center — Orchen">
   <meta name="twitter:description" content="Security architecture, data lifecycle, sub-processors, FERPA and COPPA posture — built for your security review.">
-  <meta name="twitter:image" content="https://orchen.ai/assets/og-image.png">
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,700;1,400&family=Lora:ital,wght@0,400;0,500;1,400&display=swap" rel="stylesheet">
+  <meta name="twitter:image" content="https://orchen.ai/assets/og-trust.png">
   <link rel="stylesheet" href="/assets/site.css">
   <script type="application/ld+json">
   {
@@ -34,10 +32,12 @@
     ]
   }
   </script>
+    <link rel="preload" href="/assets/fonts/playfair-bold.woff2" as="font" type="font/woff2" crossorigin>
+  <link rel="preload" href="/assets/fonts/lora-regular.woff2" as="font" type="font/woff2" crossorigin>
   <link rel="stylesheet" href="/assets/refine.css">
   <link rel="stylesheet" href="/assets/editorial.css">
 </head>
-<body>
+<body class="site-warm-refresh">
 
   <nav class="nav" id="nav">
     <div class="nav-inner">
@@ -45,6 +45,15 @@
       <div class="nav-links" id="nav-links">
         <a href="/the-problem">The Problem</a>
         <a href="/how-it-works/">How It Works</a>
+        <div class="nav-drop">
+          <button class="nav-drop__btn" type="button" aria-haspopup="true">Who it&rsquo;s for</button>
+          <div class="nav-drop__menu">
+            <a href="/for/teachers">Teachers</a>
+            <a href="/for/parents">Parents</a>
+            <a href="/for/advisors">Advisors</a>
+            <a href="/solutions/heads-of-school">Heads of School</a>
+          </div>
+        </div>
         <a href="/trust">Trust</a>
         <a href="/#contact">For Schools</a>
       </div>
@@ -120,7 +129,43 @@
             </div>
             <p class="ed-head__lead">The path of one student-AI conversation through Orchen — from creation, through analysis, to deletion. Every step is logged, scoped, and documented.</p>
           </div>
-          <div class="flow-diagram" style="max-width: 760px; margin-inline: auto;">
+          <div class="lifecycle-wrap">
+<svg class="lifecycle-desktop" viewBox="0 0 1240 344" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Data lifecycle: created day zero, analyzed nightly, source deleted day seven, insight retained per policy">
+  <defs>
+    <marker id="lcAhTrust" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="7" markerHeight="7" orient="auto"><path d="M0 0L10 5L0 10z" fill="#C9BFA9"/></marker>
+  </defs>
+  <line x1="70" y1="170" x2="1170" y2="170" stroke="#C9BFA9" stroke-width="1.6" marker-end="url(#lcAhTrust)"/>
+  <circle cx="170" cy="170" r="16" fill="#FFFFFF" stroke="#2C5F3F" stroke-width="2"/>
+<text x="170" y="175.5" text-anchor="middle" font-family="Inter, system-ui, -apple-system, sans-serif" font-size="13" font-weight="600" fill="#2C5F3F">1</text>
+<text x="170" y="212" text-anchor="middle" font-family="Inter, system-ui, -apple-system, sans-serif" font-size="10.5" font-weight="600" letter-spacing="1.5" fill="#7C857C">DAY 0</text>
+  <line x1="170" y1="130" x2="170" y2="154" stroke="#C9BFA9" stroke-width="1.2"/>
+<rect x="45" y="26" width="250" height="104" rx="12" fill="#FFFDF8" stroke="#DCD5C8"/>
+<text x="65" y="56" font-family="Inter, system-ui, -apple-system, sans-serif" font-size="14" font-weight="600" fill="#171A16">Created</text>
+<text x="65" y="78" font-family="Inter, system-ui, -apple-system, sans-serif" font-size="11.5" fill="#4F5A50">A student opens a chat &#8212;</text><text x="65" y="95" font-family="Inter, system-ui, -apple-system, sans-serif" font-size="11.5" fill="#4F5A50">scoped to them, visible</text><text x="65" y="112" font-family="Inter, system-ui, -apple-system, sans-serif" font-size="11.5" fill="#4F5A50">only to them.</text>
+  <circle cx="450" cy="170" r="16" fill="#FFFFFF" stroke="#2C5F3F" stroke-width="2"/>
+<text x="450" y="175.5" text-anchor="middle" font-family="Inter, system-ui, -apple-system, sans-serif" font-size="13" font-weight="600" fill="#2C5F3F">2</text>
+<text x="450" y="128" text-anchor="middle" font-family="Inter, system-ui, -apple-system, sans-serif" font-size="10.5" font-weight="600" letter-spacing="1.5" fill="#7C857C">NIGHTLY</text>
+  <line x1="450" y1="186" x2="450" y2="214" stroke="#C9BFA9" stroke-width="1.2"/>
+<rect x="325" y="214" width="250" height="104" rx="12" fill="#FFFDF8" stroke="#DCD5C8"/>
+<text x="345" y="244" font-family="Inter, system-ui, -apple-system, sans-serif" font-size="14" font-weight="600" fill="#171A16">Analyzed into insight</text>
+<text x="345" y="266" font-family="Inter, system-ui, -apple-system, sans-serif" font-size="11.5" fill="#4F5A50">Mastery, profiles, and narratives</text><text x="345" y="283" font-family="Inter, system-ui, -apple-system, sans-serif" font-size="11.5" fill="#4F5A50">derived. Crisis flags route</text><text x="345" y="300" font-family="Inter, system-ui, -apple-system, sans-serif" font-size="11.5" fill="#4F5A50">to a counselor.</text>
+  <circle cx="730" cy="170" r="16" fill="#FBF3F0" stroke="#9B4A3C" stroke-width="2"/>
+<text x="730" y="175.5" text-anchor="middle" font-family="Inter, system-ui, -apple-system, sans-serif" font-size="13" font-weight="600" fill="#9B4A3C">&#10005;</text>
+<text x="730" y="212" text-anchor="middle" font-family="Inter, system-ui, -apple-system, sans-serif" font-size="10.5" font-weight="600" letter-spacing="1.5" fill="#7C857C">DAY 7</text>
+  <line x1="730" y1="130" x2="730" y2="154" stroke="#C9BFA9" stroke-width="1.2"/>
+<rect x="605" y="26" width="250" height="104" rx="12" fill="#FBF3F0" stroke="#E0C4BC"/>
+<text x="625" y="56" font-family="Inter, system-ui, -apple-system, sans-serif" font-size="14" font-weight="600" fill="#9B4A3C">Source deleted</text>
+<text x="625" y="78" font-family="Inter, system-ui, -apple-system, sans-serif" font-size="11.5" fill="#4F5A50">The raw conversation is gone.</text><text x="625" y="95" font-family="Inter, system-ui, -apple-system, sans-serif" font-size="11.5" fill="#4F5A50">Only the derived insight</text><text x="625" y="112" font-family="Inter, system-ui, -apple-system, sans-serif" font-size="11.5" fill="#4F5A50">remains.</text>
+  <circle cx="1010" cy="170" r="16" fill="#FFFFFF" stroke="#2C5F3F" stroke-width="2"/>
+<text x="1010" y="175.5" text-anchor="middle" font-family="Inter, system-ui, -apple-system, sans-serif" font-size="13" font-weight="600" fill="#2C5F3F">4</text>
+<text x="1010" y="128" text-anchor="middle" font-family="Inter, system-ui, -apple-system, sans-serif" font-size="10.5" font-weight="600" letter-spacing="1.5" fill="#7C857C">ONGOING</text>
+  <line x1="1010" y1="186" x2="1010" y2="214" stroke="#C9BFA9" stroke-width="1.2"/>
+<rect x="885" y="214" width="250" height="104" rx="12" fill="#FFFDF8" stroke="#DCD5C8"/>
+<text x="905" y="244" font-family="Inter, system-ui, -apple-system, sans-serif" font-size="14" font-weight="600" fill="#171A16">Retained per policy</text>
+<text x="905" y="266" font-family="Inter, system-ui, -apple-system, sans-serif" font-size="11.5" fill="#4F5A50">Profiles persist under your</text><text x="905" y="283" font-family="Inter, system-ui, -apple-system, sans-serif" font-size="11.5" fill="#4F5A50">retention policy. Every staff</text><text x="905" y="300" font-family="Inter, system-ui, -apple-system, sans-serif" font-size="11.5" fill="#4F5A50">access is logged.</text>
+</svg>
+          </div>
+          <div class="flow-diagram lifecycle-fallback" style="max-width: 760px; margin-inline: auto;">
             <div class="flow-node">
               <div class="flow-node__dot">1</div>
               <div>
@@ -340,7 +385,7 @@
             <div class="feature-cell">
               <span class="tag-pill is-cau"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="9"/><path d="M12 7v5l3 2"/></svg>Not yet</span>
               <h3 class="feature-cell__head">SOC 2 certification</h3>
-              <p class="feature-cell__body">Orchen is not SOC 2 certified today. A Type 1 audit is on our roadmap as we move from founding pilots to broader deployment. If your procurement process requires SOC 2 now, we'd rather tell you that on this page than in month three of an evaluation. We're glad to walk your reviewer through our current controls in detail.</p>
+              <p class="feature-cell__body">Orchen itself isn't SOC 2 certified yet &mdash; but it runs on SOC 2 Type 2-certified infrastructure (Supabase), with all data encrypted in transit and at rest. Our own SOC 2 Type 2 audit is on the roadmap as we move from founding pilots to broader deployment. If your procurement requires our own certification today, we'd rather tell you that here than in month three of an evaluation &mdash; and we're glad to walk your reviewer through every control in detail.</p>
             </div>
             <div class="feature-cell">
               <span class="tag-pill is-cau"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="9"/><path d="M12 7v5l3 2"/></svg>Not yet</span>
@@ -350,7 +395,7 @@
             <div class="feature-cell">
               <span class="tag-pill is-neu"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="9"/><path d="m16 8-2 6-6 2 2-6Z"/></svg>By design</span>
               <h3 class="feature-cell__head">What an early-stage vendor owes you</h3>
-              <p class="feature-cell__body">An early-stage company can't offer a decade of audits. What it can offer is an architecture where the privacy promises are structural rather than procedural, direct access to the people who built it, and contractual terms — data ownership, export, deletion — that protect the school regardless of what happens to the vendor. That is the deal we offer, stated plainly.</p>
+              <p class="feature-cell__body">What an early-stage company offers instead of a decade of audits: an architecture where the privacy promises are structural rather than procedural, direct access to the people who built it, and contractual terms — data ownership, export, deletion — that protect the school regardless of what happens to the vendor. That is the deal we offer, stated plainly.</p>
             </div>
           </div>
         </div>
@@ -477,5 +522,6 @@
   }());
   </script>
 
+  <a class="mobile-cta-bar" href="/#contact">Book a walkthrough &rarr;</a>
 </body>
 </html>

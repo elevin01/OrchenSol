@@ -2,6 +2,7 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8">
+  <meta name="theme-color" content="#1A3527">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>For Parents — Orchen</title>
   <meta name="description" content="Orchen gives school-managed parent clarity: private weekly learning context, assignment support, and at-home next steps without exposing raw student conversations.">
@@ -20,9 +21,6 @@
   <meta name="twitter:title" content="For Parents — Orchen">
   <meta name="twitter:description" content="Orchen gives school-managed parent clarity: private weekly learning context, assignment support, and at-home next steps without exposing raw student conversations.">
   <meta name="twitter:image" content="https://orchen.ai/assets/og-image.png">
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,700;1,400&family=Lora:ital,wght@0,400;0,500;1,400&display=swap" rel="stylesheet">
   <style>
 :root {
   --green:       #2C5F3F;
@@ -2000,6 +1998,8 @@ a { color: inherit; text-decoration: none; }
   .parent-final-cta { padding-block:4rem; }
 }
   </style>
+    <link rel="preload" href="/assets/fonts/playfair-bold.woff2" as="font" type="font/woff2" crossorigin>
+  <link rel="preload" href="/assets/fonts/lora-regular.woff2" as="font" type="font/woff2" crossorigin>
   <link rel="stylesheet" href="/assets/refine.css">
 </head>
 <body>
@@ -2010,6 +2010,15 @@ a { color: inherit; text-decoration: none; }
       <div class="nav-links" id="nav-links">
         <a href="/the-problem">The Problem</a>
         <a href="/how-it-works/">How It Works</a>
+        <div class="nav-drop">
+          <button class="nav-drop__btn" type="button" aria-haspopup="true">Who it&rsquo;s for</button>
+          <div class="nav-drop__menu">
+            <a href="/for/teachers">Teachers</a>
+            <a href="/for/parents">Parents</a>
+            <a href="/for/advisors">Advisors</a>
+            <a href="/solutions/heads-of-school">Heads of School</a>
+          </div>
+        </div>
         <a href="/trust">Trust</a>
         <a href="/#contact">For Schools</a>
       </div>
@@ -2388,5 +2397,6 @@ a { color: inherit; text-decoration: none; }
 
   </script>
 
+  <a class="mobile-cta-bar" href="/#contact">Book a walkthrough &rarr;</a>
 </body>
 </html>

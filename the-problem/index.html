@@ -2,6 +2,7 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8">
+  <meta name="theme-color" content="#1A3527">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>The Problem — Orchen</title>
   <meta name="description" content="A growing body of cited research on what AI is doing in K–12 classrooms — usage behavior, faculty alarm, critical-thinking decline, dependency surge, and the cognitive baseline.">
@@ -14,15 +15,12 @@
   <meta property="og:description" content="A growing body of cited research on what AI is doing in K–12 classrooms — usage behavior, faculty alarm, critical-thinking decline, dependency surge, and the cognitive baseline.">
   <meta property="og:type" content="article">
   <meta property="og:url" content="https://orchen.ai/the-problem">
-  <meta property="og:image" content="https://orchen.ai/assets/og-image.png">
+  <meta property="og:image" content="https://orchen.ai/assets/og-the-problem.png">
   <meta property="og:site_name" content="Orchen">
   <meta name="twitter:card" content="summary_large_image">
   <meta name="twitter:title" content="The Problem — Orchen">
   <meta name="twitter:description" content="A growing body of cited research on what AI is doing in K–12 classrooms — usage behavior, faculty alarm, critical-thinking decline, dependency surge, and the cognitive baseline.">
-  <meta name="twitter:image" content="https://orchen.ai/assets/og-image.png">
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,700;1,400&family=Lora:ital,wght@0,400;0,500;1,400&display=swap" rel="stylesheet">
+  <meta name="twitter:image" content="https://orchen.ai/assets/og-the-problem.png">
   <style>
 :root {
   --green:       #2C5F3F;
@@ -564,7 +562,56 @@ a.research-cite { border-bottom: 1px solid currentColor; padding-bottom: 1px; }
   background: rgba(237,233,228,0.08); color: var(--wall-muted);
 }
 
+
+/* ─── TOOLS STRIP (moved from home) ─── */
+.tools-section { padding-block: 4.5rem; }
+.tools-strip {
+  margin-top: 2rem;
+  display: flex; flex-wrap: wrap;
+  gap: 0.875rem 2.5rem;
+  border: 1px solid var(--border);
+  padding: 1.75rem 2rem;
+  background: rgba(255,255,255,0.45);
+}
+.tool-item { display: flex; align-items: center; flex-wrap: wrap; gap: 0.5rem; font-size: 0.875rem; color: var(--ink-muted); }
+.tool-name { color: var(--ink); font-weight: 600; }
+.tool-badge {
+  font-size: 0.6875rem; color: var(--amber);
+  background: rgba(156,124,74,0.1); border: 1px solid rgba(156,124,74,0.3);
+  border-radius: 2px; padding: 1px 6px; letter-spacing: 0.04em;
+}
+.tools-foot { width: 100%; margin-top: 0.5rem; padding-top: 1rem; border-top: 1px solid var(--border-light); font-size: 0.8125rem; line-height: 1.7; color: var(--ink-faint); }
+.tools-foot strong { color: var(--ink-muted); font-weight: 600; }
+.tools-foot a { font-size: 0.625rem; letter-spacing: 0.12em; text-transform: uppercase; border-bottom: 1px solid var(--border); padding-bottom: 1px; margin-left: 0.5rem; color: var(--ink-faint); }
+
+/* ─── THREE RESPONSES (closing) ─── */
+.responses { margin: 3.25rem auto 0; max-width: 880px; }
+.responses-eyebrow {
+  text-align: center; font-family: var(--font-body);
+  font-size: 0.6875rem; font-weight: 600; letter-spacing: 0.22em;
+  text-transform: uppercase; color: var(--wall-faint); margin-bottom: 1.25rem;
+}
+.responses-grid {
+  display: grid; grid-template-columns: repeat(3, 1fr);
+  gap: 1px; background: rgba(237,233,228,0.14); border: 1px solid rgba(237,233,228,0.14);
+}
+.resp { background: var(--dark-bg); padding: 1.75rem 1.5rem; text-align: left; }
+.resp--rejected { opacity: 0.55; }
+.resp--chosen { background: rgba(237,233,228,0.05); box-shadow: inset 0 0 0 1.5px var(--amber); }
+.resp-mark { display: block; font-size: 0.875rem; color: var(--wall-faint); margin-bottom: 0.5rem; }
+.resp--chosen .resp-mark { color: var(--amber); font-size: 1rem; }
+.resp-title { font-family: var(--font-display); font-size: 1.25rem; font-weight: 700; color: var(--wall-text); margin: 0 0 0.5rem; }
+.resp--rejected .resp-title { text-decoration: line-through; text-decoration-thickness: 1px; color: var(--wall-muted); }
+.resp--chosen .resp-title { color: #fff; }
+.resp-body { font-family: var(--font-body); font-size: 0.875rem; line-height: 1.65; color: var(--wall-muted); margin: 0; }
+@media (max-width: 760px) { .responses-grid { grid-template-columns: 1fr; } }
+
+/* Wider hero headline for the new title */
+.hero-h1 { max-width: 22ch; }
+
   </style>
+    <link rel="preload" href="/assets/fonts/playfair-bold.woff2" as="font" type="font/woff2" crossorigin>
+  <link rel="preload" href="/assets/fonts/lora-regular.woff2" as="font" type="font/woff2" crossorigin>
   <link rel="stylesheet" href="/assets/refine.css">
   <link rel="stylesheet" href="/assets/editorial.css">
 </head>
@@ -576,6 +623,15 @@ a.research-cite { border-bottom: 1px solid currentColor; padding-bottom: 1px; }
       <div class="nav-links" id="nav-links">
         <a href="/the-problem">The Problem</a>
         <a href="/how-it-works/">How It Works</a>
+        <div class="nav-drop">
+          <button class="nav-drop__btn" type="button" aria-haspopup="true">Who it&rsquo;s for</button>
+          <div class="nav-drop__menu">
+            <a href="/for/teachers">Teachers</a>
+            <a href="/for/parents">Parents</a>
+            <a href="/for/advisors">Advisors</a>
+            <a href="/solutions/heads-of-school">Heads of School</a>
+          </div>
+        </div>
         <a href="/trust">Trust</a>
         <a href="/#contact">For Schools</a>
       </div>
@@ -594,8 +650,8 @@ a.research-cite { border-bottom: 1px solid currentColor; padding-bottom: 1px; }
     <section class="hero bg-grid">
       <div class="container">
         <span class="eyebrow">The Problem &middot; 2026</span>
-        <h1 class="hero-h1">The research brief.</h1>
-        <p class="hero-sub">What students actually do with AI, what faculty already see in the work, and how far the cognitive baseline had fallen before these tools arrived &mdash; the cited research, in one place.</p>
+        <h1 class="hero-h1">The problem isn&rsquo;t AI. It&rsquo;s AI without guidance.</h1>
+        <p class="hero-sub">Students already use it. Schools need a version they can shape. What students actually do with AI, what faculty already see in the work, and how far the cognitive baseline had fallen before these tools arrived &mdash; the cited research, in one place.</p>
         <hr class="hero-rule">
         <div class="hero-figures">
           <div><b>95%</b><span>sessions skip the work</span></div>
@@ -604,6 +660,22 @@ a.research-cite { border-bottom: 1px solid currentColor; padding-bottom: 1px; }
           <div><b>62%</b><span>now use AI for homework</span></div>
           <div><b>&minus;7<i>pts</i></b><span>U.S. 9-yr-old math</span></div>
           <div><b>&minus;15<i>pts</i></b><span>OECD math since 2018</span></div>
+        </div>
+      </div>
+    </section>
+
+
+    <!-- THE TOOLS ALREADY IN HAND -->
+    <section class="section s-warm bg-grid tools-section">
+      <div class="container">
+        <span class="eyebrow">Already in students&rsquo; hands</span>
+        <h2 class="sec-h2">This isn&rsquo;t hypothetical. The tools are already open in the other tab.</h2>
+        <div class="tools-strip">
+          <div class="tool-item"><span class="tool-name">ChatGPT</span><span class="tool-badge">42% of AI sessions</span><span>&mdash; the dominant shortcut</span></div>
+          <div class="tool-item"><span class="tool-name">Google Gemini</span><span class="tool-badge">21% of AI sessions</span><span>&mdash; fastest-growing in schools</span></div>
+          <div class="tool-item"><span class="tool-name">Claude</span><span class="tool-badge">undetectable writing</span><span>&mdash; favored to evade AI detectors</span></div>
+          <div class="tool-item"><span class="tool-name">Photomath &amp; Socratic</span><span class="tool-badge">STEM shortcuts</span><span>&mdash; turning productive struggle into point-and-click</span></div>
+          <div class="tools-foot">Meanwhile: <strong>40% of schools ban AI outright</strong> with no alternative plan &mdash; and only 13% encourage use across all classes. Most students navigate this alone. <a href="https://newsroom.collegeboard.org/new-college-board-research-faculty-express-near-universal-concern-student-ai-use-undermines" target="_blank" rel="noopener">College Board 2025 &#8599;</a></div>
         </div>
       </div>
     </section>
@@ -744,6 +816,26 @@ a.research-cite { border-bottom: 1px solid currentColor; padding-bottom: 1px; }
         <div class="measure" style="text-align:center;">
           <p class="sec-body" style="max-width:none; margin-inline:auto;">Students are using AI overwhelmingly to skip the thinking, not support it. Faculty closest to the work see originality declining. Students themselves are starting to report the cognitive cost. Adoption is accelerating into the age range where cognitive habits matter most. And the foundational baseline &mdash; what schools could count on students arriving with &mdash; was already deteriorating before AI showed up.</p>
         </div>
+        <div class="responses">
+          <div class="responses-eyebrow">Three responses to this moment</div>
+          <div class="responses-grid">
+            <div class="resp resp--rejected">
+              <span class="resp-mark">&#10007;</span>
+              <h3 class="resp-title">Ban it.</h3>
+              <p class="resp-body">Fails in weeks. Students move to personal devices. You lose visibility completely.</p>
+            </div>
+            <div class="resp resp--rejected">
+              <span class="resp-mark">&#10007;</span>
+              <h3 class="resp-title">Ignore it.</h3>
+              <p class="resp-body">Creates a growing gap between what students submit and what they actually understand.</p>
+            </div>
+            <div class="resp resp--chosen">
+              <span class="resp-mark">&rarr;</span>
+              <h3 class="resp-title">Design it.</h3>
+              <p class="resp-body">Take control of AI in your school. Decide how it behaves, what it teaches, and what students actually learn from it.</p>
+            </div>
+          </div>
+        </div>
         <blockquote class="pull-quote" style="margin:2.5rem auto; max-width:640px; text-align:left;">The research is past whether to allow AI. It is in your classrooms. The question is what kind of AI environment the school is willing to take responsibility for.</blockquote>
         <div style="text-align:center;">
           <a href="/#contact" class="btn-cta closing-cta">Book a walkthrough &rarr;</a>
@@ -790,5 +882,6 @@ a.research-cite { border-bottom: 1px solid currentColor; padding-bottom: 1px; }
   }());
   </script>
 
+  <a class="mobile-cta-bar" href="/#contact">Book a walkthrough &rarr;</a>
 </body>
 </html>
