@@ -96,6 +96,8 @@ em { font-style: italic; }
   pointer-events: none;
   z-index: 9999;
   opacity: 0.028;
+  will-change: transform;
+  transform: translateZ(0);
   background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='300' height='300'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='300' height='300' filter='url(%23n)'/%3E%3C/svg%3E");
   background-size: 300px 300px;
 }
@@ -186,8 +188,8 @@ h4 {
 .nav[data-theme="dark"] {
   background: rgba(12,18,16,0.8);
   border-bottom: 1px solid rgba(237,233,228,0.07);
-  backdrop-filter: blur(14px);
-  -webkit-backdrop-filter: blur(14px);
+  backdrop-filter: blur(9px);
+  -webkit-backdrop-filter: blur(9px);
 }
 .nav[data-theme="light"] {
   background: var(--bg);
@@ -2605,7 +2607,7 @@ h4 {
         <!-- Column 1 -->
         <div class="wall-col">
           <div class="hero-bg-card" style="flex:1.5;">
-            <img src="assets/mit-brain-scan.webp" alt="MIT news article on a brain-scan study of AI use during writing tasks" loading="eager">
+            <img src="assets/mit-brain-scan.webp" alt="MIT news article on a brain-scan study of AI use during writing tasks" loading="eager" decoding="async">
             <div class="card-top-gradient"></div>
             <div class="card-content">
               <span class="card-source">MIT &middot; Fluid Interfaces</span>
@@ -2615,7 +2617,7 @@ h4 {
             </div>
           </div>
           <div class="hero-bg-card" style="flex:0.9;">
-            <img src="assets/youtube-brain-experts.webp" alt="YouTube video thumbnail featuring experts discussing AI&apos;s effect on the developing brain" loading="lazy">
+            <img src="assets/youtube-brain-experts.webp" alt="YouTube video thumbnail featuring experts discussing AI&apos;s effect on the developing brain" loading="lazy" decoding="async">
             <div class="card-top-gradient"></div>
             <div class="card-content">
               <span class="card-source">YouTube</span>
@@ -2629,7 +2631,7 @@ h4 {
         <!-- Column 2 -->
         <div class="wall-col">
           <div class="hero-bg-card" style="flex:0.85;">
-            <img src="assets/cnn-ai-brainpower.webp" alt="CNN news article headline: Study says using AI could cost you brainpower" loading="eager">
+            <img src="assets/cnn-ai-brainpower.webp" alt="CNN news article headline: Study says using AI could cost you brainpower" loading="eager" decoding="async">
             <div class="card-top-gradient"></div>
             <div class="card-content">
               <span class="card-source">CNN</span>
@@ -2638,7 +2640,7 @@ h4 {
             </div>
           </div>
           <div class="hero-bg-card" style="flex:1.4;">
-            <img src="assets/wapo-stanford.avif" alt="Washington Post article on Stanford research about AI use among students" loading="lazy">
+            <img src="assets/wapo-stanford.avif" alt="Washington Post article on Stanford research about AI use among students" loading="lazy" decoding="async">
             <div class="card-top-gradient"></div>
             <div class="card-content">
               <span class="card-source">Washington Post &middot; Stanford</span>
@@ -2651,7 +2653,7 @@ h4 {
         <!-- Column 3 -->
         <div class="wall-col">
           <div class="hero-bg-card" style="flex:1.1;">
-            <img src="assets/npr-brookings.webp" alt="NPR article citing Brookings research on AI in K-12 classrooms" loading="eager">
+            <img src="assets/npr-brookings.webp" alt="NPR article citing Brookings research on AI in K-12 classrooms" loading="eager" decoding="async">
             <div class="card-top-gradient"></div>
             <div class="card-content">
               <span class="card-source">NPR &middot; Brookings</span>
@@ -2661,7 +2663,7 @@ h4 {
             </div>
           </div>
           <div class="hero-bg-card" style="flex:1.15;">
-            <img src="assets/brookings-fortune.webp" alt="Brookings analysis published in Fortune on AI&apos;s impact on student cognition" loading="lazy">
+            <img src="assets/brookings-fortune.webp" alt="Brookings analysis published in Fortune on AI&apos;s impact on student cognition" loading="lazy" decoding="async">
             <div class="card-top-gradient"></div>
             <div class="card-content">
               <span class="card-source">Brookings &middot; Fortune</span>
@@ -2717,7 +2719,7 @@ h4 {
           <a class="what-is-cta" href="/platform/">See the full platform architecture &rarr;</a>
         </div>
         <div class="what-is-visual animate-in">
-          <img class="what-is-shot" src="assets/orchen-product-shot.webp" alt="Orchen student, teacher, and parent interfaces" loading="lazy">
+          <img class="what-is-shot" src="assets/orchen-product-shot.webp" alt="Orchen student, teacher, and parent interfaces" loading="lazy" decoding="async">
         </div>
       </div>
     </section>
@@ -3227,15 +3229,21 @@ document.addEventListener('DOMContentLoaded', () => {
 
     if (!reduceMotion && newsWall) {
       const rect = newsWall.getBoundingClientRect();
+      if (rect.bottom < -200) { ticking = false; return; }
       const normalized = Math.max(-1, Math.min(1, rect.top / Math.max(1, rect.height)));
-      html.style.setProperty('--hero-fg-shift', `${(-normalized * 22).toFixed(2)}px`);
-      html.style.setProperty('--hero-overlay-shift', `${(-normalized * 16).toFixed(2)}px`);
+      // scoped to the hero: root-level var writes restyle the whole document
+      newsWall.style.setProperty('--hero-fg-shift', `${(-normalized * 22).toFixed(2)}px`);
+      newsWall.style.setProperty('--hero-overlay-shift', `${(-normalized * 16).toFixed(2)}px`);
 
+      // batch reads before writes to avoid forced reflows
+      const shifts = [];
       layerBlocks.forEach((block) => {
         const b = block.getBoundingClientRect();
         const delta = (b.top + b.height * 0.5 - window.innerHeight * 0.5) / Math.max(1, window.innerHeight);
-        const shift = Math.max(-16, Math.min(16, -delta * 22));
-        block.style.setProperty('--layer-shift', `${shift.toFixed(2)}px`);
+        shifts.push(Math.max(-16, Math.min(16, -delta * 22)));
+      });
+      layerBlocks.forEach((block, i) => {
+        block.style.setProperty('--layer-shift', `${shifts[i].toFixed(2)}px`);
       });
     }
   };
