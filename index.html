@@ -2499,6 +2499,7 @@ h4 {
   <link rel="stylesheet" href="/assets/refine.css">
   <script type="application/ld+json">
 
+
 {
   "@context": "https://schema.org",
   "@type": "FAQPage",
@@ -2541,6 +2542,14 @@ h4 {
       "acceptedAnswer": {
         "@type": "Answer",
         "text": "The Socratic design lowers the stakes of any single answer: Orchen asks students to reason and check, rather than handing down statements to accept. Subject-specific modules constrain how it teaches each discipline, and because teachers see concept-level trends across the class, a misunderstanding surfaces as a pattern — not a secret."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Will students actually use a tutor that makes them think?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "That's the design problem Orchen is built around. The tutor meets each student where they are — adapting to how they learn, down to the study mood they pick that day — and the flashcards, quizzes, and learning profile are generated from their own work, which makes progress visible and personal. Assignments launch inside Orchen, so it's where schoolwork already lives. Guided help that works beats an answer they have to hide."
       }
     },
     {
@@ -2882,7 +2891,7 @@ h4 {
     <!-- ═══ SECTION F: DEVICE LAYER — FOOTNOTE ═══ -->
     <section class="device-note">
       <div class="container">
-        <p class="animate-in">Orchen runs as a software application on your school's existing devices &mdash; iPads, MacBooks, or any managed fleet. For schools that want airtight network-level enforcement, a pre-configured managed device layer is available as an optional add-on. No IT setup required either way.</p>
+        <p class="animate-in">Orchen runs as a software application on your school's existing devices &mdash; iPads, MacBooks, or any managed fleet. For schools that want network-level enforcement on managed devices, a pre-configured device layer is available as an optional add-on. No IT setup required either way.</p>
       </div>
     </section>
 
@@ -3015,6 +3024,10 @@ h4 {
         <details class="faq-item">
           <summary>What happens when the AI gets something wrong?</summary>
           <p>The Socratic design lowers the stakes of any single answer: Orchen asks students to reason and check, rather than handing down statements to accept. Subject-specific modules constrain how it teaches each discipline, and because teachers see concept-level trends across the class, a misunderstanding surfaces as a pattern &mdash; not a secret.</p>
+        </details>
+        <details class="faq-item">
+          <summary>Will students actually use a tutor that makes them think?</summary>
+          <p>That&rsquo;s the design problem Orchen is built around. The tutor meets each student where they are &mdash; adapting to how they learn, down to the study mood they pick that day &mdash; and the flashcards, quizzes, and learning profile are generated from their own work, which makes progress visible and personal. Assignments launch inside Orchen, so it&rsquo;s where schoolwork already lives. Guided help that works beats an answer they have to hide.</p>
         </details>
         <details class="faq-item">
           <summary>What does it cost, and what does a pilot look like?</summary>
@@ -3158,84 +3171,6 @@ document.addEventListener('DOMContentLoaded', () => {
     if (idx % 2 === 1) el.dataset.anim = 'left';
   });
 
-  // ─── THIRD OPTION DASHBOARD BOOST + SCORE COUNTUP ────────
-  const entersVisual = document.querySelector('.enters-visual');
-  const signalScores = entersVisual
-    ? Array.from(entersVisual.querySelectorAll('.signal-score-value[data-score]'))
-    : [];
-
-  const resetSignalScores = () => {
-    signalScores.forEach((el) => {
-      const target = Number(el.dataset.score || '0');
-      el.textContent = String(target);
-    });
-  };
-
-  const runSignalCountUp = () => {
-    if (!signalScores.length) return;
-    if (reduceMotion) {
-      resetSignalScores();
-      return;
-    }
-    const duration = 880;
-    signalScores.forEach((el, idx) => {
-      const target = Number(el.dataset.score || '0');
-      const delay = idx * 55;
-      const startAt = performance.now() + delay;
-      el.textContent = '0';
-
-      const tick = (now) => {
-        if (now < startAt) {
-          requestAnimationFrame(tick);
-          return;
-        }
-        const t = Math.min(1, (now - startAt) / duration);
-        const eased = 1 - Math.pow(1 - t, 3);
-        el.textContent = String(Math.round(target * eased));
-        if (t < 1) requestAnimationFrame(tick);
-      };
-      requestAnimationFrame(tick);
-    });
-  };
-
-  if (entersVisual && 'IntersectionObserver' in window) {
-    let boostTimer = null;
-    let visibleState = false;
-    const clearBoost = () => {
-      if (boostTimer) {
-        clearTimeout(boostTimer);
-        boostTimer = null;
-      }
-      entersVisual.classList.remove('boost');
-    };
-
-    const triggerBoost = () => {
-      entersVisual.classList.add('boost');
-      if (boostTimer) clearTimeout(boostTimer);
-      boostTimer = setTimeout(() => {
-        entersVisual.classList.remove('boost');
-        boostTimer = null;
-      }, 1200);
-    };
-
-    const dashboardObserver = new IntersectionObserver((entries) => {
-      entries.forEach((entry) => {
-        if (entry.isIntersecting && !visibleState) {
-          visibleState = true;
-          if (!reduceMotion) triggerBoost();
-          runSignalCountUp();
-        } else if (!entry.isIntersecting && visibleState) {
-          visibleState = false;
-          clearBoost();
-        }
-      });
-    }, { threshold: 0.4, rootMargin: '-8% 0px -8% 0px' });
-
-    dashboardObserver.observe(entersVisual);
-  } else {
-    resetSignalScores();
-  }
-
   const animateEls = document.querySelectorAll('.animate-in');
   if ('IntersectionObserver' in window) {
     const observer = new IntersectionObserver((entries) => {
@@ -3260,57 +3195,6 @@ document.addEventListener('DOMContentLoaded', () => {
     layerBlocks.forEach((block) => layerObserver.observe(block));
   } else {
     layerBlocks.forEach((block) => block.classList.add('in-view'));
-  }
-
-  // ─── COUNT-UP NUMBERS ────────────────────────────────────
-  const countUpEls = [];
-  const prepCounter = (selector) => {
-    document.querySelectorAll(selector).forEach((el) => {
-      const text = el.textContent.trim().replace(/\s+/g, '');
-      const match = text.match(/^(\d+)([%×x])$/i) || text.match(/^(\d+)$/);
-      if (!match) return;
-
-      const target = Number(match[1]);
-      const suffix = match[2] || '';
-      el.dataset.countTo = String(target);
-      el.dataset.countSuffix = suffix;
-      el.textContent = `0${suffix}`;
-      countUpEls.push(el);
-    });
-  };
-
-  prepCounter('.stat-num');
-
-  const runCounter = (el) => {
-    if (el.dataset.countStarted === 'true') return;
-    el.dataset.countStarted = 'true';
-
-    const target = Number(el.dataset.countTo || '0');
-    const suffix = el.dataset.countSuffix || '';
-    const duration = 1450;
-    const start = performance.now();
-
-    const tick = (now) => {
-      const t = Math.min(1, (now - start) / duration);
-      const eased = 1 - Math.pow(1 - t, 3);
-      const value = Math.round(target * eased);
-      el.textContent = `${value}${suffix}`;
-      if (t < 1) requestAnimationFrame(tick);
-    };
-    requestAnimationFrame(tick);
-  };
-
-  if ('IntersectionObserver' in window && countUpEls.length) {
-    const countObserver = new IntersectionObserver((entries) => {
-      entries.forEach((entry) => {
-        if (!entry.isIntersecting) return;
-        runCounter(entry.target);
-        countObserver.unobserve(entry.target);
-      });
-    }, { threshold: 0.45 });
-    countUpEls.forEach((el) => countObserver.observe(el));
-  } else {
-    countUpEls.forEach(runCounter);
   }
 
   // ─── NAV: DARK/LIGHT THEME + SHADOW ─────────────────────
