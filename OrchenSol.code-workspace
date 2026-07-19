@@ -1,0 +1,47 @@
+{
+	"folders": [
+		{
+			"path": "."
+		},
+		{
+			"path": "../../Downloads/files-2/orchen/assets"
+		},
+		{
+			"path": "../../Downloads/files-2/orchen/founding-schools"
+		},
+		{
+			"path": "../../Downloads/files-2/orchen/how-it-works"
+		},
+		{
+			"path": "../../Downloads/files-2/orchen/resources"
+		},
+		{
+			"path": "../../Downloads/files-2/orchen/solutions"
+		},
+		{
+			"path": "../../Downloads/files-2/orchen/trust"
+		},
+		{
+			"path": "../../Downloads/orchen/how-it-works"
+		},
+		{
+			"path": "../../Downloads/orchen/trust"
+		},
+		{
+			"path": "../../Downloads/orchen/resources"
+		},
+		{
+			"path": "../../Downloads/orchen/assets"
+		},
+		{
+			"path": "../../Downloads/orchen/solutions"
+		},
+		{
+			"path": "../../Downloads/orchen/founding-schools"
+		}
+	],
+	"settings": {
+		"liveServer.settings.port": 5501,
+		"liveServer.settings.multiRootWorkspaceName": "OrchenSol"
+	}
+}

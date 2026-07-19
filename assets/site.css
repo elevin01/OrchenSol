@@ -1,5 +1,5 @@
 /* ─────────────────────────────────────────────────────────────────
-   Orchen — site.css
+   Orchen, site.css
    Shared stylesheet for interior pages (trust, founding-schools,
    solutions, resources, how-it-works). Extracted from the /for/*
    page system so every page shares one design language.
@@ -717,7 +717,7 @@ a:focus-visible, button:focus-visible, input:focus-visible, textarea:focus-visib
 .progress-bar { height: 100%; width: 0%; background: var(--green); transition: width 0.05s linear; }
 
 /* 6. Responsive: stack the editorial grid + pull-quote on narrow screens
-      (not in the source pack — without it the marginalia breaks on phones) */
+      (not in the source pack, without it the marginalia breaks on phones) */
 @media (max-width: 860px) {
   .editorial-layout { grid-template-columns: 1fr; gap: 0; }
   .editorial-layout > * { grid-column: 1; }
