@@ -482,8 +482,10 @@ a { color: inherit; text-decoration: none; }
     <link rel="preload" href="/assets/fonts/playfair-bold.woff2" as="font" type="font/woff2" crossorigin>
   <link rel="preload" href="/assets/fonts/lora-regular.woff2" as="font" type="font/woff2" crossorigin>
   <link rel="stylesheet" href="/assets/refine.css">
+  <link rel="stylesheet" href="/assets/demo-media.css">
+  <script src="/assets/demo-media.js" defer></script>
 </head>
-<body class="site-warm-refresh">
+<body class="site-warm-refresh teacher-page">
 
   <nav class="nav" id="nav">
     <div class="nav-inner">
@@ -523,10 +525,47 @@ a { color: inherit; text-decoration: none; }
         <div class="stage">
           <div class="shot-frame">
             <div class="shot-chrome"><span class="shot-dot"></span><span class="shot-dot"></span><span class="shot-dot"></span><span class="shot-name">Teacher &middot; Class insights</span></div>
-            <video src="/assets/shot-teacher-classview.mp4" poster="/assets/shot-teacher-classview-poster.jpg" autoplay muted loop playsinline preload="metadata" style="width:100%;display:block;" aria-label="The Orchen class view, live: students needing attention, concept distribution, and class-level stats"></video>
+            <video controls data-src="/assets/shot-teacher-classview.mp4" poster="/assets/shot-teacher-classview-poster.jpg" data-autoplay muted loop playsinline preload="none" style="width:100%;display:block;" aria-label="The Orchen class view, live: students needing attention, concept distribution, and class-level stats"></video>
           </div>
         </div>
         <p class="shot-caption stage-cap">See the gaps before the test, not after, the whole class as a distribution.</p>
+      </div>
+    </section>
+
+    <!-- CLASS KNOWLEDGE BANK -->
+    <section class="section s-cream" id="knowledge-bank">
+      <div class="container">
+        <div class="feature-head">
+          <span class="eyebrow">Class Knowledge Bank</span>
+          <h2 class="sec-h2">Your lesson carries into the next question.</h2>
+          <p class="sec-body">Add your class readings, worksheets, and lesson materials. Connect them to a lesson or unit, then choose which material is active so students can get guided help in the context of your class.</p>
+        </div>
+      </div>
+      <div class="media-wide">
+        <figure class="demo-figure">
+          <div class="shot-frame">
+            <div class="shot-chrome"><span class="shot-dot"></span><span class="shot-dot"></span><span class="shot-dot"></span><span class="shot-name">Teacher view &middot; Adding class material</span></div>
+            <video data-src="/assets/knowledge-bank-add-material.mp4" poster="/assets/knowledge-bank-add-material-poster.jpg" width="3024" height="1978" controls muted loop playsinline preload="none" data-autoplay aria-label="Demo teacher workflow: adding class material and reviewing the knowledge bank" aria-describedby="knowledge-recording-caption"></video>
+          </div>
+          <figcaption class="demo-caption" id="knowledge-recording-caption">Recorded demo class &middot; Add material, select its lesson or unit, and check what is active. Use the video controls to pause or view fullscreen.</figcaption>
+        </figure>
+        <ol class="demo-workflow">
+          <li><h3>Add the material you teach from.</h3><p>Use &ldquo;Add material&rdquo; to bring a reading, worksheet, or lesson material into the class knowledge bank. The recording shows a teacher adding a linear-equations reading.</p></li>
+          <li><h3>Connect it to the lesson.</h3><p>Choose a lesson or unit from the material&rsquo;s selector. In the demo, the teacher connects the reading to the whole Linear Equations unit.</p></li>
+          <li><h3>Choose what is active.</h3><p>Review Active materials and the material&rsquo;s activation control. The interface includes Auto and Off settings; check which materials are active for the current lesson.</p></li>
+          <li><h3>Review &ldquo;What the tutor knows.&rdquo;</h3><p>See the current unit, readings listed in full, items known by title and summary, and a separate answer-key list. This gives you a place to review the class context before students ask for help.</p></li>
+        </ol>
+        <p class="demo-note demo-answer-key">The separate &ldquo;Answer key &middot; check-only&rdquo; setting is labeled for checking answers rather than showing the key to students. It is distinct from ordinary class readings.</p>
+        <figure class="demo-figure demo-outcome">
+          <div class="shot-frame">
+            <div class="shot-chrome"><span class="shot-dot"></span><span class="shot-dot"></span><span class="shot-dot"></span><span class="shot-name">Student view &middot; Guided help in class context</span></div>
+            <a class="demo-enlarge" href="/assets/OrchenKnowledgeBankContextChatUse.png" data-enlarge data-focus-x="540" data-focus-y="350" aria-label="Enlarge the demo student conversation">
+              <img src="/assets/OrchenKnowledgeBankContextChatUse.png" width="2494" height="784" alt="Demo student asks how Clare and Lin can both be right. Under a Period 3, Grade 8, Linear Equations unit label, Orchen uses a balanced-scale explanation and asks the student to compare their first moves." loading="lazy">
+              <span>Enlarge screenshot &nearr;</span>
+            </a>
+          </div>
+          <figcaption class="demo-caption">Demo conversation &middot; The class/unit label gives context. The explanation leads to a question about the two methods, leaving the next step to the student.</figcaption>
+        </figure>
       </div>
     </section>
 

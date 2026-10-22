@@ -2567,6 +2567,8 @@ h4 {
   ]
 }
   </script>
+  <link rel="stylesheet" href="/assets/demo-media.css">
+  <script src="/assets/demo-media.js" defer></script>
 </head>
 <body class="site-warm-refresh home-page">
 
@@ -2730,35 +2732,37 @@ h4 {
       <div class="container">
         <div class="yes-ai-inner">
           <div class="yes-ai-copy animate-in">
-            <span class="eyebrow">AI, designed for school</span>
+            <span class="eyebrow">What we stand for</span>
             <h2>Same category. <em>Different job.</em></h2>
-            <p>Students are already using AI. Orchen grounds it in what your school teaches, keeps students thinking, and turns their work into clear next steps for the adults supporting them.</p>
+            <p class="core-belief">Protect the journey from not knowing to understanding.</p>
+            <p>There&rsquo;s a difference between being given an answer and arriving at understanding. That journey is where learning happens: questioning, attempting, making connections, and working through mistakes.</p>
+            <p>Orchen is built to help students move forward while keeping the thinking theirs.</p>
           </div>
 
-          <div class="ai-contrast-grid animate-in" aria-label="How Orchen differs from generic AI tools">
+          <div class="ai-contrast-grid animate-in" aria-label="Completing a task and supporting understanding">
             <article class="ai-contrast-card">
-              <span class="ai-contrast-kicker">Generic AI tools</span>
+              <span class="ai-contrast-kicker">When the goal is an output</span>
               <h3>Complete the task.</h3>
               <ul>
-                <li>Answer first</li>
-                <li>Optimize for speed</li>
-                <li>Leave school invisible</li>
+                <li>Get an answer or a finished draft</li>
+                <li>Reduce time spent on the task</li>
+                <li>Understanding still needs a separate check</li>
               </ul>
             </article>
 
             <article class="ai-contrast-card ai-contrast-card--orchen">
               <span class="ai-contrast-kicker">Orchen</span>
-              <h3>Develop the student.</h3>
+              <h3>Support the next step.</h3>
               <ul>
                 <li>Grounded in your curriculum</li>
-                <li>Ask before answering</li>
-                <li>Turn learning into the next step</li>
+                <li>Questions, explanations, examples, and feedback</li>
+                <li>Evidence to help adults decide what comes next</li>
               </ul>
             </article>
           </div>
 
           <div class="yes-ai-compare animate-in">
-            <strong>Orchen is the version schools can configure, see, and act on.</strong>
+            <strong>The features below serve that journey: class context, guided help, and evidence of understanding.</strong>
             <a href="/compare/">Compare Orchen to other AI tools &rarr;</a>
           </div>
         </div>
@@ -2787,7 +2791,7 @@ h4 {
           <div class="roles-panel active" id="panel-students" role="tabpanel" aria-labelledby="tab-students">
             <div class="roles-copy">
               <h3 class="roles-h3">A tutor that asks <em>before it answers.</em></h3>
-              <p class="roles-body">Orchen never does the work for students, it asks questions until they get there, and it learns how each one learns. Flashcards, quizzes, and a Learning Profile grow from their own work, not a generic curriculum.</p>
+              <p class="roles-body">Orchen uses guiding questions to help students work through problems and develop their own understanding. Flashcards, quizzes, and a Learning Profile grow from their own work, not a generic curriculum.</p>
               <ul class="roles-list">
                 <li>Socratic chat that keeps students thinking, not copying</li>
                 <li>Flashcards and quizzes built automatically from their own sessions</li>
@@ -2801,10 +2805,10 @@ h4 {
                 <span class="roles-chrome-tag">Student view &middot; live capture</span>
               </div>
               <div class="roles-media">
-                <video class="roles-shot active" data-chip="demo" src="assets/shot-student-chat.mp4" poster="assets/shot-student-chat-poster.jpg" autoplay muted loop playsinline preload="metadata" aria-label="Student chat: the tutor asks a guiding question instead of giving the answer"></video>
+                <video controls class="roles-shot active" data-chip="demo" data-src="assets/shot-student-chat.mp4" poster="assets/shot-student-chat-poster.jpg" data-autoplay muted loop playsinline preload="none" aria-label="Student chat: the tutor asks a guiding question instead of giving the answer"></video>
                 <img class="roles-shot" data-chip="flashcards" src="assets/shot-student-flashcard.png" alt="Flashcards generated from the student's own conversation" loading="lazy">
-                <video class="roles-shot" data-chip="quiz" src="assets/shot-student-quiz.mp4" poster="assets/shot-student-quiz-poster.jpg" muted loop playsinline preload="none" aria-label="A quiz built from the concepts the student just studied, live"></video>
-                <video class="roles-shot" data-chip="profile" src="assets/shot-student-profile.mp4" poster="assets/shot-student-profile-poster.jpg" muted loop playsinline preload="none" aria-label="A student's learning profile, live"></video>
+                <video controls class="roles-shot" data-chip="quiz" data-autoplay data-src="assets/shot-student-quiz.mp4" poster="assets/shot-student-quiz-poster.jpg" muted loop playsinline preload="none" aria-label="A quiz built from the concepts the student just studied, live"></video>
+                <video controls class="roles-shot" data-chip="profile" data-autoplay data-src="assets/shot-student-profile.mp4" poster="assets/shot-student-profile-poster.jpg" muted loop playsinline preload="none" aria-label="A student's learning profile, live"></video>
                 <img class="roles-shot" data-chip="moods" src="assets/shot-student-mood-zoom.png" alt="Six study moods, the student picks how Orchen coaches today" loading="lazy">
               </div>
               <div class="roles-chips" aria-label="More of the student workspace">
@@ -2820,22 +2824,40 @@ h4 {
           <!-- TEACHERS -->
           <div class="roles-panel" id="panel-teachers" role="tabpanel" aria-labelledby="tab-teachers">
             <div class="roles-copy">
-              <h3 class="roles-h3">Walk in already knowing <em>who needs you.</em></h3>
-              <p class="roles-body">See how each student thinks before class, not after the test: who needs attention, what&rsquo;s getting in the way, and what to try next.</p>
+              <h3 class="roles-h3">Your lesson carries into <em>the next question.</em></h3>
+              <p class="roles-body">Add readings, worksheets, and lesson materials to the class knowledge bank. Orchen uses active material to support students as they work through your lessons.</p>
               <ul class="roles-list">
-                <li>A class view built from real work, not test scores</li>
-                <li>Per-student insight: sticking points, what changed, what to try next</li>
-                <li>Early flags the moment a student needs an adult</li>
+                <li>Connect material to a lesson or unit</li>
+                <li>Choose what&rsquo;s active in the knowledge bank</li>
+                <li>Guided help in class context, with the thinking still theirs</li>
               </ul>
-              <a class="roles-link" href="/for/teachers">See what teachers get &rarr;</a>
+              <a class="roles-link" href="/for/teachers/#knowledge-bank">See the teacher workflow &rarr;</a>
             </div>
             <div class="roles-stage">
               <div class="roles-chrome">
                 <div class="mockup-dots"><div class="mockup-dot"></div><div class="mockup-dot"></div><div class="mockup-dot"></div></div>
-                <span class="roles-chrome-tag">Teacher view &middot; live capture</span>
+                <span class="roles-chrome-tag">Knowledge bank &middot; Demo data</span>
               </div>
               <div class="roles-media">
-                <video class="roles-shot active" data-chip="demo" src="assets/shot-teacher-classview.mp4" poster="assets/shot-teacher-classview-poster.jpg" autoplay muted loop playsinline preload="metadata" aria-label="Teacher class view: drilling into how the class is doing"></video>
+                <div class="roles-shot active" data-chip="material">
+                  <p class="demo-media-label">Teacher view &middot; Adding class material</p>
+                  <video data-src="/assets/knowledge-bank-add-material.mp4" poster="/assets/knowledge-bank-add-material-poster.jpg" width="3024" height="1978" controls muted loop playsinline preload="none" data-autoplay aria-label="Demo: add material, choose its unit and active setting, and review What the tutor knows" aria-describedby="teacher-demo-caption"></video>
+                  <p class="demo-caption" id="teacher-demo-caption">Add material, connect it to the unit, and review what is active. Demo class.</p>
+                </div>
+                <div class="roles-shot" data-chip="context">
+                  <p class="demo-media-label">Student view &middot; Guided help in class context</p>
+                  <a class="demo-enlarge" href="/assets/OrchenKnowledgeBankContextChatUse.png" data-enlarge data-focus-x="540" data-focus-y="350" aria-label="Enlarge the demo student conversation">
+                    <img src="/assets/OrchenKnowledgeBankContextChatUse.png" width="2494" height="784" alt="Demo conversation labeled Period 3, Grade 8, Unit 2: Linear Equations, Unit review. Orchen asks the student to compare Clare and Lin&rsquo;s first moves." loading="lazy">
+                    <span>Enlarge screenshot &nearr;</span>
+                  </a>
+                  <p class="demo-caption">The class/unit label and follow-up question show the context of this demo exchange.</p>
+                </div>
+                <video class="roles-shot" data-chip="classview" data-src="/assets/shot-teacher-classview.mp4" poster="/assets/shot-teacher-classview-poster.jpg" controls muted loop playsinline preload="none" data-autoplay aria-label="Teacher class view: drilling into how the class is doing"></video>
+              </div>
+              <div class="roles-chips" aria-label="Teacher workflow previews">
+                <button class="roles-chip active" data-chip="material" aria-pressed="true">1. Add class material</button>
+                <button class="roles-chip" data-chip="context" aria-pressed="false">2. Student conversation</button>
+                <button class="roles-chip" data-chip="classview" aria-pressed="false">Class insights</button>
               </div>
             </div>
           </div>
@@ -2858,7 +2880,7 @@ h4 {
                 <span class="roles-chrome-tag">Parent view &middot; live capture</span>
               </div>
               <div class="roles-media">
-                <video class="roles-shot active" data-chip="demo" src="assets/shot-parent-ask.mp4" poster="assets/shot-parent-ask-poster.jpg" autoplay muted loop playsinline preload="metadata" aria-label="Parent view: asking Orchen how their child is doing"></video>
+                <video controls class="roles-shot active" data-chip="demo" data-src="assets/shot-parent-ask.mp4" poster="assets/shot-parent-ask-poster.jpg" data-autoplay muted loop playsinline preload="none" aria-label="Parent view: asking Orchen how their child is doing"></video>
               </div>
             </div>
           </div>
@@ -2866,22 +2888,42 @@ h4 {
           <!-- LEADERS -->
           <div class="roles-panel" id="panel-leaders" role="tabpanel" aria-labelledby="tab-leaders">
             <div class="roles-copy">
-              <h3 class="roles-h3">Set the rules once. <em>See the whole school.</em></h3>
-              <p class="roles-body">Your value to families, visible every week of the semester. You decide how the AI behaves, and everything rolls up into a school-wide picture you can stand behind.</p>
+              <h3 class="roles-h3">Covered in class. <em>Demonstrated by students?</em></h3>
+              <p class="roles-body">Separate exposure, substantive engagement, and demonstrated understanding. See the recorded evidence against curriculum standards and where evidence is still missing.</p>
               <ul class="roles-list">
-                <li>School-wide visibility across classes and grades</li>
-                <li>Policy and configuration in your control, not a vendor&rsquo;s</li>
-                <li>Evidence you can take to boards, accreditors, and families</li>
+                <li><strong>Exposure:</strong> the student encountered the standard</li>
+                <li><strong>Engagement:</strong> the student worked with it substantively</li>
+                <li><strong>Demonstrated:</strong> understanding shown on a graded check-in or quiz</li>
               </ul>
-              <a class="roles-link" href="/solutions/heads-of-school">See the leadership view &rarr;</a>
+              <p class="demo-note">Missing evidence is a reason to ask what to assess next; it does not establish a lack of understanding.</p>
+              <a class="roles-link" href="/solutions/heads-of-school/#standards-evidence">Explore standards evidence &rarr;</a>
             </div>
             <div class="roles-stage">
               <div class="roles-chrome">
                 <div class="mockup-dots"><div class="mockup-dot"></div><div class="mockup-dot"></div><div class="mockup-dot"></div></div>
-                <span class="roles-chrome-tag">School view &middot; overview</span>
+                <span class="roles-chrome-tag">Standards view &middot; Demo data</span>
               </div>
               <div class="roles-media">
-                <img class="roles-shot active" data-chip="demo" src="assets/shot-leader-overview.webp" alt="School-wide overview across classes" loading="lazy">
+                <div class="roles-shot active" data-chip="standards">
+                  <a class="demo-enlarge" href="/assets/OrchenStandarsScreenShot.png" data-enlarge data-focus-x="550" data-focus-y="140" aria-label="Enlarge the ELA standards example">
+                    <img src="/assets/OrchenStandarsScreenShot.png" width="2872" height="1988" alt="Example standards view with exposure, engagement and demonstrated definitions above NYS English Language Arts standards. Visible assignment and student counts are zero; latest evidence is blank." loading="lazy">
+                    <span>Enlarge screenshot &nearr;</span>
+                  </a>
+                  <p class="demo-caption">ELA example: visible counts are zero, with no latest evidence recorded.</p>
+                </div>
+                <div class="roles-shot" data-chip="math">
+                  <a class="demo-enlarge" href="/assets/StandardsMath1count.png" data-enlarge aria-label="Enlarge the math standards example">
+                    <img src="/assets/StandardsMath1count.png" width="2014" height="480" alt="Math standards example: NY-5.NF.1 through NY-5.NF.3 each show zero assignments, one student, and latest evidence dated August 31, 2026. NY-5.NF.4 shows zero counts." loading="lazy">
+                    <span>Enlarge screenshot &nearr;</span>
+                  </a>
+                  <p class="demo-caption">Math example: three rows show one student and a latest-evidence date, not a completed class report.</p>
+                </div>
+                <img class="roles-shot" data-chip="overview" src="assets/shot-leader-overview.webp" alt="Orchen leadership overview" loading="lazy">
+              </div>
+              <div class="roles-chips" aria-label="Leadership previews">
+                <button class="roles-chip active" data-chip="standards" aria-pressed="true">Standards &middot; ELA example</button>
+                <button class="roles-chip" data-chip="math" aria-pressed="false">Math example</button>
+                <button class="roles-chip" data-chip="overview" aria-pressed="false">Overview</button>
               </div>
             </div>
           </div>
@@ -3342,24 +3384,19 @@ document.addEventListener('DOMContentLoaded', () => {
   const roleTabs = document.querySelectorAll('.roles-tab');
   const rolePanels = document.querySelectorAll('.roles-panel');
 
-  const setRoleVideo = (video, on) => {
-    if (!video) return;
-    if (on) { video.play().catch(() => {}); } else { video.pause(); }
-  };
-
   const activateRole = (name) => {
     roleTabs.forEach((tab) => {
       const on = tab.dataset.panel === name;
       tab.classList.toggle('active', on);
       tab.setAttribute('aria-selected', String(on));
+      tab.tabIndex = on ? 0 : -1;
     });
     rolePanels.forEach((panel) => {
       const on = panel.id === `panel-${name}`;
       panel.classList.toggle('active', on);
-      panel.querySelectorAll('video.roles-shot').forEach((video) => {
-        setRoleVideo(video, on && video.classList.contains('active') && !reduceMotion);
-      });
+      panel.hidden = !on;
     });
+    document.dispatchEvent(new Event('orchen:mediachange'));
   };
 
   roleTabs.forEach((tab) => {
@@ -3383,12 +3420,16 @@ document.addEventListener('DOMContentLoaded', () => {
     const shots = panel.querySelectorAll('.roles-shot');
     chips.forEach((chip) => {
       chip.addEventListener('click', () => {
-        chips.forEach((c) => c.classList.toggle('active', c === chip));
+        chips.forEach((c) => {
+          c.classList.toggle('active', c === chip);
+          c.setAttribute('aria-pressed', String(c === chip));
+        });
         shots.forEach((shot) => {
           const on = shot.dataset.chip === chip.dataset.chip;
           shot.classList.toggle('active', on);
-          if (shot.tagName === 'VIDEO') setRoleVideo(shot, on && panel.classList.contains('active') && !reduceMotion);
+          shot.hidden = !on;
         });
+        document.dispatchEvent(new Event('orchen:mediachange'));
       });
     });
   });

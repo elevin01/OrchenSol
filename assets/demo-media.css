@@ -1,0 +1,122 @@
+/* Product evidence additions, scoped to the existing media and section patterns. */
+body.site-warm-refresh .yes-ai-copy .core-belief {
+  color: var(--green);
+  font-size: clamp(1.2rem, 1.7vw, 1.5rem);
+  font-weight: 700;
+  line-height: 1.35;
+}
+
+.roles-shot[hidden], .roles-panel[hidden], [data-demo-panel][hidden] { display: none !important; }
+.demo-figure { margin: 0; min-width: 0; }
+#knowledge-bank > .media-wide { width: min(calc(100% - 40px), 1200px); margin-inline: auto; }
+.teacher-page .two-col > * { min-width: 0; }
+.demo-figure video, .roles-shot video, .demo-enlarge img {
+  display: block;
+  width: 100%;
+  height: auto;
+  object-fit: contain;
+}
+.demo-media-label {
+  padding: .8rem 1rem;
+  margin: 0;
+  color: var(--green);
+  font-size: .85rem;
+  font-weight: 600;
+}
+.demo-caption, .demo-note {
+  color: var(--ink-muted);
+  font-size: .875rem;
+  line-height: 1.65;
+}
+.demo-caption { margin: 0; padding: .85rem 1rem; }
+.demo-note { margin: 0 0 1.25rem; }
+.demo-enlarge {
+  display: block;
+  color: var(--green);
+  background: #fff;
+  text-decoration: none;
+}
+.demo-enlarge span {
+  display: block;
+  padding: .75rem 1rem;
+  text-align: right;
+  font-size: .8125rem;
+  text-decoration: underline;
+  text-underline-offset: .2em;
+}
+.demo-enlarge:focus-visible, .demo-selector button:focus-visible,
+.demo-zoom button:focus-visible, .demo-zoom-viewport:focus-visible {
+  outline: 3px solid var(--green);
+  outline-offset: -3px;
+}
+.demo-workflow, .demo-evidence-types, .demo-reading-notes {
+  display: grid;
+  gap: 1.5rem;
+  margin: 2.5rem 0;
+  padding: 0;
+}
+.demo-workflow { grid-template-columns: repeat(2, minmax(0, 1fr)); list-style: none; counter-reset: workflow; }
+.demo-workflow li { counter-increment: workflow; }
+.demo-workflow h3::before { content: counter(workflow, decimal-leading-zero) " / "; color: var(--green); }
+.demo-workflow h3, .demo-reading-notes h3, .demo-evidence-types dt {
+  color: var(--ink);
+  font-size: 1.0625rem;
+  line-height: 1.4;
+  font-weight: 600;
+  margin: 0 0 .65rem;
+}
+.demo-workflow p, .demo-reading-notes p, .demo-evidence-types dd {
+  color: var(--ink-muted);
+  font-size: .9375rem;
+  line-height: 1.75;
+  margin: 0;
+}
+.demo-answer-key { padding: 1rem 1.25rem; border-left: 3px solid var(--green); background: rgba(44, 95, 63, .04); }
+.demo-outcome { margin-top: 2.5rem; }
+.demo-evidence-types { grid-template-columns: repeat(3, minmax(0, 1fr)); }
+.demo-evidence-types > div { padding-top: 1rem; border-top: 1px solid var(--border); }
+.demo-evidence-types dt { color: var(--green); }
+.demo-reading-notes { grid-template-columns: repeat(3, minmax(0, 1fr)); }
+.demo-selector { display: flex; flex-wrap: wrap; gap: .6rem; margin-bottom: 1.25rem; }
+.demo-selector button {
+  padding: .65rem 1rem;
+  border: 1px solid var(--border);
+  border-radius: 999px;
+  font: inherit;
+  font-size: .875rem;
+  color: var(--green);
+  background: #fff;
+  cursor: pointer;
+}
+.demo-selector button[aria-pressed="true"] { background: var(--green); color: #fff; border-color: var(--green); }
+#knowledge-bank, #standards-evidence { scroll-margin-top: calc(var(--nav-h, 80px) + 1.5rem); }
+
+.demo-zoom {
+  width: min(96vw, 1440px);
+  max-width: 96vw;
+  max-height: 92dvh;
+  padding: 0;
+  color: var(--ink);
+  background: #fff;
+  border: 1px solid var(--border);
+  border-radius: 12px;
+  box-shadow: 0 24px 80px rgba(0, 0, 0, .3);
+  font-family: var(--font-body);
+}
+.demo-zoom::backdrop { background: rgba(15, 26, 22, .78); }
+.demo-zoom-bar { display: flex; align-items: center; flex-wrap: wrap; gap: .7rem; padding: 1rem; border-bottom: 1px solid var(--border); }
+.demo-zoom-bar h2 { flex: 1 1 220px; margin: 0; font: inherit; font-weight: 600; }
+.demo-zoom button { padding: .6rem .8rem; font: inherit; font-size: .875rem; border: 1px solid var(--border); border-radius: 6px; background: #fff; color: var(--green); cursor: pointer; }
+.demo-zoom-viewport { max-height: 68dvh; overflow: auto; overscroll-behavior: contain; }
+.demo-zoom-viewport img { display: block; width: 100%; height: auto; max-width: 100%; }
+.demo-zoom-viewport.is-full-size img { width: var(--image-width); max-width: none; }
+.demo-zoom-help { padding: .8rem 1rem; margin: 0; font-size: .8125rem; color: var(--ink-muted); }
+html:has(.demo-zoom[open]) { overflow: hidden; }
+
+@media (max-width: 760px) {
+  .teacher-page .two-col { grid-template-columns: minmax(0, 1fr); }
+  .demo-workflow, .demo-evidence-types, .demo-reading-notes { grid-template-columns: 1fr; }
+  .demo-media-label { font-size: .8rem; }
+  .demo-zoom-bar h2 { flex-basis: 100%; }
+  .demo-zoom-viewport { max-height: 62dvh; }
+}

@@ -37,6 +37,8 @@
   <link rel="preload" href="/assets/fonts/lora-regular.woff2" as="font" type="font/woff2" crossorigin>
   <link rel="stylesheet" href="/assets/refine.css">
   <link rel="stylesheet" href="/assets/editorial.css">
+  <link rel="stylesheet" href="/assets/demo-media.css">
+  <script src="/assets/demo-media.js" defer></script>
 </head>
 <body class="site-warm-refresh">
 
@@ -145,6 +147,53 @@
           </div>
         </div>
         <p class="shot-caption stage-cap">A per-student profile built from real sessions, not surveys.</p>
+      </div>
+    </section>
+
+    <!-- STANDARDS EVIDENCE -->
+    <section class="section s-cream" id="standards-evidence">
+      <div class="container">
+        <div class="feature-head">
+          <span class="eyebrow">Standards Evidence</span>
+          <h2 class="sec-h2">Covered in class. Demonstrated by students?</h2>
+          <p class="sec-body">Protecting the learning journey includes checking for evidence of understanding. The standards view separates encountering material, working with it, and showing understanding on an assessment.</p>
+        </div>
+        <dl class="demo-evidence-types">
+          <div><dt>Exposure</dt><dd>The student encountered the standard during instruction or independent work.</dd></div>
+          <div><dt>Engagement</dt><dd>The student worked with it substantively, such as through sustained effort, discussion, or applying concepts.</dd></div>
+          <div><dt>Demonstrated</dt><dd>The student showed understanding on a graded check-in or quiz.</dd></div>
+        </dl>
+      </div>
+      <div class="media-wide" data-demo-gallery>
+        <div class="demo-selector" role="group" aria-label="Standards examples">
+          <button type="button" data-demo-select="ela" aria-pressed="true" aria-controls="standards-ela">ELA &middot; No recorded evidence</button>
+          <button type="button" data-demo-select="math" aria-pressed="false" aria-controls="standards-math">Math &middot; One-student counts</button>
+        </div>
+        <figure class="demo-figure" data-demo-panel="ela" id="standards-ela">
+          <div class="shot-frame">
+            <div class="shot-chrome"><span class="shot-dot"></span><span class="shot-dot"></span><span class="shot-dot"></span><span class="shot-name">Standards view &middot; ELA example &middot; Demo data</span></div>
+            <a class="demo-enlarge" href="/assets/OrchenStandarsScreenShot.png" data-enlarge data-focus-x="550" data-focus-y="140" aria-label="Enlarge the ELA standards example">
+              <img src="/assets/OrchenStandarsScreenShot.png" width="2872" height="1988" alt="NYS English Language Arts standards example with assignment, student, evidence and last-evidence columns. All visible counts are zero and latest-evidence dates are blank." loading="lazy">
+              <span>Enlarge screenshot &nearr;</span>
+            </a>
+          </div>
+          <figcaption class="demo-caption">ELA example &middot; Zero visible assignment and student counts; no latest evidence recorded. This is an example of the view, not a completed class report.</figcaption>
+        </figure>
+        <figure class="demo-figure" data-demo-panel="math" id="standards-math" hidden>
+          <div class="shot-frame">
+            <div class="shot-chrome"><span class="shot-dot"></span><span class="shot-dot"></span><span class="shot-dot"></span><span class="shot-name">Standards view &middot; Math example &middot; Demo data</span></div>
+            <a class="demo-enlarge" href="/assets/StandardsMath1count.png" data-enlarge aria-label="Enlarge the math standards example">
+              <img src="/assets/StandardsMath1count.png" width="2014" height="480" alt="Fraction standards NY-5.NF.1, NY-5.NF.2 and NY-5.NF.3 show zero assignments, one student each, and latest evidence August 31, 2026. NY-5.NF.4 has zero counts and no latest-evidence date." loading="lazy">
+              <span>Enlarge screenshot &nearr;</span>
+            </a>
+          </div>
+          <figcaption class="demo-caption">Math example &middot; Three rows show one student, zero assignments, and latest evidence dated August 31, 2026. These counts do not establish class-wide understanding.</figcaption>
+        </figure>
+        <div class="demo-reading-notes">
+          <div><h3>Read the counts alongside the evidence.</h3><p>The view places assignment and student counts beside evidence indicators and the latest-evidence date for each standard. It records counts and dates, not a mastery score. A count alone does not tell you which kind of understanding a student demonstrated.</p></div>
+          <div><h3>Use the gaps to plan the next question.</h3><p>Ask which standards students have encountered, where they have worked substantively, and where a further check-in could help. A missing record means evidence is missing from this view; it does not mean the student lacks understanding.</p></div>
+          <div><h3>Bring evidence to curriculum conversations.</h3><p>Use these records alongside student work, classroom observations, and assessment to decide what to revisit or assess next. They support professional judgment rather than replace it.</p></div>
+        </div>
       </div>
     </section>
 
