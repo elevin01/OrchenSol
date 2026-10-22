@@ -1,12 +1,4 @@
 /* A compact introduction followed by two directly comparable learning paths. */
-.what-is-visual .what-is-image-caption {
-  margin: 1rem 0 0;
-  color: var(--ink-muted);
-  font-size: .8rem;
-  line-height: 1.5;
-  text-align: center;
-}
-
 #obvious-question {
   padding-block: clamp(3rem, 5vw, 4.5rem);
 }
