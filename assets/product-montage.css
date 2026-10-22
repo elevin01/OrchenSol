@@ -1,0 +1,52 @@
+/* Give the montage the remaining width while preserving a readable copy column. */
+body.home-page .what-is-grid {
+  width: min(calc(100% - 80px), 1720px);
+  max-width: 1720px;
+  grid-template-columns: 560px minmax(0, 1fr);
+  gap: clamp(2rem, 3vw, 3rem);
+}
+
+body.home-page .what-is-visual {
+  min-width: 0;
+  padding: 0;
+}
+
+body.home-page .what-is-shot {
+  width: 100%;
+  max-width: none;
+}
+
+/* Align the existing colored panel with the enlarged image column. */
+body.home-page .what-is::before {
+  right: max(40px, calc((100vw - 1720px) / 2));
+  width: calc(min(100vw - 80px, 1720px) - 560px - clamp(2rem, 3vw, 3rem));
+}
+
+@media (max-width: 1180px) {
+  body.home-page .what-is-grid {
+    width: calc(100% - 40px);
+    grid-template-columns: minmax(0, 1fr);
+    gap: 2rem;
+  }
+
+  body.home-page .what-is-copy {
+    max-width: 720px;
+    margin-inline: auto;
+  }
+
+  body.home-page .what-is-visual {
+    width: 100%;
+    max-width: 1100px;
+    margin-inline: auto;
+    padding: 0;
+  }
+
+  body.home-page .what-is::before { display: none; }
+}
+
+@media (max-width: 560px) {
+  body.home-page .what-is-visual {
+    width: calc(100% + 24px);
+    margin-inline: -12px;
+  }
+}
