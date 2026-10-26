@@ -92,8 +92,12 @@ body.site-warm-refresh .yes-ai-copy .core-belief {
 #knowledge-bank, #standards-evidence { scroll-margin-top: calc(var(--nav-h, 80px) + 1.5rem); }
 
 .demo-zoom {
+  position: fixed;
+  inset: 0;
+  margin: auto;
   width: min(96vw, 1440px);
   max-width: 96vw;
+  height: fit-content;
   max-height: 92dvh;
   padding: 0;
   color: var(--ink);
@@ -103,14 +107,16 @@ body.site-warm-refresh .yes-ai-copy .core-belief {
   box-shadow: 0 24px 80px rgba(0, 0, 0, .3);
   font-family: var(--font-body);
 }
+.demo-zoom[open] { display: flex; flex-direction: column; }
 .demo-zoom::backdrop { background: rgba(15, 26, 22, .78); }
-.demo-zoom-bar { display: flex; align-items: center; flex-wrap: wrap; gap: .7rem; padding: 1rem; border-bottom: 1px solid var(--border); }
+.demo-zoom-bar { display: flex; flex-shrink: 0; align-items: center; flex-wrap: wrap; gap: .7rem; padding: 1rem; border-bottom: 1px solid var(--border); }
 .demo-zoom-bar h2 { flex: 1 1 220px; margin: 0; font: inherit; font-weight: 600; }
 .demo-zoom button { padding: .6rem .8rem; font: inherit; font-size: .875rem; border: 1px solid var(--border); border-radius: 6px; background: #fff; color: var(--green); cursor: pointer; }
-.demo-zoom-viewport { max-height: 68dvh; overflow: auto; overscroll-behavior: contain; }
-.demo-zoom-viewport img { display: block; width: 100%; height: auto; max-width: 100%; }
-.demo-zoom-viewport.is-full-size img { width: var(--image-width); max-width: none; }
-.demo-zoom-help { padding: .8rem 1rem; margin: 0; font-size: .8125rem; color: var(--ink-muted); }
+.demo-zoom-viewport { position: relative; flex: 0 1 auto; min-height: 0; aspect-ratio: var(--image-ratio); overflow: auto; overscroll-behavior: contain; }
+.demo-zoom-viewport img { position: absolute; inset: 0; display: block; width: 100%; height: 100%; max-width: 100%; object-fit: contain; }
+.demo-zoom-viewport.is-full-size { aspect-ratio: auto; }
+.demo-zoom-viewport.is-full-size img { position: static; width: var(--image-width); height: auto; max-width: none; }
+.demo-zoom-help { flex-shrink: 0; padding: .8rem 1rem; margin: 0; font-size: .8125rem; color: var(--ink-muted); }
 html:has(.demo-zoom[open]) { overflow: hidden; }
 
 @media (max-width: 760px) {
@@ -118,5 +124,4 @@ html:has(.demo-zoom[open]) { overflow: hidden; }
   .demo-workflow, .demo-evidence-types, .demo-reading-notes { grid-template-columns: 1fr; }
   .demo-media-label { font-size: .8rem; }
   .demo-zoom-bar h2 { flex-basis: 100%; }
-  .demo-zoom-viewport { max-height: 62dvh; }
 }
