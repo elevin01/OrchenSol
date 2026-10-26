@@ -9,10 +9,15 @@ document.addEventListener('DOMContentLoaded', () => {
     return rect.bottom > 0 && rect.top < window.innerHeight && rect.width > 0;
   };
   const syncVideos = () => {
-    videos.forEach((video) => {
-      if (!isVisible(video)) {
+    // Read all geometry before changing sources or posters.
+    const visibility = videos.map((video) => [video, isVisible(video)]);
+    visibility.forEach(([video, visible]) => {
+      if (!visible) {
         video.pause();
         return;
+      }
+      if (video.dataset.poster && !video.hasAttribute('poster')) {
+        video.poster = video.dataset.poster;
       }
       // No source is attached until the capture is on screen in its selected tab.
       if (!video.hasAttribute('src')) {
