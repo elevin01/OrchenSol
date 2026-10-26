@@ -9,10 +9,15 @@ document.addEventListener('DOMContentLoaded', () => {
     return rect.bottom > 0 && rect.top < window.innerHeight && rect.width > 0;
   };
   const syncVideos = () => {
-    videos.forEach((video) => {
-      if (!isVisible(video)) {
+    // Read all geometry before changing sources or posters.
+    const visibility = videos.map((video) => [video, isVisible(video)]);
+    visibility.forEach(([video, visible]) => {
+      if (!visible) {
         video.pause();
         return;
+      }
+      if (video.dataset.poster && !video.hasAttribute('poster')) {
+        video.poster = video.dataset.poster;
       }
       // No source is attached until the capture is on screen in its selected tab.
       if (!video.hasAttribute('src')) {
@@ -84,13 +89,13 @@ document.addEventListener('DOMContentLoaded', () => {
       enlarged.width = Number(original.getAttribute('width'));
       enlarged.height = Number(original.getAttribute('height'));
       enlarged.style.setProperty('--image-width', `${original.getAttribute('width') || original.naturalWidth}px`);
-      const full = window.matchMedia('(max-width: 760px)').matches;
       const viewport = dialog.querySelector('.demo-zoom-viewport');
-      viewport.classList.toggle('is-full-size', full);
+      viewport.style.setProperty('--image-ratio', `${enlarged.width} / ${enlarged.height}`);
+      viewport.classList.remove('is-full-size');
       viewport.scrollTo(0, 0);
-      setZoomLabel(full);
+      setZoomLabel(false);
       dialog.showModal();
-      enlarged.decode().then(() => positionImage(full)).catch(() => {});
+      enlarged.decode().then(() => positionImage(viewport.classList.contains('is-full-size'))).catch(() => {});
     });
   });
   function setZoomLabel(full) {

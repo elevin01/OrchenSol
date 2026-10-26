@@ -106,7 +106,7 @@
   background: var(--green);
 }
 
-#obvious-question .ai-contrast-card--orchen .ai-contrast-kicker { color: #e6f6c4; }
+#obvious-question .ai-contrast-card--orchen .ai-contrast-kicker { color: #fff; }
 #obvious-question .ai-contrast-card--orchen h3,
 #obvious-question .ai-contrast-card--orchen li strong { color: #fff; }
 #obvious-question .ai-contrast-card--orchen li p { color: #f1fbfa; }
@@ -128,4 +128,19 @@
   #obvious-question .ai-contrast-card h3 { font-size: 1.85rem; }
   #obvious-question .ai-contrast-card ul { grid-template-rows: none; }
   #obvious-question .yes-ai-compare { align-items: flex-start; text-align: left; }
+}
+
+/* Source selection and footer semantics leave the existing layout intact. */
+body.home-page .hero-bg-card picture,
+body.home-page .what-is-visual picture { display: contents; }
+
+body.home-page .footer-col .footer-heading {
+  font-family: var(--font-display);
+  font-size: .94rem;
+  font-weight: 800;
+  line-height: 1.2;
+  letter-spacing: -.035em;
+  color: #fff;
+  text-transform: uppercase;
+  margin: 0 0 1rem;
 }
