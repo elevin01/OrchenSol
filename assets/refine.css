@@ -2542,7 +2542,7 @@ body.site-warm-refresh .cmp-table-wrap {
 }
 
 body.site-warm-refresh .cmp-table thead th.th-feature,
-body.site-warm-refresh .cmp-table td.td-feature {
+body.site-warm-refresh .cmp-table .td-feature {
   background: #f7fafa;
 }
 

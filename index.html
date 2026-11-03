@@ -2089,74 +2089,6 @@ h4 {
 }
 .what-is-cta:hover { color: var(--green-light); }
 
-/* ─── EXPANDED FOOTER ─── */
-.footer { border-top: 1px solid var(--border); padding-block: 3.5rem 1.75rem; background: var(--bg); }
-.footer-cols {
-  display: grid;
-  grid-template-columns: 1.4fr 1fr 1fr 1fr 1fr;
-  gap: clamp(1.5rem, 3vw, 2.75rem);
-  margin-bottom: 2.5rem;
-}
-.footer-brand { max-width: 300px; }
-.footer-brand .footer-logo { font-family: var(--font-display); font-size: 1.25rem; font-weight: 700; letter-spacing: -0.02em; color: var(--ink); }
-.footer-tag {
-  font-family: var(--font-body);
-  font-size: 0.875rem;
-  line-height: 1.6;
-  color: var(--ink-muted);
-  margin-top: 0.85rem;
-}
-.footer-col h4 {
-  font-family: var(--font-body);
-  font-size: 0.6875rem;
-  font-weight: 600;
-  letter-spacing: 0.14em;
-  text-transform: uppercase;
-  color: var(--ink-faint);
-  margin: 0 0 1rem;
-}
-.footer-col ul { list-style: none; margin: 0; padding: 0; }
-.footer-col li { margin-bottom: 0.55rem; line-height: 1.4; }
-.footer-col a {
-  font-family: var(--font-body);
-  font-size: 0.875rem;
-  color: var(--ink-muted);
-  text-decoration: none;
-  transition: color 0.2s;
-}
-.footer-col a:hover { color: var(--green); }
-.footer-bottom {
-  padding-top: 1.5rem;
-  border-top: 1px solid var(--border-light);
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  gap: 1rem;
-  flex-wrap: wrap;
-}
-.footer-bottom .footer-meta { font-size: 0.8125rem; color: var(--ink-faint); font-style: italic; }
-.footer-bottom .footer-mail {
-  font-family: var(--font-body);
-  font-size: 0.8125rem;
-  color: var(--ink-muted);
-  text-decoration: none;
-  transition: color 0.2s;
-}
-.footer-bottom .footer-mail:hover { color: var(--green); }
-
-@media (max-width: 1100px) {
-  .footer-cols { grid-template-columns: repeat(3, 1fr); gap: 2rem 1.75rem; }
-  .footer-brand { grid-column: 1 / -1; max-width: none; margin-bottom: 0.5rem; }
-}
-@media (max-width: 700px) {
-  .footer-cols { grid-template-columns: repeat(2, 1fr); }
-  .footer { padding-block: 3rem 1.5rem; }
-}
-@media (max-width: 480px) {
-  .footer-cols { grid-template-columns: 1fr; gap: 1.75rem; }
-  .footer-bottom { flex-direction: column; align-items: flex-start; gap: 0.5rem; }
-}
-
 /* keep old .footer-inner working in case any other page still uses it */
 .footer-inner { display: flex; align-items: center; justify-content: space-between; }
 .footer-logo { font-family: var(--font-display); font-size: 1rem; font-weight: 700; letter-spacing: -0.015em; }
@@ -2433,7 +2365,7 @@ h4 {
     "url": "https://orchen.ai"
   }
   </script>
-  <link rel="stylesheet" href="/assets/refine.css">
+  <link rel="stylesheet" href="/assets/refine.css?v=20261103">
   <script type="application/ld+json">
 {
   "@context": "https://schema.org",
@@ -2460,7 +2392,7 @@ h4 {
       "name": "What does the pilot cost?",
       "acceptedAnswer": {
         "@type": "Answer",
-        "text": "The founding school pilot is free. We agree on the pilot scope and what success looks like with your school before it begins. If you choose to continue afterward, Orchen uses a flat per-school license, sized by headcount. Founding schools receive 30% off their school license, with the agreed founding rate locked in for the first three paid years. That rate is exclusive to this cohort and won’t be offered again. We agree on paid pricing with your school before you decide to continue. See the founding school offer."
+        "text": "The founding school pilot is free: one class for about six weeks. We agree on the pilot scope and what success looks like with your school before it begins. If you choose to continue afterward, Orchen uses a flat per-school license, sized by headcount. Founding schools receive 30% off their school license, with the agreed founding rate locked in for the first three paid years. That rate is exclusive to this cohort and won’t be offered again. We agree on paid pricing with your school before you decide to continue. See the founding school offer."
       }
     },
     {
@@ -2537,6 +2469,7 @@ h4 {
   <script src="/assets/demo-media.js?v=20261102-svg-icons" defer></script>
   <link rel="stylesheet" href="/assets/ui-icons.css?v=20261102">
   <link rel="stylesheet" href="/assets/founding-cohort.css?v=20261102-combined">
+  <link rel="stylesheet" href="/assets/footer.css?v=20261103">
 </head>
 <body class="site-warm-refresh home-page">
 
@@ -3038,7 +2971,7 @@ h4 {
                   <span class="school-review__toggle" aria-hidden="true"><svg class="ui-icon ui-icon--plus" width="16" height="16" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><use href="/assets/ui-icons.svg#plus"></use></svg></span>
                 </summary>
                 <div class="school-review__answer">
-                  <p class="school-review__preview">The founding school pilot is free.</p>
+                  <p class="school-review__preview">The founding school pilot is free: one class for about six weeks.</p>
                   <p>We agree on the pilot scope and what success looks like with your school before it begins.</p>
                   <p>If you choose to continue afterward, Orchen uses a flat per-school license, sized by headcount. Founding schools receive <strong>30% off their school license, with the agreed founding rate locked in for the first three paid years.</strong> That rate is exclusive to this cohort and won&rsquo;t be offered again. We agree on paid pricing with your school before you decide to continue. See the <a href="/founding-schools/">founding school offer</a>.</p>
                 </div>

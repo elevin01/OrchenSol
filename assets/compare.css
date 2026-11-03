@@ -220,6 +220,30 @@ abbr.v {
 .cmp-section p { color: var(--ink-muted); line-height: 1.75; margin-bottom: 1rem; }
 .cmp-section p:last-child { margin-bottom: 0; }
 
+.cmp-source-link,
+.cmp-sources a {
+  color: var(--green);
+  text-decoration: underline;
+  text-decoration-color: var(--green-pale);
+  text-underline-offset: 3px;
+}
+.cmp-source-link:hover,
+.cmp-sources a:hover { text-decoration-color: currentColor; }
+.cmp-table .cmp-source-link { font-size: 0.8125rem; }
+.cmp-sources p,
+.cmp-sources li { font-size: 0.875rem; line-height: 1.7; }
+.cmp-sources ul {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 0.65rem 1.5rem;
+  list-style: none;
+  margin-top: 1.25rem;
+}
+
+@media (max-width: 600px) {
+  .cmp-sources ul { grid-template-columns: 1fr; }
+}
+
 /* ─── COMPARISON TABLE ─── */
 .cmp-table-wrap {
   overflow-x: auto;
@@ -261,14 +285,16 @@ abbr.v {
 .cmp-table tbody tr { border-bottom: 1px solid var(--border-light); }
 .cmp-table tbody tr:last-child { border-bottom: none; }
 .cmp-table tbody tr:hover { background: rgba(44,95,63,0.015); }
-.cmp-table td {
+.cmp-table td,
+.cmp-table tbody th {
   padding: 0.875rem 1.25rem;
+  text-align: left;
   vertical-align: top;
   line-height: 1.65;
   color: var(--ink-muted);
   font-size: 0.9rem;
 }
-.cmp-table td.td-feature {
+.cmp-table .td-feature {
   font-size: 0.8125rem;
   font-weight: 500;
   color: var(--ink);
@@ -470,10 +496,21 @@ details[open] .faq-chevron {
   .btn-nav { display: none; }
   .nav-toggle { display: flex; }
 
-  .cmp-table thead th.th-feature,
-  .cmp-table td.td-feature { display: none; }
+  .cmp-table,
+  .cmp-table thead,
+  .cmp-table tbody { display: block; }
+  .cmp-table tr { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); }
+  .cmp-table thead th.th-feature { display: none; }
   .cmp-table thead th.th-orchen,
-  .cmp-table thead th.th-comp { width: 50%; }
+  .cmp-table thead th.th-comp { width: auto; }
+  .cmp-table .td-feature {
+    display: block;
+    grid-column: 1 / -1;
+    padding: 0.6rem 1rem;
+    border-bottom: 1px solid var(--border-light);
+    font-weight: 700;
+  }
+  .cmp-table td { min-width: 0; }
 }
 
 @media (max-width: 600px) {

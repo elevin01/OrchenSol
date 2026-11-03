@@ -21,7 +21,7 @@
   <meta name="twitter:title" content="Orchen vs Khanmigo: Which Belongs in Your School? (2026)">
   <meta name="twitter:description" content="Both take a Socratic approach. Honest comparison on curriculum dependency, school customization, and advisor insight.">
   <meta name="twitter:image" content="https://orchen.ai/assets/og-orchen-vs-khanmigo.png">
-  <link rel="stylesheet" href="/assets/compare.css">
+  <link rel="stylesheet" href="/assets/compare.css?v=20261103">
   <script type="application/ld+json">
   {
     "@context": "https://schema.org",
@@ -73,8 +73,9 @@
   </script>
     <link rel="preload" href="/assets/fonts/playfair-bold.woff2" as="font" type="font/woff2" crossorigin>
   <link rel="preload" href="/assets/fonts/lora-regular.woff2" as="font" type="font/woff2" crossorigin>
-  <link rel="stylesheet" href="/assets/refine.css">
+  <link rel="stylesheet" href="/assets/refine.css?v=20261103">
   <link rel="stylesheet" href="/assets/ui-icons.css?v=20261102">
+  <link rel="stylesheet" href="/assets/footer.css?v=20261103">
 </head>
 <body class="site-warm-refresh">
 
@@ -129,72 +130,72 @@
         <div class="section-label">At a Glance</div>
         <h2>Side-by-side comparison</h2>
         <div class="cmp-table-wrap">
-          <table class="cmp-table">
+          <table class="cmp-table" role="table">
             <thead>
               <tr>
-                <th class="th-feature">Feature</th>
-                <th class="th-orchen">Orchen</th>
-                <th class="th-comp">Khanmigo</th>
+                <th scope="col" class="th-feature">Feature</th>
+                <th scope="col" class="th-orchen">Orchen</th>
+                <th scope="col" class="th-comp">Khanmigo</th>
               </tr>
             </thead>
             <tbody>
               <tr>
-                <td class="td-feature">Primary design intent</td>
+                <th scope="row" class="td-feature">Primary design intent</th>
                 <td class="td-orchen">Curriculum-grounded learning environment connecting guided student work with school-controlled learning insight</td>
                 <td>Launched March 2023. Student tutoring is embedded within the Khan Academy platform; teacher-facing tools are accessible at khanmigo.ai. Part of Khan Academy's nonprofit mission, no separate product outside the KA ecosystem.</td>
               </tr>
               <tr>
-                <td class="td-feature">Curriculum dependency</td>
+                <th scope="row" class="td-feature">Curriculum dependency</th>
                 <td class="td-orchen">Works with any school's content and curriculum; no platform lock-in</td>
                 <td>Draws on Khan Academy's exercise and video library; Khanmigo actively recommends KA resources during tutoring sessions. General conversational tutoring works outside KA content, but the curriculum integration advantage only applies to schools already using Khan Academy.</td>
               </tr>
               <tr>
-                <td class="td-feature">Pedagogy</td>
+                <th scope="row" class="td-feature">Pedagogy</th>
                 <td class="td-orchen">Socratic by design, asks guiding questions and works through problems with the student</td>
                 <td>Socratic by design, guides without giving direct answers; confirmed as Khan Academy's stated approach. Note: math educator Dan Meyer has raised the concern that Khanmigo's Socratic method adds steps without deepening conceptual understanding in all cases. Worth considering for math-heavy curricula.</td>
               </tr>
               <tr>
-                <td class="td-feature">Target grades</td>
+                <th scope="row" class="td-feature">Target grades</th>
                 <td class="td-orchen">Middle and high school focus</td>
                 <td>K–12</td>
               </tr>
               <tr>
-                <td class="td-feature">Deployment model</td>
+                <th scope="row" class="td-feature">Deployment model</th>
                 <td class="td-orchen">Browser-based learning workspace on the devices your school already uses</td>
                 <td>SaaS, embedded within the Khan Academy web platform. No standalone app; no managed device offering.</td>
               </tr>
               <tr>
-                <td class="td-feature">Data retention</td>
+                <th scope="row" class="td-feature">Data retention</th>
                 <td class="td-orchen">Source conversations deleted within 7 days; derived insight retained separately</td>
                 <td>Governed by Khan Academy's privacy policy and FERPA compliance commitments. Khanmigo conversations are stored to support the tutoring experience. District-level retention windows and deletion rights are set in Khan Academy's Data Processing Agreement, available on request.</td>
               </tr>
               <tr>
-                <td class="td-feature">Insight output for advisors</td>
+                <th scope="row" class="td-feature">Insight output for advisors</th>
                 <td class="td-orchen">Weekly plain-English advisor narratives per student; longitudinal pattern tracking</td>
                 <td>Teacher and coach dashboard within Khan Academy showing student activity, assignment completion, and mastery progress. Insight is per-subject within the KA platform, not cross-subject weekly narratives for advisors/counselors.</td>
               </tr>
               <tr>
-                <td class="td-feature">Parent access</td>
+                <th scope="row" class="td-feature">Parent access</th>
                 <td class="td-orchen">5-tier visibility model with school-mediated defaults</td>
                 <td>Parents can subscribe to a "Parent" account at $4/month or $44/year to monitor their child's Khan Academy activity. In school implementations, parent visibility is school-mediated rather than direct.</td>
               </tr>
               <tr>
-                <td class="td-feature">School customization</td>
+                <th scope="row" class="td-feature">School customization</th>
                 <td class="td-orchen">Custom system prompt per school; white-label branding; school-specific AI identity</td>
                 <td>Khanmigo's persona is set by Khan Academy, not customizable per school. Schools cannot write a system prompt or define a school-specific AI identity. Configuration is limited to enabling/disabling Khanmigo within the KA district settings.</td>
               </tr>
               <tr>
-                <td class="td-feature">Organizational backing</td>
+                <th scope="row" class="td-feature">Organizational backing</th>
                 <td class="td-orchen">Early-stage company; purpose-built for institutional AI governance</td>
                 <td>Khan Academy, nonprofit founded 2006, 380+ district partners, substantial philanthropic backing</td>
               </tr>
               <tr>
-                <td class="td-feature">Pricing model</td>
-                <td class="td-orchen">Contact sales (rollout phase)</td>
+                <th scope="row" class="td-feature">Pricing model</th>
+                <td class="td-orchen">Flat per-school site license (sized by headcount); free 6-week single-class pilot.</td>
                 <td>Free for teachers globally since May 2024 (Khan Academy's Microsoft Azure partnership covers costs). Student access: $4/month or $44/year individually; school access is through district partnerships. Free for students in qualifying district programs.</td>
               </tr>
               <tr>
-                <td class="td-feature">Best for</td>
+                <th scope="row" class="td-feature">Best for</th>
                 <td class="td-orchen">Non-KA schools wanting a configurable, private, insight-generating AI tutor</td>
                 <td>Khan Academy schools wanting curriculum-integrated AI tutoring from a trusted nonprofit</td>
               </tr>
@@ -423,9 +424,61 @@
   </main>
 
   <footer class="footer">
-    <div class="container footer-inner">
-      <span class="footer-logo">Orchen</span>
-      <span class="footer-meta">&copy; 2026 Orchen AI &middot; <a href="/privacy" style="border-bottom:1px solid currentColor;">Privacy Policy</a> &middot; <a href="/terms" style="border-bottom:1px solid currentColor;">Terms of Service</a></span>
+    <div class="container">
+      <div class="footer-cols">
+
+        <div class="footer-col footer-brand">
+          <span class="footer-logo">Orchen</span>
+          <p class="footer-tag">A learning environment for independent schools.<br>Every student, understood.</p>
+        </div>
+
+        <div class="footer-col">
+          <h2 class="footer-heading">Product</h2>
+          <ul>
+            <li><a href="/how-it-works/">How it works</a></li>
+            <li><a href="/platform/">Platform</a></li>
+            <li><a href="/trust">Trust Center</a></li>
+            <li><a href="/founding-schools/">Founding Schools</a></li>
+          </ul>
+        </div>
+
+        <div class="footer-col">
+          <h2 class="footer-heading">For Schools</h2>
+          <ul>
+            <li><a href="/for/teachers">For teachers</a></li>
+            <li><a href="/for/advisors">For advisors</a></li>
+            <li><a href="/for/parents">For parents</a></li>
+          </ul>
+        </div>
+
+        <div class="footer-col">
+          <h2 class="footer-heading">Compare</h2>
+          <ul>
+            <li><a href="/compare/orchen-vs-chatgpt.html">vs. ChatGPT, Claude &amp; Gemini</a></li>
+            <li><a href="/compare/orchen-vs-schoolai.html">vs. SchoolAI</a></li>
+            <li><a href="/compare/orchen-vs-khanmigo.html">vs. Khanmigo</a></li>
+            <li><a href="/compare/orchen-vs-magicschool.html">vs. MagicSchool</a></li>
+            <li><a href="/compare/">All comparisons</a></li>
+          </ul>
+        </div>
+
+        <div class="footer-col">
+          <h2 class="footer-heading">Resources</h2>
+          <ul>
+            <li><a href="/the-problem">The Problem</a></li>
+            <li><a href="/resources/ai-policy-brief/">AI Policy Brief</a></li>
+            <li><a href="/solutions/heads-of-school/">For Heads of School</a></li>
+            <li><a href="/privacy">Privacy</a></li>
+            <li><a href="/terms">Terms</a></li>
+          </ul>
+        </div>
+
+      </div>
+
+      <div class="footer-bottom">
+        <span class="footer-meta">&copy; 2026 Orchen AI</span>
+        <a class="footer-mail" href="mailto:emil@orchen.ai">emil@orchen.ai</a>
+      </div>
     </div>
   </footer>
 

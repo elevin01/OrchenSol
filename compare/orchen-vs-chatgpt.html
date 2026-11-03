@@ -21,7 +21,7 @@
   <meta name="twitter:title" content="Orchen vs ChatGPT, Claude, and Gemini: Which AI Should Your Students Use? (2026)">
   <meta name="twitter:description" content="Honest side-by-side comparison of Orchen and consumer AI tools, pedagogy, privacy, school visibility, and what schools take responsibility for.">
   <meta name="twitter:image" content="https://orchen.ai/assets/og-orchen-vs-chatgpt.png">
-  <link rel="stylesheet" href="/assets/compare.css">
+  <link rel="stylesheet" href="/assets/compare.css?v=20261103">
   <script type="application/ld+json">
   {
     "@context": "https://schema.org",
@@ -73,8 +73,9 @@
   </script>
     <link rel="preload" href="/assets/fonts/playfair-bold.woff2" as="font" type="font/woff2" crossorigin>
   <link rel="preload" href="/assets/fonts/lora-regular.woff2" as="font" type="font/woff2" crossorigin>
-  <link rel="stylesheet" href="/assets/refine.css">
+  <link rel="stylesheet" href="/assets/refine.css?v=20261103">
   <link rel="stylesheet" href="/assets/ui-icons.css?v=20261102">
+  <link rel="stylesheet" href="/assets/footer.css?v=20261103">
 </head>
 <body class="site-warm-refresh">
 
@@ -166,77 +167,77 @@
         <div class="section-label">At a Glance</div>
         <h2>Side-by-side comparison</h2>
         <div class="cmp-table-wrap">
-          <table class="cmp-table">
+          <table class="cmp-table" role="table">
             <thead>
               <tr>
-                <th class="th-feature">Feature</th>
-                <th class="th-orchen">Orchen</th>
-                <th class="th-comp">ChatGPT / Claude / Gemini (consumer)</th>
+                <th scope="col" class="th-feature">Feature</th>
+                <th scope="col" class="th-orchen">Orchen</th>
+                <th scope="col" class="th-comp">ChatGPT / Claude / Gemini (consumer)</th>
               </tr>
             </thead>
             <tbody>
               <tr>
-                <td class="td-feature">Primary design intent</td>
+                <th scope="row" class="td-feature">Primary design intent</th>
                 <td class="td-orchen">Curriculum-grounded learning environment connecting guided student work with school-controlled learning insight</td>
                 <td>General-purpose AI assistants designed to complete tasks for any user. No relationship with any school.</td>
               </tr>
               <tr>
-                <td class="td-feature">Pedagogy</td>
+                <th scope="row" class="td-feature">Pedagogy</th>
                 <td class="td-orchen">Socratic by design, asks guiding questions and works through problems with the student. Hard-coded in the system prompt; consistent for every session.</td>
                 <td>Task-completion oriented. Asks for a task, produces the output. Will write the essay, solve the problem, summarize the reading. Some have "Study Mode" toggles but they're opt-in, easily bypassed, and not the default.</td>
               </tr>
               <tr>
-                <td class="td-feature">Configuration by the school</td>
+                <th scope="row" class="td-feature">Configuration by the school</th>
                 <td class="td-orchen">Schools configure the AI's identity, tone, subject focus, mechanical-feedback policy, and crisis-routing chain. Every Orchen interaction reflects the school's choices.</td>
                 <td>No school configuration. The same product, the same defaults, for every user globally.</td>
               </tr>
               <tr>
-                <td class="td-feature">Underlying model</td>
+                <th scope="row" class="td-feature">Underlying model</th>
                 <td class="td-orchen">Always-current frontier AI models. Schools don't manage model upgrades, Orchen handles that on the school's behalf. The pedagogy and architecture are Orchen's; the underlying intelligence is whatever's best available.</td>
                 <td>The same model the consumer uses on their personal account. Free tiers may use older or rate-limited models; the school has no influence over which tier a given student is on.</td>
               </tr>
               <tr>
-                <td class="td-feature">Account model</td>
+                <th scope="row" class="td-feature">Account model</th>
                 <td class="td-orchen">Accounts issued and managed by the school. COPPA-aware role gates for students under 13. No personal email signup.</td>
                 <td>Self-signup with personal email. Age verification is honor-system. Most have official policies against under-13 use but no enforcement that the school can rely on.</td>
               </tr>
               <tr>
-                <td class="td-feature">Visibility for teachers / advisors / parents</td>
+                <th scope="row" class="td-feature">Visibility for teachers / advisors / parents</th>
                 <td class="td-orchen">School-controlled learning insight: class patterns and student profiles for teachers, longitudinal context for advisors, and configurable parent summaries.</td>
                 <td>None. The school has no visibility into what students do with these tools. Conversations are invisible to faculty unless the student volunteers them.</td>
               </tr>
               <tr>
-                <td class="td-feature">Data retention</td>
+                <th scope="row" class="td-feature">Data retention</th>
                 <td class="td-orchen">Source conversation transcripts deleted within seven days. Derived insight (learning profiles, struggle/strength tags, weekly narratives) retained per the school's configured policy.</td>
                 <td>Variable by provider, generally lengthy by default. Conversations are stored on the provider's servers; histories may be used for product improvement, abuse review, and, depending on the consumer setting, model training. The school has no control over any of it.</td>
               </tr>
               <tr>
-                <td class="td-feature">Model training on student data</td>
+                <th scope="row" class="td-feature">Model training on student data</th>
                 <td class="td-orchen">Student data stays out of external model training, contractually enforced with the underlying model providers.</td>
                 <td>Varies by provider and account tier. Free-tier ChatGPT conversations may be used for training unless the user opts out. Most students don't know how, and certainly don't, opt out.</td>
               </tr>
               <tr>
-                <td class="td-feature">Crisis detection</td>
+                <th scope="row" class="td-feature">Crisis detection</th>
                 <td class="td-orchen">Built-in. Concerning content is automatically flagged and routed to the school's designated counselor with a 24-hour urgency indicator and full lifecycle tracking.</td>
                 <td>Limited generalized safety responses. No school-side flag, no counselor routing, no audit trail. If a student types something concerning into ChatGPT, your school will never know.</td>
               </tr>
               <tr>
-                <td class="td-feature">FERPA / COPPA posture</td>
+                <th scope="row" class="td-feature">FERPA / COPPA posture</th>
                 <td class="td-orchen">Built around FERPA's parent/student record boundaries and COPPA's under-13 protections. Audit logs meet FERPA documentation requirements.</td>
                 <td>Consumer-grade ToS designed for individual users, not educational institutions. Not built for FERPA. COPPA compliance is the user's problem.</td>
               </tr>
               <tr>
-                <td class="td-feature">Pricing</td>
-                <td class="td-orchen">School and district contracts. Per-school pricing; no consumer subscription.</td>
+                <th scope="row" class="td-feature">Pricing</th>
+                <td class="td-orchen">Flat per-school site license (sized by headcount); free 6-week single-class pilot.</td>
                 <td>Free tiers with usage caps. Paid individual subscriptions (~$20/month per user) for higher limits and newer models. Enterprise plans exist but aren't designed around K-12.</td>
               </tr>
               <tr>
-                <td class="td-feature">Business model</td>
+                <th scope="row" class="td-feature">Business model</th>
                 <td class="td-orchen">B2B contract with the school. Incentives are aligned with the institution paying for the product.</td>
                 <td>Subscription and free-tier driven, with the long-term business model still being defined. Several major consumer-AI providers have publicly discussed introducing advertising in their consumer products; the school has no influence over whether or when that happens, or what student-context data supports it.</td>
               </tr>
               <tr>
-                <td class="td-feature">Best for</td>
+                <th scope="row" class="td-feature">Best for</th>
                 <td class="td-orchen">Schools that want to take institutional responsibility for the AI students use during learning.</td>
                 <td>Personal productivity, off-school research, professional work, hobbies. Not built for classroom use, even when it happens there.</td>
               </tr>
@@ -452,9 +453,61 @@
   </main>
 
   <footer class="footer">
-    <div class="container footer-inner">
-      <span class="footer-logo">Orchen</span>
-      <span class="footer-meta">&copy; 2026 Orchen AI &middot; <a href="/privacy" style="border-bottom:1px solid currentColor;">Privacy Policy</a> &middot; <a href="/terms" style="border-bottom:1px solid currentColor;">Terms of Service</a></span>
+    <div class="container">
+      <div class="footer-cols">
+
+        <div class="footer-col footer-brand">
+          <span class="footer-logo">Orchen</span>
+          <p class="footer-tag">A learning environment for independent schools.<br>Every student, understood.</p>
+        </div>
+
+        <div class="footer-col">
+          <h2 class="footer-heading">Product</h2>
+          <ul>
+            <li><a href="/how-it-works/">How it works</a></li>
+            <li><a href="/platform/">Platform</a></li>
+            <li><a href="/trust">Trust Center</a></li>
+            <li><a href="/founding-schools/">Founding Schools</a></li>
+          </ul>
+        </div>
+
+        <div class="footer-col">
+          <h2 class="footer-heading">For Schools</h2>
+          <ul>
+            <li><a href="/for/teachers">For teachers</a></li>
+            <li><a href="/for/advisors">For advisors</a></li>
+            <li><a href="/for/parents">For parents</a></li>
+          </ul>
+        </div>
+
+        <div class="footer-col">
+          <h2 class="footer-heading">Compare</h2>
+          <ul>
+            <li><a href="/compare/orchen-vs-chatgpt.html">vs. ChatGPT, Claude &amp; Gemini</a></li>
+            <li><a href="/compare/orchen-vs-schoolai.html">vs. SchoolAI</a></li>
+            <li><a href="/compare/orchen-vs-khanmigo.html">vs. Khanmigo</a></li>
+            <li><a href="/compare/orchen-vs-magicschool.html">vs. MagicSchool</a></li>
+            <li><a href="/compare/">All comparisons</a></li>
+          </ul>
+        </div>
+
+        <div class="footer-col">
+          <h2 class="footer-heading">Resources</h2>
+          <ul>
+            <li><a href="/the-problem">The Problem</a></li>
+            <li><a href="/resources/ai-policy-brief/">AI Policy Brief</a></li>
+            <li><a href="/solutions/heads-of-school/">For Heads of School</a></li>
+            <li><a href="/privacy">Privacy</a></li>
+            <li><a href="/terms">Terms</a></li>
+          </ul>
+        </div>
+
+      </div>
+
+      <div class="footer-bottom">
+        <span class="footer-meta">&copy; 2026 Orchen AI</span>
+        <a class="footer-mail" href="mailto:emil@orchen.ai">emil@orchen.ai</a>
+      </div>
     </div>
   </footer>
 

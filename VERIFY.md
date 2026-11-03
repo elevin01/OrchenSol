@@ -1,6 +1,6 @@
 # VERIFY.md — Remaining unresolved claims
 
-Last verified against primary sources: April 24, 2026.
+SchoolAI comparison sources rechecked: November 3, 2026. Other competitor research retains its April 24, 2026 verification date.
 
 All other `[VERIFY]` markers in the compare pages have been resolved and removed.
 The four items below remain open — confirm before publishing.
@@ -12,7 +12,7 @@ The four items below remain open — confirm before publishing.
 **File:** `compare/orchen-vs-schoolai.html`
 **Location:** Table row "Insight output for advisors"; FAQ "Can advisors or counselors see longitudinal student patterns?"
 **Claim to confirm:** Whether SchoolAI's Mission Control offers dedicated cross-subject, longitudinal reporting for advisors or counselors (as distinct from subject teachers monitoring their own Spaces in real time).
-**Status:** Mission Control is confirmed for real-time teacher oversight within Spaces. Advisor/counselor cross-subject longitudinal view is not publicly documented.
+**Status (November 3, 2026):** SchoolAI now documents Student Insights combining Space session history, individual Sidekick activity, chats, and alerts. Access is described for rostered teachers and organization admins. A dedicated counselor workflow remains unconfirmed. The comparison must not describe SchoolAI as limited to session-only insight. [Student Insights Dashboard](https://help.schoolai.com/en/articles/16192386-student-insights-dashboard).
 
 ---
 
@@ -93,3 +93,15 @@ Validation: both links decode to the same intended recipient, subject, and edita
 - Per the founder's latest direction, school-data terms now use “Your school reviews and finalizes the terms with us before any student logs in.” Removed draft labels and unfinished-terms language from the homepage, Trust Center (including document cards and its FAQ), founding-school page, and Privacy Policy. References to students drafting their writing remain unchanged.
 - The founder supplied these assessment milestones: the independent review and third-party penetration test are scheduled before any paid agreement; founding schools receive the results first; Orchen's own SOC 2 audit follows the founding cohort. These describe future milestones and do not assert completed Orchen audits. Supabase's infrastructure audit remains identified separately.
 - The homepage security answer uses the requested scheduled-review wording and founder walkthrough. The Privacy Policy reflects the same milestones, and homepage FAQ structured data is synchronized.
+
+## SchoolAI comparison refresh — November 3, 2026
+
+- Founder supplied the current pilot scope: a free six-week, single-class pilot, with a flat per-school site license sized by headcount afterward. Updated the SchoolAI table and FAQ, all other Orchen comparison pricing cells, the MagicSchool pricing answer, and homepage/founding-school pilot answers to match. The existing founding discount remains unchanged.
+- Added Orchen's documented crisis routing (designated counselor, 24-hour urgency indicator, and lifecycle tracking) to the SchoolAI content-moderation row, plus the optional pre-configured managed device layer for network-level enforcement in the deployment row and device-school FAQ.
+- SchoolAI's [customer-stories page](https://schoolai.com/stories) confirms over one million educators. The [Spaces guide](https://help.schoolai.com/en/articles/15538519-getting-started-with-spaces) confirms 200,000+ teacher-created Spaces and rostered student access.
+- [Current pricing](https://schoolai.com/pricing) replaces the old 75-sign-ins claim with five Space launches per year on its free trial. Scale includes district instructions and student-level insights. Removed the contradictory no-student-accounts/no-district-prompt assertions. [Student Insights](https://help.schoolai.com/en/articles/16192386-student-insights-dashboard) documents activity across sessions and Sidekick chats, so the session-only characterization was removed.
+- [Critical alert documentation](https://help.schoolai.com/en/articles/14756370-student-safety-critical-alerts-real-time-monitoring) confirms configurable email recipients in addition to the session owner. [Data protection](https://schoolai.com/trust/data-protection) distinguishes SchoolAI's retained platform records from zero retention at its AI providers and confirms district-requested deletion. [Compliance](https://schoolai.com/trust/compliance) lists its current status and ESSA Tier 3 evidence; replaced the earlier Tier 4 description and avoided calling FERPA/COPPA government certifications.
+- SchoolAI page title/OG/Twitter title now use the requested K–12 tutor/platform comparison wording. Its header and source-check dates are November 3, 2026, with direct primary-source links. Existing SVG FAQ chevrons and FAQPage JSON-LD were retained; structured answers were regenerated to match the visible answers exactly.
+- Every comparison page (including the comparison index) now contains the homepage's full, static footer links. The layout is shared through assets/footer.css and stays present without JavaScript.
+
+Validation: local links and shared footer markup checked across the homepage and all five comparison pages; all 18 footer links remain present in static HTML. Browser checks passed for those six pages at desktop and phone widths; SchoolAI also passed at 320 and 820 pixels. All six SchoolAI FAQ disclosures and the mobile menu work, with no runtime errors. Homepage, SchoolAI, and edited MagicSchool FAQ schemas match the visible answers. Table row labels now use semantic row headers and remain visible on phones instead of being hidden. Shared stylesheet references are versioned for the site's immutable asset cache. git diff --check passed.
