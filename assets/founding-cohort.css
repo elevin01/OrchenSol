@@ -1,0 +1,89 @@
+/* Founder-supplied spring 2027 availability and continuation offer. */
+body.home-page .hero-cohort-note {
+  margin: 1.1rem auto 0;
+  max-width: 48ch;
+  color: var(--ink-muted);
+  font-size: 0.95rem;
+  line-height: 1.6;
+  text-align: center;
+}
+
+.hero-cohort-note strong {
+  color: #087b75;
+  font-weight: 700;
+}
+
+.hero-cohort-note span { display: block; }
+
+.founder-phrase { white-space: nowrap; }
+
+body.home-page .contact-headline em { display: block; }
+body.home-page .contact-sub strong { color: #fff; }
+
+.contact-form button .ui-icon,
+.std-form button .ui-icon { margin-left: 0.45em; }
+
+body.home-page .cohort-form-intro {
+  margin-bottom: 1.5rem;
+  color: rgba(255, 255, 255, 0.84);
+  font-size: 1rem;
+  line-height: 1.65;
+}
+
+.cohort-benefit {
+  max-width: 680px;
+  margin: 1.5rem auto 0;
+  color: var(--ink-muted);
+  font-size: 1.15rem;
+  line-height: 1.65;
+}
+
+.cohort-benefit strong { color: #087b75; }
+
+.cohort-hero-actions {
+  display: flex;
+  justify-content: center;
+  margin-block: 1.5rem;
+}
+
+/* Let the hero grow with its offer copy at every viewport size. */
+body.home-page .hero:has(.hero-bg) {
+  height: auto;
+  min-height: max(800px, 100svh);
+  padding-top: 47svh;
+  padding-bottom: 2rem;
+}
+
+body.home-page .hero-fg {
+  position: relative;
+  inset: auto;
+  margin-inline: auto;
+  transform: none;
+}
+
+@media (max-width: 1100px) {
+  body.home-page .hero:has(.hero-bg) { padding-top: 46svh; }
+}
+
+@media (max-width: 820px) {
+  body.home-page .hero:has(.hero-bg) {
+    min-height: 100svh;
+    padding-top: 34svh;
+  }
+}
+
+@media (max-width: 560px) {
+  body.home-page .hero:has(.hero-bg) { padding-top: 31svh; }
+  body.home-page .hero-cohort-note { font-size: 0.875rem; }
+  body.home-page .contact-headline em {
+    margin-top: 0.15em;
+    font-size: clamp(1.75rem, 8.4vw, 2.4rem);
+    line-height: 1.2;
+    white-space: nowrap;
+  }
+  .cohort-benefit { font-size: 1.0625rem; }
+}
+
+@media (max-width: 560px) and (max-height: 900px) {
+  body.home-page .hero:has(.hero-bg) { padding-top: 30svh; }
+}

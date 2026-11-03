@@ -523,10 +523,6 @@ body.site-warm-refresh .hero-cta-secondary:hover {
   color: var(--green-dark);
 }
 
-body.site-warm-refresh .hero-cta-secondary .beta {
-  color: var(--ink-faint);
-  border-color: rgba(44,95,63,0.20);
-}
 
 body.site-warm-refresh .problem-section {
   background: #F7F2EA;
@@ -938,7 +934,7 @@ body.site-warm-refresh .mobile-hero-break {
   font-family: var(--font-body); font-size: 0.875rem; color: var(--ink-muted);
   transition: color 0.2s;
 }
-.nav-drop__btn::after { content: ' \2304'; font-size: 0.75em; position: relative; top: -2px; }
+.nav-drop__btn::after { content: ''; font-size: 0.75em; position: relative; top: -2px; }
 .nav-drop:hover .nav-drop__btn, .nav-drop:focus-within .nav-drop__btn { color: var(--ink); }
 .nav-drop__menu {
   display: none;
@@ -1637,10 +1633,6 @@ body.site-warm-refresh .hero-cta-secondary:hover {
   border-color: var(--green);
 }
 
-body.site-warm-refresh .hero-cta-secondary .beta {
-  color: var(--green);
-  border-color: var(--green-pale);
-}
 
 body.site-warm-refresh .hero-research-link {
   margin-top: 1.4rem;
@@ -4201,9 +4193,6 @@ body.site-warm-refresh .reel-kicker {
   font-size: 0.75rem;
 }
 
-body.site-warm-refresh .form-secondary-cta .beta {
-  color: rgba(255, 255, 255, 0.82);
-}
 
 @media (min-width: 1100px) {
   body.site-warm-refresh .section-inner--wide,
@@ -4429,4 +4418,133 @@ body.site-warm-refresh .s-dark.cta .cta-alt a {
     width: 100%;
     min-width: 0;
   }
+}
+
+/* ==================================================================
+   SUBPAGE HERO GEOMETRY
+   A quiet orbital system gives interior entry screens visual identity
+   without competing with the headline or product imagery.
+   ================================================================== */
+
+body.site-warm-refresh .hero:not(:has(.hero-bg)):not(.problem-hero) {
+  isolation: isolate;
+  background:
+    linear-gradient(45deg, transparent 39%, rgba(8, 123, 117, 0.16) 40% 60%, transparent 61%) 7% 20% / 18px 18px no-repeat,
+    linear-gradient(45deg, transparent 39%, rgba(191, 67, 30, 0.13) 40% 60%, transparent 61%) 91% 24% / 14px 14px no-repeat,
+    linear-gradient(45deg, transparent 39%, rgba(209, 237, 126, 0.30) 40% 60%, transparent 61%) 84% 82% / 22px 22px no-repeat,
+    radial-gradient(circle at 50% 46%, rgba(255, 255, 255, 0.94) 0 17%, transparent 17.3%),
+    linear-gradient(116deg, rgba(119, 230, 224, 0.09) 0 27%, transparent 27.2%),
+    radial-gradient(ellipse at 100% 100%, rgba(209, 237, 126, 0.11) 0 24%, transparent 24.3%),
+    #f7fafa;
+}
+
+body.site-warm-refresh .hero:not(:has(.hero-bg)):not(.problem-hero)::before {
+  content: "";
+  position: absolute;
+  z-index: -1;
+  left: -18vw;
+  top: 50%;
+  width: min(58vw, 980px);
+  height: auto;
+  aspect-ratio: 1;
+  pointer-events: none;
+  border: 0;
+  border-radius: 50%;
+  background: conic-gradient(
+    from 205deg,
+    rgba(119, 230, 224, 0.78) 0 11deg,
+    transparent 11deg 52deg,
+    rgba(249, 207, 98, 0.72) 52deg 66deg,
+    transparent 66deg 132deg,
+    rgba(209, 237, 126, 0.78) 132deg 148deg,
+    transparent 148deg 226deg,
+    rgba(8, 123, 117, 0.30) 226deg 235deg,
+    transparent 235deg 360deg
+  );
+  opacity: 0.72;
+  transform: translateY(-50%) rotate(-9deg);
+  -webkit-mask: radial-gradient(
+    circle,
+    transparent 0 35%,
+    #000 35.2% 35.8%,
+    transparent 36% 49%,
+    #000 49.2% 50.8%,
+    transparent 51% 64%,
+    #000 64.2% 66%,
+    transparent 66.2%
+  );
+  mask: radial-gradient(
+    circle,
+    transparent 0 35%,
+    #000 35.2% 35.8%,
+    transparent 36% 49%,
+    #000 49.2% 50.8%,
+    transparent 51% 64%,
+    #000 64.2% 66%,
+    transparent 66.2%
+  );
+}
+
+/* Warm entries and the Trust Center mirror the orbit for variation. */
+body.site-warm-refresh .hero.hero-warm:not(.problem-hero)::before,
+body.trust-page .hero:not(:has(.hero-bg)):not(.problem-hero)::before,
+body.site-warm-refresh .hero:has(.hero-stage):not(.problem-hero)::before {
+  right: -18vw;
+  left: auto;
+  transform: translateY(-50%) rotate(14deg) scaleX(-1);
+}
+
+body.site-warm-refresh .hero.hero-warm:not(.problem-hero) {
+  background:
+    linear-gradient(45deg, transparent 39%, rgba(191, 67, 30, 0.14) 40% 60%, transparent 61%) 8% 24% / 16px 16px no-repeat,
+    linear-gradient(45deg, transparent 39%, rgba(8, 123, 117, 0.15) 40% 60%, transparent 61%) 92% 17% / 20px 20px no-repeat,
+    radial-gradient(circle at 50% 46%, rgba(255, 255, 255, 0.92) 0 17%, transparent 17.3%),
+    linear-gradient(244deg, rgba(255, 228, 157, 0.14) 0 27%, transparent 27.2%),
+    radial-gradient(ellipse at 0 100%, rgba(119, 230, 224, 0.10) 0 24%, transparent 24.3%),
+    #f7fafa;
+}
+
+/* Product-stage heroes keep the pattern toward the visual, not the copy. */
+body.site-warm-refresh .hero:has(.hero-stage):not(.problem-hero)::before {
+  top: 62%;
+  opacity: 0.58;
+}
+
+body.site-warm-refresh .hero:not(:has(.hero-bg)):not(.problem-hero) > .container {
+  z-index: 1;
+}
+
+@media (max-width: 820px) {
+  body.site-warm-refresh .hero:not(:has(.hero-bg)):not(.problem-hero) {
+    background:
+      linear-gradient(45deg, transparent 39%, rgba(8, 123, 117, 0.14) 40% 60%, transparent 61%) 8% 18% / 14px 14px no-repeat,
+      linear-gradient(45deg, transparent 39%, rgba(191, 67, 30, 0.11) 40% 60%, transparent 61%) 90% 76% / 12px 12px no-repeat,
+      radial-gradient(circle at 50% 43%, rgba(255, 255, 255, 0.94) 0 22%, transparent 22.4%),
+      linear-gradient(118deg, rgba(119, 230, 224, 0.08) 0 32%, transparent 32.3%),
+      #f7fafa;
+  }
+
+  body.site-warm-refresh .hero:not(:has(.hero-bg)):not(.problem-hero)::before {
+    left: -430px;
+    width: 720px;
+    opacity: 0.54;
+  }
+
+  body.site-warm-refresh .hero.hero-warm:not(.problem-hero)::before,
+  body.trust-page .hero:not(:has(.hero-bg)):not(.problem-hero)::before,
+  body.site-warm-refresh .hero:has(.hero-stage):not(.problem-hero)::before {
+    right: -430px;
+    left: auto;
+  }
+}
+
+@media (prefers-reduced-motion: no-preference) {
+  body.site-warm-refresh .hero:not(:has(.hero-bg)):not(.problem-hero)::before {
+    animation: subpageOrbitBreathe 12s ease-in-out infinite alternate;
+  }
+}
+
+@keyframes subpageOrbitBreathe {
+  from { opacity: 0.58; }
+  to { opacity: 0.78; }
 }
