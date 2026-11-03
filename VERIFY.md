@@ -87,3 +87,9 @@ Validation: the banner precedes the FAQ and documents follow the questions; all 
 - The template asks for the teacher's name, school, grade/subject, class size, lesson/unit, and preferred start date, then asks Emil for setup steps and school requirements before student use. The website sends no email and creates no student accounts; the user sends the message through their own email application.
 
 Validation: both links decode to the same intended recipient, subject, and editable template with preserved line breaks. Both descriptions resolve to unique IDs. Browser checks at 320, 390, 820, and 1440 pixels found no overflow, overlapping copy, or runtime errors, and keyboard focus is visible. Existing demo and teacher-workflow links remain available. No email was sent during verification.
+
+## School review and assessment wording — November 2, 2026
+
+- Per the founder's latest direction, school-data terms now use “Your school reviews and finalizes the terms with us before any student logs in.” Removed draft labels and unfinished-terms language from the homepage, Trust Center (including document cards and its FAQ), founding-school page, and Privacy Policy. References to students drafting their writing remain unchanged.
+- The founder supplied these assessment milestones: the independent review and third-party penetration test are scheduled before any paid agreement; founding schools receive the results first; Orchen's own SOC 2 audit follows the founding cohort. These describe future milestones and do not assert completed Orchen audits. Supabase's infrastructure audit remains identified separately.
+- The homepage security answer uses the requested scheduled-review wording and founder walkthrough. The Privacy Policy reflects the same milestones, and homepage FAQ structured data is synchronized.
