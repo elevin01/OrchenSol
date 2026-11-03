@@ -5,14 +5,14 @@
   <meta name="theme-color" content="#1A3527">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Trust Center, Orchen | Security, Privacy &amp; Compliance for Schools</title>
-  <meta name="description" content="Orchen's security architecture, data lifecycle, sub-processors, FERPA and COPPA posture, and an honest account of where our compliance roadmap stands. Built for your security review.">
+  <meta name="description" content="Explore Orchen's security controls, data lifecycle, school review documents, and independent assessment milestones. Founding schools work directly with the founder on their technical review.">
   <link rel="icon" type="image/png" sizes="32x32" href="/assets/favicon-32.png">
   <link rel="icon" type="image/png" sizes="256x256" href="/assets/favicon.png">
   <link rel="apple-touch-icon" sizes="180x180" href="/assets/apple-touch-icon.png">
   <link rel="canonical" href="https://orchen.ai/trust">
   <meta name="robots" content="index, follow">
   <meta property="og:title" content="Trust Center, Orchen">
-  <meta property="og:description" content="Security architecture, data lifecycle, sub-processors, FERPA and COPPA posture, and an honest account of where our compliance roadmap stands.">
+  <meta property="og:description" content="Security controls, student data practices, and assessment milestones for Orchen's founding schools. Bring your technical team for a live walkthrough with the founder.">
   <meta property="og:type" content="website">
   <meta property="og:url" content="https://orchen.ai/trust">
   <meta property="og:image" content="https://orchen.ai/assets/og-trust.png">
@@ -36,6 +36,10 @@
   <link rel="preload" href="/assets/fonts/lora-regular.woff2" as="font" type="font/woff2" crossorigin>
   <link rel="stylesheet" href="/assets/refine.css">
   <link rel="stylesheet" href="/assets/editorial.css">
+  <style>
+    .trust-page section[id] { scroll-margin-top: calc(var(--nav-h) + 24px); }
+  </style>
+  <link rel="stylesheet" href="/assets/ui-icons.css?v=20261102">
 </head>
 <body class="site-warm-refresh trust-page">
 
@@ -72,7 +76,8 @@
         <span class="eyebrow">Trust Center</span>
         <h1 class="hero-h1">Built so your security review is the easy part.</h1>
         <p class="hero-sub">Everything your technology director, legal counsel, or board will ask about Orchen, the data lifecycle, the security architecture, the sub-processors, and an honest account of where our compliance roadmap stands today.</p>
-        <p class="hero-note">Last updated July 2026 &middot; Questions or document requests: emil@orchen.ai</p>
+        <p class="hero-note">Last updated November 2, 2026 &middot; Spring 2027 founding cohort &middot; Questions: emil@orchen.ai</p>
+        <p class="hero-note">Founding schools work directly with Emil to review the live system, agree on student data terms, and prepare for the spring 2027 rollout.</p>
       </div>
     </section>
 
@@ -118,7 +123,7 @@
     </section>
 
     <!-- DATA LIFECYCLE -->
-    <section class="section s-warm trust-lifecycle-section">
+    <section class="section s-warm trust-lifecycle-section" id="data-lifecycle">
       <div class="container">
         <div class="section-inner">
           <div class="ed-head ed-head--center">
@@ -150,7 +155,7 @@
 <text x="345" y="244" font-family="Inter, system-ui, -apple-system, sans-serif" font-size="14" font-weight="600" fill="#171A16">Analyzed into insight</text>
 <text x="345" y="266" font-family="Inter, system-ui, -apple-system, sans-serif" font-size="11.5" fill="#4F5A50">Profiles, concept progress, and narratives</text><text x="345" y="283" font-family="Inter, system-ui, -apple-system, sans-serif" font-size="11.5" fill="#4F5A50">derived. Crisis flags route</text><text x="345" y="300" font-family="Inter, system-ui, -apple-system, sans-serif" font-size="11.5" fill="#4F5A50">to a counselor.</text>
   <circle cx="730" cy="170" r="16" fill="#FBF3F0" stroke="#9B4A3C" stroke-width="2"/>
-<text x="730" y="175.5" text-anchor="middle" font-family="Inter, system-ui, -apple-system, sans-serif" font-size="13" font-weight="600" fill="#9B4A3C">&#10005;</text>
+<path d="M726.49 166.53l7.02 7.02m0 -7.02 -7.02 7.02" fill="none" stroke="#9B4A3C" stroke-width="1.6" stroke-linecap="round"/>
 <text x="730" y="212" text-anchor="middle" font-family="Inter, system-ui, -apple-system, sans-serif" font-size="10.5" font-weight="600" letter-spacing="1.5" fill="#7C857C">DAY 7</text>
   <line x1="730" y1="130" x2="730" y2="154" stroke="#C9BFA9" stroke-width="1.2"/>
 <rect x="605" y="26" width="250" height="104" rx="12" fill="#FBF3F0" stroke="#E0C4BC"/>
@@ -228,7 +233,7 @@
     </section>
 
     <!-- SECURITY ARCHITECTURE -->
-    <section class="section s-dark">
+    <section class="section s-dark" id="security-architecture">
       <div class="container">
         <div class="section-inner section-inner--wide">
           <div class="ed-head">
@@ -323,41 +328,41 @@
               <tr><td>Google (Gemini)</td><td>AI model inference for tutoring, writing analysis, and synthesis</td><td>Conversation content transmitted per-request; not retained for training</td></tr>
             </tbody>
           </table>
-          <p class="sec-body" style="font-size: 0.9375rem;">A current, complete sub-processor list with data processing terms is available on request and is incorporated into our Data Processing Agreement. Schools are notified before any new sub-processor handles student data.</p>
+          <p class="sec-body" style="font-size: 0.9375rem;">Your school reviews the provider list and student data terms before student access. Our draft terms are being prepared for that review, and we can use your school or diocese's own agreement.</p>
         </div>
       </div>
     </section>
 
     <!-- COMPLIANCE POSTURE -->
-    <section class="section s-cream">
+    <section class="section s-cream" id="compliance">
       <div class="container">
         <div class="section-inner section-inner--wide">
           <div class="ed-head">
             <div class="ed-head__title">
-              <span class="eyebrow">Regulatory Posture</span>
-              <h2 class="sec-h2">FERPA, COPPA, and state privacy law.</h2>
+              <span class="eyebrow">Student privacy</span>
+              <h2 class="sec-h2">Built for FERPA, COPPA, and New York Education Law 2-d.</h2>
               <hr class="ed-rule">
             </div>
-            <p class="ed-head__lead">The same posture satisfies all three: collect less, keep less, log everything, and keep the school in control of the record.</p>
+            <p class="ed-head__lead">School-controlled records, consent controls, and clear rules for student data are built into Orchen. Before any student logs in, we finalize the student data terms with your school. Our terms are currently a draft, written around FERPA and COPPA and modeled on New York Education Law 2-d. If your school or diocese has its own data agreement, we'll sign yours instead.</p>
           </div>
           <div class="feature-grid cols-3">
             <div class="feature-cell">
               <svg class="card-ico" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8Z"/><path d="M14 2v6h6"/><path d="M8 13h8M8 17h5"/></svg>
               <span class="feature-cell__eyebrow">FERPA</span>
-              <h3 class="feature-cell__head">Orchen operates as a school official</h3>
-              <p class="feature-cell__body">Under FERPA, your school controls the education records; Orchen processes them as a school official under the school's direct control, with a legitimate educational interest. Access, amendment, and deletion requests route through the school, and our audit logs satisfy FERPA's documentation requirements for record access.</p>
+              <h3 class="feature-cell__head">School-controlled student records</h3>
+              <p class="feature-cell__body">The platform is designed for the school to control its education records, with Orchen processing them under the school's direction. Role-scoped access and staff access logs support that model. The student data terms are written around FERPA and will be provided for school review before student access.</p>
             </div>
             <div class="feature-cell">
               <svg class="card-ico" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M12 2l8 3v6c0 5-3.5 8-8 9-4.5-1-8-4-8-9V5Z"/><circle cx="12" cy="9.5" r="1.8"/><path d="M9 15.5a3 3 0 0 1 6 0"/></svg>
               <span class="feature-cell__eyebrow">COPPA</span>
-              <h3 class="feature-cell__head">Under-13 protections enforced by role gates</h3>
+              <h3 class="feature-cell__head">Consent before student data is saved</h3>
               <p class="feature-cell__body">Students under 13 require verifiable parental consent managed through the school's consent process. Without an active consent record, the platform's COPPA-aware role gates place the student in non-persistent Guest Mode, no data is written.</p>
             </div>
             <div class="feature-cell">
               <svg class="card-ico" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M12 4v17M8 21h8M4 8l16-3"/><path d="M4 8l-2.5 5a2.5 2.5 0 0 0 5 0L4 8Z"/><path d="M20 5l-2.5 5a2.5 2.5 0 0 0 5 0L20 5Z"/></svg>
-              <span class="feature-cell__eyebrow">State law</span>
-              <h3 class="feature-cell__head">Data minimization as the default posture</h3>
-              <p class="feature-cell__body">State student-privacy statutes vary, but nearly all reward the same posture: collect less, keep less, log everything. The 7-day source deletion, school-configurable retention, and immutable audit trail are designed so that posture holds across jurisdictions. Your counsel reviews the DPA against your state's requirements before deployment.</p>
+              <span class="feature-cell__eyebrow">New York Education Law &sect;2-d</span>
+              <h3 class="feature-cell__head">School-specific data terms</h3>
+              <p class="feature-cell__body">Our draft data terms are modeled on Education Law 2-d. Where the law applies, we finalize the required contract terms, data security and privacy plan, and Parents' Bill of Rights with your school before student data is shared. <a href="mailto:emil@orchen.ai?subject=Orchen%20student%20data%20terms">Discuss your school's data agreement</a> and see <a href="https://www.nysed.gov/sites/default/files/programs/data-privacy-security/final-pbor-guidance-for-schools-on-2.24.25.pdf">NYSED's guidance</a>.</p>
             </div>
           </div>
         </div>
@@ -365,37 +370,37 @@
     </section>
 
     <!-- HONEST STATUS -->
-    <section class="section s-dark trust-status-section">
+    <section class="section s-dark trust-status-section" id="assessment-status">
       <div class="container">
         <div class="section-inner section-inner--wide">
           <div class="ed-head">
             <div class="ed-head__title">
               <span class="eyebrow">Where We Stand</span>
-              <h2 class="sec-h2">An honest account of our current posture.</h2>
+              <h2 class="sec-h2">Security assessments.</h2>
               <hr class="ed-rule">
             </div>
-            <p class="ed-head__lead">Trust pages usually list what a company has. Ours also lists what we don't have yet, because you deserve to make this decision with complete information.</p>
+            <p class="ed-head__lead">Explore the live controls with the founder, review the independent assessment milestones, and agree on the terms your school needs before student access.</p>
           </div>
           <div class="feature-grid cols-2">
             <div class="feature-cell">
               <span class="tag-pill is-pos"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"/></svg>In place today</span>
-              <h3 class="feature-cell__head">Architecture-level controls, live in production</h3>
+              <h3 class="feature-cell__head">Platform controls for school review</h3>
               <p class="feature-cell__body">Row-level security, immutable audit logging, consent gating with Guest Mode, the 7-day source deletion pipeline, per-school retention enforcement, crisis flag lifecycle tracking, structured data export, and right-to-be-forgotten tooling. Each is verifiable in a technical walkthrough.</p>
             </div>
             <div class="feature-cell">
-              <span class="tag-pill is-cau"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="9"/><path d="M12 7v5l3 2"/></svg>Not yet</span>
-              <h3 class="feature-cell__head">SOC 2 certification</h3>
-              <p class="feature-cell__body">Orchen itself isn't SOC 2 certified yet, but it runs on SOC 2 Type 2-certified infrastructure (Supabase), with all data encrypted in transit and at rest. Our own SOC 2 Type 2 audit is on the roadmap as we move from founding pilots to broader deployment. If your procurement requires our own certification today, we'd rather tell you that here than in month three of an evaluation, and we're glad to walk your reviewer through every control in detail.</p>
+              <span class="tag-pill is-cau"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="9"/><path d="M12 7v5l3 2"/></svg>Infrastructure assurance</span>
+              <h3 class="feature-cell__head">Audited infrastructure</h3>
+              <p class="feature-cell__body">Orchen runs on Supabase, whose infrastructure is SOC 2 Type 2 audited. Founding schools can inspect Orchen's controls in a live technical walkthrough. Supabase's audit covers its infrastructure; Orchen's own SOC 2 audit has not been completed.</p>
             </div>
             <div class="feature-cell">
-              <span class="tag-pill is-cau"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="9"/><path d="M12 7v5l3 2"/></svg>Not yet</span>
-              <h3 class="feature-cell__head">Third-party penetration test</h3>
-              <p class="feature-cell__body">An independent penetration test is planned ahead of our first full-school deployments. Schools participating in our founding program will receive the results when complete.</p>
+              <span class="tag-pill is-cau"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="9"/><path d="M12 7v5l3 2"/></svg>Pre-rollout milestone</span>
+              <h3 class="feature-cell__head">Independent security review</h3>
+              <p class="feature-cell__body">Our independent security review is scheduled ahead of full rollout and before any paid agreement. Founding schools receive the results first. The review and a third-party penetration test have not yet been completed; until then, Emil will walk your technical team through the live system.</p>
             </div>
             <div class="feature-cell">
-              <span class="tag-pill is-neu"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="9"/><path d="m16 8-2 6-6 2 2-6Z"/></svg>By design</span>
-              <h3 class="feature-cell__head">Continuity, protected by contract</h3>
-              <p class="feature-cell__body">What an early-stage company offers instead of a decade of audits: an architecture where the privacy promises are structural rather than procedural, direct access to the people who built it, and contractual terms, the school owns its data, a full structured export is available at any time, and defined wind-down terms guarantee an orderly exit with data returned and deleted on schedule, whatever happens to the vendor. That is the deal we offer, in writing.</p>
+              <span class="tag-pill is-neu"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="9"/><path d="m16 8-2 6-6 2 2-6Z"/></svg>Draft terms</span>
+              <h3 class="feature-cell__head">Data ownership and exit terms for your review</h3>
+              <p class="feature-cell__body">Before any student logs in, your school will review student data terms covering ownership, retention, export, and deletion. Those terms are still a draft. If your school or diocese has its own data agreement, we'll sign yours instead.</p>
             </div>
           </div>
         </div>
@@ -403,27 +408,27 @@
     </section>
 
     <!-- DOCUMENTS -->
-    <section class="section s-warm">
+    <section class="section s-warm" id="review-documents">
       <div class="container">
         <div class="section-inner">
           <span class="eyebrow">For Your Review</span>
-          <h2 class="sec-h2">Documents available on request.</h2>
-          <p class="sec-body">Email <strong>emil@orchen.ai</strong> with your school name and we'll send these within one business day:</p>
+          <h2 class="sec-h2">Review the practices. Agree on the terms.</h2>
+          <p class="sec-body">Explore the security practices on this page and bring your technical team for a live walkthrough. Your school reviews its data terms before student access, and founding schools receive the independent security review results first. Email <a href="mailto:emil@orchen.ai">emil@orchen.ai</a> to begin your school's review.</p>
           <div class="mini-cards" style="margin-top: 2rem;">
             <div class="mini-card">
               <svg class="card-ico" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8Z"/><path d="M14 2v6h6"/><path d="M8 13h8M8 17h5"/></svg>
-              <h3>Data Processing Agreement</h3>
-              <p>Retention windows, deletion rights, breach notification terms, and the full sub-processor list.</p>
+              <h3>Student data terms &middot; draft</h3>
+              <p>Written around FERPA and COPPA, modeled on New York Education Law 2-d. Your school reviews the terms before any student logs in. If your school or diocese has its own data agreement, we'll sign yours instead.</p>
             </div>
             <div class="mini-card">
               <svg class="card-ico" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10Z"/><path d="m9 12 2 2 4-4"/></svg>
               <h3>Security overview</h3>
-              <p>A technical summary of the controls on this page, written for IT directors and security reviewers.</p>
+              <p>Use the published controls, data lifecycle, and provider list to guide your technology director's review. Founding schools receive independent assessment results first, ahead of full rollout.</p>
             </div>
             <div class="mini-card">
               <svg class="card-ico" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="3" width="20" height="14" rx="2"/><path d="M8 21h8M12 17v4"/><path d="m7 10 2.5 2.5L15 7"/></svg>
               <h3>Architecture walkthrough</h3>
-              <p>A live session with the founder covering RLS policies, the audit log, and the deletion pipeline against the production system.</p>
+              <p>A session with the founder covering access controls, the audit log, and the deletion pipeline. Bring your technical reviewer and your school's data agreement requirements.</p>
             </div>
           </div>
           <p class="sec-body" style="margin-top: 2rem; font-size: 0.9375rem;">Also see our public <a href="/privacy" style="color: var(--green); border-bottom: 1px solid var(--green-pale);">Privacy Policy</a> and <a href="/terms" style="color: var(--green); border-bottom: 1px solid var(--green-pale);">Terms of Service</a>, and the <a href="/platform/" style="color: var(--green); border-bottom: 1px solid var(--green-pale);">full platform architecture</a>.</p>
@@ -439,37 +444,37 @@
           <h2 class="sec-h2">What reviewers ask us.</h2>
           <div class="faq-list">
             <details class="faq-item">
-              <summary class="faq-q">If conversations are deleted in 7 days, how do advisors see anything useful? <span class="faq-chevron">&#8964;</span></summary>
+              <summary class="faq-q">If conversations are deleted in 7 days, how do advisors see anything useful? <span class="faq-chevron"><svg class="ui-icon ui-icon--chevron-down" width="16" height="16" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><use href="/assets/ui-icons.svg#chevron-down"></use></svg></span></summary>
               <div class="faq-a">
                 <p>The analysis runs before deletion. Each night, conversations feed the learning profile, concept tracking, and the weekly advisor narrative. By the time the source transcript is removed, the synthesis your staff actually uses already exists, and that's all they ever needed. Advisors were never going to read raw transcripts at scale anyway.</p>
               </div>
             </details>
             <details class="faq-item">
-              <summary class="faq-q">Does Google see our students' conversations? <span class="faq-chevron">&#8964;</span></summary>
+              <summary class="faq-q">Does Google see our students' conversations? <span class="faq-chevron"><svg class="ui-icon ui-icon--chevron-down" width="16" height="16" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><use href="/assets/ui-icons.svg#chevron-down"></use></svg></span></summary>
               <div class="faq-a">
-                <p>Conversation content is transmitted to Google's Gemini models per-request to generate AI responses, the same way any AI product works. The terms governing that access prohibit using the data to train models or for any purpose beyond generating the requested response. No student account information is required for inference, and Google is listed in our DPA as a sub-processor.</p>
+                <p>The platform sends conversation content to Google's Gemini models per-request to generate AI responses. Student data is not used to train AI models. Google is included in the provider list for school review; our student data terms are currently a draft, which your school will review before student access.</p>
               </div>
             </details>
             <details class="faq-item">
-              <summary class="faq-q">What happens to our data if Orchen shuts down? <span class="faq-chevron">&#8964;</span></summary>
+              <summary class="faq-q">What happens to our data if Orchen shuts down? <span class="faq-chevron"><svg class="ui-icon ui-icon--chevron-down" width="16" height="16" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><use href="/assets/ui-icons.svg#chevron-down"></use></svg></span></summary>
               <div class="faq-a">
                 <p>Your school owns its data, contractually. You can request a full structured export at any time during the contract, and you have a 30-day export window after termination for any reason. After that window, all school and student data is deleted. The export covers profiles, derived insights, assignment data, and quiz results in machine-readable formats.</p>
               </div>
             </details>
             <details class="faq-item">
-              <summary class="faq-q">Who at Orchen can read student conversations? <span class="faq-chevron">&#8964;</span></summary>
+              <summary class="faq-q">Who at Orchen can read student conversations? <span class="faq-chevron"><svg class="ui-icon ui-icon--chevron-down" width="16" height="16" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><use href="/assets/ui-icons.svg#chevron-down"></use></svg></span></summary>
               <div class="faq-a">
                 <p>In the ordinary course, no one. Analysis is performed by AI, not by staff reading transcripts. Platform-level access exists for compliance, support, and audit purposes, and every such access writes an audit log entry. There is no support workflow that involves browsing student conversations.</p>
               </div>
             </details>
             <details class="faq-item">
-              <summary class="faq-q">How does crisis detection interact with the deletion policy? <span class="faq-chevron">&#8964;</span></summary>
+              <summary class="faq-q">How does crisis detection interact with the deletion policy? <span class="faq-chevron"><svg class="ui-icon ui-icon--chevron-down" width="16" height="16" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><use href="/assets/ui-icons.svg#chevron-down"></use></svg></span></summary>
               <div class="faq-a">
                 <p>Crisis flags are exempt from automatic deletion because of their safety significance. A flag moves through a tracked lifecycle, open, reviewing, resolved, or escalated, with a 24-hour urgency indicator, and it routes only to the school's designated counselor. If a student account is later deleted, flags are anonymized rather than destroyed, preserving the safeguarding record without the personal identifier.</p>
               </div>
             </details>
             <details class="faq-item">
-              <summary class="faq-q">Can we verify any of this, or do we take your word for it? <span class="faq-chevron">&#8964;</span></summary>
+              <summary class="faq-q">Can we verify any of this, or do we take your word for it? <span class="faq-chevron"><svg class="ui-icon ui-icon--chevron-down" width="16" height="16" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><use href="/assets/ui-icons.svg#chevron-down"></use></svg></span></summary>
               <div class="faq-a">
                 <p>Verify it. The architecture walkthrough is a live session against the production system, RLS policies, the audit log behavior, the deletion job, with your technical reviewer in the room asking questions. For founding schools, we treat the security review as part of the partnership, not an obstacle to it.</p>
               </div>
@@ -485,7 +490,7 @@
         <span class="eyebrow">Next Step</span>
         <h2 class="cta-h">Put your hardest reviewer in the room.</h2>
         <p class="sec-body">Book a walkthrough and bring your technology director. We'll go as deep as they want to go.</p>
-        <a href="/#contact" class="btn-cta btn-invert">Book a walkthrough &rarr;</a>
+        <a href="/#contact" class="btn-cta btn-invert">Book a walkthrough <svg class="ui-icon ui-icon--arrow-right" width="16" height="16" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><use href="/assets/ui-icons.svg#arrow-right"></use></svg></a>
         <p class="cta-alt">Or request documents directly: <a href="mailto:emil@orchen.ai">emil@orchen.ai</a></p>
       </div>
     </section>
@@ -522,6 +527,6 @@
   }());
   </script>
 
-  <a class="mobile-cta-bar" href="/#contact">Book a walkthrough &rarr;</a>
+  <a class="mobile-cta-bar" href="/#contact">Book a walkthrough <svg class="ui-icon ui-icon--arrow-right" width="16" height="16" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><use href="/assets/ui-icons.svg#arrow-right"></use></svg></a>
 </body>
 </html>

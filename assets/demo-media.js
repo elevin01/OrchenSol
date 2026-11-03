@@ -70,7 +70,7 @@ document.addEventListener('DOMContentLoaded', () => {
         dialog = document.createElement('dialog');
         dialog.className = 'demo-zoom';
         dialog.setAttribute('aria-labelledby', 'demo-zoom-title');
-        dialog.innerHTML = '<div class="demo-zoom-bar"><h2 id="demo-zoom-title">Demo screenshot</h2><button type="button" data-zoom-toggle aria-pressed="false">View full size</button><button type="button" data-zoom-close autofocus>Close</button></div><div class="demo-zoom-viewport" tabindex="0" role="region" aria-label="Screenshot; scroll to explore at full size"><img alt=""></div><p class="demo-zoom-help">Demo data · At full size, scroll to explore the image. Press Escape to close.</p>';
+        dialog.innerHTML = '<div class="demo-zoom-bar"><h2 id="demo-zoom-title">Demo screenshot</h2><button type="button" data-zoom-toggle aria-pressed="false"><svg class="ui-icon" width="16" height="16" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><use href="/assets/ui-icons.svg#expand"></use></svg><span data-zoom-label>View full size</span></button><button type="button" data-zoom-close autofocus><svg class="ui-icon" width="16" height="16" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><use href="/assets/ui-icons.svg#close"></use></svg>Close</button></div><div class="demo-zoom-viewport" tabindex="0" role="region" aria-label="Screenshot; scroll to explore at full size"><img alt=""></div><p class="demo-zoom-help">Demo data · At full size, scroll to explore the image. Press Escape to close.</p>';
         document.body.append(dialog);
         dialog.querySelector('[data-zoom-close]').addEventListener('click', () => dialog.close());
         dialog.addEventListener('click', (e) => { if (e.target === dialog) dialog.close(); });
@@ -101,7 +101,8 @@ document.addEventListener('DOMContentLoaded', () => {
   function setZoomLabel(full) {
     const button = dialog.querySelector('[data-zoom-toggle]');
     button.setAttribute('aria-pressed', String(full));
-    button.textContent = full ? 'Fit to window' : 'View full size';
+    button.querySelector('[data-zoom-label]').textContent = full ? 'Fit to window' : 'View full size';
+    button.querySelector('use').setAttribute('href', `/assets/ui-icons.svg#${full ? 'minimize' : 'expand'}`);
   }
   function positionImage(full) {
     dialog.querySelector('.demo-zoom-viewport').scrollTo({

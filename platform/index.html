@@ -462,6 +462,8 @@ code {
   <link rel="preload" href="/assets/fonts/lora-regular.woff2" as="font" type="font/woff2" crossorigin>
   <link rel="stylesheet" href="/assets/refine.css">
   <link rel="stylesheet" href="/assets/editorial.css">
+  <script src="/assets/demo-media.js?v=20261102-svg-icons" defer></script>
+  <link rel="stylesheet" href="/assets/ui-icons.css?v=20261102">
 </head>
 <body class="site-warm-refresh">
 
@@ -555,9 +557,9 @@ code {
             <figure>
               <div class="shot-frame">
                 <div class="shot-chrome"><span class="shot-dot"></span><span class="shot-dot"></span><span class="shot-dot"></span><span class="shot-name">orchen &middot; Writing Studio</span></div>
-                <img src="/assets/product-writing-workspace.webp" alt="Orchen Writing Studio" loading="lazy">
+                <video data-src="/assets/student-writing-workspace.mp4" poster="/assets/student-writing-workspace-poster.jpg" width="3584" height="1992" controls muted playsinline preload="none" aria-label="Student writing walkthrough: move from a planning conversation into the editor, review outline cards and the rubric, and begin a draft" aria-describedby="platform-writing-caption"></video>
               </div>
-              <figcaption class="platform-figcap">The dedicated essay surface with rubric-aware feedback.</figcaption>
+              <figcaption class="platform-figcap" id="platform-writing-caption">A planning conversation, outline cards, the rubric, and the student&rsquo;s own opening sentence. Demo data.</figcaption>
             </figure>
             <figure>
               <div class="shot-frame">
@@ -999,7 +1001,7 @@ code {
           <p>A 30-minute walkthrough is the fastest way to verify any of the architecture above against the live product.</p>
           <div class="cta-actions">
             <a href="/#contact" class="btn-cta-white">Book a walkthrough</a>
-            <a href="/" class="cta-secondary">Back to the homepage &rarr;</a>
+            <a href="/" class="cta-secondary">Back to the homepage <svg class="ui-icon ui-icon--arrow-right" width="16" height="16" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><use href="/assets/ui-icons.svg#arrow-right"></use></svg></a>
           </div>
         </div>
       </div>
@@ -1031,6 +1033,6 @@ code {
   }());
   </script>
 
-  <a class="mobile-cta-bar" href="/#contact">Book a walkthrough &rarr;</a>
+  <a class="mobile-cta-bar" href="/#contact">Book a walkthrough <svg class="ui-icon ui-icon--arrow-right" width="16" height="16" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><use href="/assets/ui-icons.svg#arrow-right"></use></svg></a>
 </body>
 </html>

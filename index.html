@@ -566,15 +566,6 @@ h4 {
   border-color: rgba(255,255,255,0.55);
   color: #fff;
 }
-.hero-cta-secondary .beta {
-  font-size: 0.625rem;
-  letter-spacing: 0.18em;
-  text-transform: uppercase;
-  color: rgba(255,255,255,0.55);
-  padding: 2px 6px;
-  border: 1px solid rgba(255,255,255,0.22);
-  border-radius: 2px;
-}
 
 /* ─── CONTACT secondary CTA (outline, sits below form submit) ─── */
 .form-secondary-cta {
@@ -600,15 +591,6 @@ h4 {
   background: rgba(255,255,255,0.08);
   border-color: rgba(255,255,255,0.55);
   color: #fff;
-}
-.form-secondary-cta .beta {
-  font-size: 0.625rem;
-  letter-spacing: 0.18em;
-  text-transform: uppercase;
-  color: rgba(255,255,255,0.55);
-  padding: 2px 6px;
-  border: 1px solid rgba(255,255,255,0.22);
-  border-radius: 2px;
 }
 
 
@@ -1618,7 +1600,7 @@ h4 {
   position: relative;
 }
 .what-is-rule::before {
-  content: '✦';
+  content: '';
   position: absolute;
   left: -2px;
   top: -10px;
@@ -1849,7 +1831,7 @@ h4 {
   position: relative;
 }
 .roles-list li::before {
-  content: '\2192';
+  content: '';
   position: absolute;
   left: 0;
   color: var(--green);
@@ -2099,7 +2081,7 @@ h4 {
   transition: color 0.2s;
 }
 .what-is-cta::before {
-  content: '✦';
+  content: '';
   color: var(--green-light);
   font-size: 0.625rem;
   position: relative;
@@ -2422,51 +2404,6 @@ h4 {
 }
 .demo-alt:hover { color: var(--green); border-color: var(--green); }
 
-/* ─── FAQ ─── */
-.faq-section { background: var(--bg); padding-block: 6rem; }
-.faq-inner { max-width: 760px; }
-.faq-h {
-  font-family: var(--font-display);
-  font-size: clamp(1.75rem, 3vw, 2.4rem);
-  font-weight: 700;
-  color: var(--ink);
-  letter-spacing: -0.02em;
-  margin: 0.5rem 0 2rem;
-}
-.faq-item { border-bottom: 1px solid var(--border-light); }
-.faq-item summary {
-  cursor: pointer;
-  list-style: none;
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  gap: 1rem;
-  padding: 1.25rem 0;
-  font-family: var(--font-body);
-  font-size: 1.0625rem;
-  font-weight: 600;
-  color: var(--ink);
-}
-.faq-item summary::-webkit-details-marker { display: none; }
-.faq-item summary::after {
-  content: '+';
-  font-size: 1.35rem;
-  font-weight: 400;
-  color: var(--green);
-  flex-shrink: 0;
-  transition: transform 0.25s;
-}
-.faq-item[open] summary::after { transform: rotate(45deg); }
-.faq-item p {
-  font-family: var(--font-body);
-  font-size: 0.96875rem;
-  line-height: 1.75;
-  color: var(--ink-muted);
-  margin: 0 0 1.4rem;
-  max-width: 660px;
-}
-.faq-item a { color: var(--green); border-bottom: 1px solid var(--green-pale, #C5DBCB); }
-
 /* ─── CONTACT, what happens next ─── */
 .contact-next {
   display: grid;
@@ -2498,44 +2435,56 @@ h4 {
   </script>
   <link rel="stylesheet" href="/assets/refine.css">
   <script type="application/ld+json">
-
-
-
-
 {
   "@context": "https://schema.org",
   "@type": "FAQPage",
   "mainEntity": [
     {
       "@type": "Question",
+      "name": "Which schools are joining Orchen?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "School leaders in the Archdiocese of New York are evaluating Orchen this fall. We’re in the process of signing schools for our spring 2027 pilot. Spots are limited so Emil can personally set up and support each founding school. Your school could help shape the cohort. We’re intentionally small this year. Every founding school works directly with Emil, the founder, from configuration and in-person training through the pilot. Explore the founding school opportunity."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "How does our school get started?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Work directly with Emil on setup and in-person training. Orchen runs in the browser on the devices your school already has. Founding schools work directly with Emil for configuration, training, and support. That access is reserved for the founding cohort, and your teachers help shape what we build next. Training happens in person in January 2027, so we need school decisions by December 15, 2026. Orchen works on iPads, Chromebooks, MacBooks, and other school-managed devices. The optional network-enforcement device layer can be added later."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "What does the pilot cost?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "The founding school pilot is free. We agree on the pilot scope and what success looks like with your school before it begins. If you choose to continue afterward, Orchen uses a flat per-school license, sized by headcount. Founding schools receive 30% off their school license, with the agreed founding rate locked in for the first three paid years. That rate is exclusive to this cohort and won’t be offered again. We agree on paid pricing with your school before you decide to continue. See the founding school offer."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Can we hear from another school?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Emil can ask whether a school evaluating Orchen would be willing to speak with you. Your teachers can also explore the open demo and join a walkthrough with Emil. You can see how Orchen fits your lessons and agree on what a successful pilot would look like for your school. Explore the demo or discuss a founding school pilot. Student access begins after your school’s data terms and consent requirements are in place. School privacy comes first. We haven’t received permission to share school names or arrange introductions. If you’d like an introduction, Emil can request that permission; any introduction depends on the school agreeing."
+      }
+    },
+    {
+      "@type": "Question",
       "name": "Can teachers or parents read student conversations?",
       "acceptedAnswer": {
         "@type": "Answer",
-        "text": "Your school decides what visibility looks like. Orchen turns student work into role-appropriate learning insight, while schools control what teachers, advisors, and parents can see, including conversation access. Parent visibility is configured separately. Staff access is role-scoped and audited."
+        "text": "Your school controls what teachers, advisors, and parents can see. Parent visibility is configured separately. Orchen gives each role the learning information your school chooses to share, including whether they can access conversations. Staff access is scoped to their role and logged."
       }
     },
     {
       "@type": "Question",
-      "name": "Is Orchen FERPA and COPPA compliant?",
+      "name": "What do teachers need to do?",
       "acceptedAnswer": {
         "@type": "Answer",
-        "text": "Orchen is built around both statutes: row-level security at the database layer, immutable audit logs of every staff access, per-school retention policies, and under-13 protections via the role gate. Your technical reviewer can verify every claim against the live architecture during the walkthrough, the platform page covers the details."
-      }
-    },
-    {
-      "@type": "Question",
-      "name": "What does rollout take? Do we need new devices?",
-      "acceptedAnswer": {
-        "@type": "Answer",
-        "text": "No new hardware and no IT project. Orchen runs in the browser on whatever fleet you already manage, iPads, Chromebooks, MacBooks. Configuration is an afternoon, not a semester. Schools that want network-level enforcement can add the optional managed device layer later."
-      }
-    },
-    {
-      "@type": "Question",
-      "name": "Is this one more tool my teachers have to learn?",
-      "acceptedAnswer": {
-        "@type": "Answer",
-        "text": "Teachers read Orchen like a morning briefing, the platform does the managing. The class view shows who's on track, who's quietly stuck, who needs attention today. Creating assignments through Orchen is optional; the insight flows either way."
+        "text": "Connect class materials, set assignments if you choose, and use the class view to see where students need help. The class view brings together student progress and common sticking points so teachers can decide what to revisit. Creating assignments through Orchen is optional; teachers can also use it to support work already happening in class."
       }
     },
     {
@@ -2543,32 +2492,51 @@ h4 {
       "name": "What happens when the AI gets something wrong?",
       "acceptedAnswer": {
         "@type": "Answer",
-        "text": "The Socratic design lowers the stakes of any single answer: Orchen asks students to reason and check, rather than handing down statements to accept. Subject-specific modules constrain how it teaches each discipline, and because teachers see concept-level trends across the class, a misunderstanding surfaces as a pattern, not a secret."
+        "text": "Teachers can revisit the explanation with the student and use class-level learning patterns to see who else may need help. AI can make mistakes. Orchen asks students to explain and check their thinking, while subject-specific teaching modules guide how it approaches each discipline. Teacher review remains part of the process."
       }
     },
     {
       "@type": "Question",
-      "name": "Will students actually use a tutor that makes them think?",
+      "name": "Why would students choose to use it?",
       "acceptedAnswer": {
         "@type": "Answer",
-        "text": "That's the design problem Orchen is built around. The tutor meets each student where they are, adapting to how they learn, down to the study mood they pick that day, and the flashcards, quizzes, and learning profile are generated from their own work, which makes progress visible and personal. Assignments launch inside Orchen, so it's where schoolwork already lives. Guided help that works beats an answer they have to hide."
+        "text": "Students can work on their actual assignments, plan and draft writing, and make quizzes and flashcards from their own sessions. Orchen adapts its help to the student and the class materials. Study moods let students choose how they want to work, and their learning profile keeps track of concepts to practice next. They have a place to make progress on the work in front of them."
       }
     },
     {
       "@type": "Question",
-      "name": "What does it cost, and what does a pilot look like?",
+      "name": "How does Orchen support student privacy requirements?",
       "acceptedAnswer": {
         "@type": "Answer",
-        "text": "A flat per-school site license, sized by headcount, a school-level decision, not a per-seat negotiation. Pilots are free: one class, about six weeks, working directly with the founder, then you review the results together and decide. The founding program spells out terms, timeline, and the clean exit, and emil@orchen.ai answers with straight numbers, not a quote funnel."
+        "text": "Built for FERPA, COPPA, and New York Education Law 2-d, with school-controlled access, consent controls, and clear rules for student data. Before any student logs in, your school receives our student data terms to review. The terms are currently a draft, written around FERPA and COPPA and modeled on New York Education Law 2-d. If your school or diocese has its own data agreement, we’ll sign yours instead. FERPA School-directed processing, role-scoped access, and logged staff access help schools control their education records. Schools coordinate requests to access or amend them. COPPA Consent controls support the school’s process for students under 13. Without an active consent record, interactions are not saved to the database. Student information is never sold or used for advertising. New York Education Law §2-d Our data terms are modeled on Education Law 2-d. Where it applies, the school agreement addresses the required contract terms, data security and privacy plan, and Parents’ Bill of Rights before student data is shared. How our privacy controls work · Discuss your school’s data agreement"
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "What happens to student data? Is it used to train AI?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Student data is encrypted, hosted in the US, and never used to train AI models. Raw conversations are deleted within seven days by default. Your school stays in control of student data, from the first account through export and deletion. Here’s how the platform is designed to support your school’s policies. Collected through school use Account and school details, tutoring messages, submitted assignments and writing, quiz responses, learning profiles, and usage information support the learning experience. Stored and processed Platform data is stored with Supabase in the United States. Conversation content is sent to Google’s Gemini models through the AI gateway to generate responses. Neither Orchen nor its AI providers use student data to train models. Student data is never sold or used for advertising. Protected by access controls Data is encrypted in transit and at rest. Database-level access controls scope records to the appropriate school and role; staff access is logged. Schools configure parent visibility. Deleted under a defined policy Raw conversations are deleted within seven days by default; school contracts may allow a longer window. Derived learning profiles follow the school’s retention policy. Schools can request exports and deletion; other student data is removed within 30 days of a deletion request or contract termination, subject to the policy’s exceptions. Safety flags and audit records have separate retention rules. What we collect · Retention & exceptions · Follow the data lifecycle"
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Has Orchen had an independent security review?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Not yet. Our independent security review is scheduled ahead of full rollout, and founding schools receive the results first. Until the review is complete, I’ll walk your technical team through the live system so they can see exactly how student data is protected. The review is scheduled before any paid agreement and ahead of full rollout. Orchen runs on Supabase, whose infrastructure is SOC 2 Type 2 audited. Bring your reviewer to explore our security practices and security review schedule."
       }
     }
   ]
 }
   </script>
-  <link rel="stylesheet" href="/assets/demo-media.css?v=20261026-viewer">
+  <link rel="stylesheet" href="/assets/demo-media.css?v=20261102-classroom-trial">
   <link rel="stylesheet" href="/assets/learning-comparison.css?v=20261026">
   <link rel="stylesheet" href="/assets/product-montage.css">
-  <script src="/assets/demo-media.js?v=20261026-viewer" defer></script>
+  <link rel="stylesheet" href="/assets/school-review.css?v=20261102-faq-banner">
+  <script src="/assets/demo-media.js?v=20261102-svg-icons" defer></script>
+  <link rel="stylesheet" href="/assets/ui-icons.css?v=20261102">
+  <link rel="stylesheet" href="/assets/founding-cohort.css?v=20261102-combined">
 </head>
 <body class="site-warm-refresh home-page">
 
@@ -2590,10 +2558,10 @@ h4 {
             <a href="/solutions/heads-of-school">Heads of School</a>
           </div>
         </div>
-        <a href="/trust">Trust</a>
+        <a href="#school-review">Trust &amp; privacy</a>
         <a href="/#contact">For Schools</a>
       </div>
-      <a href="#contact" class="btn-nav">Book a walkthrough</a>
+      <a href="#contact" class="btn-nav">Founding schools</a>
       <button class="nav-toggle" id="nav-toggle" aria-label="Open menu" aria-expanded="false">
         <span></span><span></span><span></span>
       </button>
@@ -2705,10 +2673,11 @@ h4 {
           <hr class="hero-rule">
           <p class="hero-descriptor">A guided workspace grounded in your curriculum. AI that asks instead of answers, building insight teachers, advisors, and parents can act on.</p>
           <div class="hero-ctas">
-            <a href="#contact" class="hero-cta">Book a walkthrough &rarr;</a>
-            <a href="https://app.orchen.ai" class="hero-cta-secondary" target="_blank" rel="noopener">Try the demo <span class="beta">Beta</span></a>
+            <a href="#contact" class="hero-cta">Apply for a founding spot <svg class="ui-icon ui-icon--arrow-right" width="16" height="16" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><use href="/assets/ui-icons.svg#arrow-right"></use></svg></a>
+            <a href="https://app.orchen.ai" class="hero-cta-secondary" target="_blank" rel="noopener">Try the demo</a>
           </div>
-          <a class="hero-research-link" href="/the-problem">Why now? Read the research &rarr;</a>
+          <p class="hero-cohort-note"><strong>3 spots remaining for Spring 2027.</strong><span>Stay after the pilot and get 30% off, locked in for 3 paid years.</span></p>
+          <a class="hero-research-link" href="/the-problem">Why now? Read the research <svg class="ui-icon ui-icon--arrow-right" width="16" height="16" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><use href="/assets/ui-icons.svg#arrow-right"></use></svg></a>
         </div>
       </div>
 
@@ -2722,10 +2691,10 @@ h4 {
       <div class="what-is-grid">
         <div class="what-is-copy animate-in">
           <span class="eyebrow">What Orchen Is</span>
-          <h2>One place to learn. <em>One growing picture underneath.</em></h2>
+          <h2>A workspace for learning.</h2>
           <p class="lead">Orchen is a school-governed learning environment where students do their learning: guided sessions grounded in their classes, a Writing Studio, assignments, flashcards, and quizzes built from their own work. As they learn, a growing picture of how each student thinks forms underneath it.</p>
           <p>Teachers, advisors, and parents see that picture through their own window, at levels the school controls. It compounds over time: what a school learns about a student in October doesn&rsquo;t disappear in June. The context stays, even as classes and teachers change.</p>
-          <a class="what-is-cta" href="/platform/">See the full platform architecture &rarr;</a>
+          <a class="what-is-cta" href="/platform/">Explore the platform <svg class="ui-icon ui-icon--arrow-right" width="16" height="16" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><use href="/assets/ui-icons.svg#arrow-right"></use></svg></a>
         </div>
         <div class="what-is-visual animate-in">
           <picture>
@@ -2736,13 +2705,31 @@ h4 {
       </div>
     </section>
 
+    <div class="privacy-strip" role="region" aria-label="Student privacy at a glance">
+      <div class="container privacy-strip__inner">
+        <a class="privacy-strip__item" href="#student-data">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10Z"/><path d="m9 12 2 2 4-4"/></svg>
+          <span>No AI training on student data</span>
+        </a>
+        <a class="privacy-strip__item" href="#school-agreements">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8Z"/><path d="M14 2v6h6M8 13h8M8 17h5"/></svg>
+          <span>Data terms reviewed before student access</span>
+        </a>
+        <a class="privacy-strip__item" href="#student-data">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="5" y="10" width="14" height="11" rx="2"/><path d="M8 10V7a4 4 0 0 1 8 0v3M12 14v3"/></svg>
+          <span>Encrypted. School-controlled.</span>
+        </a>
+        <a class="privacy-strip__link" href="#school-review">Privacy &amp; school information <span aria-hidden="true"><svg class="ui-icon ui-icon--arrow-right" width="16" height="16" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><use href="/assets/ui-icons.svg#arrow-right"></use></svg></span></a>
+      </div>
+    </div>
+
     <!-- ═══ SECTION C: AI, DESIGNED FOR LEARNING ═══ -->
     <section class="yes-ai section" id="obvious-question">
       <div class="container">
         <div class="yes-ai-inner">
           <div class="yes-ai-copy animate-in">
             <span class="eyebrow">What we stand for</span>
-            <h2>Same category. <em>Different job.</em></h2>
+            <h2>Help students work through it.</h2>
             <p class="core-belief">Protect the journey from not knowing to understanding.</p>
             <p>A correct answer can still leave a student unable to explain it. Orchen supports the work between receiving an answer and understanding why it makes sense.</p>
           </div>
@@ -2751,7 +2738,7 @@ h4 {
             <article class="ai-contrast-card">
               <header>
                 <span class="ai-contrast-kicker">When AI does the work</span>
-                <h3>Finished work.<br>Unfinished understanding.</h3>
+                <h3>When the answer comes too soon</h3>
               </header>
               <ul>
                 <li><strong>The solution comes first.</strong><p>A student can get a worked answer before attempting the problem.</p></li>
@@ -2763,7 +2750,7 @@ h4 {
             <article class="ai-contrast-card ai-contrast-card--orchen">
               <header>
                 <span class="ai-contrast-kicker">Orchen &middot; Guided learning</span>
-                <h3>Move them forward.<br>Keep them thinking.</h3>
+                <h3>Help with the next step</h3>
               </header>
               <ul>
                 <li><strong>The next step invites their thinking.</strong><p>Questions, explanations, examples, and feedback help students work through the problem.</p></li>
@@ -2775,7 +2762,7 @@ h4 {
 
           <div class="yes-ai-compare animate-in">
             <strong>For a school, the question is what students can understand and do for themselves.</strong>
-            <a href="/compare/">Compare Orchen to other AI tools &rarr;</a>
+            <a href="/compare/">Compare Orchen to other AI tools <svg class="ui-icon ui-icon--arrow-right" width="16" height="16" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><use href="/assets/ui-icons.svg#arrow-right"></use></svg></a>
           </div>
         </div>
       </div>
@@ -2786,8 +2773,8 @@ h4 {
       <div class="roles-container">
 
         <div class="roles-head animate-in">
-          <span class="eyebrow">One student &middot; one picture &middot; four windows</span>
-          <h2 class="roles-title">One growing picture. <em>Four windows onto it.</em></h2>
+          <span class="eyebrow">Around your school</span>
+          <h2 class="roles-title">How your school uses Orchen.</h2>
           <div class="roles-tabs" role="tablist" aria-label="Choose who Orchen is for">
             <span class="roles-tabs-label">Orchen for&hellip;</span>
             <button class="roles-tab active" role="tab" aria-selected="true" id="tab-students" aria-controls="panel-students" data-panel="students">Students</button>
@@ -2802,33 +2789,40 @@ h4 {
           <!-- STUDENTS -->
           <div class="roles-panel active" id="panel-students" role="tabpanel" aria-labelledby="tab-students">
             <div class="roles-copy">
-              <h3 class="roles-h3">A tutor that asks <em>before it answers.</em></h3>
-              <p class="roles-body">Orchen uses guiding questions to help students work through problems and develop their own understanding. Flashcards, quizzes, and a Learning Profile grow from their own work, not a generic curriculum.</p>
+              <h3 class="roles-h3">Work through the next step.</h3>
+              <p class="roles-body">Orchen uses guiding questions to help students work through problems and develop their own understanding. In the Writing Studio, they turn a planning conversation into a draft of their own, with an outline and rubric close by.</p>
               <ul class="roles-list">
                 <li>Socratic chat that keeps students thinking, not copying</li>
+                <li>A writing workspace with planning cards and a rubric</li>
                 <li>Flashcards and quizzes built automatically from their own sessions</li>
                 <li>A learning profile that adapts to each student, down to today&rsquo;s study mood</li>
               </ul>
-              <a class="roles-link" href="/platform/">See the full platform &rarr;</a>
+              <a class="roles-link" href="/platform/">See the full platform <svg class="ui-icon ui-icon--arrow-right" width="16" height="16" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><use href="/assets/ui-icons.svg#arrow-right"></use></svg></a>
             </div>
             <div class="roles-stage">
               <div class="roles-chrome">
                 <div class="mockup-dots"><div class="mockup-dot"></div><div class="mockup-dot"></div><div class="mockup-dot"></div></div>
-                <span class="roles-chrome-tag">Student view &middot; live capture</span>
+                <span class="roles-chrome-tag">Student workspace &middot; Demo data</span>
               </div>
               <div class="roles-media">
                 <video width="1206" height="720" controls class="roles-shot active" data-chip="demo" data-src="assets/shot-student-chat.mp4" data-poster="assets/shot-student-chat-poster.jpg" data-autoplay muted loop playsinline preload="none" aria-label="Student chat: the tutor asks a guiding question instead of giving the answer"></video>
-                <img class="roles-shot" data-chip="flashcards" src="assets/shot-student-flashcard.png" alt="Flashcards generated from the student's own conversation" loading="lazy">
+                <div class="roles-shot" data-chip="writing">
+                  <p class="demo-media-label">Student view &middot; Writing workspace</p>
+                  <video data-src="/assets/student-writing-workspace.mp4" data-poster="/assets/student-writing-workspace-poster.jpg" width="3584" height="1992" controls muted playsinline preload="none" aria-label="Student writing walkthrough: move from a planning conversation into the editor, review outline cards and the rubric, and begin a draft" aria-describedby="student-writing-demo-caption"></video>
+                  <p class="demo-caption" id="student-writing-demo-caption">From a planning chat to outline cards, the rubric, and the student&rsquo;s own opening sentence. Demo data. <a href="/for/teachers/#writing-studio">Explore the Writing Studio <svg class="ui-icon ui-icon--arrow-right" width="16" height="16" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><use href="/assets/ui-icons.svg#arrow-right"></use></svg></a></p>
+                </div>
                 <video width="1600" height="900" controls class="roles-shot" data-chip="quiz" data-autoplay data-src="assets/shot-student-quiz.mp4" data-poster="assets/shot-student-quiz-poster.jpg" muted loop playsinline preload="none" aria-label="A quiz built from the concepts the student just studied, live"></video>
                 <video width="1600" height="956" controls class="roles-shot" data-chip="profile" data-autoplay data-src="assets/shot-student-profile.mp4" data-poster="assets/shot-student-profile-poster.jpg" muted loop playsinline preload="none" aria-label="A student's learning profile, live"></video>
+                <img class="roles-shot" data-chip="flashcards" src="assets/shot-student-flashcard.png" alt="Flashcards generated from the student's own conversation" loading="lazy">
                 <img class="roles-shot" data-chip="moods" src="assets/shot-student-mood-zoom.png" alt="Six study moods, the student picks how Orchen coaches today" loading="lazy">
               </div>
               <div class="roles-chips" aria-label="More of the student workspace">
-                <button class="roles-chip active" data-chip="demo">&#9654;&#xFE0E; Live demo</button>
-                <button class="roles-chip" data-chip="flashcards">Flashcards</button>
-                <button class="roles-chip" data-chip="quiz">Quizzes</button>
-                <button class="roles-chip" data-chip="profile">Learning profile</button>
-                <button class="roles-chip" data-chip="moods">Study moods</button>
+                <button class="roles-chip active" data-chip="demo" aria-pressed="true">Guided chat</button>
+                <button class="roles-chip" data-chip="writing" aria-pressed="false">Writing workspace</button>
+                <button class="roles-chip" data-chip="quiz" aria-pressed="false">Quizzes</button>
+                <button class="roles-chip" data-chip="profile" aria-pressed="false">Learning profile</button>
+                <button class="roles-chip" data-chip="flashcards" aria-pressed="false">Flashcards</button>
+                <button class="roles-chip" data-chip="moods" aria-pressed="false">Study moods</button>
               </div>
             </div>
           </div>
@@ -2836,19 +2830,23 @@ h4 {
           <!-- TEACHERS -->
           <div class="roles-panel" id="panel-teachers" role="tabpanel" aria-labelledby="tab-teachers">
             <div class="roles-copy">
-              <h3 class="roles-h3">Your lesson carries into <em>the next question.</em></h3>
-              <p class="roles-body">Add readings, worksheets, and lesson materials to the class knowledge bank. Orchen uses active material to support students as they work through your lessons.</p>
+              <h3 class="roles-h3">Bring your class materials into Orchen.</h3>
+              <p class="roles-body">Add class materials to ground the tutor in your lessons. Then review assignments, see how students worked, and use learning summaries to plan your next conversation.</p>
               <ul class="roles-list">
                 <li>Connect material to a lesson or unit</li>
-                <li>Choose what&rsquo;s active in the knowledge bank</li>
-                <li>Guided help in class context, with the thinking still theirs</li>
+                <li>Review submissions, active time, and exchanges</li>
+                <li>Read a learning summary and open the assignment transcript</li>
               </ul>
-              <a class="roles-link" href="/for/teachers/#knowledge-bank">See the teacher workflow &rarr;</a>
+              <div class="classroom-trial">
+                <a class="classroom-trial-cta" href="mailto:emil@orchen.ai?subject=Orchen%20classroom%20trial%20request&amp;body=Hi%20Emil%2C%0D%0A%0D%0AI%27d%20like%20to%20try%20Orchen%20with%20my%20class.%20Could%20you%20help%20me%20set%20up%20a%20classroom%20trial%3F%0D%0A%0D%0AName%3A%0D%0ASchool%3A%0D%0AGrade%20and%20subject%3A%0D%0AApproximate%20class%20size%3A%0D%0ALesson%20or%20unit%3A%0D%0APreferred%20start%20date%3A%0D%0A%0D%0APlease%20let%20me%20know%20the%20next%20steps%20for%20setup%20and%20what%20my%20school%20needs%20to%20complete%20before%20students%20use%20Orchen.%0D%0A%0D%0AThank%20you%21" data-classroom-trial aria-describedby="teacher-classroom-trial-note">Request a classroom trial <svg class="ui-icon ui-icon--arrow-right" width="16" height="16" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><use href="/assets/ui-icons.svg#arrow-right"></use></svg></a>
+                <p class="classroom-trial-note" id="teacher-classroom-trial-note">Email Emil to arrange setup for your class.</p>
+              </div>
+              <a class="roles-link" href="/for/teachers/#knowledge-bank">See the teacher workflow <svg class="ui-icon ui-icon--arrow-right" width="16" height="16" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><use href="/assets/ui-icons.svg#arrow-right"></use></svg></a>
             </div>
             <div class="roles-stage">
               <div class="roles-chrome">
                 <div class="mockup-dots"><div class="mockup-dot"></div><div class="mockup-dot"></div><div class="mockup-dot"></div></div>
-                <span class="roles-chrome-tag">Knowledge bank &middot; Demo data</span>
+                <span class="roles-chrome-tag">Teacher workspace &middot; Demo data</span>
               </div>
               <div class="roles-media">
                 <div class="roles-shot active" data-chip="material">
@@ -2856,20 +2854,26 @@ h4 {
                   <video data-src="/assets/knowledge-bank-add-material.mp4" data-poster="/assets/knowledge-bank-add-material-poster.jpg" width="3024" height="1978" controls muted loop playsinline preload="none" data-autoplay aria-label="Demo: add material, choose its unit and active setting, and review What the tutor knows" aria-describedby="teacher-demo-caption"></video>
                   <p class="demo-caption" id="teacher-demo-caption">Add material, connect it to the unit, and review what is active. Demo class.</p>
                 </div>
+                <div class="roles-shot" data-chip="assignments">
+                  <p class="demo-media-label">Teacher view &middot; Reviewing an assignment</p>
+                  <video data-src="/assets/teacher-assignment-review.mp4" data-poster="/assets/teacher-assignment-review-poster.jpg" width="3584" height="1992" controls muted playsinline preload="none" aria-label="Teacher assignment walkthrough: review submissions, open an assignment transcript, and generate a student learning summary" aria-describedby="teacher-assignment-demo-caption"></video>
+                  <p class="demo-caption" id="teacher-assignment-demo-caption">Review progress, open the student&rsquo;s assigned conversation, and generate a learning summary. Demo data. <a href="/for/teachers/#assignments">Explore assignment review <svg class="ui-icon ui-icon--arrow-right" width="16" height="16" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><use href="/assets/ui-icons.svg#arrow-right"></use></svg></a></p>
+                </div>
+                <video width="1600" height="574" class="roles-shot" data-chip="classview" data-src="/assets/shot-teacher-classview.mp4" data-poster="/assets/shot-teacher-classview-poster.jpg" controls muted loop playsinline preload="none" data-autoplay aria-label="Teacher class view: drilling into how the class is doing"></video>
                 <div class="roles-shot" data-chip="context">
                   <p class="demo-media-label">Student view &middot; Guided help in class context</p>
                   <a class="demo-enlarge" href="/assets/OrchenKnowledgeBankContextChatUse.png" data-enlarge data-focus-x="540" data-focus-y="350" aria-label="Enlarge the demo student conversation">
                     <img src="/assets/OrchenKnowledgeBankContextChatUse.png" width="2494" height="784" alt="Demo conversation labeled Period 3, Grade 8, Unit 2: Linear Equations, Unit review. Orchen asks the student to compare Clare and Lin&rsquo;s first moves." loading="lazy">
-                    <span>Enlarge screenshot &nearr;</span>
+                    <span>Enlarge screenshot <svg class="ui-icon ui-icon--expand" width="16" height="16" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><use href="/assets/ui-icons.svg#expand"></use></svg></span>
                   </a>
                   <p class="demo-caption">The class/unit label and follow-up question show the context of this demo exchange.</p>
                 </div>
-                <video width="1600" height="574" class="roles-shot" data-chip="classview" data-src="/assets/shot-teacher-classview.mp4" data-poster="/assets/shot-teacher-classview-poster.jpg" controls muted loop playsinline preload="none" data-autoplay aria-label="Teacher class view: drilling into how the class is doing"></video>
               </div>
               <div class="roles-chips" aria-label="Teacher workflow previews">
-                <button class="roles-chip active" data-chip="material" aria-pressed="true">1. Add class material</button>
-                <button class="roles-chip" data-chip="context" aria-pressed="false">2. Student conversation</button>
+                <button class="roles-chip active" data-chip="material" aria-pressed="true">Class materials</button>
+                <button class="roles-chip" data-chip="assignments" aria-pressed="false">Assignment review</button>
                 <button class="roles-chip" data-chip="classview" aria-pressed="false">Class insights</button>
+                <button class="roles-chip" data-chip="context" aria-pressed="false">Student conversation</button>
               </div>
             </div>
           </div>
@@ -2877,19 +2881,19 @@ h4 {
           <!-- PARENTS -->
           <div class="roles-panel" id="panel-parents" role="tabpanel" aria-labelledby="tab-parents">
             <div class="roles-copy">
-              <h3 class="roles-h3">Finally, a clear picture, <em>without the chat logs.</em></h3>
+              <h3 class="roles-h3">Know how to help at home.</h3>
               <p class="roles-body">What your child worked on, where they pushed through, and what to ask at dinner, every week, in plain language. Zero scores, zero jargon.</p>
               <ul class="roles-list">
                 <li>Weekly updates on what they&rsquo;re learning and where they&rsquo;re stuck</li>
                 <li>Bright spots worth celebrating at dinner</li>
                 <li>One concrete thing you can do tonight, five minutes, no nagging</li>
               </ul>
-              <a class="roles-link" href="/for/parents">See what parents get &rarr;</a>
+              <a class="roles-link" href="/for/parents">See what parents get <svg class="ui-icon ui-icon--arrow-right" width="16" height="16" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><use href="/assets/ui-icons.svg#arrow-right"></use></svg></a>
             </div>
             <div class="roles-stage">
               <div class="roles-chrome">
                 <div class="mockup-dots"><div class="mockup-dot"></div><div class="mockup-dot"></div><div class="mockup-dot"></div></div>
-                <span class="roles-chrome-tag">Parent view &middot; live capture</span>
+                <span class="roles-chrome-tag">Parent workspace &middot; Demo data</span>
               </div>
               <div class="roles-media">
                 <video width="1600" height="854" controls class="roles-shot active" data-chip="demo" data-src="assets/shot-parent-ask.mp4" data-poster="assets/shot-parent-ask-poster.jpg" data-autoplay muted loop playsinline preload="none" aria-label="Parent view: asking Orchen how their child is doing"></video>
@@ -2900,15 +2904,15 @@ h4 {
           <!-- LEADERS -->
           <div class="roles-panel" id="panel-leaders" role="tabpanel" aria-labelledby="tab-leaders">
             <div class="roles-copy">
-              <h3 class="roles-h3">Covered in class. <em>Demonstrated by students?</em></h3>
-              <p class="roles-body">Separate exposure, substantive engagement, and demonstrated understanding. See the recorded evidence against curriculum standards and where evidence is still missing.</p>
+              <h3 class="roles-h3">See learning across your school.</h3>
+              <p class="roles-body">Connect curriculum standards to exposure, substantive engagement, and demonstrated understanding. See the recorded evidence and plan what comes next.</p>
               <ul class="roles-list">
                 <li><strong>Exposure:</strong> the student encountered the standard</li>
                 <li><strong>Engagement:</strong> the student worked with it substantively</li>
                 <li><strong>Demonstrated:</strong> understanding shown on a graded check-in or quiz</li>
               </ul>
-              <p class="demo-note">Missing evidence is a reason to ask what to assess next; it does not establish a lack of understanding.</p>
-              <a class="roles-link" href="/solutions/heads-of-school/#standards-evidence">Explore standards evidence &rarr;</a>
+              <p class="demo-note">Use the evidence view to plan what to assess next and where to build a fuller picture of understanding.</p>
+              <a class="roles-link" href="/solutions/heads-of-school/#standards-evidence">Explore standards evidence <svg class="ui-icon ui-icon--arrow-right" width="16" height="16" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><use href="/assets/ui-icons.svg#arrow-right"></use></svg></a>
             </div>
             <div class="roles-stage">
               <div class="roles-chrome">
@@ -2919,16 +2923,16 @@ h4 {
                 <div class="roles-shot active" data-chip="standards">
                   <a class="demo-enlarge" href="/assets/OrchenStandarsScreenShot.png" data-enlarge data-focus-x="550" data-focus-y="140" aria-label="Enlarge the ELA standards example">
                     <img src="/assets/OrchenStandarsScreenShot.png" width="2872" height="1988" alt="Example standards view with exposure, engagement and demonstrated definitions above NYS English Language Arts standards. Visible assignment and student counts are zero; latest evidence is blank." loading="lazy">
-                    <span>Enlarge screenshot &nearr;</span>
+                    <span>Enlarge screenshot <svg class="ui-icon ui-icon--expand" width="16" height="16" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><use href="/assets/ui-icons.svg#expand"></use></svg></span>
                   </a>
-                  <p class="demo-caption">ELA example: visible counts are zero, with no latest evidence recorded.</p>
+                  <p class="demo-caption">ELA standards example: review exposure, engagement, and demonstrated-understanding signals.</p>
                 </div>
                 <div class="roles-shot" data-chip="math">
                   <a class="demo-enlarge" href="/assets/StandardsMath1count.png" data-enlarge aria-label="Enlarge the math standards example">
                     <img src="/assets/StandardsMath1count.png" width="2014" height="480" alt="Math standards example: NY-5.NF.1 through NY-5.NF.3 each show zero assignments, one student, and latest evidence dated August 31, 2026. NY-5.NF.4 shows zero counts." loading="lazy">
-                    <span>Enlarge screenshot &nearr;</span>
+                    <span>Enlarge screenshot <svg class="ui-icon ui-icon--expand" width="16" height="16" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><use href="/assets/ui-icons.svg#expand"></use></svg></span>
                   </a>
-                  <p class="demo-caption">Math example: three rows show one student and a latest-evidence date, not a completed class report.</p>
+                  <p class="demo-caption">Math standards example: explore student counts and latest-evidence dates by standard.</p>
                 </div>
                 <img class="roles-shot" data-chip="overview" src="assets/shot-leader-overview.webp" alt="Orchen leadership overview" loading="lazy">
               </div>
@@ -2956,11 +2960,226 @@ h4 {
     <section class="demo-section" id="demo">
       <div class="container animate-in">
         <span class="eyebrow">Try it yourself</span>
-        <h2 class="demo-h">Don&rsquo;t take our word for it. <em>Take the wheel.</em></h2>
-        <p class="demo-sub">The Orchen demo is open, no signup, no sales call. Ask it something a student would ask, and watch it teach instead of answer.</p>
+        <h2 class="demo-h">Try Orchen.</h2>
+        <p class="demo-sub">Explore the open demo at your own pace. Ask a question a student would ask and see how Orchen helps them work toward understanding.</p>
         <div class="demo-ctas">
-          <a class="btn btn-primary" href="https://app.orchen.ai" target="_blank" rel="noopener">Open the live demo &rarr;</a>
+          <div class="demo-actions">
+            <a class="btn btn-primary" href="https://app.orchen.ai" target="_blank" rel="noopener">Open the live demo <svg class="ui-icon ui-icon--arrow-right" width="16" height="16" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><use href="/assets/ui-icons.svg#arrow-right"></use></svg></a>
+            <a class="classroom-trial-cta classroom-trial-cta--outline" href="mailto:emil@orchen.ai?subject=Orchen%20classroom%20trial%20request&amp;body=Hi%20Emil%2C%0D%0A%0D%0AI%27d%20like%20to%20try%20Orchen%20with%20my%20class.%20Could%20you%20help%20me%20set%20up%20a%20classroom%20trial%3F%0D%0A%0D%0AName%3A%0D%0ASchool%3A%0D%0AGrade%20and%20subject%3A%0D%0AApproximate%20class%20size%3A%0D%0ALesson%20or%20unit%3A%0D%0APreferred%20start%20date%3A%0D%0A%0D%0APlease%20let%20me%20know%20the%20next%20steps%20for%20setup%20and%20what%20my%20school%20needs%20to%20complete%20before%20students%20use%20Orchen.%0D%0A%0D%0AThank%20you%21" data-classroom-trial aria-describedby="demo-classroom-trial-note">Request a classroom trial <svg class="ui-icon ui-icon--arrow-right" width="16" height="16" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><use href="/assets/ui-icons.svg#arrow-right"></use></svg></a>
+          </div>
+          <p class="classroom-trial-note" id="demo-classroom-trial-note">Want to try it with your students? Email Emil to arrange setup for your class.</p>
           <a class="demo-alt" href="#contact">or book a guided walkthrough</a>
+        </div>
+      </div>
+    </section>
+
+    <!-- ═══ STUDENT PRIVACY ═══ -->
+    <div class="privacy-banner" role="region" aria-label="Built for student privacy">
+      <div class="container privacy-banner__inner">
+        <div class="privacy-banner__message">
+          <svg class="ui-icon ui-icon--lock" width="28" height="28" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><use href="/assets/ui-icons.svg#lock"></use></svg>
+          <p>Built for <strong>FERPA, COPPA, and New York Education Law 2-d.</strong></p>
+        </div>
+        <a href="/trust#compliance">Our privacy practices <svg class="ui-icon ui-icon--arrow-right" width="16" height="16" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><use href="/assets/ui-icons.svg#arrow-right"></use></svg></a>
+      </div>
+    </div>
+
+    <!-- ═══ FREQUENTLY ASKED QUESTIONS ═══ -->
+    <section class="school-review" id="school-review" aria-labelledby="school-review-title">
+      <div class="container">
+        <div class="school-review__header" id="faq">
+          <div>
+            <span class="eyebrow">For schools</span>
+            <h2 class="school-review__title" id="school-review-title">Frequently asked questions</h2>
+          </div>
+          <p class="school-review__intro">Answers about the pilot, classroom use, and student privacy. Select a topic, then open a question to read the answer.</p>
+        </div>
+
+        <div class="school-review__grid">
+          <div class="school-review__topics">
+            <div class="school-review__tabs" aria-label="Frequently asked question topics" hidden>
+              <button class="school-review__tab" type="button" id="school-tab-start" data-school-topic="start" aria-controls="school-topic-start">Getting started</button>
+              <button class="school-review__tab" type="button" id="school-tab-classroom" data-school-topic="classroom" aria-controls="school-topic-classroom">In the classroom</button>
+              <button class="school-review__tab" type="button" id="school-tab-privacy" data-school-topic="privacy" aria-controls="school-topic-privacy">Privacy &amp; security</button>
+            </div>
+            <div class="school-review__panel" id="school-topic-start" aria-labelledby="school-topic-start-title">
+              <h3 class="school-review__topic-title" id="school-topic-start-title">Getting started</h3>
+              <details class="school-review__question" id="company-background">
+                <summary>
+                  <span>
+                    <span class="school-review__question-title">Which schools are joining Orchen?</span>
+                  </span>
+                  <span class="school-review__toggle" aria-hidden="true"><svg class="ui-icon ui-icon--plus" width="16" height="16" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><use href="/assets/ui-icons.svg#plus"></use></svg></span>
+                </summary>
+                <div class="school-review__answer">
+                  <p class="school-review__preview">School leaders in the Archdiocese of New York are evaluating Orchen this fall.</p>
+                  <p>We&rsquo;re in the process of signing schools for our spring 2027 pilot. Spots are limited so Emil can personally set up and support each founding school. Your school could help shape the cohort.</p>
+                <p>We&rsquo;re intentionally small this year. Every founding school works directly with Emil, the founder, from configuration and in-person training through the pilot. <a href="/founding-schools/">Explore the founding school opportunity</a>.</p>
+                </div>
+              </details>
+              <details class="school-review__question" id="founder-support">
+                <summary>
+                  <span>
+                    <span class="school-review__question-title">How does our school get started?</span>
+                  </span>
+                  <span class="school-review__toggle" aria-hidden="true"><svg class="ui-icon ui-icon--plus" width="16" height="16" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><use href="/assets/ui-icons.svg#plus"></use></svg></span>
+                </summary>
+                <div class="school-review__answer">
+                  <p class="school-review__preview">Work directly with Emil on setup and in-person training. Orchen runs in the browser on the devices your school already has.</p>
+                  <p>Founding schools work directly with Emil for configuration, training, and support. That access is reserved for the founding cohort, and your teachers help shape what we build next.</p>
+                <p>Training happens in person in January 2027, so we need school decisions by December 15, 2026. Orchen works on iPads, Chromebooks, MacBooks, and other school-managed devices. The optional network-enforcement device layer can be added later.</p>
+                </div>
+              </details>
+              <details class="school-review__question" id="pilot-pricing">
+                <summary>
+                  <span>
+                    <span class="school-review__question-title">What does the pilot cost?</span>
+                  </span>
+                  <span class="school-review__toggle" aria-hidden="true"><svg class="ui-icon ui-icon--plus" width="16" height="16" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><use href="/assets/ui-icons.svg#plus"></use></svg></span>
+                </summary>
+                <div class="school-review__answer">
+                  <p class="school-review__preview">The founding school pilot is free.</p>
+                  <p>We agree on the pilot scope and what success looks like with your school before it begins.</p>
+                  <p>If you choose to continue afterward, Orchen uses a flat per-school license, sized by headcount. Founding schools receive <strong>30% off their school license, with the agreed founding rate locked in for the first three paid years.</strong> That rate is exclusive to this cohort and won&rsquo;t be offered again. We agree on paid pricing with your school before you decide to continue. See the <a href="/founding-schools/">founding school offer</a>.</p>
+                </div>
+              </details>
+              <details class="school-review__question" id="school-references">
+                <summary>
+                  <span>
+                    <span class="school-review__question-title">Can we hear from another school?</span>
+                  </span>
+                  <span class="school-review__toggle" aria-hidden="true"><svg class="ui-icon ui-icon--plus" width="16" height="16" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><use href="/assets/ui-icons.svg#plus"></use></svg></span>
+                </summary>
+                <div class="school-review__answer">
+                  <p class="school-review__preview">Emil can ask whether a school evaluating Orchen would be willing to speak with you.</p>
+                  <p>Your teachers can also explore the open demo and join a walkthrough with Emil. You can see how Orchen fits your lessons and agree on what a successful pilot would look like for your school.</p>
+                  <p><a href="https://app.orchen.ai" target="_blank" rel="noopener">Explore the demo</a> or <a href="#contact">discuss a founding school pilot</a>. Student access begins after your school&rsquo;s data terms and consent requirements are in place.</p>
+                  <p>School privacy comes first. We haven&rsquo;t received permission to share school names or arrange introductions. If you&rsquo;d like an introduction, Emil can request that permission; any introduction depends on the school agreeing.</p>
+                </div>
+              </details>
+            </div>
+
+            <div class="school-review__panel" id="school-topic-classroom" aria-labelledby="school-topic-classroom-title">
+              <h3 class="school-review__topic-title" id="school-topic-classroom-title">In the classroom</h3>
+              <details class="school-review__question" id="conversation-access">
+                <summary>
+                  <span>
+                    <span class="school-review__question-title">Can teachers or parents read student conversations?</span>
+                  </span>
+                  <span class="school-review__toggle" aria-hidden="true"><svg class="ui-icon ui-icon--plus" width="16" height="16" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><use href="/assets/ui-icons.svg#plus"></use></svg></span>
+                </summary>
+                <div class="school-review__answer">
+                  <p class="school-review__preview">Your school controls what teachers, advisors, and parents can see. Parent visibility is configured separately.</p>
+                  <p>Orchen gives each role the learning information your school chooses to share, including whether they can access conversations. Staff access is scoped to their role and logged.</p>
+                </div>
+              </details>
+              <details class="school-review__question" id="teacher-workflow">
+                <summary>
+                  <span>
+                    <span class="school-review__question-title">What do teachers need to do?</span>
+                  </span>
+                  <span class="school-review__toggle" aria-hidden="true"><svg class="ui-icon ui-icon--plus" width="16" height="16" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><use href="/assets/ui-icons.svg#plus"></use></svg></span>
+                </summary>
+                <div class="school-review__answer">
+                  <p class="school-review__preview">Connect class materials, set assignments if you choose, and use the class view to see where students need help.</p>
+                  <p>The class view brings together student progress and common sticking points so teachers can decide what to revisit. Creating assignments through Orchen is optional; teachers can also use it to support work already happening in class.</p>
+                </div>
+              </details>
+              <details class="school-review__question" id="ai-mistakes">
+                <summary>
+                  <span>
+                    <span class="school-review__question-title">What happens when the AI gets something wrong?</span>
+                  </span>
+                  <span class="school-review__toggle" aria-hidden="true"><svg class="ui-icon ui-icon--plus" width="16" height="16" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><use href="/assets/ui-icons.svg#plus"></use></svg></span>
+                </summary>
+                <div class="school-review__answer">
+                  <p class="school-review__preview">Teachers can revisit the explanation with the student and use class-level learning patterns to see who else may need help.</p>
+                  <p>AI can make mistakes. Orchen asks students to explain and check their thinking, while subject-specific teaching modules guide how it approaches each discipline. Teacher review remains part of the process.</p>
+                </div>
+              </details>
+              <details class="school-review__question" id="student-engagement">
+                <summary>
+                  <span>
+                    <span class="school-review__question-title">Why would students choose to use it?</span>
+                  </span>
+                  <span class="school-review__toggle" aria-hidden="true"><svg class="ui-icon ui-icon--plus" width="16" height="16" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><use href="/assets/ui-icons.svg#plus"></use></svg></span>
+                </summary>
+                <div class="school-review__answer">
+                  <p class="school-review__preview">Students can work on their actual assignments, plan and draft writing, and make quizzes and flashcards from their own sessions.</p>
+                  <p>Orchen adapts its help to the student and the class materials. Study moods let students choose how they want to work, and their learning profile keeps track of concepts to practice next. They have a place to make progress on the work in front of them.</p>
+                </div>
+              </details>
+            </div>
+
+            <div class="school-review__panel" id="school-topic-privacy" aria-labelledby="school-topic-privacy-title">
+              <h3 class="school-review__topic-title" id="school-topic-privacy-title">Privacy &amp; security</h3>
+              <details class="school-review__question" id="school-agreements">
+                <summary>
+                  <span>
+                    <span class="school-review__question-title">How does Orchen support student privacy requirements?</span>
+                  </span>
+                  <span class="school-review__toggle" aria-hidden="true"><svg class="ui-icon ui-icon--plus" width="16" height="16" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><use href="/assets/ui-icons.svg#plus"></use></svg></span>
+                </summary>
+                <div class="school-review__answer">
+                  <p class="school-review__preview">Built for FERPA, COPPA, and New York Education Law 2-d, with school-controlled access, consent controls, and clear rules for student data.</p>
+                  <p>Before any student logs in, your school receives our student data terms to review. The terms are currently a draft, written around FERPA and COPPA and modeled on New York Education Law 2-d. If your school or diocese has its own data agreement, we&rsquo;ll sign yours instead.</p>
+                <dl>
+                  <div><dt>FERPA</dt><dd>School-directed processing, role-scoped access, and logged staff access help schools control their education records. Schools coordinate requests to access or amend them.</dd></div>
+                  <div><dt>COPPA</dt><dd>Consent controls support the school&rsquo;s process for students under 13. Without an active consent record, interactions are not saved to the database. Student information is never sold or used for advertising.</dd></div>
+                  <div><dt>New York Education Law &sect;2-d</dt><dd>Our data terms are modeled on Education Law 2-d. Where it applies, the school agreement addresses the required contract terms, data security and privacy plan, and Parents&rsquo; Bill of Rights before student data is shared.</dd></div>
+                </dl>
+                <p><a href="/trust#compliance">How our privacy controls work</a> &middot; <a href="mailto:emil@orchen.ai?subject=Orchen%20student%20data%20terms">Discuss your school&rsquo;s data agreement</a></p>
+                </div>
+              </details>
+              <details class="school-review__question" id="student-data">
+                <summary>
+                  <span>
+                    <span class="school-review__question-title">What happens to student data? Is it used to train AI?</span>
+                  </span>
+                  <span class="school-review__toggle" aria-hidden="true"><svg class="ui-icon ui-icon--plus" width="16" height="16" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><use href="/assets/ui-icons.svg#plus"></use></svg></span>
+                </summary>
+                <div class="school-review__answer">
+                  <p class="school-review__preview">Student data is encrypted, hosted in the US, and never used to train AI models. Raw conversations are deleted within seven days by default.</p>
+                  <p>Your school stays in control of student data, from the first account through export and deletion. Here&rsquo;s how the platform is designed to support your school&rsquo;s policies.</p>
+                <dl>
+                  <div><dt>Collected through school use</dt><dd>Account and school details, tutoring messages, submitted assignments and writing, quiz responses, learning profiles, and usage information support the learning experience.</dd></div>
+                  <div><dt>Stored and processed</dt><dd>Platform data is stored with Supabase in the United States. Conversation content is sent to Google&rsquo;s Gemini models through the AI gateway to generate responses. <strong>Neither Orchen nor its AI providers use student data to train models.</strong> Student data is never sold or used for advertising.</dd></div>
+                  <div><dt>Protected by access controls</dt><dd>Data is encrypted in transit and at rest. Database-level access controls scope records to the appropriate school and role; staff access is logged. Schools configure parent visibility.</dd></div>
+                  <div><dt>Deleted under a defined policy</dt><dd>Raw conversations are deleted within seven days by default; school contracts may allow a longer window. Derived learning profiles follow the school&rsquo;s retention policy. Schools can request exports and deletion; other student data is removed within 30 days of a deletion request or contract termination, subject to the policy&rsquo;s exceptions. Safety flags and audit records have separate retention rules.</dd></div>
+                </dl>
+                <p><a href="/privacy#section-5">What we collect</a> &middot; <a href="/privacy#section-8">Retention &amp; exceptions</a> &middot; <a href="/trust#data-lifecycle">Follow the data lifecycle</a></p>
+                </div>
+              </details>
+              <details class="school-review__question" id="security-review">
+                <summary>
+                  <span>
+                    <span class="school-review__question-title">Has Orchen had an independent security review?</span>
+                  </span>
+                  <span class="school-review__toggle" aria-hidden="true"><svg class="ui-icon ui-icon--plus" width="16" height="16" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><use href="/assets/ui-icons.svg#plus"></use></svg></span>
+                </summary>
+                <div class="school-review__answer">
+                  <p class="school-review__preview">Not yet. Our independent security review is scheduled ahead of full rollout, and founding schools receive the results first.</p>
+                  <p>Until the review is complete, I&rsquo;ll walk your technical team through the live system so they can see exactly how student data is protected. The review is scheduled before any paid agreement and ahead of full rollout.</p>
+                <p>Orchen runs on Supabase, whose infrastructure is SOC 2 Type 2 audited. Bring your reviewer to explore our <a href="/trust#security-architecture">security practices</a> and <a href="/trust#assessment-status">security review schedule</a>.</p>
+                </div>
+              </details>
+            </div>
+          </div>
+
+          <aside class="school-review__resources" aria-labelledby="school-review-documents">
+            <div class="school-review__resources-header">
+              <div>
+                <h3 id="school-review-documents">Documents for your team</h3>
+                <p>Privacy and security details to share with your school.</p>
+              </div>
+              <a class="school-review__request" href="mailto:emil@orchen.ai?subject=Orchen%20school%20review&body=Hello%20Emil%2C%0A%0AWe%20would%20like%20to%20discuss%20Orchen%27s%20student%20data%20terms%20and%20scheduled%20security%20review.%0A%0ASchool%20or%20diocese%3A%20%0ARole%3A%20%0AOur%20data%20agreement%20requirements%3A%20">Ask Emil <span aria-hidden="true">&nbsp;<svg class="ui-icon ui-icon--arrow-right" width="16" height="16" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><use href="/assets/ui-icons.svg#arrow-right"></use></svg></span></a>
+            </div>
+            <div class="school-review__documents">
+              <a class="school-review__document" href="/trust"><span>Trust Center<small>Controls, providers &amp; assessment status</small></span><span aria-hidden="true"><svg class="ui-icon ui-icon--arrow-up-right" width="16" height="16" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><use href="/assets/ui-icons.svg#arrow-up-right"></use></svg></span></a>
+              <a class="school-review__document" href="/privacy"><span>Privacy Policy<small>Collection, retention &amp; deletion</small></span><span aria-hidden="true"><svg class="ui-icon ui-icon--arrow-up-right" width="16" height="16" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><use href="/assets/ui-icons.svg#arrow-up-right"></use></svg></span></a>
+              <a class="school-review__document" href="#school-agreements"><span>Student data terms<small>School review before student access</small></span><span aria-hidden="true"><svg class="ui-icon ui-icon--arrow-right" width="16" height="16" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><use href="/assets/ui-icons.svg#arrow-right"></use></svg></span></a>
+            </div>
+          </aside>
         </div>
       </div>
     </section>
@@ -3043,11 +3262,16 @@ h4 {
     <section class="founder-note" id="founder">
       <div class="founder-inner animate-in">
         <span class="eyebrow">A Note From the Founder</span>
-        <h2 class="founder-h">You'll be working with the person who built this. Here's why that's the point.</h2>
+        <h2 class="founder-h">Learning happens between <span class="founder-phrase">“I don’t know”</span> and <span class="founder-phrase">“I understand.”</span></h2>
         <div class="founder-body">
-          <p>I built Orchen because the two answers schools were being offered, ban AI, or look away, both seemed designed to fail the students. The research made the stakes clear; what was missing was an environment a school could actually take responsibility for: one that teaches instead of completing work, and treats student data like it belongs to the student.</p>
-          <p>Orchen is early-stage, and I'd rather say that plainly than dress it up. What early means in practice: <strong>schools that join now work directly with me</strong>, on configuration, on the pilot, on the roadmap. Every privacy commitment on this site is one I can show you in the architecture, live, with your technical reviewer in the room.</p>
-          <p>If you're weighing this decision for your school, write to me. You'll get a straight answer, including honest guidance on timing, if a later cohort would serve your school better.</p>
+          <p>That space matters. It’s where students try an idea, discover why it doesn’t work, ask a better question, and make a connection for themselves. It leads to that moment when the pieces finally align, when forty minutes of a lesson suddenly make sense. Teachers spend their careers helping students get there.</p>
+          <p>AI has made it possible to skip that journey in seconds. A photo, a click, a response. Copy, paste, submit. The work is finished, and it can look as though learning happened. But having an answer in front of you is different from being able to reach it yourself.</p>
+          <p>I built Orchen because I believe AI should help protect that journey.</p>
+          <p>What excites me about this technology is its ability to recognize patterns, carry context forward, and help us notice what might otherwise go unseen. Where does a student keep getting stuck? What explanation helped them move forward? Can they now work through a similar problem independently? What should their teacher know before the next lesson?</p>
+          <p>Those questions deserve more attention than they get.</p>
+          <p>A helpful conversation is a beginning. What happens within it should also help the people supporting that student. Teachers need something they can act on. Parents need a way to help without taking over. Schools need to decide how AI participates in learning and what information is shared.</p>
+          <p>That is what I’m building with Orchen: guided help that keeps students thinking, and a growing understanding of their learning that helps the adults around them respond.</p>
+          <p>Orchen is early, and there is still plenty to prove. But the belief behind the work is clear: the journey from not knowing to understanding is worth protecting. Every part of Orchen should earn its place by helping students make it.</p>
         </div>
         <div class="founder-sig">
           <span class="founder-name">Emil</span>
@@ -3057,56 +3281,25 @@ h4 {
       </div>
     </section>
 
-    <!-- ═══ FAQ, objection handling before the ask ═══ -->
-    <section class="faq-section" id="faq">
-      <div class="container faq-inner">
-        <span class="eyebrow">Before you ask</span>
-        <h2 class="faq-h">The questions every head of school asks.</h2>
-        <details class="faq-item">
-          <summary>Can teachers or parents read student conversations?</summary>
-          <p>Your school decides what visibility looks like. Orchen turns student work into role-appropriate learning insight, while schools control what teachers, advisors, and parents can see, including conversation access. Parent visibility is configured separately. Staff access is role-scoped and audited.</p>
-        </details>
-        <details class="faq-item">
-          <summary>Is Orchen FERPA and COPPA compliant?</summary>
-          <p>Orchen is built around both statutes: row-level security at the database layer, immutable audit logs of every staff access, per-school retention policies, and under-13 protections via the role gate. Your technical reviewer can verify every claim against the live architecture during the walkthrough, the <a href="/platform/">platform page</a> covers the details.</p>
-        </details>
-        <details class="faq-item">
-          <summary>What does rollout take? Do we need new devices?</summary>
-          <p>No new hardware and no IT project. Orchen runs in the browser on whatever fleet you already manage, iPads, Chromebooks, MacBooks. Configuration is an afternoon, not a semester. Schools that want network-level enforcement can add the optional managed device layer later.</p>
-        </details>
-        <details class="faq-item">
-          <summary>Is this one more tool my teachers have to learn?</summary>
-          <p>Teachers read Orchen like a morning briefing, the platform does the managing. The class view shows who&rsquo;s on track, who&rsquo;s quietly stuck, who needs attention today. Creating assignments through Orchen is optional; the insight flows either way.</p>
-        </details>
-        <details class="faq-item">
-          <summary>What happens when the AI gets something wrong?</summary>
-          <p>The Socratic design lowers the stakes of any single answer: Orchen asks students to reason and check, rather than handing down statements to accept. Subject-specific modules constrain how it teaches each discipline, and because teachers see concept-level trends across the class, a misunderstanding surfaces as a pattern, not a secret.</p>
-        </details>
-        <details class="faq-item">
-          <summary>Will students actually use a tutor that makes them think?</summary>
-          <p>That&rsquo;s the design problem Orchen is built around. The tutor meets each student where they are, adapting to how they learn, down to the study mood they pick that day, and the flashcards, quizzes, and learning profile are generated from their own work, which makes progress visible and personal. Assignments launch inside Orchen, so it&rsquo;s where schoolwork already lives. Guided help that works beats an answer they have to hide.</p>
-        </details>
-        <details class="faq-item">
-          <summary>What does it cost, and what does a pilot look like?</summary>
-          <p>A flat per-school site license, sized by headcount, a school-level decision, not a per-seat negotiation. Pilots are free: one class, about six weeks, working directly with the founder, then you review the results together and decide. The <a href="/founding-schools/">founding program</a> spells out terms, timeline, and the clean exit, and <a href="mailto:emil@orchen.ai">emil@orchen.ai</a> answers with straight numbers, not a quote funnel.</p>
-        </details>
-      </div>
-    </section>
+
 
     <!-- ═══ SECTION 8: CONTACT ═══ -->
     <section class="contact-section" id="contact">
       <div class="container contact-inner">
-        <span class="eyebrow contact-eyebrow">Book a walkthrough</span>
-        <h2 class="contact-headline">See what a school that has designed its AI environment actually looks like. <em>We'll show you.</em></h2>
-        <p class="contact-sub">Leave your details and we'll reach out to book your walkthrough.</p>
+        <span class="eyebrow contact-eyebrow">Spring 2027 founding schools</span>
+        <!-- Availability and offer supplied by the founder; update as places are filled. -->
+        <h2 class="contact-headline">3 spots remaining <em>for Spring 2027.</em></h2>
+        <p class="contact-sub">Founding schools shape what we build next. Later schools inherit it. If you stay after the pilot, get <strong>30% off your school license, locked in for the first 3 paid years.</strong></p>
 
         <div class="contact-next animate-in">
-          <div><strong>Within 24 hours</strong><span>you hear back from Emil, the founder, not a sales team</span></div>
-          <div><strong>30 minutes, live product</strong><span>your questions drive the walkthrough</span></div>
-          <div><strong>Founding cohort</strong><span>pilot schools work directly with the founder and shape the roadmap</span></div>
+          <div><strong>Direct founder access</strong><span>work with Emil on setup, the pilot, and your school&rsquo;s feedback</span></div>
+          <div><strong>In-person January training</strong><span>we need school decisions by December 15 to personally onboard each founding school</span></div>
+          <div><strong>Your founding school rate</strong><span>30% off for your first 3 paid years; this rate won&rsquo;t be offered again</span></div>
         </div>
 
         <form class="contact-form" id="demo-form">
+          <p class="cohort-form-intro">Tell us about your school. We need decisions by December 15, 2026 for in-person training in January 2027. Emil will follow up to discuss your pilot and arrange a walkthrough.</p>
+          <input type="hidden" name="form-type" value="spring-2027-founding-school-interest">
           <p class="form-hidden" aria-hidden="true"><label>Skip: <input name="bot-field" tabindex="-1"></label></p>
           <div class="form-row">
             <div class="form-group">
@@ -3130,11 +3323,11 @@ h4 {
             <label for="message">Anything you'd like to share <em>(optional)</em></label>
             <textarea id="message" name="message" rows="3" placeholder="What's driving your interest?"></textarea>
           </div>
-          <button type="submit" class="btn btn-primary">Book a walkthrough &rarr;</button>
+          <button type="submit" class="btn btn-primary">Apply for a founding spot <svg class="ui-icon ui-icon--arrow-right" width="16" height="16" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><use href="/assets/ui-icons.svg#arrow-right"></use></svg></button>
           <p class="form-agree">By submitting this form you agree to our <a href="/terms">Terms of Service</a> and <a href="/privacy">Privacy Policy</a>.</p>
         </form>
 
-        <a class="form-secondary-cta" href="https://app.orchen.ai" target="_blank" rel="noopener">Try the demo <span class="beta">Beta</span></a>
+        <a class="form-secondary-cta" href="https://app.orchen.ai" target="_blank" rel="noopener">Try the demo</a>
 
         <p class="contact-alt">Or write to us at <a href="mailto:emil@orchen.ai">emil@orchen.ai</a></p>
 
@@ -3207,6 +3400,60 @@ h4 {
 document.addEventListener('DOMContentLoaded', () => {
 
   const reduceMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+
+  // One school information section, with keyboard-accessible topic tabs.
+  const schoolReview = document.getElementById('school-review');
+  const schoolTabs = Array.from(schoolReview.querySelectorAll('[data-school-topic]'));
+  const schoolPanels = Array.from(schoolReview.querySelectorAll('.school-review__panel'));
+  const showSchoolTopic = (key, focus = false) => {
+    schoolTabs.forEach((tab) => {
+      const selected = tab.dataset.schoolTopic === key;
+      tab.setAttribute('aria-selected', String(selected));
+      tab.tabIndex = selected ? 0 : -1;
+      if (selected && focus) tab.focus();
+    });
+    schoolPanels.forEach((panel) => { panel.hidden = panel.id !== 'school-topic-' + key; });
+  };
+  schoolReview.classList.add('is-enhanced');
+  const schoolTabList = schoolReview.querySelector('.school-review__tabs');
+  schoolTabList.setAttribute('role', 'tablist');
+  schoolTabList.hidden = false;
+  schoolTabs.forEach((tab, index) => {
+    tab.setAttribute('role', 'tab');
+    tab.addEventListener('click', () => showSchoolTopic(tab.dataset.schoolTopic));
+    tab.addEventListener('keydown', (event) => {
+      let next;
+      if (event.key === 'ArrowRight') next = (index + 1) % schoolTabs.length;
+      if (event.key === 'ArrowLeft') next = (index + schoolTabs.length - 1) % schoolTabs.length;
+      if (event.key === 'Home') next = 0;
+      if (event.key === 'End') next = schoolTabs.length - 1;
+      if (next === undefined) return;
+      event.preventDefault();
+      showSchoolTopic(schoolTabs[next].dataset.schoolTopic, true);
+    });
+  });
+  schoolPanels.forEach((panel) => {
+    panel.setAttribute('role', 'tabpanel');
+    panel.setAttribute('aria-labelledby', panel.id.replace('school-topic-', 'school-tab-'));
+    panel.tabIndex = 0;
+  });
+  showSchoolTopic('start');
+
+  const revealSchoolTarget = (target) => {
+    const panel = target.closest('.school-review__panel');
+    if (panel) showSchoolTopic(panel.id.replace('school-topic-', ''));
+    if (target.matches('.school-review__question')) target.open = true;
+  };
+  const revealSchoolAnswer = () => {
+    const id = window.location.hash.slice(1);
+    const target = id && document.getElementById(id);
+    if (!target || !schoolReview.contains(target)) return;
+    revealSchoolTarget(target);
+    requestAnimationFrame(() => target.scrollIntoView({ behavior: 'instant', block: 'start' }));
+  };
+  window.addEventListener('hashchange', revealSchoolAnswer);
+  window.addEventListener('popstate', revealSchoolAnswer);
+  revealSchoolAnswer();
 
   // ─── SCROLL ANIMATION PRESETS ────────────────────────────
   const prepReveal = (selector, options = {}) => {
@@ -3347,8 +3594,12 @@ document.addEventListener('DOMContentLoaded', () => {
       const target = document.querySelector(href);
       if (target) {
         e.preventDefault();
-        const top = target.getBoundingClientRect().top + window.scrollY - 72;
-        window.scrollTo({ top, behavior: 'smooth' });
+        const isSchoolReview = target === schoolReview || schoolReview.contains(target);
+        if (isSchoolReview) revealSchoolTarget(target);
+        if (isSchoolReview && window.location.hash !== href) window.history.pushState(null, '', href);
+        const offset = nav.getBoundingClientRect().height + (isSchoolReview ? 24 : 0);
+        const top = target.getBoundingClientRect().top + window.scrollY - offset;
+        window.scrollTo({ top, behavior: reduceMotion ? 'instant' : 'smooth' });
       }
     });
   });
@@ -3357,7 +3608,7 @@ document.addEventListener('DOMContentLoaded', () => {
   const demoForm = document.getElementById('demo-form');
   const toast = document.createElement('div');
   toast.className = 'toast';
-  toast.textContent = 'Submission received - we\'ll be in touch.';
+  toast.textContent = 'Founding school inquiry received. Emil will be in touch.';
   document.body.appendChild(toast);
 
   const showToast = () => {
@@ -3366,6 +3617,7 @@ document.addEventListener('DOMContentLoaded', () => {
   };
 
   if (demoForm) {
+    const originalButtonLabel = demoForm.querySelector('button[type="submit"]').innerHTML;
     demoForm.addEventListener('submit', async (e) => {
       e.preventDefault();
       const btn = demoForm.querySelector('button[type="submit"]');
@@ -3387,7 +3639,7 @@ document.addEventListener('DOMContentLoaded', () => {
         btn.textContent = 'Something went wrong - try again';
       } finally {
         btn.disabled = false;
-        if (btn.textContent === 'Sending…') btn.textContent = 'Book a walkthrough →';
+        if (btn.textContent === 'Sending…') btn.innerHTML = originalButtonLabel;
       }
     });
   }
@@ -3449,6 +3701,6 @@ document.addEventListener('DOMContentLoaded', () => {
 });
   </script>
 
-  <a class="mobile-cta-bar" href="#contact">Book a walkthrough &rarr;</a>
+  <a class="mobile-cta-bar" href="#contact">3 spots left &middot; Spring 2027 <svg class="ui-icon ui-icon--arrow-right" width="16" height="16" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><use href="/assets/ui-icons.svg#arrow-right"></use></svg></a>
 </body>
 </html>

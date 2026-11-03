@@ -5,21 +5,21 @@
   <meta name="theme-color" content="#1A3527">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Privacy Policy, Orchen</title>
-  <meta name="description" content="How Orchen collects, uses, and protects student data. FERPA-aligned, COPPA-aware, school-controlled.">
+  <meta name="description" content="How Orchen collects, uses, and protects student data. Built for FERPA, COPPA, and New York Education Law 2-d.">
   <link rel="icon" type="image/png" sizes="32x32" href="/assets/favicon-32.png">
   <link rel="icon" type="image/png" sizes="256x256" href="/assets/favicon.png">
   <link rel="apple-touch-icon" sizes="180x180" href="/assets/apple-touch-icon.png">
   <link rel="canonical" href="https://orchen.ai/privacy">
   <meta name="robots" content="index, follow">
   <meta property="og:title" content="Privacy Policy, Orchen">
-  <meta property="og:description" content="How Orchen collects, uses, and protects student data. FERPA-aligned, COPPA-aware, school-controlled.">
+  <meta property="og:description" content="How Orchen collects, uses, and protects student data. Built for FERPA, COPPA, and New York Education Law 2-d.">
   <meta property="og:type" content="website">
   <meta property="og:url" content="https://orchen.ai/privacy">
   <meta property="og:image" content="https://orchen.ai/assets/og-image.png">
   <meta property="og:site_name" content="Orchen">
   <meta name="twitter:card" content="summary_large_image">
   <meta name="twitter:title" content="Privacy Policy, Orchen">
-  <meta name="twitter:description" content="How Orchen collects, uses, and protects student data. FERPA-aligned, COPPA-aware, school-controlled.">
+  <meta name="twitter:description" content="How Orchen collects, uses, and protects student data. Built for FERPA, COPPA, and New York Education Law 2-d.">
   <meta name="twitter:image" content="https://orchen.ai/assets/og-image.png">
   <style>
 :root {
@@ -349,6 +349,7 @@ a { color: inherit; text-decoration: none; }
     <link rel="preload" href="/assets/fonts/playfair-bold.woff2" as="font" type="font/woff2" crossorigin>
   <link rel="preload" href="/assets/fonts/lora-regular.woff2" as="font" type="font/woff2" crossorigin>
   <link rel="stylesheet" href="/assets/refine.css">
+  <link rel="stylesheet" href="/assets/ui-icons.css?v=20261102">
 </head>
 <body class="site-warm-refresh">
 
@@ -373,7 +374,7 @@ a { color: inherit; text-decoration: none; }
     <section class="legal-hero">
       <div class="container">
         <h1>Orchen Privacy Policy</h1>
-        <p class="updated">Last updated: June 1, 2026</p>
+        <p class="updated">Last updated: November 2, 2026</p>
       </div>
     </section>
 
@@ -382,6 +383,7 @@ a { color: inherit; text-decoration: none; }
 
         <div class="plain-summary">
           <span class="ps-label">Plain summary</span>
+          <p><strong>School deployment:</strong> We&rsquo;re selecting our founding schools for spring 2027. Each school reviews its student data terms before student access. Draft terms are being prepared for that review, and the practices below describe the planned school deployment.</p>
           <p>Orchen is a school-governed learning environment. Schools purchase Orchen and deploy it for their students. We collect student interaction data to personalize tutoring and generate learning insights for teachers, advisors, and parents. We do not sell student data. We do not train AI models on your school's data. Student conversations are deleted within seven days. Schools control what parents can see.</p>
           <p>The full policy is below. If anything in it conflicts with what's above, the full policy governs.</p>
         </div>
@@ -405,7 +407,7 @@ a { color: inherit; text-decoration: none; }
         <p>This means:</p>
         <ul>
           <li>The school is responsible for obtaining any required consents and for ensuring Orchen's use complies with FERPA at their institution.</li>
-          <li>Orchen processes student data only as directed by the school and as described in this policy and our Data Processing Agreement.</li>
+          <li>Before any student logs in, your school receives our student data terms (written around FERPA and COPPA, modeled on New York Education Law 2-d) to review. If your school or diocese has its own data agreement, we'll sign yours instead. The school agreement will address applicable contract requirements before student data is shared.</li>
           <li>Students and eligible parents may exercise their FERPA rights (access, correction, and deletion) by contacting their school. The school may then contact us to fulfill those requests.</li>
         </ul>
 
@@ -515,9 +517,9 @@ a { color: inherit; text-decoration: none; }
           <li>Immutable, insert-only audit logging via an RPC that verifies the actor server-side</li>
           <li>Encrypted data in transit (TLS) and at rest</li>
           <li>COPPA-aware role gates that prevent data writes for non-consented students</li>
-          <li>Annual security review</li>
+          <li>An independent security review is scheduled ahead of full rollout and before any paid agreement; founding schools receive the results first</li>
         </ul>
-        <p>Orchen is not SOC 2 certified at the time of this policy's effective date. Schools with SOC 2 requirements should contact us at emil@orchen.ai to discuss our current security posture and roadmap.</p>
+        <p>Orchen runs on Supabase, whose infrastructure is SOC 2 Type 2 audited. Founding schools can review the live controls with Emil and receive independent security review results first. Orchen's own SOC 2 audit, penetration test, and independent review have not yet been completed. See the <a href="/trust#assessment-status">Trust Center</a> for the assessment roadmap.</p>
 
         <h2 id="section-12">12. Breach notification</h2>
         <p>In the event of a data breach affecting student data, Orchen will notify affected schools within 72 hours of discovering the breach, in accordance with applicable law. Schools are responsible for notifying affected students and parents as required by FERPA and applicable state law.</p>

@@ -688,7 +688,7 @@ a:focus-visible, button:focus-visible, input:focus-visible, textarea:focus-visib
   font-size: 1.2rem;
 }
 .s-dark .flourish-divider { color: rgba(237,233,228,0.2); }
-.flourish-divider::before { content: "\2726 \2726 \2726"; }
+.flourish-divider::before { content: ''; }
 
 /* 4. Connected timeline for data points */
 .timeline-wrapper { position: relative; }

@@ -444,7 +444,7 @@ details[open] .faq-chevron {
   font-weight: 500;
   margin-top: 0.5rem;
 }
-.compare-card-link::after { content: '\2192'; }
+.compare-card-link::after { content: ''; }
 
 /* ─── RESPONSIVE ─── */
 @media (max-width: 900px) {
