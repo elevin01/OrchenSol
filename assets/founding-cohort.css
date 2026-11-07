@@ -9,7 +9,7 @@ body.home-page .hero-cohort-note {
 }
 
 .hero-cohort-note strong {
-  color: #2C5F3F;
+  color: #087b75;
   font-weight: 700;
 }
 
@@ -38,7 +38,7 @@ body.home-page .cohort-form-intro {
   line-height: 1.65;
 }
 
-.cohort-benefit strong { color: #2C5F3F; }
+.cohort-benefit strong { color: #087b75; }
 
 .cohort-hero-actions {
   display: flex;

@@ -109,11 +109,12 @@ Validation: local links and shared footer markup checked across the homepage and
 ## Brand kit rollout — November 7, 2026
 
 - All 19 HTML pages, including 404, load the shared brand stylesheet last. The
-  supplied forest/pine/cream/night/mint palette replaces the former teal/orange
-  presentation. UI uses self-hosted Inter; taglines use Lora Italic 400. The Inter
+  supplied forest/pine/cream/night/mint colors anchor the brand artwork, with
+  coral actions, teal details, and gold/mint supporting panels. UI uses
+  self-hosted Inter; taglines use Lora Italic 400. The Inter
   license is retained alongside the font. No third-party font requests are added.
-- Headers and footers use the kit's actual small SVG wordmarks. Interior hero
-  backgrounds use the supplied still mark. Favicons, Apple touch icons, and the
+- Headers and footers use the kit's actual small SVG wordmarks. Interior heroes
+  retain the site's colorful orbital backgrounds. Favicons, Apple touch icons, and the
   new web manifest use the kit exports. All 18 shareable pages have their own
   1200×630 social card, with SVG source and PNG delivery files.
 - The homepage's featured lockup uses geometry and timing generated directly
@@ -127,3 +128,10 @@ Validation: local links and shared footer markup checked across the homepage and
   font loading, reduced-motion switching, offscreen animation pausing, local
   links/assets, social images, and manifest icons checked. No forms submitted.
   Branding changes preserve product screenshots, policy text, and FAQ content.
+
+Color revision after founder feedback: the initial rollout made the site too
+muted. Restored white surfaces, coral calls to action, pale-gold highlights, mint
+panels, and teal details, keeping the new logos, forest-green accents, typography,
+icons, and social cards. The revision stays on the same branding branch. Primary
+coral buttons have 5.2:1 contrast with white text. Rechecked all 19 pages at phone
+and desktop widths, plus homepage tablet widths, menus, assets, and motion.

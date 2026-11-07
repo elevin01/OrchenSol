@@ -22,29 +22,31 @@ body.site-warm-refresh {
   --brand-cream: #F5F2EE;
   --brand-night: #0F1A14;
   --brand-mint: #8FBF9F;
+  --accent-coral: #BF431E;
+  --accent-coral-dark: #A73618;
   --green: var(--brand-forest);
   --green-dark: var(--brand-pine);
   --green-light: var(--brand-forest);
-  --green-faint: #E8EFE9;
-  --green-pale: #CBDDCE;
-  --bg: var(--brand-cream);
+  --green-faint: #E6F4EE;
+  --green-pale: #CCE5C8;
+  --bg: #FFFFFF;
   --bg-ui: #FFFFFF;
-  --ink: var(--brand-pine);
-  --ink-muted: #4F6255;
-  --ink-faint: #5F7164;
-  --border: #D2DCD2;
-  --border-light: #E0E5DC;
+  --ink: #234652;
+  --ink-muted: #405F68;
+  --ink-faint: #526D74;
+  --border: #D0DBDB;
+  --border-light: #EDF4F4;
   --dark-bg: var(--brand-pine);
   --wall-bg: var(--brand-night);
   --wall-text: var(--brand-cream);
   --wall-muted: rgba(245, 242, 238, 0.84);
   --wall-faint: rgba(245, 242, 238, 0.72);
   --wall-border: rgba(245, 242, 238, 0.16);
-  --amber: #8A6336;
-  --amber-bg: #F4EBDD;
-  --amber-border: #DDCDAF;
-  --sage-bg: #E8EFE9;
-  --sage-border: #CBDDCE;
+  --amber: var(--accent-coral);
+  --amber-bg: #FFF4D9;
+  --amber-border: #F0D58D;
+  --sage-bg: #F0F8DE;
+  --sage-border: #D1E5A4;
   --font-ui: 'Inter', ui-sans-serif, system-ui, -apple-system, 'Segoe UI', sans-serif;
   --font-body: var(--font-ui);
   --font-display: var(--font-ui);
@@ -62,36 +64,19 @@ body.site-warm-refresh ::selection {
   background: var(--brand-mint);
 }
 body.site-warm-refresh :is(button, input, select, textarea) { font-family: var(--font-ui); }
-body.site-warm-refresh .hero:has(.hero-bg) { background: var(--brand-cream); }
+body.site-warm-refresh .hero:has(.hero-bg) { background: var(--bg); }
 body.site-warm-refresh .hero:has(.hero-bg)::before {
   background:
-    linear-gradient(180deg, rgba(245, 242, 238, 0) 0%, rgba(245, 242, 238, 0.05) 45%, rgba(245, 242, 238, 0.72) 72%, var(--brand-cream) 100%),
-    linear-gradient(90deg, rgba(245, 242, 238, 0.18), rgba(245, 242, 238, 0) 16% 84%, rgba(245, 242, 238, 0.18));
+    linear-gradient(180deg, rgba(255, 255, 255, 0) 0%, rgba(255, 255, 255, 0.05) 45%, rgba(255, 255, 255, 0.72) 72%, #FFFFFF 100%),
+    linear-gradient(90deg, rgba(255, 255, 255, 0.18), rgba(255, 255, 255, 0) 16% 84%, rgba(255, 255, 255, 0.18));
 }
-body.site-warm-refresh .hero:not(:has(.hero-bg)):not(.problem-hero) {
-  background: var(--brand-cream);
-}
-body.site-warm-refresh .hero:not(:has(.hero-bg)):not(.problem-hero)::before {
-  top: 50%;
-  right: -10%;
-  left: auto;
-  width: min(65vw, 780px);
-  height: auto;
-  aspect-ratio: 1;
-  background: url('/assets/orchen-brand-kit/svg/orchen-mark-forest.svg') center / contain no-repeat;
-  -webkit-mask: none;
-  mask: none;
-  opacity: 0.055;
-  transform: translateY(-50%);
-  animation: none;
-}
-body.site-warm-refresh .hero .hero-rule { background: var(--brand-forest); }
+body.site-warm-refresh .hero .hero-rule { background: var(--accent-coral); }
 
 /* Headers use the kit's still, optically weighted small lockup. */
 body.site-warm-refresh .nav,
 body.site-warm-refresh .nav[data-theme],
 body.site-warm-refresh .nav.scrolled[data-theme] {
-  background: rgba(245, 242, 238, 0.97);
+  background: rgba(255, 255, 255, 0.98);
   border-top-color: var(--brand-forest);
 }
 body.site-warm-refresh .nav-logo,
@@ -106,17 +91,17 @@ body.site-warm-refresh .footer-logo {
 body.site-warm-refresh .nav-logo { min-height: 44px; }
 body.site-warm-refresh .nav-logo:hover { opacity: 0.82; }
 
-/* Forest actions, pine hovers, and mint accents on dark surfaces. */
+/* Warm actions stand out against the forest brand and cool supporting colors. */
 body.site-warm-refresh :is(.btn-primary, .btn-cta, .btn-nav, .hero-cta, .school-review__request) {
-  color: var(--brand-cream);
-  background: var(--brand-forest);
-  border-color: var(--brand-forest);
+  color: #FFFFFF;
+  background: var(--accent-coral);
+  border-color: var(--accent-coral);
 }
 body.site-warm-refresh :is(.btn-primary, .btn-cta, .btn-nav, .hero-cta, .school-review__request):hover {
-  color: var(--brand-cream);
-  background: var(--brand-pine);
-  border-color: var(--brand-pine);
-  box-shadow: 0 8px 18px rgba(44, 95, 63, 0.16);
+  color: #FFFFFF;
+  background: var(--accent-coral-dark);
+  border-color: var(--accent-coral-dark);
+  box-shadow: 0 8px 18px rgba(191, 67, 30, 0.18);
 }
 body.site-warm-refresh .contact-section { background: var(--brand-pine); }
 body.site-warm-refresh .footer {

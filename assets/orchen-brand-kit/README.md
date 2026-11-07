@@ -30,8 +30,11 @@ per screen; headers and sidebars use the still lockup.
 
 ## Website integration
 
-All 19 HTML pages load `/assets/brand.css` last. It owns the canonical palette and
+All 19 HTML pages load `/assets/brand.css` last. It owns the brand tokens and
 self-hosted Inter UI font; taglines use the existing self-hosted Lora Italic 400.
+The website pairs forest-green brand accents with white backgrounds, coral
+actions, pale-gold and mint panels, and teal details. These supporting colors
+preserve the site's visual variety; the supplied logo artwork keeps its colors.
 Headers use `orchen-lockup-small-light.svg`, and night footers use the small dark
 lockup. Favicons and `site.webmanifest` use the supplied icon exports.
 
