@@ -577,7 +577,7 @@ body.problem-page .problem-hero {
   min-height: 100svh;
   padding-top: calc(var(--nav-h) + clamp(3.5rem, 6vh, 5rem));
   padding-bottom: clamp(2.5rem, 5vh, 4rem);
-  background: #f7fafa;
+  background: #F5F2EE;
 }
 
 body.problem-page .problem-hero-shell {
@@ -620,7 +620,7 @@ body.problem-page .problem-hero .hero-sub {
 body.problem-page .problem-hero .hero-rule {
   width: 54px;
   margin: 1.75rem 0 0;
-  background: var(--amber, #de5226);
+  background: var(--amber, #2C5F3F);
 }
 
 body.problem-page .problem-evidence {
@@ -634,7 +634,7 @@ body.problem-page .problem-evidence-label {
   align-items: center;
   gap: 0.7rem;
   margin-bottom: 0.85rem;
-  color: var(--green, #009d98);
+  color: var(--green, #2C5F3F);
   font-family: var(--font-body);
   font-size: 0.8rem;
   font-weight: 700;
@@ -645,7 +645,7 @@ body.problem-page .problem-evidence-label {
 body.problem-page .problem-evidence-label span {
   width: 22px;
   height: 1px;
-  background: #50c8c3;
+  background: #8FBF9F;
 }
 
 body.problem-page .problem-evidence-grid {
@@ -664,7 +664,7 @@ body.problem-page .problem-evidence-card {
   min-height: 166px;
   overflow: hidden;
   color: #fff;
-  background: #244957;
+  background: #1A3527;
   border: 1px solid rgba(36, 73, 87, 0.28);
 }
 
@@ -705,7 +705,7 @@ body.problem-page .problem-evidence-card--feature .problem-evidence-card__copy {
 body.problem-page .problem-evidence-card__copy span,
 body.problem-page .problem-evidence-card__copy time {
   display: inline-block;
-  color: #9ce7e3;
+  color: #8FBF9F;
   font-family: var(--font-body);
   font-size: 0.7rem;
   line-height: 1.35;

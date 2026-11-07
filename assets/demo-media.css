@@ -14,18 +14,18 @@
   gap: 0.6rem;
   min-height: 54px;
   padding: 0.85rem 1.15rem;
-  border: 1px solid #087b75;
-  background: #087b75;
+  border: 1px solid #2C5F3F;
+  background: #2C5F3F;
   color: #fff;
   font: 600 0.95rem/1.5 var(--font-body);
   text-align: center;
   text-decoration: none;
   transition: background 0.2s, border-color 0.2s;
 }
-.home-page .classroom-trial-cta:hover { background: #075b57; border-color: #075b57; }
-.home-page .classroom-trial-cta--outline { background: transparent; color: #087b75; border-color: #b6cfcd; }
-.home-page .classroom-trial-cta--outline:hover { background: #e3f3f1; color: #075b57; }
-.home-page .classroom-trial-cta:focus-visible { outline: 3px solid #087b75; outline-offset: 4px; }
+.home-page .classroom-trial-cta:hover { background: #1A3527; border-color: #1A3527; }
+.home-page .classroom-trial-cta--outline { background: transparent; color: #2C5F3F; border-color: #CBDDCE; }
+.home-page .classroom-trial-cta--outline:hover { background: #E8EFE9; color: #1A3527; }
+.home-page .classroom-trial-cta:focus-visible { outline: 3px solid #2C5F3F; outline-offset: 4px; }
 .home-page .classroom-trial { margin-block: 1.5rem; }
 .home-page .classroom-trial-note { margin: 0.65rem 0 0; color: var(--ink-muted); font-size: 0.8125rem; line-height: 1.6; }
 .home-page .demo-ctas > .classroom-trial-note { max-width: 36rem; margin: 0; }
@@ -133,7 +133,7 @@ body.site-warm-refresh .yes-ai-copy .core-belief {
 .writing-recording .shot-frame { background: #fff; }
 .writing-recording video { aspect-ratio: 3584 / 1992; }
 .teacher-page #assignments .demo-caption { color: var(--wall-muted); }
-.demo-caption a { color: #087b75; text-decoration: underline; text-underline-offset: .2em; }
+.demo-caption a { color: #2C5F3F; text-decoration: underline; text-underline-offset: .2em; }
 
 .demo-zoom {
   position: fixed;

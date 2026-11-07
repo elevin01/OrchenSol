@@ -8,21 +8,27 @@
 <head>
   <meta charset="UTF-8">
   <meta name="theme-color" content="#1A3527">
+  <link rel="icon" type="image/svg+xml" href="/assets/orchen-brand-kit/favicon/favicon.svg">
+  <link rel="icon" type="image/png" sizes="32x32" href="/assets/orchen-brand-kit/favicon/favicon-32.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="/assets/orchen-brand-kit/favicon/favicon-16.png">
+  <link rel="apple-touch-icon" sizes="180x180" href="/assets/orchen-brand-kit/favicon/apple-touch-icon.png">
+  <link rel="manifest" href="/site.webmanifest?v=20261107-brand">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Orchen | The Learning Environment for Independent Schools</title>
   <meta name="description" content="Grades show what students know. Orchen shows how they think, a school-governed learning environment where guided work builds a growing picture of every student.">
-  <link rel="icon" type="image/png" sizes="32x32" href="/assets/favicon-32.png">
-  <link rel="icon" type="image/png" sizes="256x256" href="/assets/favicon.png">
-  <link rel="apple-touch-icon" sizes="180x180" href="/assets/apple-touch-icon.png">
   <link rel="canonical" href="https://orchen.ai/">
   <meta property="og:title" content="Orchen | The Learning Environment for Independent Schools">
   <meta property="og:description" content="Grades show what students know. Orchen shows how they think, a school-governed learning environment where guided work builds a growing picture of every student.">
   <meta property="og:type" content="website">
   <meta property="og:url" content="https://orchen.ai/">
-  <meta property="og:image" content="https://orchen.ai/assets/og-image.png">
+  <meta property="og:image" content="https://orchen.ai/assets/social/home.png">
+  <meta property="og:image:width" content="1200">
+  <meta property="og:image:height" content="630">
+  <meta property="og:image:alt" content="Orchen | The Learning Environment for Independent Schools">
+  <meta name="twitter:image:alt" content="Orchen | The Learning Environment for Independent Schools">
   <meta property="og:site_name" content="Orchen">
   <meta name="twitter:card" content="summary_large_image">
-  <meta name="twitter:image" content="https://orchen.ai/assets/og-image.png">
+  <meta name="twitter:image" content="https://orchen.ai/assets/social/home.png">
   <style>
 
 /* ═══════════════════════════════════════════════════════════════
@@ -646,7 +652,7 @@ h4 {
 }
 .orchen-enters .container { max-width: var(--max-w-stage); }
 .enters-layout {
-  --enters-ui: "Avenir Next", "Segoe UI", system-ui, -apple-system, sans-serif;
+  --enters-ui: var(--font-ui);
   display: block;
   max-width: 940px;
 }
@@ -1860,7 +1866,7 @@ h4 {
   overflow: hidden;
 }
 .roles-chrome {
-  background: #F7F2EA;
+  background: #F5F2EE;
   padding: 12px 20px;
   display: flex;
   align-items: center;
@@ -1897,7 +1903,7 @@ h4 {
   flex-wrap: wrap;
   gap: 0.5rem;
   padding: 0.875rem 1rem;
-  background: #F7F2EA;
+  background: #F5F2EE;
   border-top: 1px solid var(--border-light);
 }
 .roles-chip {
@@ -2365,7 +2371,7 @@ h4 {
     "url": "https://orchen.ai"
   }
   </script>
-  <link rel="stylesheet" href="/assets/refine.css?v=20261103">
+  <link rel="stylesheet" href="/assets/refine.css?v=20261107-brand">
   <script type="application/ld+json">
 {
   "@context": "https://schema.org",
@@ -2462,14 +2468,17 @@ h4 {
   ]
 }
   </script>
-  <link rel="stylesheet" href="/assets/demo-media.css?v=20261102-classroom-trial">
-  <link rel="stylesheet" href="/assets/learning-comparison.css?v=20261026">
+  <link rel="stylesheet" href="/assets/demo-media.css?v=20261107-brand">
+  <link rel="stylesheet" href="/assets/learning-comparison.css?v=20261107-brand">
   <link rel="stylesheet" href="/assets/product-montage.css">
-  <link rel="stylesheet" href="/assets/school-review.css?v=20261102-faq-banner">
+  <link rel="stylesheet" href="/assets/school-review.css?v=20261107-brand">
   <script src="/assets/demo-media.js?v=20261102-svg-icons" defer></script>
   <link rel="stylesheet" href="/assets/ui-icons.css?v=20261102">
-  <link rel="stylesheet" href="/assets/founding-cohort.css?v=20261102-combined">
+  <link rel="stylesheet" href="/assets/founding-cohort.css?v=20261107-brand">
   <link rel="stylesheet" href="/assets/footer.css?v=20261103">
+  <link rel="preload" href="/assets/fonts/inter-variable.woff2" as="font" type="font/woff2" crossorigin>
+  <link rel="stylesheet" href="/assets/brand.css?v=20261107-brand">
+  <script type="module" src="/assets/brand-motion.js?v=20261107-brand"></script>
 </head>
 <body class="site-warm-refresh home-page">
 
@@ -2478,7 +2487,7 @@ h4 {
   <!-- NAV -->
   <nav class="nav" id="nav" data-theme="dark">
     <div class="nav-inner">
-      <a href="#" class="nav-logo">Orchen</a>
+      <a href="/" class="nav-logo" aria-label="Orchen home"><img class="brand-lockup" src="/assets/orchen-brand-kit/svg/orchen-lockup-small-light.svg" width="108" height="28" alt="Orchen"></a>
       <div class="nav-links" id="nav-links">
         <a href="/the-problem">The Problem</a>
         <a href="/how-it-works/">How It Works</a>
@@ -3263,6 +3272,7 @@ h4 {
 
         <p class="contact-alt">Or write to us at <a href="mailto:emil@orchen.ai">emil@orchen.ai</a></p>
 
+        <div class="brand-signature"><img data-brand-animation src="/assets/orchen-brand-kit/svg/orchen-lockup-dark.svg" width="310" height="80" alt="Orchen" loading="lazy"></div>
         <p class="contact-closer animate-in">Every student, <em>understood.</em></p>
       </div>
     </section>
@@ -3274,7 +3284,7 @@ h4 {
       <div class="footer-cols">
 
         <div class="footer-col footer-brand">
-          <span class="footer-logo">Orchen</span>
+          <a class="footer-logo" href="/" aria-label="Orchen home"><img class="brand-lockup" src="/assets/orchen-brand-kit/svg/orchen-lockup-small-dark.svg" width="108" height="28" alt="Orchen" loading="lazy"></a>
           <p class="footer-tag">A learning environment for independent schools.<br>Every student, understood.</p>
         </div>
 

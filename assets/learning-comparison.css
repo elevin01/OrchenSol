@@ -58,7 +58,7 @@
   padding: clamp(1.25rem, 2.2vw, 2rem);
   border: 1px solid #edc56c;
   border-top: 4px solid #bf431e;
-  background: #fff7e3;
+  background: #F0EAE0;
 }
 
 #obvious-question .ai-contrast-kicker {
@@ -102,14 +102,14 @@
 
 #obvious-question .ai-contrast-card--orchen {
   border-color: var(--green);
-  border-top-color: #d1ed7e;
+  border-top-color: #CBDDCE;
   background: var(--green);
 }
 
 #obvious-question .ai-contrast-card--orchen .ai-contrast-kicker { color: #fff; }
 #obvious-question .ai-contrast-card--orchen h3,
 #obvious-question .ai-contrast-card--orchen li strong { color: #fff; }
-#obvious-question .ai-contrast-card--orchen li p { color: #f1fbfa; }
+#obvious-question .ai-contrast-card--orchen li p { color: #E8EFE9; }
 #obvious-question .ai-contrast-card--orchen li { border-top-color: rgba(255, 255, 255, .28); }
 
 #obvious-question .yes-ai-compare {

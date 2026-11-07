@@ -1,0 +1,178 @@
+/* Orchen brand kit: canonical colors, typography, and supplied artwork.
+   Keep this stylesheet last so every static page shares the same identity. */
+@font-face {
+  font-family: 'Inter';
+  src: url('/assets/fonts/inter-variable.woff2') format('woff2');
+  font-style: normal;
+  font-weight: 100 900;
+  font-display: swap;
+}
+@font-face {
+  font-family: 'Lora';
+  src: url('/assets/fonts/lora-italic.woff2') format('woff2');
+  font-style: italic;
+  font-weight: 400;
+  font-display: swap;
+}
+
+:root,
+body.site-warm-refresh {
+  --brand-forest: #2C5F3F;
+  --brand-pine: #1A3527;
+  --brand-cream: #F5F2EE;
+  --brand-night: #0F1A14;
+  --brand-mint: #8FBF9F;
+  --green: var(--brand-forest);
+  --green-dark: var(--brand-pine);
+  --green-light: var(--brand-forest);
+  --green-faint: #E8EFE9;
+  --green-pale: #CBDDCE;
+  --bg: var(--brand-cream);
+  --bg-ui: #FFFFFF;
+  --ink: var(--brand-pine);
+  --ink-muted: #4F6255;
+  --ink-faint: #5F7164;
+  --border: #D2DCD2;
+  --border-light: #E0E5DC;
+  --dark-bg: var(--brand-pine);
+  --wall-bg: var(--brand-night);
+  --wall-text: var(--brand-cream);
+  --wall-muted: rgba(245, 242, 238, 0.84);
+  --wall-faint: rgba(245, 242, 238, 0.72);
+  --wall-border: rgba(245, 242, 238, 0.16);
+  --amber: #8A6336;
+  --amber-bg: #F4EBDD;
+  --amber-border: #DDCDAF;
+  --sage-bg: #E8EFE9;
+  --sage-border: #CBDDCE;
+  --font-ui: 'Inter', ui-sans-serif, system-ui, -apple-system, 'Segoe UI', sans-serif;
+  --font-body: var(--font-ui);
+  --font-display: var(--font-ui);
+  --font-tagline: 'Lora', Georgia, serif;
+  --enters-ui: var(--font-ui);
+}
+
+body.site-warm-refresh {
+  color: var(--ink);
+  background: var(--bg);
+  font-family: var(--font-body);
+}
+body.site-warm-refresh ::selection {
+  color: var(--brand-pine);
+  background: var(--brand-mint);
+}
+body.site-warm-refresh :is(button, input, select, textarea) { font-family: var(--font-ui); }
+body.site-warm-refresh .hero:has(.hero-bg) { background: var(--brand-cream); }
+body.site-warm-refresh .hero:has(.hero-bg)::before {
+  background:
+    linear-gradient(180deg, rgba(245, 242, 238, 0) 0%, rgba(245, 242, 238, 0.05) 45%, rgba(245, 242, 238, 0.72) 72%, var(--brand-cream) 100%),
+    linear-gradient(90deg, rgba(245, 242, 238, 0.18), rgba(245, 242, 238, 0) 16% 84%, rgba(245, 242, 238, 0.18));
+}
+body.site-warm-refresh .hero:not(:has(.hero-bg)):not(.problem-hero) {
+  background: var(--brand-cream);
+}
+body.site-warm-refresh .hero:not(:has(.hero-bg)):not(.problem-hero)::before {
+  top: 50%;
+  right: -10%;
+  left: auto;
+  width: min(65vw, 780px);
+  height: auto;
+  aspect-ratio: 1;
+  background: url('/assets/orchen-brand-kit/svg/orchen-mark-forest.svg') center / contain no-repeat;
+  -webkit-mask: none;
+  mask: none;
+  opacity: 0.055;
+  transform: translateY(-50%);
+  animation: none;
+}
+body.site-warm-refresh .hero .hero-rule { background: var(--brand-forest); }
+
+/* Headers use the kit's still, optically weighted small lockup. */
+body.site-warm-refresh .nav,
+body.site-warm-refresh .nav[data-theme],
+body.site-warm-refresh .nav.scrolled[data-theme] {
+  background: rgba(245, 242, 238, 0.97);
+  border-top-color: var(--brand-forest);
+}
+body.site-warm-refresh .nav-logo,
+body.site-warm-refresh .footer-logo {
+  display: inline-flex;
+  align-items: center;
+  flex: 0 0 auto;
+  line-height: 1;
+  text-decoration: none;
+}
+.brand-lockup { display: block; width: 108px; height: 28px; max-width: 100%; }
+body.site-warm-refresh .nav-logo { min-height: 44px; }
+body.site-warm-refresh .nav-logo:hover { opacity: 0.82; }
+
+/* Forest actions, pine hovers, and mint accents on dark surfaces. */
+body.site-warm-refresh :is(.btn-primary, .btn-cta, .btn-nav, .hero-cta, .school-review__request) {
+  color: var(--brand-cream);
+  background: var(--brand-forest);
+  border-color: var(--brand-forest);
+}
+body.site-warm-refresh :is(.btn-primary, .btn-cta, .btn-nav, .hero-cta, .school-review__request):hover {
+  color: var(--brand-cream);
+  background: var(--brand-pine);
+  border-color: var(--brand-pine);
+  box-shadow: 0 8px 18px rgba(44, 95, 63, 0.16);
+}
+body.site-warm-refresh .contact-section { background: var(--brand-pine); }
+body.site-warm-refresh .footer {
+  color: var(--brand-cream);
+  background: var(--brand-night);
+  border-top-color: rgba(245, 242, 238, 0.16);
+}
+body.site-warm-refresh .footer :is(.footer-heading, .footer-logo) { color: var(--brand-cream); }
+body.site-warm-refresh .footer :is(.footer-tag, .footer-col a, .footer-meta, .footer-mail) {
+  color: var(--wall-muted);
+}
+body.site-warm-refresh .footer a:hover { color: var(--brand-mint); }
+body.site-warm-refresh .footer-bottom { border-top-color: var(--wall-border); }
+body.site-warm-refresh .footer-tag,
+body.site-warm-refresh .contact-closer {
+  font-family: var(--font-tagline);
+  font-style: italic;
+  font-weight: 400;
+  letter-spacing: 0;
+}
+body.site-warm-refresh .contact-closer em { font-style: italic; font-weight: 400; }
+
+.brand-signature { margin: 3rem auto 0; width: min(100%, 310px); }
+.brand-signature > :is(img, svg) { display: block; width: 100%; height: auto; }
+body.site-warm-refresh .brand-signature + .contact-closer {
+  margin-top: 1.5rem;
+  padding-top: 0;
+  border-top: 0;
+  color: var(--brand-cream);
+  text-align: center;
+}
+
+/* The standalone error page shares the same identity and keyboard affordances. */
+body.error-page {
+  min-height: 100svh;
+  color: var(--brand-cream);
+  background: var(--brand-night);
+  padding-bottom: 8rem;
+}
+body.error-page h1 { color: var(--brand-cream); font-family: var(--font-display); }
+body.error-page :is(.eyebrow, a.alt) { color: var(--brand-mint); }
+body.error-page a.alt { border-color: var(--brand-mint); }
+body.error-page .brand { display: flex; justify-content: center; }
+body.error-page a:focus-visible,
+body.site-warm-refresh :is(.footer, .contact-section) a:focus-visible,
+body.site-warm-refresh .contact-section button:focus-visible {
+  outline: 2px solid var(--brand-mint);
+  outline-offset: 4px;
+}
+
+@media (max-width: 560px) {
+  .brand-lockup { width: 100px; height: 26px; }
+  body.site-warm-refresh .nav-inner { gap: 0.75rem; }
+  body.site-warm-refresh .btn-nav { padding-inline: 0.75rem; font-size: 0.8125rem; }
+}
+@media (prefers-reduced-motion: reduce) {
+  html { scroll-behavior: auto; }
+  body.error-page * { transition: none; }
+}

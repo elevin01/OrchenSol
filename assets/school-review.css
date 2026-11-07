@@ -1,7 +1,7 @@
 /* Privacy banner and a single FAQ, with documents below the answers. */
 body.home-page .privacy-strip {
   border-block: 1px solid var(--border);
-  background: #f5fafa;
+  background: #F5F2EE;
 }
 
 .privacy-strip__inner {
@@ -17,7 +17,7 @@ body.home-page .privacy-strip {
   align-items: center;
   gap: 0.8rem;
   min-height: 44px;
-  color: #234652;
+  color: #1A3527;
   font-size: 0.875rem;
   font-weight: 600;
   line-height: 1.45;
@@ -27,7 +27,7 @@ body.home-page .privacy-strip {
   width: 23px;
   height: 23px;
   flex-shrink: 0;
-  color: #087b75;
+  color: #2C5F3F;
 }
 
 .privacy-strip__link {
@@ -35,17 +35,17 @@ body.home-page .privacy-strip {
   align-items: center;
   gap: 0.5rem;
   min-height: 44px;
-  color: #087b75;
+  color: #2C5F3F;
   font-size: 0.875rem;
   font-weight: 700;
   white-space: nowrap;
 }
 
-.privacy-strip a:hover { color: #075b57; }
+.privacy-strip a:hover { color: #1A3527; }
 
 .privacy-banner {
-  color: #dceceb;
-  background: #234652;
+  color: #F5F2EE;
+  background: #1A3527;
 }
 
 .privacy-banner__inner {
@@ -57,7 +57,7 @@ body.home-page .privacy-strip {
 }
 
 .privacy-banner__message { display: flex; align-items: center; gap: 1rem; }
-.privacy-banner .ui-icon--lock { flex-shrink: 0; width: 28px; height: 28px; color: #a7dbd3; }
+.privacy-banner .ui-icon--lock { flex-shrink: 0; width: 28px; height: 28px; color: #8FBF9F; }
 .privacy-banner__message p { margin: 0; font-size: 1.2rem; line-height: 1.55; }
 .privacy-banner__message strong { color: #fff; font-weight: 600; }
 .privacy-banner__inner > a {
@@ -65,17 +65,17 @@ body.home-page .privacy-strip {
   align-items: center;
   gap: 0.5rem;
   min-height: 44px;
-  color: #dceceb;
+  color: #F5F2EE;
   font-size: 0.875rem;
   white-space: nowrap;
   text-underline-offset: 4px;
 }
 .privacy-banner__inner > a:hover { color: #fff; text-decoration: underline; }
-.privacy-banner a:focus-visible { outline: 2px solid #a7dbd3; outline-offset: 4px; }
+.privacy-banner a:focus-visible { outline: 2px solid #8FBF9F; outline-offset: 4px; }
 
 body.home-page .school-review {
   padding-block: clamp(4.5rem, 7vw, 7rem);
-  background: #f7fafa;
+  background: #F5F2EE;
   border-block: 1px solid var(--border);
   scroll-margin-top: calc(var(--nav-h) + 24px);
 }
@@ -87,7 +87,7 @@ body.home-page .school-review {
 
 body.home-page .school-review .eyebrow {
   margin-bottom: 1rem;
-  color: #087b75;
+  color: #2C5F3F;
 }
 
 body.home-page .school-review__title {
@@ -118,8 +118,8 @@ body.home-page .school-review__title {
   gap: 0.35rem;
   padding: 0.35rem;
   margin-bottom: 1.5rem;
-  background: #eaf1f1;
-  border: 1px solid #d7e4e4;
+  background: #E8EFE9;
+  border: 1px solid #D2DCD2;
 }
 
 .school-review__tabs[hidden],
@@ -129,23 +129,23 @@ body.home-page .school-review__title {
   min-height: 46px;
   padding: 0.65rem 0.9rem;
   border: 1px solid transparent;
-  color: #48616b;
+  color: #4F6255;
   background: transparent;
   font: 600 0.875rem/1.4 var(--font-body);
   text-align: center;
   cursor: pointer;
 }
 
-.school-review__tab:hover { color: #075b57; }
+.school-review__tab:hover { color: #1A3527; }
 .school-review__tab[aria-selected="true"] {
-  color: #075b57;
+  color: #1A3527;
   background: #fff;
-  border-color: #c6d9d7;
-  box-shadow: 0 2px 5px rgba(35, 70, 82, 0.04);
+  border-color: #CBDDCE;
+  box-shadow: 0 2px 5px rgba(26, 53, 39, 0.04);
 }
 
 .school-review :is(button, summary, a):focus-visible {
-  outline: 2px solid #087b75;
+  outline: 2px solid #2C5F3F;
   outline-offset: 4px;
 }
 
@@ -196,19 +196,19 @@ body.home-page .school-review__title {
   width: 28px;
   height: 28px;
   margin-top: 0.05rem;
-  border: 1px solid #b6cfcd;
+  border: 1px solid #CBDDCE;
   border-radius: 50%;
-  color: #087b75;
+  color: #2C5F3F;
   font: 400 1.3rem/1 var(--font-body);
   transition: background 0.2s, transform 0.2s;
 }
 
 .school-review__question[open] .school-review__toggle {
   transform: rotate(45deg);
-  background: #e3f3f1;
+  background: #E8EFE9;
 }
 
-.school-review__question > summary:hover .school-review__question-title { color: #087b75; }
+.school-review__question > summary:hover .school-review__question-title { color: #2C5F3F; }
 
 .school-review__answer {
   padding: 0 44px 1.75rem 0;
@@ -228,10 +228,10 @@ body.home-page .school-review__title {
 
 .school-review__answer a,
 .school-review__contact a {
-  color: #087b75;
+  color: #2C5F3F;
   text-decoration: underline;
   text-underline-offset: 3px;
-  text-decoration-color: #a2c6c2;
+  text-decoration-color: #8FBF9F;
 }
 
 .school-review__answer a:hover,
@@ -240,7 +240,7 @@ body.home-page .school-review__title {
 .school-review__resources {
   margin-top: 3rem;
   padding-top: 2rem;
-  border-top: 1px solid #ccdada;
+  border-top: 1px solid #D2DCD2;
 }
 
 .school-review__resources-header {
@@ -277,7 +277,7 @@ body.home-page .school-review__resources h3 {
   gap: 0.75rem;
   min-height: 96px;
   padding: 1rem 1.1rem;
-  border: 1px solid #d7e4e4;
+  border: 1px solid #D2DCD2;
   background: #fff;
   color: var(--ink);
   font-size: 0.875rem;
@@ -285,9 +285,9 @@ body.home-page .school-review__resources h3 {
   line-height: 1.5;
 }
 
-.school-review__document:hover { color: #087b75; border-color: #087b75; }
+.school-review__document:hover { color: #2C5F3F; border-color: #2C5F3F; }
 .school-review__document small { display: block; color: var(--ink-muted); font-size: 0.75rem; font-weight: 400; }
-.school-review__document > span:last-child { color: #087b75; }
+.school-review__document > span:last-child { color: #2C5F3F; }
 
 .school-review__request {
   display: flex;
@@ -297,7 +297,7 @@ body.home-page .school-review__resources h3 {
   min-height: 44px;
   padding: 0.65rem 1rem;
   color: #ffffff;
-  background: #087b75;
+  background: #2C5F3F;
   font-family: var(--font-display);
   font-size: 0.875rem;
   font-weight: 700;
@@ -305,7 +305,7 @@ body.home-page .school-review__resources h3 {
   transition: background 0.2s;
 }
 
-.school-review__request:hover { background: #075b57; }
+.school-review__request:hover { background: #1A3527; }
 
 @media (max-width: 1050px) {
   .privacy-strip__inner { grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 1rem; }
