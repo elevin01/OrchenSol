@@ -105,3 +105,47 @@ Validation: both links decode to the same intended recipient, subject, and edita
 - Every comparison page (including the comparison index) now contains the homepage's full, static footer links. The layout is shared through assets/footer.css and stays present without JavaScript.
 
 Validation: local links and shared footer markup checked across the homepage and all five comparison pages; all 18 footer links remain present in static HTML. Browser checks passed for those six pages at desktop and phone widths; SchoolAI also passed at 320 and 820 pixels. All six SchoolAI FAQ disclosures and the mobile menu work, with no runtime errors. Homepage, SchoolAI, and edited MagicSchool FAQ schemas match the visible answers. Table row labels now use semantic row headers and remain visible on phones instead of being hidden. Shared stylesheet references are versioned for the site's immutable asset cache. git diff --check passed.
+
+## Brand kit rollout — November 7, 2026
+
+- All 19 HTML pages, including 404, load the shared brand stylesheet last. The
+  supplied forest/pine/cream/night/mint colors anchor the brand artwork, with
+  coral actions, teal details, and gold/mint supporting panels. UI uses
+  self-hosted Inter; taglines use Lora Italic 400. The Inter
+  license is retained alongside the font. No third-party font requests are added.
+- Headers and footers use the kit's actual small SVG wordmarks. Interior heroes
+  retain the site's colorful orbital backgrounds. Favicons, Apple touch icons, and the
+  new web manifest use the kit exports. All 18 shareable pages have their own
+  1200×630 social card, with SVG source and PNG delivery files.
+- The homepage's featured lockup uses geometry and timing generated directly
+  from `OrchenMark.tsx`. It starts still, pauses offscreen/in background tabs, and
+  resets to the exact still geometry when reduced motion is enabled. A supplied
+  still image remains visible without JavaScript. The site stays buildless.
+- Validation: all 19 pages checked in Chrome at 320 and 1440 pixels; homepage
+  additionally checked at 390 and 820 pixels. Updated homepage, Trust, and parent
+  layouts rechecked at all four widths. No horizontal overflow, overlapping
+  header controls, failed asset requests, or JavaScript errors. Mobile menus,
+  font loading, reduced-motion switching, offscreen animation pausing, local
+  links/assets, social images, and manifest icons checked. No forms submitted.
+  Branding changes preserve product screenshots, policy text, and FAQ content.
+
+Color revision after founder feedback: the initial rollout made the site too
+muted. Restored white surfaces, coral calls to action, pale-gold highlights, mint
+panels, and teal details, keeping the new logos, forest-green accents, typography,
+icons, and social cards. The revision stays on the same branding branch. Primary
+coral buttons have 5.2:1 contrast with white text. Rechecked all 19 pages at phone
+and desktop widths, plus homepage tablet widths, menus, assets, and motion.
+
+## Decorative backgrounds — November 7, 2026
+
+- Added a fine dot field and sparse connecting lines behind content on all 19
+  pages, including comparison, legal, role, resource, and trust subpages. The
+  homepage's existing news-wall hero is retained. A shared stylesheet and small
+  SVG mask provide static decoration using each section's existing text color.
+- Existing colors, section fills, typography, copy, and spacing are unchanged.
+  The layers ignore pointer input, are hidden from assistive technology, and
+  disappear in print. Content cards and screenshots remain above the pattern.
+- Chrome checks passed at 320 and 1440 pixels for all 19 pages, including mobile
+  menus, asset loading, overflow, and runtime errors. A comparison with the layers
+  removed confirmed identical colors, background fills/images, fonts, sizes, and
+  positions for 1,053 existing content elements. Print suppression also passed.

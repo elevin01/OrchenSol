@@ -3,24 +3,30 @@
 <head>
   <meta charset="UTF-8">
   <meta name="theme-color" content="#1A3527">
+  <link rel="icon" type="image/svg+xml" href="/assets/orchen-brand-kit/favicon/favicon.svg">
+  <link rel="icon" type="image/png" sizes="32x32" href="/assets/orchen-brand-kit/favicon/favicon-32.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="/assets/orchen-brand-kit/favicon/favicon-16.png">
+  <link rel="apple-touch-icon" sizes="180x180" href="/assets/orchen-brand-kit/favicon/apple-touch-icon.png">
+  <link rel="manifest" href="/site.webmanifest?v=20261107-color">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>AI for Schools: The Orchen Teacher Dashboard &amp; Tools</title>
   <meta name="description" content="The Orchen teacher experience: per-student learning profiles built from real AI sessions, AI-guided chat, writing, and quiz assignments, and class-level concept gap analysis so you can see how a class is really doing.">
-  <link rel="icon" type="image/png" sizes="32x32" href="/assets/favicon-32.png">
-  <link rel="icon" type="image/png" sizes="256x256" href="/assets/favicon.png">
-  <link rel="apple-touch-icon" sizes="180x180" href="/assets/apple-touch-icon.png">
   <link rel="canonical" href="https://orchen.ai/for/teachers">
   <meta name="robots" content="index, follow">
   <meta property="og:title" content="AI for Schools: The Orchen Teacher Dashboard &amp; Tools">
   <meta property="og:description" content="Per-student learning profiles, AI-guided assignments, and class-level concept gap analysis, the Orchen teacher experience.">
   <meta property="og:type" content="website">
   <meta property="og:url" content="https://orchen.ai/for/teachers">
-  <meta property="og:image" content="https://orchen.ai/assets/og-image.png">
+  <meta property="og:image" content="https://orchen.ai/assets/social/for-teachers.png">
+  <meta property="og:image:width" content="1200">
+  <meta property="og:image:height" content="630">
+  <meta property="og:image:alt" content="AI for Schools: The Orchen Teacher Dashboard &amp; Tools">
+  <meta name="twitter:image:alt" content="AI for Schools: The Orchen Teacher Dashboard &amp; Tools">
   <meta property="og:site_name" content="Orchen">
   <meta name="twitter:card" content="summary_large_image">
   <meta name="twitter:title" content="AI for Schools: The Orchen Teacher Dashboard &amp; Tools">
   <meta name="twitter:description" content="Per-student learning profiles, AI-guided assignments, and class-level concept gap analysis.">
-  <meta name="twitter:image" content="https://orchen.ai/assets/og-image.png">
+  <meta name="twitter:image" content="https://orchen.ai/assets/social/for-teachers.png">
   <style>
 :root {
   --green:       #2C5F3F;
@@ -481,16 +487,19 @@ a { color: inherit; text-decoration: none; }
   </script>
     <link rel="preload" href="/assets/fonts/playfair-bold.woff2" as="font" type="font/woff2" crossorigin>
   <link rel="preload" href="/assets/fonts/lora-regular.woff2" as="font" type="font/woff2" crossorigin>
-  <link rel="stylesheet" href="/assets/refine.css">
-  <link rel="stylesheet" href="/assets/demo-media.css?v=20261102-writing-workspace">
+  <link rel="stylesheet" href="/assets/refine.css?v=20261107-color">
+  <link rel="stylesheet" href="/assets/demo-media.css?v=20261107-color">
   <script src="/assets/demo-media.js?v=20261102-svg-icons" defer></script>
   <link rel="stylesheet" href="/assets/ui-icons.css?v=20261102">
+  <link rel="preload" href="/assets/fonts/inter-variable.woff2" as="font" type="font/woff2" crossorigin>
+  <link rel="stylesheet" href="/assets/brand.css?v=20261107-color">
+  <link rel="stylesheet" href="/assets/backgrounds.css?v=20261107-weave">
 </head>
 <body class="site-warm-refresh teacher-page">
 
   <nav class="nav" id="nav">
     <div class="nav-inner">
-      <a href="/" class="nav-logo">Orchen</a>
+      <a href="/" class="nav-logo" aria-label="Orchen home"><img class="brand-lockup" src="/assets/orchen-brand-kit/svg/orchen-lockup-small-light.svg" width="108" height="28" alt="Orchen"></a>
       <div class="nav-links" id="nav-links">
         <a href="/the-problem">The Problem</a>
         <a href="/how-it-works/">How It Works</a>
@@ -516,7 +525,8 @@ a { color: inherit; text-decoration: none; }
   <main>
 
     <!-- HERO -->
-    <section class="hero">
+    <section class="hero has-page-background">
+      <div class="page-background" aria-hidden="true"></div>
       <div class="container hero-center">
         <span class="eyebrow">For Teachers</span>
         <h1 class="hero-h1">See how each student thinks, before class, not after the test.</h1>
@@ -534,7 +544,8 @@ a { color: inherit; text-decoration: none; }
     </section>
 
     <!-- CLASS KNOWLEDGE BANK -->
-    <section class="section s-cream" id="knowledge-bank">
+    <section class="section s-cream has-page-background" id="knowledge-bank">
+      <div class="page-background" aria-hidden="true"></div>
       <div class="container">
         <div class="feature-head">
           <span class="eyebrow">Class Knowledge Bank</span>
@@ -571,7 +582,8 @@ a { color: inherit; text-decoration: none; }
     </section>
 
     <!-- THE LEARNING PROFILE -->
-    <section class="section s-dark">
+    <section class="section s-dark has-page-background">
+      <div class="page-background" aria-hidden="true"></div>
       <div class="container">
         <div class="two-col">
           <div class="col-copy">
@@ -610,7 +622,8 @@ a { color: inherit; text-decoration: none; }
     </section>
 
     <!-- CLASS-LEVEL VIEW -->
-    <section class="section s-cream">
+    <section class="section s-cream has-page-background">
+      <div class="page-background" aria-hidden="true"></div>
       <div class="container">
         <span class="eyebrow">What You See Across a Class</span>
         <h2 class="sec-h2">See the gaps before the test, not after.</h2>
@@ -632,7 +645,8 @@ a { color: inherit; text-decoration: none; }
     </section>
 
     <!-- ASSIGNMENTS -->
-    <section class="section s-dark" id="assignments" aria-labelledby="assignment-review-title">
+    <section class="section s-dark has-page-background" id="assignments" aria-labelledby="assignment-review-title">
+      <div class="page-background" aria-hidden="true"></div>
       <div class="container">
         <div class="feature-head">
           <span class="eyebrow">Assignments</span>
@@ -687,7 +701,8 @@ a { color: inherit; text-decoration: none; }
     </section>
 
     <!-- WRITING -->
-    <section class="section s-cream" id="writing-studio" aria-labelledby="writing-studio-title">
+    <section class="section s-cream has-page-background" id="writing-studio" aria-labelledby="writing-studio-title">
+      <div class="page-background" aria-hidden="true"></div>
       <div class="container">
         <div class="feature-head">
           <span class="eyebrow">Writing Assignments</span>
@@ -710,7 +725,8 @@ a { color: inherit; text-decoration: none; }
     </section>
 
     <!-- DOCUMENT TEMPLATES -->
-    <section class="section s-dark">
+    <section class="section s-dark has-page-background">
+      <div class="page-background" aria-hidden="true"></div>
       <div class="container">
         <span class="eyebrow">Documents</span>
         <h2 class="sec-h2">Lesson plans, unit plans, rubrics, drafted in seconds.</h2>
@@ -725,7 +741,8 @@ a { color: inherit; text-decoration: none; }
     </section>
 
     <!-- CTA -->
-    <section class="section s-cream cta">
+    <section class="section s-cream cta has-page-background">
+      <div class="page-background" aria-hidden="true"></div>
       <div class="container">
         <span class="eyebrow">Book a Walkthrough</span>
         <h2 class="cta-h">See Orchen from a teacher's seat.</h2>
@@ -744,7 +761,7 @@ a { color: inherit; text-decoration: none; }
 
   <footer class="footer">
     <div class="container footer-inner">
-      <span class="footer-logo">Orchen</span>
+      <a class="footer-logo" href="/" aria-label="Orchen home"><img class="brand-lockup" src="/assets/orchen-brand-kit/svg/orchen-lockup-small-dark.svg" width="108" height="28" alt="Orchen" loading="lazy"></a>
       <span class="footer-meta">&copy; 2026 Orchen AI &middot; <a href="/privacy" style="border-bottom:1px solid currentColor;">Privacy Policy</a> &middot; <a href="/terms" style="border-bottom:1px solid currentColor;">Terms of Service</a></span>
     </div>
   </footer>

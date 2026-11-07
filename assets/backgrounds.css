@@ -1,0 +1,66 @@
+/* Decorative layers only. Section fills, palette, content and spacing stay intact. */
+body.site-warm-refresh .has-page-background,
+body.site-warm-refresh.has-page-background {
+  position: relative;
+  isolation: isolate;
+}
+
+.page-background {
+  position: absolute;
+  inset: 0;
+  z-index: -1;
+  overflow: hidden;
+  border-radius: inherit;
+  pointer-events: none;
+  user-select: none;
+}
+
+/* A quiet dot field leaves the center of each reading column clear. */
+.page-background::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background-image: radial-gradient(currentColor 0.85px, transparent 1px);
+  background-size: 28px 28px;
+  background-position: 14px 14px;
+  opacity: 0.16;
+  -webkit-mask-image: linear-gradient(90deg, #000, rgba(0, 0, 0, 0.22) 32% 68%, #000);
+  mask-image: linear-gradient(90deg, #000, rgba(0, 0, 0, 0.22) 32% 68%, #000);
+}
+
+/* The linework borrows the page's text color; no new palette is introduced. */
+.page-background::after {
+  content: "";
+  position: absolute;
+  top: -5rem;
+  right: -11rem;
+  width: 760px;
+  height: calc(100% + 10rem);
+  background-color: currentColor;
+  opacity: 0.12;
+  -webkit-mask: url('/assets/background-weave.svg') right top / 760px 900px repeat-y;
+  mask: url('/assets/background-weave.svg') right top / 760px 900px repeat-y;
+}
+
+main > .has-page-background:nth-of-type(even) > .page-background::after {
+  right: auto;
+  left: -11rem;
+  transform: scaleX(-1);
+}
+
+/* Existing illustrated heroes keep their artwork; dots add a little texture. */
+.hero:not(.problem-hero) > .page-background::after { opacity: 0.065; }
+.cmp-hero > .page-background::after,
+.legal-hero > .page-background::after { opacity: 0.14; }
+
+@media (max-width: 820px) {
+  .page-background::before { background-size: 24px 24px; opacity: 0.12; }
+  .page-background::after { right: -29rem; opacity: 0.09; }
+  main > .has-page-background:nth-of-type(even) > .page-background::after {
+    left: -29rem;
+  }
+}
+
+@media print {
+  .page-background { display: none; }
+}
