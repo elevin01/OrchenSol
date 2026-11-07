@@ -135,3 +135,17 @@ panels, and teal details, keeping the new logos, forest-green accents, typograph
 icons, and social cards. The revision stays on the same branding branch. Primary
 coral buttons have 5.2:1 contrast with white text. Rechecked all 19 pages at phone
 and desktop widths, plus homepage tablet widths, menus, assets, and motion.
+
+## Decorative backgrounds — November 7, 2026
+
+- Added a fine dot field and sparse connecting lines behind content on all 19
+  pages, including comparison, legal, role, resource, and trust subpages. The
+  homepage's existing news-wall hero is retained. A shared stylesheet and small
+  SVG mask provide static decoration using each section's existing text color.
+- Existing colors, section fills, typography, copy, and spacing are unchanged.
+  The layers ignore pointer input, are hidden from assistive technology, and
+  disappear in print. Content cards and screenshots remain above the pattern.
+- Chrome checks passed at 320 and 1440 pixels for all 19 pages, including mobile
+  menus, asset loading, overflow, and runtime errors. A comparison with the layers
+  removed confirmed identical colors, background fills/images, fonts, sizes, and
+  positions for 1,053 existing content elements. Print suppression also passed.
