@@ -149,3 +149,17 @@ and desktop widths, plus homepage tablet widths, menus, assets, and motion.
   menus, asset loading, overflow, and runtime errors. A comparison with the layers
   removed confirmed identical colors, background fills/images, fonts, sizes, and
   positions for 1,053 existing content elements. Print suppression also passed.
+
+## Flint comparison and consistency fixes — November 10, 2026
+
+- Added `compare/orchen-vs-flint.html`, built on the SchoolAI page's structure, with a card on the comparison index and a sitemap entry. Flint claims come from Flint's own pages, read November 10, 2026: [school leaders](https://flintk12.com/school-leaders), [pricing](https://flintk12.com/pricing), [parents](https://flintk12.com/parents), [sessions and monitoring](https://flintk12.com/features/sessions-and-monitoring), [grading and analytics](https://flintk12.com/features/grading-and-analytics), [Sparky behavior and safety](https://flintk12.com/features/sparky-behavior-and-safety), and [security](https://flintk12.com/security). Orchen cells reuse wording already published on the other comparison pages, the homepage FAQ, and the platform page.
+- **Founder to confirm before merging:**
+  1. *Flint retention.* The page says Flint's security page does not state a retention window for conversations. This is a statement about an absence; re-read the security page and its privacy policy.
+  2. *Flint student profiles.* The page says Flint refreshes a per-student learning profile weekly from sessions across classes, and that a dedicated advisor view is not documented.
+  3. *Flint pricing.* The page says school plans are priced by number of users and published on Flint's site. Dollar figures are not repeated; decide whether the pricing row should quote them.
+  4. *Orchen teacher view.* The row describes assignment review as documented on the teacher page. Update it as the teacher view changes.
+- The new page uses the shared `assets/social/compare.png` card. A dedicated card and a footer link across all pages were left out to keep this change small.
+- Pilot scope now reads the same everywhere (one class, about six weeks, free), following the November 3 founder direction. Updated the heads-of-school "What are we committing to?" answer and the founding-schools "We ask" cell, path diagram, and step 4.
+- Removed the "Learning Style" percentage bars from the teacher-page mock and the matching phrases elsewhere. The current product insight view (`shot-teacher-insight-glance.webp`) has no such panel, and the bars summed to 30%. Alt text for that screenshot on the heads-of-school and how-it-works pages now describes what the image shows.
+- The two homepage links that sent general visitors to the architecture page (`/platform/`) now point to `/how-it-works/`. The platform page and footer links are unchanged.
+- **Not changed:** the standards screenshots on the homepage and heads-of-school page (reshoot noted in `SHOT-LIST.md`).

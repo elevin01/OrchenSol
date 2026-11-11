@@ -133,6 +133,16 @@ Swap the three existing stage shots to cleaned versions:
 
 ---
 
+## Standards evidence view (homepage Leaders tab, /solutions/heads-of-school)
+
+Reshoot needed (noted November 10, 2026). The two live shots show an empty view, which a buyer reads as an unused product:
+- `OrchenStandarsScreenShot.png` (ELA): every assignment and student count is zero and the latest-evidence column is blank.
+- `StandardsMath1count.png` (Math): zero assignments and one student per standard.
+
+Capture both from a seeded demo class with a real mix: several assignments per standard, a full class of students, and recent evidence dates across exposure, engagement, and demonstrated. Then update the alt text and captions on both pages, which currently describe the empty state.
+
+---
+
 ## Notes
 
 - Homepage left as-is per your call. If reconsidered, the Socratic loop is the obvious hero.
