@@ -50,13 +50,18 @@ document.addEventListener('DOMContentLoaded', () => {
   syncVideos();
 
   document.querySelectorAll('[data-demo-gallery]').forEach((gallery) => {
-    gallery.querySelectorAll('[data-demo-select]').forEach((button) => {
-      button.addEventListener('click', () => {
-        gallery.querySelectorAll('[data-demo-select]').forEach((item) => item.setAttribute('aria-pressed', String(item === button)));
-        gallery.querySelectorAll('[data-demo-panel]').forEach((panel) => { panel.hidden = panel.dataset.demoPanel !== button.dataset.demoSelect; });
-        syncVideos();
-      });
+    const buttons = [...gallery.querySelectorAll('[data-demo-select]')];
+    const selectPanel = (button) => {
+      gallery.querySelectorAll('[data-demo-select]').forEach((item) => item.setAttribute('aria-pressed', String(item === button)));
+      gallery.querySelectorAll('[data-demo-panel]').forEach((panel) => { panel.hidden = panel.dataset.demoPanel !== button.dataset.demoSelect; });
+      syncVideos();
+    };
+    buttons.forEach((button) => {
+      button.addEventListener('click', () => selectPanel(button));
     });
+    // New galleries keep every capture in the HTML for readers without JavaScript.
+    const initial = buttons.find((button) => button.getAttribute('aria-pressed') === 'true') || buttons[0];
+    if (initial) selectPanel(initial);
   });
 
   // Keep the original asset link as a no-JavaScript fallback.
