@@ -49,6 +49,7 @@
   <link rel="preload" href="/assets/fonts/inter-variable.woff2" as="font" type="font/woff2" crossorigin>
   <link rel="stylesheet" href="/assets/brand.css?v=20261107-color">
   <link rel="stylesheet" href="/assets/backgrounds.css?v=20261107-weave">
+  <link rel="stylesheet" href="/assets/feature-updates.css?v=20261120">
 </head>
 <body class="site-warm-refresh trust-page">
 
@@ -317,12 +318,41 @@
               <tr><td>Teacher</td><td>Learning profiles and synthesis for students in their classes. Raw conversations only when a session has been explicitly shared.</td></tr>
               <tr><td>Advisor</td><td>Weekly narratives, learning profiles, and crisis flags for assigned students. Shared sessions only for raw conversation access.</td></tr>
               <tr><td>Parent</td><td>Summary data at the school-configured visibility level (1–5). Level 5 includes redacted, read-only transcripts; every access is logged.</td></tr>
-              <tr><td>School Admin</td><td>School-scoped administration: users, settings, consent records, audit logs, visibility configuration.</td></tr>
+              <tr><td>School Admin</td><td>School-scoped Today and Overview views; standards, users, settings, consent records, audit logs, and visibility configuration.</td></tr>
               <tr><td>Orchen</td><td>Platform-level access for compliance, support, and audit purposes only. All access is logged.</td></tr>
             </tbody>
           </table>
         </div>
       </div>
+    </section>
+
+    <section class="section s-cream has-page-background" id="voice-privacy">
+      <div class="page-background" aria-hidden="true">
+          </div>
+      <div class="container">
+          <div class="feature-head">
+          <span class="eyebrow">Voice &amp; School Briefings</span><h2 class="sec-h2">Spoken input becomes text. Orchen does not save the audio.</h2>
+          <p class="sec-body">When a student uses dictation or hands-free voice, spoken input is sent to Google (Gemini) for transcription. Orchen stores the resulting text in the same school-governed chat record, under its existing visibility and retention settings.</p>
+          </div>
+          <div class="feature-grid cols-2 feature-summary">
+          <div class="feature-cell">
+          <span class="feature-cell__eyebrow">A school decision</span><h3 class="feature-cell__head">Voice starts off</h3>
+          <p class="feature-cell__body">Schools enable voice in their settings. Changes to that switch are audit-logged, and under-13 access follows the school&rsquo;s configured consent requirements.</p>
+          </div>
+          <div class="feature-cell">
+          <span class="feature-cell__eyebrow">A student choice</span><h3 class="feature-cell__head">A notice before microphone use</h3>
+          <p class="feature-cell__body">The first-use notice explains speech-to-text processing and asks the student to continue. Students can return to typing, mute, or pause voice; a 30-minute daily limit applies.</p>
+          </div>
+          <div class="feature-cell">
+          <span class="feature-cell__eyebrow">The existing record</span><h3 class="feature-cell__head">Text follows the chat rules</h3>
+          <p class="feature-cell__body">Spoken input becomes part of the conversation used for learning profiles and role-scoped summaries. Orchen does not retain the audio recording.</p>
+          </div>
+          <div class="feature-cell">
+          <span class="feature-cell__eyebrow">School-level summary</span><h3 class="feature-cell__head">Briefings use counts</h3>
+          <p class="feature-cell__body">The School Admin Monday briefing is generated from school-level counts. Student names and raw transcripts are not sent to the AI for that briefing.</p>
+          </div>
+          </div>
+          </div>
     </section>
 
     <!-- SUB-PROCESSORS -->
@@ -340,7 +370,7 @@
             </thead>
             <tbody>
               <tr><td>Supabase</td><td>Database, authentication, edge functions, file storage</td><td>All platform data, encrypted at rest, US-hosted</td></tr>
-              <tr><td>Google (Gemini)</td><td>AI model inference for tutoring, writing analysis, and synthesis</td><td>Conversation content transmitted per-request; not retained for training</td></tr>
+              <tr><td>Google (Gemini)</td><td>AI inference for tutoring, writing analysis, and synthesis; voice transcription</td><td>Conversation content per-request and spoken input for transcription; student data is not used for model training</td></tr>
             </tbody>
           </table>
           <p class="sec-body" style="font-size: 0.9375rem;">Your school reviews and finalizes the terms with us before any student logs in. This includes the provider list, and we can use your school or diocese's own agreement.</p>

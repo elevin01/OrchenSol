@@ -15,11 +15,11 @@
   <link rel="manifest" href="/site.webmanifest?v=20261107-color">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Orchen Platform Architecture | Secure AI for Schools</title>
-  <meta name="description" content="A detailed walkthrough of Orchen's managed, secure AI for schools: the Socratic engine that powers student conversations, the insight layer that turns sessions into structured signal, the six-role system, and the compliance and security posture underneath.">
+  <meta name="description" content="Explore Orchen: guided chat and school-enabled voice, the School Admin workspace, learning insights, role-scoped views, and school data controls.">
   <link rel="canonical" href="https://orchen.ai/platform/">
   <meta name="robots" content="index, follow">
   <meta property="og:title" content="Orchen Platform Architecture | Secure AI for Schools">
-  <meta property="og:description" content="A detailed walkthrough of Orchen's managed, secure AI for schools: the Socratic engine, the insight layer, the six-role system, and the compliance posture underneath.">
+  <meta property="og:description" content="Explore Orchen: guided chat and school-enabled voice, the School Admin workspace, learning insights, role-scoped views, and school data controls.">
   <meta property="og:type" content="article">
   <meta property="og:url" content="https://orchen.ai/platform/">
   <meta property="og:image" content="https://orchen.ai/assets/social/platform.png">
@@ -30,7 +30,7 @@
   <meta property="og:site_name" content="Orchen">
   <meta name="twitter:card" content="summary_large_image">
   <meta name="twitter:title" content="Orchen Platform Architecture | Secure AI for Schools">
-  <meta name="twitter:description" content="A detailed walkthrough of Orchen's managed, secure AI for schools: the Socratic engine, the insight layer, the six-role system, and the compliance posture underneath.">
+  <meta name="twitter:description" content="Explore Orchen: guided chat and school-enabled voice, the School Admin workspace, learning insights, role-scoped views, and school data controls.">
   <meta name="twitter:image" content="https://orchen.ai/assets/social/platform.png">
   <script type="application/ld+json">
   {
@@ -468,11 +468,13 @@ code {
   <link rel="preload" href="/assets/fonts/lora-regular.woff2" as="font" type="font/woff2" crossorigin>
   <link rel="stylesheet" href="/assets/refine.css?v=20261107-color">
   <link rel="stylesheet" href="/assets/editorial.css?v=20261107-color">
-  <script src="/assets/demo-media.js?v=20261102-svg-icons" defer></script>
+  <script src="/assets/demo-media.js?v=20261120-features" defer></script>
   <link rel="stylesheet" href="/assets/ui-icons.css?v=20261102">
   <link rel="preload" href="/assets/fonts/inter-variable.woff2" as="font" type="font/woff2" crossorigin>
   <link rel="stylesheet" href="/assets/brand.css?v=20261107-color">
   <link rel="stylesheet" href="/assets/backgrounds.css?v=20261107-weave">
+  <link rel="stylesheet" href="/assets/demo-media.css?v=20261107-color">
+  <link rel="stylesheet" href="/assets/feature-updates.css?v=20261120">
 </head>
 <body class="site-warm-refresh">
 
@@ -518,7 +520,7 @@ code {
             <span class="layer-band__tag">Layer 01</span>
             <div>
               <span class="layer-band__name">The student environment</span>
-              <span class="layer-band__desc">A Socratic tutor, an assignment shelf, a Writing Studio, and a private space that belongs to the student alone.</span>
+              <span class="layer-band__desc">A Socratic tutor with typed and school-enabled voice input, an assignment shelf, a Writing Studio, and a private workspace.</span>
             </div>
           </div>
           <div class="layer-band">
@@ -618,6 +620,82 @@ code {
           </div>
         </div>
       </div>
+    </section>
+
+    <section class="section s-warm has-page-background" id="voice-mode">
+      <div class="page-background" aria-hidden="true"></div>
+      <div class="container">
+          <div class="feature-head">
+          <span class="eyebrow">Student Voice</span><h2 class="sec-h2">Think out loud. Keep the same learning conversation.</h2>
+          <p class="sec-body">Students can speak instead of type. The resulting text joins the same chat, so learning profiles, teacher insights, and parent digests keep working within the school&rsquo;s existing visibility rules.</p>
+          </div>
+          <div class="voice-layout">
+          <div>
+          <dl class="voice-options">
+          <div>
+          <dt>Dictation</dt>
+          <dd>Speak an answer, review the text, edit it if needed, and choose when to send. A recording stops at 90 seconds, with a countdown.</dd>
+          </div>
+          <div>
+          <dt>Hands-free conversation</dt>
+          <dd>Orchen listens, replies out loud, and listens again. Live captions, an optional transcript, mute, pause, and a return to typing stay available.</dd>
+          </div>
+          <div>
+          <dt>At the student&rsquo;s pace</dt>
+          <dd>Replay the last reply or choose Slower, Normal, or Faster playback, from 0.8&times; to 1.5&times;.</dd>
+          </div>
+          <div>
+          <dt>The learning tools stay close</dt>
+          <dd>Diagrams take center stage. Flashcards can pause voice and open above it; quizzes are offered out loud so the student can choose to begin.</dd>
+          </div>
+          </dl>
+          <p class="feature-context">Voice follows the app&rsquo;s light or dark theme. On phones it fills the screen, with the main controls at the bottom.</p>
+          </div>
+          <div>
+          <div class="feature-admin-gallery" data-demo-gallery>
+          <div class="demo-selector" role="group" aria-label="Student voice mode examples">
+          <button type="button" data-demo-select="voice-hands-free" aria-pressed="true" aria-controls="platform-voice-voice-hands-free">Hands-free</button><button type="button" data-demo-select="voice-playback" aria-pressed="false" aria-controls="platform-voice-voice-playback">Playback controls</button><button type="button" data-demo-select="voice-mobile" aria-pressed="false" aria-controls="platform-voice-voice-mobile">On a phone</button><button type="button" data-demo-select="voice-consent" aria-pressed="false" aria-controls="platform-voice-voice-consent">First-use notice</button></div>
+          <figure class="demo-figure feature-capture" data-demo-panel="voice-hands-free" id="platform-voice-voice-hands-free">
+            <div class="shot-frame">
+              <a class="demo-enlarge" href="/assets/voice-hands-free.webp" data-enlarge aria-label="Enlarge hands-free voice screenshot">
+                <img src="/assets/voice-hands-free-1600.webp" srcset="/assets/voice-hands-free-1600.webp 1600w, /assets/voice-hands-free.webp 2880w" sizes="(max-width: 820px) calc(100vw - 40px), 1200px" width="2880" height="2000" alt="Orchen hands-free voice mode in the Listening state with microphone, pause, type-instead controls and an optional transcript panel." loading="lazy" decoding="async">
+                <span>Enlarge screenshot <svg class="ui-icon ui-icon--expand" width="16" height="16" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><use href="/assets/ui-icons.svg#expand"></use></svg></span>
+              </a>
+            </div>
+            <figcaption class="demo-caption">Hands-free voice &middot; A still capture from the Orchen Academy demo. Students can listen, speak, pause, or return to typing.</figcaption>
+          </figure>
+          <figure class="demo-figure feature-capture" data-demo-panel="voice-playback" id="platform-voice-voice-playback">
+            <div class="shot-frame">
+              <a class="demo-enlarge" href="/assets/voice-playback.webp" data-enlarge aria-label="Enlarge voice playback controls screenshot">
+                <img src="/assets/voice-playback-1600.webp" srcset="/assets/voice-playback-1600.webp 1600w, /assets/voice-playback.webp 2880w" sizes="(max-width: 820px) calc(100vw - 40px), 1200px" width="2880" height="2000" alt="Orchen voice mode with the replay and Slower, Normal and Faster speaking-speed menu open." loading="lazy" decoding="async">
+                <span>Enlarge screenshot <svg class="ui-icon ui-icon--expand" width="16" height="16" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><use href="/assets/ui-icons.svg#expand"></use></svg></span>
+              </a>
+            </div>
+            <figcaption class="demo-caption">Playback controls &middot; Replay the last reply or choose a slower or faster speaking rate.</figcaption>
+          </figure>
+          <figure class="demo-figure feature-capture voice-phone" data-demo-panel="voice-mobile" id="platform-voice-voice-mobile">
+            <div class="shot-frame">
+              <a class="demo-enlarge" href="/assets/voice-mobile.webp" data-enlarge aria-label="Enlarge mobile voice screenshot">
+                <img src="/assets/voice-mobile.webp" width="1170" height="2532" alt="Orchen mobile voice screen with a Listening indicator, microphone, pause and type-instead controls." loading="lazy" decoding="async">
+                <span>Enlarge screenshot <svg class="ui-icon ui-icon--expand" width="16" height="16" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><use href="/assets/ui-icons.svg#expand"></use></svg></span>
+              </a>
+            </div>
+            <figcaption class="demo-caption">Phone view &middot; Voice fills the screen, with the main controls within reach at the bottom.</figcaption>
+          </figure>
+          <figure class="demo-figure feature-capture" data-demo-panel="voice-consent" id="platform-voice-voice-consent">
+            <div class="shot-frame">
+              <a class="demo-enlarge" href="/assets/voice-consent.webp" data-enlarge aria-label="Enlarge the microphone notice screenshot">
+                <img src="/assets/voice-consent-1600.webp" srcset="/assets/voice-consent-1600.webp 1600w, /assets/voice-consent.webp 2880w" sizes="(max-width: 820px) calc(100vw - 40px), 1200px" width="2880" height="2000" alt="Orchen first-use microphone notice explaining speech-to-text processing and offering Not now and Continue." loading="lazy" decoding="async">
+                <span>Enlarge screenshot <svg class="ui-icon ui-icon--expand" width="16" height="16" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><use href="/assets/ui-icons.svg#expand"></use></svg></span>
+              </a>
+            </div>
+            <figcaption class="demo-caption">First-use notice &middot; Students choose whether to continue before using the microphone. Schools must enable voice first.</figcaption>
+          </figure>
+        </div>
+          </div>
+          </div>
+          <p class="voice-safeguards"><strong>School-controlled, off by default.</strong> A first-use notice asks the student to continue before microphone use. Under-13 access follows the school&rsquo;s consent settings, school switch changes are audit-logged, and a 30-minute daily limit applies. Google (Gemini) transcribes spoken input; Orchen does not save the audio. <a class="feature-detail-link" href="/trust/#voice-privacy">Read about voice privacy</a>.</p>
+          </div>
     </section>
 
     <!-- ── 3. THE TEACHING ARCHITECTURE ── -->
@@ -813,7 +891,7 @@ code {
               </tr>
               <tr>
                 <th scope="row">School admin</th>
-                <td data-label="Sees">School-level configuration: AI identity, mechanical-feedback toggles, parent visibility, crisis routing, white-label branding.</td>
+                <td data-label="Sees">Today attention items and school-level briefings; term activity by subject, grade, or class; standards, users, consent, and school configuration.</td>
                 <td data-label="Boundary">School-scoped, no access across other schools.</td>
               </tr>
               <tr>
@@ -825,6 +903,42 @@ code {
           </table>
         </div>
       </div>
+    </section>
+
+    <section class="section s-light has-page-background" id="school-admin">
+      <div class="page-background" aria-hidden="true"></div>
+      <div class="container">
+          <div class="ed-head">
+          <div class="ed-head__title">
+          <span class="eyebrow">School Admin</span><h2 class="sec-h2">Daily follow-up and term review have separate homes.</h2>
+          <hr class="ed-rule"></div>
+          <p class="ed-head__lead">Today brings together safety flags, attention items, shared sticking points, and per-subject student status. Overview tracks activity over the school year, with subject, grade, and class views.</p>
+          </div>
+          <figure class="demo-figure feature-capture" >
+            <div class="shot-frame">
+              <a class="demo-enlarge" href="/assets/admin-today.webp" data-enlarge aria-label="Enlarge School Admin Today screenshot">
+                <img src="/assets/admin-today-1600.webp" srcset="/assets/admin-today-1600.webp 1600w, /assets/admin-today.webp 3578w" sizes="(max-width: 820px) calc(100vw - 40px), 1200px" width="3578" height="2060" alt="School Admin Today screen at Orchen Academy with safety flags, a Monday briefing, attention items and an empty shared-sticking-points state." loading="lazy" decoding="async">
+                <span>Enlarge screenshot <svg class="ui-icon ui-icon--expand" width="16" height="16" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><use href="/assets/ui-icons.svg#expand"></use></svg></span>
+              </a>
+            </div>
+            <figcaption class="demo-caption">Today &middot; Orchen Academy demo data. Review the briefing and follow up on attention items. Empty states are shown as captured.</figcaption>
+          </figure>
+          <div class="feature-grid cols-3 feature-summary">
+          <div class="feature-cell">
+          <span class="feature-cell__eyebrow">Pulse</span><h3 class="feature-cell__head">Today, Overview, Students</h3>
+          <p class="feature-cell__body">Use the morning action screen, review 7-day, 30-day, or full-term activity, and narrow Today by grade, subject, or class.</p>
+          </div>
+          <div class="feature-cell">
+          <span class="feature-cell__eyebrow">Academics &amp; people</span><h3 class="feature-cell__head">Keep the school setup connected</h3>
+          <p class="feature-cell__body">Classes, subjects, standards, the editor, users, assignments, and parent access live together in the grouped sidebar.</p>
+          </div>
+          <div class="feature-cell">
+          <span class="feature-cell__eyebrow">Governance</span><h3 class="feature-cell__head">School controls stay in view</h3>
+          <p class="feature-cell__body">Manage consent and settings alongside the learning workflow. Thin data appears as insufficient evidence, and school activity is not a mastery score.</p>
+          </div>
+          </div>
+          <p class="feature-context"><a href="/solutions/heads-of-school/#school-admin">Explore all four School Admin captures</a>, including the term Overview and standards controls.</p>
+          </div>
     </section>
 
     <!-- ── 6. SCHOOL CONFIGURATION ── -->
@@ -861,6 +975,7 @@ code {
                   <h3 class="feature-cell__head">Flags stay in your designated chain</h3>
                   <p class="feature-cell__body">Schools designate the counselor or safeguarding lead who receives flags. The urgency indicator and lifecycle tracking are configurable; crisis content never leaves the chain.</p>
                 </div>
+<div class="feature-cell"><span class="feature-cell__eyebrow">Voice access</span><h3 class="feature-cell__head">The school enables the microphone</h3><p class="feature-cell__body">Dictation and hands-free mode are off by default. The first-use notice, school consent gates, audit-logged settings, and daily limit govern access.</p></div>
                 <div class="feature-cell" style="grid-column: 1 / -1;">
                   <span class="feature-cell__eyebrow">White-label branding</span>
                   <h3 class="feature-cell__head">The AI presents as the school's tutor</h3>

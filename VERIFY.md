@@ -150,6 +150,46 @@ and desktop widths, plus homepage tablet widths, menus, assets, and motion.
   removed confirmed identical colors, background fills/images, fonts, sizes, and
   positions for 1,053 existing content elements. Print suppression also passed.
 
+## School Admin and student voice — November 20, 2026
+
+- Sources: the founder-supplied `Orchen_New_Features_Guide (1).pdf`, November 2026,
+  and four November 20 admin screenshots. The guide describes voice in Part 1
+  (pages 1–7) and the School Admin workspace in Part 2 (pages 8–13). The website
+  uses the newer uploaded admin captures for Today, Overview, framework settings,
+  and mathematics evidence. They show Orchen Academy demo data, including sparse
+  activity and honest empty states; no customer results are claimed.
+- Replaced the homepage's older Leaders previews and the Heads of School
+  standards examples with the current admin workspace. Added Today/Overview
+  explanations, school-year activity windows, the lens filter, attention actions,
+  counts-only weekly briefings, shared sticking points, framework controls, and
+  evidence dates. Activity and student counts are distinguished from mastery.
+- Added dictation and hands-free voice to the homepage, Platform, and How It
+  Works. Actual guide captures show hands-free mode, playback controls, phone
+  controls, and the first-use notice (PDF pages 4, 5, 7, and 3 respectively).
+  Documented editable dictation, the 90-second recording stop, captions/transcript,
+  playback speed, learning tools, school enablement, and the 30-minute daily cap.
+- The founder confirmed in this conversation that Gemini handles voice
+  transcription. Trust Center and Privacy Policy now describe incoming audio
+  processing by Google (Gemini), no audio storage by Orchen, and resulting text
+  following the existing chat visibility and retention rules. These statements
+  do not assert a new provider-side retention guarantee. The guide states that
+  the Monday briefing uses school-level counts without sending student names or
+  transcripts for that summary; this is distinct from individual tutoring.
+- `scripts/prepare-feature-media.py` generates responsive WebP delivery files
+  and full-size lossless versions, with pixel round-trip checks. The guide PDF is
+  reference material and is not published. New galleries retain all captures in
+  static HTML; JavaScript selects the initial view as progressive enhancement.
+  Original branding, colors, backgrounds, and the merged Flint work are retained.
+
+Validation: seven affected pages checked in Chrome at 320, 390, 820, and 1440
+pixels. All admin and voice selectors, existing teacher galleries, mobile menus,
+image decoding, enlarged/full-size viewing, Escape dismissal, and no-JavaScript
+capture access passed. No horizontal overflow, duplicate IDs, failed assets, or
+JavaScript errors. Platform media styling was rechecked at all four widths after
+adding its shared media stylesheet. Local links/assets, JSON-LD parsing, sitemap
+XML, and `git diff --check` passed. No forms were submitted or microphone sessions
+started. Updated sitemap dates and feature-page descriptions reflect this change.
+
 ## Flint comparison and consistency fixes — November 10, 2026
 
 - Added `compare/orchen-vs-flint.html`, built on the SchoolAI page's structure, with a card on the comparison index and a sitemap entry. Flint claims come from Flint's own pages, read November 10, 2026: [school leaders](https://flintk12.com/school-leaders), [pricing](https://flintk12.com/pricing), [parents](https://flintk12.com/parents), [sessions and monitoring](https://flintk12.com/features/sessions-and-monitoring), [grading and analytics](https://flintk12.com/features/grading-and-analytics), [Sparky behavior and safety](https://flintk12.com/features/sparky-behavior-and-safety), and [security](https://flintk12.com/security). Orchen cells reuse wording already published on the other comparison pages, the homepage FAQ, and the platform page.

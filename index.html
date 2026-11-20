@@ -2472,7 +2472,7 @@ h4 {
   <link rel="stylesheet" href="/assets/learning-comparison.css?v=20261107-color">
   <link rel="stylesheet" href="/assets/product-montage.css">
   <link rel="stylesheet" href="/assets/school-review.css?v=20261107-color">
-  <script src="/assets/demo-media.js?v=20261102-svg-icons" defer></script>
+  <script src="/assets/demo-media.js?v=20261120-features" defer></script>
   <link rel="stylesheet" href="/assets/ui-icons.css?v=20261102">
   <link rel="stylesheet" href="/assets/founding-cohort.css?v=20261107-color">
   <link rel="stylesheet" href="/assets/footer.css?v=20261103">
@@ -2480,6 +2480,7 @@ h4 {
   <link rel="stylesheet" href="/assets/brand.css?v=20261107-color">
   <script type="module" src="/assets/brand-motion.js?v=20261107-color"></script>
   <link rel="stylesheet" href="/assets/backgrounds.css?v=20261107-weave">
+  <link rel="stylesheet" href="/assets/feature-updates.css?v=20261120">
 </head>
 <body class="site-warm-refresh home-page">
 
@@ -2740,6 +2741,7 @@ h4 {
               <ul class="roles-list">
                 <li>Socratic chat that keeps students thinking, not copying</li>
                 <li>A writing workspace with planning cards and a rubric</li>
+                <li>Dictation and hands-free voice, when your school enables them</li>
                 <li>Flashcards and quizzes built automatically from their own sessions</li>
                 <li>A learning profile that adapts to each student, down to today&rsquo;s study mood</li>
               </ul>
@@ -2759,6 +2761,7 @@ h4 {
                 </div>
                 <video width="1600" height="900" controls class="roles-shot" data-chip="quiz" data-autoplay data-src="assets/shot-student-quiz.mp4" data-poster="assets/shot-student-quiz-poster.jpg" muted loop playsinline preload="none" aria-label="A quiz built from the concepts the student just studied, live"></video>
                 <video width="1600" height="956" controls class="roles-shot" data-chip="profile" data-autoplay data-src="assets/shot-student-profile.mp4" data-poster="assets/shot-student-profile-poster.jpg" muted loop playsinline preload="none" aria-label="A student's learning profile, live"></video>
+                <div class="roles-shot" data-chip="voice"><a class="demo-enlarge" href="/assets/voice-hands-free.webp" data-enlarge aria-label="Enlarge hands-free voice screenshot"><img src="/assets/voice-hands-free-1600.webp" srcset="/assets/voice-hands-free-1600.webp 1600w, /assets/voice-hands-free.webp 2880w" sizes="(max-width: 820px) calc(100vw - 40px), 1200px" width="2880" height="2000" alt="Orchen hands-free voice mode in the Listening state with microphone, pause, type-instead controls and an optional transcript panel." loading="lazy" decoding="async"><span>Enlarge screenshot <svg class="ui-icon ui-icon--expand" width="16" height="16" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><use href="/assets/ui-icons.svg#expand"></use></svg></span></a><p class="demo-caption">Speak, listen, and follow the transcript. Voice is off until the school enables it; Orchen does not save the audio.</p><a class="feature-detail-link" href="/platform/#voice-mode">Explore student voice <svg class="ui-icon ui-icon--arrow-right" width="16" height="16" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><use href="/assets/ui-icons.svg#arrow-right"></use></svg></a></div>
                 <img class="roles-shot" data-chip="flashcards" src="assets/shot-student-flashcard.png" alt="Flashcards generated from the student's own conversation" loading="lazy">
                 <img class="roles-shot" data-chip="moods" src="assets/shot-student-mood-zoom.png" alt="Six study moods, the student picks how Orchen coaches today" loading="lazy">
               </div>
@@ -2767,6 +2770,7 @@ h4 {
                 <button class="roles-chip" data-chip="writing" aria-pressed="false">Writing workspace</button>
                 <button class="roles-chip" data-chip="quiz" aria-pressed="false">Quizzes</button>
                 <button class="roles-chip" data-chip="profile" aria-pressed="false">Learning profile</button>
+                <button class="roles-chip" data-chip="voice" aria-pressed="false">Voice mode</button>
                 <button class="roles-chip" data-chip="flashcards" aria-pressed="false">Flashcards</button>
                 <button class="roles-chip" data-chip="moods" aria-pressed="false">Study moods</button>
               </div>
@@ -2850,43 +2854,20 @@ h4 {
           <!-- LEADERS -->
           <div class="roles-panel" id="panel-leaders" role="tabpanel" aria-labelledby="tab-leaders">
             <div class="roles-copy">
-              <h3 class="roles-h3">See learning across your school.</h3>
-              <p class="roles-body">Connect curriculum standards to exposure, substantive engagement, and demonstrated understanding. See the recorded evidence and plan what comes next.</p>
+              <h3 class="roles-h3">Act on today. See the whole term.</h3>
+              <p class="roles-body">The School Admin workspace separates the morning action list from the longer view. Follow up on the students and classes that need attention, then review school-wide activity and curriculum evidence.</p>
               <ul class="roles-list">
-                <li><strong>Exposure:</strong> the student encountered the standard</li>
-                <li><strong>Engagement:</strong> the student worked with it substantively</li>
-                <li><strong>Demonstrated:</strong> understanding shown on a graded check-in or quiz</li>
+                <li><strong>Today:</strong> a weekly briefing, safety flags, attention items, and shared sticking points</li>
+                <li><strong>Overview:</strong> activity over 7 days, 30 days, or the full school term</li>
+                <li><strong>Standards:</strong> framework controls and school-wide evidence by standard</li>
               </ul>
-              <p class="demo-note">Use the evidence view to plan what to assess next and where to build a fuller picture of understanding.</p>
-              <a class="roles-link" href="/solutions/heads-of-school/#standards-evidence">Explore standards evidence <svg class="ui-icon ui-icon--arrow-right" width="16" height="16" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><use href="/assets/ui-icons.svg#arrow-right"></use></svg></a>
+              <p class="demo-note">Filter by grade, subject, or class. Thin data stays visible as an empty or &ldquo;not enough data&rdquo; state.</p>
+              <a class="roles-link" href="/solutions/heads-of-school/#school-admin">Explore the admin workspace <svg class="ui-icon ui-icon--arrow-right" width="16" height="16" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><use href="/assets/ui-icons.svg#arrow-right"></use></svg></a>
             </div>
             <div class="roles-stage">
-              <div class="roles-chrome">
-                <div class="mockup-dots"><div class="mockup-dot"></div><div class="mockup-dot"></div><div class="mockup-dot"></div></div>
-                <span class="roles-chrome-tag">Standards view &middot; Demo data</span>
-              </div>
-              <div class="roles-media">
-                <div class="roles-shot active" data-chip="standards">
-                  <a class="demo-enlarge" href="/assets/OrchenStandarsScreenShot.png" data-enlarge data-focus-x="550" data-focus-y="140" aria-label="Enlarge the ELA standards example">
-                    <img src="/assets/OrchenStandarsScreenShot.png" width="2872" height="1988" alt="Example standards view with exposure, engagement and demonstrated definitions above NYS English Language Arts standards. Visible assignment and student counts are zero; latest evidence is blank." loading="lazy">
-                    <span>Enlarge screenshot <svg class="ui-icon ui-icon--expand" width="16" height="16" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><use href="/assets/ui-icons.svg#expand"></use></svg></span>
-                  </a>
-                  <p class="demo-caption">ELA standards example: review exposure, engagement, and demonstrated-understanding signals.</p>
-                </div>
-                <div class="roles-shot" data-chip="math">
-                  <a class="demo-enlarge" href="/assets/StandardsMath1count.png" data-enlarge aria-label="Enlarge the math standards example">
-                    <img src="/assets/StandardsMath1count.png" width="2014" height="480" alt="Math standards example: NY-5.NF.1 through NY-5.NF.3 each show zero assignments, one student, and latest evidence dated August 31, 2026. NY-5.NF.4 shows zero counts." loading="lazy">
-                    <span>Enlarge screenshot <svg class="ui-icon ui-icon--expand" width="16" height="16" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><use href="/assets/ui-icons.svg#expand"></use></svg></span>
-                  </a>
-                  <p class="demo-caption">Math standards example: explore student counts and latest-evidence dates by standard.</p>
-                </div>
-                <img class="roles-shot" data-chip="overview" src="assets/shot-leader-overview.webp" alt="Orchen leadership overview" loading="lazy">
-              </div>
-              <div class="roles-chips" aria-label="Leadership previews">
-                <button class="roles-chip active" data-chip="standards" aria-pressed="true">Standards &middot; ELA example</button>
-                <button class="roles-chip" data-chip="math" aria-pressed="false">Math example</button>
-                <button class="roles-chip" data-chip="overview" aria-pressed="false">Overview</button>
-              </div>
+              <div class="roles-chrome"><div class="mockup-dots"><div class="mockup-dot"></div><div class="mockup-dot"></div><div class="mockup-dot"></div></div><span class="roles-chrome-tag">School Admin &middot; Orchen Academy demo</span></div>
+              <div class="roles-media"><div class="roles-shot active" data-chip="admin-today"><a class="demo-enlarge" href="/assets/admin-today.webp" data-enlarge aria-label="Enlarge School Admin Today screenshot"><img src="/assets/admin-today-1600.webp" srcset="/assets/admin-today-1600.webp 1600w, /assets/admin-today.webp 3578w" sizes="(max-width: 820px) calc(100vw - 40px), 1200px" width="3578" height="2060" alt="School Admin Today screen at Orchen Academy with safety flags, a Monday briefing, attention items and an empty shared-sticking-points state." loading="lazy" decoding="async"><span>Enlarge screenshot <svg class="ui-icon ui-icon--expand" width="16" height="16" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><use href="/assets/ui-icons.svg#expand"></use></svg></span></a><p class="demo-caption">Today &middot; Orchen Academy demo data. Review the briefing and follow up on attention items. Empty states are shown as captured.</p></div><div class="roles-shot" data-chip="admin-overview"><a class="demo-enlarge" href="/assets/admin-overview.webp" data-enlarge aria-label="Enlarge School Admin term overview screenshot"><img src="/assets/admin-overview-1600.webp" srcset="/assets/admin-overview-1600.webp 1600w, /assets/admin-overview.webp 3580w" sizes="(max-width: 820px) calc(100vw - 40px), 1200px" width="3580" height="2060" alt="School Admin Overview with school-year and time-range controls, activity counts, a weekly term chart and an across-the-school table." loading="lazy" decoding="async"><span>Enlarge screenshot <svg class="ui-icon ui-icon--expand" width="16" height="16" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><use href="/assets/ui-icons.svg#expand"></use></svg></span></a><p class="demo-caption">Overview &middot; Orchen Academy demo data. Activity counts across the recorded school year; activity is not a mastery score.</p></div><div class="roles-shot" data-chip="admin-frameworks"><a class="demo-enlarge" href="/assets/admin-frameworks.webp" data-enlarge aria-label="Enlarge standards settings screenshot"><img src="/assets/admin-frameworks-1600.webp" srcset="/assets/admin-frameworks-1600.webp 1600w, /assets/admin-frameworks.webp 3584w" sizes="(max-width: 820px) calc(100vw - 40px), 1200px" width="3584" height="2072" alt="School Admin Standards and Frameworks showing enabled NYS ELA and mathematics frameworks, grade settings, an optional weekly rollup and teacher-created standards controls." loading="lazy" decoding="async"><span>Enlarge screenshot <svg class="ui-icon ui-icon--expand" width="16" height="16" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><use href="/assets/ui-icons.svg#expand"></use></svg></span></a><p class="demo-caption">Standards settings &middot; Choose frameworks and grades, manage school and teacher standards, and decide whether to include a counts-only weekly rollup.</p></div><div class="roles-shot" data-chip="admin-standards"><a class="demo-enlarge" href="/assets/admin-standards.webp" data-enlarge aria-label="Enlarge standards evidence screenshot"><img src="/assets/admin-standards-1600.webp" srcset="/assets/admin-standards-1600.webp 1600w, /assets/admin-standards.webp 3578w" sizes="(max-width: 820px) calc(100vw - 40px), 1200px" width="3578" height="2044" alt="School Admin mathematics standards table with student evidence for NY-6.EE.2c and NY-7.EE.4a, latest-evidence dates and many rows without evidence." loading="lazy" decoding="async"><span>Enlarge screenshot <svg class="ui-icon ui-icon--expand" width="16" height="16" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><use href="/assets/ui-icons.svg#expand"></use></svg></span></a><p class="demo-caption">Coverage evidence &middot; Demo data. A few rows have student evidence and many have none. Student counts and latest-evidence dates do not establish mastery.</p></div></div>
+              <div class="roles-chips" aria-label="School Admin previews"><button class="roles-chip active" data-chip="admin-today" aria-pressed="true">Today</button><button class="roles-chip" data-chip="admin-overview" aria-pressed="false">Term overview</button><button class="roles-chip" data-chip="admin-frameworks" aria-pressed="false">Standards settings</button><button class="roles-chip" data-chip="admin-standards" aria-pressed="false">Coverage evidence</button></div>
             </div>
           </div>
 
